@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://akynazh.gitee.io/</loc>
+    <lastmod>2021-11-17T10:37:10+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.gitee.io/posts/my/</loc>
+    <lastmod>2021-11-17T10:37:10+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.gitee.io/posts/</loc>
+    <lastmod>2021-11-17T10:37:10+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.gitee.io/test/</loc>
+    <lastmod>2021-11-17T10:21:25+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.gitee.io/categories/</loc>
+  </url><url>
+    <loc>https://akynazh.gitee.io/tags/</loc>
+  </url>
+</urlset>
