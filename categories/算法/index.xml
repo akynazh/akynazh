@@ -6,13 +6,22 @@
     <description>Recent content in 算法 on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Nov 2021 17:25:21 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 17:55:32 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>最短路问题汇总</title>
+      <link>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。 迪杰斯特拉算法 O(V^2) const</description>
+    </item>
+    
     <item>
       <title>关于数论的一些简单算法</title>
-      <link>https://akynazh.site/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 17 Nov 2021 17:25:21 +0800</pubDate>
+      <link>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
       
-      <guid>https://akynazh.site/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
       <description>关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？ 运用朴素算法必TLE，这时考虑埃氏筛法。 算法思路： 1.建立is_prime</description>
     </item>
     

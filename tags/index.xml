@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Nov 2021 17:25:21 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 17:55:32 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>初等数论</title>
-      <link>https://akynazh.site/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/</link>
-      <pubDate>Wed, 17 Nov 2021 17:25:21 +0800</pubDate>
+      <title>图论</title>
+      <link>https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/</link>
+      <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/</guid>
+      <guid>https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C/C&#43;&#43;</title>
-      <link>https://akynazh.site/tags/c/c&#43;&#43;/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Linux</title>
+      <link>https://akynazh.site/tags/linux/</link>
+      <pubDate>Wed, 17 Nov 2021 17:53:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/c/c&#43;&#43;/</guid>
+      <guid>https://akynazh.site/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://akynazh.site/tags/ssh/</link>
+      <pubDate>Wed, 17 Nov 2021 17:53:03 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>初等数论</title>
+      <link>https://akynazh.site/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/</link>
+      <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/</guid>
       <description></description>
     </item>
     

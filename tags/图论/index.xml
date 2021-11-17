@@ -6,17 +6,14 @@
     <description>Recent content in 图论 on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Nov 2021 15:58:41 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 17:55:32 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>最短路问题汇总</title>
-      <link>https://akynazh.site/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Wed, 17 Nov 2021 15:58:41 +0800</pubDate>
+      <link>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>最短路问题汇总 site: https://akynazh.site
-之前写的几个有点乱而且有些地方写的不准确，这里借着CSP比赛复习重新整理一下。
-注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
-迪杰斯特拉算法 O(V^2) const int MAXN = 100; const int INF = 0x3f3f3f3f; // 有向无环图 DAG int V, E; // 顶点数和边数 int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0  // 初始化图 void init() { memset(graph, 0x3f, sizeof(graph)); cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; int from, to, cost; for (int i = 0 ; i &amp;lt; E; i++) { cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; graph[from][to] = cost; } } // 迪杰斯特拉算法求解最短路，针对点展开 void Dijkstra(int s) { memset(d, 0x3f, sizeof(d)); memset(visited, 0, sizeof(visited)); visited[s] = 1; for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; d[s] = 0; int k, min_cost; // 无负边时最多更新n-1(其他结点数)次 	for(int i = 0; i &amp;lt; V - 1; i++){ min_cost = INF; // 寻找最未被访问的且权值最小的路径，需要优化的地方 	for(int j = 0; j &amp;lt; V; j++){ if(!</description>
+      <guid>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。 迪杰斯特拉算法 O(V^2) const</description>
     </item>
     
   </channel>
