@@ -1,3 +1,8 @@
 # My Personal Blog
 
-## Visit [Akynazh](https://akynazh.site)
+## Please Visit [Akynazh](https://akynazh.site)
+
+### By Roman Adams
+
+### On 2021-11-17
+
