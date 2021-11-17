@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo-Primer Theme</title>
-    <link>https://akynazh.github.io/</link>
-    <description>Recent content on Hugo-Primer Theme</description>
+    <title>Mainroad</title>
+    <link>akynazh.site/</link>
+    <description>Recent content on Mainroad</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy;Qiushi Pan 2018-2019</copyright>
-    <lastBuildDate>Wed, 17 Nov 2021 10:37:10 +0800</lastBuildDate><atom:link href="https://akynazh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 10:37:10 +0800</lastBuildDate><atom:link href="akynazh.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My</title>
-      <link>https://akynazh.github.io/posts/my/</link>
+      <link>akynazh.site/posts/my/</link>
       <pubDate>Wed, 17 Nov 2021 10:37:10 +0800</pubDate>
       
-      <guid>https://akynazh.github.io/posts/my/</guid>
+      <guid>akynazh.site/posts/my/</guid>
       <description>Hello World </description>
     </item>
     
     <item>
       <title>Test</title>
-      <link>https://akynazh.github.io/test/</link>
+      <link>akynazh.site/test/</link>
       <pubDate>Wed, 17 Nov 2021 10:21:25 +0800</pubDate>
       
-      <guid>https://akynazh.github.io/test/</guid>
+      <guid>akynazh.site/test/</guid>
       <description></description>
     </item>
     
