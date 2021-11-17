@@ -2,20 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>akynazh.site/</loc>
-    <lastmod>2021-11-17T10:37:10+08:00</lastmod>
+    <loc>https://akynazh.site/</loc>
+    <lastmod>2021-11-17T15:23:43+08:00</lastmod>
   </url><url>
-    <loc>akynazh.site/posts/my/</loc>
-    <lastmod>2021-11-17T10:37:10+08:00</lastmod>
+    <loc>https://akynazh.site/p/archives/</loc>
+    <lastmod>2021-11-17T15:23:43+08:00</lastmod>
   </url><url>
-    <loc>akynazh.site/posts/</loc>
-    <lastmod>2021-11-17T10:37:10+08:00</lastmod>
+    <loc>https://akynazh.site/post/</loc>
+    <lastmod>2021-11-17T15:23:43+08:00</lastmod>
   </url><url>
-    <loc>akynazh.site/test/</loc>
-    <lastmod>2021-11-17T10:21:25+08:00</lastmod>
+    <loc>https://akynazh.site/p/search/</loc>
+    <lastmod>2021-11-17T15:23:19+08:00</lastmod>
   </url><url>
-    <loc>akynazh.site/categories/</loc>
+    <loc>https://akynazh.site/p/home/</loc>
+    <lastmod>2021-11-17T14:07:22+08:00</lastmod>
   </url><url>
-    <loc>akynazh.site/tags/</loc>
+    <loc>https://akynazh.site/categories/</loc>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
   </url>
 </urlset>
