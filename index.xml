@@ -6,7 +6,177 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Nov 2021 17:55:32 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Nov 2021 23:30:04 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java中通过反射获取带参数类型的方法</title>
+        <link>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+        <description>&lt;h2 id=&#34;问题的提出&#34;&gt;问题的提出&lt;/h2&gt;
+&lt;p&gt;在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。通过了解，发现可以采用导入Gson包的方式调用方法实现这个功能：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Person p = new Person(1, &amp;quot;jzh&amp;quot;);
+Gson gson = new Gson();
+String p_json = gson.toJson(p);
+Person p1 = gson.fromJson(p_json, Person.class);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;people&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;people&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;jzh&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;people&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;zh&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;people&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;z&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ps_json&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gson&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;toJson&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;people&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;people1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gson&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;fromJson&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ps_json&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TypeToken&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;o&#34;&gt;}.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken&lt;!-- raw HTML omitted --&gt;实现。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyType&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TypeToken&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;people1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gson&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;fromJson&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ps_json&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MyType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;那么问题来了，这里底层是怎么实现转换的呢？为什么要使用TypeToken&lt;!-- raw HTML omitted --&gt;?&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题的思考与解决&#34;&gt;问题的思考与解决&lt;/h2&gt;
+&lt;p&gt;首先我们通过阅读源码寻找答案。&lt;/p&gt;
+&lt;p&gt;gson源码中的TypeToken&lt;!-- raw HTML omitted --&gt;类:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;TypeToken&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;super&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rawType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hashCode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;constructor:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;TypeToken&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getSuperclassTypeParameter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getClass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;rawType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;super&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$Gson$Types&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getRawType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;hashCode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;hashCode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我们主要研究type成员。&lt;/p&gt;
+&lt;p&gt;通过方法getSuperclassTypeParameter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Type&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getSuperclassTypeParameter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;subclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;Type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;superclass&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;subclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getGenericSuperclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;superclass&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RuntimeException&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Missing type parameter.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;ParameterizedType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parameterized&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ParameterizedType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;superclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$Gson$Types&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;canonicalize&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parameterized&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getActualTypeArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]);&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这里我们就可以找到答案了：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分析可知，步骤如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 从一个Class对象中，获取该对象父类接收到的参数化类型（泛型）&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 判断type类型&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 强制转换为ParameterizedType类型&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 获取parameterized的第一个参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;一. 从一个Class对象中，获取该对象父类接收到的参数化类型（泛型）&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;Type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;superclass&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;subclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getGenericSuperclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中subclass为：&lt;/p&gt;
+&lt;p&gt;class 包名.Type.TypeTest.TypeToken&amp;lt;java.util.ArrayList&amp;lt;包名.Type.Person&amp;raquo;&lt;/p&gt;
+&lt;p&gt;通过前面知道，我们通过继承（或者匿名内部类）的方式创建了一个类，那么我们则可以通过getGenericSuperclass()方法获取这个类的父类，而且是包含了我们需要的类型参数的父类！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二. 判断type类型&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;superclass&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RuntimeException&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Missing type parameter.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 不是带参数类型
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Type是一个接口，Class，ParameterizedType等类型都实现了Type，我们需要确保传入的类型参数是一个带参数的类ParameterizedType而不是Class。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三. 强制转换为ParameterizedType类型，即带参数类型，可以调用对应方法获取参数&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;ParameterizedType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parameterized&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ParameterizedType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;superclass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;parameterized : 包名.Type.TypeToken&amp;lt;java.util.ArrayList&amp;lt;包名.Type.Person&amp;raquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;四. 获取parameterized的第一个参数，即java.util.ArrayList&amp;lt;包名.Type.Person&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;parameterized&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getActualTypeArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;源码中的canonicalize方法是实例化一个ParameterizedTypeImpl对象的方法，可以不予理会。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;过程粗略一看貌似有些奇怪，但是分析其思路，用通俗的话描述就是，&lt;strong&gt;将一个加密的东西放进一个解密的机器里面，在把东西拿出来，你就知道东西具体是什么了！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;那么为什么需要一个TypeToken&lt;!-- raw HTML omitted --&gt;进行包裹呢，个人认为，因为有一个方法getGenericSuperclass可以获得包含了参数类型的父类，用一个类继承于TypeToken&lt;!-- raw HTML omitted --&gt;,  指定T为自定义的参数类型如ArrayList&lt;!-- raw HTML omitted --&gt;， 通过调用getGenericSuperclass获取父类，把父类强制转换为ParameterizedType类型，即带参数类型，即可调用对应方法获取参数。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
+        <link>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Wed, 17 Nov 2021 17:56:03 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;img src="https://akynazh.site/image/45.jpg" alt="Featured image of post SSH免密且免IP登录远程主机的方法以及遇到的一些问题" /&gt;&lt;h2 id=&#34;问题的提出&#34;&gt;问题的提出：&lt;/h2&gt;
+&lt;p&gt;我们可以通过指令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh 用户名@IP
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！&lt;/p&gt;
+&lt;p&gt;通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。&lt;/p&gt;
+&lt;h2 id=&#34;实现免ip登录&#34;&gt;实现免ip登录：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新建config文件&lt;/p&gt;
+&lt;p&gt;若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑代替名以及IP，端口号，用户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
+	HostName 输入IP
+	Port 输入端口号
+	User 输入用户
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样，即可通过&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh 代替名
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进行登录咯！&lt;/p&gt;
+&lt;h2 id=&#34;接着我们实现免密登录&#34;&gt;接着我们实现免密登录：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在本地生成密钥：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并选择&lt;strong&gt;生成在.ssh目录下即可&lt;/strong&gt;，获得一把公钥和私钥。&lt;/p&gt;
+&lt;p&gt;将名字带.pub的就是公钥了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将公钥发给远程主机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过命令&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-copy-id -i .ssh/公钥 用户名@IP
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;即可发送给远程主机。&lt;/p&gt;
+&lt;p&gt;在window10中可能出现以下错误：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;则可先于命令行中运行以下代码：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function ssh-copy-id([string]$userAtMachine, $args){
+    $publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa.pub&amp;quot;
+    if (!(Test-Path &amp;quot;$publicKey&amp;quot;)){
+        Write-Error &amp;quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&amp;quot;
+    }
+    else {
+        &amp;amp; cat &amp;quot;$publicKey&amp;quot; | ssh $args $userAtMachine &amp;quot;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys || exit 1&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后再重试即可成功发送公钥！&lt;/p&gt;
+&lt;p&gt;远程主机对本地发送过去的公钥进行加密，只有本地的私钥可以解密！&lt;/p&gt;
+&lt;p&gt;这样本地就与远程主机有了联系！&lt;/p&gt;
+&lt;h2 id=&#34;密钥算法不匹配问题&#34;&gt;密钥算法不匹配问题&lt;/h2&gt;
+&lt;p&gt;这里贴上一个我遇到的问题，如果出现以下错误：&lt;/p&gt;
+&lt;p&gt;no matching key exchange method found. Their offer: diffie-hellman-group1-sha1&lt;/p&gt;
+&lt;p&gt;则是本地密钥算法与远程主机密钥算法&lt;strong&gt;不匹配&lt;/strong&gt;造成的！&lt;/p&gt;
+&lt;p&gt;可以在ssh_config或config文件中添加密钥算法配置：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
+	HostName 输入IP
+	Port 输入端口号
+	User 输入用户
+	KexAlgorithms +diffie-hellman-group1-sha1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中加号不能省略！表示新增的密钥算法哦~&lt;/p&gt;
+&lt;h2 id=&#34;自定义密钥文件导致识别错误问题&#34;&gt;自定义密钥文件导致识别错误问题&lt;/h2&gt;
+&lt;p&gt;生成密钥的时候系统会让我们指定路径（包含其生成的文件名），这是可选的一步，如果我们直接回车而不指定则系统会默认生成id_rsa及id_rsa.pub这两个文件。&lt;/p&gt;
+&lt;p&gt;而当我们需要登录多个主机时，生成的文件名就会冲突了。所以我们需要自定义文件名。&lt;/p&gt;
+&lt;p&gt;步骤如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;假设我们自定义为~/.ssh/id_rsa_centos，生成id_rsa_centos79及id_rsa_centos79.pub文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;继续编辑config文件，如下&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
+	HostName 输入IP
+	Port 输入端口号
+	User 输入用户
+	IdentityFile ~/.ssh/id_rsa_centos79
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;修改ssh-copy-id函数中的公钥名，如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa_centos79.pub&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样即可顺利发送公钥到主机哩^-^&lt;/p&gt;
+&lt;p&gt;over!&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>最短路问题汇总</title>
         <link>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
         <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
@@ -275,104 +445,12 @@
 </description>
         </item>
         <item>
-        <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
-        <link>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Wed, 17 Nov 2021 17:53:03 +0800</pubDate>
-        
-        <guid>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
-        <description>&lt;h2 id=&#34;问题的提出&#34;&gt;问题的提出：&lt;/h2&gt;
-&lt;p&gt;我们可以通过指令：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh 用户名@IP
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！&lt;/p&gt;
-&lt;p&gt;通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。&lt;/p&gt;
-&lt;h2 id=&#34;实现免ip登录&#34;&gt;实现免ip登录：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;新建config文件&lt;/p&gt;
-&lt;p&gt;若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编辑代替名以及IP，端口号，用户。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
-	HostName 输入IP
-	Port 输入端口号
-	User 输入用户
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样，即可通过&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh 代替名
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进行登录咯！&lt;/p&gt;
-&lt;h2 id=&#34;接着我们实现免密登录&#34;&gt;接着我们实现免密登录：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;在本地生成密钥：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并选择&lt;strong&gt;生成在.ssh目录下即可&lt;/strong&gt;，获得一把公钥和私钥。&lt;/p&gt;
-&lt;p&gt;将名字带.pub的就是公钥了。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;将公钥发给远程主机&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;通过命令&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-copy-id -i .ssh/公钥 用户名@IP
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;即可发送给远程主机。&lt;/p&gt;
-&lt;p&gt;在window10中可能出现以下错误：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;则可先于命令行中运行以下代码：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function ssh-copy-id([string]$userAtMachine, $args){
-    $publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa.pub&amp;quot;
-    if (!(Test-Path &amp;quot;$publicKey&amp;quot;)){
-        Write-Error &amp;quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&amp;quot;
-    }
-    else {
-        &amp;amp; cat &amp;quot;$publicKey&amp;quot; | ssh $args $userAtMachine &amp;quot;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys || exit 1&amp;quot;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后再重试即可成功发送公钥！&lt;/p&gt;
-&lt;p&gt;远程主机对本地发送过去的公钥进行加密，只有本地的私钥可以解密！&lt;/p&gt;
-&lt;p&gt;这样本地就与远程主机有了联系！&lt;/p&gt;
-&lt;h2 id=&#34;密钥算法不匹配问题&#34;&gt;密钥算法不匹配问题&lt;/h2&gt;
-&lt;p&gt;这里贴上一个我遇到的问题，如果出现以下错误：&lt;/p&gt;
-&lt;p&gt;no matching key exchange method found. Their offer: diffie-hellman-group1-sha1&lt;/p&gt;
-&lt;p&gt;则是本地密钥算法与远程主机密钥算法&lt;strong&gt;不匹配&lt;/strong&gt;造成的！&lt;/p&gt;
-&lt;p&gt;可以在ssh_config或config文件中添加密钥算法配置：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
-	HostName 输入IP
-	Port 输入端口号
-	User 输入用户
-	KexAlgorithms +diffie-hellman-group1-sha1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中加号不能省略！表示新增的密钥算法哦~&lt;/p&gt;
-&lt;h2 id=&#34;自定义密钥文件导致识别错误问题&#34;&gt;自定义密钥文件导致识别错误问题&lt;/h2&gt;
-&lt;p&gt;生成密钥的时候系统会让我们指定路径（包含其生成的文件名），这是可选的一步，如果我们直接回车而不指定则系统会默认生成id_rsa及id_rsa.pub这两个文件。&lt;/p&gt;
-&lt;p&gt;而当我们需要登录多个主机时，生成的文件名就会冲突了。所以我们需要自定义文件名。&lt;/p&gt;
-&lt;p&gt;步骤如下&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;假设我们自定义为~/.ssh/id_rsa_centos，生成id_rsa_centos79及id_rsa_centos79.pub文件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;继续编辑config文件，如下&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
-	HostName 输入IP
-	Port 输入端口号
-	User 输入用户
-	IdentityFile ~/.ssh/id_rsa_centos79
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;修改ssh-copy-id函数中的公钥名，如下&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa_centos79.pub&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样即可顺利发送公钥到主机哩^-^&lt;/p&gt;
-&lt;p&gt;over!&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>关于数论的一些简单算法</title>
         <link>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
         <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
         
         <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
-        <description>&lt;img src="https://akynazh.site/image/1.jpg" alt="Featured image of post 关于数论的一些简单算法" /&gt;&lt;h2 id=&#34;关于素数&#34;&gt;关于素数&lt;/h2&gt;
+        <description>&lt;img src="https://akynazh.site/image/3.jpg" alt="Featured image of post 关于数论的一些简单算法" /&gt;&lt;h2 id=&#34;关于素数&#34;&gt;关于素数&lt;/h2&gt;
 &lt;h3 id=&#34;1埃氏筛法&#34;&gt;1.埃氏筛法&lt;/h3&gt;
 &lt;p&gt;问1000000000000以内有多少个素数？&lt;/p&gt;
 &lt;p&gt;运用朴素算法必TLE，这时考虑埃氏筛法。&lt;/p&gt;
@@ -464,6 +542,42 @@
 	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;over.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>hugo一些操作和文件记录</title>
+        <link>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
+        <pubDate>Sat, 17 Oct 2020 23:12:51 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
+        <description>&lt;h2 id=&#34;hugo目录大致功能&#34;&gt;hugo目录大致功能&lt;/h2&gt;
+&lt;h3 id=&#34;-blog&#34;&gt;-blog/&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;- archetypes/: 标准类型目录，生成对应文章页面时会由这个目录里的md模板生成
+
+- assets/: 全局物件目录，存放全局图像（不包含image加载的，主要是图标等），scss样式，ts脚本的等的目录，可以从theme对应的assets里的文件中复制同样的文件目录进行补充添加覆盖等
+
+- content/: 文章和页面目录
+
+- data/: 数据模板目录，需要加载数据库时有用
+
+- layouts/: 布局模板目录，可以从theme对应的layouts里的文件中复制同样的文件并加以覆盖升级
+
+- public/: 部署网站内容到github的目录
+
+- resources/: 缓冲目录，加速hugo命令完成
+
+- static/: 加载图像文件时对应的根目录，如：image: /image/1.jpg  -&amp;gt;  static/image/1.jpg
+
+- themes/: 存放各种主题
+
+- config.yaml: 全局配置文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;hugo一些操作记录&#34;&gt;hugo一些操作记录&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;- hugo new \post\*.md 生成文章or页面
+
+- hugo 编译部署到public
+
+- hugo server 编译并开启本地服务器预览&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
         

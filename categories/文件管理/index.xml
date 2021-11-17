@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文件管理 on Akynazh</title>
+    <link>https://akynazh.site/categories/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 文件管理 on Akynazh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Oct 2020 23:12:51 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo一些操作和文件记录</title>
+      <link>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 17 Oct 2020 23:12:51 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
+      <description>hugo目录大致功能 -blog/ - archetypes/: 标准类型目录，生成对应文章页面时会由这个目录里的md模板生成 - assets/: 全局物件目录，存放全局图像（不包含image加载的</description>
+    </item>
+    
+  </channel>
+</rss>
