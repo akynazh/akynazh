@@ -2,23 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://akynazh.site/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2021-11-17T17:55:32+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2021-11-17T17:53:03+08:00</lastmod>
+  </url><url>
     <loc>https://akynazh.site/</loc>
-    <lastmod>2021-11-17T15:23:43+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/archives/</loc>
-    <lastmod>2021-11-17T15:23:43+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/post/</loc>
-    <lastmod>2021-11-17T15:23:43+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/search/</loc>
-    <lastmod>2021-11-17T15:23:19+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/home/</loc>
-    <lastmod>2021-11-17T14:07:22+08:00</lastmod>
+    <lastmod>2021-11-17T17:25:21+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/</loc>
+    <lastmod>2021-11-17T17:25:21+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2021-11-17T17:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-11-17T17:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/</loc>
+    <lastmod>2021-11-17T17:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-11-17T17:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/about/</loc>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/page/</loc>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/c/c&#43;&#43;/</loc>
+  </url><url>
+    <loc>https://akynazh.site/search/</loc>
+  </url><url>
+    <loc>https://akynazh.site/categories/test/</loc>
   </url>
 </urlset>

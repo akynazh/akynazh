@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Akynazh</title>
+    <link>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Akynazh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 17:25:21 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于数论的一些简单算法</title>
+      <link>https://akynazh.site/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 17 Nov 2021 17:25:21 +0800</pubDate>
+      
+      <guid>https://akynazh.site/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
+      <description>关于数论的一些简单算法 关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？
+运用朴素算法必TLE，这时考虑埃氏筛法。
+算法思路：
+1.建立is_prime[]数组，初始化为true；
+2.从2开始筛取，(注意从2开始很重要，因为2为素数，否则需要改变相应后续操作)，若为true，则继续判断是否为素数，若为素数，则将所有该素数的倍数置为false。
+2.区间筛法 问[21479862, 21499877)之间有多少个素数？
+这时若采用埃氏筛法，会浪费大量时间计算前面未涉及的区间，这时考虑区间筛法。
+算法思路：
+1.建立is_prime_small[]和is_prime[]数组，初始化为true；
+2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。
+相应代码：
+typedef long long ll; bool is_prime[MAX1]; bool is_prime_small[MAX2]; void sieve(ll a, ll b) { for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime_small[i] = true; for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime[i] = true; for(int i = 2; (ll)i * i &amp;lt; b; i++) { if(is_prime_small[i]){ for(int j = 2 * i; (ll)j * j &amp;lt; b; j += i) is_prime_small[j] = false; for(ll j = max( 2ll, (a + i - 1) / i) ) * i; j &amp;lt; b; j += i) is_prime[j - a] = false; } } } 注意点：</description>
+    </item>
+    
+  </channel>
+</rss>
