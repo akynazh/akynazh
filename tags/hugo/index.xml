@@ -6,7 +6,16 @@
     <description>Recent content in hugo on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Oct 2020 23:12:51 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Nov 2021 19:41:03 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo实现自动化生成文章并提交github</title>
+      <link>https://akynazh.site/p/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</link>
+      <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</guid>
+      <description>自动化的思想在计算机领域是非常重要的，计算机，本质上就是为了通过自动化，方便我们的生活，提高办事的效率而存在的。 所以在使用计算机时，在开始用</description>
+    </item>
+    
     <item>
       <title>hugo一些操作和文件记录</title>
       <link>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>

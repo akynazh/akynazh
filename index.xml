@@ -6,7 +6,51 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Nov 2021 23:30:04 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 18 Nov 2021 19:41:03 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo实现自动化生成文章并提交github</title>
+        <link>https://akynazh.site/p/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</link>
+        <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</guid>
+        <description>&lt;p&gt;自动化的思想在计算机领域是非常重要的，计算机，本质上就是为了通过自动化，方便我们的生活，提高办事的效率而存在的。&lt;/p&gt;
+&lt;p&gt;所以在使用计算机时，在开始用计算机办事之前，可以先想想这件事的那些地方可以利用计算机的自动化来帮我们完成。&lt;/p&gt;
+&lt;p&gt;正是这种懒的思想，使得人类不断进步，攀登科技高峰，不是吗？^-^&lt;/p&gt;
+&lt;p&gt;下面介绍通过编写bat脚本自动化hugo写文章，提交发布文章的方法。&lt;/p&gt;
+&lt;p&gt;Linux用户则使用shell编写脚本~&lt;/p&gt;
+&lt;h2 id=&#34;自动化生成文章&#34;&gt;自动化生成文章&lt;/h2&gt;
+&lt;p&gt;通过 set /p 接收用户输入的文章名称&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;D&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;cd&lt;/span&gt; D:\@git\akynazh
+&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;/p&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;please input article name  
+hugo new \post\&lt;span class=&#34;nv&#34;&gt;%input%&lt;/span&gt;.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;自动化生成分类&#34;&gt;自动化生成分类&lt;/h2&gt;
+&lt;p&gt;通过cp命令，复制模板文件到categories下并命名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;D&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;cd&lt;/span&gt; D:\@git\akynazh
+&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;/p&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;please input category name  
+&lt;span class=&#34;k&#34;&gt;copy&lt;/span&gt; archetypes\categories.md content\categories\&lt;span class=&#34;nv&#34;&gt;%input%&lt;/span&gt;.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;自动提交发布到github&#34;&gt;自动提交发布到github&lt;/h2&gt;
+&lt;h3 id=&#34;普通提交&#34;&gt;普通提交&lt;/h3&gt;
+&lt;p&gt;方法与以上类似，最后可以pause一下看看有没有问题产生&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;D&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;cd&lt;/span&gt; D:\@git\akynazh
+hugo
+&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;/p&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;please enter msg  
+&lt;span class=&#34;k&#34;&gt;cd&lt;/span&gt; D:\@git\akynazh\public
+git add .
+git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;%input%&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+git push
+&lt;span class=&#34;k&#34;&gt;pause&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;提交文章&#34;&gt;提交文章&lt;/h3&gt;
+&lt;p&gt;只需要将上面的set部分修改一下即可&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;publish article
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;over~&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Java中通过反射获取带参数类型的方法</title>
         <link>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
         <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
