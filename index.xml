@@ -494,7 +494,7 @@ Person p1 = gson.fromJson(p_json, Person.class);
         <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
         
         <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
-        <description>&lt;img src="https://akynazh.site/image/3.jpg" alt="Featured image of post 关于数论的一些简单算法" /&gt;&lt;h2 id=&#34;关于素数&#34;&gt;关于素数&lt;/h2&gt;
+        <description>&lt;img src="https://akynazh.site/image/3.jpeg" alt="Featured image of post 关于数论的一些简单算法" /&gt;&lt;h2 id=&#34;关于素数&#34;&gt;关于素数&lt;/h2&gt;
 &lt;h3 id=&#34;1埃氏筛法&#34;&gt;1.埃氏筛法&lt;/h3&gt;
 &lt;p&gt;问1000000000000以内有多少个素数？&lt;/p&gt;
 &lt;p&gt;运用朴素算法必TLE，这时考虑埃氏筛法。&lt;/p&gt;
