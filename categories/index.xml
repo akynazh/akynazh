@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Nov 2021 19:41:03 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Nov 2021 23:47:15 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>算法</title>
+      <link>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
+      
+      <guid>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>脚本</title>
       <link>https://akynazh.site/categories/%E8%84%9A%E6%9C%AC/</link>
@@ -35,30 +44,11 @@
     </item>
     
     <item>
-      <title>算法</title>
-      <link>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
-      
-      <guid>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>文件管理</title>
       <link>https://akynazh.site/categories/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sat, 17 Oct 2020 23:12:51 +0800</pubDate>
       
       <guid>https://akynazh.site/categories/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>
-�维</title>
-      <link>https://akynazh.site/categories/%E8%BF%90%E7%BB%B4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://akynazh.site/categories/%E8%BF%90%E7%BB%B4/</guid>
       <description></description>
     </item>
     
