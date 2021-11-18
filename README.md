@@ -2,7 +2,5 @@
 
 ## Please Visit [Akynazh](https://akynazh.site)
 
-### By Roman Adams
-
-### On 2021-11-17
+### Created And Developed By Roman Adams(Akynazh)
 
