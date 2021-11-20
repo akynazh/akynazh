@@ -6,7 +6,142 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 18 Nov 2021 23:47:15 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Nov 2021 18:17:33 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Cmd重要且实用的一些命令</title>
+        <link>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;h2 id=&#34;写入文件&#34;&gt;写入文件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;写入hello字符串（同时新建了a.txt）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; hello &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; a.txt 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;追加写入hello字符串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; hello &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; a.txt 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;将a.txt内容追加写入b.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; a.txt &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; b.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;新建文件&#34;&gt;新建文件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;新建空文件a.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; null &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; a.txt 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;换行分号换行输出&#34;&gt;换行（分号换行输出）&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; hello; echo peter  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;关于程序编译&#34;&gt;关于程序编译&lt;/h2&gt;
+&lt;p&gt;test.cpp: 一个含cin输入的程序&lt;/p&gt;
+&lt;p&gt;编译cpp&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;g++ test.cpp -o test 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以1.in作为标准输入，2.out作为标准输出执行test&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;test &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; 1.in &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; 2.out 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;test_err.cpp: 一个会导致编译错误的程序&lt;/p&gt;
+&lt;p&gt;把编译后出现的错误输入log.txt，命令行不会报错&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;g++ test_err.cpp -o terr &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; log.txt 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;打开并编辑文件&#34;&gt;打开并编辑文件&lt;/h2&gt;
+&lt;p&gt;cmd下没有bash下好用的vim=_=&lt;/p&gt;
+&lt;p&gt;使用记事本打开编辑 1.py&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;notepad 1.py 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;记事本不好用呀，还是vscode香，如下~&lt;/p&gt;
+&lt;p&gt;使用vscode打开编辑1.py，首先需配置环境变量&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(${vscodepath}\bin)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;code 1.py 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;over&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Window增加右键打开选项</title>
+        <link>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+        <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+        <description>&lt;p&gt;欢迎访问我的博客^-^&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Akynazh&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;加入注册表界面&#34;&gt;加入注册表界面&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;win+R&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;regedit&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;增加右键编辑文件选项&#34;&gt;增加右键编辑文件选项&lt;/h2&gt;
+&lt;h3 id=&#34;以vscode作为实例&#34;&gt;以vscode作为实例&lt;/h3&gt;
+&lt;p&gt;注册表页面下进入：&lt;/p&gt;
+&lt;p&gt;计算机\HKEY_CLASSES_ROOT*\shell&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;新建项 Vscode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右键Vscode并新建项command&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑command默认选项值为： ${vscodepath}\Code.exe %1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑Vscode值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;增加目录下右键打开选项&#34;&gt;增加目录下右键打开选项&lt;/h2&gt;
+&lt;h3 id=&#34;以window-terminal作为实例&#34;&gt;以window terminal作为实例&lt;/h3&gt;
+&lt;p&gt;注册表页面下进入：&lt;/p&gt;
+&lt;p&gt;计算机\HKEY_CLASSES_ROOT\Directory\Background\shell&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;新建项 Terminal&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右键Terminal 新建项command&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑command默认选项值为：${terminalpath}\wt.exe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑Terminal值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：${terminalicon}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑window terminal的json配置文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;profiles&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; 
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;nt&#34;&gt;&amp;#34;defaults&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; 
+        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;nt&#34;&gt;&amp;#34;startingDirectory&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;over&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>矩阵快速幂的介绍及其应用</title>
         <link>https://akynazh.site/p/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
         <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>

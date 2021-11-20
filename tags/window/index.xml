@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>window on Akynazh</title>
+    <link>https://akynazh.site/tags/window/</link>
+    <description>Recent content in window on Akynazh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Nov 2021 18:10:30 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Window增加右键打开选项</title>
+      <link>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+      <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+      <description>欢迎访问我的博客^-^ Akynazh 加入注册表界面 win+R regedit 增加右键编辑文件选项 以vscode作为实例 注册表页面下进入： 计算机\HKEY_CLASSES_RO</description>
+    </item>
+    
+  </channel>
+</rss>
