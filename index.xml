@@ -157,7 +157,7 @@
 &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;/p&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;please input article name  
 hugo new \post\&lt;span class=&#34;nv&#34;&gt;%input%&lt;/span&gt;.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;自动化生成分类&#34;&gt;自动化生成分类&lt;/h2&gt;
-&lt;p&gt;通过cp命令，复制模板文件到categories下并命名&lt;/p&gt;
+&lt;p&gt;通过copy命令，复制模板文件到categories下并命名&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;D&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;cd&lt;/span&gt; D:\@git\akynazh
 &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
@@ -656,9 +656,16 @@ Person p1 = gson.fromJson(p_json, Person.class);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意点：&lt;/p&gt;
 &lt;p&gt;1.&lt;code&gt;max( 2ll, (a + i - 1) / i ) * i &lt;/code&gt;其中的2ll为隐式地将max的参数类型转换为long long 型&lt;/p&gt;
 &lt;p&gt;2.（a + i - 1) / i  * i 可以得到的是a或a以后的第一个素数的倍数：&lt;/p&gt;
-&lt;p&gt;当a为该素数的倍数时，设倍为x，则a等于ix, (ix + i - 1) / i * i 即为 [ix / i + (i - 1) / i] * i = ix&lt;/p&gt;
-&lt;p&gt;反之，设a等于ix + t, 则有t &amp;gt;= 1 &amp;amp;&amp;amp; t &amp;lt; x, (ix + t + i - 1) / i * i 即为 [ix / i + (i - 1 + t) / i] * i = （x + 1) * i = ix + i &amp;gt; ix + t
-即ix + i 为 ix + t后第一个i的倍数&lt;/p&gt;
+&lt;p&gt;当a为该素数的倍数时：&lt;/p&gt;
+&lt;p&gt;设倍为x，则a等于ix&lt;/p&gt;
+&lt;p&gt;(ix + i - 1) / i * i&lt;/p&gt;
+&lt;p&gt;即为 [ix / i + (i - 1) / i] * i = ix&lt;/p&gt;
+&lt;p&gt;反之：&lt;/p&gt;
+&lt;p&gt;设a等于ix + t&lt;/p&gt;
+&lt;p&gt;则有t &amp;gt;= 1 &amp;amp;&amp;amp; t &amp;lt; x&lt;/p&gt;
+&lt;p&gt;(ix + t + i - 1) / i * i&lt;/p&gt;
+&lt;p&gt;即为 [ix / i + (i - 1 + t) / i] * i = （x + 1) * i = ix + i &amp;gt; ix + t&lt;/p&gt;
+&lt;p&gt;即ix + i 为 ix + t后第一个i的倍数&lt;/p&gt;
 &lt;h2 id=&#34;关于模&#34;&gt;关于模&lt;/h2&gt;
 &lt;h3 id=&#34;取模的运算&#34;&gt;取模的运算&lt;/h3&gt;
 &lt;p&gt;（a+b)%p = (a%p+b%p)%p    +可以换为-和*&lt;/p&gt;

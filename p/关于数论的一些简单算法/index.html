@@ -170,9 +170,16 @@
 </code></pre></div><p>注意点：</p>
 <p>1.<code>max( 2ll, (a + i - 1) / i ) * i </code>其中的2ll为隐式地将max的参数类型转换为long long 型</p>
 <p>2.（a + i - 1) / i  * i 可以得到的是a或a以后的第一个素数的倍数：</p>
-<p>当a为该素数的倍数时，设倍为x，则a等于ix, (ix + i - 1) / i * i 即为 [ix / i + (i - 1) / i] * i = ix</p>
-<p>反之，设a等于ix + t, 则有t &gt;= 1 &amp;&amp; t &lt; x, (ix + t + i - 1) / i * i 即为 [ix / i + (i - 1 + t) / i] * i = （x + 1) * i = ix + i &gt; ix + t
-即ix + i 为 ix + t后第一个i的倍数</p>
+<p>当a为该素数的倍数时：</p>
+<p>设倍为x，则a等于ix</p>
+<p>(ix + i - 1) / i * i</p>
+<p>即为 [ix / i + (i - 1) / i] * i = ix</p>
+<p>反之：</p>
+<p>设a等于ix + t</p>
+<p>则有t &gt;= 1 &amp;&amp; t &lt; x</p>
+<p>(ix + t + i - 1) / i * i</p>
+<p>即为 [ix / i + (i - 1 + t) / i] * i = （x + 1) * i = ix + i &gt; ix + t</p>
+<p>即ix + i 为 ix + t后第一个i的倍数</p>
 <h2 id="关于模">关于模</h2>
 <h3 id="取模的运算">取模的运算</h3>
 <p>（a+b)%p = (a%p+b%p)%p    +可以换为-和*</p>
