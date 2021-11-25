@@ -6,7 +6,134 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 23 Nov 2021 18:20:39 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 25 Nov 2021 00:21:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java进行对象比较中的equals和hashcode</title>
+        <link>https://akynazh.site/p/java%E8%BF%9B%E8%A1%8C%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83%E4%B8%AD%E7%9A%84equals%E5%92%8Chashcode/</link>
+        <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/java%E8%BF%9B%E8%A1%8C%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83%E4%B8%AD%E7%9A%84equals%E5%92%8Chashcode/</guid>
+        <description>&lt;h2 id=&#34;equals方法与的比较与分析&#34;&gt;equals方法与&amp;quot;==&amp;ldquo;的比较与分析&lt;/h2&gt;
+&lt;p&gt;首先提出一个重要的点:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;== 比较时进行&lt;strong&gt;地址&lt;/strong&gt;的比较&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;equals 比较时进行&lt;strong&gt;值&lt;/strong&gt;的比较&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// false
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好像没问题。&lt;/p&gt;
+&lt;p&gt;然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;obj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;obj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;anObject&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;anObject&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;anObject&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;aString&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;anObject&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;coder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;aString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;coder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;())&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;isLatin1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StringLatin1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;aString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+                              &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StringUTF16&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;aString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;所以equals()不一定进行值的比较，在使用自己创建的类时，若想进行值的比较就必须重写equals()方法。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如何重写equals方法&#34;&gt;如何重写equals方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;重写equals方法的目的&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重写equals是 &lt;strong&gt;在两个对象某些字段相等时就认定两个对象相等&lt;/strong&gt; 的情况下进行的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;重写一个完美的equals()的步骤&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.显式参数命名为otherObject，稍后将它强制转换为另一个名为other的变量&lt;/p&gt;
+&lt;p&gt;2.检测this与otherObject&lt;strong&gt;是否相等&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.检测otherObject&lt;strong&gt;是否为null&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;4.比较this与otherObject的类，如果equals的语义可以在子类中改变，就使用&lt;strong&gt;getclass&lt;/strong&gt;检测&lt;/p&gt;
+&lt;p&gt;如果所有的子类都有相同的相等性语义，就使用&lt;strong&gt;instanceof&lt;/strong&gt;检测&lt;/p&gt;
+&lt;p&gt;5.将otherObject&lt;strong&gt;强制转换&lt;/strong&gt;为相应类类型的变量&lt;/p&gt;
+&lt;p&gt;6.使用 &lt;strong&gt;==&lt;/strong&gt; 比较基本类型字段 使用 &lt;strong&gt;Object.equals&lt;/strong&gt;比较对象字段&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;by 《core Java》&lt;/p&gt;
+&lt;p&gt;注：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;instanceof进行类型检查规则是:你属于该类or该类的派生类;&lt;/p&gt;
+&lt;p&gt;getClass获得类型信息采用==来进行检查是否相等的操作是严格的判断,只会判断”本类”.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;p&gt;当两个人年龄相同时，我们认为这两个对象相同：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class Person {
+    private int age;
+    private String name;
+
+    public Person(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return &amp;quot;Person{&amp;quot; +
+                &amp;quot;age=&amp;quot; + age +
+                &amp;quot;, name=&#39;&amp;quot; + name + &#39;\&#39;&#39; +
+                &#39;}&#39;;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;test:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Person p1 = new Person(15, &amp;quot;Mary&amp;quot;);
+Person p2 = new Person(15, &amp;quot;Mark&amp;quot;);
+System.out.println(p1.equals(p2)); // true
+System.out.println(p1 == p2); // false
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3为什么重写equals时要重写hashcode&#34;&gt;3.为什么重写equals()时要重写hashcode()&lt;/h2&gt;
+&lt;p&gt;可以看到上述程序中不但重写了equals()方法，同时重写了hashcode()方法：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@Override
+public int hashCode() {
+    return Objects.hash(age);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重写equals&lt;strong&gt;最好要重写hashcode()&lt;/strong&gt;，对需要进行比较的部分字段进行&lt;strong&gt;hash()&lt;/strong&gt;，也就是让值通过一个&lt;strong&gt;哈希函数&lt;/strong&gt;获取到对应的哈希值&lt;/p&gt;
+&lt;p&gt;为何？&lt;/p&gt;
+&lt;p&gt;其实这样是为了&lt;strong&gt;提高程序的效率&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;如果不重写hashcode()的话，可以试想一下，向一个元素个数为10000的集合中插入一个新的元素，就需要对之前的10000个元素进行比较，每次比较都要调用一次equals()比较每一个需要比较的字段，可以容易地想象出比较需要花费的时间复杂度是巨大的。&lt;/p&gt;
+&lt;p&gt;如果插入元素时，先通过hashcode的寻找可以飞速地判断集合中是否存在一样的元素，在&lt;strong&gt;O(1)的时间&lt;/strong&gt;内可以解决集合插入问题。&lt;/p&gt;
+&lt;p&gt;同时重写hashcode()也保证了对象进行equals时，如果为true，其对应的hashcode也一定相等。&lt;strong&gt;虽然在不涉及集合操作时不重写hashcode()不影响比较&lt;/strong&gt;，编译运行也不会报错，但是这会&lt;strong&gt;违反&lt;/strong&gt;Java中对象的比较规则。&lt;/p&gt;
+&lt;p&gt;关于这两个方法的重要规范：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;规范1：若重写equals(Object obj)方法，有必要重写hashcode()方法，确保通过equals(Object obj)方法判断结果为true的两个对象具备相等的hashcode()返回值。说得简单点就是：&lt;strong&gt;“如果两个对象相同，那么他们的hashcode应该相等”&lt;/strong&gt;。不过请注意：这个只是规范，如果你非要写一个类让equals(Object obj)返回true而hashcode()返回两个不相等的值，&lt;strong&gt;编译和运行都是不会报错的&lt;/strong&gt;。不过这样违反了Java规范，程序也就埋下了BUG。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;规范2：如果equals(Object obj)返回false，即两个对象“不相同”，并不要求对这两个对象调用hashcode()方法得到两个不相同的数。说的简单点就是：“&lt;strong&gt;如果两个对象不相同，他们的hashcode可能相同&lt;/strong&gt;”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;over&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>我的跑步历程</title>
         <link>https://akynazh.site/p/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E5%8E%86%E7%A8%8B/</link>
         <pubDate>Tue, 23 Nov 2021 18:20:39 +0800</pubDate>
@@ -138,8 +265,8 @@
 &lt;p&gt;regedit&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;增加右键编辑文件选项&#34;&gt;增加右键编辑文件选项&lt;/h2&gt;
-&lt;h3 id=&#34;以vscode作为实例&#34;&gt;以vscode作为实例&lt;/h3&gt;
+&lt;h2 id=&#34;增加右键操作文件选项&#34;&gt;增加右键操作文件选项&lt;/h2&gt;
+&lt;h3 id=&#34;以vscode作为编辑文件实例&#34;&gt;以vscode作为编辑文件实例&lt;/h3&gt;
 &lt;p&gt;注册表页面下进入：&lt;/p&gt;
 &lt;p&gt;计算机\HKEY_CLASSES_ROOT*\shell&lt;/p&gt;
 &lt;ol&gt;
@@ -151,6 +278,7 @@
 &lt;ul&gt;
 &lt;li&gt;编辑command默认选项值为： ${vscodepath}\Code.exe %1&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;%1是可选的参数，这里必须要加，表示作用于该文件。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;编辑Vscode值&lt;/p&gt;
@@ -160,6 +288,31 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;以python作为运行文件实例&#34;&gt;以python作为运行文件实例&lt;/h3&gt;
+&lt;p&gt;注册表页面下进入：&lt;/p&gt;
+&lt;p&gt;计算机\HKEY_CLASSES_ROOT*\shell&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;新建项 Python&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右键Python并新建项command&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑command默认选项值为： ${pythonpath}\python.exe %1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑Python值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;编辑右键显示名称：默认值改为Run Python File （不编辑则为新建项的名称）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加： ${pythonpath}\DLLs\pyc.ico&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
