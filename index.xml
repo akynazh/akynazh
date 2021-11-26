@@ -6,12 +6,71 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 25 Nov 2021 00:21:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Java进行对象比较中的equals和hashcode</title>
-        <link>https://akynazh.site/p/java%E8%BF%9B%E8%A1%8C%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83%E4%B8%AD%E7%9A%84equals%E5%92%8Chashcode/</link>
+        <lastBuildDate>Fri, 26 Nov 2021 09:23:27 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
+        <link>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
+        <description>&lt;h2 id=&#34;提出问题&#34;&gt;提出问题&lt;/h2&gt;
+&lt;p&gt;先看一个例子：&lt;/p&gt;
+&lt;p&gt;当两个人年龄相同时，我们认为这两个对象相同：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class Person {
+    private int age;
+    private String name;
+
+    public Person(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return &amp;quot;Person{&amp;quot; +
+                &amp;quot;age=&amp;quot; + age +
+                &amp;quot;, name=&#39;&amp;quot; + name + &#39;\&#39;&#39; +
+                &#39;}&#39;;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以看到上述程序中不但重写了equals()方法，同时重写了hashcode()方法：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@Override
+public int hashCode() {
+    return Objects.hash(age);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重写equals&lt;strong&gt;最好要重写hashcode()&lt;/strong&gt;，对需要进行比较的部分字段进行&lt;strong&gt;hash()&lt;/strong&gt;，也就是让值通过一个&lt;strong&gt;哈希函数&lt;/strong&gt;获取到对应的哈希值&lt;/p&gt;
+&lt;p&gt;但是为何？如果不重写也是可以顺利比较的。&lt;/p&gt;
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+&lt;p&gt;其实这样是为了&lt;strong&gt;提高程序的效率&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;如果不重写hashcode()的话，可以试想一下，向一个元素个数为10000的集合中插入一个新的元素，就需要对之前的10000个元素进行比较。&lt;/p&gt;
+&lt;p&gt;每次比较都要&lt;strong&gt;调用一次equals()&lt;strong&gt;比较每一个需要比较的字段，可以容易地想象出比较需要花费的&lt;/strong&gt;时间复杂度&lt;/strong&gt;是巨大的。&lt;/p&gt;
+&lt;p&gt;如果插入元素时，先通过hashcode的寻找可以飞速地判断集合中是否存在一样的元素，在&lt;strong&gt;O(1)的时间&lt;/strong&gt;内可以解决集合插入问题。&lt;/p&gt;
+&lt;p&gt;同时重写hashcode()也保证了对象进行equals时，如果为true，其对应的&lt;strong&gt;hashcode也一定相等&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;虽然在不涉及集合操作时不重写hashcode()不影响比较，编译运行也不会报错，但是这会&lt;strong&gt;违反Java中对象的比较规则&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结：&lt;/h2&gt;
+&lt;p&gt;若重写equals(Object obj)方法，有必要重写hashcode()方法，确保通过equals(Object obj)方法判断结果为true的两个对象具备相等的hashcode()返回值。&lt;/p&gt;
+&lt;p&gt;说得简单点就是：&lt;strong&gt;如果两个对象相同，那么他们的hashcode应该相等&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;另外，值得注意的是，&lt;strong&gt;如果两个对象不相同，他们的hashcode可能相同&lt;/strong&gt;。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>equals方法和==运算符的作用区别</title>
+        <link>https://akynazh.site/p/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
         <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
         
-        <guid>https://akynazh.site/p/java%E8%BF%9B%E8%A1%8C%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83%E4%B8%AD%E7%9A%84equals%E5%92%8Chashcode/</guid>
+        <guid>https://akynazh.site/p/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
         <description>&lt;h2 id=&#34;equals方法与的比较与分析&#34;&gt;equals方法与&amp;quot;==&amp;ldquo;的比较与分析&lt;/h2&gt;
 &lt;p&gt;首先提出一个重要的点:&lt;/p&gt;
 &lt;ul&gt;
@@ -71,8 +130,8 @@
 &lt;p&gt;by 《core Java》&lt;/p&gt;
 &lt;p&gt;注：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;instanceof进行类型检查规则是:你属于该类or该类的派生类;&lt;/p&gt;
-&lt;p&gt;getClass获得类型信息采用==来进行检查是否相等的操作是严格的判断,只会判断”本类”.&lt;/p&gt;
+&lt;p&gt;instanceof进行类型检查规则是:你属于该类or&lt;strong&gt;该类的派生类&lt;/strong&gt;;&lt;/p&gt;
+&lt;p&gt;getClass获得类型信息采用==来进行检查是否相等的操作是严格的判断,只会判断&lt;strong&gt;本类&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;example:&lt;/p&gt;
 &lt;p&gt;当两个人年龄相同时，我们认为这两个对象相同：&lt;/p&gt;
@@ -111,26 +170,7 @@
 Person p2 = new Person(15, &amp;quot;Mark&amp;quot;);
 System.out.println(p1.equals(p2)); // true
 System.out.println(p1 == p2); // false
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3为什么重写equals时要重写hashcode&#34;&gt;3.为什么重写equals()时要重写hashcode()&lt;/h2&gt;
-&lt;p&gt;可以看到上述程序中不但重写了equals()方法，同时重写了hashcode()方法：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@Override
-public int hashCode() {
-    return Objects.hash(age);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重写equals&lt;strong&gt;最好要重写hashcode()&lt;/strong&gt;，对需要进行比较的部分字段进行&lt;strong&gt;hash()&lt;/strong&gt;，也就是让值通过一个&lt;strong&gt;哈希函数&lt;/strong&gt;获取到对应的哈希值&lt;/p&gt;
-&lt;p&gt;为何？&lt;/p&gt;
-&lt;p&gt;其实这样是为了&lt;strong&gt;提高程序的效率&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;如果不重写hashcode()的话，可以试想一下，向一个元素个数为10000的集合中插入一个新的元素，就需要对之前的10000个元素进行比较，每次比较都要调用一次equals()比较每一个需要比较的字段，可以容易地想象出比较需要花费的时间复杂度是巨大的。&lt;/p&gt;
-&lt;p&gt;如果插入元素时，先通过hashcode的寻找可以飞速地判断集合中是否存在一样的元素，在&lt;strong&gt;O(1)的时间&lt;/strong&gt;内可以解决集合插入问题。&lt;/p&gt;
-&lt;p&gt;同时重写hashcode()也保证了对象进行equals时，如果为true，其对应的hashcode也一定相等。&lt;strong&gt;虽然在不涉及集合操作时不重写hashcode()不影响比较&lt;/strong&gt;，编译运行也不会报错，但是这会&lt;strong&gt;违反&lt;/strong&gt;Java中对象的比较规则。&lt;/p&gt;
-&lt;p&gt;关于这两个方法的重要规范：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;规范1：若重写equals(Object obj)方法，有必要重写hashcode()方法，确保通过equals(Object obj)方法判断结果为true的两个对象具备相等的hashcode()返回值。说得简单点就是：&lt;strong&gt;“如果两个对象相同，那么他们的hashcode应该相等”&lt;/strong&gt;。不过请注意：这个只是规范，如果你非要写一个类让equals(Object obj)返回true而hashcode()返回两个不相等的值，&lt;strong&gt;编译和运行都是不会报错的&lt;/strong&gt;。不过这样违反了Java规范，程序也就埋下了BUG。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;规范2：如果equals(Object obj)返回false，即两个对象“不相同”，并不要求对这两个对象调用hashcode()方法得到两个不相同的数。说的简单点就是：“&lt;strong&gt;如果两个对象不相同，他们的hashcode可能相同&lt;/strong&gt;”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;over&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;over&lt;/p&gt;
 </description>
         </item>
         <item>
