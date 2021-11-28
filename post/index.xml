@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Nov 2021 09:23:27 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 18:24:12 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二次元杂思</title>
+      <link>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E6%9D%82%E6%80%9D/</link>
+      <pubDate>Sun, 28 Nov 2021 18:24:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E6%9D%82%E6%80%9D/</guid>
+      <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头。这是一种难以言说的情愫&amp;hellip;&amp;helli</description>
+    </item>
+    
     <item>
       <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
       <link>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
