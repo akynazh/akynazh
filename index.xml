@@ -488,8 +488,8 @@ System.out.println(p1 == p2); // false
 &lt;p&gt;为什么可以用矩阵解决？请看下图：&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://akynazh.site/images/feibonacci.png&#34; &gt;
-		&lt;img src=&#34;https://akynazh.site/images/feibonacci.png&#34;
+	&lt;a href=&#34;https://akynazh.site/post_image/feibonacci.png&#34; &gt;
+		&lt;img src=&#34;https://akynazh.site/post_image/feibonacci.png&#34;
 			
 			
 			
