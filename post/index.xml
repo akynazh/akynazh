@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Dec 2021 00:10:38 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux使用操作（一）</title>
-      <link>https://akynazh.site/p/linux%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
+      <title>Linux实用操作（一）</title>
+      <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
       <pubDate>Fri, 03 Dec 2021 00:10:38 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/linux%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
+      <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
       <description>文件编码 查看文件编码 enca -L none file 文件编码转为UTF-8 enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询历史命令 history 10 查看</description>
     </item>
     

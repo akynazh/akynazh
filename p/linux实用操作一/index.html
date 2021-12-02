@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='文件编码 查看文件编码 enca -L none file 文件编码转为UTF-8 enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询历史命令 history 10 查看'><title>Linux实用操作（一）</title>
+
+<link rel='canonical' href='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Linux实用操作（一）'>
+<meta property='og:description' content='文件编码 查看文件编码 enca -L none file 文件编码转为UTF-8 enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询历史命令 history 10 查看'>
+<meta property='og:url' content='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/'>
+<meta property='og:site_name' content='Akynazh'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='shell' /><meta property='article:published_time' content='2021-12-03T00:10:38&#43;08:00'/><meta property='article:modified_time' content='2021-12-03T00:10:38&#43;08:00'/><meta property='og:image' content='https://akynazh.site/image/48.jpg' />
+<meta name="twitter:site" content="@https://twitter.com/aC5b6xyu2SytCOT">
+    <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Linux实用操作（一）">
+<meta name="twitter:description" content="文件编码 查看文件编码 enca -L none file 文件编码转为UTF-8 enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询历史命令 history 10 查看"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://akynazh.site/image/48.jpg' />
+    <link rel="shortcut icon" href="/image/avatar.jpg" />
+<style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+		
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/">
+                
+                    <img src="/image/48.jpg" loading="lazy" alt="Featured image of post Linux实用操作（一）" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/">Linux实用操作（一）</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 03, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h3 id="文件编码">文件编码</h3>
+<p>查看文件编码</p>
+<pre tabindex="0"><code>enca -L none file 
+</code></pre><p>文件编码转为UTF-8</p>
+<pre tabindex="0"><code>enca -L none -x UTF-8 file 
+</code></pre><h3 id="变量作用域">变量作用域</h3>
+<pre tabindex="0"><code>name=jzh
+echo $name # 输出 jzh
+bash
+echo $name # 输出 空 
+exit
+export name
+bash
+echo $name # 输出 jzh
+</code></pre><h3 id="查询历史命令">查询历史命令</h3>
+<pre tabindex="0"><code>history 10 查看最近的10笔bash命令记录
+
+!10 执行history中第10笔bash命令记录
+</code></pre><h3 id="禁用烦人的蜂鸣声">禁用烦人的蜂鸣声</h3>
+<p>禁用bash蜂鸣声</p>
+<pre tabindex="0"><code> /etc/inputrc &quot;set bell-style none&quot;
+</code></pre><p>禁用vim蜂鸣声</p>
+<pre tabindex="0"><code> /etc/vimrc &quot;:set noeb vb t_vb=&quot; 
+</code></pre><p>(vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)</p>
+<h3 id="永久的alias">永久的alias</h3>
+<p>为某一个用户永久添加alias</p>
+<pre tabindex="0"><code>vim ~/etc/.bashrc
+
+alias lm='ls -al | more'
+</code></pre><h3 id="使用cut处理输出的结果">使用cut处理输出的结果</h3>
+<p>对以:隔开的结果，输出第三个到第五个</p>
+<pre tabindex="0"><code>echo $PATH | cut -d ':' -f 3,5
+</code></pre><h3 id="使用grep抓取期望的结果">使用grep抓取期望的结果</h3>
+<p>在过去登录主机的人中截取登录信息含root的行信息</p>
+<pre tabindex="0"><code>last | grep 'root'
+</code></pre><p>比较重要，记忆：</p>
+<p>grep [-acinv] [&ndash;color=auto] &lsquo;搜寻字串&rsquo; filename</p>
+<p>选项与参数：</p>
+<p>-a ：将 binary 文件以 text 文件的方式搜寻数据</p>
+<p>-c ：计算找到 &lsquo;搜寻字串&rsquo; 的次数</p>
+<p>-i ：忽略大小写的不同，所以大小写视为相同</p>
+<p>-n ：顺便输出行号</p>
+<p>-v ：反向选择，亦即显示出没有 &lsquo;搜寻字串&rsquo; 内容的那一行</p>
+<p>&ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔</p>
+<h3 id="文件读写">文件读写</h3>
+<ul>
+<li>新建1.txt并进入编辑模式，ctrl+D离开</li>
+</ul>
+<pre tabindex="0"><code>cat &gt; 1.txt
+</code></pre><ul>
+<li>追加写入1.txt</li>
+</ul>
+<pre tabindex="0"><code>echo &gt;&gt; 1.txt
+</code></pre><ul>
+<li>新建test开始编辑并将~/.bashrc作为标准输入</li>
+</ul>
+<pre tabindex="0"><code>cat &gt; test &lt; ~/.bashrc
+</code></pre><ul>
+<li>标准输出和标准错误输出都写入testfile</li>
+</ul>
+<pre tabindex="0"><code>find /home -name .bashrc &gt; testfile 2&gt;&amp;1 
+or 
+find /home -name .bashrc &amp;&gt; testfile
+</code></pre><h3 id="使用sort和uniq处理结果">使用sort和uniq处理结果</h3>
+<p>使用 last 将帐号列出，仅取出帐号栏，进行排序后仅取出一位</p>
+<pre tabindex="0"><code>last | cut -d ' ' -f 1 | sort | uniq
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/shell/">shell</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="akynazh/hugo-comment"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 Akynazh
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#文件编码">文件编码</a></li>
+        <li><a href="#变量作用域">变量作用域</a></li>
+        <li><a href="#查询历史命令">查询历史命令</a></li>
+        <li><a href="#禁用烦人的蜂鸣声">禁用烦人的蜂鸣声</a></li>
+        <li><a href="#永久的alias">永久的alias</a></li>
+        <li><a href="#使用cut处理输出的结果">使用cut处理输出的结果</a></li>
+        <li><a href="#使用grep抓取期望的结果">使用grep抓取期望的结果</a></li>
+        <li><a href="#文件读写">文件读写</a></li>
+        <li><a href="#使用sort和uniq处理结果">使用sort和uniq处理结果</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
