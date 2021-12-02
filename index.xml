@@ -6,7 +6,81 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 02 Dec 2021 23:50:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 Dec 2021 00:10:38 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux使用操作（一）</title>
+        <link>https://akynazh.site/p/linux%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
+        <pubDate>Fri, 03 Dec 2021 00:10:38 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/linux%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
+        <description>&lt;img src="https://akynazh.site/image/48.jpg" alt="Featured image of post Linux使用操作（一）" /&gt;&lt;h3 id=&#34;文件编码&#34;&gt;文件编码&lt;/h3&gt;
+&lt;p&gt;查看文件编码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;enca -L none file 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;文件编码转为UTF-8&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;enca -L none -x UTF-8 file 
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;变量作用域&#34;&gt;变量作用域&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;name=jzh
+echo $name # 输出 jzh
+bash
+echo $name # 输出 空 
+exit
+export name
+bash
+echo $name # 输出 jzh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查询历史命令&#34;&gt;查询历史命令&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;history 10 查看最近的10笔bash命令记录
+
+!10 执行history中第10笔bash命令记录
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;禁用烦人的蜂鸣声&#34;&gt;禁用烦人的蜂鸣声&lt;/h3&gt;
+&lt;p&gt;禁用bash蜂鸣声&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; /etc/inputrc &amp;quot;set bell-style none&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;禁用vim蜂鸣声&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;(vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)&lt;/p&gt;
+&lt;h3 id=&#34;永久的alias&#34;&gt;永久的alias&lt;/h3&gt;
+&lt;p&gt;为某一个用户永久添加alias&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim ~/etc/.bashrc
+
+alias lm=&#39;ls -al | more&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;使用cut处理输出的结果&#34;&gt;使用cut处理输出的结果&lt;/h3&gt;
+&lt;p&gt;对以:隔开的结果，输出第三个到第五个&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo $PATH | cut -d &#39;:&#39; -f 3,5
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;使用grep抓取期望的结果&#34;&gt;使用grep抓取期望的结果&lt;/h3&gt;
+&lt;p&gt;在过去登录主机的人中截取登录信息含root的行信息&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;last | grep &#39;root&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;比较重要，记忆：&lt;/p&gt;
+&lt;p&gt;grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename&lt;/p&gt;
+&lt;p&gt;选项与参数：&lt;/p&gt;
+&lt;p&gt;-a ：将 binary 文件以 text 文件的方式搜寻数据&lt;/p&gt;
+&lt;p&gt;-c ：计算找到 &amp;lsquo;搜寻字串&amp;rsquo; 的次数&lt;/p&gt;
+&lt;p&gt;-i ：忽略大小写的不同，所以大小写视为相同&lt;/p&gt;
+&lt;p&gt;-n ：顺便输出行号&lt;/p&gt;
+&lt;p&gt;-v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行&lt;/p&gt;
+&lt;p&gt;&amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔&lt;/p&gt;
+&lt;h3 id=&#34;文件读写&#34;&gt;文件读写&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;新建1.txt并进入编辑模式，ctrl+D离开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;gt; 1.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;追加写入1.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;gt;&amp;gt; 1.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;新建test开始编辑并将~/.bashrc作为标准输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;gt; test &amp;lt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;标准输出和标准错误输出都写入testfile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find /home -name .bashrc &amp;gt; testfile 2&amp;gt;&amp;amp;1 
+or 
+find /home -name .bashrc &amp;amp;&amp;gt; testfile
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;使用sort和uniq处理结果&#34;&gt;使用sort和uniq处理结果&lt;/h3&gt;
+&lt;p&gt;使用 last 将帐号列出，仅取出帐号栏，进行排序后仅取出一位&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;last | cut -d &#39; &#39; -f 1 | sort | uniq
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
         <title>求解有向图和无向图中是否存在环的方法</title>
         <link>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
         <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
