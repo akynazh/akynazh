@@ -6,7 +6,16 @@
     <description>Recent content in 图论 on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Nov 2021 17:55:32 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Dec 2021 23:50:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>求解有向图和无向图中是否存在环的方法</title>
+      <link>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。 由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs</description>
+    </item>
+    
     <item>
       <title>最短路问题汇总</title>
       <link>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
