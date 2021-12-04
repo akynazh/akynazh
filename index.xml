@@ -6,7 +6,84 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 03 Dec 2021 00:10:38 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 05 Dec 2021 00:20:09 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux实用操作（二）</title>
+        <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</link>
+        <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</guid>
+        <description>&lt;h3 id=&#34;dos与linux换行区别&#34;&gt;Dos与Linux换行区别&lt;/h3&gt;
+&lt;p&gt;首先知道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;回车 CR \r&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;换行 LR \n&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;win/dos的换行： \r\n&lt;/p&gt;
+&lt;p&gt;unix mac linux的换行： \n&lt;/p&gt;
+&lt;p&gt;unix to win 换行失败&lt;/p&gt;
+&lt;p&gt;win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M&lt;/p&gt;
+&lt;h3 id=&#34;awk命令操作文本&#34;&gt;awk命令操作文本&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;格式化输出：以tab隔开打印前五行中每行的第一和第三个字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;last -n 5 | awk &#39;{print $1 &amp;quot;\t&amp;quot; $3}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;分隔字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk -F  #-F指定分割字符&lt;/p&gt;
+&lt;p&gt;使用&amp;quot;,&amp;ldquo;分隔&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk -F, &#39;{print $1,$2}&#39; log.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;设置变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk -v  # 设置变量&lt;/p&gt;
+&lt;p&gt;设置变量k等于1&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk -vk=1 &#39;{print $1, $1+k}&#39; log.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;awk -k {awk_script} {file}&lt;/p&gt;
+&lt;p&gt;使用my.awk处理log.txt&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk -k my.awk log.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;sed命令操作文本&#34;&gt;sed命令操作文本&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;打印删除了第二到第五行的文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nl /etc/passwd | sed &#39;2,5d&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;lsquo;2,$d&amp;rsquo; 匹配删除了第2到最后一行的文本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;lsquo;/root/d&amp;rsquo; 匹配删除了含root的行的文本&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;a: add&lt;/p&gt;
+&lt;p&gt;c: commute&lt;/p&gt;
+&lt;p&gt;d: delete&lt;/p&gt;
+&lt;p&gt;i: insert&lt;/p&gt;
+&lt;p&gt;p: print&lt;/p&gt;
+&lt;p&gt;s: s/old/new/g&lt;/p&gt;
+&lt;h3 id=&#34;查看内网ip&#34;&gt;查看内网IP&lt;/h3&gt;
+&lt;p&gt;grep抓取inet行，sed删除inet字串和netmask.*字串&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;alias myip=&amp;quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;test:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos ~]# myip
+         172.17.0.11
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查看外网ip&#34;&gt;查看外网IP&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl cip.cc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;show:&lt;/p&gt;
+&lt;p&gt;IP      : ${my_ip}
+地址    : 中国  中国&lt;/p&gt;
+&lt;p&gt;数据二  : 上海市 | 腾讯云&lt;/p&gt;
+&lt;p&gt;数据三  : 中国北京北京 | 腾讯&lt;/p&gt;
+&lt;p&gt;URL     : &lt;a class=&#34;link&#34; href=&#34;http://www.cip.cc/$%7bmy_ip%7d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.cip.cc/${my_ip}&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Linux实用操作（一）</title>
         <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
         <pubDate>Fri, 03 Dec 2021 00:10:38 +0800</pubDate>

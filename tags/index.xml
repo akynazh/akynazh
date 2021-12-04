@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Dec 2021 00:10:38 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 00:20:09 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://akynazh.site/tags/linux/</link>
+      <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>shell</title>
       <link>https://akynazh.site/tags/shell/</link>
@@ -103,15 +112,6 @@
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://akynazh.site/tags/linux/</link>
-      <pubDate>Wed, 17 Nov 2021 17:56:03 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/linux/</guid>
       <description></description>
     </item>
     
