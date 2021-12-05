@@ -6,7 +6,16 @@
     <description>Recent content in 算法 on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Dec 2021 23:50:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 12:34:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图的着色问题汇总</title>
+      <link>https://akynazh.site/p/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>Author: akynazh Blog: akynazh 二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？ 代码解决： vector&amp;lt;int&amp;gt; G[MAX_V]; int vertexes; int edges; int color[MAX_V]; //二分图，颜色为1或-1 bool dfs(int v, int c) { color[v] =</description>
+    </item>
+    
     <item>
       <title>求解有向图和无向图中是否存在环的方法</title>
       <link>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>

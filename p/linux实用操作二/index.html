@@ -159,7 +159,10 @@
 <p>awk -v  # 设置变量</p>
 <p>设置变量k等于1</p>
 <pre tabindex="0"><code>awk -vk=1 '{print $1, $1+k}' log.txt
-</code></pre><p>awk -k {awk_script} {file}</p>
+</code></pre><ul>
+<li>使用awk脚本</li>
+</ul>
+<p>awk -k {awk_script} {file}</p>
 <p>使用my.awk处理log.txt</p>
 <pre tabindex="0"><code>awk -k my.awk log.txt
 </code></pre><h3 id="sed命令操作文本">sed命令操作文本</h3>

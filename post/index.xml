@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Dec 2021 00:20:09 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 12:34:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图的着色问题汇总</title>
+      <link>https://akynazh.site/p/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>Author: akynazh Blog: akynazh 二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？ 代码解决： vector&amp;lt;int&amp;gt; G[MAX_V]; int vertexes; int edges; int color[MAX_V]; //二分图，颜色为1或-1 bool dfs(int v, int c) { color[v] =</description>
+    </item>
+    
     <item>
       <title>Linux实用操作（二）</title>
       <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</link>
