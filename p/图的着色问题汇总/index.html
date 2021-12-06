@@ -130,7 +130,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -146,7 +146,35 @@
 <h2 id="二分图问题">二分图问题</h2>
 <p>能否只用2种颜色对一个图上色，并且使得共边顶点不同色？</p>
 <p>代码解决：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX_V</span><span class="p">];</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX_V</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">vertexes</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">edges</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">color</span><span class="p">[</span><span class="n">MAX_V</span><span class="p">];</span>  <span class="c1">//二分图，颜色为1或-1
@@ -170,12 +198,42 @@
   <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Yes</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="n">solve</span><span class="p">();</span>
-</code></pre></div><p>二分图是着色问题的特殊情况，即图的最小着色数为2，接下来的问题是：</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>二分图是着色问题的特殊情况，即图的最小着色数为2，接下来的问题是：</p>
 <h2 id="图的最多着色方法数问题">图的最多着色方法数问题</h2>
 <p>对V个顶点，E条边的图，用<strong>小于num_color</strong>种颜色进行涂色，要求共边的两点颜色不相同，一共有多少种涂法？</p>
 <p>重要思想：回溯</p>
 <p>代码解决：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init: 0
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init: 0
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">color</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init: 0
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">num_color</span><span class="p">,</span> <span class="n">ccount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">bool</span> <span class="nf">Judge_Color</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 对v点用col继续涂色
@@ -199,12 +257,47 @@
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">Solve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 从第一个结点开始涂色
-</span></code></pre></div><p>以上问题我们给定了最小的涂色数，求的是方法的个数，反过来呢？</p>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>以上问题我们给定了最小的涂色数，求的是方法的个数，反过来呢？</p>
 <p>现在我们想要用<strong>最少的颜色</strong>达到目标，就是要求一幅图的最小着色数了：</p>
 <p><strong>思路</strong>：从小到大增加着色数，判断以当前数量的颜色是否可以成功涂色，如果可以一一选取其中可以涂色的颜色进行涂色，如果不可以则新增颜色涂色</p>
 <h2 id="最小着色数问题">最小着色数问题</h2>
 <p>基本思想：剪枝与回溯</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init: 0
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init: 0
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">color</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init: 0
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">c_min</span> <span class="o">=</span> <span class="n">MAX</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
 <span class="kt">bool</span> <span class="nf">Judge_Color</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 判断v是否可以用col涂色
@@ -233,12 +326,49 @@
 <span class="n">Solve</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 
-</code></pre></div><p>下面是有关最小着色问题相应实际问题的解决：</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>下面是有关最小着色问题相应实际问题的解决：</p>
 <h2 id="分考场问题">分考场问题</h2>
 <p>n个人参加某项特殊考试。
 为了公平，要求任何两个认识的人不能分在同一个考场。
 求是少需要分几个考场才能满足条件。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init 0
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">G</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// init 0
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">room</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span> <span class="c1">// 保存教室i中第j个学生的id, init: 0
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">c_stu</span><span class="p">,</span> <span class="n">c_relation</span><span class="p">,</span> <span class="n">min_room</span> <span class="o">=</span> <span class="n">MAX</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">count_room</span><span class="p">;</span>
 <span class="kt">void</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count_room</span><span class="p">)</span> <span class="p">{</span>
@@ -269,7 +399,9 @@
 <span class="p">}</span>
 
 <span class="n">solve</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 最开始用一个教室分配学生
-</span></code></pre></div><p><strong>Author: akynazh</strong></p>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Author: akynazh</strong></p>
 <p><strong>Blog: <a class="link" href="https://akynazh.site"  target="_blank" rel="noopener"
     >akynazh</a></strong></p>
 <p>over.</p>

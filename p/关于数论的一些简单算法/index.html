@@ -154,7 +154,24 @@
 <p>1.建立is_prime_small[]和is_prime[]数组，初始化为true；</p>
 <p>2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。</p>
 <p>相应代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
 <span class="kt">bool</span> <span class="n">is_prime</span><span class="p">[</span><span class="n">MAX1</span><span class="p">];</span>
 <span class="kt">bool</span> <span class="n">is_prime_small</span><span class="p">[</span><span class="n">MAX2</span><span class="p">];</span>
 <span class="kt">void</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">,</span> <span class="n">ll</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
@@ -167,7 +184,9 @@
 		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span> 
-</code></pre></div><p>注意点：</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意点：</p>
 <p>1.<code>max( 2ll, (a + i - 1) / i ) * i </code>其中的2ll为隐式地将max的参数类型转换为long long 型</p>
 <p>2.（a + i - 1) / i  * i 可以得到的是a或a以后的第一个素数的倍数：</p>
 <p>当a为该素数的倍数时：</p>
@@ -190,7 +209,21 @@
 <p>result = 9 * 6561</p>
 <p>可以推出幂的结果等于变化中所有当<strong>指数为奇数时底数之积</strong></p>
 <p>相应代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
 <span class="n">ll</span> <span class="nf">mod_pow</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">,</span> <span class="n">ll</span> <span class="n">n</span><span class="p">,</span> <span class="n">ll</span> <span class="n">mod</span><span class="p">)</span> <span class="p">{</span>
 	<span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 	<span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -200,16 +233,28 @@
 	<span class="p">}</span>	
 	<span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>注意，运用位运算可以提高效率！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意，运用位运算可以提高效率！</p>
 <h2 id="关于最大公约数">关于最大公约数</h2>
 <h3 id="gcd辗转相除法求最大公约数">gcd辗转相除法求最大公约数</h3>
 <p>思路</p>
 <p>反复交换取余，直到小的数为0.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
 	<span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
 	<span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h3>
 <p>先介绍<strong>贝祖定理</strong>：</p>
 <p>若a,b为整数，则一定存在整数x,y使得ax + by == gcd(a,b)。</p>
 <p>即若ax + by == m有解，则m一定为<strong>gcd(a,b)的若干倍</strong>。</p>
@@ -226,7 +271,23 @@
 <p>由等式可知上层的x,y可以由下层的x1,y1来求,则可以通过递归来实现。</p>
 <p>又由（1），当b == 0, a * 1 + b * 0 == a == gcd(a,b)</p>
 <p>则此时x == 1, y == 0, 一定会出现在递归末尾。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">){</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">){</span>
 	<span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 	<span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
 		<span class="n">d</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
@@ -238,7 +299,9 @@
 	<span class="p">}</span>
 	<span class="k">return</span> <span class="n">d</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>over.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>over.</p>
 
 </section>
 

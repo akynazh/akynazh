@@ -147,22 +147,58 @@
 <p>Linux用户则使用shell编写脚本~</p>
 <h2 id="自动化生成文章">自动化生成文章</h2>
 <p>通过 set /p 接收用户输入的文章名称</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat">D<span class="p">:</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat">D<span class="p">:</span>
 <span class="k">cd</span> D:\@git\akynazh
 <span class="k">set</span> <span class="nv">input</span><span class="p">=</span>
 <span class="k">set</span> <span class="k">/p</span> <span class="nv">input</span><span class="p">=</span>please input article name  
 hugo new \post\<span class="nv">%input%</span>.md
-</code></pre></div><h2 id="自动化生成分类">自动化生成分类</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="自动化生成分类">自动化生成分类</h2>
 <p>通过copy命令，复制模板文件到categories下并命名</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat">D<span class="p">:</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat">D<span class="p">:</span>
 <span class="k">cd</span> D:\@git\akynazh
 <span class="k">set</span> <span class="nv">input</span><span class="p">=</span>
 <span class="k">set</span> <span class="k">/p</span> <span class="nv">input</span><span class="p">=</span>please input category name  
 <span class="k">copy</span> archetypes\categories.md content\categories\<span class="nv">%input%</span>.md
-</code></pre></div><h2 id="自动提交发布到github">自动提交发布到github</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="自动提交发布到github">自动提交发布到github</h2>
 <h3 id="普通提交">普通提交</h3>
 <p>方法与以上类似，最后可以pause一下看看有没有问题产生</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat">D<span class="p">:</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat">D<span class="p">:</span>
 <span class="k">cd</span> D:\@git\akynazh
 hugo
 <span class="k">set</span> <span class="nv">input</span><span class="p">=</span>
@@ -172,10 +208,19 @@ git add .
 git commit -m <span class="s2">&#34;</span><span class="nv">%input%</span><span class="s2">&#34;</span>
 git push
 <span class="k">pause</span>
-</code></pre></div><h3 id="提交文章">提交文章</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="提交文章">提交文章</h3>
 <p>只需要将上面的set部分修改一下即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat"><span class="k">set</span> <span class="nv">input</span><span class="p">=</span>publish article
-</code></pre></div><p>over~</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat"><span class="k">set</span> <span class="nv">input</span><span class="p">=</span>publish article
+</code></pre></td></tr></table>
+</div>
+</div><p>over~</p>
 
 </section>
 

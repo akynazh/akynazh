@@ -13,7 +13,7 @@
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-      <description>Author: akynazh Blog: akynazh.site 最近写一些关于字符串的程序时遇到了一些问题，所以把这些东西复习整理一遍。 关于char[]与char*的区别 char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc s1[1] =</description>
+      <description>Author: akynazh Blog: akynazh.site 最近写一些关于字符串的程序时遇到了一些问题，所以把这些东西复习整理一遍。 关于char[]与char*的区别 1 2 3 4 char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl;</description>
     </item>
     
   </channel>

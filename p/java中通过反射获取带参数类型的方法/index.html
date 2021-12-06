@@ -134,35 +134,91 @@ Gson gson = new Gson();
 String p_json = gson.toJson(p);
 Person p1 = gson.fromJson(p_json, Person.class);
 </code></pre><p>从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">people</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">people</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 <span class="n">people</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="s">&#34;jzh&#34;</span><span class="o">));</span>
 <span class="n">people</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="s">&#34;zh&#34;</span><span class="o">));</span>
 <span class="n">people</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="n">3</span><span class="o">,</span> <span class="s">&#34;z&#34;</span><span class="o">));</span>
 <span class="n">String</span> <span class="n">ps_json</span> <span class="o">=</span> <span class="n">gson</span><span class="o">.</span><span class="na">toJson</span><span class="o">(</span><span class="n">people</span><span class="o">);</span>
 <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">people1</span> <span class="o">=</span> <span class="n">gson</span><span class="o">.</span><span class="na">fromJson</span><span class="o">(</span><span class="n">ps_json</span><span class="o">,</span><span class="k">new</span> <span class="n">TypeToken</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
         <span class="o">}.</span><span class="na">getType</span><span class="o">());</span>
-</code></pre></div><p>这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken<!-- raw HTML omitted -->实现。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">MyType</span> <span class="kd">extends</span> <span class="n">TypeToken</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;&gt;</span> <span class="o">{}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken<!-- raw HTML omitted -->实现。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">MyType</span> <span class="kd">extends</span> <span class="n">TypeToken</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;&gt;</span> <span class="o">{}</span>
 
 <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">people1</span> <span class="o">=</span> <span class="n">gson</span><span class="o">.</span><span class="na">fromJson</span><span class="o">(</span><span class="n">ps_json</span><span class="o">,</span> <span class="k">new</span> <span class="n">MyType</span><span class="o">().</span><span class="na">getType</span><span class="o">());</span>
-</code></pre></div><p><strong>那么问题来了，这里底层是怎么实现转换的呢？为什么要使用TypeToken<!-- raw HTML omitted -->?</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>那么问题来了，这里底层是怎么实现转换的呢？为什么要使用TypeToken<!-- raw HTML omitted -->?</strong></p>
 <h2 id="问题的思考与解决">问题的思考与解决</h2>
 <p>首先我们通过阅读源码寻找答案。</p>
 <p>gson源码中的TypeToken<!-- raw HTML omitted -->类:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TypeToken</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TypeToken</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kd">final</span> <span class="n">Class</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">rawType</span><span class="o">;</span>
     <span class="kd">final</span> <span class="n">Type</span> <span class="n">type</span><span class="o">;</span>
     <span class="kd">final</span> <span class="kt">int</span> <span class="n">hashCode</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><p>constructor:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">protected</span> <span class="nf">TypeToken</span><span class="o">()</span> <span class="o">{</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>constructor:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">protected</span> <span class="nf">TypeToken</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">getSuperclassTypeParameter</span><span class="o">(</span><span class="n">getClass</span><span class="o">());</span>
     <span class="k">this</span><span class="o">.</span><span class="na">rawType</span> <span class="o">=</span> <span class="o">(</span><span class="n">Class</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;)</span> <span class="n">$Gson$Types</span><span class="o">.</span><span class="na">getRawType</span><span class="o">(</span><span class="n">type</span><span class="o">);</span>
     <span class="k">this</span><span class="o">.</span><span class="na">hashCode</span> <span class="o">=</span> <span class="n">type</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
 <span class="o">}</span>
-</code></pre></div><p>这里我们主要研究type成员。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里我们主要研究type成员。</p>
 <p>通过方法getSuperclassTypeParameter:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="n">Type</span> <span class="nf">getSuperclassTypeParameter</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">subclass</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="n">Type</span> <span class="nf">getSuperclassTypeParameter</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">subclass</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">Type</span> <span class="n">superclass</span> <span class="o">=</span> <span class="n">subclass</span><span class="o">.</span><span class="na">getGenericSuperclass</span><span class="o">();</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">superclass</span> <span class="k">instanceof</span> <span class="n">Class</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">&#34;Missing type parameter.&#34;</span><span class="o">);</span>
@@ -170,7 +226,9 @@ Person p1 = gson.fromJson(p_json, Person.class);
     <span class="n">ParameterizedType</span> <span class="n">parameterized</span> <span class="o">=</span> <span class="o">(</span><span class="n">ParameterizedType</span><span class="o">)</span> <span class="n">superclass</span><span class="o">;</span>
     <span class="k">return</span> <span class="n">$Gson$Types</span><span class="o">.</span><span class="na">canonicalize</span><span class="o">(</span><span class="n">parameterized</span><span class="o">.</span><span class="na">getActualTypeArguments</span><span class="o">()[</span><span class="n">0</span><span class="o">]);</span>
 <span class="o">}</span>
-</code></pre></div><p>在这里我们就可以找到答案了：</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>在这里我们就可以找到答案了：</p>
 <p><strong>分析可知，步骤如下：</strong></p>
 <ul>
 <li><input disabled="" type="checkbox"> 从一个Class对象中，获取该对象父类接收到的参数化类型（泛型）</li>
@@ -179,21 +237,51 @@ Person p1 = gson.fromJson(p_json, Person.class);
 <li><input disabled="" type="checkbox"> 获取parameterized的第一个参数</li>
 </ul>
 <p><strong>一. 从一个Class对象中，获取该对象父类接收到的参数化类型（泛型）</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Type</span> <span class="n">superclass</span> <span class="o">=</span> <span class="n">subclass</span><span class="o">.</span><span class="na">getGenericSuperclass</span><span class="o">();</span>
-</code></pre></div><p>其中subclass为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Type</span> <span class="n">superclass</span> <span class="o">=</span> <span class="n">subclass</span><span class="o">.</span><span class="na">getGenericSuperclass</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中subclass为：</p>
 <p>class 包名.Type.TypeTest.TypeToken&lt;java.util.ArrayList&lt;包名.Type.Person&raquo;</p>
 <p>通过前面知道，我们通过继承（或者匿名内部类）的方式创建了一个类，那么我们则可以通过getGenericSuperclass()方法获取这个类的父类，而且是包含了我们需要的类型参数的父类！</p>
 <p><strong>二. 判断type类型</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">superclass</span> <span class="k">instanceof</span> <span class="n">Class</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">superclass</span> <span class="k">instanceof</span> <span class="n">Class</span><span class="o">)</span> <span class="o">{</span>
 	<span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">&#34;Missing type parameter.&#34;</span><span class="o">);</span> <span class="c1">// 不是带参数类型
 </span><span class="c1"></span><span class="o">}</span>
-</code></pre></div><p>Type是一个接口，Class，ParameterizedType等类型都实现了Type，我们需要确保传入的类型参数是一个带参数的类ParameterizedType而不是Class。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Type是一个接口，Class，ParameterizedType等类型都实现了Type，我们需要确保传入的类型参数是一个带参数的类ParameterizedType而不是Class。</p>
 <p><strong>三. 强制转换为ParameterizedType类型，即带参数类型，可以调用对应方法获取参数</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ParameterizedType</span> <span class="n">parameterized</span> <span class="o">=</span> <span class="o">(</span><span class="n">ParameterizedType</span><span class="o">)</span> <span class="n">superclass</span><span class="o">;</span>
-</code></pre></div><p>parameterized : 包名.Type.TypeToken&lt;java.util.ArrayList&lt;包名.Type.Person&raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ParameterizedType</span> <span class="n">parameterized</span> <span class="o">=</span> <span class="o">(</span><span class="n">ParameterizedType</span><span class="o">)</span> <span class="n">superclass</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>parameterized : 包名.Type.TypeToken&lt;java.util.ArrayList&lt;包名.Type.Person&raquo;</p>
 <p><strong>四. 获取parameterized的第一个参数，即java.util.ArrayList&lt;包名.Type.Person&gt;</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">parameterized</span><span class="o">.</span><span class="na">getActualTypeArguments</span><span class="o">()[</span><span class="n">0</span><span class="o">];</span>
-</code></pre></div><p>源码中的canonicalize方法是实例化一个ParameterizedTypeImpl对象的方法，可以不予理会。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">parameterized</span><span class="o">.</span><span class="na">getActualTypeArguments</span><span class="o">()[</span><span class="n">0</span><span class="o">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>源码中的canonicalize方法是实例化一个ParameterizedTypeImpl对象的方法，可以不予理会。</p>
 <h2 id="总结">总结</h2>
 <p>过程粗略一看貌似有些奇怪，但是分析其思路，用通俗的话描述就是，<strong>将一个加密的东西放进一个解密的机器里面，在把东西拿出来，你就知道东西具体是什么了！</strong></p>
 <p>那么为什么需要一个TypeToken<!-- raw HTML omitted -->进行包裹呢，个人认为，因为有一个方法getGenericSuperclass可以获得包含了参数类型的父类，用一个类继承于TypeToken<!-- raw HTML omitted -->,  指定T为自定义的参数类型如ArrayList<!-- raw HTML omitted -->， 通过调用getGenericSuperclass获取父类，把父类强制转换为ParameterizedType类型，即带参数类型，即可调用对应方法获取参数。</p>
