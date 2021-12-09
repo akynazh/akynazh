@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='介绍了ssh免密且免IP登录远程主机和遇到的密钥算法不匹配以及自定义密钥文件导致识别错误的问题'><title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date &#43;%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST'><title>Linux实用操作（三）</title>
 
-<link rel='canonical' href='https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/'>
+<link rel='canonical' href='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='SSH免密且免IP登录远程主机的方法以及遇到的一些问题'>
-<meta property='og:description' content='介绍了ssh免密且免IP登录远程主机和遇到的密钥算法不匹配以及自定义密钥文件导致识别错误的问题'>
-<meta property='og:url' content='https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Linux实用操作（三）'>
+<meta property='og:description' content='shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date &#43;%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST'>
+<meta property='og:url' content='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/'>
 <meta property='og:site_name' content='Akynazh'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SSH' /><meta property='article:tag' content='Linux' /><meta property='article:published_time' content='2020-11-17T17:56:03&#43;08:00'/><meta property='article:modified_time' content='2020-11-17T17:56:03&#43;08:00'/><meta property='og:image' content='https://akynazh.site/image/45.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2021-12-09T20:33:45&#43;08:00'/><meta property='article:modified_time' content='2021-12-09T20:33:45&#43;08:00'/>
 <meta name="twitter:site" content="@https://twitter.com/aC5b6xyu2SytCOT">
-    <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="SSH免密且免IP登录远程主机的方法以及遇到的一些问题">
-<meta name="twitter:description" content="介绍了ssh免密且免IP登录远程主机和遇到的密钥算法不匹配以及自定义密钥文件导致识别错误的问题"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://akynazh.site/image/45.jpg' />
+    <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Linux实用操作（三）">
+<meta name="twitter:description" content="shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date &#43;%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST">
     <link rel="shortcut icon" href="/image/avatar.jpg" />
 <style>
     :root {
@@ -78,28 +77,16 @@
         </div>
     
 <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">
-                
-                    <img src="/image/45.jpg" loading="lazy" alt="Featured image of post SSH免密且免IP登录远程主机的方法以及遇到的一些问题" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
 
     <h2 class="article-title">
-        <a href="/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">SSH免密且免IP登录远程主机的方法以及遇到的一些问题</a>
+        <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/">Linux实用操作（三）</a>
     </h2>
 
-    
-    <h3 class="article-subtitle">
-        介绍了ssh免密且免IP登录远程主机和遇到的密钥算法不匹配以及自定义密钥文件导致识别错误的问题
-    </h3>
     
 
     
@@ -115,7 +102,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Nov 17, 2020</time>
+                <time class="article-time--published">Dec 09, 2021</time>
             </div>
         
 
@@ -140,99 +127,222 @@
 </header>
 
     <section class="article-content">
-    <h2 id="问题的提出">问题的提出：</h2>
-<p>我们可以通过指令：</p>
-<pre tabindex="0"><code>ssh 用户名@IP
-</code></pre><p>登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！</p>
-<p>通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。</p>
-<h2 id="实现免ip登录">实现免ip登录：</h2>
+    <h3 id="shell参数">shell参数</h3>
 <ul>
 <li>
-<p>新建config文件</p>
-<p>若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。</p>
+<p>$# 参数个数</p>
 </li>
 <li>
-<p>编辑代替名以及IP，端口号，用户。</p>
-</li>
-</ul>
-<pre tabindex="0"><code>Host 输入代替名
-	HostName 输入IP
-	Port 输入端口号
-	User 输入用户
-</code></pre><p>这样，即可通过</p>
-<pre tabindex="0"><code>ssh 代替名
-</code></pre><p>进行登录咯！</p>
-<h2 id="接着我们实现免密登录">接着我们实现免密登录：</h2>
-<ul>
-<li>在本地生成密钥：</li>
-</ul>
-<pre tabindex="0"><code>ssh-keygen
-</code></pre><p>并选择<strong>生成在.ssh目录下即可</strong>，获得一把公钥和私钥。</p>
-<p>将名字带.pub的就是公钥了。</p>
-<ul>
-<li>将公钥发给远程主机</li>
-</ul>
-<p>通过命令</p>
-<pre tabindex="0"><code>ssh-copy-id -i .ssh/公钥 用户名@IP
-</code></pre><p>即可发送给远程主机。</p>
-<p>在window10中可能出现以下错误：</p>
-<pre tabindex="0"><code>ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
-</code></pre><p>则可先于命令行中运行以下代码：</p>
-<pre tabindex="0"><code>function ssh-copy-id([string]$userAtMachine, $args){
-    $publicKey = &quot;$ENV:USERPROFILE&quot; + &quot;/.ssh/id_rsa.pub&quot;
-    if (!(Test-Path &quot;$publicKey&quot;)){
-        Write-Error &quot;ERROR: failed to open ID file '$publicKey': No such file&quot;
-    }
-    else {
-        &amp; cat &quot;$publicKey&quot; | ssh $args $userAtMachine &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&quot;
-    }
-}
-</code></pre><p>之后再重试即可成功发送公钥！</p>
-<p>远程主机对本地发送过去的公钥进行加密，只有本地的私钥可以解密！</p>
-<p>这样本地就与远程主机有了联系！</p>
-<h2 id="密钥算法不匹配问题">密钥算法不匹配问题</h2>
-<p>这里贴上一个我遇到的问题，如果出现以下错误：</p>
-<p>no matching key exchange method found. Their offer: diffie-hellman-group1-sha1</p>
-<p>则是本地密钥算法与远程主机密钥算法<strong>不匹配</strong>造成的！</p>
-<p>可以在ssh_config或config文件中添加密钥算法配置：</p>
-<pre tabindex="0"><code>Host 输入代替名
-	HostName 输入IP
-	Port 输入端口号
-	User 输入用户
-	KexAlgorithms +diffie-hellman-group1-sha1
-</code></pre><p>其中加号不能省略！表示新增的密钥算法哦~</p>
-<h2 id="自定义密钥文件导致识别错误问题">自定义密钥文件导致识别错误问题</h2>
-<p>生成密钥的时候系统会让我们指定路径（包含其生成的文件名），这是可选的一步，如果我们直接回车而不指定则系统会默认生成id_rsa及id_rsa.pub这两个文件。</p>
-<p>而当我们需要登录多个主机时，生成的文件名就会冲突了。所以我们需要自定义文件名。</p>
-<p>步骤如下</p>
-<ul>
-<li>
-<p>假设我们自定义为~/.ssh/id_rsa_centos，生成id_rsa_centos79及id_rsa_centos79.pub文件</p>
+<p>$@ 取出所有参数</p>
 </li>
 <li>
-<p>继续编辑config文件，如下</p>
+<p>${0} 取出第一个参数</p>
 </li>
 </ul>
-<pre tabindex="0"><code>Host 输入代替名
-	HostName 输入IP
-	Port 输入端口号
-	User 输入用户
-	IdentityFile ~/.ssh/id_rsa_centos79
-</code></pre><ul>
-<li>修改ssh-copy-id函数中的公钥名，如下</li>
-</ul>
-<pre tabindex="0"><code>$publicKey = &quot;$ENV:USERPROFILE&quot; + &quot;/.ssh/id_rsa_centos79.pub&quot;
-</code></pre><p>这样即可顺利发送公钥到主机哩^-^</p>
-<p>over!</p>
+<h3 id="修改vim中tab长度">修改vim中tab长度</h3>
+<p>设置vim中tab长度</p>
+<pre tabindex="0"><code>vim /etc/vimrc
 
+set tabstop=4
+</code></pre><h3 id="日期输出">日期输出</h3>
+<pre tabindex="0"><code>[root@VM-0-11-centos tmp]# date +%Y%m%d
+20211209
+
+[root@VM-0-11-centos tmp]# date
+Thu Dec  9 19:34:06 CST 2021
+[root@VM-0-11-centos tmp]# date --date='2 days ago'
+Tue Dec  7 19:34:07 CST 2021
+</code></pre><h3 id="test命令">test命令</h3>
+<ul>
+<li>
+<p>-e exist or not</p>
+</li>
+<li>
+<p>-f file or not</p>
+</li>
+<li>
+<p>-d directory or not</p>
+</li>
+<li>
+<p>-r can read or not &mdash;similar: -x -w</p>
+</li>
+<li>
+<p>-s exist and not blank</p>
+</li>
+<li>
+<p>-nt newer than &mdash; -ot</p>
+</li>
+<li>
+<p>-eq equal &mdash; -ne</p>
+</li>
+<li>
+<p>-gt greater than &mdash; -lt</p>
+</li>
+<li>
+<p>-ge greater than or equal &mdash;le</p>
+</li>
+<li>
+<p>-z string if null -&gt; true</p>
+</li>
+<li>
+<p>-n string if null -&gt; false</p>
+</li>
+<li>
+<p>-a and</p>
+</li>
+<li>
+<p>-o or</p>
+</li>
+<li>
+<p>! reverse</p>
+</li>
+</ul>
+<h3 id="使用--进行条件判断">使用 “[]” 进行条件判断</h3>
+<p>注：中括号两端要有空白符。</p>
+<pre tabindex="0"><code>[root@VM-0-11-centos tmp]# [ &quot;a&quot; == &quot;b&quot; ] &amp;&amp; echo hello || echo bye
+bye
+[root@VM-0-11-centos tmp]# [ &quot;a&quot; == &quot;a&quot; ] &amp;&amp; echo hello || echo bye
+hello
+</code></pre><h3 id="read命令">read命令</h3>
+<ul>
+<li>read -a variable_name 读取数组”array”</li>
+</ul>
+<pre tabindex="0"><code>[root@VM-0-11-centos tmp]# read -a arr
+1 2 3 4 5
+[root@VM-0-11-centos tmp]# echo ${arr[0]}
+1
+[root@VM-0-11-centos tmp]# echo ${arr[4]}
+5
+</code></pre><ul>
+<li>
+<p>read -p “prompt words” variable_name</p>
+</li>
+<li>
+<p>read -n limit_length variable_name</p>
+</li>
+</ul>
+<pre tabindex="0"><code>[root@VM-0-11-centos tmp]# read -n 5 kk
+words[root@VM-0-11-centos tmp]# echo $kk
+words
+</code></pre><ul>
+<li>
+<p>read -s variable_name “silent”输入不显示</p>
+</li>
+<li>
+<p>read -t time variable_name “time”限定时间输入</p>
+</li>
+</ul>
+<h3 id="条件判断语句">条件判断语句</h3>
+<h4 id="if-else">if else</h4>
+<pre tabindex="0"><code>if []; then
+	do something
+elif []; then
+	do something
+else
+	do something
+fi
+</code></pre><h4 id="case">case</h4>
+<pre tabindex="0"><code>case ${var} in
+&quot;condition1&quot;)
+do something
+;;
+&quot;condition2&quot;)
+do something
+;;
+*) #anything
+do something
+;;
+esac
+</code></pre><h3 id="循环语句">循环语句</h3>
+<h4 id="while">while</h4>
+<pre tabindex="0"><code>while [condition]
+do
+	do something
+done
+</code></pre><p>when meet the condition, start the loop.</p>
+<h4 id="until">until</h4>
+<pre tabindex="0"><code>until [condition]
+do
+	do something
+done
+</code></pre><p>when meet the condition, end the loop.</p>
+<h4 id="for">for</h4>
+<h5 id="usage1">usage1</h5>
+<pre tabindex="0"><code>for $var in con1 con2 con3 ...
+do
+	do something
+done
+</code></pre><h5 id="usage2">usage2</h5>
+<pre tabindex="0"><code>for $var in ${array}
+...
+</code></pre><h5 id="usage3">usage3</h5>
+<pre tabindex="0"><code>for $var in $(seq 1 100)
+...
+or
+for $var in {1..100}
+...
+</code></pre><h5 id="usage4">usage4</h5>
+<pre tabindex="0"><code>for ( (i=1; i&lt;=${var}; i++) )
+...
+</code></pre><h5 id="a-test">a test:</h5>
+<pre tabindex="0"><code># loop.sh
+var=95
+for var in {1..10}
+do
+    echo $var
+done
+</code></pre><pre tabindex="0"><code>[root@VM-0-11-centos tmp]# sh loop.test
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre><h3 id="sh命令">sh命令</h3>
+<ul>
+<li>-n 不执行，只检查语法 not execute but check</li>
+<li>-v 执行前输出脚本内容 view the script</li>
+<li>-x 将使用到脚本内容输出</li>
+</ul>
+<pre tabindex="0"><code>[root@VM-0-11-centos tmp]# sh -x loop.sh
++ var=95
++ for var in '{1..10}'
++ echo 1
+1
++ for var in '{1..10}'
++ echo 2
+2
++ for var in '{1..10}'
++ echo 3
+3
+...
+[root@VM-0-11-centos tmp]# sh -v loop.sh
+var=95
+for var in {1..10}
+do
+        echo $var
+done
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre>
 </section>
 
 
     <footer class="article-footer">
     
     <section class="article-tags">
-        
-            <a href="/tags/ssh/">SSH</a>
         
             <a href="/tags/linux/">linux</a>
         
@@ -270,43 +380,6 @@
 
     <aside class="related-contents--wrapper">
     
-    
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
-                
-                    
-<article class="">
-    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux实用操作（二）</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/image/48.jpg" loading="lazy" data-key="" data-hash="/image/48.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux实用操作（一）</h2>
-        </div>
-    </a>
-</article>
-                
-            </div>
-        </div>
     
 </aside>
 
@@ -470,11 +543,30 @@
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li><a href="#问题的提出">问题的提出：</a></li>
-    <li><a href="#实现免ip登录">实现免ip登录：</a></li>
-    <li><a href="#接着我们实现免密登录">接着我们实现免密登录：</a></li>
-    <li><a href="#密钥算法不匹配问题">密钥算法不匹配问题</a></li>
-    <li><a href="#自定义密钥文件导致识别错误问题">自定义密钥文件导致识别错误问题</a></li>
+    <li>
+      <ol>
+        <li><a href="#shell参数">shell参数</a></li>
+        <li><a href="#修改vim中tab长度">修改vim中tab长度</a></li>
+        <li><a href="#日期输出">日期输出</a></li>
+        <li><a href="#test命令">test命令</a></li>
+        <li><a href="#使用--进行条件判断">使用 “[]” 进行条件判断</a></li>
+        <li><a href="#read命令">read命令</a></li>
+        <li><a href="#条件判断语句">条件判断语句</a>
+          <ol>
+            <li><a href="#if-else">if else</a></li>
+            <li><a href="#case">case</a></li>
+          </ol>
+        </li>
+        <li><a href="#循环语句">循环语句</a>
+          <ol>
+            <li><a href="#while">while</a></li>
+            <li><a href="#until">until</a></li>
+            <li><a href="#for">for</a></li>
+          </ol>
+        </li>
+        <li><a href="#sh命令">sh命令</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
                 </div>

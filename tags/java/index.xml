@@ -34,14 +34,5 @@
       <description>问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。</description>
     </item>
     
-    <item>
-      <title>Test</title>
-      <link>https://akynazh.site/p/test/</link>
-      <pubDate>Tue, 08 Dec 2020 17:25:21 +0800</pubDate>
-      
-      <guid>https://akynazh.site/p/test/</guid>
-      <description>Test </description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Window on Akynazh</title>
+    <link>https://akynazh.site/categories/window/</link>
+    <description>Recent content in Window on Akynazh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Nov 2021 18:17:33 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cmd重要且实用的一些命令</title>
+      <link>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
+      <description>写入文件 写入hello字符串（同时新建了a.txt） 1 echo hello &amp;gt; a.txt 追加写入hello字符串 1 echo hello &amp;gt;&amp;gt; a.txt 将a.txt内容追加写入b.txt 1 type a.txt &amp;gt;&amp;gt; b.txt</description>
+    </item>
+    
+    <item>
+      <title>Window增加右键打开选项</title>
+      <link>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+      <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+      <description>欢迎访问我的博客^-^ Akynazh 加入注册表界面 win+R regedit 增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入： 计算机\HKEY_CLASSE</description>
+    </item>
+    
+  </channel>
+</rss>

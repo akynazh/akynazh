@@ -6,14 +6,14 @@
     <description>Recent content in Posts on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Dec 2021 12:37:32 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 20:33:45 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>关于char*, char[], string的理解</title>
-      <link>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
-      <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
+      <title>Linux实用操作（三）</title>
+      <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</link>
+      <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-      <description>Author: akynazh Blog: akynazh.site 最近写一些关于字符串的程序时遇到了一些问题，所以把这些东西复习整理一遍。 关于char[]与char*的区别 1 2 3 4 char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl;</description>
+      <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</guid>
+      <description>shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST</description>
     </item>
     
     <item>
@@ -50,15 +50,6 @@
       
       <guid>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。 由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs</description>
-    </item>
-    
-    <item>
-      <title>二次元随想</title>
-      <link>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</link>
-      <pubDate>Sun, 28 Nov 2021 18:24:12 +0800</pubDate>
-      
-      <guid>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</guid>
-      <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头。这是一种难以言说的情愫&amp;hellip;&amp;helli</description>
     </item>
     
     <item>
@@ -134,15 +125,6 @@
     </item>
     
     <item>
-      <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
-      <link>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 17 Nov 2021 17:56:03 +0800</pubDate>
-      
-      <guid>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
-      <description>问题的提出： 我们可以通过指令： ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！ 通</description>
-    </item>
-    
-    <item>
       <title>最短路问题汇总</title>
       <link>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
@@ -152,12 +134,30 @@
     </item>
     
     <item>
-      <title>Test</title>
-      <link>https://akynazh.site/p/test/</link>
-      <pubDate>Tue, 08 Dec 2020 17:25:21 +0800</pubDate>
+      <title>关于char*, char[], string的理解</title>
+      <link>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/test/</guid>
-      <description>Test </description>
+      <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>Author: akynazh Blog: akynazh.site 最近写一些关于字符串的程序时遇到了一些问题，所以把这些东西复习整理一遍。 关于char[]与char*的区别 1 2 3 4 char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl;</description>
+    </item>
+    
+    <item>
+      <title>二次元随想</title>
+      <link>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</link>
+      <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</guid>
+      <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头。这是一种难以言说的情愫&amp;hellip;&amp;helli</description>
+    </item>
+    
+    <item>
+      <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
+      <link>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <description>问题的提出： 我们可以通过指令： ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！ 通</description>
     </item>
     
     <item>
