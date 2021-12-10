@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Dec 2021 20:33:45 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git实用操作（一）</title>
+      <link>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
+      <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
+      <description>git初次拉取远程仓库 从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码 &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git</description>
+    </item>
+    
     <item>
       <title>Linux实用操作（三）</title>
       <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</link>
