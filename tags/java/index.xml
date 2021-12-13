@@ -13,7 +13,7 @@
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
       <guid>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
-      <description>提出问题 先看一个例子： 当两个人年龄相同时，我们认为这两个对象相同： class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;quot;Person{&amp;quot; + &amp;quot;age=&amp;quot; + age + &amp;quot;, name=&#39;&amp;quot; +</description>
+      <description>Java重写equals方法的同时为什么要重写hashcode方法 Author: akynazh 个人网站: akynazh 提出问题 先看一个例子： 当两个人年龄相同时，我们认为这两个对</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
       
       <guid>https://akynazh.site/p/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
-      <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点: == 比较时进行地址的比较 equals 比较时进行值的比较 1 2 3 4 5 6 7 8</description>
+      <description>equals方法和==运算符的作用区别 Author: akynazh 个人网站: akynazh equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点: == 比</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
       
       <guid>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-      <description>问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。</description>
+      <description>Java中通过反射获取带参数类型的方法 Author: akynazh 个人网站: akynazh 问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
       <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</guid>
-      <description>shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST</description>
+      <description>Linux实用操作（三） Author: akynazh 个人网站: akynazh shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
       
       <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</guid>
-      <description>Dos与Linux换行区别 首先知道： 回车 CR \r 换行 LR \n win/dos的换行： \r\n unix mac linux的换行： \n unix to win 换行失败 win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M aw</description>
+      <description>Linux实用操作（二） Author: akynazh 个人网站: akynazh Dos与Linux换行区别 首先知道： 回车 CR \r 换行 LR \n win/dos的换行： \r\n unix mac linux的换行： \n</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
       
       <guid>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
-      <description>问题的提出： 我们可以通过指令： ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！ 通</description>
+      <description>SSH免密且免IP登录远程主机的方法以及遇到的一些问题 Author: akynazh 个人网站: akynazh 问题的提出： 我们可以通过指令： ssh 用户名@IP 登录远程主机，但是每次都要</description>
     </item>
     
   </channel>
