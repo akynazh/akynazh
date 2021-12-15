@@ -13,7 +13,7 @@
       <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
-      <description>矩阵快速幂的介绍及其应用 Author: akynazh 个人网站: akynazh 矩阵快速幂介绍 题目描述 给定n×n的矩阵A，求 A^k。 输入格式 第一行两个整数 n,k 接下来n行，每行n个整数</description>
+      <description>Author: akynazh 个人网站: akynazh 矩阵快速幂介绍 题目描述 给定n×n的矩阵A，求 A^k。 输入格式 第一行两个整数 n,k 接下来n行，每行n个整数，第i行的第j个数表示A</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
-      <description>关于数论的一些简单算法 Author: akynazh 个人网站: akynazh 关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？ 运用朴素算法必TLE，这时考虑埃氏筛</description>
+      <description>Author: akynazh 个人网站: akynazh 关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？ 运用朴素算法必TLE，这时考虑埃氏筛法。 算法思路： 1.建立</description>
     </item>
     
   </channel>

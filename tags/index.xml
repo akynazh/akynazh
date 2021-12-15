@@ -98,24 +98,6 @@
     </item>
     
     <item>
-      <title>bat</title>
-      <link>https://akynazh.site/tags/bat/</link>
-      <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/bat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://akynazh.site/tags/hugo/</link>
-      <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>web</title>
       <link>https://akynazh.site/tags/web/</link>
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
@@ -148,6 +130,15 @@
       <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://akynazh.site/tags/hugo/</link>
+      <pubDate>Sat, 17 Oct 2020 23:12:51 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/hugo/</guid>
       <description></description>
     </item>
     

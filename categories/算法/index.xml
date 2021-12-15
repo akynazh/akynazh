@@ -13,7 +13,7 @@
       <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>图的着色问题汇总 Author: akynazh 个人网站: akynazh 二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？ 代码解决： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</description>
+      <description>Author: akynazh 个人网站: akynazh 二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？ 代码解决： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 vector&amp;lt;int&amp;gt;</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-      <description>求解有向图和无向图中是否存在环的方法 Author: akynazh 个人网站: akynazh 求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。 由于他是无向图，所以每次</description>
+      <description>Author: akynazh 个人网站: akynazh 求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。 由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
-      <description>矩阵快速幂的介绍及其应用 Author: akynazh 个人网站: akynazh 矩阵快速幂介绍 题目描述 给定n×n的矩阵A，求 A^k。 输入格式 第一行两个整数 n,k 接下来n行，每行n个整数</description>
+      <description>Author: akynazh 个人网站: akynazh 矩阵快速幂介绍 题目描述 给定n×n的矩阵A，求 A^k。 输入格式 第一行两个整数 n,k 接下来n行，每行n个整数，第i行的第j个数表示A</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>最短路问题汇总 Author: akynazh 个人网站: akynazh 注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星</description>
+      <description>Author: akynazh 个人网站: akynazh 注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。 迪</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
       
       <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
-      <description>关于数论的一些简单算法 Author: akynazh 个人网站: akynazh 关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？ 运用朴素算法必TLE，这时考虑埃氏筛</description>
+      <description>Author: akynazh 个人网站: akynazh 关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？ 运用朴素算法必TLE，这时考虑埃氏筛法。 算法思路： 1.建立</description>
     </item>
     
   </channel>

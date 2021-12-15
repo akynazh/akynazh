@@ -13,7 +13,7 @@
       <pubDate>Sat, 17 Oct 2020 23:12:51 +0800</pubDate>
       
       <guid>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
-      <description>hugo一些操作和文件记录 Author: akynazh 个人网站: akynazh hugo目录大致功能 -blog/ - archetypes/: 标准类型目录，生成对应文章页面时会由这个目录里的md模板生成 - assets/: 全局物件</description>
+      <description>Author: akynazh 个人网站: akynazh hugo目录大致功能 -blog/ - archetypes/: 标准类型目录，生成对应文章页面时会由这个目录里的md模板生成 - assets/: 全局物件目录，存放全局图像（不包含</description>
     </item>
     
   </channel>

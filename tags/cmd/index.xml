@@ -13,7 +13,7 @@
       <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
       
       <guid>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
-      <description>Cmd重要且实用的一些命令 Author: akynazh 个人网站: akynazh 写入文件 写入hello字符串（同时新建了a.txt） 1 echo hello &amp;gt; a.txt 追加写入hello字符串 1 echo hello &amp;gt;&amp;gt; a.txt 将</description>
+      <description>Author: akynazh 个人网站: akynazh 写入文件 写入hello字符串（同时新建了a.txt） 1 echo hello &amp;gt; a.txt 追加写入hello字符串 1 echo hello &amp;gt;&amp;gt; a.txt 将a.txt内容追加写入b.</description>
     </item>
     
   </channel>

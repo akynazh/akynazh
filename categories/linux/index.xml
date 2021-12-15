@@ -13,7 +13,7 @@
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
       <guid>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
-      <description>Git实用操作（一） Author: akynazh 个人网站: akynazh git初次拉取远程仓库 从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码 &amp;gt; git</description>
+      <description>Author: akynazh 个人网站: akynazh git初次拉取远程仓库 从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码 &amp;gt; git init # 初始化仓库，生成</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
       <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</guid>
-      <description>Linux实用操作（三） Author: akynazh 个人网站: akynazh shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim</description>
+      <description>Author: akynazh 个人网站: akynazh shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%d 20211209</description>
     </item>
     
   </channel>
