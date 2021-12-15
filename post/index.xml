@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Dec 2021 23:40:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis学习记录（一）</title>
+      <link>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
+      <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
+      <description>Redis学习记录（一） Author: akynazh 个人网站: akynazh Open, Connect And Config open redis: redis-server connect to redis: redis-cli disconnect: redis-cli shutdown show chinese: redis-cli --raw connect to remote redis: redis-cli -h host -p port -a password get redis config: config get {config_name} Data Type list: lpush clist redis lpush clist mysql lrange clist 0 100 key: 127.0.0.1:6379&amp;gt;</description>
+    </item>
+    
     <item>
       <title>Git实用操作（一）</title>
       <link>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
