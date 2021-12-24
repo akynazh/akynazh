@@ -12,8 +12,7 @@
         <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
         
         <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</guid>
-        <description>&lt;img src="https://akynazh.site/31.jpg" alt="Featured image of post Linux实用操作（四）" /&gt;&lt;h1 id=&#34;linux实用操作四&#34;&gt;Linux实用操作（四）&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/31.jpg" alt="Featured image of post Linux实用操作（四）" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;添加用户&#34;&gt;添加用户&lt;/h3&gt;
@@ -103,8 +102,7 @@ su - jzh # 使用jzh登录
         <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
         
         <guid>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
-        <description>&lt;img src="https://akynazh.site/.jpg" alt="Featured image of post Redis学习记录（二）" /&gt;&lt;h1 id=&#34;redis学习记录二&#34;&gt;Redis学习记录（二）&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/66.jpg" alt="Featured image of post Redis学习记录（二）" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;事务&#34;&gt;事务&lt;/h3&gt;

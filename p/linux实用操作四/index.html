@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Linux实用操作（四） Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!'><title>Linux实用操作（四）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!” 设置密码 在进行user'><title>Linux实用操作（四）</title>
 
 <link rel='canonical' href='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Linux实用操作（四）'>
-<meta property='og:description' content='Linux实用操作（四） Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!'>
+<meta property='og:description' content='Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!” 设置密码 在进行user'>
 <meta property='og:url' content='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/'>
 <meta property='og:site_name' content='Akynazh'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2021-12-20T10:15:34&#43;08:00'/><meta property='article:modified_time' content='2021-12-20T10:15:34&#43;08:00'/><meta property='og:image' content='https://akynazh.site/31.jpg' />
 <meta name="twitter:site" content="@https://twitter.com/aC5b6xyu2SytCOT">
     <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Linux实用操作（四）">
-<meta name="twitter:description" content="Linux实用操作（四） Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!” 设置密码 在进行user"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://akynazh.site/31.jpg' />
     <link rel="shortcut icon" href="/image/avatar.jpg" />
 <style>
@@ -126,7 +126,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -136,8 +136,7 @@
 </header>
 
     <section class="article-content">
-    <h1 id="linux实用操作四">Linux实用操作（四）</h1>
-<p><strong>Author: akynazh</strong></p>
+    <p><strong>Author: akynazh</strong></p>
 <p><strong>个人网站: <a class="link" href="https://akynazh.site"  target="_blank" rel="noopener"
     >akynazh</a></strong></p>
 <h3 id="添加用户">添加用户</h3>
