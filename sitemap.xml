@@ -3,24 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://akynazh.site/</loc>
-    <lastmod>2021-12-14T23:40:44+08:00</lastmod>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2021-12-14T23:40:44+08:00</lastmod>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2021-12-14T23:40:44+08:00</lastmod>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/categories/linux/</loc>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/linux/</loc>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</loc>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/post/</loc>
-    <lastmod>2021-12-14T23:40:44+08:00</lastmod>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</loc>
+    <lastmod>2021-12-20T10:15:05+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/redis/</loc>
     <lastmod>2021-12-14T23:40:44+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</loc>
-    <lastmod>2021-12-14T23:40:44+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/</loc>
     <lastmod>2021-12-14T23:40:44+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
@@ -31,12 +43,6 @@
   </url><url>
     <loc>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</loc>
     <lastmod>2021-12-10T18:10:07+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/linux/</loc>
-    <lastmod>2021-12-10T18:10:07+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/linux/</loc>
-    <lastmod>2021-12-09T20:33:45+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</loc>
     <lastmod>2021-12-09T20:33:45+08:00</lastmod>

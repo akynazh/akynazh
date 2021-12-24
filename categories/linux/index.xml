@@ -6,7 +6,16 @@
     <description>Recent content in Linux on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 10:15:34 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux实用操作（四）</title>
+      <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</link>
+      <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</guid>
+      <description>Linux实用操作（四） Author: akynazh 个人网站: akynazh 添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!</description>
+    </item>
+    
     <item>
       <title>Git实用操作（一）</title>
       <link>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>

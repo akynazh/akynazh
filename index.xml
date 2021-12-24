@@ -6,7 +6,204 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 14 Dec 2021 23:40:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 20 Dec 2021 10:15:34 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux实用操作（四）</title>
+        <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</link>
+        <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</guid>
+        <description>&lt;img src="https://akynazh.site/31.jpg" alt="Featured image of post Linux实用操作（四）" /&gt;&lt;h1 id=&#34;linux实用操作四&#34;&gt;Linux实用操作（四）&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;添加用户&#34;&gt;添加用户&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos ~]# useradd jzh
+
+[root@VM-0-11-centos /]# id jzh
+uid=1000(jzh) gid=1000(jzh) groups=1000(jzh)
+
+[root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group
+/etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash
+/etc/shadow:jzh:!!:18980:0:99999:7:::
+/etc/group:jzh:x:1000:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;x指代密码，对应到shadow中，未设定即为“!!”&lt;/p&gt;
+&lt;h3 id=&#34;设置密码&#34;&gt;设置密码&lt;/h3&gt;
+&lt;p&gt;在进行useradd后密码还未设定。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos /]# passwd jzh
+Changing password for user jzh.
+New password:
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password:
+passwd: all authentication tokens updated successfully.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos /]# useradd vbird
+[root@VM-0-11-centos /]# echo &amp;quot;658766&amp;quot; | passwd --stdin vbird
+Changing password for user vbird.
+passwd: all authentication tokens updated successfully.
+[root@VM-0-11-centos /]# chage -d 0 vbird # -d接最近一次需要修改密码的时间
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用vbird用户登录：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS C:\Users\akyna&amp;gt; ssh jzh
+vbird@101.34.217.138&#39;s password:
+You are required to change your password immediately (root enforced)
+Last login: Mon Dec 20 00:04:51 2021 from 113.200.174.13
+WARNING: Your password has expired.
+You must change your password now and login again!
+# 提示需要修改密码
+
+# 修改密码
+Changing password for user vbird.
+Changing password for vbird.
+(current) UNIX password:
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加群组与加入群组&#34;&gt;添加群组与加入群组&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos ~]# groupadd testgroup
+[root@VM-0-11-centos ~]# gpasswd testgroup
+Changing the password for group testgroup
+New Password:
+Re-enter new password:
+[root@VM-0-11-centos ~]# gpasswd -A vbird testgroup
+[root@VM-0-11-centos ~]# grep testgroup /etc/group /etc/gshadow
+/etc/group:testgroup:x:1002:
+/etc/gshadow:testgroup:$1$9v24LYZE$V/yYwmmoaKNpe9.zCPK3U.:vbird:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可见vbird已经加入该群组&lt;/p&gt;
+&lt;h3 id=&#34;通过acl设置专有权限&#34;&gt;通过ACL设置专有权限&lt;/h3&gt;
+&lt;p&gt;团队开发时，由于原有权限无法满足需求，通常需要对某些成员设置专有权限。&lt;/p&gt;
+&lt;h4 id=&#34;setfaclgetfacl&#34;&gt;setfacl&amp;amp;getfacl&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;-m 设置后续acl参数给文件使用&lt;/li&gt;
+&lt;li&gt;-x 删除后续acl参数&lt;/li&gt;
+&lt;li&gt;-R 递归设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# touch acl
+# 针对用户
+[root@VM-0-11-centos tmp]# setfacl -m u:jzh:rx acl # 为jzh用户设置专有权限
+
+# 针对群组
+[root@VM-0-11-centos tmp]# setfacl -m g:testgroup:rwx acl
+[root@VM-0-11-centos tmp]# getfacl acl
+# file: acl
+# owner: root
+# group: root
+user::rw-
+user:jzh:r-x
+group::r--
+group:testgroup:rwx
+mask::rwx
+other::r--
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;登录&#34;&gt;登录&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;su - # 使用root登录
+su - jzh # 使用jzh登录
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>Redis学习记录（二）</title>
+        <link>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
+        <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
+        <description>&lt;img src="https://akynazh.site/.jpg" alt="Featured image of post Redis学习记录（二）" /&gt;&lt;h1 id=&#34;redis学习记录二&#34;&gt;Redis学习记录（二）&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;事务&#34;&gt;事务&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; multi # 开启事务
+OK
+127.0.0.1:6379&amp;gt; set book java
+QUEUED
+127.0.0.1:6379&amp;gt; get book
+QUEUED
+127.0.0.1:6379&amp;gt; exec # 执行事务
+1) OK
+2) &amp;quot;java&amp;quot;
+127.0.0.1:6379&amp;gt; get book
+&amp;quot;java&amp;quot;
+127.0.0.1:6379&amp;gt; multi
+OK
+127.0.0.1:6379&amp;gt; set name peter
+QUEUED
+127.0.0.1:6379&amp;gt; discard # 取消事务
+OK
+127.0.0.1:6379&amp;gt; exec
+(error) ERR EXEC without MULTI
+127.0.0.1:6379&amp;gt; get name
+(nil)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;获取key&#34;&gt;获取key&lt;/h3&gt;
+&lt;h4 id=&#34;获取指定key&#34;&gt;获取指定key&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;keys * # 获取所有key
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;keys pattern # 根据pattern获取key
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;代表匹配任意字符&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;代表匹配一个字符&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;代表匹配部分字符&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;例如&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;代表匹配1和3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;而&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;代表匹配1到10的任意数字&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;。&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;转移字符&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;例如要匹配星号&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;问号需要转义的字符&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;e.g.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; keys *
+1) &amp;quot;book&amp;quot;
+2) &amp;quot;mkeys&amp;quot;
+3) &amp;quot;zset&amp;quot;
+4) &amp;quot;mkey&amp;quot;
+127.0.0.1:6379&amp;gt; keys m*
+1) &amp;quot;mkeys&amp;quot;
+2) &amp;quot;mkey&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;获取key信息&#34;&gt;获取key信息&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; keys *
+1) &amp;quot;book&amp;quot;
+2) &amp;quot;mkeys&amp;quot;
+3) &amp;quot;zset&amp;quot;
+4) &amp;quot;mkey&amp;quot;
+127.0.0.1:6379&amp;gt; dbsize # 获取key数量
+(integer) 4
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;删除key&#34;&gt;删除key&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; flushall # 删除所有数据库所有key
+OK
+127.0.0.1:6379&amp;gt; keys *
+(empty list or set)
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;flushdb # 删除当前数据库所有key
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;redis数据库数量是固定的：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; config get databases
+1) &amp;quot;databases&amp;quot;
+2) &amp;quot;16&amp;quot; # 共16个数据库
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;发布和订阅&#34;&gt;发布和订阅&lt;/h3&gt;
+&lt;p&gt;开启一个redis-cli:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; subscribe news
+Reading messages... (press Ctrl-C to quit)
+1) &amp;quot;subscribe&amp;quot;
+2) &amp;quot;news&amp;quot;
+3) (integer) 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再开启一个redis-cli:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS C:\Users\akyna&amp;gt; redis-cli
+127.0.0.1:6379&amp;gt; publish news &amp;quot;hello&amp;quot;
+(integer) 1
+127.0.0.1:6379&amp;gt; publish news &amp;quot;world&amp;quot;
+(integer) 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在第一个的redis-cli中接收到订阅的消息：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; subscribe news
+Reading messages... (press Ctrl-C to quit)
+1) &amp;quot;subscribe&amp;quot;
+2) &amp;quot;news&amp;quot;
+3) (integer) 1
+1) &amp;quot;message&amp;quot;
+2) &amp;quot;news&amp;quot;
+3) &amp;quot;hello&amp;quot;
+1) &amp;quot;message&amp;quot;
+2) &amp;quot;news&amp;quot;
+3) &amp;quot;world&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
         <title>Redis学习记录（一）</title>
         <link>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
         <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
