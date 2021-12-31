@@ -6,16 +6,88 @@
         <description>Recent content on Akynazh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 31 Dec 2021 15:07:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>SpringBoot中关于请求和返回路径的辨析</title>
-        <link>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E8%B7%AF%E5%BE%84%E7%9A%84%E8%BE%A8%E6%9E%90/</link>
-        <pubDate>Fri, 31 Dec 2021 15:07:35 +0800</pubDate>
+        <lastBuildDate>Fri, 31 Dec 2021 15:41:50 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SpringBoot中通过cookie给前端传递错误消息值</title>
+        <link>https://akynazh.site/p/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</link>
+        <pubDate>Fri, 31 Dec 2021 15:41:50 +0800</pubDate>
         
-        <guid>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E8%B7%AF%E5%BE%84%E7%9A%84%E8%BE%A8%E6%9E%90/</guid>
-        <description>&lt;img src="https://akynazh.site/24.jpg" alt="Featured image of post SpringBoot中关于请求和返回路径的辨析" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <guid>https://akynazh.site/p/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</guid>
+        <description>&lt;img src="https://akynazh.site/25.jpg" alt="Featured image of post SpringBoot中通过cookie给前端传递错误消息值" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;返回值辨析&#34;&gt;返回值辨析&lt;/h2&gt;
+&lt;h2 id=&#34;后端操作方法&#34;&gt;后端操作方法&lt;/h2&gt;
+&lt;p&gt;这里我们需要后端在接收一些请求并做出判断后，向前端反馈请求情况。&lt;/p&gt;
+&lt;p&gt;考虑到安全性，一般是不允许前端访问session值的，所以我们通过cookie给前端反馈：&lt;/p&gt;
+&lt;p&gt;如下是一个controller方法中的片段：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;addCookie&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Cookie&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;errorMsg&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;邮箱已经被注册&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getRequestDispatcher&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/success&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;forward&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我们给前端添加了一个cookie值。&lt;/p&gt;
+&lt;p&gt;这里必须注意的是，&lt;strong&gt;不能在添加完cookie后进行重定向&lt;/strong&gt;，否则无法正确成功传递cookie值。必须使用请求转发的方式，这也刚好和表单请求失败后的处理情况相合。&lt;/p&gt;
+&lt;h2 id=&#34;前端操作方法&#34;&gt;前端操作方法&lt;/h2&gt;
+&lt;p&gt;下面我们通过javascript方法进行获取并发出提示并删除cookie：&lt;/p&gt;
+&lt;p&gt;注意，执行完提示后必须删除该cookie值，否则以后访问页面将一直提示。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ready&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;errorMsg&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cookie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;errorMsg&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;errorMsg&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;myPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;location&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;host&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;.alert&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;errorMsg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;addClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;alert-info&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;delay&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1500&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fadeOut&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+        &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cookie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;errorMsg&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;myPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;expires&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里很关键的是需要指定path值，不同路径下生成的是不同的cookie值，即使它们同名为errorMsg。&lt;/p&gt;
+&lt;p&gt;所以，为了删除同为errorMsg名的cookie值，path必须指定为所有路径。&lt;/p&gt;
+&lt;p&gt;这里有个坑， &amp;lsquo;/&amp;rsquo; 似乎不能指定为所有路径, 而使用完整路径则可以。&lt;/p&gt;
+&lt;p&gt;关于获取完整路径的方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;myPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;location&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;host&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;window.location.host:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;&lt;a class=&#34;link&#34; href=&#34;https://akynazh.site/p/linuxTalk%27&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://akynazh.site/p/linuxTalk&#39;&lt;/a&gt; -&amp;gt; &amp;lsquo;akynazh.site&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;http://localhost:8080/index&amp;rsquo; -&amp;gt; &amp;lsquo;localhost:8080&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>SpringBoot中关于controller方法返回值的辨析</title>
+        <link>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</link>
+        <pubDate>Fri, 31 Dec 2021 15:07:35 +0800</pubDate>
+        
+        <guid>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</guid>
+        <description>&lt;img src="https://akynazh.site/24.jpg" alt="Featured image of post SpringBoot中关于controller方法返回值的辨析" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;返回值为重定向&#34;&gt;返回值为重定向&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -24,7 +96,24 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;redirect:/success&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;重定向到/success请求。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;重定向到/success请求。也就是说还要执行/success请求对应的方法。&lt;/p&gt;
+&lt;p&gt;一般表单提交成功，可以使用重定向请求，避免用户多次发起请求。&lt;/p&gt;
+&lt;p&gt;而如果表单提交失败，一般可以使用请求转发到原来的页面，也可以使用下面返回视图对象的方法。&lt;/p&gt;
+&lt;p&gt;但是，值得注意的是，只是返回视图对象的话，必须注意一些问题：&lt;/p&gt;
+&lt;p&gt;如下请求路径：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/theater/watch/?video?videoId=1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果请求失败：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以进行重定向到/theater。&lt;/li&gt;
+&lt;li&gt;而如果不进行重定向，只是返回视图对象：
+&lt;ul&gt;
+&lt;li&gt;如果原来是get请求，用户按F5刷新页面则会&lt;strong&gt;重复访问请求&lt;/strong&gt;，所以必须导向正确的URL。&lt;/li&gt;
+&lt;li&gt;如果原来是post请求，且url路径不改变则可以这样，如果url路径不变用户刷新将&lt;strong&gt;导致404错误&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，返回视图对象必须注意一些路径上的细节。&lt;/p&gt;
+&lt;h2 id=&#34;返回视图对象&#34;&gt;返回视图对象&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -33,38 +122,12 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;转发到 classpath:/templates/success.html页面。&lt;/p&gt;
-&lt;p&gt;注意，如果加载success页面&lt;strong&gt;含有需要解析的modelAttribute中的对象&lt;/strong&gt;，则该方法中必须往modelAttribute添加该对象，否则会报错。&lt;/p&gt;
-&lt;p&gt;所以如果多个页面都可能访问到这个也页面，则最好别使用modelAttribute注入对象，否则一律需要redirect到有注入该对象的方法中去才能正确解析页面。&lt;/p&gt;
-&lt;p&gt;可以使用&lt;strong&gt;session.setAttribute&lt;/strong&gt;来解决这个问题。&lt;/p&gt;
-&lt;h2 id=&#34;请求路径辨析&#34;&gt;请求路径辨析&lt;/h2&gt;
-&lt;p&gt;如下请求路径：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/theater/watch/?video?videoId=1
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如果请求失败，&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;可以进行重定向到/theater，但是这样后台添加的cookie无法正确传递。&lt;/li&gt;
-&lt;li&gt;而如果不进行重定向，只是返回视图对象：
-&lt;ul&gt;
-&lt;li&gt;如果原来是get请求，用户按F5刷新页面则会&lt;strong&gt;重复访问请求&lt;/strong&gt;，所以必须导向正确的URL。&lt;/li&gt;
-&lt;li&gt;如果原来是post请求，且url路径不改变则可以这样，如果url路径不变用户刷新将&lt;strong&gt;导致404错误&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一般表单请求失败确实可以进行重定向，但是如果需要添加cookie，可以进行请求转发，即：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getRequestDispatcher&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/theater&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;forward&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这样存在response中的cookie可以顺利传递给前端，后台添加的cookie可以顺利传递。&lt;/p&gt;
-&lt;p&gt;注意，如果表单请求成功最好都使用重定向了，防止表单重复提交。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;注意必须已经启动了thymeleaf引擎。&lt;/p&gt;
+&lt;p&gt;该方法将转发到 classpath:/templates/success.html页面。&lt;/p&gt;
+&lt;p&gt;值得注意的是，如果加载success页面&lt;strong&gt;含有需要解析的modelAttribute中的对象&lt;/strong&gt;，则该方法中必须往modelAttribute添加该对象，否则会报错。&lt;/p&gt;
+&lt;p&gt;所以如果多个页面都可能访问到这个也页面，则最好别使用modelAttribute注入对象，如果这样必须先注入视图对象所需要的model对象。&lt;/p&gt;
+&lt;p&gt;否则一律需要redirect到有注入该对象的方法中去才能正确解析页面。&lt;/p&gt;
+&lt;p&gt;另外，可以通过将model对象放到session中，同时视图对象中通过session值来获取对象，即可。&lt;/p&gt;
 </description>
         </item>
         <item>
