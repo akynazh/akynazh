@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Dec 2021 10:15:34 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 15:07:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringBoot中关于请求和返回路径的辨析</title>
+      <link>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E8%B7%AF%E5%BE%84%E7%9A%84%E8%BE%A8%E6%9E%90/</link>
+      <pubDate>Fri, 31 Dec 2021 15:07:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E8%B7%AF%E5%BE%84%E7%9A%84%E8%BE%A8%E6%9E%90/</guid>
+      <description>Author: akynazh 个人网站: akynazh 返回值辨析 1 return &amp;#34;redirect:/success&amp;#34; 重定向到/success请求。 1 return &amp;#34;success&amp;#34; 转发到 classpath:/templates/success.html</description>
+    </item>
+    
     <item>
       <title>Linux实用操作（四）</title>
       <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</link>

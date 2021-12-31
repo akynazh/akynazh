@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://akynazh.site/</loc>
-    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/categories/java/</loc>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/post/</loc>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/springboot/</loc>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E8%B7%AF%E5%BE%84%E7%9A%84%E8%BE%A8%E6%9E%90/</loc>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2021-12-31T15:07:35+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/linux/</loc>
     <lastmod>2021-12-20T10:15:34+08:00</lastmod>
@@ -18,12 +33,6 @@
     <lastmod>2021-12-20T10:15:34+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</loc>
-    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/post/</loc>
-    <lastmod>2021-12-20T10:15:34+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/</loc>
     <lastmod>2021-12-20T10:15:34+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/redis/</loc>
@@ -70,9 +79,6 @@
   </url><url>
     <loc>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-12-02T23:50:44+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/java/</loc>
-    <lastmod>2021-11-26T09:23:27+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/java/</loc>
     <lastmod>2021-11-26T09:23:27+08:00</lastmod>
