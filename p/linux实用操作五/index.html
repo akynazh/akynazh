@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Author: akynazh 个人网站: akynazh 事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获'><title>Redis学习记录（二）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Author: akynazh 个人网站: akynazh 查看IP端口状况 1 2 3 4 5 6 [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即'><title>Linux实用操作（五）</title>
 
-<link rel='canonical' href='https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/'>
+<link rel='canonical' href='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Redis学习记录（二）'>
-<meta property='og:description' content='Author: akynazh 个人网站: akynazh 事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获'>
-<meta property='og:url' content='https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Linux实用操作（五）'>
+<meta property='og:description' content='Author: akynazh 个人网站: akynazh 查看IP端口状况 1 2 3 4 5 6 [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即'>
+<meta property='og:url' content='https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/'>
 <meta property='og:site_name' content='Akynazh'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='redis' /><meta property='article:published_time' content='2021-12-20T10:15:05&#43;08:00'/><meta property='article:modified_time' content='2021-12-20T10:15:05&#43;08:00'/><meta property='og:image' content='https://akynazh.site/66.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2022-01-03T00:27:58&#43;08:00'/><meta property='article:modified_time' content='2022-01-03T00:27:58&#43;08:00'/><meta property='og:image' content='https://akynazh.site/27.jpg' />
 <meta name="twitter:site" content="@https://twitter.com/aC5b6xyu2SytCOT">
-    <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Redis学习记录（二）">
-<meta name="twitter:description" content="Author: akynazh 个人网站: akynazh 事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://akynazh.site/66.jpg' />
+    <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Linux实用操作（五）">
+<meta name="twitter:description" content="Author: akynazh 个人网站: akynazh 查看IP端口状况 1 2 3 4 5 6 [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://akynazh.site/27.jpg' />
     <link rel="shortcut icon" href="/image/avatar.jpg" />
 <style>
     :root {
@@ -81,9 +81,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/">
+            <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/">
                 
-                    <img src="/66.jpg" loading="lazy" alt="Featured image of post Redis学习记录（二）" />
+                    <img src="/27.jpg" loading="lazy" alt="Featured image of post Linux实用操作（五）" />
                 
             </a>
         </div>
@@ -93,7 +93,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/">Redis学习记录（二）</a>
+        <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/">Linux实用操作（五）</a>
     </h2>
 
     
@@ -111,7 +111,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 20, 2021</time>
+                <time class="article-time--published">Jan 03, 2022</time>
             </div>
         
 
@@ -139,33 +139,84 @@
     <p><strong>Author: akynazh</strong></p>
 <p><strong>个人网站: <a class="link" href="https://akynazh.site"  target="_blank" rel="noopener"
     >akynazh</a></strong></p>
-<h3 id="事务">事务</h3>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; multi # 开启事务
-OK
-127.0.0.1:6379&gt; set book java
-QUEUED
-127.0.0.1:6379&gt; get book
-QUEUED
-127.0.0.1:6379&gt; exec # 执行事务
-1) OK
-2) &quot;java&quot;
-127.0.0.1:6379&gt; get book
-&quot;java&quot;
-127.0.0.1:6379&gt; multi
-OK
-127.0.0.1:6379&gt; set name peter
-QUEUED
-127.0.0.1:6379&gt; discard # 取消事务
-OK
-127.0.0.1:6379&gt; exec
-(error) ERR EXEC without MULTI
-127.0.0.1:6379&gt; get name
-(nil)
-</code></pre><h3 id="获取key">获取key</h3>
-<h4 id="获取指定key">获取指定key</h4>
-<pre tabindex="0"><code>keys * # 获取所有key
-</code></pre><pre tabindex="0"><code>keys pattern # 根据pattern获取key
-</code></pre><blockquote>
+<h2 id="查看ip端口状况">查看IP端口状况</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># netstat -ntlp</span>
+Active Internet connections <span class="o">(</span>only servers<span class="o">)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        <span class="m">0</span>      <span class="m">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1089/sshd
+
+tcp6       <span class="m">0</span>      <span class="m">0</span> :::3306                 :::*                    LISTEN      14528/mysqld
+</code></pre></td></tr></table>
+</div>
+</div><p>说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。</p>
+<p>结果列出了进程PID，可以通过kill终止占用该端口的程序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">kill</span> -9 PID
+</code></pre></td></tr></table>
+</div>
+</div><p>另外一种方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># lsof -i:3306</span>
+COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+mysqld  <span class="m">14528</span> mysql   17u  IPv6 <span class="m">779103</span>      0t0  TCP *:mysql <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="开启与关闭端口">开启与关闭端口</h2>
+<p>这里实验环境为centos7.9，我采用firewall来实现需求。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 首先打开防火墙服务</span>
+<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># systemctl start firewalld </span>
+
+<span class="c1"># 永久开启80端口</span>
+<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># firewall-cmd --zone=public --add-port=8080/tcp --permanent </span>
+
+<span class="c1"># 使生效</span>
+<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># firewall-cmd --reload</span>
+
+<span class="c1"># 查看已经开启的端口</span>
+<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># firewall-cmd --zone=public --list-ports</span>
+8080/tcp 3306/tcp 80/tcp
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看进程">查看进程</h2>
+<p>查看所有进程</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -174,66 +225,28 @@ OK
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">-</span> <span class="o">*</span> <span class="nx">代表匹配任意字符</span>
-<span class="o">-</span> <span class="o">?</span> <span class="nx">代表匹配一个字符</span>
-<span class="o">-</span> <span class="p">[]</span> <span class="nx">代表匹配部分字符</span><span class="err">，</span><span class="nx">例如</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="nx">代表匹配1和3</span><span class="err">，</span><span class="nx">而</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">10</span><span class="p">]</span><span class="nx">代表匹配1到10的任意数字</span><span class="err">。</span>
-<span class="o">-</span> <span class="nx">x</span> <span class="nx">转移字符</span><span class="err">，</span><span class="nx">例如要匹配星号</span><span class="err">，</span><span class="nx">问号需要转义的字符</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># ps -ef </span>
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         <span class="m">1</span>     <span class="m">0</span>  <span class="m">0</span> 00:41 ?        00:00:06 /usr/lib/systemd/systemd --switched-root --system --deserialize <span class="m">22</span>
+root         <span class="m">2</span>     <span class="m">0</span>  <span class="m">0</span> 00:41 ?        00:00:00 <span class="o">[</span>kthreadd<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
-</div></blockquote>
-<p>e.g.</p>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; keys *
-1) &quot;book&quot;
-2) &quot;mkeys&quot;
-3) &quot;zset&quot;
-4) &quot;mkey&quot;
-127.0.0.1:6379&gt; keys m*
-1) &quot;mkeys&quot;
-2) &quot;mkey&quot;
-</code></pre><h4 id="获取key信息">获取key信息</h4>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; keys *
-1) &quot;book&quot;
-2) &quot;mkeys&quot;
-3) &quot;zset&quot;
-4) &quot;mkey&quot;
-127.0.0.1:6379&gt; dbsize # 获取key数量
-(integer) 4
-</code></pre><h4 id="删除key">删除key</h4>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; flushall # 删除所有数据库所有key
-OK
-127.0.0.1:6379&gt; keys *
-(empty list or set)
-</code></pre><pre tabindex="0"><code>flushdb # 删除当前数据库所有key
-</code></pre><p>redis数据库数量是固定的：</p>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; config get databases
-1) &quot;databases&quot;
-2) &quot;16&quot; # 共16个数据库
-</code></pre><h3 id="发布和订阅">发布和订阅</h3>
-<p>开启一个redis-cli:</p>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; subscribe news
-Reading messages... (press Ctrl-C to quit)
-1) &quot;subscribe&quot;
-2) &quot;news&quot;
-3) (integer) 1
-</code></pre><p>再开启一个redis-cli:</p>
-<pre tabindex="0"><code>PS C:\Users\akyna&gt; redis-cli
-127.0.0.1:6379&gt; publish news &quot;hello&quot;
-(integer) 1
-127.0.0.1:6379&gt; publish news &quot;world&quot;
-(integer) 1
-</code></pre><p>在第一个的redis-cli中接收到订阅的消息：</p>
-<pre tabindex="0"><code>127.0.0.1:6379&gt; subscribe news
-Reading messages... (press Ctrl-C to quit)
-1) &quot;subscribe&quot;
-2) &quot;news&quot;
-3) (integer) 1
-1) &quot;message&quot;
-2) &quot;news&quot;
-3) &quot;hello&quot;
-1) &quot;message&quot;
-2) &quot;news&quot;
-3) &quot;world&quot;
-</code></pre>
+</div><p>查看相关进程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># ps -ef | head -n 1; ps -ef | grep java</span>
+UID        PID  PPID  C STIME TTY          TIME CMD
+root     <span class="m">25889</span> <span class="m">24972</span>  <span class="m">4</span> 17:46 pts/1    00:00:11 java -jar LonersHub-0.0.1-SNAPSHOT.jar
+root     <span class="m">26558</span> <span class="m">24972</span>  <span class="m">0</span> 17:51 pts/1    00:00:00 grep --color<span class="o">=</span>auto java
+</code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -241,7 +254,7 @@ Reading messages... (press Ctrl-C to quit)
     
     <section class="article-tags">
         
-            <a href="/tags/redis/">redis</a>
+            <a href="/tags/linux/">linux</a>
         
     </section>
 
@@ -284,18 +297,90 @@ Reading messages... (press Ctrl-C to quit)
                 
                     
 <article class="has-image">
-    <a href="/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/">
+    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/">
         
         
             <div class="article-image">
                 
-                    <img src="/29.jpg" loading="lazy" data-key="" data-hash="/29.jpg"/>
+                    <img src="/31.jpg" loading="lazy" data-key="" data-hash="/31.jpg"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Redis学习记录（一）</h2>
+            <h2 class="article-title">Linux实用操作（四）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/46.jpg" loading="lazy" data-key="" data-hash="/46.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux实用操作（二）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/48.jpg" loading="lazy" data-key="" data-hash="/48.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux实用操作（一）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/11.jpg" loading="lazy" data-key="" data-hash="/11.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Git实用操作（一）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/47.jpg" loading="lazy" data-key="" data-hash="/47.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux实用操作（三）</h2>
         </div>
     </a>
 </article>
@@ -465,19 +550,9 @@ Reading messages... (press Ctrl-C to quit)
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li><a href="#事务">事务</a></li>
-        <li><a href="#获取key">获取key</a>
-          <ol>
-            <li><a href="#获取指定key">获取指定key</a></li>
-            <li><a href="#获取key信息">获取key信息</a></li>
-            <li><a href="#删除key">删除key</a></li>
-          </ol>
-        </li>
-        <li><a href="#发布和订阅">发布和订阅</a></li>
-      </ol>
-    </li>
+    <li><a href="#查看ip端口状况">查看IP端口状况</a></li>
+    <li><a href="#开启与关闭端口">开启与关闭端口</a></li>
+    <li><a href="#查看进程">查看进程</a></li>
   </ol>
 </nav>
                 </div>

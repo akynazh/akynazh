@@ -6,14 +6,14 @@
     <description>Recent content in shell on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Dec 2021 00:10:38 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 20:33:45 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux实用操作（一）</title>
-      <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
-      <pubDate>Fri, 03 Dec 2021 00:10:38 +0800</pubDate>
+      <title>Linux实用操作（三）</title>
+      <link>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</link>
+      <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
-      <description>Author: akynazh 个人网站: akynazh 文件编码 查看文件编码 enca -L none file 文件编码转为UTF-8 enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询</description>
+      <guid>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</guid>
+      <description>Author: akynazh 个人网站: akynazh shell参数 $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数 修改vim中tab长度 设置vim中tab长度 vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%d 20211209</description>
     </item>
     
   </channel>

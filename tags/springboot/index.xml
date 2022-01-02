@@ -6,7 +6,16 @@
     <description>Recent content in springboot on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Dec 2021 15:41:50 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 00:30:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux主机部署springboot项目全过程</title>
+      <link>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <description>Author: akynazh 个人网站: akynazh 配置Java环境 下载jdk压缩包： jdk-8u311-linux-x64.tar.gz 将jdk压缩包通过winsp上传至主机 解压缩jdk压缩包 1 2 3 4 5 6 [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar</description>
+    </item>
+    
     <item>
       <title>SpringBoot中通过cookie给前端传递错误消息值</title>
       <link>https://akynazh.site/p/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</link>

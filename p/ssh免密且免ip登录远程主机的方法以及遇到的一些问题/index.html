@@ -130,7 +130,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -209,12 +209,8 @@
 <p>而当我们需要登录多个主机时，生成的文件名就会冲突了。所以我们需要自定义文件名。</p>
 <p>步骤如下</p>
 <ul>
-<li>
-<p>假设我们自定义为~/.ssh/id_rsa_centos，生成id_rsa_centos79及id_rsa_centos79.pub文件</p>
-</li>
-<li>
-<p>继续编辑config文件，如下</p>
-</li>
+<li>假设我们自定义key生成路径为~/.ssh/id_rsa_centos79，则生成id_rsa_centos79及id_rsa_centos79.pub文件</li>
+<li>继续编辑config文件，如下</li>
 </ul>
 <pre tabindex="0"><code>Host 输入代替名
 	HostName 输入IP
@@ -224,8 +220,40 @@
 </code></pre><ul>
 <li>修改ssh-copy-id函数中的公钥名，如下</li>
 </ul>
-<pre tabindex="0"><code>$publicKey = &quot;$ENV:USERPROFILE&quot; + &quot;/.ssh/id_rsa_centos79.pub&quot;
-</code></pre><p>这样即可顺利发送公钥到主机哩^-^</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nv">$publicKey</span> <span class="p">=</span> <span class="s2">&#34;$ENV:USERPROFILE&#34;</span> <span class="p">+</span> <span class="s2">&#34;/.ssh/id_rsa_centos79.pub&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>即为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="k">function</span> <span class="nb">ssh-copy</span><span class="n">-id</span><span class="p">(</span><span class="no">[string]</span><span class="nv">$userAtMachine</span><span class="p">,</span> <span class="nv">$args</span><span class="p">){</span>
+    <span class="nv">$publicKey</span> <span class="p">=</span> <span class="s2">&#34;$ENV:USERPROFILE&#34;</span> <span class="p">+</span> <span class="s2">&#34;/.ssh/id_rsa_centos79.pub&#34;</span> <span class="c"># 修改的位置</span>
+    <span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="s2">&#34;$publicKey&#34;</span><span class="p">)){</span>
+        <span class="nb">Write-Error</span> <span class="s2">&#34;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&#34;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="p">&amp;</span> <span class="nb">cat </span><span class="s2">&#34;$publicKey&#34;</span> <span class="p">|</span> <span class="n">ssh</span> <span class="nv">$args</span> <span class="nv">$userAtMachine</span> <span class="s2">&#34;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样即可顺利发送公钥到主机哩^-^</p>
 <p>over!</p>
 
 </section>
@@ -273,49 +301,6 @@
 
     <aside class="related-contents--wrapper">
     
-    
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
-                
-                    
-<article class="has-image">
-    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/46.jpg" loading="lazy" data-key="" data-hash="/46.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux实用操作（二）</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/48.jpg" loading="lazy" data-key="" data-hash="/48.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux实用操作（一）</h2>
-        </div>
-    </a>
-</article>
-                
-            </div>
-        </div>
     
 </aside>
 
@@ -370,7 +355,7 @@
         
             2020 - 
         
-        2021 Akynazh
+        2022 Akynazh
     </section>
     
     <section class="powerby">
