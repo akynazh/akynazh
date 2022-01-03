@@ -12,7 +12,7 @@
         <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
         
         <guid>https://akynazh.site/p/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
-        <description>&lt;img src="https://akynazh.site/35.jpg" alt="Featured image of post Linux上部署JAR包项目后的文件上传问题" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/56.jpg" alt="Featured image of post Linux上部署JAR包项目后的文件上传问题" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在进行上传文件时，一般会先获取项目类路径：&lt;/p&gt;
@@ -192,9 +192,9 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
         <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
         
         <guid>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-        <description>&lt;img src="https://akynazh.site/28.jpg" alt="Featured image of post Linux主机部署springboot项目全过程" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/28.jpg" alt="Featured image of post Linux主机部署springboot项目全过程" /&gt;&lt;p&gt;&lt;strong&gt;作者: Jiang Zhihang&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AKYNAZH&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;配置java环境&#34;&gt;配置Java环境&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -258,8 +258,6 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 &lt;li&gt;
 &lt;p&gt;编辑/etc/bashrc文件：&lt;/p&gt;
 &lt;p&gt;也可以选择编辑/etc/profile。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -282,9 +280,9 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;.:&lt;span class=&#34;nv&#34;&gt;$JAVA_HOME&lt;/span&gt;/lib/dt.jar:&lt;span class=&#34;nv&#34;&gt;$JAVA_HOME&lt;/span&gt;/lib/tools.jar
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;使配置文件生效：&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使配置文件生效：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -293,9 +291,9 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /etc/bashrc
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;验证版本：&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;验证版本：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -320,7 +318,7 @@ where possible options include:
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;实例测试&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -377,11 +375,9 @@ hello world
 &lt;/ul&gt;
 &lt;h2 id=&#34;配置mysql环境&#34;&gt;配置mysql环境&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;安装mysql57&lt;/p&gt;
-&lt;p&gt;这里实验环境为centos7.9版本，且采用yum方式安装mysql57。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;安装mysql57&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;这里实验环境为centos7.9版本，且采用yum方式安装mysql57。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -437,7 +433,7 @@ hello world
 &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# rpm -Uvh mysql80-community-release-el7-3.noarch.rpm&lt;/span&gt;
 ......
 Updating / installing...
-   1:mysql80-community-release-el7-3  &lt;span class=&#34;c1&#34;&gt;################################# [100%]&lt;/span&gt;
+  1:mysql80-community-release-el7-3  &lt;span class=&#34;c1&#34;&gt;################################# [100%]&lt;/span&gt;
 
 &lt;span class=&#34;c1&#34;&gt;# 这时查看/etc/yum.repos.d可以看到如下：&lt;/span&gt;
 &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# ls  /etc/yum.repos.d | grep mysql&lt;/span&gt;
@@ -471,8 +467,8 @@ Replaced:
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;运行并配置mysql&lt;/p&gt;
+&lt;li&gt;运行并配置mysql&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -530,15 +526,15 @@ Redirecting to /bin/systemctl start mysqld.service
 &lt;span class=&#34;c1&#34;&gt;# 查看mysql服务状态&lt;/span&gt;
 &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# systemctl status mysqld.service&lt;/span&gt;
 ● mysqld.service - MySQL Server
-   Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/usr/lib/systemd/system/mysqld.service&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; enabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; vendor preset: disabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-   Active: active &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;running&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; since Sun 2022-01-02 12:21:47 CST&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 11s ago
-     Docs: man:mysqld&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;8&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-           http://dev.mysql.com/doc/refman/en/using-systemd.html
+  Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/usr/lib/systemd/system/mysqld.service&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; enabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; vendor preset: disabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+  Active: active &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;running&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; since Sun 2022-01-02 12:21:47 CST&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 11s ago
+    Docs: man:mysqld&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;8&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+          http://dev.mysql.com/doc/refman/en/using-systemd.html
   Process: &lt;span class=&#34;m&#34;&gt;12593&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/sbin/mysqld --daemonize --pid-file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/var/run/mysqld/mysqld.pid &lt;span class=&#34;nv&#34;&gt;$MYSQLD_OPTS&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;exited, &lt;span class=&#34;nv&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0/SUCCESS&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
   Process: &lt;span class=&#34;m&#34;&gt;12530&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ExecStartPre&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/bin/mysqld_pre_systemd &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;exited, &lt;span class=&#34;nv&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0/SUCCESS&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
- Main PID: &lt;span class=&#34;m&#34;&gt;12596&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;mysqld&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-   CGroup: /system.slice/mysqld.service
-           └─12596 /usr/sbin/mysqld --daemonize --pid-file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/var/run/mysqld/mysqld.pid
+Main PID: &lt;span class=&#34;m&#34;&gt;12596&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;mysqld&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+  CGroup: /system.slice/mysqld.service
+          └─12596 /usr/sbin/mysqld --daemonize --pid-file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/var/run/mysqld/mysqld.pid
 
 Jan &lt;span class=&#34;m&#34;&gt;02&lt;/span&gt; 12:21:41 VM-0-11-centos systemd&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: Starting MySQL Server...
 Jan &lt;span class=&#34;m&#34;&gt;02&lt;/span&gt; 12:21:47 VM-0-11-centos systemd&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;1&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: Started MySQL Server.
@@ -571,9 +567,9 @@ Query OK, &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; rows affected &lt;span cl
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PLUS： mysql设置编码为utf-8&lt;/p&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;PLUS： mysql设置编码为utf-8&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -662,10 +658,8 @@ mysql&amp;gt; SHOW VARIABLES LIKE &lt;span class=&#34;s1&#34;&gt;&amp;#39;charac
 &lt;span class=&#34;m&#34;&gt;8&lt;/span&gt; rows in &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;0.01 sec&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;建立数据库并新建表。&lt;/p&gt;
-&lt;/li&gt;
+&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;建立数据库并新建表。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;通过sql脚本快速建成。&lt;/p&gt;
 &lt;h2 id=&#34;生成上传并运行jar包项目&#34;&gt;生成，上传并运行JAR包项目&lt;/h2&gt;
@@ -748,7 +742,7 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt; &lt;span class=&#34;n&#34;&gt;java&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jar&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LonersHub&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SNAPSHOT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;jar&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;java&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jar&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LonersHub&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SNAPSHOT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;jar&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这样的话关闭终端项目就停止运行了。&lt;/p&gt;
@@ -767,6 +761,8 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;更新项目&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;首先删除原来的jar包并上传新的jar包。&lt;/p&gt;
+&lt;p&gt;然后杀死原本进程并运行jar包：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -815,6 +811,9 @@ nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &lt;span class=&#34;p&#34;&gt;&amp;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;OVER.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作者: Jiang Zhihang&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AKYNAZH&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2045,7 +2044,7 @@ find /home -name .bashrc &amp;amp;&amp;gt; testfile
         <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
         
         <guid>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-        <description>&lt;img src="https://akynazh.site/20.jpg" alt="Featured image of post 求解有向图和无向图中是否存在环的方法" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/115.jpg" alt="Featured image of post 求解有向图和无向图中是否存在环的方法" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;求解无向图中是否存在环&#34;&gt;求解无向图中是否存在环&lt;/h2&gt;
@@ -2502,7 +2501,7 @@ public int hashCode() {
         <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
         
         <guid>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
-        <description>&lt;img src="https://akynazh.site/189.jpg" alt="Featured image of post Cmd重要且实用的一些命令" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/89.jpg" alt="Featured image of post Cmd重要且实用的一些命令" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;写入文件&#34;&gt;写入文件&lt;/h2&gt;
@@ -3221,7 +3220,7 @@ Person p1 = gson.fromJson(p_json, Person.class);
         <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
         
         <guid>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-        <description>&lt;img src="https://akynazh.site/155.jpg" alt="Featured image of post 最短路问题汇总" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/105.jpg" alt="Featured image of post 最短路问题汇总" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为&lt;strong&gt;链式前向星&lt;/strong&gt;或者邻接表。&lt;/p&gt;
@@ -3778,7 +3777,7 @@ Person p1 = gson.fromJson(p_json, Person.class);
         <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
         
         <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-        <description>&lt;img src="https://akynazh.site/123.jpg" alt="Featured image of post 关于char*, char[], string的理解" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/120.jpg" alt="Featured image of post 关于char*, char[], string的理解" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;最近写一些关于字符串的程序时遇到了一些问题，所以把这些东西复习整理一遍。&lt;/p&gt;
@@ -4091,7 +4090,7 @@ Person p1 = gson.fromJson(p_json, Person.class);
         <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
         
         <guid>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
-        <description>&lt;img src="https://akynazh.site/134.jpg" alt="Featured image of post 关于数论的一些简单算法" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;img src="https://akynazh.site/114.jpg" alt="Featured image of post 关于数论的一些简单算法" /&gt;&lt;p&gt;&lt;strong&gt;Author: akynazh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;akynazh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;关于素数&#34;&gt;关于素数&lt;/h2&gt;
