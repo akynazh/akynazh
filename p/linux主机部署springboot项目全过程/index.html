@@ -143,7 +143,9 @@
     <p><strong>作者: Jiang Zhihang</strong></p>
 <p><strong>网站: <a class="link" href="https://akynazh.site"  target="_blank" rel="noopener"
     >AKYNAZH</a></strong></p>
+<p><strong>注：部署环境为centos7.9版本</strong></p>
 <h2 id="配置java环境">配置Java环境</h2>
+<h3 id="获取jdk">获取JDK</h3>
 <ul>
 <li>
 <p>下载jdk压缩包： jdk-8u311-linux-x64.tar.gz</p>
@@ -185,11 +187,9 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 </code></pre></td></tr></table>
 </div>
 </div></li>
-<li>
-<p>配置环境变量</p>
-<ul>
-<li>
-<p>记录一下所有相关配置文件：</p>
+</ul>
+<h3 id="配置环境变量">配置环境变量</h3>
+<h4 id="linux相关配置文件解析">Linux相关配置文件解析</h4>
 <p>bashrc部分:</p>
 <ul>
 <li>/etc/bashrc: 针对所有用户，每开启一个shell都会执行一次</li>
@@ -202,9 +202,7 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 <li>/etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile</li>
 <li>~/.bash_profile: 只针对单个用户，首次登录执行一次</li>
 </ul>
-</li>
-<li>
-<p>编辑/etc/bashrc文件：</p>
+<h4 id="编辑etcbashrc文件">编辑/etc/bashrc文件</h4>
 <p>也可以选择编辑/etc/profile。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -228,9 +226,9 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 <span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib/dt.jar:<span class="nv">$JAVA_HOME</span>/lib/tools.jar
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>使配置文件生效：</p>
+</div><ul>
+<li>使配置文件生效：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -239,9 +237,7 @@ bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">source</span> /etc/bashrc
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>验证版本：</p>
+</div><h4 id="验证java环境">验证Java环境：</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -266,65 +262,8 @@ where possible options include:
 
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>实例测试</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">touch /tmp/test.java
-<span class="nb">cd</span> /tmp
-vim test.java
-</code></pre></td></tr></table>
-</div>
-</div><p>编辑如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>测试：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@VM-0-11-centos tmp<span class="o">]</span><span class="c1"># javac test.java</span>
-<span class="o">[</span>root@VM-0-11-centos tmp<span class="o">]</span><span class="c1"># ls | grep test</span>
-test.class
-test.java
-<span class="o">[</span>root@VM-0-11-centos tmp<span class="o">]</span><span class="c1"># java test</span>
-hello world
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-</li>
-</ul>
-<h2 id="配置mysql环境">配置mysql环境</h2>
-<ol>
-<li>安装mysql57</li>
-</ol>
+</div><h2 id="配置mysql环境">配置mysql环境</h2>
+<h3 id="yum方式安装mysql57">yum方式安装mysql57</h3>
 <p>这里实验环境为centos7.9版本，且采用yum方式安装mysql57。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -363,12 +302,6 @@ hello world
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 获取mysql80-community-release-el7-3.noarch.rpm软件包</span>
@@ -381,7 +314,7 @@ hello world
 <span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># rpm -Uvh mysql80-community-release-el7-3.noarch.rpm</span>
 ......
 Updating / installing...
-  1:mysql80-community-release-el7-3  <span class="c1">################################# [100%]</span>
+1:mysql80-community-release-el7-3  <span class="c1">################################# [100%]</span>
 
 <span class="c1"># 这时查看/etc/yum.repos.d可以看到如下：</span>
 <span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># ls  /etc/yum.repos.d | grep mysql</span>
@@ -402,21 +335,45 @@ mysql57-community/x86_64             MySQL 5.7 Community Server              <sp
 <span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># yum install mysql-community-server</span>
 ......
 Installed:
-  mysql-community-libs.x86_64 0:5.7.36-1.el7               mysql-community-libs-compat.x86_64 0:5.7.36-1.el7
-  mysql-community-server.x86_64 0:5.7.36-1.el7
-
-Dependency Installed:
-  mysql-community-client.x86_64 0:5.7.36-1.el7                mysql-community-common.x86_64 0:5.7.36-1.el7
-  numactl-libs.x86_64 0:2.0.12-5.el7
-
-Replaced:
-  mariadb-libs.x86_64 1:5.5.68-1.el7
+mysql-community-libs.x86_64 0:5.7.36-1.el7               mysql-community-libs-compat.x86_64 0:5.7.36-1.el7
+mysql-community-server.x86_64 0:5.7.36-1.el7
+......
 
 </code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>运行并配置mysql</li>
-</ol>
+</div><h3 id="运行mysql">运行mysql</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 开启mysql服务</span>
+<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># service mysqld start</span>
+Redirecting to /bin/systemctl start mysqld.service
+
+<span class="c1"># 查看mysql服务状态</span>
+<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># systemctl status mysqld.service</span>
+● mysqld.service - MySQL Server
+Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/mysqld.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
+Active: active <span class="o">(</span>running<span class="o">)</span> since Sun 2022-01-02 12:21:47 CST<span class="p">;</span> 11s ago
+......
+Jan <span class="m">02</span> 12:21:41 VM-0-11-centos systemd<span class="o">[</span>1<span class="o">]</span>: Starting MySQL Server...
+Jan <span class="m">02</span> 12:21:47 VM-0-11-centos systemd<span class="o">[</span>1<span class="o">]</span>: Started MySQL Server.
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置mysql">配置mysql</h3>
+<h4 id="设置root密码">设置root密码</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -435,64 +392,15 @@ Replaced:
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 开启mysql服务</span>
-<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># service mysqld start</span>
-Redirecting to /bin/systemctl start mysqld.service
-
-<span class="c1"># 查看mysql服务状态</span>
-<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># systemctl status mysqld.service</span>
-● mysqld.service - MySQL Server
-  Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/mysqld.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
-  Active: active <span class="o">(</span>running<span class="o">)</span> since Sun 2022-01-02 12:21:47 CST<span class="p">;</span> 11s ago
-    Docs: man:mysqld<span class="o">(</span>8<span class="o">)</span>
-          http://dev.mysql.com/doc/refman/en/using-systemd.html
-  Process: <span class="m">12593</span> <span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/mysqld --daemonize --pid-file<span class="o">=</span>/var/run/mysqld/mysqld.pid <span class="nv">$MYSQLD_OPTS</span> <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
-  Process: <span class="m">12530</span> <span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/mysqld_pre_systemd <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
-Main PID: <span class="m">12596</span> <span class="o">(</span>mysqld<span class="o">)</span>
-  CGroup: /system.slice/mysqld.service
-          └─12596 /usr/sbin/mysqld --daemonize --pid-file<span class="o">=</span>/var/run/mysqld/mysqld.pid
-
-Jan <span class="m">02</span> 12:21:41 VM-0-11-centos systemd<span class="o">[</span>1<span class="o">]</span>: Starting MySQL Server...
-Jan <span class="m">02</span> 12:21:47 VM-0-11-centos systemd<span class="o">[</span>1<span class="o">]</span>: Started MySQL Server.
-
-<span class="c1"># 获取初始mysql为root生成的默认密码并登录mysql</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 获取初始mysql为root生成的默认密码并登录mysql</span>
 <span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># grep &#39;temporary password&#39; /var/log/mysqld.log</span>
 2022-01-02T04:21:43.962084Z <span class="m">1</span> <span class="o">[</span>Note<span class="o">]</span> A temporary password is generated <span class="k">for</span> root@localhost: mkjhMuJBe3,%
+<span class="c1"># 则默认密码为mkjhMuJBe3,%</span>
 
 <span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># mysql -uroot -p</span>
-Enter password: <span class="c1"># 输入mkjhMuJBe3,%</span>
+Enter password: <span class="c1"># 输入默认密码</span>
 Welcome to the MySQL monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
 Your MySQL connection id is <span class="m">3</span>
 Server version: 5.7.36
@@ -502,22 +410,37 @@ mysql&gt;
 <span class="c1"># 修改root账户登录密码</span>
 mysql&gt; ALTER USER <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;658766@Jzh&#39;</span><span class="p">;</span>
 Query OK, <span class="m">0</span> rows affected <span class="o">(</span>0.00 sec<span class="o">)</span>
-
-<span class="c1"># 允许远程访问</span>
-mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;658766@Jzh&#39;</span> WITH GRANT OPTION<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="设置允许远程访问mysql">设置允许远程访问mysql</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;658766@Jzh&#39;</span> WITH GRANT OPTION<span class="p">;</span>
 Query OK, <span class="m">0</span> rows affected, <span class="m">1</span> warning <span class="o">(</span>0.00 sec<span class="o">)</span>
 mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
 Query OK, <span class="m">0</span> rows affected <span class="o">(</span>0.00 sec<span class="o">)</span>
-
-<span class="c1"># 设置开机自启动mysql</span>
-<span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># systemctl enable mysqld</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="设置开机自启动mysql">设置开机自启动mysql</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># systemctl enable mysqld</span>
 <span class="o">[</span>root@VM-0-11-centos ~<span class="o">]</span><span class="c1"># systemctl daemon-reload</span>
 
 </code></pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li>PLUS： mysql设置编码为utf-8</li>
-</ol>
+</div><h4 id="设置mysql默认编码为utf-8">设置mysql默认编码为utf-8</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -606,14 +529,10 @@ mysql&gt; SHOW VARIABLES LIKE <span class="s1">&#39;character%&#39;</span><span 
 <span class="m">8</span> rows in <span class="nb">set</span> <span class="o">(</span>0.01 sec<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="4">
-<li>建立数据库并新建表。</li>
-</ol>
+</div><h4 id="建立数据库并新建表">建立数据库并新建表。</h4>
 <p>通过sql脚本快速建成。</p>
 <h2 id="生成上传并运行jar包项目">生成，上传并运行JAR包项目</h2>
-<ol>
-<li>上传JAR包项目</li>
-</ol>
+<h3 id="上传jar包项目">上传JAR包项目</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -636,9 +555,7 @@ mysql&gt; SHOW VARIABLES LIKE <span class="s1">&#39;character%&#39;</span><span 
 chmod <span class="m">777</span> /app
 </code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>重新指定application配置文件</li>
-</ol>
+</div><h3 id="新建并编辑application配置文件">新建并编辑application配置文件</h3>
 <p>由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -652,12 +569,12 @@ chmod <span class="m">777</span> /app
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">~~~~~~~~~</span><span class="w">
-</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">static-locations</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="l">classpath:static/</span><span class="w">
-</span><span class="w">            </span>- <span class="l">file:/app/static/</span><span class="w">
+</span><span class="w"></span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">~~~~~~~~~</span><span class="w">
+</span><span class="w"></span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">static-locations</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">classpath:static/</span><span class="w">
+</span><span class="w">    </span>- <span class="l">file:/app/static/</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -672,10 +589,8 @@ chmod <span class="m">777</span> /app
 application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 </code></pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li>运行项目</li>
-</ol>
-<p>确保需要的端口已经开启</p>
+</div><h3 id="运行项目">运行项目</h3>
+<h4 id="确保需要的端口开启">确保需要的端口开启</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -684,7 +599,9 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">netstat -ntlp
 </code></pre></td></tr></table>
 </div>
-</div><p>值得注意的一点是，在某云上购买的主机可能带有安全组，其优先级更高，所以想要开放8080端口，还得现在安全组那里先添加入站规则以放通8080端口。同样的，3306端口也一样要添加，否则同样是连接不上滴。</p>
+</div><h4 id="指定安全组规则">指定安全组规则</h4>
+<p>值得注意的一点是，在某云上购买的主机可能带有安全组，其优先级更高，所以想要开放8080端口，还得现在安全组那里先添加入站规则以放通8080端口。同样的，3306端口也一样要添加，否则同样是连接不上滴。</p>
+<h4 id="部署运行jar包">部署运行JAR包</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -706,9 +623,7 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 </code></pre></td></tr></table>
 </div>
 </div><p>这样即使关闭终端项目也仍旧运行着！</p>
-<ol start="4">
-<li>更新项目</li>
-</ol>
+<h3 id="更新项目">更新项目</h3>
 <p>首先删除原来的jar包并上传新的jar包。</p>
 <p>然后杀死原本进程并运行jar包：</p>
 <div class="highlight"><div class="chroma">
@@ -758,7 +673,9 @@ nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar <span class="p">&amp;</span>
 <span class="o">[</span>root@VM-0-11-centos app<span class="o">]</span><span class="c1"># sh restart.sh</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>OVER.</p>
+</div><h2 id="总结">总结</h2>
+<p>通过记录项目的完整部署运行过程，方便以后参考。</p>
+<p>OVER.</p>
 <p><strong>作者: Jiang Zhihang</strong></p>
 <p><strong>网站: <a class="link" href="https://akynazh.site"  target="_blank" rel="noopener"
     >AKYNAZH</a></strong></p>
@@ -1070,9 +987,48 @@ nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar <span class="p">&amp;</span>
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li><a href="#配置java环境">配置Java环境</a></li>
-    <li><a href="#配置mysql环境">配置mysql环境</a></li>
-    <li><a href="#生成上传并运行jar包项目">生成，上传并运行JAR包项目</a></li>
+    <li><a href="#配置java环境">配置Java环境</a>
+      <ol>
+        <li><a href="#获取jdk">获取JDK</a></li>
+        <li><a href="#配置环境变量">配置环境变量</a>
+          <ol>
+            <li><a href="#linux相关配置文件解析">Linux相关配置文件解析</a></li>
+            <li><a href="#编辑etcbashrc文件">编辑/etc/bashrc文件</a></li>
+            <li><a href="#验证java环境">验证Java环境：</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#配置mysql环境">配置mysql环境</a>
+      <ol>
+        <li><a href="#yum方式安装mysql57">yum方式安装mysql57</a></li>
+        <li><a href="#运行mysql">运行mysql</a></li>
+        <li><a href="#配置mysql">配置mysql</a>
+          <ol>
+            <li><a href="#设置root密码">设置root密码</a></li>
+            <li><a href="#设置允许远程访问mysql">设置允许远程访问mysql</a></li>
+            <li><a href="#设置开机自启动mysql">设置开机自启动mysql</a></li>
+            <li><a href="#设置mysql默认编码为utf-8">设置mysql默认编码为utf-8</a></li>
+            <li><a href="#建立数据库并新建表">建立数据库并新建表。</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#生成上传并运行jar包项目">生成，上传并运行JAR包项目</a>
+      <ol>
+        <li><a href="#上传jar包项目">上传JAR包项目</a></li>
+        <li><a href="#新建并编辑application配置文件">新建并编辑application配置文件</a></li>
+        <li><a href="#运行项目">运行项目</a>
+          <ol>
+            <li><a href="#确保需要的端口开启">确保需要的端口开启</a></li>
+            <li><a href="#指定安全组规则">指定安全组规则</a></li>
+            <li><a href="#部署运行jar包">部署运行JAR包</a></li>
+          </ol>
+        </li>
+        <li><a href="#更新项目">更新项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ol>
 </nav>
                 </div>
