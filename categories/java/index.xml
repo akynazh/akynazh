@@ -6,7 +6,16 @@
     <description>Recent content in JAVA on Akynazh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jan 2022 00:30:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 00:38:12 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <link>https://akynazh.site/p/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/p/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <description>Author: akynazh 个人网站: akynazh 在进行上传文件时，一般会先获取项目类路径： 1 2 File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下： 如果单纯</description>
+    </item>
+    
     <item>
       <title>Linux主机部署springboot项目全过程</title>
       <link>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
