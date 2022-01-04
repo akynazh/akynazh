@@ -9,7 +9,7 @@
 <meta property='og:description' content='包括了linux上java，mysql环境搭建，部署jar项目等过程。'>
 <meta property='og:url' content='https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/'>
 <meta property='og:site_name' content='Akynazh'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='springboot' /><meta property='article:tag' content='java' /><meta property='article:published_time' content='2022-01-03T00:30:25&#43;08:00'/><meta property='article:modified_time' content='2022-01-03T00:30:25&#43;08:00'/><meta property='og:image' content='https://akynazh.site/28.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='Spring Boot' /><meta property='article:tag' content='Java' /><meta property='article:published_time' content='2022-01-03T00:30:25&#43;08:00'/><meta property='article:modified_time' content='2022-01-03T00:30:25&#43;08:00'/><meta property='og:image' content='https://akynazh.site/28.jpg' />
 <meta name="twitter:site" content="@https://twitter.com/aC5b6xyu2SytCOT">
     <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Linux主机部署springboot项目全过程">
 <meta name="twitter:description" content="包括了linux上java，mysql环境搭建，部署jar项目等过程。"><meta name="twitter:card" content="summary_large_image">
@@ -569,12 +569,12 @@ chmod <span class="m">777</span> /app
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">datasource</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">~~~~~~~~~</span><span class="w">
-</span><span class="w"></span><span class="nt">resources</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">static-locations</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="l">classpath:static/</span><span class="w">
-</span><span class="w">    </span>- <span class="l">file:/app/static/</span><span class="w">
+</span><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">......</span><span class="w">
+</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">static-locations</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="l">classpath:static/</span><span class="w">
+</span><span class="w">            </span>- <span class="l">file:/app/static/</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -687,11 +687,11 @@ nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar <span class="p">&amp;</span>
     
     <section class="article-tags">
         
-            <a href="/tags/linux/">linux</a>
+            <a href="/tags/linux/">Linux</a>
         
-            <a href="/tags/springboot/">springboot</a>
+            <a href="/tags/spring-boot/">Spring Boot</a>
         
-            <a href="/tags/java/">java</a>
+            <a href="/tags/java/">Java</a>
         
     </section>
 

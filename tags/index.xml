@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 03 Jan 2022 00:38:12 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>java</title>
+      <title>Java</title>
       <link>https://akynazh.site/tags/java/</link>
       <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://akynazh.site/tags/linux/</link>
       <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
       
@@ -26,16 +26,16 @@
     </item>
     
     <item>
-      <title>springboot</title>
-      <link>https://akynazh.site/tags/springboot/</link>
+      <title>Spring Boot</title>
+      <link>https://akynazh.site/tags/spring-boot/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/springboot/</guid>
+      <guid>https://akynazh.site/tags/spring-boot/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>redis</title>
+      <title>Redis</title>
       <link>https://akynazh.site/tags/redis/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
@@ -44,7 +44,7 @@
     </item>
     
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://akynazh.site/tags/git/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
@@ -53,7 +53,7 @@
     </item>
     
     <item>
-      <title>shell</title>
+      <title>Shell</title>
       <link>https://akynazh.site/tags/shell/</link>
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
@@ -80,7 +80,7 @@
     </item>
     
     <item>
-      <title>cmd</title>
+      <title>Cmd</title>
       <link>https://akynazh.site/tags/cmd/</link>
       <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
       
@@ -89,7 +89,7 @@
     </item>
     
     <item>
-      <title>window</title>
+      <title>Window</title>
       <link>https://akynazh.site/tags/window/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
@@ -107,16 +107,16 @@
     </item>
     
     <item>
-      <title>bat</title>
-      <link>https://akynazh.site/tags/bat/</link>
+      <title>Batch</title>
+      <link>https://akynazh.site/tags/batch/</link>
       <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/bat/</guid>
+      <guid>https://akynazh.site/tags/batch/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://akynazh.site/tags/hugo/</link>
       <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
       
@@ -125,20 +125,20 @@
     </item>
     
     <item>
-      <title>web</title>
-      <link>https://akynazh.site/tags/web/</link>
+      <title>后端开发</title>
+      <link>https://akynazh.site/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/web/</guid>
+      <guid>https://akynazh.site/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>cpp</title>
-      <link>https://akynazh.site/tags/cpp/</link>
+      <title>C&#43;&#43;</title>
+      <link>https://akynazh.site/tags/c&#43;&#43;/</link>
       <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/cpp/</guid>
+      <guid>https://akynazh.site/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
@@ -148,15 +148,6 @@
       <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SSH</title>
-      <link>https://akynazh.site/tags/ssh/</link>
-      <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/ssh/</guid>
       <description></description>
     </item>
     
