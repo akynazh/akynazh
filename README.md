@@ -1,6 +1,6 @@
 # My Personal Blog
 
-## Please Visit [Akynazh](https://akynazh.site)
+## Please visit [AKYNAZH](https://akynazh.site)
 
-### Created And Developed By Roman Adams(Akynazh)
+### Developed by Jiang Zhihang
 
