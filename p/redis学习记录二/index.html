@@ -8,13 +8,12 @@
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Redis学习记录（二）'>
 <meta property='og:description' content='Author: akynazh 个人网站: akynazh 事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获'>
 <meta property='og:url' content='https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/'>
-<meta property='og:site_name' content='Akynazh'>
+<meta property='og:site_name' content='AKYNAZH'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Redis' /><meta property='article:published_time' content='2021-12-20T10:15:05&#43;08:00'/><meta property='article:modified_time' content='2021-12-20T10:15:05&#43;08:00'/><meta property='og:image' content='https://akynazh.site/66.jpg' />
-<meta name="twitter:site" content="@https://twitter.com/aC5b6xyu2SytCOT">
-    <meta name="twitter:creator" content="@https://twitter.com/aC5b6xyu2SytCOT"><meta name="twitter:title" content="Redis学习记录（二）">
+<meta name="twitter:title" content="Redis学习记录（二）">
 <meta name="twitter:description" content="Author: akynazh 个人网站: akynazh 事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://akynazh.site/66.jpg' />
-    <link rel="shortcut icon" href="/image/avatar.jpg" />
+    <link rel="shortcut icon" href="avatar.jpg" />
 <style>
     :root {
         --article-font-family: "Noto Serif SC", var(--base-font-family);
@@ -356,10 +355,12 @@ Reading messages... (press Ctrl-C to quit)
         
             2020 - 
         
-        2022 Akynazh
+        2022 AKYNAZH
     </section>
     
     <section class="powerby">
+        
+            Let It Go <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
