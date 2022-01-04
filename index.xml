@@ -196,6 +196,12 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 &lt;p&gt;&lt;strong&gt;网站: &lt;a class=&#34;link&#34; href=&#34;https://akynazh.site&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;AKYNAZH&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注：部署环境为centos7.9版本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作步骤如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置Java环境&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置mysql环境&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 生成，上传并运行JAR包项目&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;配置java环境&#34;&gt;配置Java环境&lt;/h2&gt;
 &lt;h3 id=&#34;获取jdk&#34;&gt;获取JDK&lt;/h3&gt;
 &lt;ul&gt;

@@ -22,7 +22,7 @@
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
       
       <guid>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-      <description>作者: Jiang Zhihang 网站: AKYNAZH 注：部署环境为centos7.9版本 配置Java环境 获取JDK 下载jdk压缩包： jdk-8u311-linux-x64.tar.gz 将jdk压缩包通过winsp上传至主机 解</description>
+      <description>作者: Jiang Zhihang 网站: AKYNAZH 注：部署环境为centos7.9版本 操作步骤如下： 配置Java环境 配置mysql环境 生成，上传并运行JAR包项目 配置Jav</description>
     </item>
     
     <item>
