@@ -335,11 +335,11 @@
 <li>如果单纯运行一个java项目：</li>
 </ul>
 <p>获得路径为：</p>
-<p>${project}/target/classes</p>
+<p><code>${project}/target/classes</code></p>
 <ul>
 <li>如果是运行jar包，且是在Linux系统上，则获得路径大致为：</li>
 </ul>
-<p>&hellip;/${jar包名}!/BOOT-INF/classes!  [centos7.9下]</p>
+<p><code>.../${jar包名}!/BOOT-INF/classes!</code>  [centos7.9下]</p>
 <p>所以如果是jar包启动并上传文件，则无法正确放到类路径下。</p>
 <p>所以需指定新的上传路径。</p>
 <p>在如下路径中：</p>
@@ -378,13 +378,13 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 <ul>
 <li>linux下：</li>
 </ul>
-<p>返回/app/static/${uploadType}/${fileName}</p>
-<p>e.g. /app/static/avatar/test.jpg</p>
+<p>返回<code>/app/static/${uploadType}/${fileName}</code></p>
+<p>e.g. <code>/app/static/avatar/test.jpg</code></p>
 <ul>
 <li>window下：</li>
 </ul>
-<p>返回 ${project}/target/classes/static/${uploadType}/${fileName}</p>
-<p>e.g. ${project}/target/classes/static/avatar/test.jpg</p>
+<p>返回 <code>${project}/target/classes/static/${uploadType}/${fileName}</code></p>
+<p>e.g. <code>${project}/target/classes/static/avatar/test.jpg</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1

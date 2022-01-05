@@ -31,11 +31,11 @@
 &lt;li&gt;如果单纯运行一个java项目：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;获得路径为：&lt;/p&gt;
-&lt;p&gt;${project}/target/classes&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;${project}/target/classes&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果是运行jar包，且是在Linux系统上，则获得路径大致为：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;hellip;/${jar包名}!/BOOT-INF/classes!  [centos7.9下]&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.../${jar包名}!/BOOT-INF/classes!&lt;/code&gt;  [centos7.9下]&lt;/p&gt;
 &lt;p&gt;所以如果是jar包启动并上传文件，则无法正确放到类路径下。&lt;/p&gt;
 &lt;p&gt;所以需指定新的上传路径。&lt;/p&gt;
 &lt;p&gt;在如下路径中：&lt;/p&gt;
@@ -74,13 +74,13 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 &lt;ul&gt;
 &lt;li&gt;linux下：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;返回/app/static/${uploadType}/${fileName}&lt;/p&gt;
-&lt;p&gt;e.g. /app/static/avatar/test.jpg&lt;/p&gt;
+&lt;p&gt;返回&lt;code&gt;/app/static/${uploadType}/${fileName}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;e.g. &lt;code&gt;/app/static/avatar/test.jpg&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;window下：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;返回 ${project}/target/classes/static/${uploadType}/${fileName}&lt;/p&gt;
-&lt;p&gt;e.g. ${project}/target/classes/static/avatar/test.jpg&lt;/p&gt;
+&lt;p&gt;返回 &lt;code&gt;${project}/target/classes/static/${uploadType}/${fileName}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;e.g. &lt;code&gt;${project}/target/classes/static/avatar/test.jpg&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -922,11 +922,8 @@ root     &lt;span class=&#34;m&#34;&gt;26558&lt;/span&gt; &lt;span class=&#34;m&
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;window.location.host:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;lsquo;&lt;a class=&#34;link&#34; href=&#34;https://akynazh.site/p/linuxTalk%27&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://akynazh.site/p/linuxTalk&#39;&lt;/a&gt; -&amp;gt; &amp;lsquo;akynazh.site&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;http://localhost:8080/index&amp;rsquo; -&amp;gt; &amp;lsquo;localhost:8080&amp;rsquo;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;&#39;https://akynazh.site/p/linuxTalk&#39; -&amp;gt; &#39;akynazh.site&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;http://localhost:8080/index&#39; -&amp;gt; &#39;localhost:8080&#39;&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2511,7 +2508,7 @@ public int hashCode() {
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;记事本不好用呀，还是vscode香，如下~&lt;/p&gt;
 &lt;p&gt;使用vscode打开编辑1.py，首先需配置环境变量&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(${vscodepath}\bin)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(${vscodepath}\bin)&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -2553,7 +2550,7 @@ public int hashCode() {
 &lt;li&gt;
 &lt;p&gt;右键Vscode并新建项command&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;编辑command默认选项值为： ${vscodepath}\Code.exe %1&lt;/li&gt;
+&lt;li&gt;编辑command默认选项值为： &lt;code&gt;${vscodepath}\Code.exe %1&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;%1是可选的参数，这里必须要加，表示作用于该文件。&lt;/p&gt;
 &lt;/li&gt;
@@ -2564,7 +2561,7 @@ public int hashCode() {
 &lt;p&gt;编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)&lt;/p&gt;
+&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：&lt;code&gt;${vscodepath}\Code.exe&lt;/code&gt; (有些可以这样，但一般为ico文件)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -2580,7 +2577,7 @@ public int hashCode() {
 &lt;li&gt;
 &lt;p&gt;右键Terminal 新建项command&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;编辑command默认选项值为：${terminalpath}\wt.exe&lt;/li&gt;
+&lt;li&gt;编辑command默认选项值为：&lt;code&gt;${terminalpath}\wt.exe&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2590,7 +2587,7 @@ public int hashCode() {
 &lt;p&gt;编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：${terminalicon}&lt;/p&gt;
+&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：&lt;code&gt;${terminalicon}&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
