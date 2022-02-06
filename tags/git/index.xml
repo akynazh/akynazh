@@ -6,14 +6,19 @@
     <description>Recent content in Git on AKYNAZH</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Jzh</copyright>
     <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git实用操作（一）</title>
-      <link>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
+      <link>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
-      <description>Author: akynazh 个人网站: akynazh git初次拉取远程仓库 从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码 &amp;gt; git init # 初始化仓库，生成</description>
+      <guid>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
+      <description>git初次拉取远程仓库  从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码  &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程分支 &amp;gt; git push origin master # 将本地分支推送到远程分支 这里执行完 git commit -m “init”后，我们查看一下本地分支信息：
+&amp;gt; git branch * master 可见git自动为我们本地创建了一个master分支。
+执行完git push origin master后，我们查看一下本地分支与远程分支的映射关系：
+&amp;gt; git branch -a * master remotes/origin/master &amp;gt; git branch -vv * master 3a31f4c init 可见并没有产生映射。
+所以如果直接使用git push提交代码会报错，因为git不知道你要提交到哪个远程分支。</description>
     </item>
     
   </channel>

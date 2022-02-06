@@ -1,6 +1,6 @@
-# My Personal Blog
+### My Personal Blog
 
-## Please visit [AKYNAZH](https://akynazh.site)
+#### Please visit [AKYNAZH](https://akynazh.site)
 
-### Developed by Jiang Zhihang
+##### Developed by Jiang Zhihang
 

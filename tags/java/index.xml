@@ -6,50 +6,134 @@
     <description>Recent content in Java on AKYNAZH</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Jzh</copyright>
     <lastBuildDate>Mon, 03 Jan 2022 00:38:12 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux上部署JAR包项目后的文件上传问题</title>
-      <link>https://akynazh.site/p/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <link>https://akynazh.site/posts/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
-      <description>Author: akynazh 个人网站: akynazh 在进行上传文件时，一般会先获取项目类路径： 1 2 File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下： 如果单纯</description>
+      <guid>https://akynazh.site/posts/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <description>在进行上传文件时，一般会先获取项目类路径：
+1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
+ 如果单纯运行一个java项目：  获得路径为：
+${project}/target/classes
+ 如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
+所以如果是jar包启动并上传文件，则无法正确放到类路径下。
+所以需指定新的上传路径。
+在如下路径中：
+1[root@VM-0-11-centos app]# ls 2application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
+1spring: 2 resources: 3 static-locations: 4 - classpath:static/ 5 - file:/app/static/ 然后在文件上传是指定上传路径即可。
+这里编写一个工具类如下：
+关注getUploadPath方法，它用于获取上传路径。
+首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
+比如，要上传一个头像：
+ linux下：  返回/app/static/${uploadType}/${fileName}
+e.g. /app/static/avatar/test.jpg
+ window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}
+e.g. ${project}/target/classes/static/avatar/test.jpg
+1public class FileUtils { 2 3 /** 4* @description: 获取上传路径 5* @author Jiang Zhihang 6* @date 2022/1/2 23:32 7* @param type 上传类型，如avatar，video 8* @param fileName 上传文件的名称 9*/ 10 public static String getUploadPath(String type, String fileName) throws FileNotFoundException, UnsupportedEncodingException { 11 String osName = System.</description>
     </item>
     
     <item>
       <title>Linux主机部署springboot项目全过程</title>
-      <link>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <link>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-      <description>作者: Jiang Zhihang 网站: AKYNAZH 注：部署环境为centos7.9版本 操作步骤如下： 配置Java环境 配置mysql环境 生成，上传并运行JAR包项目 配置Jav</description>
+      <guid>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <description>注：部署环境为centos7.9版本
+操作步骤如下：
+ 配置Java环境 配置mysql环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+  将jdk压缩包通过winsp上传至主机
+  解压缩jdk压缩包
+1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
+1[root@VM-0-11-centos ~]# mkdir /usr/local/java 2[root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java   配置环境变量 Linux相关配置文件解析 bashrc部分:
+ /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:
+ /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot中通过cookie给前端传递错误消息值</title>
+      <link>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</link>
+      <pubDate>Fri, 31 Dec 2021 15:41:50 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</guid>
+      <description>后端操作方法 这里我们需要后端在接收一些请求并做出判断后，向前端反馈请求情况。
+考虑到安全性，一般是不允许前端访问session值的，所以我们通过cookie给前端反馈：
+如下是一个controller方法中的片段：
+1response.addCookie(new Cookie(&amp;#34;errorMsg&amp;#34;, &amp;#34;邮箱已经被注册&amp;#34;)); 2request.getRequestDispatcher(&amp;#34;/success&amp;#34;).forward(request, response); 3return null; 我们给前端添加了一个cookie值。
+这里必须注意的是，不能在添加完cookie后进行重定向，否则无法正确成功传递cookie值。必须使用请求转发的方式，这也刚好和表单请求失败后的处理情况相合。
+前端操作方法 下面我们通过javascript方法进行获取并发出提示并删除cookie：
+注意，执行完提示后必须删除该cookie值，否则以后访问页面将一直提示。
+1$(document).ready(function () { 2 let errorMsg = $.cookie(&amp;#39;errorMsg&amp;#39;); 3 if (errorMsg != null) { 4 let myPath = window.location.host + &amp;#39;/&amp;#39;; 5 $(&amp;#39;.alert&amp;#39;).html(errorMsg).addClass(&amp;#39;alert-info&amp;#39;).show().delay(1500).fadeOut(); 6 $.cookie(&amp;#39;errorMsg&amp;#39;, &amp;#39;&amp;#39;, {path: myPath, expires: -1}); 7 } 8}) 这里很关键的是需要指定path值，不同路径下生成的是不同的cookie值，即使它们同名为errorMsg。
+所以，为了删除同为errorMsg名的cookie值，path必须指定为所有路径。
+这里有个坑， &amp;lsquo;/&amp;rsquo; 似乎不能指定为所有路径, 而使用完整路径则可以。
+关于获取完整路径的方法：
+1let myPath = window.location.host + &amp;#39;/&amp;#39;; window.location.host:
+&#39;https://akynazh.site/p/linuxTalk&#39; -&amp;gt; &#39;akynazh.site&#39;
+&#39;http://localhost:8080/index&#39; -&amp;gt; &#39;localhost:8080&#39;</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot中关于controller方法返回值的辨析</title>
+      <link>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</link>
+      <pubDate>Fri, 31 Dec 2021 15:07:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</guid>
+      <description>返回值为重定向 1return &amp;#34;redirect:/success&amp;#34; 重定向到/success请求。也就是说还要执行/success请求对应的方法。
+一般表单提交成功，可以使用重定向请求，避免用户多次发起请求。
+而如果表单提交失败，一般可以使用请求转发到原来的页面，也可以使用下面返回视图对象的方法。
+但是，值得注意的是，只是返回视图对象的话，必须注意一些问题：
+如下请求路径：
+/theater/watch?videoId=1 如果请求失败：
+ 可以进行重定向到/theater。 而如果不进行重定向，只是返回视图对象：  如果原来是get请求，用户按F5刷新页面则会重复访问请求，所以必须导向正确的URL。 如果原来是post请求，且url路径不改变则可以这样，如果url路径不变用户刷新将导致404错误。    因此，返回视图对象必须注意一些路径上的细节。
+返回视图对象 1return &amp;#34;success&amp;#34; 注意必须已经启动了thymeleaf引擎。
+该方法将转发到 classpath:/templates/success.html页面。
+值得注意的是，如果加载success页面含有需要解析的modelAttribute中的对象，则该方法中必须往modelAttribute添加该对象，否则会报错。
+所以如果多个页面都可能访问到这个也页面，则最好别使用modelAttribute注入对象，如果这样必须先注入视图对象所需要的model对象。
+否则一律需要redirect到有注入该对象的方法中去才能正确解析页面。
+另外，可以通过将model对象放到session中，同时视图对象中通过session值来获取对象，即可。</description>
     </item>
     
     <item>
       <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
-      <link>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
-      <description>Author: akynazh 个人网站: akynazh 提出问题 先看一个例子： 当两个人年龄相同时，我们认为这两个对象相同： class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;quot;Person{&amp;quot;</description>
+      <guid>https://akynazh.site/posts/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
+      <description>提出问题 先看一个例子：
+当两个人年龄相同时，我们认为这两个对象相同：
+class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;quot;Person{&amp;quot; + &amp;quot;age=&amp;quot; + age + &amp;quot;, name=&#39;&amp;quot; + name + &#39;\&#39;&#39; + &#39;}&#39;; } @Override public boolean equals(Object o) { if (this == o) return true; if (o == null || getClass() != o.getClass()) return false; Person person = (Person) o; return age == person.</description>
     </item>
     
     <item>
       <title>equals方法和==运算符的作用区别</title>
-      <link>https://akynazh.site/p/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
+      <link>https://akynazh.site/posts/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
-      <description>Author: akynazh 个人网站: akynazh equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点: == 比较时进行地址的比较 equals 比较时进行值的比较</description>
+      <guid>https://akynazh.site/posts/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
+      <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
+  == 比较时进行地址的比较
+  equals 比较时进行值的比较
+  1String a = &amp;#34;123&amp;#34;; 2String b = &amp;#34;123&amp;#34;; 3System.out.println(a.equals(b)); // true 4System.out.println(a == b); // true 5 6String a1 = new String(&amp;#34;123&amp;#34;); 7String b1 = new String(&amp;#34;123&amp;#34;); 8System.out.println(a1.equals(b1)); // true 9System.out.println(a1 == b1); // false 好像没问题。
+然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较
+1public boolean equals(Object obj) { 2 return (this == obj); 3} 再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！
+1public boolean equals(Object anObject) { 2 if (this == anObject) { 3 return true; 4 } 5 if (anObject instanceof String) { 6 String aString = (String)anObject; 7 if (coder() == aString.</description>
     </item>
     
     <item>
       <title>Java中通过反射获取带参数类型的方法</title>
-      <link>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-      <description>Author: akynazh 个人网站: akynazh 问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成</description>
+      <guid>https://akynazh.site/posts/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。通过了解，发现可以采用导入Gson包的方式调用方法实现这个功能：
+Person p = new Person(1, &amp;quot;jzh&amp;quot;); Gson gson = new Gson(); String p_json = gson.toJson(p); Person p1 = gson.fromJson(p_json, Person.class); 从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：
+1ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); 2people.add(new Person(1, &amp;#34;jzh&amp;#34;)); 3people.add(new Person(2, &amp;#34;zh&amp;#34;)); 4people.add(new Person(3, &amp;#34;z&amp;#34;)); 5String ps_json = gson.toJson(people); 6ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json,new TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt;() { 7 }.getType()); 这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken实现。
+1class MyType extends TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt; {} 2 3ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json, new MyType().getType()); 那么问题来了，这里底层是怎么实现转换的呢？为什么要使用TypeToken?
+问题的思考与解决 首先我们通过阅读源码寻找答案。
+gson源码中的TypeToken类:
+1public class TypeToken&amp;lt;T&amp;gt; { 2 final Class&amp;lt;?</description>
     </item>
     
   </channel>

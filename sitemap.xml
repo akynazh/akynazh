@@ -2,207 +2,131 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://akynazh.site/about/</loc>
+    <lastmod>2022-02-06T16:38:34+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/share/</loc>
+    <lastmod>2022-02-06T16:38:34+08:00</lastmod>
+  </url><url>
     <loc>https://akynazh.site/</loc>
-    <lastmod>2022-01-03T00:38:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2022-01-03T00:38:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2022-01-03T00:38:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/java/</loc>
     <lastmod>2022-01-03T00:38:12+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/java/</loc>
     <lastmod>2022-01-03T00:38:12+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/linux/</loc>
+    <loc>https://akynazh.site/posts/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2022-01-03T00:38:12+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2022-01-03T00:38:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/post/</loc>
+    <loc>https://akynazh.site/posts/</loc>
     <lastmod>2022-01-03T00:38:12+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/</loc>
     <lastmod>2022-01-03T00:38:12+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</loc>
+    <loc>https://akynazh.site/tags/linux/</loc>
+    <lastmod>2022-01-03T00:30:25+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2022-01-03T00:30:25+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/spring-boot/</loc>
     <lastmod>2022-01-03T00:30:25+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/categories/linux/</loc>
+    <loc>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</loc>
     <lastmod>2022-01-03T00:27:58+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</loc>
-    <lastmod>2022-01-03T00:27:58+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</loc>
+    <loc>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</loc>
     <lastmod>2021-12-31T15:41:50+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</loc>
+    <loc>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</loc>
     <lastmod>2021-12-31T15:07:35+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</loc>
+    <loc>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</loc>
     <lastmod>2021-12-20T10:15:34+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/redis/</loc>
     <lastmod>2021-12-20T10:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</loc>
+    <loc>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</loc>
     <lastmod>2021-12-20T10:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2021-12-20T10:15:05+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</loc>
+    <loc>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</loc>
     <lastmod>2021-12-14T23:40:44+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/git/</loc>
     <lastmod>2021-12-10T18:10:07+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</loc>
+    <loc>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</loc>
     <lastmod>2021-12-10T18:10:07+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</loc>
+    <loc>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</loc>
     <lastmod>2021-12-09T20:33:45+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/shell/</loc>
-    <lastmod>2021-12-09T20:33:45+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
+    <loc>https://akynazh.site/tags/algorithm/</loc>
     <lastmod>2021-12-05T12:34:05+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/%E5%9B%BE%E8%AE%BA/</loc>
+    <loc>https://akynazh.site/posts/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
     <lastmod>2021-12-05T12:34:05+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-12-05T12:34:05+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</loc>
+    <loc>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</loc>
     <lastmod>2021-12-05T00:20:09+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</loc>
+    <loc>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</loc>
     <lastmod>2021-12-03T00:10:38+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://akynazh.site/posts/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-12-02T23:50:44+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://akynazh.site/posts/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-11-26T09:23:27+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</loc>
+    <loc>https://akynazh.site/posts/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2021-11-25T00:21:05+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E5%8E%86%E7%A8%8B/</loc>
+    <loc>https://akynazh.site/tags/life/</loc>
     <lastmod>2021-11-23T18:20:39+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <loc>https://akynazh.site/posts/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2021-11-23T18:20:39+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/%E8%BF%90%E5%8A%A8/</loc>
-    <lastmod>2021-11-23T18:20:39+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/cmd/</loc>
+    <loc>https://akynazh.site/posts/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2021-11-20T18:17:33+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2021-11-20T18:17:33+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/window/</loc>
+    <loc>https://akynazh.site/tags/script/</loc>
     <lastmod>2021-11-20T18:17:33+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/window/</loc>
     <lastmod>2021-11-20T18:10:30+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</loc>
+    <loc>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</loc>
     <lastmod>2021-11-20T18:10:30+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/</loc>
+    <loc>https://akynazh.site/posts/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2021-11-18T23:47:15+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2021-11-18T23:47:15+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/batch/</loc>
+    <loc>https://akynazh.site/posts/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</loc>
     <lastmod>2021-11-18T19:41:03+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/hugo/</loc>
-    <lastmod>2021-11-18T19:41:03+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</loc>
-    <lastmod>2021-11-18T19:41:03+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2021-11-18T19:41:03+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://akynazh.site/posts/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-11-17T23:30:04+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2021-11-17T23:30:04+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
+    <loc>https://akynazh.site/posts/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
     <lastmod>2021-11-17T17:55:32+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/page/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/c&#43;&#43;/</loc>
+    <loc>https://akynazh.site/posts/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2020-12-05T12:37:32+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/%E5%85%B3%E4%BA%8Echar-char-string%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
-    <lastmod>2020-12-05T12:37:32+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2020-12-05T12:37:32+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
+    <loc>https://akynazh.site/posts/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</loc>
     <lastmod>2020-11-28T18:24:12+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</loc>
-    <lastmod>2020-11-28T18:24:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/p/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2020-11-17T17:56:03+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://akynazh.site/posts/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-11-17T17:25:21+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/p/hugo%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%92%8C%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2020-10-17T23:12:51+08:00</lastmod>
+    <loc>https://akynazh.site/tags/c/c&#43;&#43;/</loc>
   </url><url>
-    <loc>https://akynazh.site/categories/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2020-10-17T23:12:51+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/java/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/linux/</loc>
-  </url><url>
-    <loc>https://akynazh.site/search/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/window/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E7%94%9F%E6%B4%BB/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E7%AE%97%E6%B3%95/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E8%84%9A%E6%9C%AC/</loc>
-  </url><url>
-    <loc>https://akynazh.site/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://akynazh.site/categories/</loc>
   </url>
 </urlset>

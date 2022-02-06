@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C/C&#43;&#43; on AKYNAZH</title>
+    <link>https://akynazh.site/tags/c/c&#43;&#43;/</link>
+    <description>Recent content in C/C&#43;&#43; on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright><atom:link href="https://akynazh.site/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于char*, char[], string的理解</title>
+      <link>https://akynazh.site/posts/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>关于char[]与char*的区别 1char s1[] = &amp;#34;abc&amp;#34;; 2cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 3s1[1] = &amp;#39;d&amp;#39;; // 改变值 4cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
+1const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 2cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc 3s2 = &amp;#34;dfs&amp;#34;; // 改变地址 4cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
+以上两者皆可用于函数传值
+1void print_str(const char * str) { 2 printf(&amp;#34;%s\n&amp;#34;, str); 3} 4 5print_str(s1); // adc 6print_str(s2); // dfs 关于string和char[],char*的关系  string是类，string是对一个字符串的引用值  1const char* s1 = &amp;#34;abc&amp;#34;; 2string s = s1; 3cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc 4s += &amp;#34;a&amp;#34;; 5cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca 6cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; 7// abc 证明string只是引用了s1  string引用字符串示例  1const char *s1 = &amp;#34;123&amp;#34;; 2string str1 = s1; // 若要这样赋值s1必须加const 3cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123 4 5char s2[] = &amp;#34;234&amp;#34;; 6string str2 = s2; 7cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234  string转char*  1const char* s1_1 = str1.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,14 +6,31 @@
     <description>Recent content in Window on AKYNAZH</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Jzh</copyright>
     <lastBuildDate>Sat, 20 Nov 2021 18:10:30 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/window/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Window增加右键打开选项</title>
-      <link>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+      <link>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
-      <guid>https://akynazh.site/p/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
-      <description>Author: akynazh 个人网站: akynazh 加入注册表界面 win+R regedit 增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入： 计算机\HKEY_CLASSES_RO</description>
+      <guid>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+      <description>加入注册表界面   win+R
+  regedit
+  增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT*\shell
+  新建项 Vscode
+  右键Vscode并新建项command
+ 编辑command默认选项值为： ${vscodepath}\Code.exe %1  %1是可选的参数，这里必须要加，表示作用于该文件。
+  编辑Vscode值
+  编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）
+  编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)
+    增加目录下右键打开选项 以window terminal作为实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
+  新建项 Terminal
+  右键Terminal 新建项command
+ 编辑command默认选项值为：${terminalpath}\wt.exe    编辑Terminal值
+  编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
+  编辑右键显示图标：新建字符串值icon 添加：${terminalicon}</description>
     </item>
     
   </channel>

@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on AKYNAZH</title>
+    <link>https://akynazh.site/posts/</link>
+    <description>Recent content in Posts on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Mon, 03 Jan 2022 00:38:12 +0800</lastBuildDate><atom:link href="https://akynazh.site/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <link>https://akynazh.site/posts/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <description>在进行上传文件时，一般会先获取项目类路径：
+1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
+ 如果单纯运行一个java项目：  获得路径为：
+${project}/target/classes
+ 如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
+所以如果是jar包启动并上传文件，则无法正确放到类路径下。
+所以需指定新的上传路径。
+在如下路径中：
+1[root@VM-0-11-centos app]# ls 2application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
+1spring: 2 resources: 3 static-locations: 4 - classpath:static/ 5 - file:/app/static/ 然后在文件上传是指定上传路径即可。
+这里编写一个工具类如下：
+关注getUploadPath方法，它用于获取上传路径。
+首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
+比如，要上传一个头像：
+ linux下：  返回/app/static/${uploadType}/${fileName}
+e.g. /app/static/avatar/test.jpg
+ window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}
+e.g. ${project}/target/classes/static/avatar/test.jpg
+1public class FileUtils { 2 3 /** 4* @description: 获取上传路径 5* @author Jiang Zhihang 6* @date 2022/1/2 23:32 7* @param type 上传类型，如avatar，video 8* @param fileName 上传文件的名称 9*/ 10 public static String getUploadPath(String type, String fileName) throws FileNotFoundException, UnsupportedEncodingException { 11 String osName = System.</description>
+    </item>
+    
+    <item>
+      <title>Linux主机部署springboot项目全过程</title>
+      <link>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <description>注：部署环境为centos7.9版本
+操作步骤如下：
+ 配置Java环境 配置mysql环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+  将jdk压缩包通过winsp上传至主机
+  解压缩jdk压缩包
+1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
+1[root@VM-0-11-centos ~]# mkdir /usr/local/java 2[root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java   配置环境变量 Linux相关配置文件解析 bashrc部分:
+ /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:
+ /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作（五）</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</link>
+      <pubDate>Mon, 03 Jan 2022 00:27:58 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</guid>
+      <description>查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。
+结果列出了进程PID，可以通过kill终止占用该端口的程序：
+1kill -9 PID 另外一种方法：
+1[root@VM-0-11-centos ~]# lsof -i:3306 2COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME 3mysqld 14528 mysql 17u IPv6 779103 0t0 TCP *:mysql (LISTEN) 开启与关闭端口 这里实验环境为centos7.9，我采用firewall来实现需求。
+1# 首先打开防火墙服务 2[root@VM-0-11-centos ~]# systemctl start firewalld  3 4# 永久开启80端口 5[root@VM-0-11-centos ~]# firewall-cmd --zone=public --add-port=8080/tcp --permanent  6 7# 使生效 8[root@VM-0-11-centos ~]# firewall-cmd --reload 9 10# 查看已经开启的端口 11[root@VM-0-11-centos ~]# firewall-cmd --zone=public --list-ports 128080/tcp 3306/tcp 80/tcp 13 查看进程 查看所有进程</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot中通过cookie给前端传递错误消息值</title>
+      <link>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</link>
+      <pubDate>Fri, 31 Dec 2021 15:41:50 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</guid>
+      <description>后端操作方法 这里我们需要后端在接收一些请求并做出判断后，向前端反馈请求情况。
+考虑到安全性，一般是不允许前端访问session值的，所以我们通过cookie给前端反馈：
+如下是一个controller方法中的片段：
+1response.addCookie(new Cookie(&amp;#34;errorMsg&amp;#34;, &amp;#34;邮箱已经被注册&amp;#34;)); 2request.getRequestDispatcher(&amp;#34;/success&amp;#34;).forward(request, response); 3return null; 我们给前端添加了一个cookie值。
+这里必须注意的是，不能在添加完cookie后进行重定向，否则无法正确成功传递cookie值。必须使用请求转发的方式，这也刚好和表单请求失败后的处理情况相合。
+前端操作方法 下面我们通过javascript方法进行获取并发出提示并删除cookie：
+注意，执行完提示后必须删除该cookie值，否则以后访问页面将一直提示。
+1$(document).ready(function () { 2 let errorMsg = $.cookie(&amp;#39;errorMsg&amp;#39;); 3 if (errorMsg != null) { 4 let myPath = window.location.host + &amp;#39;/&amp;#39;; 5 $(&amp;#39;.alert&amp;#39;).html(errorMsg).addClass(&amp;#39;alert-info&amp;#39;).show().delay(1500).fadeOut(); 6 $.cookie(&amp;#39;errorMsg&amp;#39;, &amp;#39;&amp;#39;, {path: myPath, expires: -1}); 7 } 8}) 这里很关键的是需要指定path值，不同路径下生成的是不同的cookie值，即使它们同名为errorMsg。
+所以，为了删除同为errorMsg名的cookie值，path必须指定为所有路径。
+这里有个坑， &amp;lsquo;/&amp;rsquo; 似乎不能指定为所有路径, 而使用完整路径则可以。
+关于获取完整路径的方法：
+1let myPath = window.location.host + &amp;#39;/&amp;#39;; window.location.host:
+&#39;https://akynazh.site/p/linuxTalk&#39; -&amp;gt; &#39;akynazh.site&#39;
+&#39;http://localhost:8080/index&#39; -&amp;gt; &#39;localhost:8080&#39;</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot中关于controller方法返回值的辨析</title>
+      <link>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</link>
+      <pubDate>Fri, 31 Dec 2021 15:07:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</guid>
+      <description>返回值为重定向 1return &amp;#34;redirect:/success&amp;#34; 重定向到/success请求。也就是说还要执行/success请求对应的方法。
+一般表单提交成功，可以使用重定向请求，避免用户多次发起请求。
+而如果表单提交失败，一般可以使用请求转发到原来的页面，也可以使用下面返回视图对象的方法。
+但是，值得注意的是，只是返回视图对象的话，必须注意一些问题：
+如下请求路径：
+/theater/watch?videoId=1 如果请求失败：
+ 可以进行重定向到/theater。 而如果不进行重定向，只是返回视图对象：  如果原来是get请求，用户按F5刷新页面则会重复访问请求，所以必须导向正确的URL。 如果原来是post请求，且url路径不改变则可以这样，如果url路径不变用户刷新将导致404错误。    因此，返回视图对象必须注意一些路径上的细节。
+返回视图对象 1return &amp;#34;success&amp;#34; 注意必须已经启动了thymeleaf引擎。
+该方法将转发到 classpath:/templates/success.html页面。
+值得注意的是，如果加载success页面含有需要解析的modelAttribute中的对象，则该方法中必须往modelAttribute添加该对象，否则会报错。
+所以如果多个页面都可能访问到这个也页面，则最好别使用modelAttribute注入对象，如果这样必须先注入视图对象所需要的model对象。
+否则一律需要redirect到有注入该对象的方法中去才能正确解析页面。
+另外，可以通过将model对象放到session中，同时视图对象中通过session值来获取对象，即可。</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作（四）</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</link>
+      <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</guid>
+      <description>添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
+设置密码 在进行useradd后密码还未设定。
+[root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
+[root@VM-0-11-centos /]# useradd vbird [root@VM-0-11-centos /]# echo &amp;quot;658766&amp;quot; | passwd --stdin vbird Changing password for user vbird.</description>
+    </item>
+    
+    <item>
+      <title>Redis学习记录（二）</title>
+      <link>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
+      <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
+      <description>事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获取key 获取指定key keys * # 获取所有key keys pattern # 根据pattern获取key  1- * 代表匹配任意字符 2- ? 代表匹配一个字符 3- [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 4- x 转移字符，例如要匹配星号，问号需要转义的字符  e.</description>
+    </item>
+    
+    <item>
+      <title>Redis学习记录（一）</title>
+      <link>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
+      <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
+      <description>Open, Connect And Config open redis:
+redis-server  connect to redis:
+redis-cli  disconnect:
+redis-cli shutdown show chinese:
+redis-cli --raw  connect to remote redis:
+redis-cli -h host -p port -a password  get redis config:
+config get {config_name}  Data Type list:
+lpush clist redis lpush clist mysql lrange clist 0 100 key:
+127.0.0.1:6379&amp;gt; set mkey sos OK 127.0.0.1:6379&amp;gt; get mkey &amp;quot;sos&amp;quot; 127.0.0.1:6379&amp;gt; del mkey (integer) 1 127.0.0.1:6379&amp;gt; get mkey (nil) keys: 接偶数个参数，一一对应。</description>
+    </item>
+    
+    <item>
+      <title>Git实用操作（一）</title>
+      <link>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
+      <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
+      <description>git初次拉取远程仓库  从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码  &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程分支 &amp;gt; git push origin master # 将本地分支推送到远程分支 这里执行完 git commit -m “init”后，我们查看一下本地分支信息：
+&amp;gt; git branch * master 可见git自动为我们本地创建了一个master分支。
+执行完git push origin master后，我们查看一下本地分支与远程分支的映射关系：
+&amp;gt; git branch -a * master remotes/origin/master &amp;gt; git branch -vv * master 3a31f4c init 可见并没有产生映射。
+所以如果直接使用git push提交代码会报错，因为git不知道你要提交到哪个远程分支。</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作（三）</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</link>
+      <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</guid>
+      <description>shell参数  $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数  修改vim中tab长度 设置vim中tab长度
+vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST 2021 [root@VM-0-11-centos tmp]# date --date=&#39;2 days ago&#39; Tue Dec 7 19:34:07 CST 2021 test命令  -e exist or not -f file or not -d directory or not -r can read or not &amp;mdash;similar: -x -w -s exist and not blank -nt newer than &amp;mdash; -ot -eq equal &amp;mdash; -ne -gt greater than &amp;mdash; -lt -ge greater than or equal &amp;mdash;le -z string if null -&amp;gt; true -n string if null -&amp;gt; false -a and -o or !</description>
+    </item>
+    
+    <item>
+      <title>图的着色问题汇总</title>
+      <link>https://akynazh.site/posts/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
+代码解决：
+1vector&amp;lt;int&amp;gt; G[MAX_V]; 2int vertexes; 3int edges; 4int color[MAX_V]; //二分图，颜色为1或-1 5bool dfs(int v, int c) { 6 color[v] = c; 7 for (int i = 0; i &amp;lt; G[v].size(); i++) { 8 if (color[G[v][i]] == c) return false; 9 if (color[G[v][i]] == 0 &amp;amp;&amp;amp; !dfs(G[v][i], -c)) return false; 10 } 11 return true; 12} 13void solve() { 14 for (int i = 0; i &amp;lt; vertexes; i++) { 15 if (color[i] == 0) { 16 if (!</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作（二）</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</link>
+      <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</guid>
+      <description>Dos与Linux换行区别 首先知道：
+ 回车 CR \r 换行 LR \n  win/dos的换行： \r\n
+unix mac linux的换行： \n
+unix to win 换行失败
+win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M
+awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}
+last -n 5 | awk &#39;{print $1 &amp;quot;\t&amp;quot; $3}&#39;  分隔字符  awk -F #-F指定分割字符
+使用&amp;quot;,&amp;ldquo;分隔
+awk -F, &#39;{print $1,$2}&#39; log.txt  设置变量  awk -v # 设置变量
+设置变量k等于1
+awk -vk=1 &#39;{print $1, $1+k}&#39; log.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作（一）</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
+      <pubDate>Fri, 03 Dec 2021 00:10:38 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
+      <description>文件编码 查看文件编码
+enca -L none file 文件编码转为UTF-8
+enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询历史命令 history 10 查看最近的10笔bash命令记录 !10 执行history中第10笔bash命令记录 禁用烦人的蜂鸣声 禁用bash蜂鸣声
+ /etc/inputrc &amp;quot;set bell-style none&amp;quot; 禁用vim蜂鸣声
+ /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)
+永久的alias 为某一个用户永久添加alias
+vim ~/etc/.bashrc alias lm=&#39;ls -al | more&#39; source ~/etc/.bashrc 使用cut处理输出的结果 对以:隔开的结果，输出第三个到第五个</description>
+    </item>
+    
+    <item>
+      <title>求解有向图和无向图中是否存在环的方法</title>
+      <link>https://akynazh.site/posts/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
+由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
+1int mat[maxn][maxn], vis[maxn]; 2int dfs(int v) { 3 vis[v] = 1; 4 for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { 5 if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环 6 } 7 return 0; 8} 9 10memset(vis, 0, sizeof(vis)); 11int flag = 0; // 无环标志 12for (int j = 0; j &amp;lt; num; j++) { 13 if (!vis[j]) flag = dfs(j); 14 // 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点 15 if (flag) break; // 如果在该连通子图中找到环则直接结束递归 16} 求解有向图中是否存在环 这里我也尝试过使用如上DFS的解法，但似乎行不通。</description>
+    </item>
+    
+    <item>
+      <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
+      <link>https://akynazh.site/posts/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
+      <description>提出问题 先看一个例子：
+当两个人年龄相同时，我们认为这两个对象相同：
+class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;quot;Person{&amp;quot; + &amp;quot;age=&amp;quot; + age + &amp;quot;, name=&#39;&amp;quot; + name + &#39;\&#39;&#39; + &#39;}&#39;; } @Override public boolean equals(Object o) { if (this == o) return true; if (o == null || getClass() != o.getClass()) return false; Person person = (Person) o; return age == person.</description>
+    </item>
+    
+    <item>
+      <title>equals方法和==运算符的作用区别</title>
+      <link>https://akynazh.site/posts/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
+      <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
+  == 比较时进行地址的比较
+  equals 比较时进行值的比较
+  1String a = &amp;#34;123&amp;#34;; 2String b = &amp;#34;123&amp;#34;; 3System.out.println(a.equals(b)); // true 4System.out.println(a == b); // true 5 6String a1 = new String(&amp;#34;123&amp;#34;); 7String b1 = new String(&amp;#34;123&amp;#34;); 8System.out.println(a1.equals(b1)); // true 9System.out.println(a1 == b1); // false 好像没问题。
+然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较
+1public boolean equals(Object obj) { 2 return (this == obj); 3} 再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！
+1public boolean equals(Object anObject) { 2 if (this == anObject) { 3 return true; 4 } 5 if (anObject instanceof String) { 6 String aString = (String)anObject; 7 if (coder() == aString.</description>
+    </item>
+    
+    <item>
+      <title>跑步记忆</title>
+      <link>https://akynazh.site/posts/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 23 Nov 2021 18:20:39 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</guid>
+      <description>仔细想想自己坚持跑步也有好几年了，中间也停滞过一段时间。
+一. 接触 记得，初中是我真正接触跑步的开始。
+ 因为说起初中的运动生活，就会想起那位挚友，那位一起骑行，跑步的挚友。
+他很喜欢且很擅长跑步，和他一起同窗学习的日子里，我也渐渐习惯了跑步。
+我俩都喜欢跑步，也更喜欢骑行，每到周末日就会相约骑行，去探索，去流汗，去呼吸，去感受脚下的风。
+二. 离开 结束了吗？
+ 初中结束以后，和他的联系，不知为什么越来越少了。
+跑步的日子，似乎渐渐离我而去。
+人走，茶凉。
+三. 迷恋 高中，我真正开始迷上跑步，这项孤独，奇妙的运动。
+ 进入高中，偶然的一天，我又开始跑步。
+那种熟悉的感觉，那清爽的风，那轻快的步，那孤独的感觉，那平静的内心。
+我在日记记录下了那种感觉，我又决定开始跑步，以不一样的目的开始。
+每天几乎都跑，放学后，操场上，三到五公里的发泄，释放，抑或是挣扎。
+ 中间和不同的人一起跑过步，有一个朋友给我深刻的印象。
+我们一起跑，步调几乎是一致的，停下的时机也几乎抓在了一起，同时，我们边跑也边聊天，好像有说不完的话题。和他一起跑步，一切都是自然而舒适的。
+四. 思考 跑步的思考。
+ 跑步的时候，有时我也许什么都不想。
+在放空心绪的状态下，感受跑步，感受风的味道。
+也可能我会思考问题。
+孤独的时候我一般都会思考问题。
+跑步，这项本质孤独的运动，在我看来，其实是免不了思考的。
+人生，道理，反思，题目。
+凡此种种。
+五. 突破 大学的风。
+ 现在敲着键盘，想着往事。
+不知，旧日的朋友现在近况如何？
+今天蛮有意义的。
+一千米三分三十一秒，终于突破了自己。
+最后两百的那种冲刺感，肌肉顿时没了感觉，一口一口地猛吸入冷风，又一口一口吐出。
+跑完，听到成绩。
+很舒服，很兴奋，也很难受。
+这就是突破自己极限时的感觉吧。
+继续去挑战吧。
+因为人生，没有极限。</description>
+    </item>
+    
+    <item>
+      <title>Cmd重要且实用的一些命令</title>
+      <link>https://akynazh.site/posts/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
+      <description>写入文件  写入hello字符串（同时新建了a.txt）  1echo hello &amp;gt; a.txt  追加写入hello字符串  1echo hello &amp;gt;&amp;gt; a.txt  将a.txt内容追加写入b.txt  1type a.txt &amp;gt;&amp;gt; b.txt 新建文件  新建空文件a.txt  1type null &amp;gt; a.txt 换行（分号换行输出） 1echo hello; echo peter 关于程序编译 test.cpp: 一个含cin输入的程序
+编译cpp
+1g++ test.cpp -o test 以1.in作为标准输入，2.out作为标准输出执行test
+1test &amp;lt; 1.in &amp;gt; 2.out  test_err.cpp: 一个会导致编译错误的程序
+把编译后出现的错误输入log.txt，命令行不会报错
+1g++ test_err.cpp -o terr 2&amp;gt; log.txt 打开并编辑文件 cmd下没有bash下好用的vim=_=
+使用记事本打开编辑 1.py
+1notepad 1.py 记事本不好用呀，还是vscode香，如下~
+使用vscode打开编辑1.py，首先需配置环境变量
+(${vscodepath}\bin)
+1code 1.py over</description>
+    </item>
+    
+    <item>
+      <title>Window增加右键打开选项</title>
+      <link>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+      <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+      <description>加入注册表界面   win+R
+  regedit
+  增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT*\shell
+  新建项 Vscode
+  右键Vscode并新建项command
+ 编辑command默认选项值为： ${vscodepath}\Code.exe %1  %1是可选的参数，这里必须要加，表示作用于该文件。
+  编辑Vscode值
+  编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）
+  编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)
+    增加目录下右键打开选项 以window terminal作为实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
+  新建项 Terminal
+  右键Terminal 新建项command
+ 编辑command默认选项值为：${terminalpath}\wt.exe    编辑Terminal值
+  编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
+  编辑右键显示图标：新建字符串值icon 添加：${terminalicon}</description>
+    </item>
+    
+    <item>
+      <title>矩阵快速幂的介绍及其应用</title>
+      <link>https://akynazh.site/posts/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
+      <description>矩阵快速幂介绍 题目描述
+给定n×n的矩阵A，求 A^k。
+输入格式
+第一行两个整数 n,k 接下来n行，每行n个整数，第i行的第j个数表示Aij。
+输出格式
+输出 A^k
+共n行，每行n个数，第i行第j个数表示Aij, 每个元素对 10^9+7取模。
+1 &amp;lt;= n &amp;lt;= 100
+0 &amp;lt;= k &amp;lt;= 10 ^ 12
+|Aij| &amp;lt;= 1000
+分析：
+本质上就是快速幂运算，只是底数变成了一个矩阵。
+快速幂运算板子： 1typedef long long ll; 2ll mod_pow(ll x, ll n, ll mod){ 3	ll res = 1; 4	while(n &amp;gt; 0){ 5	if(n &amp;amp; 1 == 1) res = res * x % mod; // 如果指数是奇数则乘上底数 6	x = x * x % mod; // 底数平方 7	n &amp;gt;&amp;gt;= 1; // 指数除二 8	}	9	return res; 10} 由此易得：</description>
+    </item>
+    
+    <item>
+      <title>Hugo实现自动化生成文章并提交github</title>
+      <link>https://akynazh.site/posts/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</link>
+      <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</guid>
+      <description>前言 自动化的思想在计算机领域是非常重要的，计算机，本质上就是为了通过自动化，方便我们的生活，提高办事的效率而存在的。
+所以在使用计算机时，在开始用计算机办事之前，可以先想想这件事的那些地方可以利用计算机的自动化来帮我们完成。
+正是这种懒的思想，使得人类不断进步，攀登科技高峰，不是吗？^-^
+下面介绍通过编写bat脚本自动化hugo写文章，提交发布文章的方法。
+Linux用户则使用shell编写脚本~
+自动化生成文章 通过 set /p 接收用户输入的文章名称
+1D: 2cd D:\@git\akynazh 3set input= 4set /p input=please input article name 5hugo new \post\%input%.md 自动化生成分类 通过copy命令，复制模板文件到categories下并命名
+1D: 2cd D:\@git\akynazh 3set input= 4set /p input=please input category name 5copy archetypes\categories.md content\categories\%input%.md 自动提交发布到github 普通提交 方法与以上类似，最后可以pause一下看看有没有问题产生
+1D: 2cd D:\@git\akynazh 3hugo 4set input= 5set /p input=please enter msg 6cd D:\@git\akynazh\public 7git add . 8git commit -m &amp;#34;%input%&amp;#34; 9git push 10pause 提交文章 只需要将上面的set部分修改一下即可
+1set input=publish article over~</description>
+    </item>
+    
+    <item>
+      <title>Java中通过反射获取带参数类型的方法</title>
+      <link>https://akynazh.site/posts/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。通过了解，发现可以采用导入Gson包的方式调用方法实现这个功能：
+Person p = new Person(1, &amp;quot;jzh&amp;quot;); Gson gson = new Gson(); String p_json = gson.toJson(p); Person p1 = gson.fromJson(p_json, Person.class); 从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：
+1ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); 2people.add(new Person(1, &amp;#34;jzh&amp;#34;)); 3people.add(new Person(2, &amp;#34;zh&amp;#34;)); 4people.add(new Person(3, &amp;#34;z&amp;#34;)); 5String ps_json = gson.toJson(people); 6ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json,new TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt;() { 7 }.getType()); 这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken实现。
+1class MyType extends TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt; {} 2 3ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json, new MyType().getType()); 那么问题来了，这里底层是怎么实现转换的呢？为什么要使用TypeToken?
+问题的思考与解决 首先我们通过阅读源码寻找答案。
+gson源码中的TypeToken类:
+1public class TypeToken&amp;lt;T&amp;gt; { 2 final Class&amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>最短路问题汇总</title>
+      <link>https://akynazh.site/posts/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
+迪杰斯特拉算法 O(V^2) 1const int MAXN = 100; 2const int INF = 0x3f3f3f3f; 3// 有向无环图 DAG 4int V, E; // 顶点数和边数 5int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 6int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF 7int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0 8 9// 初始化图 10void init() { 11	memset(graph, 0x3f, sizeof(graph)); 12	cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; 13	int from, to, cost; 14	for (int i = 0 ; i &amp;lt; E; i++) { 15	cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; 16	graph[from][to] = cost; 17	} 18} 19// 迪杰斯特拉算法求解最短路，针对点展开 20void Dijkstra(int s) { 21	memset(d, 0x3f, sizeof(d)); 22	memset(visited, 0, sizeof(visited)); 23	visited[s] = 1; 24	for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; 25	d[s] = 0; 26	int k, min_cost; 27	// 无负边时最多更新n-1(其他结点数)次 28	for(int i = 0; i &amp;lt; V - 1; i++){ 29	min_cost = INF; 30	// 寻找最未被访问的且权值最小的路径，需要优化的地方 31	for(int j = 0; j &amp;lt; V; j++){ 32	if(!</description>
+    </item>
+    
+    <item>
+      <title>关于char*, char[], string的理解</title>
+      <link>https://akynazh.site/posts/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>关于char[]与char*的区别 1char s1[] = &amp;#34;abc&amp;#34;; 2cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 3s1[1] = &amp;#39;d&amp;#39;; // 改变值 4cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
+1const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 2cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc 3s2 = &amp;#34;dfs&amp;#34;; // 改变地址 4cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
+以上两者皆可用于函数传值
+1void print_str(const char * str) { 2 printf(&amp;#34;%s\n&amp;#34;, str); 3} 4 5print_str(s1); // adc 6print_str(s2); // dfs 关于string和char[],char*的关系  string是类，string是对一个字符串的引用值  1const char* s1 = &amp;#34;abc&amp;#34;; 2string s = s1; 3cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc 4s += &amp;#34;a&amp;#34;; 5cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca 6cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; 7// abc 证明string只是引用了s1  string引用字符串示例  1const char *s1 = &amp;#34;123&amp;#34;; 2string str1 = s1; // 若要这样赋值s1必须加const 3cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123 4 5char s2[] = &amp;#34;234&amp;#34;; 6string str2 = s2; 7cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234  string转char*  1const char* s1_1 = str1.</description>
+    </item>
+    
+    <item>
+      <title>二次元随想</title>
+      <link>https://akynazh.site/posts/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</link>
+      <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</guid>
+      <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头。这是一种难以言说的情愫&amp;hellip;&amp;hellip;
+也许是对一段故事谢幕的不舍。欣赏一部优秀的作品，走进另一个世界，见证一段故事。在故事尾声，我总希望剧情能不断延长下去。可就像一段青春时光，一段故事总要落幕。结束了的就只能成为回忆&amp;hellip;&amp;hellip;虚拟世界里的东西，往往是现实中难以企及的。
+也许是对二次元世界的那种向往。 二次元世界有着独特的美感，每一个画面都扣人心弦，那种干净的，美好的画面，都是现实中难以遇见的。尤其是京阿尼的冰菓，每一帧画面都是精品。所以在经历了一段时间的美感洗礼之后又回到现实，我也许因此莫名的迷惘，失落吧。
+也许是对故事中那种青春的向往。 想体验那种玫瑰色的青春，体验青春中真挚的，纯真的感情。随着时间流逝，我也许已经不再有机会&amp;hellip;&amp;hellip;
+不管如何，二次元，再扩展到所有的文学艺术作品，与现实都是有一定的距离的。但就算是如此，我们一样可以在现实中找寻生活的美与希望。尽管我们难以企及故事中的那般美好，生活有时总是那么不如意，但是我觉得只要自然地生活下去，用心生活下去，总能在不经意间体会到现实生活中的，不一样的美，与快乐。
+另外，阅览一个故事，也可以算是经历了一段故事吧，尽管不是故事的主人公，但也已经在自己的人生中体验到了另一种生活的感觉，尽管那种体验不那么真实，但它也给你带来了一笔无比珍贵的宝物。
+每个人都会过完自己独特的一生吧，把握住当下，去做自己喜欢做的事，对，这一点就是我觉得的，很重要的东西。不要浮躁，不要回到曾经的那种焦虑与迷惘。切实地理解自己，品味生活，偶尔让身心慢下来，不要逼自己去做太多不必要的事情。“不必要的事情不管，必要的事情尽快完成”，这种节能思想我觉得还是很值得借鉴的。毕竟我觉得懂得偷闲的人，也许都过的更快乐一点吧。</description>
+    </item>
+    
+    <item>
+      <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
+      <link>https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <description>问题的提出： 我们可以通过指令：
+ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
+通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
+实现免ip登录：   新建config文件
+若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。
+  编辑代替名以及IP，端口号，用户。
+  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户 这样，即可通过
+ssh 代替名 进行登录咯！
+接着我们实现免密登录：  在本地生成密钥：  ssh-keygen 并选择生成在.ssh目录下即可，获得一把公钥和私钥。
+将名字带.pub的就是公钥了。
+ 将公钥发给远程主机  通过命令
+ssh-copy-id -i .ssh/公钥 用户名@IP 即可发送给远程主机。
+在window10中可能出现以下错误：
+ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。 则可先于命令行中运行以下代码：
+function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa.pub&amp;quot; if (!(Test-Path &amp;quot;$publicKey&amp;quot;)){ Write-Error &amp;quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&amp;quot; } else { &amp;amp; cat &amp;quot;$publicKey&amp;quot; | ssh $args $userAtMachine &amp;quot;umask 077; test -d .</description>
+    </item>
+    
+    <item>
+      <title>关于数论的一些简单算法</title>
+      <link>https://akynazh.site/posts/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
+      <description>关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？
+运用朴素算法必TLE，这时考虑埃氏筛法。
+算法思路：
+1.建立is_prime[]数组，初始化为true；
+2.从2开始筛取，(注意从2开始很重要，因为2为素数，否则需要改变相应后续操作)，若为true，则继续判断是否为素数，若为素数，则将所有该素数的倍数置为false。
+2.区间筛法 问[21479862, 21499877)之间有多少个素数？
+这时若采用埃氏筛法，会浪费大量时间计算前面未涉及的区间，这时考虑区间筛法。
+算法思路：
+1.建立is_prime_small[]和is_prime[]数组，初始化为true；
+2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。
+相应代码：
+1typedef long long ll; 2bool is_prime[MAX1]; 3bool is_prime_small[MAX2]; 4void sieve(ll a, ll b) { 5	for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime_small[i] = true; 6	for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime[i] = true; 7	for(int i = 2; (ll)i * i &amp;lt; b; i++) { 8	if(is_prime_small[i]){ 9	for(int j = 2 * i; (ll)j * j &amp;lt; b; j += i) is_prime_small[j] = false; 10	for(ll j = max( 2ll, (a + i - 1) / i) ) * i; j &amp;lt; b; j += i) is_prime[j - a] = false; 11	} 12	} 13} 注意点：</description>
+    </item>
+    
+  </channel>
+</rss>
