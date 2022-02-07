@@ -430,23 +430,23 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>   <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.0000</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    <span style="color:#bd93f9">9.0000</span>
 </code></pre></div><h3 id="计算特征值及对应特征向量">计算特征值及对应特征向量</h3>
-<pre tabindex="0"><code>&gt;&gt; [Q, D] = eig(A)
-
-Q =
-
-    0.7071    0.5774    0.4082
-   -0.7071    0.5774    0.4082
-         0   -0.5774    0.8165
-
-
-D =
-
-   -1.0000         0         0
-         0   -0.0000         0
-         0         0    9.0000
-</code></pre><h3 id="使用命令eig把二次型标准化">使用命令eig把二次型标准化</h3>
-<pre tabindex="0"><code>同上，由D可得标准型，由Q可得正交变换法。
-</code></pre><h3 id="使用命令eig判断二次型的正定性">使用命令eig判断二次型的正定性</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">&gt;&gt;</span> [Q, D] = eig(A)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>Q =
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#bd93f9">0.7071</span>    <span style="color:#bd93f9">0.5774</span>    <span style="color:#bd93f9">0.4082</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>   <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.7071</span>    <span style="color:#bd93f9">0.5774</span>    <span style="color:#bd93f9">0.4082</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>         <span style="color:#bd93f9">0</span>   <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.5774</span>    <span style="color:#bd93f9">0.8165</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>D =
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>   <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1.0000</span>         <span style="color:#bd93f9">0</span>         <span style="color:#bd93f9">0</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>         <span style="color:#bd93f9">0</span>   <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.0000</span>         <span style="color:#bd93f9">0</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>         <span style="color:#bd93f9">0</span>         <span style="color:#bd93f9">0</span>    <span style="color:#bd93f9">9.0000</span>
+</code></pre></div><h3 id="使用命令eig把二次型标准化">使用命令eig把二次型标准化</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>同上，由D可得标准型，由Q可得正交变换法。
+</code></pre></div><h3 id="使用命令eig判断二次型的正定性">使用命令eig判断二次型的正定性</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>同上，观察D对角线元素正负性即可。
 </code></pre></div><h3 id="使用命令orth把向量组正交规范化">使用命令orth把向量组正交规范化</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>A =
