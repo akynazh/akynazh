@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://akynazh.site/</loc>
-    <lastmod>2022-02-06T20:41:12+08:00</lastmod>
+    <lastmod>2022-02-06T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/life/</loc>
+    <lastmod>2022-02-06T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/</loc>
+    <lastmod>2022-02-06T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2022-02-06T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/</loc>
+    <lastmod>2022-02-06T21:42:50+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/matlab/</loc>
     <lastmod>2022-02-06T20:41:12+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2022-02-06T20:41:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/posts/</loc>
-    <lastmod>2022-02-06T20:41:12+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/</loc>
     <lastmod>2022-02-06T20:41:12+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/about/</loc>
@@ -35,7 +41,7 @@
     <loc>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2022-01-03T00:30:25+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/spring-boot/</loc>
+    <loc>https://akynazh.site/tags/springboot/</loc>
     <lastmod>2022-01-03T00:30:25+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</loc>
@@ -88,9 +94,6 @@
   </url><url>
     <loc>https://akynazh.site/posts/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2021-11-25T00:21:05+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/life/</loc>
-    <lastmod>2021-11-23T18:20:39+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2021-11-23T18:20:39+08:00</lastmod>
