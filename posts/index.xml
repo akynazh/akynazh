@@ -93,16 +93,19 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Linux实用操作（五）</title>
-      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</link>
+      <title>Linux实用操作之网络观察</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E8%A7%82%E5%AF%9F/</link>
       <pubDate>Mon, 03 Jan 2022 00:27:58 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%94/</guid>
-      <description>查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。
-结果列出了进程PID，可以通过kill终止占用该端口的程序：
-1kill -9 PID 另外一种方法：
-1[root@VM-0-11-centos ~]# lsof -i:3306 2COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME 3mysqld 14528 mysql 17u IPv6 779103 0t0 TCP *:mysql (LISTEN) 开启与关闭端口 这里实验环境为centos7.9，我采用firewall来实现需求。
-1# 首先打开防火墙服务 2[root@VM-0-11-centos ~]# systemctl start firewalld  3 4# 永久开启80端口 5[root@VM-0-11-centos ~]# firewall-cmd --zone=public --add-port=8080/tcp --permanent  6 7# 使生效 8[root@VM-0-11-centos ~]# firewall-cmd --reload 9 10# 查看已经开启的端口 11[root@VM-0-11-centos ~]# firewall-cmd --zone=public --list-ports 128080/tcp 3306/tcp 80/tcp 13 查看进程 查看所有进程</description>
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E8%A7%82%E5%AF%9F/</guid>
+      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
+alias myip=&amp;quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&amp;quot; test:
+[root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP curl cip.cc show:
+IP : ${my_ip} 地址 : 中国 中国
+数据二 : 上海市 | 腾讯云
+数据三 : 中国北京北京 | 腾讯
+URL : http://www.cip.cc/${my_ip}
+查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。</description>
     </item>
     
     <item>
@@ -149,11 +152,11 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Linux实用操作（四）</title>
-      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</link>
+      <title>Linux实用操作之权限管理</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9B%9B/</guid>
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
       <description>添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
 [root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
@@ -200,13 +203,12 @@ lpush clist redis lpush clist mysql lrange clist 0 100 key:
     </item>
     
     <item>
-      <title>Linux实用操作（三）</title>
-      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</link>
+      <title>Linux实用操作之流程控制</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%89/</guid>
-      <description>shell参数  $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数  修改vim中tab长度 设置vim中tab长度
-vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%d 20211209 [root@VM-0-11-centos tmp]# date Thu Dec 9 19:34:06 CST 2021 [root@VM-0-11-centos tmp]# date --date=&#39;2 days ago&#39; Tue Dec 7 19:34:07 CST 2021 test命令  -e exist or not -f file or not -d directory or not -r can read or not &amp;mdash;similar: -x -w -s exist and not blank -nt newer than &amp;mdash; -ot -eq equal &amp;mdash; -ne -gt greater than &amp;mdash; -lt -ge greater than or equal &amp;mdash;le -z string if null -&amp;gt; true -n string if null -&amp;gt; false -a and -o or !</description>
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <description>read命令  read -a variable_name 读取数组”array”  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5  read -p “prompt words” variable_name read -n limit_length variable_name  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words  read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else if []; then do something elif []; then do something else do something fi case case ${var} in &amp;quot;condition1&amp;quot;) do something ;; &amp;quot;condition2&amp;quot;) do something ;; *) #anything do something ;; esac 循环语句 while while [condition] do do something done when meet the condition, start the loop.</description>
     </item>
     
     <item>
@@ -221,37 +223,26 @@ vim /etc/vimrc set tabstop=4 日期输出 [root@VM-0-11-centos tmp]# date +%Y%m%
     </item>
     
     <item>
-      <title>Linux实用操作（二）</title>
-      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</link>
+      <title>Linux实用操作之文本操作</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BA%8C/</guid>
-      <description>Dos与Linux换行区别 首先知道：
- 回车 CR \r 换行 LR \n  win/dos的换行： \r\n
-unix mac linux的换行： \n
-unix to win 换行失败
-win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
+last | grep &#39;root&#39; 比较重要，记忆：
+grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename
+选项与参数：
+-a ：将 binary 文件以 text 文件的方式搜寻数据
+-c ：计算找到 &amp;lsquo;搜寻字串&amp;rsquo; 的次数
+-i ：忽略大小写的不同，所以大小写视为相同
+-n ：顺便输出行号
+-v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行
+&amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
 awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}
 last -n 5 | awk &#39;{print $1 &amp;quot;\t&amp;quot; $3}&#39;  分隔字符  awk -F #-F指定分割字符
 使用&amp;quot;,&amp;ldquo;分隔
 awk -F, &#39;{print $1,$2}&#39; log.txt  设置变量  awk -v # 设置变量
-设置变量k等于1
-awk -vk=1 &#39;{print $1, $1+k}&#39; log.</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作（一）</title>
-      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</link>
-      <pubDate>Fri, 03 Dec 2021 00:10:38 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B8%80/</guid>
-      <description>文件编码 查看文件编码
-enca -L none file 文件编码转为UTF-8
-enca -L none -x UTF-8 file 变量作用域 name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh 查询历史命令 history 10 查看最近的10笔bash命令记录 !10 执行history中第10笔bash命令记录 禁用烦人的蜂鸣声 禁用bash蜂鸣声
- /etc/inputrc &amp;quot;set bell-style none&amp;quot; 禁用vim蜂鸣声
- /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)
-永久的alias 为某一个用户永久添加alias
-vim ~/etc/.bashrc alias lm=&#39;ls -al | more&#39; source ~/etc/.bashrc 使用cut处理输出的结果 对以:隔开的结果，输出第三个到第五个</description>
+设置变量k等于1</description>
     </item>
     
     <item>
@@ -440,6 +431,25 @@ gson源码中的TypeToken类:
       <guid>https://akynazh.site/posts/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
 迪杰斯特拉算法 O(V^2) 1const int MAXN = 100; 2const int INF = 0x3f3f3f3f; 3// 有向无环图 DAG 4int V, E; // 顶点数和边数 5int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 6int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF 7int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0 8 9// 初始化图 10void init() { 11	memset(graph, 0x3f, sizeof(graph)); 12	cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; 13	int from, to, cost; 14	for (int i = 0 ; i &amp;lt; E; i++) { 15	cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; 16	graph[from][to] = cost; 17	} 18} 19// 迪杰斯特拉算法求解最短路，针对点展开 20void Dijkstra(int s) { 21	memset(d, 0x3f, sizeof(d)); 22	memset(visited, 0, sizeof(visited)); 23	visited[s] = 1; 24	for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; 25	d[s] = 0; 26	int k, min_cost; 27	// 无负边时最多更新n-1(其他结点数)次 28	for(int i = 0; i &amp;lt; V - 1; i++){ 29	min_cost = INF; 30	// 寻找最未被访问的且权值最小的路径，需要优化的地方 31	for(int j = 0; j &amp;lt; V; j++){ 32	if(!</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之其他</title>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Sun, 03 Jan 2021 00:10:38 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%85%B6%E4%BB%96/</guid>
+      <description>Dos与Linux换行区别 首先知道：
+ 回车 CR \r 换行 LR \n  win/dos的换行： \r\n
+unix mac linux的换行： \n
+unix to win 换行失败
+win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M
+文件编码 查看文件编码
+enca -L none file 文件编码转为UTF-8
+enca -L none -x UTF-8 file 查询历史命令 history 10 查看最近的10笔bash命令记录 !10 执行history中第10笔bash命令记录 修改vim中tab长度 设置vim中tab长度
+vim /etc/vimrc set tabstop=4 禁用烦人的蜂鸣声 禁用bash蜂鸣声
+ /etc/inputrc &amp;quot;set bell-style none&amp;quot; 禁用vim蜂鸣声
+ /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)</description>
     </item>
     
     <item>
