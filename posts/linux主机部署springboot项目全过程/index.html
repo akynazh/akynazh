@@ -18,7 +18,7 @@
   <meta property="og:title" content="Linux主机部署springboot项目全过程" />
 <meta property="og:description" content="注：部署环境为centos7.9版本
 操作步骤如下：
- 配置Java环境 配置mysql环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+ 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
   将jdk压缩包通过winsp上传至主机
   解压缩jdk压缩包
 1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
@@ -35,7 +35,7 @@
 <meta name="twitter:title" content="Linux主机部署springboot项目全过程"/>
 <meta name="twitter:description" content="注：部署环境为centos7.9版本
 操作步骤如下：
- 配置Java环境 配置mysql环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+ 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
   将jdk压缩包通过winsp上传至主机
   解压缩jdk压缩包
 1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
@@ -182,7 +182,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2flinux%25E4%25B8%25BB%25E6%259C%25BA%25E9%2583%25A8%25E7%25BD%25B2springboot%25E9%25A1%25B9%25E7%259B%25AE%25E5%2585%25A8%25E8%25BF%2587%25E7%25A8%258B%2f&name=Linux%e4%b8%bb%e6%9c%ba%e9%83%a8%e7%bd%b2springboot%e9%a1%b9%e7%9b%ae%e5%85%a8%e8%bf%87%e7%a8%8b&description=%e6%b3%a8%ef%bc%9a%e9%83%a8%e7%bd%b2%e7%8e%af%e5%a2%83%e4%b8%bacentos7.9%e7%89%88%e6%9c%ac%0a%e6%93%8d%e4%bd%9c%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e9%85%8d%e7%bd%aemysql%e7%8e%af%e5%a2%83%20%e7%94%9f%e6%88%90%ef%bc%8c%e4%b8%8a%e4%bc%a0%e5%b9%b6%e8%bf%90%e8%a1%8cJAR%e5%8c%85%e9%a1%b9%e7%9b%ae%20%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e8%8e%b7%e5%8f%96JDK%20%20%20%e4%b8%8b%e8%bd%bdjdk%e5%8e%8b%e7%bc%a9%e5%8c%85%ef%bc%9a%20jdk-8u311-linux-x64.tar.gz%0a%20%20%e5%b0%86jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%e9%80%9a%e8%bf%87winsp%e4%b8%8a%e4%bc%a0%e8%87%b3%e4%b8%bb%e6%9c%ba%0a%20%20%e8%a7%a3%e5%8e%8b%e7%bc%a9jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%0a1%5broot%40VM-0-11-centos%20~%5d%23%20ls%202bin%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%203%5broot%40VM-0-11-centos%20~%5d%23%20tar%20-zxvf%20jdk-8u311-linux-x64.tar.gz%204...%205%5broot%40VM-0-11-centos%20~%5d%23%20ls%206bin%20jdk1.8.0_311%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%20%20%20%e7%a7%bb%e5%8a%a8jdk%e5%88%b0%e5%90%88%e9%80%82%e7%9b%ae%e5%bd%95%0a1%5broot%40VM-0-11-centos%20~%5d%23%20mkdir%20%2fusr%2flocal%2fjava%202%5broot%40VM-0-11-centos%20~%5d%23%20mv%20.%2fjdk1.8.0_311%20%2fusr%2flocal%2fjava%20%20%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%20Linux%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%a7%a3%e6%9e%90%20bashrc%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fbashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e9%83%bd%e4%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2f.bashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashrc%20~%2f.bashrc%3a%20%e5%8f%aa%e9%92%88%e5%af%b9%e5%8d%95%e4%b8%aa%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%20profile%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fprofile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e9%a6%96%e6%ac%a1%e7%99%bb%e5%bd%95%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2fbash_profile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashr_profile%20~%2f." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2flinux%25E4%25B8%25BB%25E6%259C%25BA%25E9%2583%25A8%25E7%25BD%25B2springboot%25E9%25A1%25B9%25E7%259B%25AE%25E5%2585%25A8%25E8%25BF%2587%25E7%25A8%258B%2f&name=Linux%e4%b8%bb%e6%9c%ba%e9%83%a8%e7%bd%b2springboot%e9%a1%b9%e7%9b%ae%e5%85%a8%e8%bf%87%e7%a8%8b&description=%e6%b3%a8%ef%bc%9a%e9%83%a8%e7%bd%b2%e7%8e%af%e5%a2%83%e4%b8%bacentos7.9%e7%89%88%e6%9c%ac%0a%e6%93%8d%e4%bd%9c%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e9%85%8d%e7%bd%aemysql%e7%8e%af%e5%a2%83%20%e9%85%8d%e7%bd%aeredis%e7%8e%af%e5%a2%83%20%e7%94%9f%e6%88%90%ef%bc%8c%e4%b8%8a%e4%bc%a0%e5%b9%b6%e8%bf%90%e8%a1%8cJAR%e5%8c%85%e9%a1%b9%e7%9b%ae%20%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e8%8e%b7%e5%8f%96JDK%20%20%20%e4%b8%8b%e8%bd%bdjdk%e5%8e%8b%e7%bc%a9%e5%8c%85%ef%bc%9a%20jdk-8u311-linux-x64.tar.gz%0a%20%20%e5%b0%86jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%e9%80%9a%e8%bf%87winsp%e4%b8%8a%e4%bc%a0%e8%87%b3%e4%b8%bb%e6%9c%ba%0a%20%20%e8%a7%a3%e5%8e%8b%e7%bc%a9jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%0a1%5broot%40VM-0-11-centos%20~%5d%23%20ls%202bin%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%203%5broot%40VM-0-11-centos%20~%5d%23%20tar%20-zxvf%20jdk-8u311-linux-x64.tar.gz%204...%205%5broot%40VM-0-11-centos%20~%5d%23%20ls%206bin%20jdk1.8.0_311%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%20%20%20%e7%a7%bb%e5%8a%a8jdk%e5%88%b0%e5%90%88%e9%80%82%e7%9b%ae%e5%bd%95%0a1%5broot%40VM-0-11-centos%20~%5d%23%20mkdir%20%2fusr%2flocal%2fjava%202%5broot%40VM-0-11-centos%20~%5d%23%20mv%20.%2fjdk1.8.0_311%20%2fusr%2flocal%2fjava%20%20%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%20Linux%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%a7%a3%e6%9e%90%20bashrc%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fbashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e9%83%bd%e4%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2f.bashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashrc%20~%2f.bashrc%3a%20%e5%8f%aa%e9%92%88%e5%af%b9%e5%8d%95%e4%b8%aa%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%20profile%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fprofile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e9%a6%96%e6%ac%a1%e7%99%bb%e5%bd%95%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2fbash_profile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashr_profile%20~%2f." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -223,6 +223,13 @@ if (!doNotTrack) {
             <li><a href="#建立数据库并新建表">建立数据库并新建表。</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#配置redis环境">配置redis环境</a>
+      <ul>
+        <li><a href="#yum安装redis">yum安装redis</a></li>
+        <li><a href="#启动redis">启动redis</a></li>
+        <li><a href="#设置开机自启动redis">设置开机自启动redis</a></li>
       </ul>
     </li>
     <li><a href="#生成上传并运行jar包项目">生成，上传并运行JAR包项目</a>
@@ -295,6 +302,7 @@ if (!doNotTrack) {
 <ul>
 <li><input disabled="" type="checkbox"> 配置Java环境</li>
 <li><input disabled="" type="checkbox"> 配置mysql环境</li>
+<li><input disabled="" type="checkbox"> 配置redis环境</li>
 <li><input disabled="" type="checkbox"> 生成，上传并运行JAR包项目</li>
 </ul>
 <h2 id="配置java环境">配置Java环境</h2>
@@ -481,7 +489,19 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span style="color:#bd93f9">8</span> rows in <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#ff79c6">(</span>0.01 sec<span style="color:#ff79c6">)</span>
 </code></pre></div><h4 id="建立数据库并新建表">建立数据库并新建表。</h4>
 <p>通过sql脚本快速建成。</p>
-<h2 id="生成上传并运行jar包项目">生成，上传并运行JAR包项目</h2>
+<h2 id="配置redis环境">配置redis环境</h2>
+<h3 id="yum安装redis">yum安装redis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>yum install redis
+</code></pre></div><h3 id="启动redis">启动redis</h3>
+<p>默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>systemctl start redis
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>ps -ef | grep redis <span style="color:#6272a4"># 检查是否已经启动</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>redis <span style="color:#bd93f9">12105</span> <span style="color:#bd93f9">1</span> <span style="color:#bd93f9">0</span> 00:44 ? 00:00:01 /usr/bin/redis-server 127.0.0.1:6379
+</code></pre></div><h3 id="设置开机自启动redis">设置开机自启动redis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>systemctl <span style="color:#8be9fd;font-style:italic">enable</span> redis
+</code></pre></div><h2 id="生成上传并运行jar包项目">生成，上传并运行JAR包项目</h2>
 <h3 id="上传jar包项目">上传JAR包项目</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>mvn clean
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>mvn <span style="color:#ff79c6">package</span>
@@ -615,6 +635,13 @@ if (!doNotTrack) {
         </li>
       </ul>
     </li>
+    <li><a href="#配置redis环境">配置redis环境</a>
+      <ul>
+        <li><a href="#yum安装redis">yum安装redis</a></li>
+        <li><a href="#启动redis">启动redis</a></li>
+        <li><a href="#设置开机自启动redis">设置开机自启动redis</a></li>
+      </ul>
+    </li>
     <li><a href="#生成上传并运行jar包项目">生成，上传并运行JAR包项目</a>
       <ul>
         <li><a href="#上传jar包项目">上传JAR包项目</a></li>
@@ -679,7 +706,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2flinux%25E4%25B8%25BB%25E6%259C%25BA%25E9%2583%25A8%25E7%25BD%25B2springboot%25E9%25A1%25B9%25E7%259B%25AE%25E5%2585%25A8%25E8%25BF%2587%25E7%25A8%258B%2f&name=Linux%e4%b8%bb%e6%9c%ba%e9%83%a8%e7%bd%b2springboot%e9%a1%b9%e7%9b%ae%e5%85%a8%e8%bf%87%e7%a8%8b&description=%e6%b3%a8%ef%bc%9a%e9%83%a8%e7%bd%b2%e7%8e%af%e5%a2%83%e4%b8%bacentos7.9%e7%89%88%e6%9c%ac%0a%e6%93%8d%e4%bd%9c%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e9%85%8d%e7%bd%aemysql%e7%8e%af%e5%a2%83%20%e7%94%9f%e6%88%90%ef%bc%8c%e4%b8%8a%e4%bc%a0%e5%b9%b6%e8%bf%90%e8%a1%8cJAR%e5%8c%85%e9%a1%b9%e7%9b%ae%20%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e8%8e%b7%e5%8f%96JDK%20%20%20%e4%b8%8b%e8%bd%bdjdk%e5%8e%8b%e7%bc%a9%e5%8c%85%ef%bc%9a%20jdk-8u311-linux-x64.tar.gz%0a%20%20%e5%b0%86jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%e9%80%9a%e8%bf%87winsp%e4%b8%8a%e4%bc%a0%e8%87%b3%e4%b8%bb%e6%9c%ba%0a%20%20%e8%a7%a3%e5%8e%8b%e7%bc%a9jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%0a1%5broot%40VM-0-11-centos%20~%5d%23%20ls%202bin%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%203%5broot%40VM-0-11-centos%20~%5d%23%20tar%20-zxvf%20jdk-8u311-linux-x64.tar.gz%204...%205%5broot%40VM-0-11-centos%20~%5d%23%20ls%206bin%20jdk1.8.0_311%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%20%20%20%e7%a7%bb%e5%8a%a8jdk%e5%88%b0%e5%90%88%e9%80%82%e7%9b%ae%e5%bd%95%0a1%5broot%40VM-0-11-centos%20~%5d%23%20mkdir%20%2fusr%2flocal%2fjava%202%5broot%40VM-0-11-centos%20~%5d%23%20mv%20.%2fjdk1.8.0_311%20%2fusr%2flocal%2fjava%20%20%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%20Linux%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%a7%a3%e6%9e%90%20bashrc%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fbashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e9%83%bd%e4%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2f.bashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashrc%20~%2f.bashrc%3a%20%e5%8f%aa%e9%92%88%e5%af%b9%e5%8d%95%e4%b8%aa%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%20profile%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fprofile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e9%a6%96%e6%ac%a1%e7%99%bb%e5%bd%95%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2fbash_profile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashr_profile%20~%2f." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2flinux%25E4%25B8%25BB%25E6%259C%25BA%25E9%2583%25A8%25E7%25BD%25B2springboot%25E9%25A1%25B9%25E7%259B%25AE%25E5%2585%25A8%25E8%25BF%2587%25E7%25A8%258B%2f&name=Linux%e4%b8%bb%e6%9c%ba%e9%83%a8%e7%bd%b2springboot%e9%a1%b9%e7%9b%ae%e5%85%a8%e8%bf%87%e7%a8%8b&description=%e6%b3%a8%ef%bc%9a%e9%83%a8%e7%bd%b2%e7%8e%af%e5%a2%83%e4%b8%bacentos7.9%e7%89%88%e6%9c%ac%0a%e6%93%8d%e4%bd%9c%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e9%85%8d%e7%bd%aemysql%e7%8e%af%e5%a2%83%20%e9%85%8d%e7%bd%aeredis%e7%8e%af%e5%a2%83%20%e7%94%9f%e6%88%90%ef%bc%8c%e4%b8%8a%e4%bc%a0%e5%b9%b6%e8%bf%90%e8%a1%8cJAR%e5%8c%85%e9%a1%b9%e7%9b%ae%20%20%e9%85%8d%e7%bd%aeJava%e7%8e%af%e5%a2%83%20%e8%8e%b7%e5%8f%96JDK%20%20%20%e4%b8%8b%e8%bd%bdjdk%e5%8e%8b%e7%bc%a9%e5%8c%85%ef%bc%9a%20jdk-8u311-linux-x64.tar.gz%0a%20%20%e5%b0%86jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%e9%80%9a%e8%bf%87winsp%e4%b8%8a%e4%bc%a0%e8%87%b3%e4%b8%bb%e6%9c%ba%0a%20%20%e8%a7%a3%e5%8e%8b%e7%bc%a9jdk%e5%8e%8b%e7%bc%a9%e5%8c%85%0a1%5broot%40VM-0-11-centos%20~%5d%23%20ls%202bin%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%203%5broot%40VM-0-11-centos%20~%5d%23%20tar%20-zxvf%20jdk-8u311-linux-x64.tar.gz%204...%205%5broot%40VM-0-11-centos%20~%5d%23%20ls%206bin%20jdk1.8.0_311%20jdk-8u311-linux-x64.tar.gz%20passwd%20var%20%20%20%e7%a7%bb%e5%8a%a8jdk%e5%88%b0%e5%90%88%e9%80%82%e7%9b%ae%e5%bd%95%0a1%5broot%40VM-0-11-centos%20~%5d%23%20mkdir%20%2fusr%2flocal%2fjava%202%5broot%40VM-0-11-centos%20~%5d%23%20mv%20.%2fjdk1.8.0_311%20%2fusr%2flocal%2fjava%20%20%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%20Linux%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%a7%a3%e6%9e%90%20bashrc%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fbashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e9%83%bd%e4%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2f.bashrc%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashrc%20~%2f.bashrc%3a%20%e5%8f%aa%e9%92%88%e5%af%b9%e5%8d%95%e4%b8%aa%e7%94%a8%e6%88%b7%ef%bc%8c%e6%af%8f%e5%bc%80%e5%90%af%e4%b8%80%e4%b8%aashell%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%20profile%e9%83%a8%e5%88%86%3a%0a%20%2fetc%2fprofile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e9%a6%96%e6%ac%a1%e7%99%bb%e5%bd%95%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%20%2fetc%2fskel%2fbash_profile%3a%20%e9%92%88%e5%af%b9%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%9c%a8%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%94%a8%e6%88%b7%e6%97%b6%e9%bb%98%e8%ae%a4%e7%bb%99%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e7%9a%84bashr_profile%20~%2f." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
