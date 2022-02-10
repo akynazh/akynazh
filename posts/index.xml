@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sun, 06 Feb 2022 21:42:50 +0800</lastBuildDate><atom:link href="https://akynazh.site/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
+      <link>https://akynazh.site/posts/springmvc%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/springmvc%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
+      <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
+本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
+使用cookie传递数据：不推荐 步骤  后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值  缺陷 这个方法我使用过，但是效果并不好，原因如下：
+ 用户可能禁止cookie 后端如果有重定向操作将导致cookie添加失败 前端每次都要删除cookie，有时可能会失效  使用session传递数据：值得借鉴 步骤  后端往session中存入数据 前端通过${session}进行获取数据并展示 前端将该数据删除或修改为指定默认值  这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：
+1&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 2// 这里可以通过session访问值 3&amp;lt;/script&amp;gt; 缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
+但是这种方法的思想值得借鉴，请看如下方法。
+通过RedirectAttributesModelMap传递数据 注意这里后端采用SpringMVC。
+步骤  通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示  示例：提醒用户首先进行登录 后端代码 1@GetMapping(&amp;#34;/loginFirst&amp;#34;) 2public String loginFirst(RedirectAttributesModelMap model) { 3 model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); 4 return &amp;#34;redirect:/&amp;#34;; 5} 解析：
+  RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
+  addFlashAttribute是把数据临时放在session中并在刷新页面后自动删除的方法，配合RedirectAttributesModelMap进行使用
+  前端代码 必须注意，这里外部js无法通过$(&#39;#msg&#39;).val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。
+1&amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 2&amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; 3&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 4 let msg = [[${msg}]]; 5 document.</description>
+    </item>
+    
     <item>
       <title>简洁之美</title>
       <link>https://akynazh.site/posts/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/</link>
@@ -106,49 +126,6 @@ IP : ${my_ip} 地址 : 中国 中国
 数据三 : 中国北京北京 | 腾讯
 URL : http://www.cip.cc/${my_ip}
 查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot中通过cookie给前端传递错误消息值</title>
-      <link>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</link>
-      <pubDate>Fri, 31 Dec 2021 15:41:50 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/springboot%E4%B8%AD%E9%80%9A%E8%BF%87cookie%E7%BB%99%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%80%BC/</guid>
-      <description>后端操作方法 这里我们需要后端在接收一些请求并做出判断后，向前端反馈请求情况。
-考虑到安全性，一般是不允许前端访问session值的，所以我们通过cookie给前端反馈：
-如下是一个controller方法中的片段：
-1response.addCookie(new Cookie(&amp;#34;errorMsg&amp;#34;, &amp;#34;邮箱已经被注册&amp;#34;)); 2request.getRequestDispatcher(&amp;#34;/success&amp;#34;).forward(request, response); 3return null; 我们给前端添加了一个cookie值。
-这里必须注意的是，不能在添加完cookie后进行重定向，否则无法正确成功传递cookie值。必须使用请求转发的方式，这也刚好和表单请求失败后的处理情况相合。
-前端操作方法 下面我们通过javascript方法进行获取并发出提示并删除cookie：
-注意，执行完提示后必须删除该cookie值，否则以后访问页面将一直提示。
-1$(document).ready(function () { 2 let errorMsg = $.cookie(&amp;#39;errorMsg&amp;#39;); 3 if (errorMsg != null) { 4 let myPath = window.location.host + &amp;#39;/&amp;#39;; 5 $(&amp;#39;.alert&amp;#39;).html(errorMsg).addClass(&amp;#39;alert-info&amp;#39;).show().delay(1500).fadeOut(); 6 $.cookie(&amp;#39;errorMsg&amp;#39;, &amp;#39;&amp;#39;, {path: myPath, expires: -1}); 7 } 8}) 这里很关键的是需要指定path值，不同路径下生成的是不同的cookie值，即使它们同名为errorMsg。
-所以，为了删除同为errorMsg名的cookie值，path必须指定为所有路径。
-这里有个坑， &amp;lsquo;/&amp;rsquo; 似乎不能指定为所有路径, 而使用完整路径则可以。
-关于获取完整路径的方法：
-1let myPath = window.location.host + &amp;#39;/&amp;#39;; window.location.host:
-&#39;https://akynazh.site/p/linuxTalk&#39; -&amp;gt; &#39;akynazh.site&#39;
-&#39;http://localhost:8080/index&#39; -&amp;gt; &#39;localhost:8080&#39;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot中关于controller方法返回值的辨析</title>
-      <link>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</link>
-      <pubDate>Fri, 31 Dec 2021 15:07:35 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/springboot%E4%B8%AD%E5%85%B3%E4%BA%8Econtroller%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E8%BE%A8%E6%9E%90/</guid>
-      <description>返回值为重定向 1return &amp;#34;redirect:/success&amp;#34; 重定向到/success请求。也就是说还要执行/success请求对应的方法。
-一般表单提交成功，可以使用重定向请求，避免用户多次发起请求。
-而如果表单提交失败，一般可以使用请求转发到原来的页面，也可以使用下面返回视图对象的方法。
-但是，值得注意的是，只是返回视图对象的话，必须注意一些问题：
-如下请求路径：
-/theater/watch?videoId=1 如果请求失败：
- 可以进行重定向到/theater。 而如果不进行重定向，只是返回视图对象：  如果原来是get请求，用户按F5刷新页面则会重复访问请求，所以必须导向正确的URL。 如果原来是post请求，且url路径不改变则可以这样，如果url路径不变用户刷新将导致404错误。    因此，返回视图对象必须注意一些路径上的细节。
-返回视图对象 1return &amp;#34;success&amp;#34; 注意必须已经启动了thymeleaf引擎。
-该方法将转发到 classpath:/templates/success.html页面。
-值得注意的是，如果加载success页面含有需要解析的modelAttribute中的对象，则该方法中必须往modelAttribute添加该对象，否则会报错。
-所以如果多个页面都可能访问到这个也页面，则最好别使用modelAttribute注入对象，如果这样必须先注入视图对象所需要的model对象。
-否则一律需要redirect到有注入该对象的方法中去才能正确解析页面。
-另外，可以通过将model对象放到session中，同时视图对象中通过session值来获取对象，即可。</description>
     </item>
     
     <item>
