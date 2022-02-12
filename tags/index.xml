@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2022 21:46:13 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringBoot Vue</title>
+      <link>https://akynazh.site/tags/springboot-vue/</link>
+      <pubDate>Sat, 12 Feb 2022 21:46:13 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/springboot-vue/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://akynazh.site/tags/java/</link>
