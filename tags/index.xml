@@ -9,11 +9,20 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SpringBoot Java</title>
-      <link>https://akynazh.site/tags/springboot-java/</link>
+      <title>Java</title>
+      <link>https://akynazh.site/tags/java/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/springboot-java/</guid>
+      <guid>https://akynazh.site/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://akynazh.site/tags/springboot/</link>
+      <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/springboot/</guid>
       <description></description>
     </item>
     
@@ -36,29 +45,11 @@
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://akynazh.site/tags/java/</link>
-      <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://akynazh.site/tags/linux/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://akynazh.site/tags/springboot/</link>
-      <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/springboot/</guid>
       <description></description>
     </item>
     
