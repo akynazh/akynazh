@@ -434,7 +434,7 @@ if (!doNotTrack) {
 </code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">UserMapper</span> <span style="color:#8be9fd;font-style:italic">extends</span> BaseMapper<span style="color:#ff79c6">&lt;</span>User<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">}</span>
 </code></pre></div><h3 id="创建mybatis配置类">创建Mybatis配置类</h3>
-<p>添加mapper扫描路径以及开启事务</p>
+<p>添加mapper扫描路径以及开启事务。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">/**
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"> * @version 1.0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"> * @description MyBatisPlus配置
@@ -527,7 +527,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>    <span style="color:#ff79c6">}</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span><span style="color:#ff79c6">}</span>
 </code></pre></div><h3 id="创建jwttoken类">创建JwtToken类</h3>
-<p>JwtToken继承于Shiro包下的AuthenticationToken，用于Shiro认证</p>
+<p>JwtToken继承于Shiro包下的AuthenticationToken，用于Shiro认证。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">/**
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"> * @version 1.0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"> * @description token类
@@ -552,7 +552,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#ff79c6">}</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#ff79c6">}</span>
 </code></pre></div><h3 id="创建accountprofile类">创建AccountProfile类</h3>
-<p>用于Shiro认证存储的对象</p>
+<p>用于Shiro认证存储的对象。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">/**
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"> * @version 1.0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"> * @description
@@ -572,7 +572,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#ff79c6">}</span>
 </code></pre></div><p>这里提前提醒一下必须在后续注入RedisManager时指定AccountProfile类用于Redis缓存的key字段！</p>
 <h3 id="创建accountrealm类">创建AccountRealm类</h3>
-<p>用于向数据库查询验证账户以及权限校验信息的注册</p>
+<p>用于向数据库查询验证账户以及权限校验信息的注册。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">/**
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"> * @version 1.0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"> * @description 用于向数据库查询验证账户以及权限校验信息的注册
@@ -643,19 +643,19 @@ if (!doNotTrack) {
 <p>过滤流程：</p>
 <ol>
 <li>
-<p>首先经过prehandle，用于支持跨域请求</p>
+<p>首先经过prehandle，用于支持跨域请求。</p>
 </li>
 <li>
-<p>接着经过onAccessDenied，拦截请求Header中是否有auth字段并进行对应操作</p>
+<p>接着经过onAccessDenied，拦截请求Header中是否有auth字段并进行对应操作。</p>
 </li>
 <li>
-<p>如果没有token，则直接通过，后续通过@RequiresAuthentication等进行拦截</p>
+<p>如果没有token，则直接通过，后续通过@RequiresAuthentication等进行拦截。</p>
 </li>
 <li>
-<p>如果有token，则校验token失效，如果失效则通过失败执行onLoginFailure</p>
+<p>如果有token，则校验token失效，如果失效则通过失败执行onLoginFailure。</p>
 </li>
 <li>
-<p>如果token未失效，则通过Shiro进行登录认证以及可选的权限校验</p>
+<p>如果token未失效，则通过Shiro进行登录认证以及可选的权限校验。</p>
 </li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#6272a4">/**
@@ -782,11 +782,11 @@ if (!doNotTrack) {
 <ol>
 <li>配置SessionManager</li>
 </ol>
-<p>注入RedisSessionDAO，session管理员集成redis</p>
+<p>注入RedisSessionDAO，session管理员集成redis。</p>
 <ol start="2">
 <li>配置DefaultWebSecurityManager</li>
 </ol>
-<p>注入AccountRealm， SessionManager，RedisCacheManager</p>
+<p>注入AccountRealm， SessionManager，RedisCacheManager。</p>
 <p>其中必须记得要设置主键名称，shiro-redis 插件用过这个缓存用户信息：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>redisCacheManager<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPrincipalIdFieldName</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;email&#34;</span><span style="color:#ff79c6">);</span>
 </code></pre></div><ol start="3">
@@ -798,7 +798,7 @@ if (!doNotTrack) {
 <ol start="4">
 <li>配置ShiroFilterFactoryBean</li>
 </ol>
-<p>shiro工厂bean，设置安全管理员和jwt过滤器</p>
+<p>shiro工厂bean，设置安全管理员和jwt过滤器。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">/**
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"> * @version 1.0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"> * @description Shiro安全框架配置
@@ -934,7 +934,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    <span style="color:#ff79c6">}</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#ff79c6">}</span>
 </code></pre></div><h3 id="新建全局异常处理类">新建全局异常处理类</h3>
-<p>全局处理异常，方便异常消息的捕获和向前端反馈信息</p>
+<p>全局处理异常，方便异常消息的捕获和向前端反馈信息。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">/**
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"> * @version 1.0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"> * @description
@@ -999,13 +999,13 @@ if (!doNotTrack) {
 <p>注：</p>
 <ol>
 <li>
-<p>@RequiresAuthentication代表通过过滤器后需要进一步进行认证</p>
+<p>@RequiresAuthentication代表通过过滤器后需要进一步进行认证。</p>
 </li>
 <li>
-<p>@RequiresRoles(&ldquo;admin&rdquo;)代表需要有admin对象才可进行访问</p>
+<p>@RequiresRoles(&ldquo;admin&rdquo;)代表需要有admin对象才可进行访问。</p>
 </li>
 <li>
-<p>@RequiresPermissions(logical = Logical.AND, value = {&ldquo;view&rdquo;, &ldquo;edit&rdquo;})代表必须同时拥有view和edit两个权限可访问</p>
+<p>@RequiresPermissions(logical = Logical.AND, value = {&ldquo;view&rdquo;, &ldquo;edit&rdquo;})代表必须同时拥有view和edit两个权限可访问。</p>
 </li>
 <li>
 <p>对于退出登录操作的解释：</p>
@@ -1136,12 +1136,12 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span>    <span style="color:#ff79c6">}</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span><span style="color:#ff79c6">}</span>
 </code></pre></div><h3 id="运行项目">运行项目</h3>
-<p>运行在8080端口，后续的前端项目则运行在8081端口</p>
+<p>运行在8080端口，后续的前端项目则运行在8081端口。</p>
 <h3 id="通过postman调试">通过Postman调试</h3>
 <p>注意post方法：</p>
 <ol>
-<li>header中添加content-type: application/json</li>
-<li>body设置为raw并添加json数据</li>
+<li>header中添加content-type: application/json。</li>
+<li>body设置为raw并添加json数据。</li>
 </ol>
 <h2 id="前端开发">前端开发</h2>
 <h3 id="主要工具-1">主要工具</h3>
@@ -1151,7 +1151,7 @@ if (!doNotTrack) {
 <li>axios</li>
 </ul>
 <h3 id="新建项目导入依赖">新建项目，导入依赖</h3>
-<p>通过<code>vue ui</code>快速新建项目，完成后通过<code>npm install</code>导入axios，element等组件</p>
+<p>通过<code>vue ui</code>快速新建项目，完成后通过<code>npm install</code>导入axios，element等组件。</p>
 <h3 id="创建页面和组件">创建页面和组件</h3>
 <ul>
 <li>
@@ -1172,7 +1172,7 @@ if (!doNotTrack) {
 </ul>
 <h3 id="配置router">配置router</h3>
 <p>src/router/index.js</p>
-<p>meta.auth数据用于判断进入页面是否需要认证</p>
+<p>meta.auth数据用于判断进入页面是否需要认证。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> Vue from <span style="color:#f1fa8c">&#39;vue&#39;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> VueRouter from <span style="color:#f1fa8c">&#39;vue-router&#39;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">import</span> Home from <span style="color:#f1fa8c">&#39;../views/Home.vue&#39;</span>
@@ -1204,7 +1204,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> router
 </code></pre></div><h3 id="配置store">配置store</h3>
-<p>更方便地更新和存储数据</p>
+<p>更方便地更新和存储数据。</p>
 <p>src/store/index.js</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> Vue from <span style="color:#f1fa8c">&#39;vue&#39;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> Vuex from <span style="color:#f1fa8c">&#39;vuex&#39;</span>
@@ -1241,10 +1241,10 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="定义axios拦截器">定义axios拦截器</h3>
 <ol>
 <li>
-<p>由于前后端分离，项目部署在不同端口上，所以设置所有axios访问后端的baseURL为后端的地址</p>
+<p>由于前后端分离，项目部署在不同端口上，所以设置所有axios访问后端的baseURL为后端的地址。</p>
 </li>
 <li>
-<p>所有axios请求结果都先通过一个方法拦截判断成功与否，失败则reject终止并反馈信息，成功则resolve并放行，减少了许多代码量</p>
+<p>所有axios请求结果都先通过一个方法拦截判断成功与否，失败则reject终止并反馈信息，成功则resolve并放行，减少了许多代码量。</p>
 </li>
 </ol>
 <p>src/main.js</p>
@@ -1271,8 +1271,8 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>
 </code></pre></div><h3 id="定义router拦截器">定义router拦截器</h3>
-<p>前后端分离，前端则必须定义自己路由的拦截器，实现资源的合理控制</p>
-<p>通过src/router/index.js中meta下的字段即可进行合理的操控了，比如通过auth真假与否决定一个访问静态页面资源是否需要认证</p>
+<p>前后端分离，前端则必须定义自己路由的拦截器，实现资源的合理控制。</p>
+<p>通过src/router/index.js中meta下的字段即可进行合理的操控了，比如通过auth真假与否决定一个访问静态页面资源是否需要认证。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">// router前置拦截
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>router.beforeEach((to, from, next) =&gt; {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#ff79c6">if</span> (to.matched.some(record =&gt; record.meta.auth)) {
@@ -1293,7 +1293,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>})
 </code></pre></div><h3 id="部署调试">部署调试</h3>
-<p>通过<code>npm run serve</code>即可进行预览</p>
+<p>通过<code>npm run serve</code>即可进行预览。</p>
 <p>可在vue.config.js中配置预览端口地址：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>module.exports <span style="color:#ff79c6">=</span> {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    devServer<span style="color:#ff79c6">:</span> {
@@ -1303,15 +1303,15 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="正式部署">正式部署</h3>
 <ol>
 <li>
-<p>通过<code>npm run build</code>部署并在dist中</p>
+<p>通过<code>npm run build</code>部署并在dist中。</p>
 </li>
 <li>
-<p>接着安装serve</p>
+<p>接着安装serve：</p>
 </li>
 </ol>
 <pre tabindex="0"><code>npm install -g serve
 </code></pre><ol start="3">
-<li>将dist中项目部署在8081端口</li>
+<li>将dist中项目部署在8081端口。</li>
 </ol>
 <p>暂时部署：</p>
 <pre tabindex="0"><code>cd dist
