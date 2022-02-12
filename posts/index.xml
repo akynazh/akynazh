@@ -15,6 +15,7 @@
       
       <guid>https://akynazh.site/posts/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</guid>
       <description>前言 Github地址：SpringBoot-Vue-Demo
+相关项目：lonersHub，前后端不分离的基础web项目。
 欢迎star学习。
 SpringBoot整合Vue的一个Demo，同时后端整合了Shiro+Jwt+Redis的安全框架。
 通过一个demo进一步了解了前后端分离的架构思想以及安全框架shiro的运行机制。
