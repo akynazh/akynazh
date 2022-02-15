@@ -110,21 +110,13 @@ SpringBoot整合Vue的一个Demo，同时后端整合了Shiro+Jwt+Redis的安全
       <pubDate>Sun, 06 Feb 2022 16:38:34 +0800</pubDate>
       
       <guid>https://akynazh.site/about/</guid>
-      <description>2022-2-6 修改博客主题。
-2021-12-8 写博客是为了总结与学习，其次是记录与抒发感情。
-只有写给自己看的博客才能真正长久地写下去。
-Keep It.
-2021-11-18 记录博客历史@-@
-2021-11-17 新的一天开始，建立我的hugo博客^-^
-本来决定部署在GiteePage的，后来发现只有Pro用户可以自定义域名&amp;hellip;&amp;hellip;所以还是部署在了无敌（要不是被墙了）的GithubPage，Github真可谓我第二个家啦=_=
-花了接近半天的时间抉择主题（老强迫症患者了）&amp;hellip;&amp;hellip;
-终于选好，然后通过hugo文档和编写的相当优秀的主题文档慢慢测试修改界面&amp;hellip;&amp;hellip;大功告成!~
-体验很不错，很舒服~
-接着就开始编写脚本，实现自动化发布文章咯^-^
-2021-11-16 部署在虚拟主机上的网站通常因为各种问题无法访问，后来又发生了众多奇妙的令人恼火的问题，虽然途中通过解决一个个问题玩转了一下Linux，但是觉得这似乎违背了我建站的本意=_=。。我是来写博客的呀@—@。 遂产生了转移博客的念头。
-确实还是想念hexo那种在本地通过命令行操作生成并发布文章的方式，想念舒服地在本地修改界面文件，自定义配置文件的感觉。那种感觉就是一种控制感，不像wordpress一样，感觉就是单纯使用一个软件写东西。
-最近听说hugo由go语言编写，响应很快，方便preview调试，这是比hexo好用的一个非常重要的点！之前就饱受hexo摧残qaq。
-所以窝决定试试hugo!</description>
+      <description>2022-2-6 更改了博客主题。
+2021-12-8 突然觉得只有写给自己看的博客才能真正长久地写下去。
+2021-11-17 新的一天开始，建立我的hugo博客。
+部署在了的Github。
+接着就开始编写脚本，自动化发布和修改文章。
+2021-11-16 删除了部署在虚拟主机上的wordpress网站。
+wordpress有点拉跨，窝决定试试hugo。</description>
     </item>
     
     <item>
@@ -133,7 +125,7 @@ Keep It.
       <pubDate>Sun, 06 Feb 2022 16:38:34 +0800</pubDate>
       
       <guid>https://akynazh.site/share/</guid>
-      <description> 来Airpano环游世界吧 巴姆哈特，台湾地区的ACGN站 omofun，国内高质高速且免费的动漫站 计算机书籍收藏库 香港高登论坛 台湾Dcard论坛 日本国2ch论坛 国内老牌论坛天涯 Reddit，老外娱乐网站 OpenUserJs，各种油猴脚本 Aconvert，实用的全文件转换工具 HammerVPN，个人推荐的一款VPN Quora，外国人的知乎 wiki程序员教程 聚合图床，易用免费的图床 StackOverflow，程序员论坛 Wallhaven，老外的壁纸收集站 Apkpure，自由地下载各种apk Unsplash，高质量图片收集站 Pinterest，高质量图片收集站  </description>
+      <description> 来Airpano环游世界吧 巴姆哈特，台湾地区的ACGN站 omofun，国内高质高速且免费的动漫站 计算机书籍收藏库 台湾Dcard论坛 ACGN论坛绯月 HammerVPN，个人推荐的一款VPN Apkpure，自由地下载各种apk Unsplash，高质量图片收集站 Pinterest，高质量图片收集站  </description>
     </item>
     
     <item>
