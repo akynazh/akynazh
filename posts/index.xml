@@ -182,7 +182,7 @@ URL : http://www.cip.cc/${my_ip}
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
-      <description>事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获取key 获取指定key keys * # 获取所有key keys pattern # 根据pattern获取key  - * 代表匹配任意字符 - ? 代表匹配一个字符 - [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 - x 转移字符，例如要匹配星号，问号需要转义的字符  e.</description>
+      <description>事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获取key 获取指定key keys * # 获取所有key keys pattern # 根据pattern获取key - * 代表匹配任意字符 - ? 代表匹配一个字符 - [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 - x 转移字符，例如要匹配星号，问号需要转义的字符 e.</description>
     </item>
     
     <item>
