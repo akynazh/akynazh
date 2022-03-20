@@ -8,7 +8,7 @@
 
 ![](https://github-readme-stats.vercel.app/api?username=akynazh&show_icons=true)
 
-## 📕 Latest Blog Posts
+### 📕 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->

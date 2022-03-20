@@ -1,130 +1,834 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on AKYNAZH</title>
+    <title>Linux | AKYNAZH</title>
     <link>https://akynazh.site/tags/linux/</link>
-    <description>Recent content in Linux on AKYNAZH</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Jzh</copyright>
-    <lastBuildDate>Mon, 03 Jan 2022 00:30:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://akynazh.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <description>Linux</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Jzh</copyright><lastBuildDate>Mon, 03 Jan 2022 00:30:25 +0800</lastBuildDate>
     <item>
       <title>Linux主机部署springboot项目全过程</title>
       <link>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-      <description>注：部署环境为centos7.9版本
-操作步骤如下：
- 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
-  将jdk压缩包通过winsp上传至主机
-  解压缩jdk压缩包
-1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
-1[root@VM-0-11-centos ~]# mkdir /usr/local/java 2[root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java   配置环境变量 Linux相关配置文件解析 bashrc部分:
- /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:
- /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.</description>
+      <description>&lt;p&gt;&lt;strong&gt;注：部署环境为centos7.9版本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作步骤如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置Java环境&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置mysql环境&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置redis环境&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 生成，上传并运行JAR包项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;配置java环境&#34;&gt;配置Java环境&lt;/h2&gt;
+&lt;h3 id=&#34;获取jdk&#34;&gt;获取JDK&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;下载jdk压缩包： jdk-8u311-linux-x64.tar.gz&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将jdk压缩包通过winsp上传至主机&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压缩jdk压缩包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;bin  jdk-8u311-linux-x64.tar.gz  passwd  var
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# tar -zxvf jdk-8u311-linux-x64.tar.gz&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;...
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移动jdk到合适目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# mkdir /usr/local/java&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# mv ./jdk1.8.0_311 /usr/local/java&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;配置环境变量&#34;&gt;配置环境变量&lt;/h3&gt;
+&lt;h4 id=&#34;linux相关配置文件解析&#34;&gt;Linux相关配置文件解析&lt;/h4&gt;
+&lt;p&gt;bashrc部分:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/etc/bashrc: 针对所有用户，每开启一个shell都会执行一次&lt;/li&gt;
+&lt;li&gt;/etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc&lt;/li&gt;
+&lt;li&gt;~/.bashrc: 只针对单个用户，每开启一个shell执行一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;profile部分:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/etc/profile: 针对所有用户，首次登录执行一次&lt;/li&gt;
+&lt;li&gt;/etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile&lt;/li&gt;
+&lt;li&gt;~/.bash_profile: 只针对单个用户，首次登录执行一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;编辑etcbashrc文件&#34;&gt;编辑/etc/bashrc文件&lt;/h4&gt;
+&lt;p&gt;也可以选择编辑/etc/profile。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# vim /etc/bashrc # 进行全局配置&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;进行添加如下：
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#JAVA&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;/usr/local/java/jdk1.8.0_311
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$PATH&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;CLASSPATH&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;.:&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$JAVA_HOME&lt;/span&gt;/lib/dt.jar:&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$JAVA_HOME&lt;/span&gt;/lib/tools.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;使配置文件生效：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;source&lt;/span&gt; /etc/bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;验证java环境&#34;&gt;验证Java环境：&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# java -version&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;java version &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;1.8.0_311&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;Java&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; SE Runtime Environment &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;build 1.8.0_311-b11&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;Java HotSpot&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; 64-Bit Server VM &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;build 25.311-b11, mixed mode&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# javac&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;Usage: javac &amp;lt;options&amp;gt; &amp;lt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;source&lt;/span&gt; files&amp;gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;where possible options include:
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&lt;/span&gt;...
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;9&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;配置mysql环境&#34;&gt;配置mysql环境&lt;/h2&gt;
+&lt;h3 id=&#34;yum方式安装mysql57&#34;&gt;yum方式安装mysql57&lt;/h3&gt;
+&lt;p&gt;这里实验环境为centos7.9版本，且采用yum方式安装mysql57。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 获取mysql80-community-release-el7-3.noarch.rpm软件包&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;......
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;2022-01-02 12:07:24 &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;133&lt;/span&gt; KB/s&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; - ‘mysql80-community-release-el7-3.noarch.rpm’ saved &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;26024/26024&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 安装mysql80-community-release-el7-3.noarch.rpm软件包&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# rpm -Uvh mysql80-community-release-el7-3.noarch.rpm&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;......
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;Updating / installing...
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;1:mysql80-community-release-el7-3  &lt;span style=&#34;color:#6272a4&#34;&gt;################################# [100%]&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 这时查看/etc/yum.repos.d可以看到如下：&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls  /etc/yum.repos.d | grep mysql&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;mysql-community.repo
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;mysql-community-source.repo
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 将mysql80换为mysql57&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# yum-config-manager --disable mysql80-community&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#  yum-config-manager --enable mysql57-community&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看是否切换成功：&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# yum repolist enabled | grep mysql&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24&lt;/span&gt;mysql-connectors-community/x86_64    MySQL Connectors Community              &lt;span style=&#34;color:#bd93f9&#34;&gt;221&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25&lt;/span&gt;mysql-tools-community/x86_64         MySQL Tools Community                   &lt;span style=&#34;color:#bd93f9&#34;&gt;135&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26&lt;/span&gt;mysql57-community/x86_64             MySQL 5.7 Community Server              &lt;span style=&#34;color:#bd93f9&#34;&gt;544&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 安装mysql57&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# yum install mysql-community-server&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30&lt;/span&gt;......
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31&lt;/span&gt;Installed:
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32&lt;/span&gt;mysql-community-libs.x86_64 0:5.7.36-1.el7               mysql-community-libs-compat.x86_64 0:5.7.36-1.el7
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33&lt;/span&gt;mysql-community-server.x86_64 0:5.7.36-1.el7
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34&lt;/span&gt;......
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行mysql&#34;&gt;运行mysql&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 开启mysql服务&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# service mysqld start&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;Redirecting to /bin/systemctl start mysqld.service
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看mysql服务状态&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl status mysqld.service&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;● mysqld.service - MySQL Server
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;Loaded: loaded &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;Active: active &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;running&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; since Sun 2022-01-02 12:21:47 CST; 11s ago
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;......
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;Jan &lt;span style=&#34;color:#bd93f9&#34;&gt;02&lt;/span&gt; 12:21:41 VM-0-11-centos systemd&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;: Starting MySQL Server...
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;Jan &lt;span style=&#34;color:#bd93f9&#34;&gt;02&lt;/span&gt; 12:21:47 VM-0-11-centos systemd&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;: Started MySQL Server.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;配置mysql&#34;&gt;配置mysql&lt;/h3&gt;
+&lt;h4 id=&#34;设置root密码&#34;&gt;设置root密码&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 获取初始mysql为root生成的默认密码并登录mysql&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# grep &amp;#39;temporary password&amp;#39; /var/log/mysqld.log&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;2022-01-02T04:21:43.962084Z &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;Note&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt; A temporary password is generated &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; root@localhost: mkjhMuJBe3,%
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 则默认密码为mkjhMuJBe3,%&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# mysql -uroot -p&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;Enter password: &lt;span style=&#34;color:#6272a4&#34;&gt;# 输入默认密码&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;Welcome to the MySQL monitor.  Commands end with ; or &lt;span style=&#34;color:#f1fa8c&#34;&gt;\g&lt;/span&gt;.
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;Your MySQL connection id is &lt;span style=&#34;color:#bd93f9&#34;&gt;3&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;Server version: 5.7.36
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;...
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;mysql&amp;gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 修改root账户登录密码&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;mysql&amp;gt; ALTER USER &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;@&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;658766@Jzh&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;Query OK, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; rows affected &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.00 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;设置允许远程访问mysql&#34;&gt;设置允许远程访问mysql&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;mysql&amp;gt; GRANT ALL PRIVILEGES ON *.* TO &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;@&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;658766@Jzh&amp;#39;&lt;/span&gt; WITH GRANT OPTION;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;Query OK, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; rows affected, &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; warning &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.00 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;mysql&amp;gt; FLUSH PRIVILEGES;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;Query OK, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; rows affected &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.00 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;设置开机自启动mysql&#34;&gt;设置开机自启动mysql&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl enable mysqld&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl daemon-reload&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;设置mysql默认编码为utf-8&#34;&gt;设置mysql默认编码为utf-8&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看原来编码&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;mysql&amp;gt; SHOW VARIABLES LIKE &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;character%&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;+--------------------------+----------------------------+
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;| Variable_name            | Value                      |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;+--------------------------+----------------------------+
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;| character_set_client     | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;| character_set_connection | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;| character_set_database   | latin1                     |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;| character_set_filesystem | binary                     |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;| character_set_results    | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;| character_set_server     | latin1                     |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;| character_set_system     | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;| character_sets_dir       | /usr/share/mysql/charsets/ |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;+--------------------------+----------------------------+
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 编辑/etc/my.cnf文件&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# vim /etc/my.cnf&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;mysqld&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;下新增：
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;character_set_server&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;utf8
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21&lt;/span&gt;init-connect&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;SET NAMES utf8&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 重启mysql服务&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl restart mysqld.service&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 再查看编码&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28&lt;/span&gt;mysql&amp;gt; SHOW VARIABLES LIKE &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;character%&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29&lt;/span&gt;+--------------------------+----------------------------+
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30&lt;/span&gt;| Variable_name            | Value                      |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31&lt;/span&gt;+--------------------------+----------------------------+
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32&lt;/span&gt;| character_set_client     | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33&lt;/span&gt;| character_set_connection | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34&lt;/span&gt;| character_set_database   | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35&lt;/span&gt;| character_set_filesystem | binary                     |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36&lt;/span&gt;| character_set_results    | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37&lt;/span&gt;| character_set_server     | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38&lt;/span&gt;| character_set_system     | utf8                       |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39&lt;/span&gt;| character_sets_dir       | /usr/share/mysql/charsets/ |
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40&lt;/span&gt;+--------------------------+----------------------------+
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;8&lt;/span&gt; rows in &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.01 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;建立数据库并新建表&#34;&gt;建立数据库并新建表。&lt;/h4&gt;
+&lt;p&gt;通过sql脚本快速建成。&lt;/p&gt;
+&lt;h2 id=&#34;配置redis环境&#34;&gt;配置redis环境&lt;/h2&gt;
+&lt;h3 id=&#34;yum安装redis&#34;&gt;yum安装redis&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;yum install redis
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;启动redis&#34;&gt;启动redis&lt;/h3&gt;
+&lt;p&gt;默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;systemctl start redis
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;ps -ef | grep redis &lt;span style=&#34;color:#6272a4&#34;&gt;# 检查是否已经启动&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;redis &lt;span style=&#34;color:#bd93f9&#34;&gt;12105&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 00:44 ? 00:00:01 /usr/bin/redis-server 127.0.0.1:6379
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;设置开机自启动redis&#34;&gt;设置开机自启动redis&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;systemctl &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;enable&lt;/span&gt; redis
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;生成上传并运行jar包项目&#34;&gt;生成，上传并运行JAR包项目&lt;/h2&gt;
+&lt;h3 id=&#34;上传jar包项目&#34;&gt;上传JAR包项目&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;mvn clean
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;mvn &lt;span style=&#34;color:#ff79c6&#34;&gt;package&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可把项目打包为JAR包，再通过WINSP上传到服务器。&lt;/p&gt;
+&lt;p&gt;先新建一个app文件夹，放置项目所有内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;mkdir /app
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;chmod &lt;span style=&#34;color:#bd93f9&#34;&gt;777&lt;/span&gt; /app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;新建并编辑application配置文件&#34;&gt;新建并编辑application配置文件&lt;/h3&gt;
+&lt;p&gt;由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;spring&lt;/span&gt;:
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;datasource&lt;/span&gt;:
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;password&lt;/span&gt;: ......
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;resources&lt;/span&gt;:
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;static-locations&lt;/span&gt;:
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;            - classpath:static/
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;            - file:/app/static/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# chmod -R 777 *&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行项目&#34;&gt;运行项目&lt;/h3&gt;
+&lt;h4 id=&#34;确保需要的端口开启&#34;&gt;确保需要的端口开启&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;netstat -ntlp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;指定安全组规则&#34;&gt;指定安全组规则&lt;/h4&gt;
+&lt;p&gt;值得注意的一点是，在某云上购买的主机可能带有安全组，其优先级更高，所以想要开放8080端口，还得现在安全组那里先添加入站规则以放通8080端口。同样的，3306端口也一样要添加，否则同样是连接不上滴。&lt;/p&gt;
+&lt;h4 id=&#34;部署运行jar包&#34;&gt;部署运行JAR包&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;java &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;jar LonersHub&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;0&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;SNAPSHOT&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;jar&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样的话关闭终端项目就停止运行了。&lt;/p&gt;
+&lt;p&gt;可以这样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;0&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;11&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;# nohup java &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;jar LonersHub&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;0&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;SNAPSHOT&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt; 27108
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样即使关闭终端项目也仍旧运行着！&lt;/p&gt;
+&lt;h3 id=&#34;更新项目&#34;&gt;更新项目&lt;/h3&gt;
+&lt;p&gt;首先删除原来的jar包并上传新的jar包。&lt;/p&gt;
+&lt;p&gt;然后杀死原本进程并运行jar包：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ps -ef | grep java&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;root     &lt;span style=&#34;color:#bd93f9&#34;&gt;13415&lt;/span&gt;     &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; 00:02 ?        00:00:18 java -jar LonersHub-0.0.1-SNAPSHOT.jar
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;root     &lt;span style=&#34;color:#bd93f9&#34;&gt;16053&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;15504&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 00:21 pts/1    00:00:00 grep --color&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;auto java
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# kill -9 12415&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;脚本实现：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 编写脚本&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# touch restart.sh&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# vim restart.sh&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;kill&lt;/span&gt; -9 &lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;ps -ef | grep LonersHub | grep -v color | awk &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 运行脚本&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# sh restart.sh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;通过记录项目的完整部署运行过程，方便以后参考。&lt;/p&gt;
+&lt;p&gt;OVER.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作者: Jiang Zhihang&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网站: &lt;a href=&#34;https://akynazh.site&#34;&gt;AKYNAZH&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Linux实用操作之网络观察</title>
       <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E8%A7%82%E5%AF%9F/</link>
       <pubDate>Mon, 03 Jan 2022 00:27:58 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E8%A7%82%E5%AF%9F/</guid>
-      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-alias myip=&amp;quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&amp;quot; test:
-[root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP curl cip.cc show:
-IP : ${my_ip} 地址 : 中国 中国
-数据二 : 上海市 | 腾讯云
-数据三 : 中国北京北京 | 腾讯
-URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。</description>
+      <description>&lt;h2 id=&#34;查看内网ip&#34;&gt;查看内网IP&lt;/h2&gt;
+&lt;p&gt;grep抓取inet行，sed删除inet字串和netmask.*字串&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;alias myip=&amp;quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;test:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos ~]# myip
+         172.17.0.11
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;查看外网ip&#34;&gt;查看外网IP&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl cip.cc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;show:&lt;/p&gt;
+&lt;p&gt;IP      : ${my_ip}
+地址    : 中国  中国&lt;/p&gt;
+&lt;p&gt;数据二  : 上海市 | 腾讯云&lt;/p&gt;
+&lt;p&gt;数据三  : 中国北京北京 | 腾讯&lt;/p&gt;
+&lt;p&gt;URL     : &lt;a href=&#34;http://www.cip.cc/$%7Bmy_ip%7D&#34;&gt;http://www.cip.cc/${my_ip}&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查看ip端口状况&#34;&gt;查看IP端口状况&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# netstat -ntlp&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;Active Internet connections &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;only servers&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;tcp        &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;      &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 0.0.0.0:22              0.0.0.0:*               LISTEN      1089/sshd
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;tcp6       &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;      &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; :::3306                 :::*                    LISTEN      14528/mysqld
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;说明：n拒绝别名都用数字，t即只TCP，l即只显示在listen中的，p可显示相关程序名。&lt;/p&gt;
+&lt;p&gt;结果列出了进程PID，可以通过kill终止占用该端口的程序：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;kill&lt;/span&gt; -9 PID
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另外一种方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# lsof -i:3306&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;mysqld  &lt;span style=&#34;color:#bd93f9&#34;&gt;14528&lt;/span&gt; mysql   17u  IPv6 &lt;span style=&#34;color:#bd93f9&#34;&gt;779103&lt;/span&gt;      0t0  TCP *:mysql &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;开启与关闭端口&#34;&gt;开启与关闭端口&lt;/h2&gt;
+&lt;p&gt;这里实验环境为centos7.9，我采用firewall来实现需求。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 首先打开防火墙服务&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl start firewalld &lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 永久开启80端口&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# firewall-cmd --zone=public --add-port=8080/tcp --permanent &lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 使生效&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# firewall-cmd --reload&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看已经开启的端口&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# firewall-cmd --zone=public --list-ports&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;8080/tcp 3306/tcp 80/tcp
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看进程&#34;&gt;查看进程&lt;/h2&gt;
+&lt;p&gt;查看所有进程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ps -ef &lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;UID        PID  PPID  C STIME TTY          TIME CMD
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;root         &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;     &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 00:41 ?        00:00:06 /usr/lib/systemd/systemd --switched-root --system --deserialize &lt;span style=&#34;color:#bd93f9&#34;&gt;22&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;root         &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;     &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 00:41 ?        00:00:00 &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;kthreadd&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看相关进程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ps -ef | head -n 1; ps -ef | grep java&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;UID        PID  PPID  C STIME TTY          TIME CMD
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;root     &lt;span style=&#34;color:#bd93f9&#34;&gt;25889&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;24972&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;4&lt;/span&gt; 17:46 pts/1    00:00:11 java -jar LonersHub-0.0.1-SNAPSHOT.jar
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;root     &lt;span style=&#34;color:#bd93f9&#34;&gt;26558&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;24972&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 17:51 pts/1    00:00:00 grep --color&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;auto java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>Linux实用操作之权限管理</title>
       <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
-      <description>添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
-设置密码 在进行useradd后密码还未设定。
-[root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
-[root@VM-0-11-centos /]# useradd vbird [root@VM-0-11-centos /]# echo &amp;quot;658766&amp;quot; | passwd --stdin vbird Changing password for user vbird.</description>
+      <description>&lt;h2 id=&#34;添加用户&#34;&gt;添加用户&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos ~]# useradd jzh
+
+[root@VM-0-11-centos /]# id jzh
+uid=1000(jzh) gid=1000(jzh) groups=1000(jzh)
+
+[root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group
+/etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash
+/etc/shadow:jzh:!!:18980:0:99999:7:::
+/etc/group:jzh:x:1000:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;x指代密码，对应到shadow中，未设定即为“!!”&lt;/p&gt;
+&lt;h2 id=&#34;设置密码&#34;&gt;设置密码&lt;/h2&gt;
+&lt;p&gt;在进行useradd后密码还未设定。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos /]# passwd jzh
+Changing password for user jzh.
+New password:
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password:
+passwd: all authentication tokens updated successfully.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos /]# useradd vbird
+[root@VM-0-11-centos /]# echo &amp;quot;658766&amp;quot; | passwd --stdin vbird
+Changing password for user vbird.
+passwd: all authentication tokens updated successfully.
+[root@VM-0-11-centos /]# chage -d 0 vbird # -d接最近一次需要修改密码的时间
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用vbird用户登录：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS C:\Users\akyna&amp;gt; ssh jzh
+vbird@101.34.217.138&#39;s password:
+You are required to change your password immediately (root enforced)
+Last login: Mon Dec 20 00:04:51 2021 from 113.200.174.13
+WARNING: Your password has expired.
+You must change your password now and login again!
+# 提示需要修改密码
+
+# 修改密码
+Changing password for user vbird.
+Changing password for vbird.
+(current) UNIX password:
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;添加群组与加入群组&#34;&gt;添加群组与加入群组&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos ~]# groupadd testgroup
+[root@VM-0-11-centos ~]# gpasswd testgroup
+Changing the password for group testgroup
+New Password:
+Re-enter new password:
+[root@VM-0-11-centos ~]# gpasswd -A vbird testgroup
+[root@VM-0-11-centos ~]# grep testgroup /etc/group /etc/gshadow
+/etc/group:testgroup:x:1002:
+/etc/gshadow:testgroup:$1$9v24LYZE$V/yYwmmoaKNpe9.zCPK3U.:vbird:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可见vbird已经加入该群组&lt;/p&gt;
+&lt;h2 id=&#34;通过acl设置专有权限&#34;&gt;通过ACL设置专有权限&lt;/h2&gt;
+&lt;p&gt;团队开发时，由于原有权限无法满足需求，通常需要对某些成员设置专有权限。&lt;/p&gt;
+&lt;h3 id=&#34;setfaclgetfacl&#34;&gt;setfacl&amp;amp;getfacl&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;-m 设置后续acl参数给文件使用&lt;/li&gt;
+&lt;li&gt;-x 删除后续acl参数&lt;/li&gt;
+&lt;li&gt;-R 递归设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# touch acl
+# 针对用户
+[root@VM-0-11-centos tmp]# setfacl -m u:jzh:rx acl # 为jzh用户设置专有权限
+
+# 针对群组
+[root@VM-0-11-centos tmp]# setfacl -m g:testgroup:rwx acl
+[root@VM-0-11-centos tmp]# getfacl acl
+# file: acl
+# owner: root
+# group: root
+user::rw-
+user:jzh:r-x
+group::r--
+group:testgroup:rwx
+mask::rwx
+other::r--
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;登录&#34;&gt;登录&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;su - # 使用root登录
+su - jzh # 使用jzh登录
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>Linux实用操作之流程控制</title>
       <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
-      <description>read命令  read -a variable_name 读取数组”array”  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5  read -p “prompt words” variable_name read -n limit_length variable_name  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words  read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else if []; then do something elif []; then do something else do something fi case case ${var} in &amp;quot;condition1&amp;quot;) do something ;; &amp;quot;condition2&amp;quot;) do something ;; *) #anything do something ;; esac 循环语句 while while [condition] do do something done when meet the condition, start the loop.</description>
+      <description>&lt;h2 id=&#34;read命令&#34;&gt;read命令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;read -a variable_name 读取数组”array”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# read -a arr
+1 2 3 4 5
+[root@VM-0-11-centos tmp]# echo ${arr[0]}
+1
+[root@VM-0-11-centos tmp]# echo ${arr[4]}
+5
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;read -p “prompt words” variable_name&lt;/li&gt;
+&lt;li&gt;read -n limit_length variable_name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# read -n 5 kk
+words[root@VM-0-11-centos tmp]# echo $kk
+words
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;read -s variable_name “silent”输入不显示&lt;/li&gt;
+&lt;li&gt;read -t time variable_name “time”限定时间输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;条件判断语句&#34;&gt;条件判断语句&lt;/h2&gt;
+&lt;h3 id=&#34;if-else&#34;&gt;if else&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;if []; then
+	do something
+elif []; then
+	do something
+else
+	do something
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;case&#34;&gt;case&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;case ${var} in
+&amp;quot;condition1&amp;quot;)
+do something
+;;
+&amp;quot;condition2&amp;quot;)
+do something
+;;
+*) #anything
+do something
+;;
+esac
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;循环语句&#34;&gt;循环语句&lt;/h2&gt;
+&lt;h3 id=&#34;while&#34;&gt;while&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;while [condition]
+do
+	do something
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;when meet the condition, start the loop.&lt;/p&gt;
+&lt;h3 id=&#34;until&#34;&gt;until&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;until [condition]
+do
+	do something
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;when meet the condition, end the loop.&lt;/p&gt;
+&lt;h3 id=&#34;for&#34;&gt;for&lt;/h3&gt;
+&lt;h4 id=&#34;usage1&#34;&gt;usage1&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;for $var in con1 con2 con3 ...
+do
+	do something
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;usage2&#34;&gt;usage2&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;for $var in ${array}
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;usage3&#34;&gt;usage3&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;for $var in $(seq 1 100)
+...
+or
+for $var in {1..100}
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;usage4&#34;&gt;usage4&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;for ( (i=1; i&amp;lt;=${var}; i++) )
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;a-test&#34;&gt;a test:&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# loop.sh
+var=95
+for var in {1..10}
+do
+    echo $var
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# sh loop.test
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;test命令&#34;&gt;test命令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;-e exist or not&lt;/li&gt;
+&lt;li&gt;-f file or not&lt;/li&gt;
+&lt;li&gt;-d directory or not&lt;/li&gt;
+&lt;li&gt;-r can read or not &amp;mdash;similar: -x -w&lt;/li&gt;
+&lt;li&gt;-s exist and not blank&lt;/li&gt;
+&lt;li&gt;-nt newer than &amp;mdash; -ot&lt;/li&gt;
+&lt;li&gt;-eq equal &amp;mdash; -ne&lt;/li&gt;
+&lt;li&gt;-gt greater than &amp;mdash; -lt&lt;/li&gt;
+&lt;li&gt;-ge greater than or equal &amp;mdash;le&lt;/li&gt;
+&lt;li&gt;-z string if null -&amp;gt; true&lt;/li&gt;
+&lt;li&gt;-n string if null -&amp;gt; false&lt;/li&gt;
+&lt;li&gt;-a and&lt;/li&gt;
+&lt;li&gt;-o or&lt;/li&gt;
+&lt;li&gt;! reverse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用--进行条件判断&#34;&gt;使用 “[]” 进行条件判断&lt;/h2&gt;
+&lt;p&gt;注：中括号两端要有空白符。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# [ &amp;quot;a&amp;quot; == &amp;quot;b&amp;quot; ] &amp;amp;&amp;amp; echo hello || echo bye
+bye
+[root@VM-0-11-centos tmp]# [ &amp;quot;a&amp;quot; == &amp;quot;a&amp;quot; ] &amp;amp;&amp;amp; echo hello || echo bye
+hello
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;sh命令&#34;&gt;sh命令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;-n 不执行，只检查语法 not execute but check&lt;/li&gt;
+&lt;li&gt;-v 执行前输出脚本内容 view the script&lt;/li&gt;
+&lt;li&gt;-x 将使用到脚本内容输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# sh -x loop.sh
++ var=95
++ for var in &#39;{1..10}&#39;
++ echo 1
+1
++ for var in &#39;{1..10}&#39;
++ echo 2
+2
++ for var in &#39;{1..10}&#39;
++ echo 3
+3
+...
+[root@VM-0-11-centos tmp]# sh -v loop.sh
+var=95
+for var in {1..10}
+do
+        echo $var
+done
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>Linux实用操作之文本操作</title>
       <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
-      <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
-last | grep &#39;root&#39; 比较重要，记忆：
-grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename
-选项与参数：
--a ：将 binary 文件以 text 文件的方式搜寻数据
--c ：计算找到 &amp;lsquo;搜寻字串&amp;rsquo; 的次数
--i ：忽略大小写的不同，所以大小写视为相同
--n ：顺便输出行号
--v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行
-&amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
-awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}
-last -n 5 | awk &#39;{print $1 &amp;quot;\t&amp;quot; $3}&#39;  分隔字符  awk -F #-F指定分割字符
-使用&amp;quot;,&amp;ldquo;分隔
-awk -F, &#39;{print $1,$2}&#39; log.txt  设置变量  awk -v # 设置变量
-设置变量k等于1</description>
+      <description>&lt;h2 id=&#34;使用grep抓取期望的结果&#34;&gt;使用grep抓取期望的结果&lt;/h2&gt;
+&lt;p&gt;在过去登录主机的人中截取登录信息含root的行信息&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;last | grep &#39;root&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;比较重要，记忆：&lt;/p&gt;
+&lt;p&gt;grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename&lt;/p&gt;
+&lt;p&gt;选项与参数：&lt;/p&gt;
+&lt;p&gt;-a ：将 binary 文件以 text 文件的方式搜寻数据&lt;/p&gt;
+&lt;p&gt;-c ：计算找到 &amp;lsquo;搜寻字串&amp;rsquo; 的次数&lt;/p&gt;
+&lt;p&gt;-i ：忽略大小写的不同，所以大小写视为相同&lt;/p&gt;
+&lt;p&gt;-n ：顺便输出行号&lt;/p&gt;
+&lt;p&gt;-v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行&lt;/p&gt;
+&lt;p&gt;&amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔&lt;/p&gt;
+&lt;h2 id=&#34;awk命令操作文本&#34;&gt;awk命令操作文本&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;格式化输出：以tab隔开打印前五行中每行的第一和第三个字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;last -n 5 | awk &#39;{print $1 &amp;quot;\t&amp;quot; $3}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;分隔字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk -F  #-F指定分割字符&lt;/p&gt;
+&lt;p&gt;使用&amp;quot;,&amp;ldquo;分隔&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk -F, &#39;{print $1,$2}&#39; log.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;设置变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk -v  # 设置变量&lt;/p&gt;
+&lt;p&gt;设置变量k等于1&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk -vk=1 &#39;{print $1, $1+k}&#39; log.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;使用awk脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;awk -k {awk_script} {file}&lt;/p&gt;
+&lt;p&gt;使用my.awk处理log.txt&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk -k my.awk log.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;sed命令操作文本&#34;&gt;sed命令操作文本&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;打印删除了第二到第五行的文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nl /etc/passwd | sed &#39;2,5d&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;2,$d&amp;rsquo; 匹配删除了第2到最后一行的文本&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;/root/d&amp;rsquo; 匹配删除了含root的行的文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;a: add&lt;/p&gt;
+&lt;p&gt;c: commute&lt;/p&gt;
+&lt;p&gt;d: delete&lt;/p&gt;
+&lt;p&gt;i: insert&lt;/p&gt;
+&lt;p&gt;p: print&lt;/p&gt;
+&lt;p&gt;s: s/old/new/g&lt;/p&gt;
+&lt;h2 id=&#34;使用cut处理输出的结果&#34;&gt;使用cut处理输出的结果&lt;/h2&gt;
+&lt;p&gt;对以:隔开的结果，输出第三个到第五个&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo $PATH | cut -d &#39;:&#39; -f 3,5
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;使用sort和uniq处理结果&#34;&gt;使用sort和uniq处理结果&lt;/h2&gt;
+&lt;p&gt;使用 last 将帐号列出，仅取出帐号栏，进行排序后仅取出一位&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;last | cut -d &#39; &#39; -f 1 | sort | uniq
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;文件读写&#34;&gt;文件读写&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;新建1.txt并进入编辑模式，ctrl+D离开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;gt; 1.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;追加写入1.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;gt;&amp;gt; 1.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;新建test开始编辑并将~/.bashrc作为标准输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;gt; test &amp;lt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;标准输出和标准错误输出都写入testfile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find /home -name .bashrc &amp;gt; testfile 2&amp;gt;&amp;amp;1 
+or 
+find /home -name .bashrc &amp;amp;&amp;gt; testfile
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>Linux实用操作之其他</title>
       <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%85%B6%E4%BB%96/</link>
       <pubDate>Sun, 03 Jan 2021 00:10:38 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%85%B6%E4%BB%96/</guid>
-      <description>Dos与Linux换行区别 首先知道：
- 回车 CR \r 换行 LR \n  win/dos的换行： \r\n
-unix mac linux的换行： \n
-unix to win 换行失败
-win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M
-文件编码 查看文件编码
-enca -L none file 文件编码转为UTF-8
-enca -L none -x UTF-8 file 查询历史命令 history 10 查看最近的10笔bash命令记录 !10 执行history中第10笔bash命令记录 修改vim中tab长度 设置vim中tab长度
-vim /etc/vimrc set tabstop=4 禁用烦人的蜂鸣声 禁用bash蜂鸣声
- /etc/inputrc &amp;quot;set bell-style none&amp;quot; 禁用vim蜂鸣声
- /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)</description>
+      <description>&lt;h2 id=&#34;dos与linux换行区别&#34;&gt;Dos与Linux换行区别&lt;/h2&gt;
+&lt;p&gt;首先知道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;回车 CR \r&lt;/li&gt;
+&lt;li&gt;换行 LR \n&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;win/dos的换行： \r\n&lt;/p&gt;
+&lt;p&gt;unix mac linux的换行： \n&lt;/p&gt;
+&lt;p&gt;unix to win 换行失败&lt;/p&gt;
+&lt;p&gt;win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M&lt;/p&gt;
+&lt;h2 id=&#34;文件编码&#34;&gt;文件编码&lt;/h2&gt;
+&lt;p&gt;查看文件编码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;enca -L none file 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;文件编码转为UTF-8&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;enca -L none -x UTF-8 file 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;查询历史命令&#34;&gt;查询历史命令&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;history 10 查看最近的10笔bash命令记录
+
+!10 执行history中第10笔bash命令记录
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;修改vim中tab长度&#34;&gt;修改vim中tab长度&lt;/h2&gt;
+&lt;p&gt;设置vim中tab长度&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim /etc/vimrc
+
+set tabstop=4
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;禁用烦人的蜂鸣声&#34;&gt;禁用烦人的蜂鸣声&lt;/h2&gt;
+&lt;p&gt;禁用bash蜂鸣声&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; /etc/inputrc &amp;quot;set bell-style none&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;禁用vim蜂鸣声&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;(vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)&lt;/p&gt;
+&lt;h2 id=&#34;永久的alias&#34;&gt;永久的alias&lt;/h2&gt;
+&lt;p&gt;为某一个用户永久添加alias&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim ~/etc/.bashrc
+
+alias lm=&#39;ls -al | more&#39;
+
+source ~/etc/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;shell参数&#34;&gt;shell参数&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$# 参数个数&lt;/li&gt;
+&lt;li&gt;$@ 取出所有参数&lt;/li&gt;
+&lt;li&gt;${0} 取出第一个参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;变量作用域&#34;&gt;变量作用域&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;name=jzh
+echo $name # 输出 jzh
+bash
+echo $name # 输出 空 
+exit
+export name
+bash
+echo $name # 输出 jzh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;日期输出&#34;&gt;日期输出&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@VM-0-11-centos tmp]# date +%Y%m%d
+20211209
+
+[root@VM-0-11-centos tmp]# date
+Thu Dec  9 19:34:06 CST 2021
+[root@VM-0-11-centos tmp]# date --date=&#39;2 days ago&#39;
+Tue Dec  7 19:34:07 CST 2021
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
       <link>https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
-      
       <guid>https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
-      <description>问题的提出： 我们可以通过指令：
-ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
-通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
-实现免ip登录：   新建config文件
-若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。
-  编辑代替名以及IP，端口号，用户。
-  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户 这样，即可通过
-ssh 代替名 进行登录咯！
-接着我们实现免密登录：  在本地生成密钥：  ssh-keygen 并选择生成在.ssh目录下即可，获得一把公钥和私钥。
-将名字带.pub的就是公钥了。
- 将公钥发给远程主机  通过命令
-ssh-copy-id -i .ssh/公钥 用户名@IP 即可发送给远程主机。
-在window10中可能出现以下错误：
-ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。 则可先于命令行中运行以下代码：
-function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa.pub&amp;quot; if (!(Test-Path &amp;quot;$publicKey&amp;quot;)){ Write-Error &amp;quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&amp;quot; } else { &amp;amp; cat &amp;quot;$publicKey&amp;quot; | ssh $args $userAtMachine &amp;quot;umask 077; test -d .</description>
+      <description>&lt;h2 id=&#34;问题的提出&#34;&gt;问题的提出：&lt;/h2&gt;
+&lt;p&gt;我们可以通过指令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh 用户名@IP
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！&lt;/p&gt;
+&lt;p&gt;通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。&lt;/p&gt;
+&lt;h2 id=&#34;实现免ip登录&#34;&gt;实现免ip登录：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新建config文件&lt;/p&gt;
+&lt;p&gt;若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑代替名以及IP，端口号，用户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
+	HostName 输入IP
+	Port 输入端口号
+	User 输入用户
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样，即可通过&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh 代替名
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进行登录咯！&lt;/p&gt;
+&lt;h2 id=&#34;接着我们实现免密登录&#34;&gt;接着我们实现免密登录：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在本地生成密钥：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并选择&lt;strong&gt;生成在.ssh目录下即可&lt;/strong&gt;，获得一把公钥和私钥。&lt;/p&gt;
+&lt;p&gt;将名字带.pub的就是公钥了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将公钥发给远程主机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过命令&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-copy-id -i .ssh/公钥 用户名@IP
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;即可发送给远程主机。&lt;/p&gt;
+&lt;p&gt;在window10中可能出现以下错误：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;则可先于命令行中运行以下代码：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function ssh-copy-id([string]$userAtMachine, $args){
+    $publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa.pub&amp;quot;
+    if (!(Test-Path &amp;quot;$publicKey&amp;quot;)){
+        Write-Error &amp;quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&amp;quot;
+    }
+    else {
+        &amp;amp; cat &amp;quot;$publicKey&amp;quot; | ssh $args $userAtMachine &amp;quot;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys || exit 1&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后再重试即可成功发送公钥！&lt;/p&gt;
+&lt;p&gt;远程主机对本地发送过去的公钥进行加密，只有本地的私钥可以解密！&lt;/p&gt;
+&lt;p&gt;这样本地就与远程主机有了联系！&lt;/p&gt;
+&lt;h2 id=&#34;密钥算法不匹配问题&#34;&gt;密钥算法不匹配问题&lt;/h2&gt;
+&lt;p&gt;这里贴上一个我遇到的问题，如果出现以下错误：&lt;/p&gt;
+&lt;p&gt;no matching key exchange method found. Their offer: diffie-hellman-group1-sha1&lt;/p&gt;
+&lt;p&gt;则是本地密钥算法与远程主机密钥算法&lt;strong&gt;不匹配&lt;/strong&gt;造成的！&lt;/p&gt;
+&lt;p&gt;可以在ssh_config或config文件中添加密钥算法配置：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
+	HostName 输入IP
+	Port 输入端口号
+	User 输入用户
+	KexAlgorithms +diffie-hellman-group1-sha1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中加号不能省略！表示新增的密钥算法哦~&lt;/p&gt;
+&lt;h2 id=&#34;自定义密钥文件导致识别错误问题&#34;&gt;自定义密钥文件导致识别错误问题&lt;/h2&gt;
+&lt;p&gt;生成密钥的时候系统会让我们指定路径（包含其生成的文件名），这是可选的一步，如果我们直接回车而不指定则系统会默认生成id_rsa及id_rsa.pub这两个文件。&lt;/p&gt;
+&lt;p&gt;而当我们需要登录多个主机时，生成的文件名就会冲突了。所以我们需要自定义文件名。&lt;/p&gt;
+&lt;p&gt;步骤如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;假设我们自定义key生成路径为~/.ssh/id_rsa_centos79，则生成id_rsa_centos79及id_rsa_centos79.pub文件&lt;/li&gt;
+&lt;li&gt;继续编辑config文件，如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host 输入代替名
+	HostName 输入IP
+	Port 输入端口号
+	User 输入用户
+	IdentityFile ~/.ssh/id_rsa_centos79
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;修改ssh-copy-id函数中的公钥名，如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$publicKey&lt;/span&gt; = &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;$ENV:USERPROFILE&amp;#34;&lt;/span&gt; + &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/.ssh/id_rsa_centos79.pub&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;ssh-copy&lt;/span&gt;-id([string]&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$userAtMachine&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$args&lt;/span&gt;){
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$publicKey&lt;/span&gt; = &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;$ENV:USERPROFILE&amp;#34;&lt;/span&gt; + &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/.ssh/id_rsa_centos79.pub&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#6272a4&#34;&gt;# 修改的位置&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (!(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;Test-Path&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;$publicKey&amp;#34;&lt;/span&gt;)){
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;Write-Error&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;ERROR: failed to open ID file &amp;#39;$publicKey&amp;#39;: No such file&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;    }
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt; {
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;        &amp;amp; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;cat &lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;$publicKey&amp;#34;&lt;/span&gt; | ssh &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$args&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$userAtMachine&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys || exit 1&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&lt;/span&gt;    }
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;9&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样即可顺利发送公钥到主机哩^-^&lt;/p&gt;
+&lt;p&gt;over!&lt;/p&gt;
+</description>
     </item>
     
   </channel>
