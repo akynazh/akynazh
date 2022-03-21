@@ -1,86 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git | AKYNAZH</title>
+    <title>Git on AKYNAZH</title>
     <link>https://akynazh.site/tags/git/</link>
-      <atom:link href="https://akynazh.site/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    <description>Git</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Jzh</copyright><lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate>
+    <description>Recent content in Git on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git实用操作之初始化与分支管理</title>
       <link>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
       <guid>https://akynazh.site/posts/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
-      <description>&lt;h2 id=&#34;git初次拉取远程仓库&#34;&gt;git初次拉取远程仓库&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;从github建立一个仓库，获取仓库地址url&lt;/li&gt;
-&lt;li&gt;进入项目所在文件夹，运行一下代码&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt; git init # 初始化仓库，生成.git文件
-
-&amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index）
-
-&amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支
-
-&amp;gt; git remote add origin ${url} # 添加远程仓库
-
-&amp;gt; git push origin master # 将本地分支推送到远程仓库
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里执行完 &lt;code&gt;git commit -m “init”&lt;/code&gt;后，我们查看一下本地分支信息：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt; git branch
-* master
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可见git自动为我们本地创建了一个master分支。&lt;/p&gt;
-&lt;p&gt;执行完&lt;code&gt;git push origin master&lt;/code&gt;后，我们查看一下本地分支与远程分支的映射关系：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt; git branch -a
-* master
-  remotes/origin/master
-
-&amp;gt; git branch -vv
-* master 3a31f4c init
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可见并没有产生映射。&lt;/p&gt;
-&lt;p&gt;所以如果直接使用&lt;code&gt;git push&lt;/code&gt;提交代码会报错，因为git不知道你要提交到哪个远程分支。&lt;/p&gt;
-&lt;h2 id=&#34;git映射关系&#34;&gt;git映射关系&lt;/h2&gt;
-&lt;p&gt;建立映射关系的方法：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git branch -u origin/dev_r 将当前分支与远程分支dev_r建立映射关系
-
-git branch -vv 查看分支映射关系
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果建立了映射关系，那么以后在当前分支git push时默认push到与当前分支建立关系的那个远程分支。&lt;/p&gt;
-&lt;p&gt;实际操作：&lt;/p&gt;
-&lt;p&gt;运行一下指令：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt; git branch -u origin/master
-Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;origin&#39;.
-&amp;gt; git branch -vv
-* master 3a31f4c [origin/master] init
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;即可看见产生了映射关系。&lt;/p&gt;
-&lt;h2 id=&#34;git分支管理&#34;&gt;git分支管理&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;git branch -a 查看所有分支&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;git branch dev 创建dev分支&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;git branch -d dev 删除dev分支&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;git checkout dev 切换到dev分支&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;git checkout -b dev 创建并切换到dev分支&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;git拉取与合并分支&#34;&gt;git拉取与合并分支&lt;/h2&gt;
-&lt;h3 id=&#34;方式一&#34;&gt;方式一&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git fetch origin master:dev 将远程origin仓库的master分支拉取到本地dev分支
-
-git checkout dev 切换到dev分支
-
-git merge FETCH_HEAD 将以上拉取的commit记录合并到当前分支dev
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;方式二&#34;&gt;方式二&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout dev 先切换到dev分支
-
-git pull origin master 将远程origin仓库的master分支拉取到当前分支并合并commit记录
-&lt;/code&gt;&lt;/pre&gt;</description>
+      <description>git初次拉取远程仓库  从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码  &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程仓库 &amp;gt; git push origin master # 将本地分支推送到远程仓库 这里执行完 git commit -m “init”后，我们查看一下本地分支信息：
+&amp;gt; git branch * master 可见git自动为我们本地创建了一个master分支。
+执行完git push origin master后，我们查看一下本地分支与远程分支的映射关系：
+&amp;gt; git branch -a * master remotes/origin/master &amp;gt; git branch -vv * master 3a31f4c init 可见并没有产生映射。
+所以如果直接使用git push提交代码会报错，因为git不知道你要提交到哪个远程分支。</description>
     </item>
     
   </channel>

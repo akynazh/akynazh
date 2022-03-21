@@ -1,94 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Window | AKYNAZH</title>
+    <title>Window on AKYNAZH</title>
     <link>https://akynazh.site/tags/window/</link>
-      <atom:link href="https://akynazh.site/tags/window/index.xml" rel="self" type="application/rss+xml" />
-    <description>Window</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Jzh</copyright><lastBuildDate>Sat, 20 Nov 2021 18:10:30 +0800</lastBuildDate>
+    <description>Recent content in Window on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sat, 20 Nov 2021 18:10:30 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/window/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Window增加右键打开选项</title>
       <link>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
+      
       <guid>https://akynazh.site/posts/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
-      <description>&lt;h2 id=&#34;加入注册表界面&#34;&gt;加入注册表界面&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;win+R&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;regedit&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;增加右键操作文件选项&#34;&gt;增加右键操作文件选项&lt;/h2&gt;
-&lt;h3 id=&#34;以vscode作为编辑文件实例&#34;&gt;以vscode作为编辑文件实例&lt;/h3&gt;
-&lt;p&gt;注册表页面下进入：&lt;/p&gt;
-&lt;p&gt;计算机\HKEY_CLASSES_ROOT*\shell&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;新建项 Vscode&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;右键Vscode并新建项command&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;编辑command默认选项值为： &lt;code&gt;${vscodepath}\Code.exe %1&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;%1是可选的参数，这里必须要加，表示作用于该文件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编辑Vscode值&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：&lt;code&gt;${vscodepath}\Code.exe&lt;/code&gt; (有些可以这样，但一般为ico文件)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;增加目录下右键打开选项&#34;&gt;增加目录下右键打开选项&lt;/h2&gt;
-&lt;h3 id=&#34;以window-terminal作为实例&#34;&gt;以window terminal作为实例&lt;/h3&gt;
-&lt;p&gt;注册表页面下进入：&lt;/p&gt;
-&lt;p&gt;计算机\HKEY_CLASSES_ROOT\Directory\Background\shell&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;新建项 Terminal&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;右键Terminal 新建项command&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;编辑command默认选项值为：&lt;code&gt;${terminalpath}\wt.exe&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编辑Terminal值&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编辑右键显示图标：新建字符串值icon 添加：&lt;code&gt;${terminalicon}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编辑window terminal的json配置文件&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;profiles&amp;#34;&lt;/span&gt;: 
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;    {
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;defaults&amp;#34;&lt;/span&gt;: 
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;        {
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;startingDirectory&amp;#34;&lt;/span&gt; : &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;        },
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;    ...
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&lt;/span&gt;    }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;over&lt;/p&gt;
-</description>
+      <description>加入注册表界面   win+R
+  regedit
+  增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT*\shell
+  新建项 Vscode
+  右键Vscode并新建项command
+ 编辑command默认选项值为： ${vscodepath}\Code.exe %1  %1是可选的参数，这里必须要加，表示作用于该文件。
+  编辑Vscode值
+  编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）
+  编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)
+    增加目录下右键打开选项 以window terminal作为实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
+  新建项 Terminal
+  右键Terminal 新建项command
+ 编辑command默认选项值为：${terminalpath}\wt.exe    编辑Terminal值
+  编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
+  编辑右键显示图标：新建字符串值icon 添加：${terminalicon}</description>
     </item>
     
   </channel>

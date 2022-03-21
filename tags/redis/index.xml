@@ -1,200 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Redis | AKYNAZH</title>
+    <title>Redis on AKYNAZH</title>
     <link>https://akynazh.site/tags/redis/</link>
-      <atom:link href="https://akynazh.site/tags/redis/index.xml" rel="self" type="application/rss+xml" />
-    <description>Redis</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Jzh</copyright><lastBuildDate>Mon, 20 Dec 2021 10:15:05 +0800</lastBuildDate>
+    <description>Recent content in Redis on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Mon, 20 Dec 2021 10:15:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis学习记录（二）</title>
       <link>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
+      
       <guid>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
-      <description>&lt;h2 id=&#34;事务&#34;&gt;事务&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; multi # 开启事务
-OK
-127.0.0.1:6379&amp;gt; set book java
-QUEUED
-127.0.0.1:6379&amp;gt; get book
-QUEUED
-127.0.0.1:6379&amp;gt; exec # 执行事务
-1) OK
-2) &amp;quot;java&amp;quot;
-127.0.0.1:6379&amp;gt; get book
-&amp;quot;java&amp;quot;
-127.0.0.1:6379&amp;gt; multi
-OK
-127.0.0.1:6379&amp;gt; set name peter
-QUEUED
-127.0.0.1:6379&amp;gt; discard # 取消事务
-OK
-127.0.0.1:6379&amp;gt; exec
-(error) ERR EXEC without MULTI
-127.0.0.1:6379&amp;gt; get name
-(nil)
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;获取key&#34;&gt;获取key&lt;/h2&gt;
-&lt;h3 id=&#34;获取指定key&#34;&gt;获取指定key&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;keys * # 获取所有key
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;keys pattern # 根据pattern获取key
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- * 代表匹配任意字符
-- ? 代表匹配一个字符
-- [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。
-- x 转移字符，例如要匹配星号，问号需要转义的字符
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;e.g.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; keys *
-1) &amp;quot;book&amp;quot;
-2) &amp;quot;mkeys&amp;quot;
-3) &amp;quot;zset&amp;quot;
-4) &amp;quot;mkey&amp;quot;
-127.0.0.1:6379&amp;gt; keys m*
-1) &amp;quot;mkeys&amp;quot;
-2) &amp;quot;mkey&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;获取key信息&#34;&gt;获取key信息&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; keys *
-1) &amp;quot;book&amp;quot;
-2) &amp;quot;mkeys&amp;quot;
-3) &amp;quot;zset&amp;quot;
-4) &amp;quot;mkey&amp;quot;
-127.0.0.1:6379&amp;gt; dbsize # 获取key数量
-(integer) 4
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;删除key&#34;&gt;删除key&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; flushall # 删除所有数据库所有key
-OK
-127.0.0.1:6379&amp;gt; keys *
-(empty list or set)
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;flushdb # 删除当前数据库所有key
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;redis数据库数量是固定的：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; config get databases
-1) &amp;quot;databases&amp;quot;
-2) &amp;quot;16&amp;quot; # 共16个数据库
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;发布和订阅&#34;&gt;发布和订阅&lt;/h2&gt;
-&lt;p&gt;开启一个redis-cli:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; subscribe news
-Reading messages... (press Ctrl-C to quit)
-1) &amp;quot;subscribe&amp;quot;
-2) &amp;quot;news&amp;quot;
-3) (integer) 1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再开启一个redis-cli:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS C:\Users\akyna&amp;gt; redis-cli
-127.0.0.1:6379&amp;gt; publish news &amp;quot;hello&amp;quot;
-(integer) 1
-127.0.0.1:6379&amp;gt; publish news &amp;quot;world&amp;quot;
-(integer) 1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在第一个的redis-cli中接收到订阅的消息：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; subscribe news
-Reading messages... (press Ctrl-C to quit)
-1) &amp;quot;subscribe&amp;quot;
-2) &amp;quot;news&amp;quot;
-3) (integer) 1
-1) &amp;quot;message&amp;quot;
-2) &amp;quot;news&amp;quot;
-3) &amp;quot;hello&amp;quot;
-1) &amp;quot;message&amp;quot;
-2) &amp;quot;news&amp;quot;
-3) &amp;quot;world&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;</description>
+      <description>事务 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; get book &amp;quot;java&amp;quot; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获取key 获取指定key keys * # 获取所有key keys pattern # 根据pattern获取key - * 代表匹配任意字符 - ? 代表匹配一个字符 - [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 - x 转移字符，例如要匹配星号，问号需要转义的字符 e.</description>
     </item>
     
     <item>
       <title>Redis学习记录（一）</title>
       <link>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
+      
       <guid>https://akynazh.site/posts/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
-      <description>&lt;h2 id=&#34;open-connect-and-config&#34;&gt;Open, Connect And Config&lt;/h2&gt;
-&lt;p&gt;open redis:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;redis-server
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;connect to redis:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;redis-cli
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;disconnect:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;redis-cli shutdown
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;show chinese:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;redis-cli --raw
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;connect to remote redis:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;redis-cli -h host -p port -a password
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;get redis config:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;config get {config_name}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;data-type&#34;&gt;Data Type&lt;/h2&gt;
-&lt;p&gt;list:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;lpush clist redis
-lpush clist mysql
-lrange clist 0 100
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;key:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; set mkey sos
-OK
-127.0.0.1:6379&amp;gt; get mkey
-&amp;quot;sos&amp;quot;
-127.0.0.1:6379&amp;gt; del mkey
-(integer) 1
-127.0.0.1:6379&amp;gt; get mkey
-(nil)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;keys: 接偶数个参数，一一对应。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; hmset mkeys A a B b C c
-OK
-127.0.0.1:6379&amp;gt; hget mkeys B
-&amp;quot;b&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;set:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; sadd mkey 123
-(integer) 1
-127.0.0.1:6379&amp;gt; sadd mkey 123
-(integer) 0
-127.0.0.1:6379&amp;gt; smembers mkey
-1) &amp;quot;123&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;sorted_set: 根据分数和字典序进行排序，同分数下比较字典序，不同分数时，分数越低越靠前。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; zadd zs 1 ak
-(integer) 1
-127.0.0.1:6379&amp;gt; zadd zs 1 to
-(integer) 1
-127.0.0.1:6379&amp;gt; zrangebyscore zs 0 100
-1) &amp;quot;ak&amp;quot;
-2) &amp;quot;to&amp;quot;
-127.0.0.1:6379&amp;gt; zadd zs 1 redis
-(integer) 1
-127.0.0.1:6379&amp;gt; zrangebyscore zs 0 100
-1) &amp;quot;ak&amp;quot;
-2) &amp;quot;redis&amp;quot;
-3) &amp;quot;to&amp;quot;
-127.0.0.1:6379&amp;gt; zadd zs 0 pp
-(integer) 1
-127.0.0.1:6379&amp;gt; zrangebyscore zs 0 100
-1) &amp;quot;pp&amp;quot;
-2) &amp;quot;ak&amp;quot;
-3) &amp;quot;redis&amp;quot;
-4) &amp;quot;to&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;password的设置&#34;&gt;Password的设置&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS C:\Users\akyna&amp;gt; redis-cli
-127.0.0.1:6379&amp;gt; config get requirepass
-1) &amp;quot;requirepass&amp;quot;
-2) &amp;quot;&amp;quot;
-127.0.0.1:6379&amp;gt; config set requirepass 12345
-OK
-127.0.0.1:6379&amp;gt; config get requirepass
-(error) NOAUTH Authentication required.
-127.0.0.1:6379&amp;gt; auth 12345 # 进行密码验证
-OK
-127.0.0.1:6379&amp;gt; config get requirepass
-1) &amp;quot;requirepass&amp;quot;
-2) &amp;quot;12345&amp;quot; # 发现已经有密码咯
-127.0.0.1:6379&amp;gt; exit
-PS C:\Users\akyna&amp;gt; redis-cli
-127.0.0.1:6379&amp;gt; auth 12345
-OK
-127.0.0.1:6379&amp;gt; config get requirepass
-1) &amp;quot;requirepass&amp;quot;
-2) &amp;quot;12345&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果重启server密码会失效。&lt;/p&gt;
-&lt;p&gt;一般在Linux下主机重启后需要重新配置一下密码。&lt;/p&gt;
-&lt;p&gt;可以修改redis.conf文件，设置密码:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;requirepass ${password}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以后通过下面命令：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;redis-server redis.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进行服务重新启动时的配置，这样可以在服务开启时同时指定密码。&lt;/p&gt;
-</description>
+      <description>Open, Connect And Config open redis:
+redis-server  connect to redis:
+redis-cli  disconnect:
+redis-cli shutdown show chinese:
+redis-cli --raw  connect to remote redis:
+redis-cli -h host -p port -a password  get redis config:
+config get {config_name}  Data Type list:
+lpush clist redis lpush clist mysql lrange clist 0 100 key:
+127.0.0.1:6379&amp;gt; set mkey sos OK 127.0.0.1:6379&amp;gt; get mkey &amp;quot;sos&amp;quot; 127.0.0.1:6379&amp;gt; del mkey (integer) 1 127.0.0.1:6379&amp;gt; get mkey (nil) keys: 接偶数个参数，一一对应。</description>
     </item>
     
   </channel>

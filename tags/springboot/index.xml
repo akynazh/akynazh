@@ -1,387 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SpringBoot | AKYNAZH</title>
+    <title>SpringBoot on AKYNAZH</title>
     <link>https://akynazh.site/tags/springboot/</link>
-      <atom:link href="https://akynazh.site/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
-    <description>SpringBoot</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Jzh</copyright><lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate>
+    <description>Recent content in SpringBoot on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
       <link>https://akynazh.site/posts/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
       <guid>https://akynazh.site/posts/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。&lt;/p&gt;
-&lt;p&gt;本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。&lt;/p&gt;
-&lt;h2 id=&#34;使用cookie传递数据不推荐&#34;&gt;使用cookie传递数据：不推荐&lt;/h2&gt;
-&lt;h3 id=&#34;步骤&#34;&gt;步骤&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;后端通过addCookie方法设置值&lt;/li&gt;
-&lt;li&gt;前端在页面加载时读取cookie值并进行展示&lt;/li&gt;
-&lt;li&gt;前端删除该cookie值&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;缺陷&#34;&gt;缺陷&lt;/h3&gt;
-&lt;p&gt;这个方法我使用过，但是效果并不好，原因如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;用户可能禁止cookie&lt;/li&gt;
-&lt;li&gt;后端如果有重定向操作将导致cookie添加失败&lt;/li&gt;
-&lt;li&gt;前端每次都要删除cookie，有时可能会失效&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;使用session传递数据值得借鉴&#34;&gt;使用session传递数据：值得借鉴&lt;/h2&gt;
-&lt;h3 id=&#34;步骤-1&#34;&gt;步骤&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;后端往session中存入数据&lt;/li&gt;
-&lt;li&gt;前端通过${session}进行获取数据并展示&lt;/li&gt;
-&lt;li&gt;前端将该数据删除或修改为指定默认值&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;script th&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;inline&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;// 这里可以通过session访问值
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;缺陷-1&#34;&gt;缺陷&lt;/h3&gt;
-&lt;p&gt;这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。&lt;/p&gt;
-&lt;p&gt;但是这种方法的思想值得借鉴，请看如下方法。&lt;/p&gt;
-&lt;h2 id=&#34;通过redirectattributesmodelmap传递数据&#34;&gt;通过RedirectAttributesModelMap传递数据&lt;/h2&gt;
-&lt;p&gt;注意这里后端采用SpringMVC。&lt;/p&gt;
-&lt;h3 id=&#34;步骤-2&#34;&gt;步骤&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;通过RedirectAttributesModelMap往model中存值&lt;/li&gt;
-&lt;li&gt;返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;示例提醒用户首先进行登录&#34;&gt;示例：提醒用户首先进行登录&lt;/h3&gt;
-&lt;h4 id=&#34;后端代码&#34;&gt;后端代码&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;@GetMapping&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/loginFirst&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;public&lt;/span&gt; String &lt;span style=&#34;color:#50fa7b&#34;&gt;loginFirst&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;RedirectAttributesModelMap model&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;    model&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;addFlashAttribute&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;msg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;请先进行登录&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;redirect:/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;;&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;解析：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;addFlashAttribute是把数据临时放在session中并在刷新页面后自动删除的方法，配合RedirectAttributesModelMap进行使用&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;前端代码&#34;&gt;前端代码&lt;/h4&gt;
-&lt;p&gt;必须注意，这里外部js无法通过$(&#39;#msg&#39;).val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;alert&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;msg&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;display: none&amp;#34;&lt;/span&gt;/&amp;gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;th:inline&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;let&lt;/span&gt; msg &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [[${msg}]];
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;msg&amp;#34;&lt;/span&gt;).setAttribute(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;, msg.toString());
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里可以在inline部分完成所有信息展示操作，但由于thymeleaf内联js无法调用jquery代码，所以我把msg存到隐藏域中，再通过jquery代码调用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;$(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;document&lt;/span&gt;).ready(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; () {
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;let&lt;/span&gt; msg &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; $(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;#msg&amp;#39;&lt;/span&gt;).val();
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (msg &lt;span style=&#34;color:#ff79c6&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; msg &lt;span style=&#34;color:#ff79c6&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;null&lt;/span&gt;) {
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;        $(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;.alert&amp;#39;&lt;/span&gt;).html(msg).addClass(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;alert-info&amp;#39;&lt;/span&gt;).show().delay(&lt;span style=&#34;color:#bd93f9&#34;&gt;1500&lt;/span&gt;).fadeOut();
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;    }
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;})
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;提示信息的css代码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;/* 触发方式: $(&amp;#39;.alert&amp;#39;).html(&amp;#34;errorMsg&amp;#34;).addClass(&amp;#39;alert-info&amp;#39;).show().delay(1500).fadeOut();*/&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;.&lt;span style=&#34;color:#50fa7b&#34;&gt;alert&lt;/span&gt; {
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;none&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;position&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;fixed&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;top&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;%&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;left&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;50&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;%&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;min-width&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;150&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;px&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;margin-left&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;-100&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;px&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;z-index&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;99999&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;padding&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;15&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;px&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;border&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;px&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;solid&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;transparent&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;border-radius&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;px&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;}
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;.&lt;span style=&#34;color:#50fa7b&#34;&gt;alert-info&lt;/span&gt; {
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;color&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;white&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;text-align&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;center&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;font-family&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;Times New Roman&amp;#34;&lt;/span&gt;, SansSerif, &lt;span style=&#34;color:#ff79c6&#34;&gt;sans-serif&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;background-color&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;black&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;background-image&lt;/span&gt;: &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;linear-gradient&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;bottom&lt;/span&gt;, &lt;span style=&#34;color:#ff79c6&#34;&gt;gray&lt;/span&gt;, &lt;span style=&#34;color:#ff79c6&#34;&gt;black&lt;/span&gt;);
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;border-color&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;black&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21&lt;/span&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;评价&#34;&gt;评价&lt;/h3&gt;
-&lt;p&gt;这个方法原理同上一个方法，都是通过session进行数据访问，只不过springmvc为我们封装好了好用的操作方法而已。&lt;/p&gt;
-&lt;p&gt;需要避过的坑有：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;RedirectAttributesModelMap必须与addFlashAttribute结合使用&lt;/li&gt;
-&lt;li&gt;无法通过外部js访问th:value设置的值，需要通过thymeleaf内联js进行操作或将数据保存到隐藏域中再进行外部js的操作&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;p&gt;本文主要介绍在前后端不分离的情况下进行交互性数据展示的实现方法，有点麻烦，容易出错，这也让我再次意识到前后端分离的必要性！&lt;/p&gt;
-</description>
+      <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
+本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
+使用cookie传递数据：不推荐 步骤  后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值  缺陷 这个方法我使用过，但是效果并不好，原因如下：
+ 用户可能禁止cookie 后端如果有重定向操作将导致cookie添加失败 前端每次都要删除cookie，有时可能会失效  使用session传递数据：值得借鉴 步骤  后端往session中存入数据 前端通过${session}进行获取数据并展示 前端将该数据删除或修改为指定默认值  这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：
+1&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 2// 这里可以通过session访问值 3&amp;lt;/script&amp;gt; 缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
+但是这种方法的思想值得借鉴，请看如下方法。
+通过RedirectAttributesModelMap传递数据 注意这里后端采用SpringMVC。
+步骤  通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示  示例：提醒用户首先进行登录 后端代码 1@GetMapping(&amp;#34;/loginFirst&amp;#34;) 2public String loginFirst(RedirectAttributesModelMap model) { 3 model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); 4 return &amp;#34;redirect:/&amp;#34;; 5} 解析：
+  RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
+  addFlashAttribute是把数据临时放在session中并在刷新页面后自动删除的方法，配合RedirectAttributesModelMap进行使用
+  前端代码 必须注意，这里外部js无法通过$(&#39;#msg&#39;).val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。
+1&amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 2&amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; 3&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 4 let msg = [[${msg}]]; 5 document.</description>
     </item>
     
     <item>
       <title>Linux主机部署springboot项目全过程</title>
       <link>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
+      
       <guid>https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;注：部署环境为centos7.9版本&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;操作步骤如下：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置Java环境&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置mysql环境&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 配置redis环境&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 生成，上传并运行JAR包项目&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;配置java环境&#34;&gt;配置Java环境&lt;/h2&gt;
-&lt;h3 id=&#34;获取jdk&#34;&gt;获取JDK&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;下载jdk压缩包： jdk-8u311-linux-x64.tar.gz&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将jdk压缩包通过winsp上传至主机&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;解压缩jdk压缩包&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;bin  jdk-8u311-linux-x64.tar.gz  passwd  var
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# tar -zxvf jdk-8u311-linux-x64.tar.gz&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;...
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;bin  jdk1.8.0_311  jdk-8u311-linux-x64.tar.gz  passwd  var
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;移动jdk到合适目录&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# mkdir /usr/local/java&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# mv ./jdk1.8.0_311 /usr/local/java&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;配置环境变量&#34;&gt;配置环境变量&lt;/h3&gt;
-&lt;h4 id=&#34;linux相关配置文件解析&#34;&gt;Linux相关配置文件解析&lt;/h4&gt;
-&lt;p&gt;bashrc部分:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;/etc/bashrc: 针对所有用户，每开启一个shell都会执行一次&lt;/li&gt;
-&lt;li&gt;/etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc&lt;/li&gt;
-&lt;li&gt;~/.bashrc: 只针对单个用户，每开启一个shell执行一次&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;profile部分:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;/etc/profile: 针对所有用户，首次登录执行一次&lt;/li&gt;
-&lt;li&gt;/etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile&lt;/li&gt;
-&lt;li&gt;~/.bash_profile: 只针对单个用户，首次登录执行一次&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;编辑etcbashrc文件&#34;&gt;编辑/etc/bashrc文件&lt;/h4&gt;
-&lt;p&gt;也可以选择编辑/etc/profile。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# vim /etc/bashrc # 进行全局配置&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;进行添加如下：
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#JAVA&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;/usr/local/java/jdk1.8.0_311
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$PATH&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;CLASSPATH&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;.:&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$JAVA_HOME&lt;/span&gt;/lib/dt.jar:&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$JAVA_HOME&lt;/span&gt;/lib/tools.jar
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;使配置文件生效：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;source&lt;/span&gt; /etc/bashrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;验证java环境&#34;&gt;验证Java环境：&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# java -version&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;java version &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;1.8.0_311&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;Java&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; SE Runtime Environment &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;build 1.8.0_311-b11&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;Java HotSpot&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; 64-Bit Server VM &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;build 25.311-b11, mixed mode&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# javac&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;Usage: javac &amp;lt;options&amp;gt; &amp;lt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;source&lt;/span&gt; files&amp;gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;where possible options include:
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8&lt;/span&gt;...
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;9&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;配置mysql环境&#34;&gt;配置mysql环境&lt;/h2&gt;
-&lt;h3 id=&#34;yum方式安装mysql57&#34;&gt;yum方式安装mysql57&lt;/h3&gt;
-&lt;p&gt;这里实验环境为centos7.9版本，且采用yum方式安装mysql57。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 获取mysql80-community-release-el7-3.noarch.rpm软件包&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;......
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;2022-01-02 12:07:24 &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;133&lt;/span&gt; KB/s&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; - ‘mysql80-community-release-el7-3.noarch.rpm’ saved &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;26024/26024&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 安装mysql80-community-release-el7-3.noarch.rpm软件包&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# rpm -Uvh mysql80-community-release-el7-3.noarch.rpm&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;......
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;Updating / installing...
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;1:mysql80-community-release-el7-3  &lt;span style=&#34;color:#6272a4&#34;&gt;################################# [100%]&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 这时查看/etc/yum.repos.d可以看到如下：&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls  /etc/yum.repos.d | grep mysql&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;mysql-community.repo
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;mysql-community-source.repo
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 将mysql80换为mysql57&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# yum-config-manager --disable mysql80-community&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#  yum-config-manager --enable mysql57-community&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看是否切换成功：&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# yum repolist enabled | grep mysql&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24&lt;/span&gt;mysql-connectors-community/x86_64    MySQL Connectors Community              &lt;span style=&#34;color:#bd93f9&#34;&gt;221&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25&lt;/span&gt;mysql-tools-community/x86_64         MySQL Tools Community                   &lt;span style=&#34;color:#bd93f9&#34;&gt;135&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26&lt;/span&gt;mysql57-community/x86_64             MySQL 5.7 Community Server              &lt;span style=&#34;color:#bd93f9&#34;&gt;544&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 安装mysql57&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# yum install mysql-community-server&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30&lt;/span&gt;......
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31&lt;/span&gt;Installed:
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32&lt;/span&gt;mysql-community-libs.x86_64 0:5.7.36-1.el7               mysql-community-libs-compat.x86_64 0:5.7.36-1.el7
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33&lt;/span&gt;mysql-community-server.x86_64 0:5.7.36-1.el7
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34&lt;/span&gt;......
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行mysql&#34;&gt;运行mysql&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 开启mysql服务&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# service mysqld start&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;Redirecting to /bin/systemctl start mysqld.service
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看mysql服务状态&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl status mysqld.service&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;● mysqld.service - MySQL Server
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;Loaded: loaded &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;Active: active &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;running&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; since Sun 2022-01-02 12:21:47 CST; 11s ago
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;......
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;Jan &lt;span style=&#34;color:#bd93f9&#34;&gt;02&lt;/span&gt; 12:21:41 VM-0-11-centos systemd&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;: Starting MySQL Server...
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;Jan &lt;span style=&#34;color:#bd93f9&#34;&gt;02&lt;/span&gt; 12:21:47 VM-0-11-centos systemd&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;: Started MySQL Server.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;配置mysql&#34;&gt;配置mysql&lt;/h3&gt;
-&lt;h4 id=&#34;设置root密码&#34;&gt;设置root密码&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 获取初始mysql为root生成的默认密码并登录mysql&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# grep &amp;#39;temporary password&amp;#39; /var/log/mysqld.log&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;2022-01-02T04:21:43.962084Z &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;Note&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt; A temporary password is generated &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; root@localhost: mkjhMuJBe3,%
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 则默认密码为mkjhMuJBe3,%&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# mysql -uroot -p&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;Enter password: &lt;span style=&#34;color:#6272a4&#34;&gt;# 输入默认密码&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;Welcome to the MySQL monitor.  Commands end with ; or &lt;span style=&#34;color:#f1fa8c&#34;&gt;\g&lt;/span&gt;.
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;Your MySQL connection id is &lt;span style=&#34;color:#bd93f9&#34;&gt;3&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;Server version: 5.7.36
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;...
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;mysql&amp;gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 修改root账户登录密码&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;mysql&amp;gt; ALTER USER &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;@&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;658766@Jzh&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;Query OK, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; rows affected &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.00 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;设置允许远程访问mysql&#34;&gt;设置允许远程访问mysql&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;mysql&amp;gt; GRANT ALL PRIVILEGES ON *.* TO &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;@&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;658766@Jzh&amp;#39;&lt;/span&gt; WITH GRANT OPTION;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;Query OK, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; rows affected, &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; warning &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.00 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;mysql&amp;gt; FLUSH PRIVILEGES;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;Query OK, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; rows affected &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.00 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;设置开机自启动mysql&#34;&gt;设置开机自启动mysql&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl enable mysqld&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl daemon-reload&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;设置mysql默认编码为utf-8&#34;&gt;设置mysql默认编码为utf-8&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 查看原来编码&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;mysql&amp;gt; SHOW VARIABLES LIKE &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;character%&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;+--------------------------+----------------------------+
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;| Variable_name            | Value                      |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;+--------------------------+----------------------------+
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;| character_set_client     | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;| character_set_connection | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;| character_set_database   | latin1                     |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;| character_set_filesystem | binary                     |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;| character_set_results    | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;| character_set_server     | latin1                     |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;| character_set_system     | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;| character_sets_dir       | /usr/share/mysql/charsets/ |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;+--------------------------+----------------------------+
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 编辑/etc/my.cnf文件&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# vim /etc/my.cnf&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;mysqld&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;下新增：
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;character_set_server&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;utf8
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21&lt;/span&gt;init-connect&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;SET NAMES utf8&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 重启mysql服务&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos ~&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# systemctl restart mysqld.service&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 再查看编码&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28&lt;/span&gt;mysql&amp;gt; SHOW VARIABLES LIKE &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;character%&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29&lt;/span&gt;+--------------------------+----------------------------+
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30&lt;/span&gt;| Variable_name            | Value                      |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31&lt;/span&gt;+--------------------------+----------------------------+
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32&lt;/span&gt;| character_set_client     | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33&lt;/span&gt;| character_set_connection | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34&lt;/span&gt;| character_set_database   | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35&lt;/span&gt;| character_set_filesystem | binary                     |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36&lt;/span&gt;| character_set_results    | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37&lt;/span&gt;| character_set_server     | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38&lt;/span&gt;| character_set_system     | utf8                       |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39&lt;/span&gt;| character_sets_dir       | /usr/share/mysql/charsets/ |
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40&lt;/span&gt;+--------------------------+----------------------------+
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;8&lt;/span&gt; rows in &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;0.01 sec&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;建立数据库并新建表&#34;&gt;建立数据库并新建表。&lt;/h4&gt;
-&lt;p&gt;通过sql脚本快速建成。&lt;/p&gt;
-&lt;h2 id=&#34;配置redis环境&#34;&gt;配置redis环境&lt;/h2&gt;
-&lt;h3 id=&#34;yum安装redis&#34;&gt;yum安装redis&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;yum install redis
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;启动redis&#34;&gt;启动redis&lt;/h3&gt;
-&lt;p&gt;默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;systemctl start redis
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;ps -ef | grep redis &lt;span style=&#34;color:#6272a4&#34;&gt;# 检查是否已经启动&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;redis &lt;span style=&#34;color:#bd93f9&#34;&gt;12105&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 00:44 ? 00:00:01 /usr/bin/redis-server 127.0.0.1:6379
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;设置开机自启动redis&#34;&gt;设置开机自启动redis&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;systemctl &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;enable&lt;/span&gt; redis
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;生成上传并运行jar包项目&#34;&gt;生成，上传并运行JAR包项目&lt;/h2&gt;
-&lt;h3 id=&#34;上传jar包项目&#34;&gt;上传JAR包项目&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;mvn clean
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;mvn &lt;span style=&#34;color:#ff79c6&#34;&gt;package&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可把项目打包为JAR包，再通过WINSP上传到服务器。&lt;/p&gt;
-&lt;p&gt;先新建一个app文件夹，放置项目所有内容：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;mkdir /app
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;chmod &lt;span style=&#34;color:#bd93f9&#34;&gt;777&lt;/span&gt; /app
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;新建并编辑application配置文件&#34;&gt;新建并编辑application配置文件&lt;/h3&gt;
-&lt;p&gt;由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;spring&lt;/span&gt;:
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;datasource&lt;/span&gt;:
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;password&lt;/span&gt;: ......
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;resources&lt;/span&gt;:
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;static-locations&lt;/span&gt;:
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;            - classpath:static/
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;            - file:/app/static/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# chmod -R 777 *&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ls&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行项目&#34;&gt;运行项目&lt;/h3&gt;
-&lt;h4 id=&#34;确保需要的端口开启&#34;&gt;确保需要的端口开启&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;netstat -ntlp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;指定安全组规则&#34;&gt;指定安全组规则&lt;/h4&gt;
-&lt;p&gt;值得注意的一点是，在某云上购买的主机可能带有安全组，其优先级更高，所以想要开放8080端口，还得现在安全组那里先添加入站规则以放通8080端口。同样的，3306端口也一样要添加，否则同样是连接不上滴。&lt;/p&gt;
-&lt;h4 id=&#34;部署运行jar包&#34;&gt;部署运行JAR包&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;java &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;jar LonersHub&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;0&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;SNAPSHOT&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;jar&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样的话关闭终端项目就停止运行了。&lt;/p&gt;
-&lt;p&gt;可以这样：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;0&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;11&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;# nohup java &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;jar LonersHub&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;0&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;SNAPSHOT&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#50fa7b&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;amp;&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt; 27108
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样即使关闭终端项目也仍旧运行着！&lt;/p&gt;
-&lt;h3 id=&#34;更新项目&#34;&gt;更新项目&lt;/h3&gt;
-&lt;p&gt;首先删除原来的jar包并上传新的jar包。&lt;/p&gt;
-&lt;p&gt;然后杀死原本进程并运行jar包：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# ps -ef | grep java&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;root     &lt;span style=&#34;color:#bd93f9&#34;&gt;13415&lt;/span&gt;     &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; 00:02 ?        00:00:18 java -jar LonersHub-0.0.1-SNAPSHOT.jar
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;root     &lt;span style=&#34;color:#bd93f9&#34;&gt;16053&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;15504&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; 00:21 pts/1    00:00:00 grep --color&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;auto java
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# kill -9 12415&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;脚本实现：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 编写脚本&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# touch restart.sh&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# vim restart.sh&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;kill&lt;/span&gt; -9 &lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;ps -ef | grep LonersHub | grep -v color | awk &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 运行脚本&lt;/span&gt;
-&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;root@VM-0-11-centos app&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# sh restart.sh&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;p&gt;通过记录项目的完整部署运行过程，方便以后参考。&lt;/p&gt;
-&lt;p&gt;OVER.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;作者: Jiang Zhihang&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;网站: &lt;a href=&#34;https://akynazh.site&#34;&gt;AKYNAZH&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <description>注：部署环境为centos7.9版本
+操作步骤如下：
+ 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+  将jdk压缩包通过winsp上传至主机
+  解压缩jdk压缩包
+1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
+1[root@VM-0-11-centos ~]# mkdir /usr/local/java 2[root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java   配置环境变量 Linux相关配置文件解析 bashrc部分:
+ /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:
+ /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.</description>
     </item>
     
   </channel>
