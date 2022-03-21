@@ -1,4 +1,4 @@
-### Personal Blog >>> [akynazh](https://akynazh.site)
+## My Personal Blog :point_right: [AKYNAZH](https://akynazh.site)
 
 <table width="960px">
 <tr>
