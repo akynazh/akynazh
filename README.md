@@ -1,8 +1,10 @@
-## 🎅 Welcome 👻         Here is my blog   👉👉👉  ❄️ [AKYNAZH](https://akynazh.site) ❄️
+## 👻 Welcome To My Repository
 
 <table width="960px">
 <tr>
 <td valign="top" width="50%">
+
+<h3> My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 <h3> :yum: Recommended Articles</h3>
 
 - <a href="https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/">Linux主机部署springboot项目全过程</a>
