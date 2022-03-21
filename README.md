@@ -1,4 +1,6 @@
-## My Personal Blog :point_right: [AKYNAZH](https://akynazh.site)
+## Welcome :trollface:
+
+## My Blog :point_right: [AKYNAZH](https://akynazh.site)
 
 <table width="960px">
 <tr>
