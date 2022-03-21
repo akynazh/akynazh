@@ -1,6 +1,4 @@
-## Welcome Bro :wink:
-
-## My Blog :point_right: [AKYNAZH](https://akynazh.site)
+## Welcome :wink: Here is my blog :point_right: [AKYNAZH](https://akynazh.site)
 
 <table width="960px">
 <tr>
