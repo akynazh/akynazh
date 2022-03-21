@@ -4,8 +4,10 @@
 <tr>
 <td valign="top" width="50%">
 <h3>:snowflake: Latest Blog Posts</h3>
+
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
+
 </td>
 <td valign="top" width="50%">
 <h3>Recommended Articles</h3>
