@@ -9,11 +9,11 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Mon, 21 Mar 2022 18:02:04 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>我的山脉游览录</title>
-      <link>https://akynazh.site/posts/%E6%88%91%E7%9A%84%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</link>
+      <title>山脉游览录</title>
+      <link>https://akynazh.site/posts/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E6%88%91%E7%9A%84%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</guid>
+      <guid>https://akynazh.site/posts/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</guid>
       <description>山的记忆 每一座山都有独特的感觉，每一座山都有自己的故事。
 我和征服过的每一座山都有一段故事。
 我的山脉游览录，记录那些年那些山。
@@ -566,18 +566,20 @@ function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &amp;quot;$ENV
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://akynazh.site/about/</guid>
-      <description>2022-2-6 更改了博客主题。
+      <description>2022-3-21 添加了Github工作流。
+2022-2-6 更改了博客主题。
 2021-11-17 新的一天开始，建立我的hugo博客。
-2021-11-16 删除了部署在虚拟主机上的wordpress网站。</description>
+2021-11-16 删除了主机个人网站。
+2021-9 新入手一个主机，开始鼓捣个人网站。</description>
     </item>
     
     <item>
-      <title>Share</title>
-      <link>https://akynazh.site/share/</link>
+      <title>Gallery</title>
+      <link>https://akynazh.site/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://akynazh.site/share/</guid>
-      <description> Pinterest，高质量图片收集站 Quora，外国人的知乎 Drivebbs，阿里云盘bbs Artstation，CG视觉艺术 来Airpano环游世界 omofun，国内高质高速动漫站 计算机书籍收藏库 Apkpure，自由地下载各种apk Unsplash，高质量图片收集站  </description>
+      <guid>https://akynazh.site/gallery/</guid>
+      <description>日常 JOJO Better Call Saul </description>
     </item>
     
   </channel>
