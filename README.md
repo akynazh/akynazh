@@ -4,6 +4,9 @@
 <tr>
 <td valign="top" width="50%">
 
+  <!--START_SECTION:waka-->
+  <!--END_SECTION:waka-->
+
 <h3>👻 My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 <h3> :yum: Recommended Articles</h3>
 
