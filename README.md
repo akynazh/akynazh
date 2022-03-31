@@ -5,25 +5,27 @@
 <td valign="top" width="50%">
 <h3> :muscle: My Major Skills </h3>
 
-![](https://img.shields.io/badge/Java-4.0-green) 
+![](https://img.shields.io/badge/Java-4.5-green) 
 ![](https://img.shields.io/badge/C++-3.0-red) 
-![](https://img.shields.io/badge/Python-3.0-pink) 
-![](https://img.shields.io/badge/Javascrpt-3.0-yellow) 
-![](https://img.shields.io/badge/Mysql-3.5-red) 
+![](https://img.shields.io/badge/Python-3.5-pink) 
+![](https://img.shields.io/badge/Javascrpt-3.0-yellow)
 
+![](https://img.shields.io/badge/Mysql-3.5-red)
 ![](https://img.shields.io/badge/SpringBoot-3.5-brown) 
 ![](https://img.shields.io/badge/Linux-3.0-blue) 
-![](https://img.shields.io/badge/Vue-2.5-yellow)
-![](https://img.shields.io/badge/Mybatis-3.0-yellow)
+![](https://img.shields.io/badge/Vue-2.5-white)
+
 <h3> :trollface: My Interests </h3>
 
 ![](https://img.shields.io/badge/running-4.5-red)
 ![](https://img.shields.io/badge/swimming-4.0-blue)
-![](https://img.shields.io/badge/acg-4.9-pink)
+![](https://img.shields.io/badge/acgn-4.9-pink)
 ![](https://img.shields.io/badge/reading-4.5-green)
 
 ![](https://img.shields.io/badge/coding-4.7-brown)
-![](https://img.shields.io/badge/travelling-4.5-orange)
+![](https://img.shields.io/badge/biking-4.5-white)
+![](https://img.shields.io/badge/travel-4.5-orange)
+![](https://img.shields.io/badge/game-4.3-green)
 
 <h3> :bug: My Weekly Coding Record </h3>
 
