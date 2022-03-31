@@ -1,11 +1,8 @@
 ## 👻 Welcome To My Repository
 
 <table width="960px">
-
 <tr>
-
 <td valign="top" width="50%">
-
 <h3> :muscle: My Major Skills </h3>
 
 ![](https://img.shields.io/badge/Java-4.0-green) 
@@ -19,21 +16,6 @@
 ![](https://img.shields.io/badge/Vue-2.5-yellow)
 ![](https://img.shields.io/badge/Mybatis-3.0-yellow)
 
-<h3> :bug: My Weekly Coding Record </h3>
-
-<!--START_SECTION:waka-->
-
-```text
-Python       1 hr 8 mins     █████████▓░░░░░░░░░░░░░░░   38.71 %
-C            55 mins         ███████▓░░░░░░░░░░░░░░░░░   31.23 %
-C++          25 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   14.23 %
-JSON         10 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
-XML          9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.59 %
-Text         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
-```
-
-<!--END_SECTION:waka-->
-
 <h3> :trollface: My Interests </h3>
 
 ![](https://img.shields.io/badge/running-4.5-red)
@@ -44,21 +26,28 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 ![](https://img.shields.io/badge/coding-4.7-brown)
 ![](https://img.shields.io/badge/travelling-4.5-orange)
 
+<h3> :bug: My Weekly Coding Record </h3>
 
-<!-- <h3> :octocat: About My Github </h3>
-
-<img src="https://github-readme-stats.vercel.app/api?username=akynazh"></img> -->
-
+<!--START_SECTION:waka-->
+```text
+Python       1 hr 8 mins     █████████▓░░░░░░░░░░░░░░░   38.71 %
+C            55 mins         ███████▓░░░░░░░░░░░░░░░░░   31.23 %
+C++          25 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   14.23 %
+JSON         10 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
+XML          9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.59 %
+Text         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
+```
+<!--END_SECTION:waka-->
 </td>
-<td valign="top" width="50%">
-  
-<h3>:panda_face: My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
+
+<td valign="top" width="50%">  
+<h3> My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 
 <h3> :yum: Recommended Articles</h3>  
 
-- <a href="https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/">Linux主机部署springboot项目全过程</a>
-- <a href="https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">SSH免密且免IP登录远程主机的方法以及遇到的一些问题</a>
-  
+- [Linux主机部署springboot项目全过程](https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/")
+- [SSH免密且免IP登录远程主机的方法以及遇到的一些问题](https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/)
+
 <h3> :alien: Latest Blog Posts</h3>
 
 <!-- BLOG-POST-LIST:START -->
@@ -70,7 +59,5 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 <!-- BLOG-POST-LIST:END -->
 
 </td>
-
 </tr>
-
 </table>
