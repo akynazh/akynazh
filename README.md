@@ -1,10 +1,20 @@
 ## 👻 Welcome To My Repository
 
 <table width="960px">
+
 <tr>
+
 <td valign="top" width="50%">
 
-  <!--START_SECTION:waka-->
+![](https://img.shields.io/badge/Java-4.0-green)
+
+![](https://img.shields.io/badge/C++-3.0-red)
+
+![](https://img.shields.io/badge/Python-3.1-pink)
+
+<h3> 👻 My Weekly Coding Record </h3>
+
+<!--START_SECTION:waka-->
 
 ```text
 Python       1 hr 8 mins     █████████▓░░░░░░░░░░░░░░░   38.71 %
@@ -17,18 +27,17 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
-<h3>👻 My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
-
+<a href="https://github-readme-stats.vercel.app/api?username=akynazh"></a>
 
 </td>
 <td valign="top" width="50%">
   
+<h3>👻 My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
+
 <h3> :yum: Recommended Articles</h3>  
 
 - <a href="https://akynazh.site/posts/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/">Linux主机部署springboot项目全过程</a>
 - <a href="https://akynazh.site/posts/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">SSH免密且免IP登录远程主机的方法以及遇到的一些问题</a>
-- <a href="https://akynazh.site/posts/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/">在前后端不分离的情况下进行交互性数据展示的实现方法</a>
-
   
 <h3> :alien: Latest Blog Posts</h3>
 
@@ -41,5 +50,7 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 <!-- BLOG-POST-LIST:END -->
 
 </td>
+
 </tr>
+
 </table>
