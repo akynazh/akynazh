@@ -27,7 +27,7 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
-<a href="https://github-readme-stats.vercel.app/api?username=akynazh"></a>
+<img src="https://github-readme-stats.vercel.app/api?username=akynazh"></img>
 
 </td>
 <td valign="top" width="50%">
