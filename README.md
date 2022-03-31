@@ -16,22 +16,7 @@
 ![](https://img.shields.io/badge/Linux-3.0-blue) 
 ![](https://img.shields.io/badge/Vue-2.5-yellow)
 ![](https://img.shields.io/badge/Mybatis-3.0-yellow)
-
-<h3> :bug: My Weekly Coding Record </h3>
-
-<!--START_SECTION:waka-->
-
-```text
-Python       1 hr 8 mins     █████████▓░░░░░░░░░░░░░░░   38.71 %
-C            55 mins         ███████▓░░░░░░░░░░░░░░░░░   31.23 %
-C++          25 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   14.23 %
-JSON         10 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
-XML          9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.59 %
-Text         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
-```
-
-<!--END_SECTION:waka-->
-
+  
 <h3> :trollface: My Interests </h3>
 
 ![](https://img.shields.io/badge/running-4.5-red)
@@ -42,8 +27,18 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 ![](https://img.shields.io/badge/coding-4.7-brown)
 ![](https://img.shields.io/badge/travelling-4.5-orange)
 
-<!-- <h3> :octocat: About My Github </h3>
-<img src="https://github-readme-stats.vercel.app/api?username=akynazh"></img> -->
+<h3> :bug: My Weekly Coding Record </h3>
+
+<!--START_SECTION:waka-->
+```text
+Python       1 hr 8 mins     █████████▓░░░░░░░░░░░░░░░   38.71 %
+C            55 mins         ███████▓░░░░░░░░░░░░░░░░░   31.23 %
+C++          25 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   14.23 %
+JSON         10 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
+XML          9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.59 %
+Text         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
+```
+<!--END_SECTION:waka-->
 
 </td>
 <td valign="top" width="50%">
