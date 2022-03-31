@@ -6,13 +6,29 @@
 
 <td valign="top" width="50%">
 
-![](https://img.shields.io/badge/Java-4.0-green)
+<h3> :muscle: My Major Skills </h3>
 
-![](https://img.shields.io/badge/C++-3.0-red)
+![](https://img.shields.io/badge/Java-4.0-green) 
+![](https://img.shields.io/badge/C++-3.0-red) 
+![](https://img.shields.io/badge/Python-3.0-pink) 
+![](https://img.shields.io/badge/Javascrpt-3.0-yellow) 
+![](https://img.shields.io/badge/Mysql-3.5-red) 
 
-![](https://img.shields.io/badge/Python-3.1-pink)
+![](https://img.shields.io/badge/SpringBoot-3.5-brown) 
+![](https://img.shields.io/badge/Linux-3.0-blue) 
+![](https://img.shields.io/badge/Vue-2.5-yellow)
+![](https://img.shields.io/badge/Mybatis-3.0-yellow)
 
-<h3> 👻 My Weekly Coding Record </h3>
+<h3> :trollface: My Interests </h3>
+
+![](https://img.shields.io/badge/running-4.5-red)
+![](https://img.shields.io/badge/swimming-4.0-blue)
+![](https://img.shields.io/badge/acg-4.9-pink)
+![](https://img.shields.io/badge/reading-4.5-green)
+![](https://img.shields.io/badge/coding-4.7-brown)
+![](https://img.shields.io/badge/travel-4.5-orange)
+
+<h3> :bug: My Weekly Coding Record </h3>
 
 <!--START_SECTION:waka-->
 
@@ -27,12 +43,14 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
+<h3> :octocat: About My Github </h3>
+
 <img src="https://github-readme-stats.vercel.app/api?username=akynazh"></img>
 
 </td>
 <td valign="top" width="50%">
   
-<h3>👻 My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
+<h3>:panda_face: My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 
 <h3> :yum: Recommended Articles</h3>  
 
