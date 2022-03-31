@@ -5,7 +5,17 @@
 <td valign="top" width="50%">
 
   <!--START_SECTION:waka-->
-  <!--END_SECTION:waka-->
+
+```text
+Python       1 hr 8 mins     █████████▓░░░░░░░░░░░░░░░   38.71 %
+C            55 mins         ███████▓░░░░░░░░░░░░░░░░░   31.23 %
+C++          25 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   14.23 %
+JSON         10 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
+XML          9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.59 %
+Text         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
+```
+
+<!--END_SECTION:waka-->
 
 <h3>👻 My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 <h3> :yum: Recommended Articles</h3>
