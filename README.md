@@ -19,15 +19,6 @@
 ![](https://img.shields.io/badge/Vue-2.5-yellow)
 ![](https://img.shields.io/badge/Mybatis-3.0-yellow)
 
-<h3> :trollface: My Interests </h3>
-
-![](https://img.shields.io/badge/running-4.5-red)
-![](https://img.shields.io/badge/swimming-4.0-blue)
-![](https://img.shields.io/badge/acg-4.9-pink)
-![](https://img.shields.io/badge/reading-4.5-green)
-![](https://img.shields.io/badge/coding-4.7-brown)
-![](https://img.shields.io/badge/travel-4.5-orange)
-
 <h3> :bug: My Weekly Coding Record </h3>
 
 <!--START_SECTION:waka-->
@@ -66,6 +57,16 @@ Text         3 mins          ▒░░░░░░░░░░░░░░░░
 - [在前后端不分离的情况下进行交互性数据展示的实现方法](https://akynazh.site/posts/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/)
 - [简洁之美](https://akynazh.site/posts/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/)
 <!-- BLOG-POST-LIST:END -->
+
+<h3> :trollface: My Interests </h3>
+
+![](https://img.shields.io/badge/running-4.5-red)
+![](https://img.shields.io/badge/swimming-4.0-blue)
+![](https://img.shields.io/badge/acg-4.9-pink)
+![](https://img.shields.io/badge/reading-4.5-green)
+
+![](https://img.shields.io/badge/coding-4.7-brown)
+![](https://img.shields.io/badge/travelling-4.5-orange)
 
 </td>
 
