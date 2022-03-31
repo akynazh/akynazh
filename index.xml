@@ -21,12 +21,11 @@
     
     <item>
       <title>Linux实用操作之at工作调度</title>
-      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
+      <link>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bat%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
       <pubDate>Thu, 31 Mar 2022 22:34:24 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
-      <description>at命令 create job 1[root@VM-0-11-centos ~]# at 22:38 2at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt 3# ctrl D 4at&amp;gt; &amp;lt;EOT&amp;gt; 5job 3 at Thu Mar 31 22:38:00 2022 6[root@VM-0-11-centos ~]# at now +2 minute 7at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt 8# ctrl D 9at&amp;gt; &amp;lt;EOT&amp;gt; 10job 4 at Thu Mar 31 22:39:00 2022 check job [root@VM-0-11-centos ~]# ls at-test.txt [root@VM-0-11-centos ~]# cat at-test.txt hello world
-[root@VM-0-11-centos ~]# atq # 查看将要运行的job &amp;hellip; 4 Thu Mar 31 22:39:00 2022 a root</description>
+      <guid>https://akynazh.site/posts/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bat%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
+      <description>at命令 create job 1[root@VM-0-11-centos ~]# at 22:38 2at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt 3# ctrl D 4at&amp;gt; &amp;lt;EOT&amp;gt; 5job 3 at Thu Mar 31 22:38:00 2022 6[root@VM-0-11-centos ~]# at now +2 minute 7at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt 8# ctrl D 9at&amp;gt; &amp;lt;EOT&amp;gt; 10job 4 at Thu Mar 31 22:39:00 2022 check job 1[root@VM-0-11-centos ~]# ls 2at-test.txt 3[root@VM-0-11-centos ~]# cat at-test.txt 4hello world 5 6[root@VM-0-11-centos ~]# atq # 查看将要运行的job 74 Thu Mar 31 22:39:00 2022 a root 8 9[root@VM-0-11-centos ~]# cat ~/at-test.</description>
     </item>
     
     <item>
