@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on AKYNAZH</title>
+    <link>https://akynazh.site/tags/web/</link>
+    <description>Recent content in web on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 13 Feb 2022 00:14:23 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python自动爬取花瓣网任意面板中所有图片</title>
+      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Sun, 13 Feb 2022 00:14:23 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</guid>
+      <description>需要安装的库  urllib easygui selenium webdriver_manager  获取过程  进入面板内 复制当前面板url 启动该脚本按提示进行即可  代码编写流程 分析pin图特点 查看面板源码，可以在对应的script中找到面板中图片的json数据。
+在app.page[&amp;ldquo;board&amp;rdquo;]下可以找到&amp;quot;pins&amp;quot;:[{&amp;hellip;}],主要图片ID(pin)位于这里面。
+获取到图片的ID(pin)之后可以对应访问点击图片后进入的地址http://huaban.com/pins/pinId/，并获取页面源码：
+显然可见主要图片的源码特征，书写对应正则表达式可以获取图片真实地址。
+分析滚动特点 通过滚动页面我们可以发现加载规律：
+原来的图片对应的代码：
+经过滚动，原来的代码逐渐被一些新的代码取代：
+而不难发现他们都有对应的data-id!而data-id就是图片地址中对应的pin。
+所以我们可以通过webdriver滚动加载页面，每滚动一次就进行一次data-id的读取，并利用集合进行去重即可。
+具体实现 github地址：
+Huaban-Board-Auto-Download</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot&#43;Vue&#43;Shiro的Demo项目</title>
+      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sat, 12 Feb 2022 21:46:13 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</guid>
+      <description>前言 Github地址：SpringBoot-Vue-Demo
+相关项目：lonersHub，前后端不分离的基础web项目。
+欢迎star学习。
+SpringBoot整合Vue的一个Demo，同时后端整合了Shiro+Jwt+Redis的安全框架。
+通过一个demo进一步了解了前后端分离的架构思想以及安全框架shiro的运行机制。
+后端开发 主要工具  SpringBoot MyBatisPlus Shiro Redis  新建数据库 1CREATETABLE`t_user`(2`userId`bigint(20)NOTNULLAUTO_INCREMENT,3`userName`varchar(255)NOTNULL,4`userPassword`varchar(255)NOTNULL,5`userEmail`varchar(255)NOTNULL,6`userRole`varchar(255)NOTNULL,7`userPermission`varchar(255)DEFAULTNULL,8PRIMARYKEY(`userId`)9)ENGINE=InnoDBAUTO_INCREMENT=5DEFAULTCHARSET=utf8;包括用户ID，用户名，用户密码，用户邮箱，用户角色，用户许可。
+加入几个对象：
+1,student,student,student@qq.com,student,view 2,teacher,teacher,teacher@qq.com,teacher,view 3,admin1,admin1,admin1@qq.com,admin,view 4,admin2,admin2,admin2@qq.com,admin,&amp;quot;view,edit&amp;quot; 包括学生，教师，只可以查看的管理员，可以查看和编辑的管理员。
+新建springboot项目并引入依赖 1&amp;lt;!-- 自定义配置字段时通过build可以让springboot自动配置meta数据 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-configuration-processor&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 6 7&amp;lt;!-- redis + shiro--&amp;gt; 8&amp;lt;dependency&amp;gt; 9 &amp;lt;groupId&amp;gt;org.crazycake&amp;lt;/groupId&amp;gt; 10 &amp;lt;artifactId&amp;gt;shiro-redis-spring-boot-starter&amp;lt;/artifactId&amp;gt; 11 &amp;lt;version&amp;gt;3.2.1&amp;lt;/version&amp;gt; 12&amp;lt;/dependency&amp;gt; 13&amp;lt;!-- hutool工具类--&amp;gt; 14&amp;lt;dependency&amp;gt; 15 &amp;lt;groupId&amp;gt;cn.hutool&amp;lt;/groupId&amp;gt; 16 &amp;lt;artifactId&amp;gt;hutool-all&amp;lt;/artifactId&amp;gt; 17 &amp;lt;version&amp;gt;5.3.3&amp;lt;/version&amp;gt; 18&amp;lt;/dependency&amp;gt; 19&amp;lt;!-- jwt --&amp;gt; 20&amp;lt;dependency&amp;gt; 21 &amp;lt;groupId&amp;gt;io.jsonwebtoken&amp;lt;/groupId&amp;gt; 22 &amp;lt;artifactId&amp;gt;jjwt&amp;lt;/artifactId&amp;gt; 23 &amp;lt;version&amp;gt;0.9.1&amp;lt;/version&amp;gt; 24&amp;lt;/dependency&amp;gt; 25&amp;lt;!--用于@Notblank等注解--&amp;gt; 26&amp;lt;dependency&amp;gt; 27 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 28 &amp;lt;artifactId&amp;gt;spring-boot-starter-validation&amp;lt;/artifactId&amp;gt; 29&amp;lt;/dependency&amp;gt; 30 31&amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
+      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
+      <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
+本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
+使用cookie传递数据：不推荐 步骤  后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值  缺陷 这个方法我使用过，但是效果并不好，原因如下：
+ 用户可能禁止cookie 后端如果有重定向操作将导致cookie添加失败 前端每次都要删除cookie，有时可能会失效  使用session传递数据：值得借鉴 步骤  后端往session中存入数据 前端通过${session}进行获取数据并展示 前端将该数据删除或修改为指定默认值  这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：
+1&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 2// 这里可以通过session访问值 3&amp;lt;/script&amp;gt; 缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
+但是这种方法的思想值得借鉴，请看如下方法。
+通过RedirectAttributesModelMap传递数据 注意这里后端采用SpringMVC。
+步骤  通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示  示例：提醒用户首先进行登录 后端代码 1@GetMapping(&amp;#34;/loginFirst&amp;#34;) 2public String loginFirst(RedirectAttributesModelMap model) { 3 model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); 4 return &amp;#34;redirect:/&amp;#34;; 5} 解析：
+  RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
+  addFlashAttribute是把数据临时放在session中并在刷新页面后自动删除的方法，配合RedirectAttributesModelMap进行使用
+  前端代码 必须注意，这里外部js无法通过$(&#39;#msg&#39;).val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。
+1&amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 2&amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; 3&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 4 let msg = [[${msg}]]; 5 document.</description>
+    </item>
+    
+  </channel>
+</rss>

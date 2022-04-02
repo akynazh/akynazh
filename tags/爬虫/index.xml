@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on AKYNAZH</title>
+    <link>https://akynazh.site/tags/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on AKYNAZH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 13 Feb 2022 00:14:23 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python自动爬取花瓣网任意面板中所有图片</title>
+      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Sun, 13 Feb 2022 00:14:23 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</guid>
+      <description>需要安装的库  urllib easygui selenium webdriver_manager  获取过程  进入面板内 复制当前面板url 启动该脚本按提示进行即可  代码编写流程 分析pin图特点 查看面板源码，可以在对应的script中找到面板中图片的json数据。
+在app.page[&amp;ldquo;board&amp;rdquo;]下可以找到&amp;quot;pins&amp;quot;:[{&amp;hellip;}],主要图片ID(pin)位于这里面。
+获取到图片的ID(pin)之后可以对应访问点击图片后进入的地址http://huaban.com/pins/pinId/，并获取页面源码：
+显然可见主要图片的源码特征，书写对应正则表达式可以获取图片真实地址。
+分析滚动特点 通过滚动页面我们可以发现加载规律：
+原来的图片对应的代码：
+经过滚动，原来的代码逐渐被一些新的代码取代：
+而不难发现他们都有对应的data-id!而data-id就是图片地址中对应的pin。
+所以我们可以通过webdriver滚动加载页面，每滚动一次就进行一次data-id的读取，并利用集合进行去重即可。
+具体实现 github地址：
+Huaban-Board-Auto-Download</description>
+    </item>
+    
+  </channel>
+</rss>
