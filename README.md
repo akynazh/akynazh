@@ -54,11 +54,11 @@ C++          7 mins          ▓░░░░░░░░░░░░░░░░
 <h3> :alien: Latest Blog Posts</h3>
   
 <!-- BLOG-POST-LIST:START -->
+- [《强风吹拂》文摘](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/)
+- [《解忧杂货店》文摘](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E6%96%87%E6%91%98/)
+- [《我的青春恋爱物语果然有问题》文摘四](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/)
+- [《我的青春恋爱物语果然有问题》文摘三](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/)
 - [《我的青春恋爱物语果然有问题》文摘二](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/)
-- [《我的青春恋爱物语果然有问题》文摘一](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/)
-- [Linux实用操作之进程管理](https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/)
-- [Linux实用操作之at工作调度](https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bat%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/)
-- [山脉游览录](https://akynazh.site/posts/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/)
 <!-- BLOG-POST-LIST:END -->
 
 </td>
