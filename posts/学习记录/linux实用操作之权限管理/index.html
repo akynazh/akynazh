@@ -16,10 +16,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Linux实用操作之权限管理" />
-<meta property="og:description" content="添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
+<meta property="og:description" content="添加用户 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000:   x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
-[root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
-[root@VM-0-11-centos /]# useradd vbird [root@VM-0-11-centos /]# echo &quot;658766&quot; | passwd --stdin vbird Changing password for user vbird." />
+1 2 3 4 5 6  [root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-20T10:15:34+08:00" />
@@ -28,17 +27,16 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux实用操作之权限管理"/>
-<meta name="twitter:description" content="添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
+<meta name="twitter:description" content="添加用户 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000:   x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
-[root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
-[root@VM-0-11-centos /]# useradd vbird [root@VM-0-11-centos /]# echo &quot;658766&quot; | passwd --stdin vbird Changing password for user vbird."/>
+1 2 3 4 5 6  [root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully."/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -170,7 +168,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%259D%2583%25E9%2599%2590%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86&description=%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%20%5broot%40VM-0-11-centos%20~%5d%23%20useradd%20jzh%20%5broot%40VM-0-11-centos%20%2f%5d%23%20id%20jzh%20uid%3d1000%28jzh%29%20gid%3d1000%28jzh%29%20groups%3d1000%28jzh%29%20%5broot%40VM-0-11-centos%20%2f%5d%23%20grep%20jzh%20%2fetc%2fpasswd%20%2fetc%2fshadow%20%2fetc%2fgroup%20%2fetc%2fpasswd%3ajzh%3ax%3a1000%3a1000%3a%3a%2fhome%2fjzh%3a%2fbin%2fbash%20%2fetc%2fshadow%3ajzh%3a%21%21%3a18980%3a0%3a99999%3a7%3a%3a%3a%20%2fetc%2fgroup%3ajzh%3ax%3a1000%3a%20x%e6%8c%87%e4%bb%a3%e5%af%86%e7%a0%81%ef%bc%8c%e5%af%b9%e5%ba%94%e5%88%b0shadow%e4%b8%ad%ef%bc%8c%e6%9c%aa%e8%ae%be%e5%ae%9a%e5%8d%b3%e4%b8%ba%e2%80%9c%21%21%e2%80%9d%0a%e8%ae%be%e7%bd%ae%e5%af%86%e7%a0%81%20%e5%9c%a8%e8%bf%9b%e8%a1%8cuseradd%e5%90%8e%e5%af%86%e7%a0%81%e8%bf%98%e6%9c%aa%e8%ae%be%e5%ae%9a%e3%80%82%0a%5broot%40VM-0-11-centos%20%2f%5d%23%20passwd%20jzh%20Changing%20password%20for%20user%20jzh.%20New%20password%3a%20BAD%20PASSWORD%3a%20The%20password%20is%20shorter%20than%208%20characters%20Retype%20new%20password%3a%20passwd%3a%20all%20authentication%20tokens%20updated%20successfully.%20%e8%8b%a5%e8%a6%81%e8%ae%a9%e7%94%a8%e6%88%b7%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%83%bd%e9%80%9a%e8%bf%87%e9%bb%98%e8%ae%a4%e5%af%86%e7%a0%81%e7%99%bb%e5%bd%95%e5%be%97%e4%b8%8a%ef%bc%8c%e5%b9%b6%e6%8f%90%e7%a4%ba%e7%94%a8%e6%88%b7%e5%bf%85%e9%a1%bb%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81%ef%bc%9a%0a%5broot%40VM-0-11-centos%20%2f%5d%23%20useradd%20vbird%20%5broot%40VM-0-11-centos%20%2f%5d%23%20echo%20%26quot%3b658766%26quot%3b%20%7c%20passwd%20--stdin%20vbird%20Changing%20password%20for%20user%20vbird." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%259D%2583%25E9%2599%2590%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86&description=%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%201%202%203%204%205%206%207%208%209%20%20%5broot%40VM-0-11-centos%20~%5d%23%20useradd%20jzh%20%5broot%40VM-0-11-centos%20%2f%5d%23%20id%20jzh%20uid%3d1000%28jzh%29%20gid%3d1000%28jzh%29%20groups%3d1000%28jzh%29%20%5broot%40VM-0-11-centos%20%2f%5d%23%20grep%20jzh%20%2fetc%2fpasswd%20%2fetc%2fshadow%20%2fetc%2fgroup%20%2fetc%2fpasswd%3ajzh%3ax%3a1000%3a1000%3a%3a%2fhome%2fjzh%3a%2fbin%2fbash%20%2fetc%2fshadow%3ajzh%3a%21%21%3a18980%3a0%3a99999%3a7%3a%3a%3a%20%2fetc%2fgroup%3ajzh%3ax%3a1000%3a%20%20%20x%e6%8c%87%e4%bb%a3%e5%af%86%e7%a0%81%ef%bc%8c%e5%af%b9%e5%ba%94%e5%88%b0shadow%e4%b8%ad%ef%bc%8c%e6%9c%aa%e8%ae%be%e5%ae%9a%e5%8d%b3%e4%b8%ba%e2%80%9c%21%21%e2%80%9d%0a%e8%ae%be%e7%bd%ae%e5%af%86%e7%a0%81%20%e5%9c%a8%e8%bf%9b%e8%a1%8cuseradd%e5%90%8e%e5%af%86%e7%a0%81%e8%bf%98%e6%9c%aa%e8%ae%be%e5%ae%9a%e3%80%82%0a1%202%203%204%205%206%20%20%5broot%40VM-0-11-centos%20%2f%5d%23%20passwd%20jzh%20Changing%20password%20for%20user%20jzh.%20New%20password%3a%20BAD%20PASSWORD%3a%20The%20password%20is%20shorter%20than%208%20characters%20Retype%20new%20password%3a%20passwd%3a%20all%20authentication%20tokens%20updated%20successfully." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -248,7 +246,20 @@ if (!doNotTrack) {
     
     <div class="content" itemprop="articleBody">
       <h2 id="添加用户">添加用户</h2>
-<pre tabindex="0"><code>[root@VM-0-11-centos ~]# useradd jzh
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos ~]# useradd jzh
 
 [root@VM-0-11-centos /]# id jzh
 uid=1000(jzh) gid=1000(jzh) groups=1000(jzh)
@@ -257,24 +268,68 @@ uid=1000(jzh) gid=1000(jzh) groups=1000(jzh)
 /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash
 /etc/shadow:jzh:!!:18980:0:99999:7:::
 /etc/group:jzh:x:1000:
-</code></pre><p>x指代密码，对应到shadow中，未设定即为“!!”</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>x指代密码，对应到shadow中，未设定即为“!!”</p>
 <h2 id="设置密码">设置密码</h2>
 <p>在进行useradd后密码还未设定。</p>
-<pre tabindex="0"><code>[root@VM-0-11-centos /]# passwd jzh
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos /]# passwd jzh
 Changing password for user jzh.
 New password:
 BAD PASSWORD: The password is shorter than 8 characters
 Retype new password:
 passwd: all authentication tokens updated successfully.
-</code></pre><p>若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：</p>
-<pre tabindex="0"><code>[root@VM-0-11-centos /]# useradd vbird
-[root@VM-0-11-centos /]# echo &quot;658766&quot; | passwd --stdin vbird
+</code></pre></td></tr></table>
+</div>
+</div><p>若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos /]# useradd vbird
+[root@VM-0-11-centos /]# echo &#34;658766&#34; | passwd --stdin vbird
 Changing password for user vbird.
 passwd: all authentication tokens updated successfully.
 [root@VM-0-11-centos /]# chage -d 0 vbird # -d接最近一次需要修改密码的时间
-</code></pre><p>使用vbird用户登录：</p>
-<pre tabindex="0"><code>PS C:\Users\akyna&gt; ssh jzh
-vbird@101.34.217.138's password:
+</code></pre></td></tr></table>
+</div>
+</div><p>使用vbird用户登录：</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">PS C:\Users\akyna&gt; ssh jzh
+vbird@101.34.217.138&#39;s password:
 You are required to change your password immediately (root enforced)
 Last login: Mon Dec 20 00:04:51 2021 from 113.200.174.13
 WARNING: Your password has expired.
@@ -288,8 +343,23 @@ Changing password for vbird.
 New password:
 Retype new password:
 passwd: all authentication tokens updated successfully.
-</code></pre><h2 id="添加群组与加入群组">添加群组与加入群组</h2>
-<pre tabindex="0"><code>[root@VM-0-11-centos ~]# groupadd testgroup
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加群组与加入群组">添加群组与加入群组</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos ~]# groupadd testgroup
 [root@VM-0-11-centos ~]# gpasswd testgroup
 Changing the password for group testgroup
 New Password:
@@ -298,7 +368,9 @@ Re-enter new password:
 [root@VM-0-11-centos ~]# grep testgroup /etc/group /etc/gshadow
 /etc/group:testgroup:x:1002:
 /etc/gshadow:testgroup:$1$9v24LYZE$V/yYwmmoaKNpe9.zCPK3U.:vbird:
-</code></pre><p>可见vbird已经加入该群组</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>可见vbird已经加入该群组</p>
 <h2 id="通过acl设置专有权限">通过ACL设置专有权限</h2>
 <p>团队开发时，由于原有权限无法满足需求，通常需要对某些成员设置专有权限。</p>
 <h3 id="setfaclgetfacl">setfacl&amp;getfacl</h3>
@@ -307,7 +379,27 @@ Re-enter new password:
 <li>-x 删除后续acl参数</li>
 <li>-R 递归设置</li>
 </ul>
-<pre tabindex="0"><code>[root@VM-0-11-centos tmp]# touch acl
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos tmp]# touch acl
 # 针对用户
 [root@VM-0-11-centos tmp]# setfacl -m u:jzh:rx acl # 为jzh用户设置专有权限
 
@@ -323,10 +415,20 @@ group::r--
 group:testgroup:rwx
 mask::rwx
 other::r--
-</code></pre><h2 id="登录">登录</h2>
-<pre tabindex="0"><code>su - # 使用root登录
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="登录">登录</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">su - # 使用root登录
 su - jzh # 使用jzh登录
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
   </article>
 
@@ -343,7 +445,7 @@ su - jzh # 使用jzh登录
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -431,7 +533,7 @@ su - jzh # 使用jzh登录
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%259D%2583%25E9%2599%2590%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86&description=%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%20%5broot%40VM-0-11-centos%20~%5d%23%20useradd%20jzh%20%5broot%40VM-0-11-centos%20%2f%5d%23%20id%20jzh%20uid%3d1000%28jzh%29%20gid%3d1000%28jzh%29%20groups%3d1000%28jzh%29%20%5broot%40VM-0-11-centos%20%2f%5d%23%20grep%20jzh%20%2fetc%2fpasswd%20%2fetc%2fshadow%20%2fetc%2fgroup%20%2fetc%2fpasswd%3ajzh%3ax%3a1000%3a1000%3a%3a%2fhome%2fjzh%3a%2fbin%2fbash%20%2fetc%2fshadow%3ajzh%3a%21%21%3a18980%3a0%3a99999%3a7%3a%3a%3a%20%2fetc%2fgroup%3ajzh%3ax%3a1000%3a%20x%e6%8c%87%e4%bb%a3%e5%af%86%e7%a0%81%ef%bc%8c%e5%af%b9%e5%ba%94%e5%88%b0shadow%e4%b8%ad%ef%bc%8c%e6%9c%aa%e8%ae%be%e5%ae%9a%e5%8d%b3%e4%b8%ba%e2%80%9c%21%21%e2%80%9d%0a%e8%ae%be%e7%bd%ae%e5%af%86%e7%a0%81%20%e5%9c%a8%e8%bf%9b%e8%a1%8cuseradd%e5%90%8e%e5%af%86%e7%a0%81%e8%bf%98%e6%9c%aa%e8%ae%be%e5%ae%9a%e3%80%82%0a%5broot%40VM-0-11-centos%20%2f%5d%23%20passwd%20jzh%20Changing%20password%20for%20user%20jzh.%20New%20password%3a%20BAD%20PASSWORD%3a%20The%20password%20is%20shorter%20than%208%20characters%20Retype%20new%20password%3a%20passwd%3a%20all%20authentication%20tokens%20updated%20successfully.%20%e8%8b%a5%e8%a6%81%e8%ae%a9%e7%94%a8%e6%88%b7%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%83%bd%e9%80%9a%e8%bf%87%e9%bb%98%e8%ae%a4%e5%af%86%e7%a0%81%e7%99%bb%e5%bd%95%e5%be%97%e4%b8%8a%ef%bc%8c%e5%b9%b6%e6%8f%90%e7%a4%ba%e7%94%a8%e6%88%b7%e5%bf%85%e9%a1%bb%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81%ef%bc%9a%0a%5broot%40VM-0-11-centos%20%2f%5d%23%20useradd%20vbird%20%5broot%40VM-0-11-centos%20%2f%5d%23%20echo%20%26quot%3b658766%26quot%3b%20%7c%20passwd%20--stdin%20vbird%20Changing%20password%20for%20user%20vbird." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%259D%2583%25E9%2599%2590%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86&description=%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%201%202%203%204%205%206%207%208%209%20%20%5broot%40VM-0-11-centos%20~%5d%23%20useradd%20jzh%20%5broot%40VM-0-11-centos%20%2f%5d%23%20id%20jzh%20uid%3d1000%28jzh%29%20gid%3d1000%28jzh%29%20groups%3d1000%28jzh%29%20%5broot%40VM-0-11-centos%20%2f%5d%23%20grep%20jzh%20%2fetc%2fpasswd%20%2fetc%2fshadow%20%2fetc%2fgroup%20%2fetc%2fpasswd%3ajzh%3ax%3a1000%3a1000%3a%3a%2fhome%2fjzh%3a%2fbin%2fbash%20%2fetc%2fshadow%3ajzh%3a%21%21%3a18980%3a0%3a99999%3a7%3a%3a%3a%20%2fetc%2fgroup%3ajzh%3ax%3a1000%3a%20%20%20x%e6%8c%87%e4%bb%a3%e5%af%86%e7%a0%81%ef%bc%8c%e5%af%b9%e5%ba%94%e5%88%b0shadow%e4%b8%ad%ef%bc%8c%e6%9c%aa%e8%ae%be%e5%ae%9a%e5%8d%b3%e4%b8%ba%e2%80%9c%21%21%e2%80%9d%0a%e8%ae%be%e7%bd%ae%e5%af%86%e7%a0%81%20%e5%9c%a8%e8%bf%9b%e8%a1%8cuseradd%e5%90%8e%e5%af%86%e7%a0%81%e8%bf%98%e6%9c%aa%e8%ae%be%e5%ae%9a%e3%80%82%0a1%202%203%204%205%206%20%20%5broot%40VM-0-11-centos%20%2f%5d%23%20passwd%20jzh%20Changing%20password%20for%20user%20jzh.%20New%20password%3a%20BAD%20PASSWORD%3a%20The%20password%20is%20shorter%20than%208%20characters%20Retype%20new%20password%3a%20passwd%3a%20all%20authentication%20tokens%20updated%20successfully." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

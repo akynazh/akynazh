@@ -27,7 +27,7 @@
 1.建立is_prime_small[]和is_prime[]数组，初始化为true；
 2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。
 相应代码：
-1typedef long long ll; 2bool is_prime[MAX1]; 3bool is_prime_small[MAX2]; 4void sieve(ll a, ll b) { 5	for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime_small[i] = true; 6	for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime[i] = true; 7	for(int i = 2; (ll)i * i &lt; b; i&#43;&#43;) { 8	if(is_prime_small[i]){ 9	for(int j = 2 * i; (ll)j * j &lt; b; j &#43;= i) is_prime_small[j] = false; 10	for(ll j = max( 2ll, (a &#43; i - 1) / i) ) * i; j &lt; b; j &#43;= i) is_prime[j - a] = false; 11	} 12	} 13} 注意点：" />
+1 2 3 4 5 6 7 8 9 10 11 12 13  typedef long long ll; bool is_prime[MAX1]; bool is_prime_small[MAX2]; void sieve(ll a, ll b) { for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime_small[i] = true; for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime[i] = true; for(int i = 2; (ll)i * i &lt; b; i&#43;&#43;) { if(is_prime_small[i]){ for(int j = 2 * i; (ll)j * j &lt; b; j &#43;= i) is_prime_small[j] = false; for(ll j = max( 2ll, (a &#43; i - 1) / i) ) * i; j &lt; b; j &#43;= i) is_prime[j - a] = false; } } }   注意点：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-17T17:25:21+08:00" />
@@ -47,14 +47,14 @@
 1.建立is_prime_small[]和is_prime[]数组，初始化为true；
 2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。
 相应代码：
-1typedef long long ll; 2bool is_prime[MAX1]; 3bool is_prime_small[MAX2]; 4void sieve(ll a, ll b) { 5	for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime_small[i] = true; 6	for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime[i] = true; 7	for(int i = 2; (ll)i * i &lt; b; i&#43;&#43;) { 8	if(is_prime_small[i]){ 9	for(int j = 2 * i; (ll)j * j &lt; b; j &#43;= i) is_prime_small[j] = false; 10	for(ll j = max( 2ll, (a &#43; i - 1) / i) ) * i; j &lt; b; j &#43;= i) is_prime[j - a] = false; 11	} 12	} 13} 注意点："/>
+1 2 3 4 5 6 7 8 9 10 11 12 13  typedef long long ll; bool is_prime[MAX1]; bool is_prime_small[MAX2]; void sieve(ll a, ll b) { for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime_small[i] = true; for(int i = 0; (ll)i * i &lt; b; i&#43;&#43;) is_prime[i] = true; for(int i = 2; (ll)i * i &lt; b; i&#43;&#43;) { if(is_prime_small[i]){ for(int j = 2 * i; (ll)j * j &lt; b; j &#43;= i) is_prime_small[j] = false; for(ll j = max( 2ll, (a &#43; i - 1) / i) ) * i; j &lt; b; j &#43;= i) is_prime[j - a] = false; } } }   注意点："/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -186,7 +186,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2f%25E5%2585%25B3%25E4%25BA%258E%25E6%2595%25B0%25E8%25AE%25BA%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E7%25AE%2580%25E5%258D%2595%25E7%25AE%2597%25E6%25B3%2595%2f&name=%e5%85%b3%e4%ba%8e%e6%95%b0%e8%ae%ba%e7%9a%84%e4%b8%80%e4%ba%9b%e7%ae%80%e5%8d%95%e7%ae%97%e6%b3%95&description=%e5%85%b3%e4%ba%8e%e7%b4%a0%e6%95%b0%201.%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%20%e9%97%ae1000000000000%e4%bb%a5%e5%86%85%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%90%e7%94%a8%e6%9c%b4%e7%b4%a0%e7%ae%97%e6%b3%95%e5%bf%85TLE%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e4%bb%8e2%e5%bc%80%e5%a7%8b%e7%ad%9b%e5%8f%96%ef%bc%8c%28%e6%b3%a8%e6%84%8f%e4%bb%8e2%e5%bc%80%e5%a7%8b%e5%be%88%e9%87%8d%e8%a6%81%ef%bc%8c%e5%9b%a0%e4%b8%ba2%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%90%a6%e5%88%99%e9%9c%80%e8%a6%81%e6%94%b9%e5%8f%98%e7%9b%b8%e5%ba%94%e5%90%8e%e7%bb%ad%e6%93%8d%e4%bd%9c%29%ef%bc%8c%e8%8b%a5%e4%b8%batrue%ef%bc%8c%e5%88%99%e7%bb%a7%e7%bb%ad%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e8%8b%a5%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%88%99%e5%b0%86%e6%89%80%e6%9c%89%e8%af%a5%e7%b4%a0%e6%95%b0%e7%9a%84%e5%80%8d%e6%95%b0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a2.%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%20%e9%97%ae%5b21479862%2c%2021499877%29%e4%b9%8b%e9%97%b4%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%99%e6%97%b6%e8%8b%a5%e9%87%87%e7%94%a8%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e4%bc%9a%e6%b5%aa%e8%b4%b9%e5%a4%a7%e9%87%8f%e6%97%b6%e9%97%b4%e8%ae%a1%e7%ae%97%e5%89%8d%e9%9d%a2%e6%9c%aa%e6%b6%89%e5%8f%8a%e7%9a%84%e5%8c%ba%e9%97%b4%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime_small%5b%5d%e5%92%8cis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e5%af%b9%e5%8c%ba%e9%97%b4%5ba%2c%20b%29%ef%bc%8c%e5%8f%aa%e9%9c%80%e8%a6%81%e5%af%b9%20%5b2%2c%20%e6%a0%b9%e5%8f%b7b%29%20%e5%9c%a8is_prime_small%5b%5d%e8%bf%9b%e8%a1%8c%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e5%90%8c%e4%b8%80%e5%be%aa%e7%8e%af%e5%86%85%e5%af%b9%5ba%2c%20b%29%e4%b8%ad%e7%9b%b8%e5%ba%94%e7%b4%a0%e6%95%b0%e5%80%8d%e6%95%b0%e5%85%83%e7%b4%a0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a%e7%9b%b8%e5%ba%94%e4%bb%a3%e7%a0%81%ef%bc%9a%0a1typedef%20long%20long%20ll%3b%202bool%20is_prime%5bMAX1%5d%3b%203bool%20is_prime_small%5bMAX2%5d%3b%204void%20sieve%28ll%20a%2c%20ll%20b%29%20%7b%205%09for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime_small%5bi%5d%20%3d%20true%3b%206%09for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime%5bi%5d%20%3d%20true%3b%207%09for%28int%20i%20%3d%202%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20%7b%208%09if%28is_prime_small%5bi%5d%29%7b%209%09for%28int%20j%20%3d%202%20%2a%20i%3b%20%28ll%29j%20%2a%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime_small%5bj%5d%20%3d%20false%3b%2010%09for%28ll%20j%20%3d%20max%28%202ll%2c%20%28a%20%2b%20i%20-%201%29%20%2f%20i%29%20%29%20%2a%20i%3b%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime%5bj%20-%20a%5d%20%3d%20false%3b%2011%09%7d%2012%09%7d%2013%7d%20%e6%b3%a8%e6%84%8f%e7%82%b9%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2f%25E5%2585%25B3%25E4%25BA%258E%25E6%2595%25B0%25E8%25AE%25BA%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E7%25AE%2580%25E5%258D%2595%25E7%25AE%2597%25E6%25B3%2595%2f&name=%e5%85%b3%e4%ba%8e%e6%95%b0%e8%ae%ba%e7%9a%84%e4%b8%80%e4%ba%9b%e7%ae%80%e5%8d%95%e7%ae%97%e6%b3%95&description=%e5%85%b3%e4%ba%8e%e7%b4%a0%e6%95%b0%201.%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%20%e9%97%ae1000000000000%e4%bb%a5%e5%86%85%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%90%e7%94%a8%e6%9c%b4%e7%b4%a0%e7%ae%97%e6%b3%95%e5%bf%85TLE%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e4%bb%8e2%e5%bc%80%e5%a7%8b%e7%ad%9b%e5%8f%96%ef%bc%8c%28%e6%b3%a8%e6%84%8f%e4%bb%8e2%e5%bc%80%e5%a7%8b%e5%be%88%e9%87%8d%e8%a6%81%ef%bc%8c%e5%9b%a0%e4%b8%ba2%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%90%a6%e5%88%99%e9%9c%80%e8%a6%81%e6%94%b9%e5%8f%98%e7%9b%b8%e5%ba%94%e5%90%8e%e7%bb%ad%e6%93%8d%e4%bd%9c%29%ef%bc%8c%e8%8b%a5%e4%b8%batrue%ef%bc%8c%e5%88%99%e7%bb%a7%e7%bb%ad%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e8%8b%a5%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%88%99%e5%b0%86%e6%89%80%e6%9c%89%e8%af%a5%e7%b4%a0%e6%95%b0%e7%9a%84%e5%80%8d%e6%95%b0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a2.%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%20%e9%97%ae%5b21479862%2c%2021499877%29%e4%b9%8b%e9%97%b4%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%99%e6%97%b6%e8%8b%a5%e9%87%87%e7%94%a8%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e4%bc%9a%e6%b5%aa%e8%b4%b9%e5%a4%a7%e9%87%8f%e6%97%b6%e9%97%b4%e8%ae%a1%e7%ae%97%e5%89%8d%e9%9d%a2%e6%9c%aa%e6%b6%89%e5%8f%8a%e7%9a%84%e5%8c%ba%e9%97%b4%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime_small%5b%5d%e5%92%8cis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e5%af%b9%e5%8c%ba%e9%97%b4%5ba%2c%20b%29%ef%bc%8c%e5%8f%aa%e9%9c%80%e8%a6%81%e5%af%b9%20%5b2%2c%20%e6%a0%b9%e5%8f%b7b%29%20%e5%9c%a8is_prime_small%5b%5d%e8%bf%9b%e8%a1%8c%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e5%90%8c%e4%b8%80%e5%be%aa%e7%8e%af%e5%86%85%e5%af%b9%5ba%2c%20b%29%e4%b8%ad%e7%9b%b8%e5%ba%94%e7%b4%a0%e6%95%b0%e5%80%8d%e6%95%b0%e5%85%83%e7%b4%a0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a%e7%9b%b8%e5%ba%94%e4%bb%a3%e7%a0%81%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20%20typedef%20long%20long%20ll%3b%20bool%20is_prime%5bMAX1%5d%3b%20bool%20is_prime_small%5bMAX2%5d%3b%20void%20sieve%28ll%20a%2c%20ll%20b%29%20%7b%20for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime_small%5bi%5d%20%3d%20true%3b%20for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime%5bi%5d%20%3d%20true%3b%20for%28int%20i%20%3d%202%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20%7b%20if%28is_prime_small%5bi%5d%29%7b%20for%28int%20j%20%3d%202%20%2a%20i%3b%20%28ll%29j%20%2a%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime_small%5bj%5d%20%3d%20false%3b%20for%28ll%20j%20%3d%20max%28%202ll%2c%20%28a%20%2b%20i%20-%201%29%20%2f%20i%29%20%29%20%2a%20i%3b%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime%5bj%20-%20a%5d%20%3d%20false%3b%20%7d%20%7d%20%7d%20%20%20%e6%b3%a8%e6%84%8f%e7%82%b9%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -286,20 +286,39 @@ if (!doNotTrack) {
 <p>1.建立is_prime_small[]和is_prime[]数组，初始化为true；</p>
 <p>2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。</p>
 <p>相应代码：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a2f;font-weight:bold">typedef</span> <span style="color:#0b0;font-weight:bold">long</span> <span style="color:#0b0;font-weight:bold">long</span> ll;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#0b0;font-weight:bold">bool</span> is_prime[MAX1];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#0b0;font-weight:bold">bool</span> is_prime_small[MAX2];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">sieve</span>(ll a, ll b) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) is_prime_small[i] <span style="color:#666">=</span> <span style="color:#a2f">true</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) is_prime[i] <span style="color:#666">=</span> <span style="color:#a2f">true</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>		<span style="color:#a2f;font-weight:bold">if</span>(is_prime_small[i]){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>			<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">2</span> <span style="color:#666">*</span> i; (ll)j <span style="color:#666">*</span> j <span style="color:#666">&lt;</span> b; j <span style="color:#666">+=</span> i) is_prime_small[j] <span style="color:#666">=</span> <span style="color:#a2f">false</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>			<span style="color:#a2f;font-weight:bold">for</span>(ll j <span style="color:#666">=</span> max( <span style="color:#666">2ll</span>, (a <span style="color:#666">+</span> i <span style="color:#666">-</span> <span style="color:#666">1</span>) <span style="color:#666">/</span> i) ) <span style="color:#666">*</span> i; j <span style="color:#666">&lt;</span> b; j <span style="color:#666">+=</span> i) is_prime[j <span style="color:#666">-</span> a] <span style="color:#666">=</span> <span style="color:#a2f">false</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>		}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>	}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>} 
-</code></pre></div><p>注意点：</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#a2f;font-weight:bold">typedef</span> <span style="color:#0b0;font-weight:bold">long</span> <span style="color:#0b0;font-weight:bold">long</span> ll;
+<span style="color:#0b0;font-weight:bold">bool</span> is_prime[MAX1];
+<span style="color:#0b0;font-weight:bold">bool</span> is_prime_small[MAX2];
+<span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">sieve</span>(ll a, ll b) {
+	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) is_prime_small[i] <span style="color:#666">=</span> <span style="color:#a2f">true</span>;
+	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) is_prime[i] <span style="color:#666">=</span> <span style="color:#a2f">true</span>;
+	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) {
+		<span style="color:#a2f;font-weight:bold">if</span>(is_prime_small[i]){
+			<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">2</span> <span style="color:#666">*</span> i; (ll)j <span style="color:#666">*</span> j <span style="color:#666">&lt;</span> b; j <span style="color:#666">+=</span> i) is_prime_small[j] <span style="color:#666">=</span> <span style="color:#a2f">false</span>;
+			<span style="color:#a2f;font-weight:bold">for</span>(ll j <span style="color:#666">=</span> max( <span style="color:#666">2ll</span>, (a <span style="color:#666">+</span> i <span style="color:#666">-</span> <span style="color:#666">1</span>) <span style="color:#666">/</span> i) ) <span style="color:#666">*</span> i; j <span style="color:#666">&lt;</span> b; j <span style="color:#666">+=</span> i) is_prime[j <span style="color:#666">-</span> a] <span style="color:#666">=</span> <span style="color:#a2f">false</span>;
+		}
+	}
+} 
+</code></pre></td></tr></table>
+</div>
+</div><p>注意点：</p>
 <p>1.<code>max( 2ll, (a + i - 1) / i ) * i </code>其中的2ll为隐式地将max的参数类型转换为long long 型</p>
 <p>2.（a + i - 1) / i  * i 可以得到的是a或a以后的第一个素数的倍数：</p>
 <p>当a为该素数的倍数时：</p>
@@ -322,26 +341,52 @@ if (!doNotTrack) {
 <p>result = 9 * 6561</p>
 <p>可以推出幂的结果等于变化中所有当<strong>指数为奇数时底数之积</strong></p>
 <p>相应代码：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a2f;font-weight:bold">typedef</span> <span style="color:#0b0;font-weight:bold">long</span> <span style="color:#0b0;font-weight:bold">long</span> ll;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>ll <span style="color:#00a000">mod_pow</span>(ll x, ll n, ll mod) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>	ll res <span style="color:#666">=</span> <span style="color:#666">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>	<span style="color:#a2f;font-weight:bold">while</span>(n <span style="color:#666">&gt;</span> <span style="color:#666">0</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>		<span style="color:#a2f;font-weight:bold">if</span>(n <span style="color:#666">&amp;</span> <span style="color:#666">1</span> <span style="color:#666">==</span> <span style="color:#666">1</span>) res <span style="color:#666">=</span> res <span style="color:#666">*</span> x <span style="color:#666">%</span> mod;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>		x <span style="color:#666">=</span> x <span style="color:#666">*</span> x <span style="color:#666">%</span> mod;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>		n <span style="color:#666">&gt;&gt;=</span> <span style="color:#666">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>	}	
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>	<span style="color:#a2f;font-weight:bold">return</span> res;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>}
-</code></pre></div><p>注意，运用位运算可以提高效率！</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#a2f;font-weight:bold">typedef</span> <span style="color:#0b0;font-weight:bold">long</span> <span style="color:#0b0;font-weight:bold">long</span> ll;
+ll <span style="color:#00a000">mod_pow</span>(ll x, ll n, ll mod) {
+	ll res <span style="color:#666">=</span> <span style="color:#666">1</span>;
+	<span style="color:#a2f;font-weight:bold">while</span>(n <span style="color:#666">&gt;</span> <span style="color:#666">0</span>) {
+		<span style="color:#a2f;font-weight:bold">if</span>(n <span style="color:#666">&amp;</span> <span style="color:#666">1</span> <span style="color:#666">==</span> <span style="color:#666">1</span>) res <span style="color:#666">=</span> res <span style="color:#666">*</span> x <span style="color:#666">%</span> mod;
+		x <span style="color:#666">=</span> x <span style="color:#666">*</span> x <span style="color:#666">%</span> mod;
+		n <span style="color:#666">&gt;&gt;=</span> <span style="color:#666">1</span>;
+	}	
+	<span style="color:#a2f;font-weight:bold">return</span> res;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>注意，运用位运算可以提高效率！</p>
 <h2 id="关于最大公约数">关于最大公约数</h2>
 <h3 id="gcd辗转相除法求最大公约数">gcd辗转相除法求最大公约数</h3>
 <p>思路</p>
 <p>反复交换取余，直到小的数为0.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">gcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#a2f;font-weight:bold">return</span> a;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>	<span style="color:#a2f;font-weight:bold">return</span> gcd(b, a <span style="color:#666">%</span> b);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
-</code></pre></div><h3 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">gcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b){
+	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#a2f;font-weight:bold">return</span> a;
+	<span style="color:#a2f;font-weight:bold">return</span> gcd(b, a <span style="color:#666">%</span> b);
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h3>
 <p>先介绍<strong>贝祖定理</strong>：</p>
 <p>若a,b为整数，则一定存在整数x,y使得ax + by == gcd(a,b)。</p>
 <p>即若ax + by == m有解，则m一定为<strong>gcd(a,b)的若干倍</strong>。</p>
@@ -358,19 +403,37 @@ if (!doNotTrack) {
 <p>由等式可知上层的x,y可以由下层的x1,y1来求,则可以通过递归来实现。</p>
 <p>又由（1），当b == 0, a * 1 + b * 0 == a == gcd(a,b)</p>
 <p>则此时x == 1, y == 0, 一定会出现在递归末尾。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">exgcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>x, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>y){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>	<span style="color:#0b0;font-weight:bold">int</span> d <span style="color:#666">=</span> a;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">!=</span> <span style="color:#666">0</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>		d <span style="color:#666">=</span> exgcd(b, a<span style="color:#666">%</span>b, x, y);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>		<span style="color:#0b0;font-weight:bold">int</span> temp <span style="color:#666">=</span> y;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>		y <span style="color:#666">=</span> x <span style="color:#666">-</span> (a <span style="color:#666">/</span> b) <span style="color:#666">*</span> y; <span style="color:#080;font-style:italic">//上一层的y
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#080;font-style:italic"></span>		x <span style="color:#666">=</span> temp; <span style="color:#080;font-style:italic">//上一层的x
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#080;font-style:italic"></span>	}<span style="color:#a2f;font-weight:bold">else</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>		x <span style="color:#666">=</span> <span style="color:#666">1</span>; y <span style="color:#666">=</span> <span style="color:#666">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>	}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>	<span style="color:#a2f;font-weight:bold">return</span> d;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
-</code></pre></div>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">exgcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>x, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>y){
+	<span style="color:#0b0;font-weight:bold">int</span> d <span style="color:#666">=</span> a;
+	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">!=</span> <span style="color:#666">0</span>){
+		d <span style="color:#666">=</span> exgcd(b, a<span style="color:#666">%</span>b, x, y);
+		<span style="color:#0b0;font-weight:bold">int</span> temp <span style="color:#666">=</span> y;
+		y <span style="color:#666">=</span> x <span style="color:#666">-</span> (a <span style="color:#666">/</span> b) <span style="color:#666">*</span> y; <span style="color:#080;font-style:italic">//上一层的y
+</span><span style="color:#080;font-style:italic"></span>		x <span style="color:#666">=</span> temp; <span style="color:#080;font-style:italic">//上一层的x
+</span><span style="color:#080;font-style:italic"></span>	}<span style="color:#a2f;font-weight:bold">else</span>{
+		x <span style="color:#666">=</span> <span style="color:#666">1</span>; y <span style="color:#666">=</span> <span style="color:#666">0</span>;
+	}
+	<span style="color:#a2f;font-weight:bold">return</span> d;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
   </article>
 
@@ -387,7 +450,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -484,7 +547,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2f%25E5%2585%25B3%25E4%25BA%258E%25E6%2595%25B0%25E8%25AE%25BA%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E7%25AE%2580%25E5%258D%2595%25E7%25AE%2597%25E6%25B3%2595%2f&name=%e5%85%b3%e4%ba%8e%e6%95%b0%e8%ae%ba%e7%9a%84%e4%b8%80%e4%ba%9b%e7%ae%80%e5%8d%95%e7%ae%97%e6%b3%95&description=%e5%85%b3%e4%ba%8e%e7%b4%a0%e6%95%b0%201.%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%20%e9%97%ae1000000000000%e4%bb%a5%e5%86%85%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%90%e7%94%a8%e6%9c%b4%e7%b4%a0%e7%ae%97%e6%b3%95%e5%bf%85TLE%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e4%bb%8e2%e5%bc%80%e5%a7%8b%e7%ad%9b%e5%8f%96%ef%bc%8c%28%e6%b3%a8%e6%84%8f%e4%bb%8e2%e5%bc%80%e5%a7%8b%e5%be%88%e9%87%8d%e8%a6%81%ef%bc%8c%e5%9b%a0%e4%b8%ba2%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%90%a6%e5%88%99%e9%9c%80%e8%a6%81%e6%94%b9%e5%8f%98%e7%9b%b8%e5%ba%94%e5%90%8e%e7%bb%ad%e6%93%8d%e4%bd%9c%29%ef%bc%8c%e8%8b%a5%e4%b8%batrue%ef%bc%8c%e5%88%99%e7%bb%a7%e7%bb%ad%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e8%8b%a5%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%88%99%e5%b0%86%e6%89%80%e6%9c%89%e8%af%a5%e7%b4%a0%e6%95%b0%e7%9a%84%e5%80%8d%e6%95%b0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a2.%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%20%e9%97%ae%5b21479862%2c%2021499877%29%e4%b9%8b%e9%97%b4%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%99%e6%97%b6%e8%8b%a5%e9%87%87%e7%94%a8%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e4%bc%9a%e6%b5%aa%e8%b4%b9%e5%a4%a7%e9%87%8f%e6%97%b6%e9%97%b4%e8%ae%a1%e7%ae%97%e5%89%8d%e9%9d%a2%e6%9c%aa%e6%b6%89%e5%8f%8a%e7%9a%84%e5%8c%ba%e9%97%b4%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime_small%5b%5d%e5%92%8cis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e5%af%b9%e5%8c%ba%e9%97%b4%5ba%2c%20b%29%ef%bc%8c%e5%8f%aa%e9%9c%80%e8%a6%81%e5%af%b9%20%5b2%2c%20%e6%a0%b9%e5%8f%b7b%29%20%e5%9c%a8is_prime_small%5b%5d%e8%bf%9b%e8%a1%8c%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e5%90%8c%e4%b8%80%e5%be%aa%e7%8e%af%e5%86%85%e5%af%b9%5ba%2c%20b%29%e4%b8%ad%e7%9b%b8%e5%ba%94%e7%b4%a0%e6%95%b0%e5%80%8d%e6%95%b0%e5%85%83%e7%b4%a0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a%e7%9b%b8%e5%ba%94%e4%bb%a3%e7%a0%81%ef%bc%9a%0a1typedef%20long%20long%20ll%3b%202bool%20is_prime%5bMAX1%5d%3b%203bool%20is_prime_small%5bMAX2%5d%3b%204void%20sieve%28ll%20a%2c%20ll%20b%29%20%7b%205%09for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime_small%5bi%5d%20%3d%20true%3b%206%09for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime%5bi%5d%20%3d%20true%3b%207%09for%28int%20i%20%3d%202%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20%7b%208%09if%28is_prime_small%5bi%5d%29%7b%209%09for%28int%20j%20%3d%202%20%2a%20i%3b%20%28ll%29j%20%2a%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime_small%5bj%5d%20%3d%20false%3b%2010%09for%28ll%20j%20%3d%20max%28%202ll%2c%20%28a%20%2b%20i%20-%201%29%20%2f%20i%29%20%29%20%2a%20i%3b%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime%5bj%20-%20a%5d%20%3d%20false%3b%2011%09%7d%2012%09%7d%2013%7d%20%e6%b3%a8%e6%84%8f%e7%82%b9%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2f%25E5%2585%25B3%25E4%25BA%258E%25E6%2595%25B0%25E8%25AE%25BA%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E7%25AE%2580%25E5%258D%2595%25E7%25AE%2597%25E6%25B3%2595%2f&name=%e5%85%b3%e4%ba%8e%e6%95%b0%e8%ae%ba%e7%9a%84%e4%b8%80%e4%ba%9b%e7%ae%80%e5%8d%95%e7%ae%97%e6%b3%95&description=%e5%85%b3%e4%ba%8e%e7%b4%a0%e6%95%b0%201.%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%20%e9%97%ae1000000000000%e4%bb%a5%e5%86%85%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%90%e7%94%a8%e6%9c%b4%e7%b4%a0%e7%ae%97%e6%b3%95%e5%bf%85TLE%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e4%bb%8e2%e5%bc%80%e5%a7%8b%e7%ad%9b%e5%8f%96%ef%bc%8c%28%e6%b3%a8%e6%84%8f%e4%bb%8e2%e5%bc%80%e5%a7%8b%e5%be%88%e9%87%8d%e8%a6%81%ef%bc%8c%e5%9b%a0%e4%b8%ba2%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%90%a6%e5%88%99%e9%9c%80%e8%a6%81%e6%94%b9%e5%8f%98%e7%9b%b8%e5%ba%94%e5%90%8e%e7%bb%ad%e6%93%8d%e4%bd%9c%29%ef%bc%8c%e8%8b%a5%e4%b8%batrue%ef%bc%8c%e5%88%99%e7%bb%a7%e7%bb%ad%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e8%8b%a5%e4%b8%ba%e7%b4%a0%e6%95%b0%ef%bc%8c%e5%88%99%e5%b0%86%e6%89%80%e6%9c%89%e8%af%a5%e7%b4%a0%e6%95%b0%e7%9a%84%e5%80%8d%e6%95%b0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a2.%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%20%e9%97%ae%5b21479862%2c%2021499877%29%e4%b9%8b%e9%97%b4%e6%9c%89%e5%a4%9a%e5%b0%91%e4%b8%aa%e7%b4%a0%e6%95%b0%ef%bc%9f%0a%e8%bf%99%e6%97%b6%e8%8b%a5%e9%87%87%e7%94%a8%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e4%bc%9a%e6%b5%aa%e8%b4%b9%e5%a4%a7%e9%87%8f%e6%97%b6%e9%97%b4%e8%ae%a1%e7%ae%97%e5%89%8d%e9%9d%a2%e6%9c%aa%e6%b6%89%e5%8f%8a%e7%9a%84%e5%8c%ba%e9%97%b4%ef%bc%8c%e8%bf%99%e6%97%b6%e8%80%83%e8%99%91%e5%8c%ba%e9%97%b4%e7%ad%9b%e6%b3%95%e3%80%82%0a%e7%ae%97%e6%b3%95%e6%80%9d%e8%b7%af%ef%bc%9a%0a1.%e5%bb%ba%e7%ab%8bis_prime_small%5b%5d%e5%92%8cis_prime%5b%5d%e6%95%b0%e7%bb%84%ef%bc%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%batrue%ef%bc%9b%0a2.%e5%af%b9%e5%8c%ba%e9%97%b4%5ba%2c%20b%29%ef%bc%8c%e5%8f%aa%e9%9c%80%e8%a6%81%e5%af%b9%20%5b2%2c%20%e6%a0%b9%e5%8f%b7b%29%20%e5%9c%a8is_prime_small%5b%5d%e8%bf%9b%e8%a1%8c%e5%9f%83%e6%b0%8f%e7%ad%9b%e6%b3%95%ef%bc%8c%e5%90%8c%e4%b8%80%e5%be%aa%e7%8e%af%e5%86%85%e5%af%b9%5ba%2c%20b%29%e4%b8%ad%e7%9b%b8%e5%ba%94%e7%b4%a0%e6%95%b0%e5%80%8d%e6%95%b0%e5%85%83%e7%b4%a0%e7%bd%ae%e4%b8%bafalse%e3%80%82%0a%e7%9b%b8%e5%ba%94%e4%bb%a3%e7%a0%81%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20%20typedef%20long%20long%20ll%3b%20bool%20is_prime%5bMAX1%5d%3b%20bool%20is_prime_small%5bMAX2%5d%3b%20void%20sieve%28ll%20a%2c%20ll%20b%29%20%7b%20for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime_small%5bi%5d%20%3d%20true%3b%20for%28int%20i%20%3d%200%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20is_prime%5bi%5d%20%3d%20true%3b%20for%28int%20i%20%3d%202%3b%20%28ll%29i%20%2a%20i%20%26lt%3b%20b%3b%20i%2b%2b%29%20%7b%20if%28is_prime_small%5bi%5d%29%7b%20for%28int%20j%20%3d%202%20%2a%20i%3b%20%28ll%29j%20%2a%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime_small%5bj%5d%20%3d%20false%3b%20for%28ll%20j%20%3d%20max%28%202ll%2c%20%28a%20%2b%20i%20-%201%29%20%2f%20i%29%20%29%20%2a%20i%3b%20j%20%26lt%3b%20b%3b%20j%20%2b%3d%20i%29%20is_prime%5bj%20-%20a%5d%20%3d%20false%3b%20%7d%20%7d%20%7d%20%20%20%e6%b3%a8%e6%84%8f%e7%82%b9%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

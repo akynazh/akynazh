@@ -17,13 +17,13 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Linux实用操作之网络管理" />
 <meta property="og:description" content="查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-alias myip=&quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&quot; test:
-[root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP curl cip.cc show:
+1  alias myip=&#34; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&#34;   test:
+1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
 IP : ${my_ip} 地址 : 中国 中国
 数据二 : 上海市 | 腾讯云
 数据三 : 中国北京北京 | 腾讯
 URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 参数说明：" />
+查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-03T00:27:58+08:00" />
@@ -33,20 +33,20 @@ URL : http://www.cip.cc/${my_ip}
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux实用操作之网络管理"/>
 <meta name="twitter:description" content="查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-alias myip=&quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&quot; test:
-[root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP curl cip.cc show:
+1  alias myip=&#34; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&#34;   test:
+1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
 IP : ${my_ip} 地址 : 中国 中国
 数据二 : 上海市 | 腾讯云
 数据三 : 中国北京北京 | 腾讯
 URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 参数说明："/>
+查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0."/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -178,7 +178,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E7%25BD%2591%25E7%25BB%259C%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e7%bd%91%e7%bb%9c%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e5%86%85%e7%bd%91IP%20grep%e6%8a%93%e5%8f%96inet%e8%a1%8c%ef%bc%8csed%e5%88%a0%e9%99%a4inet%e5%ad%97%e4%b8%b2%e5%92%8cnetmask.%2a%e5%ad%97%e4%b8%b2%0aalias%20myip%3d%26quot%3b%20ifconfig%20eth0%20%7c%20grep%20%27inet%20%27%20%7c%20sed%20%27s%2finet%2f%2fg%27%20%7c%20sed%20%27s%2fnetmask.%2a%24%2f%2fg%27%26quot%3b%20test%3a%0a%5broot%40VM-0-11-centos%20~%5d%23%20myip%20172.17.0.11%20%e6%9f%a5%e7%9c%8b%e5%a4%96%e7%bd%91IP%20curl%20cip.cc%20show%3a%0aIP%20%3a%20%24%7bmy_ip%7d%20%e5%9c%b0%e5%9d%80%20%3a%20%e4%b8%ad%e5%9b%bd%20%e4%b8%ad%e5%9b%bd%0a%e6%95%b0%e6%8d%ae%e4%ba%8c%20%3a%20%e4%b8%8a%e6%b5%b7%e5%b8%82%20%7c%20%e8%85%be%e8%ae%af%e4%ba%91%0a%e6%95%b0%e6%8d%ae%e4%b8%89%20%3a%20%e4%b8%ad%e5%9b%bd%e5%8c%97%e4%ba%ac%e5%8c%97%e4%ba%ac%20%7c%20%e8%85%be%e8%ae%af%0aURL%20%3a%20http%3a%2f%2fwww.cip.cc%2f%24%7bmy_ip%7d%0a%e6%9f%a5%e7%9c%8bIP%e7%ab%af%e5%8f%a3%e7%8a%b6%e5%86%b5%201%5broot%40VM-0-11-centos%20~%5d%23%20netstat%20-ntlp%202Active%20Internet%20connections%20%28only%20servers%29%203Proto%20Recv-Q%20Send-Q%20Local%20Address%20Foreign%20Address%20State%20PID%2fProgram%20name%204tcp%200%200%200.0.0.0%3a22%200.0.0.0%3a%2a%20LISTEN%201089%2fsshd%205%206tcp6%200%200%20%3a%3a%3a3306%20%3a%3a%3a%2a%20LISTEN%2014528%2fmysqld%20%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E7%25BD%2591%25E7%25BB%259C%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e7%bd%91%e7%bb%9c%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e5%86%85%e7%bd%91IP%20grep%e6%8a%93%e5%8f%96inet%e8%a1%8c%ef%bc%8csed%e5%88%a0%e9%99%a4inet%e5%ad%97%e4%b8%b2%e5%92%8cnetmask.%2a%e5%ad%97%e4%b8%b2%0a1%20%20alias%20myip%3d%26%2334%3b%20ifconfig%20eth0%20%7c%20grep%20%26%2339%3binet%20%26%2339%3b%20%7c%20sed%20%26%2339%3bs%2finet%2f%2fg%26%2339%3b%20%7c%20sed%20%26%2339%3bs%2fnetmask.%2a%24%2f%2fg%26%2339%3b%26%2334%3b%20%20%20test%3a%0a1%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20myip%20172.17.0.11%20%20%20%e6%9f%a5%e7%9c%8b%e5%a4%96%e7%bd%91IP%201%20%20curl%20cip.cc%20%20%20show%3a%0aIP%20%3a%20%24%7bmy_ip%7d%20%e5%9c%b0%e5%9d%80%20%3a%20%e4%b8%ad%e5%9b%bd%20%e4%b8%ad%e5%9b%bd%0a%e6%95%b0%e6%8d%ae%e4%ba%8c%20%3a%20%e4%b8%8a%e6%b5%b7%e5%b8%82%20%7c%20%e8%85%be%e8%ae%af%e4%ba%91%0a%e6%95%b0%e6%8d%ae%e4%b8%89%20%3a%20%e4%b8%ad%e5%9b%bd%e5%8c%97%e4%ba%ac%e5%8c%97%e4%ba%ac%20%7c%20%e8%85%be%e8%ae%af%0aURL%20%3a%20http%3a%2f%2fwww.cip.cc%2f%24%7bmy_ip%7d%0a%e6%9f%a5%e7%9c%8bIP%e7%ab%af%e5%8f%a3%e7%8a%b6%e5%86%b5%201%202%203%204%205%206%20%20%5broot%40VM-0-11-centos%20~%5d%23%20netstat%20-ntlp%20Active%20Internet%20connections%20%28only%20servers%29%20Proto%20Recv-Q%20Send-Q%20Local%20Address%20Foreign%20Address%20State%20PID%2fProgram%20name%20tcp%200%200%200." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -255,26 +255,60 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="查看内网ip">查看内网IP</h2>
 <p>grep抓取inet行，sed删除inet字串和netmask.*字串</p>
-<pre tabindex="0"><code>alias myip=&quot; ifconfig eth0 | grep 'inet ' | sed 's/inet//g' | sed 's/netmask.*$//g'&quot;
-</code></pre><p>test:</p>
-<pre tabindex="0"><code>[root@VM-0-11-centos ~]# myip
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">alias myip=&#34; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>test:</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos ~]# myip
          172.17.0.11
-</code></pre><h2 id="查看外网ip">查看外网IP</h2>
-<pre tabindex="0"><code>curl cip.cc
-</code></pre><p>show:</p>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看外网ip">查看外网IP</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl cip.cc
+</code></pre></td></tr></table>
+</div>
+</div><p>show:</p>
 <p>IP      : ${my_ip}
 地址    : 中国  中国</p>
 <p>数据二  : 上海市 | 腾讯云</p>
 <p>数据三  : 中国北京北京 | 腾讯</p>
 <p>URL     : <a href="http://www.cip.cc/$%7Bmy_ip%7D">http://www.cip.cc/${my_ip}</a></p>
 <h2 id="查看ip端口状况">查看IP端口状况</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># netstat -ntlp</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Active Internet connections <span style="color:#666">(</span>only servers<span style="color:#666">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>tcp        <span style="color:#666">0</span>      <span style="color:#666">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1089/sshd
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>tcp6       <span style="color:#666">0</span>      <span style="color:#666">0</span> :::3306                 :::*                    LISTEN      14528/mysqld
-</code></pre></div><p>参数说明：</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># netstat -ntlp</span>
+Active Internet connections <span style="color:#666">(</span>only servers<span style="color:#666">)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        <span style="color:#666">0</span>      <span style="color:#666">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1089/sshd
+
+tcp6       <span style="color:#666">0</span>      <span style="color:#666">0</span> :::3306                 :::*                    LISTEN      14528/mysqld
+</code></pre></td></tr></table>
+</div>
+</div><p>参数说明：</p>
 <ul>
 <li>n：拒绝别名都用数字</li>
 <li>t：即只接受TCP</li>
@@ -283,25 +317,53 @@ if (!doNotTrack) {
 </ul>
 <p>另外一种方法：</p>
 <p>获取3306端口运行状况：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># lsof -i:3306</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>mysqld  <span style="color:#666">14528</span> mysql   17u  IPv6 <span style="color:#666">779103</span>      0t0  TCP *:mysql <span style="color:#666">(</span>LISTEN<span style="color:#666">)</span>
-</code></pre></div><h2 id="开启与关闭端口">开启与关闭端口</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># lsof -i:3306</span>
+COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+mysqld  <span style="color:#666">14528</span> mysql   17u  IPv6 <span style="color:#666">779103</span>      0t0  TCP *:mysql <span style="color:#666">(</span>LISTEN<span style="color:#666">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="开启与关闭端口">开启与关闭端口</h2>
 <p>这里实验环境为centos7.9，我采用firewall来实现需求。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#080;font-style:italic"># 首先打开防火墙服务</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># systemctl start firewalld </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#080;font-style:italic"># 永久开启80端口</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># firewall-cmd --zone=public --add-port=8080/tcp --permanent </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#080;font-style:italic"># 使生效</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># firewall-cmd --reload</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#080;font-style:italic"># 查看已经开启的端口</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># firewall-cmd --zone=public --list-ports</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>8080/tcp 3306/tcp 80/tcp
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-</code></pre></div>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;font-style:italic"># 首先打开防火墙服务</span>
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># systemctl start firewalld </span>
+
+<span style="color:#080;font-style:italic"># 永久开启80端口</span>
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># firewall-cmd --zone=public --add-port=8080/tcp --permanent </span>
+
+<span style="color:#080;font-style:italic"># 使生效</span>
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># firewall-cmd --reload</span>
+
+<span style="color:#080;font-style:italic"># 查看已经开启的端口</span>
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># firewall-cmd --zone=public --list-ports</span>
+8080/tcp 3306/tcp 80/tcp
+
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
   </article>
 
@@ -318,7 +380,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -401,7 +463,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E7%25BD%2591%25E7%25BB%259C%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e7%bd%91%e7%bb%9c%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e5%86%85%e7%bd%91IP%20grep%e6%8a%93%e5%8f%96inet%e8%a1%8c%ef%bc%8csed%e5%88%a0%e9%99%a4inet%e5%ad%97%e4%b8%b2%e5%92%8cnetmask.%2a%e5%ad%97%e4%b8%b2%0aalias%20myip%3d%26quot%3b%20ifconfig%20eth0%20%7c%20grep%20%27inet%20%27%20%7c%20sed%20%27s%2finet%2f%2fg%27%20%7c%20sed%20%27s%2fnetmask.%2a%24%2f%2fg%27%26quot%3b%20test%3a%0a%5broot%40VM-0-11-centos%20~%5d%23%20myip%20172.17.0.11%20%e6%9f%a5%e7%9c%8b%e5%a4%96%e7%bd%91IP%20curl%20cip.cc%20show%3a%0aIP%20%3a%20%24%7bmy_ip%7d%20%e5%9c%b0%e5%9d%80%20%3a%20%e4%b8%ad%e5%9b%bd%20%e4%b8%ad%e5%9b%bd%0a%e6%95%b0%e6%8d%ae%e4%ba%8c%20%3a%20%e4%b8%8a%e6%b5%b7%e5%b8%82%20%7c%20%e8%85%be%e8%ae%af%e4%ba%91%0a%e6%95%b0%e6%8d%ae%e4%b8%89%20%3a%20%e4%b8%ad%e5%9b%bd%e5%8c%97%e4%ba%ac%e5%8c%97%e4%ba%ac%20%7c%20%e8%85%be%e8%ae%af%0aURL%20%3a%20http%3a%2f%2fwww.cip.cc%2f%24%7bmy_ip%7d%0a%e6%9f%a5%e7%9c%8bIP%e7%ab%af%e5%8f%a3%e7%8a%b6%e5%86%b5%201%5broot%40VM-0-11-centos%20~%5d%23%20netstat%20-ntlp%202Active%20Internet%20connections%20%28only%20servers%29%203Proto%20Recv-Q%20Send-Q%20Local%20Address%20Foreign%20Address%20State%20PID%2fProgram%20name%204tcp%200%200%200.0.0.0%3a22%200.0.0.0%3a%2a%20LISTEN%201089%2fsshd%205%206tcp6%200%200%20%3a%3a%3a3306%20%3a%3a%3a%2a%20LISTEN%2014528%2fmysqld%20%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E7%25BD%2591%25E7%25BB%259C%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e7%bd%91%e7%bb%9c%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e5%86%85%e7%bd%91IP%20grep%e6%8a%93%e5%8f%96inet%e8%a1%8c%ef%bc%8csed%e5%88%a0%e9%99%a4inet%e5%ad%97%e4%b8%b2%e5%92%8cnetmask.%2a%e5%ad%97%e4%b8%b2%0a1%20%20alias%20myip%3d%26%2334%3b%20ifconfig%20eth0%20%7c%20grep%20%26%2339%3binet%20%26%2339%3b%20%7c%20sed%20%26%2339%3bs%2finet%2f%2fg%26%2339%3b%20%7c%20sed%20%26%2339%3bs%2fnetmask.%2a%24%2f%2fg%26%2339%3b%26%2334%3b%20%20%20test%3a%0a1%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20myip%20172.17.0.11%20%20%20%e6%9f%a5%e7%9c%8b%e5%a4%96%e7%bd%91IP%201%20%20curl%20cip.cc%20%20%20show%3a%0aIP%20%3a%20%24%7bmy_ip%7d%20%e5%9c%b0%e5%9d%80%20%3a%20%e4%b8%ad%e5%9b%bd%20%e4%b8%ad%e5%9b%bd%0a%e6%95%b0%e6%8d%ae%e4%ba%8c%20%3a%20%e4%b8%8a%e6%b5%b7%e5%b8%82%20%7c%20%e8%85%be%e8%ae%af%e4%ba%91%0a%e6%95%b0%e6%8d%ae%e4%b8%89%20%3a%20%e4%b8%ad%e5%9b%bd%e5%8c%97%e4%ba%ac%e5%8c%97%e4%ba%ac%20%7c%20%e8%85%be%e8%ae%af%0aURL%20%3a%20http%3a%2f%2fwww.cip.cc%2f%24%7bmy_ip%7d%0a%e6%9f%a5%e7%9c%8bIP%e7%ab%af%e5%8f%a3%e7%8a%b6%e5%86%b5%201%202%203%204%205%206%20%20%5broot%40VM-0-11-centos%20~%5d%23%20netstat%20-ntlp%20Active%20Internet%20connections%20%28only%20servers%29%20Proto%20Recv-Q%20Send-Q%20Local%20Address%20Foreign%20Address%20State%20PID%2fProgram%20name%20tcp%200%200%200." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

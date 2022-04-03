@@ -17,20 +17,19 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="SSH免密且免IP登录远程主机的方法以及遇到的一些问题" />
 <meta property="og:description" content="问题的提出： 我们可以通过指令：
-ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
+1  ssh 用户名@IP   登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
 通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
 实现免ip登录：   新建config文件
 若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。
   编辑代替名以及IP，端口号，用户。
-  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户 这样，即可通过
-ssh 代替名 进行登录咯！
-接着我们实现免密登录：  在本地生成密钥：  ssh-keygen 并选择生成在.ssh目录下即可，获得一把公钥和私钥。
+  1 2 3 4  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户   这样，即可通过
+1  ssh 代替名   进行登录咯！
+接着我们实现免密登录：  在本地生成密钥：  1  ssh-keygen   并选择生成在.ssh目录下即可，获得一把公钥和私钥。
 将名字带.pub的就是公钥了。
  将公钥发给远程主机  通过命令
-ssh-copy-id -i .ssh/公钥 用户名@IP 即可发送给远程主机。
+1  ssh-copy-id -i .ssh/公钥 用户名@IP   即可发送给远程主机。
 在window10中可能出现以下错误：
-ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。 则可先于命令行中运行以下代码：
-function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &quot;$ENV:USERPROFILE&quot; &#43; &quot;/.ssh/id_rsa.pub&quot; if (!(Test-Path &quot;$publicKey&quot;)){ Write-Error &quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&quot; } else { &amp; cat &quot;$publicKey&quot; | ssh $args $userAtMachine &quot;umask 077; test -d ." />
+1  ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。   则可先于命令行中运行以下代码：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-17T17:56:03+08:00" />
@@ -40,27 +39,26 @@ function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &quot;$ENV:USE
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SSH免密且免IP登录远程主机的方法以及遇到的一些问题"/>
 <meta name="twitter:description" content="问题的提出： 我们可以通过指令：
-ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
+1  ssh 用户名@IP   登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
 通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
 实现免ip登录：   新建config文件
 若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。
   编辑代替名以及IP，端口号，用户。
-  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户 这样，即可通过
-ssh 代替名 进行登录咯！
-接着我们实现免密登录：  在本地生成密钥：  ssh-keygen 并选择生成在.ssh目录下即可，获得一把公钥和私钥。
+  1 2 3 4  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户   这样，即可通过
+1  ssh 代替名   进行登录咯！
+接着我们实现免密登录：  在本地生成密钥：  1  ssh-keygen   并选择生成在.ssh目录下即可，获得一把公钥和私钥。
 将名字带.pub的就是公钥了。
  将公钥发给远程主机  通过命令
-ssh-copy-id -i .ssh/公钥 用户名@IP 即可发送给远程主机。
+1  ssh-copy-id -i .ssh/公钥 用户名@IP   即可发送给远程主机。
 在window10中可能出现以下错误：
-ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。 则可先于命令行中运行以下代码：
-function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &quot;$ENV:USERPROFILE&quot; &#43; &quot;/.ssh/id_rsa.pub&quot; if (!(Test-Path &quot;$publicKey&quot;)){ Write-Error &quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&quot; } else { &amp; cat &quot;$publicKey&quot; | ssh $args $userAtMachine &quot;umask 077; test -d ."/>
+1  ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。   则可先于命令行中运行以下代码："/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -192,7 +190,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fssh%25E5%2585%258D%25E5%25AF%2586%25E4%25B8%2594%25E5%2585%258Dip%25E7%2599%25BB%25E5%25BD%2595%25E8%25BF%259C%25E7%25A8%258B%25E4%25B8%25BB%25E6%259C%25BA%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%25E4%25BB%25A5%25E5%258F%258A%25E9%2581%2587%25E5%2588%25B0%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E9%2597%25AE%25E9%25A2%2598%2f&name=SSH%e5%85%8d%e5%af%86%e4%b8%94%e5%85%8dIP%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e7%9a%84%e6%96%b9%e6%b3%95%e4%bb%a5%e5%8f%8a%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98&description=%e9%97%ae%e9%a2%98%e7%9a%84%e6%8f%90%e5%87%ba%ef%bc%9a%20%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e6%8c%87%e4%bb%a4%ef%bc%9a%0assh%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%ef%bc%8c%e4%bd%86%e6%98%af%e6%af%8f%e6%ac%a1%e9%83%bd%e8%a6%81%e8%be%93%e5%85%a5ip%e5%92%8c%e5%af%86%e7%a0%81%ef%bc%8c%e6%9c%89%e7%82%b9%e9%ba%bb%e7%83%a6%ef%bc%8c%e4%b8%ba%e4%ba%86%e8%8a%82%e7%9c%81%e6%97%b6%e9%97%b4%ef%bc%8c%e6%88%91%e4%bb%ac%e9%9c%80%e8%a6%81%e5%af%bb%e6%b1%82%e6%8f%90%e9%ab%98%e6%95%88%e7%8e%87%e7%9a%84%e5%8a%9e%e6%b3%95%ef%bc%81%0a%e9%80%9a%e8%bf%87%e4%ba%86%e8%a7%a3%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87RSA%ef%bc%8c%e5%8d%b3%e9%9d%9e%e5%af%b9%e7%a7%b0%e5%bc%8f%e7%9a%84%e5%8a%a0%e5%af%86%e6%96%b9%e6%b3%95%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e6%93%8d%e4%bd%9c%ef%bc%8c%e8%80%8c%e5%85%8dIP%e5%8f%aa%e9%9c%80%e8%a6%81%e5%9c%a8config%e6%96%87%e4%bb%b6%e4%b8%ad%e8%bf%9b%e8%a1%8c%e9%85%8d%e7%bd%ae%e5%8d%b3%e5%8f%af%e3%80%82%0a%e5%ae%9e%e7%8e%b0%e5%85%8dip%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%20%e6%96%b0%e5%bb%baconfig%e6%96%87%e4%bb%b6%0a%e8%8b%a5window%e4%b8%8b%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%ad%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%90%8d%e4%b8%baconfig%e7%9a%84%e6%96%87%e4%bb%b6%ef%bc%8c%e8%80%8clinux%e4%b8%8b%e7%9b%b4%e6%8e%a5%e7%bc%96%e8%be%91ssh_config%e6%96%87%e4%bb%b6%e3%80%82%0a%20%20%e7%bc%96%e8%be%91%e4%bb%a3%e6%9b%bf%e5%90%8d%e4%bb%a5%e5%8f%8aIP%ef%bc%8c%e7%ab%af%e5%8f%a3%e5%8f%b7%ef%bc%8c%e7%94%a8%e6%88%b7%e3%80%82%0a%20%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20%e8%bf%99%e6%a0%b7%ef%bc%8c%e5%8d%b3%e5%8f%af%e9%80%9a%e8%bf%87%0assh%20%e4%bb%a3%e6%9b%bf%e5%90%8d%20%e8%bf%9b%e8%a1%8c%e7%99%bb%e5%bd%95%e5%92%af%ef%bc%81%0a%e6%8e%a5%e7%9d%80%e6%88%91%e4%bb%ac%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%e5%9c%a8%e6%9c%ac%e5%9c%b0%e7%94%9f%e6%88%90%e5%af%86%e9%92%a5%ef%bc%9a%20%20ssh-keygen%20%e5%b9%b6%e9%80%89%e6%8b%a9%e7%94%9f%e6%88%90%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%8d%b3%e5%8f%af%ef%bc%8c%e8%8e%b7%e5%be%97%e4%b8%80%e6%8a%8a%e5%85%ac%e9%92%a5%e5%92%8c%e7%a7%81%e9%92%a5%e3%80%82%0a%e5%b0%86%e5%90%8d%e5%ad%97%e5%b8%a6.pub%e7%9a%84%e5%b0%b1%e6%98%af%e5%85%ac%e9%92%a5%e4%ba%86%e3%80%82%0a%20%e5%b0%86%e5%85%ac%e9%92%a5%e5%8f%91%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%20%20%e9%80%9a%e8%bf%87%e5%91%bd%e4%bb%a4%0assh-copy-id%20-i%20.ssh%2f%e5%85%ac%e9%92%a5%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%e5%8d%b3%e5%8f%af%e5%8f%91%e9%80%81%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e3%80%82%0a%e5%9c%a8window10%e4%b8%ad%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0assh-copy-id%20%3a%20%e6%97%a0%e6%b3%95%e5%b0%86%e2%80%9cssh-copy-id%e2%80%9d%e9%a1%b9%e8%af%86%e5%88%ab%e4%b8%ba%20cmdlet%e3%80%81%e5%87%bd%e6%95%b0%e3%80%81%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6%e6%88%96%e5%8f%af%e8%bf%90%e8%a1%8c%e7%a8%8b%e5%ba%8f%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%20%e5%88%99%e5%8f%af%e5%85%88%e4%ba%8e%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e8%bf%90%e8%a1%8c%e4%bb%a5%e4%b8%8b%e4%bb%a3%e7%a0%81%ef%bc%9a%0afunction%20ssh-copy-id%28%5bstring%5d%24userAtMachine%2c%20%24args%29%7b%20%24publicKey%20%3d%20%26quot%3b%24ENV%3aUSERPROFILE%26quot%3b%20%2b%20%26quot%3b%2f.ssh%2fid_rsa.pub%26quot%3b%20if%20%28%21%28Test-Path%20%26quot%3b%24publicKey%26quot%3b%29%29%7b%20Write-Error%20%26quot%3bERROR%3a%20failed%20to%20open%20ID%20file%20%27%24publicKey%27%3a%20No%20such%20file%26quot%3b%20%7d%20else%20%7b%20%26amp%3b%20cat%20%26quot%3b%24publicKey%26quot%3b%20%7c%20ssh%20%24args%20%24userAtMachine%20%26quot%3bumask%20077%3b%20test%20-d%20." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fssh%25E5%2585%258D%25E5%25AF%2586%25E4%25B8%2594%25E5%2585%258Dip%25E7%2599%25BB%25E5%25BD%2595%25E8%25BF%259C%25E7%25A8%258B%25E4%25B8%25BB%25E6%259C%25BA%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%25E4%25BB%25A5%25E5%258F%258A%25E9%2581%2587%25E5%2588%25B0%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E9%2597%25AE%25E9%25A2%2598%2f&name=SSH%e5%85%8d%e5%af%86%e4%b8%94%e5%85%8dIP%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e7%9a%84%e6%96%b9%e6%b3%95%e4%bb%a5%e5%8f%8a%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98&description=%e9%97%ae%e9%a2%98%e7%9a%84%e6%8f%90%e5%87%ba%ef%bc%9a%20%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e6%8c%87%e4%bb%a4%ef%bc%9a%0a1%20%20ssh%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%20%20%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%ef%bc%8c%e4%bd%86%e6%98%af%e6%af%8f%e6%ac%a1%e9%83%bd%e8%a6%81%e8%be%93%e5%85%a5ip%e5%92%8c%e5%af%86%e7%a0%81%ef%bc%8c%e6%9c%89%e7%82%b9%e9%ba%bb%e7%83%a6%ef%bc%8c%e4%b8%ba%e4%ba%86%e8%8a%82%e7%9c%81%e6%97%b6%e9%97%b4%ef%bc%8c%e6%88%91%e4%bb%ac%e9%9c%80%e8%a6%81%e5%af%bb%e6%b1%82%e6%8f%90%e9%ab%98%e6%95%88%e7%8e%87%e7%9a%84%e5%8a%9e%e6%b3%95%ef%bc%81%0a%e9%80%9a%e8%bf%87%e4%ba%86%e8%a7%a3%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87RSA%ef%bc%8c%e5%8d%b3%e9%9d%9e%e5%af%b9%e7%a7%b0%e5%bc%8f%e7%9a%84%e5%8a%a0%e5%af%86%e6%96%b9%e6%b3%95%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e6%93%8d%e4%bd%9c%ef%bc%8c%e8%80%8c%e5%85%8dIP%e5%8f%aa%e9%9c%80%e8%a6%81%e5%9c%a8config%e6%96%87%e4%bb%b6%e4%b8%ad%e8%bf%9b%e8%a1%8c%e9%85%8d%e7%bd%ae%e5%8d%b3%e5%8f%af%e3%80%82%0a%e5%ae%9e%e7%8e%b0%e5%85%8dip%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%20%e6%96%b0%e5%bb%baconfig%e6%96%87%e4%bb%b6%0a%e8%8b%a5window%e4%b8%8b%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%ad%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%90%8d%e4%b8%baconfig%e7%9a%84%e6%96%87%e4%bb%b6%ef%bc%8c%e8%80%8clinux%e4%b8%8b%e7%9b%b4%e6%8e%a5%e7%bc%96%e8%be%91ssh_config%e6%96%87%e4%bb%b6%e3%80%82%0a%20%20%e7%bc%96%e8%be%91%e4%bb%a3%e6%9b%bf%e5%90%8d%e4%bb%a5%e5%8f%8aIP%ef%bc%8c%e7%ab%af%e5%8f%a3%e5%8f%b7%ef%bc%8c%e7%94%a8%e6%88%b7%e3%80%82%0a%20%201%202%203%204%20%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20%20%20%e8%bf%99%e6%a0%b7%ef%bc%8c%e5%8d%b3%e5%8f%af%e9%80%9a%e8%bf%87%0a1%20%20ssh%20%e4%bb%a3%e6%9b%bf%e5%90%8d%20%20%20%e8%bf%9b%e8%a1%8c%e7%99%bb%e5%bd%95%e5%92%af%ef%bc%81%0a%e6%8e%a5%e7%9d%80%e6%88%91%e4%bb%ac%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%e5%9c%a8%e6%9c%ac%e5%9c%b0%e7%94%9f%e6%88%90%e5%af%86%e9%92%a5%ef%bc%9a%20%201%20%20ssh-keygen%20%20%20%e5%b9%b6%e9%80%89%e6%8b%a9%e7%94%9f%e6%88%90%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%8d%b3%e5%8f%af%ef%bc%8c%e8%8e%b7%e5%be%97%e4%b8%80%e6%8a%8a%e5%85%ac%e9%92%a5%e5%92%8c%e7%a7%81%e9%92%a5%e3%80%82%0a%e5%b0%86%e5%90%8d%e5%ad%97%e5%b8%a6.pub%e7%9a%84%e5%b0%b1%e6%98%af%e5%85%ac%e9%92%a5%e4%ba%86%e3%80%82%0a%20%e5%b0%86%e5%85%ac%e9%92%a5%e5%8f%91%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%20%20%e9%80%9a%e8%bf%87%e5%91%bd%e4%bb%a4%0a1%20%20ssh-copy-id%20-i%20.ssh%2f%e5%85%ac%e9%92%a5%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%20%20%e5%8d%b3%e5%8f%af%e5%8f%91%e9%80%81%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e3%80%82%0a%e5%9c%a8window10%e4%b8%ad%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0a1%20%20ssh-copy-id%20%3a%20%e6%97%a0%e6%b3%95%e5%b0%86%e2%80%9cssh-copy-id%e2%80%9d%e9%a1%b9%e8%af%86%e5%88%ab%e4%b8%ba%20cmdlet%e3%80%81%e5%87%bd%e6%95%b0%e3%80%81%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6%e6%88%96%e5%8f%af%e8%bf%90%e8%a1%8c%e7%a8%8b%e5%ba%8f%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%20%20%20%e5%88%99%e5%8f%af%e5%85%88%e4%ba%8e%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e8%bf%90%e8%a1%8c%e4%bb%a5%e4%b8%8b%e4%bb%a3%e7%a0%81%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -273,8 +271,15 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="问题的提出">问题的提出：</h2>
 <p>我们可以通过指令：</p>
-<pre tabindex="0"><code>ssh 用户名@IP
-</code></pre><p>登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh 用户名@IP
+</code></pre></td></tr></table>
+</div>
+</div><p>登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！</p>
 <p>通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。</p>
 <h2 id="实现免ip登录">实现免ip登录：</h2>
 <ul>
@@ -286,39 +291,92 @@ if (!doNotTrack) {
 <p>编辑代替名以及IP，端口号，用户。</p>
 </li>
 </ul>
-<pre tabindex="0"><code>Host 输入代替名
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Host 输入代替名
 	HostName 输入IP
 	Port 输入端口号
 	User 输入用户
-</code></pre><p>这样，即可通过</p>
-<pre tabindex="0"><code>ssh 代替名
-</code></pre><p>进行登录咯！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样，即可通过</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh 代替名
+</code></pre></td></tr></table>
+</div>
+</div><p>进行登录咯！</p>
 <h2 id="接着我们实现免密登录">接着我们实现免密登录：</h2>
 <ul>
 <li>在本地生成密钥：</li>
 </ul>
-<pre tabindex="0"><code>ssh-keygen
-</code></pre><p>并选择<strong>生成在.ssh目录下即可</strong>，获得一把公钥和私钥。</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-keygen
+</code></pre></td></tr></table>
+</div>
+</div><p>并选择<strong>生成在.ssh目录下即可</strong>，获得一把公钥和私钥。</p>
 <p>将名字带.pub的就是公钥了。</p>
 <ul>
 <li>将公钥发给远程主机</li>
 </ul>
 <p>通过命令</p>
-<pre tabindex="0"><code>ssh-copy-id -i .ssh/公钥 用户名@IP
-</code></pre><p>即可发送给远程主机。</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-copy-id -i .ssh/公钥 用户名@IP
+</code></pre></td></tr></table>
+</div>
+</div><p>即可发送给远程主机。</p>
 <p>在window10中可能出现以下错误：</p>
-<pre tabindex="0"><code>ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
-</code></pre><p>则可先于命令行中运行以下代码：</p>
-<pre tabindex="0"><code>function ssh-copy-id([string]$userAtMachine, $args){
-    $publicKey = &quot;$ENV:USERPROFILE&quot; + &quot;/.ssh/id_rsa.pub&quot;
-    if (!(Test-Path &quot;$publicKey&quot;)){
-        Write-Error &quot;ERROR: failed to open ID file '$publicKey': No such file&quot;
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
+</code></pre></td></tr></table>
+</div>
+</div><p>则可先于命令行中运行以下代码：</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">function ssh-copy-id([string]$userAtMachine, $args){
+    $publicKey = &#34;$ENV:USERPROFILE&#34; + &#34;/.ssh/id_rsa.pub&#34;
+    if (!(Test-Path &#34;$publicKey&#34;)){
+        Write-Error &#34;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&#34;
     }
     else {
-        &amp; cat &quot;$publicKey&quot; | ssh $args $userAtMachine &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&quot;
+        &amp; cat &#34;$publicKey&#34; | ssh $args $userAtMachine &#34;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&#34;
     }
 }
-</code></pre><p>之后再重试即可成功发送公钥！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>之后再重试即可成功发送公钥！</p>
 <p>远程主机对本地发送过去的公钥进行加密，只有本地的私钥可以解密！</p>
 <p>这样本地就与远程主机有了联系！</p>
 <h2 id="密钥算法不匹配问题">密钥算法不匹配问题</h2>
@@ -326,12 +384,23 @@ if (!doNotTrack) {
 <p>no matching key exchange method found. Their offer: diffie-hellman-group1-sha1</p>
 <p>则是本地密钥算法与远程主机密钥算法<strong>不匹配</strong>造成的！</p>
 <p>可以在ssh_config或config文件中添加密钥算法配置：</p>
-<pre tabindex="0"><code>Host 输入代替名
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Host 输入代替名
 	HostName 输入IP
 	Port 输入端口号
 	User 输入用户
 	KexAlgorithms +diffie-hellman-group1-sha1
-</code></pre><p>其中加号不能省略！表示新增的密钥算法哦~</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中加号不能省略！表示新增的密钥算法哦~</p>
 <h2 id="自定义密钥文件导致识别错误问题">自定义密钥文件导致识别错误问题</h2>
 <p>生成密钥的时候系统会让我们指定路径（包含其生成的文件名），这是可选的一步，如果我们直接回车而不指定则系统会默认生成id_rsa及id_rsa.pub这两个文件。</p>
 <p>而当我们需要登录多个主机时，生成的文件名就会冲突了。所以我们需要自定义文件名。</p>
@@ -340,26 +409,59 @@ if (!doNotTrack) {
 <li>假设我们自定义key生成路径为~/.ssh/id_rsa_centos79，则生成id_rsa_centos79及id_rsa_centos79.pub文件</li>
 <li>继续编辑config文件，如下</li>
 </ul>
-<pre tabindex="0"><code>Host 输入代替名
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Host 输入代替名
 	HostName 输入IP
 	Port 输入端口号
 	User 输入用户
 	IdentityFile ~/.ssh/id_rsa_centos79
-</code></pre><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>修改ssh-copy-id函数中的公钥名，如下</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#b8860b">$publicKey</span> = <span style="color:#b44">&#34;$ENV:USERPROFILE&#34;</span> + <span style="color:#b44">&#34;/.ssh/id_rsa_centos79.pub&#34;</span>
-</code></pre></div><p>即为：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a2f;font-weight:bold">function</span> <span style="color:#a2f">ssh-copy</span>-id(<span style="color:#800">[string]</span><span style="color:#b8860b">$userAtMachine</span>, <span style="color:#b8860b">$args</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#b8860b">$publicKey</span> = <span style="color:#b44">&#34;$ENV:USERPROFILE&#34;</span> + <span style="color:#b44">&#34;/.ssh/id_rsa_centos79.pub&#34;</span> <span style="color:#080;font-style:italic"># 修改的位置</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#a2f;font-weight:bold">if</span> (!(<span style="color:#a2f">Test-Path</span> <span style="color:#b44">&#34;$publicKey&#34;</span>)){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>        <span style="color:#a2f">Write-Error</span> <span style="color:#b44">&#34;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    <span style="color:#a2f;font-weight:bold">else</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>        &amp; <span style="color:#a2f">cat </span><span style="color:#b44">&#34;$publicKey&#34;</span> | ssh <span style="color:#b8860b">$args</span> <span style="color:#b8860b">$userAtMachine</span> <span style="color:#b44">&#34;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
-</code></pre></div><p>这样即可顺利发送公钥到主机哩^-^</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#b8860b">$publicKey</span> = <span style="color:#b44">&#34;$ENV:USERPROFILE&#34;</span> + <span style="color:#b44">&#34;/.ssh/id_rsa_centos79.pub&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>即为：</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#a2f;font-weight:bold">function</span> <span style="color:#a2f">ssh-copy</span>-id(<span style="color:#800">[string]</span><span style="color:#b8860b">$userAtMachine</span>, <span style="color:#b8860b">$args</span>){
+    <span style="color:#b8860b">$publicKey</span> = <span style="color:#b44">&#34;$ENV:USERPROFILE&#34;</span> + <span style="color:#b44">&#34;/.ssh/id_rsa_centos79.pub&#34;</span> <span style="color:#080;font-style:italic"># 修改的位置</span>
+    <span style="color:#a2f;font-weight:bold">if</span> (!(<span style="color:#a2f">Test-Path</span> <span style="color:#b44">&#34;$publicKey&#34;</span>)){
+        <span style="color:#a2f">Write-Error</span> <span style="color:#b44">&#34;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&#34;</span>
+    }
+    <span style="color:#a2f;font-weight:bold">else</span> {
+        &amp; <span style="color:#a2f">cat </span><span style="color:#b44">&#34;$publicKey&#34;</span> | ssh <span style="color:#b8860b">$args</span> <span style="color:#b8860b">$userAtMachine</span> <span style="color:#b44">&#34;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&#34;</span>
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>这样即可顺利发送公钥到主机哩^-^</p>
 <p>over!</p>
 
     </div>
@@ -378,7 +480,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -462,7 +564,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fssh%25E5%2585%258D%25E5%25AF%2586%25E4%25B8%2594%25E5%2585%258Dip%25E7%2599%25BB%25E5%25BD%2595%25E8%25BF%259C%25E7%25A8%258B%25E4%25B8%25BB%25E6%259C%25BA%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%25E4%25BB%25A5%25E5%258F%258A%25E9%2581%2587%25E5%2588%25B0%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E9%2597%25AE%25E9%25A2%2598%2f&name=SSH%e5%85%8d%e5%af%86%e4%b8%94%e5%85%8dIP%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e7%9a%84%e6%96%b9%e6%b3%95%e4%bb%a5%e5%8f%8a%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98&description=%e9%97%ae%e9%a2%98%e7%9a%84%e6%8f%90%e5%87%ba%ef%bc%9a%20%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e6%8c%87%e4%bb%a4%ef%bc%9a%0assh%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%ef%bc%8c%e4%bd%86%e6%98%af%e6%af%8f%e6%ac%a1%e9%83%bd%e8%a6%81%e8%be%93%e5%85%a5ip%e5%92%8c%e5%af%86%e7%a0%81%ef%bc%8c%e6%9c%89%e7%82%b9%e9%ba%bb%e7%83%a6%ef%bc%8c%e4%b8%ba%e4%ba%86%e8%8a%82%e7%9c%81%e6%97%b6%e9%97%b4%ef%bc%8c%e6%88%91%e4%bb%ac%e9%9c%80%e8%a6%81%e5%af%bb%e6%b1%82%e6%8f%90%e9%ab%98%e6%95%88%e7%8e%87%e7%9a%84%e5%8a%9e%e6%b3%95%ef%bc%81%0a%e9%80%9a%e8%bf%87%e4%ba%86%e8%a7%a3%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87RSA%ef%bc%8c%e5%8d%b3%e9%9d%9e%e5%af%b9%e7%a7%b0%e5%bc%8f%e7%9a%84%e5%8a%a0%e5%af%86%e6%96%b9%e6%b3%95%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e6%93%8d%e4%bd%9c%ef%bc%8c%e8%80%8c%e5%85%8dIP%e5%8f%aa%e9%9c%80%e8%a6%81%e5%9c%a8config%e6%96%87%e4%bb%b6%e4%b8%ad%e8%bf%9b%e8%a1%8c%e9%85%8d%e7%bd%ae%e5%8d%b3%e5%8f%af%e3%80%82%0a%e5%ae%9e%e7%8e%b0%e5%85%8dip%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%20%e6%96%b0%e5%bb%baconfig%e6%96%87%e4%bb%b6%0a%e8%8b%a5window%e4%b8%8b%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%ad%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%90%8d%e4%b8%baconfig%e7%9a%84%e6%96%87%e4%bb%b6%ef%bc%8c%e8%80%8clinux%e4%b8%8b%e7%9b%b4%e6%8e%a5%e7%bc%96%e8%be%91ssh_config%e6%96%87%e4%bb%b6%e3%80%82%0a%20%20%e7%bc%96%e8%be%91%e4%bb%a3%e6%9b%bf%e5%90%8d%e4%bb%a5%e5%8f%8aIP%ef%bc%8c%e7%ab%af%e5%8f%a3%e5%8f%b7%ef%bc%8c%e7%94%a8%e6%88%b7%e3%80%82%0a%20%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20%e8%bf%99%e6%a0%b7%ef%bc%8c%e5%8d%b3%e5%8f%af%e9%80%9a%e8%bf%87%0assh%20%e4%bb%a3%e6%9b%bf%e5%90%8d%20%e8%bf%9b%e8%a1%8c%e7%99%bb%e5%bd%95%e5%92%af%ef%bc%81%0a%e6%8e%a5%e7%9d%80%e6%88%91%e4%bb%ac%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%e5%9c%a8%e6%9c%ac%e5%9c%b0%e7%94%9f%e6%88%90%e5%af%86%e9%92%a5%ef%bc%9a%20%20ssh-keygen%20%e5%b9%b6%e9%80%89%e6%8b%a9%e7%94%9f%e6%88%90%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%8d%b3%e5%8f%af%ef%bc%8c%e8%8e%b7%e5%be%97%e4%b8%80%e6%8a%8a%e5%85%ac%e9%92%a5%e5%92%8c%e7%a7%81%e9%92%a5%e3%80%82%0a%e5%b0%86%e5%90%8d%e5%ad%97%e5%b8%a6.pub%e7%9a%84%e5%b0%b1%e6%98%af%e5%85%ac%e9%92%a5%e4%ba%86%e3%80%82%0a%20%e5%b0%86%e5%85%ac%e9%92%a5%e5%8f%91%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%20%20%e9%80%9a%e8%bf%87%e5%91%bd%e4%bb%a4%0assh-copy-id%20-i%20.ssh%2f%e5%85%ac%e9%92%a5%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%e5%8d%b3%e5%8f%af%e5%8f%91%e9%80%81%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e3%80%82%0a%e5%9c%a8window10%e4%b8%ad%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0assh-copy-id%20%3a%20%e6%97%a0%e6%b3%95%e5%b0%86%e2%80%9cssh-copy-id%e2%80%9d%e9%a1%b9%e8%af%86%e5%88%ab%e4%b8%ba%20cmdlet%e3%80%81%e5%87%bd%e6%95%b0%e3%80%81%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6%e6%88%96%e5%8f%af%e8%bf%90%e8%a1%8c%e7%a8%8b%e5%ba%8f%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%20%e5%88%99%e5%8f%af%e5%85%88%e4%ba%8e%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e8%bf%90%e8%a1%8c%e4%bb%a5%e4%b8%8b%e4%bb%a3%e7%a0%81%ef%bc%9a%0afunction%20ssh-copy-id%28%5bstring%5d%24userAtMachine%2c%20%24args%29%7b%20%24publicKey%20%3d%20%26quot%3b%24ENV%3aUSERPROFILE%26quot%3b%20%2b%20%26quot%3b%2f.ssh%2fid_rsa.pub%26quot%3b%20if%20%28%21%28Test-Path%20%26quot%3b%24publicKey%26quot%3b%29%29%7b%20Write-Error%20%26quot%3bERROR%3a%20failed%20to%20open%20ID%20file%20%27%24publicKey%27%3a%20No%20such%20file%26quot%3b%20%7d%20else%20%7b%20%26amp%3b%20cat%20%26quot%3b%24publicKey%26quot%3b%20%7c%20ssh%20%24args%20%24userAtMachine%20%26quot%3bumask%20077%3b%20test%20-d%20." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fssh%25E5%2585%258D%25E5%25AF%2586%25E4%25B8%2594%25E5%2585%258Dip%25E7%2599%25BB%25E5%25BD%2595%25E8%25BF%259C%25E7%25A8%258B%25E4%25B8%25BB%25E6%259C%25BA%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%25E4%25BB%25A5%25E5%258F%258A%25E9%2581%2587%25E5%2588%25B0%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E9%2597%25AE%25E9%25A2%2598%2f&name=SSH%e5%85%8d%e5%af%86%e4%b8%94%e5%85%8dIP%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e7%9a%84%e6%96%b9%e6%b3%95%e4%bb%a5%e5%8f%8a%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98&description=%e9%97%ae%e9%a2%98%e7%9a%84%e6%8f%90%e5%87%ba%ef%bc%9a%20%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e6%8c%87%e4%bb%a4%ef%bc%9a%0a1%20%20ssh%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%20%20%e7%99%bb%e5%bd%95%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%ef%bc%8c%e4%bd%86%e6%98%af%e6%af%8f%e6%ac%a1%e9%83%bd%e8%a6%81%e8%be%93%e5%85%a5ip%e5%92%8c%e5%af%86%e7%a0%81%ef%bc%8c%e6%9c%89%e7%82%b9%e9%ba%bb%e7%83%a6%ef%bc%8c%e4%b8%ba%e4%ba%86%e8%8a%82%e7%9c%81%e6%97%b6%e9%97%b4%ef%bc%8c%e6%88%91%e4%bb%ac%e9%9c%80%e8%a6%81%e5%af%bb%e6%b1%82%e6%8f%90%e9%ab%98%e6%95%88%e7%8e%87%e7%9a%84%e5%8a%9e%e6%b3%95%ef%bc%81%0a%e9%80%9a%e8%bf%87%e4%ba%86%e8%a7%a3%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87RSA%ef%bc%8c%e5%8d%b3%e9%9d%9e%e5%af%b9%e7%a7%b0%e5%bc%8f%e7%9a%84%e5%8a%a0%e5%af%86%e6%96%b9%e6%b3%95%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e6%93%8d%e4%bd%9c%ef%bc%8c%e8%80%8c%e5%85%8dIP%e5%8f%aa%e9%9c%80%e8%a6%81%e5%9c%a8config%e6%96%87%e4%bb%b6%e4%b8%ad%e8%bf%9b%e8%a1%8c%e9%85%8d%e7%bd%ae%e5%8d%b3%e5%8f%af%e3%80%82%0a%e5%ae%9e%e7%8e%b0%e5%85%8dip%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%20%e6%96%b0%e5%bb%baconfig%e6%96%87%e4%bb%b6%0a%e8%8b%a5window%e4%b8%8b%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%ad%e6%96%b0%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%90%8d%e4%b8%baconfig%e7%9a%84%e6%96%87%e4%bb%b6%ef%bc%8c%e8%80%8clinux%e4%b8%8b%e7%9b%b4%e6%8e%a5%e7%bc%96%e8%be%91ssh_config%e6%96%87%e4%bb%b6%e3%80%82%0a%20%20%e7%bc%96%e8%be%91%e4%bb%a3%e6%9b%bf%e5%90%8d%e4%bb%a5%e5%8f%8aIP%ef%bc%8c%e7%ab%af%e5%8f%a3%e5%8f%b7%ef%bc%8c%e7%94%a8%e6%88%b7%e3%80%82%0a%20%201%202%203%204%20%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20%20%20%e8%bf%99%e6%a0%b7%ef%bc%8c%e5%8d%b3%e5%8f%af%e9%80%9a%e8%bf%87%0a1%20%20ssh%20%e4%bb%a3%e6%9b%bf%e5%90%8d%20%20%20%e8%bf%9b%e8%a1%8c%e7%99%bb%e5%bd%95%e5%92%af%ef%bc%81%0a%e6%8e%a5%e7%9d%80%e6%88%91%e4%bb%ac%e5%ae%9e%e7%8e%b0%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95%ef%bc%9a%20%20%e5%9c%a8%e6%9c%ac%e5%9c%b0%e7%94%9f%e6%88%90%e5%af%86%e9%92%a5%ef%bc%9a%20%201%20%20ssh-keygen%20%20%20%e5%b9%b6%e9%80%89%e6%8b%a9%e7%94%9f%e6%88%90%e5%9c%a8.ssh%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%8d%b3%e5%8f%af%ef%bc%8c%e8%8e%b7%e5%be%97%e4%b8%80%e6%8a%8a%e5%85%ac%e9%92%a5%e5%92%8c%e7%a7%81%e9%92%a5%e3%80%82%0a%e5%b0%86%e5%90%8d%e5%ad%97%e5%b8%a6.pub%e7%9a%84%e5%b0%b1%e6%98%af%e5%85%ac%e9%92%a5%e4%ba%86%e3%80%82%0a%20%e5%b0%86%e5%85%ac%e9%92%a5%e5%8f%91%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%20%20%e9%80%9a%e8%bf%87%e5%91%bd%e4%bb%a4%0a1%20%20ssh-copy-id%20-i%20.ssh%2f%e5%85%ac%e9%92%a5%20%e7%94%a8%e6%88%b7%e5%90%8d%40IP%20%20%20%e5%8d%b3%e5%8f%af%e5%8f%91%e9%80%81%e7%bb%99%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e3%80%82%0a%e5%9c%a8window10%e4%b8%ad%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0a1%20%20ssh-copy-id%20%3a%20%e6%97%a0%e6%b3%95%e5%b0%86%e2%80%9cssh-copy-id%e2%80%9d%e9%a1%b9%e8%af%86%e5%88%ab%e4%b8%ba%20cmdlet%e3%80%81%e5%87%bd%e6%95%b0%e3%80%81%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6%e6%88%96%e5%8f%af%e8%bf%90%e8%a1%8c%e7%a8%8b%e5%ba%8f%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%20%20%20%e5%88%99%e5%8f%af%e5%85%88%e4%ba%8e%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%b8%ad%e8%bf%90%e8%a1%8c%e4%bb%a5%e4%b8%8b%e4%bb%a3%e7%a0%81%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -15,8 +15,8 @@
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
       <description>查看进程 查看所有进程
- -e: all processes -f: full-format, including command lines  1[root@VM-0-11-centos ~]# ps -ef  2UID PID PPID C STIME TTY TIME CMD 3root 1 0 0 00:41 ? 00:00:06 /usr/lib/systemd/systemd --switched-root --system --deserialize 22 4root 2 0 0 00:41 ? 00:00:00 [kthreadd] 查看相关进程
-1[root@VM-0-11-centos ~]# ps -ef | head -n 1; ps -ef | grep java 2UID PID PPID C STIME TTY TIME CMD 3root 25889 24972 4 17:46 pts/1 00:00:11 java -jar LonersHub-0.</description>
+ -e: all processes -f: full-format, including command lines  1 2 3 4  [root@VM-0-11-centos ~]# ps -ef  UID PID PPID C STIME TTY TIME CMD root 1 0 0 00:41 ? 00:00:06 /usr/lib/systemd/systemd --switched-root --system --deserialize 22 root 2 0 0 00:41 ? 00:00:00 [kthreadd]   查看相关进程
+1 2 3 4  [root@VM-0-11-centos ~]# ps -ef | head -n 1; ps -ef | grep java UID PID PPID C STIME TTY TIME CMD root 25889 24972 4 17:46 pts/1 00:00:11 java -jar LonersHub-0.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <pubDate>Thu, 31 Mar 2022 22:34:24 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bat%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
-      <description>at命令 create job 1[root@VM-0-11-centos ~]# at 22:38 2at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt 3# ctrl D 4at&amp;gt; &amp;lt;EOT&amp;gt; 5job 3 at Thu Mar 31 22:38:00 2022 6[root@VM-0-11-centos ~]# at now +2 minute 7at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt 8# ctrl D 9at&amp;gt; &amp;lt;EOT&amp;gt; 10job 4 at Thu Mar 31 22:39:00 2022 check job 1[root@VM-0-11-centos ~]# ls 2at-test.txt 3[root@VM-0-11-centos ~]# cat at-test.txt 4hello world 5 6[root@VM-0-11-centos ~]# atq # 查看将要运行的job 74 Thu Mar 31 22:39:00 2022 a root 8 9[root@VM-0-11-centos ~]# cat ~/at-test.</description>
+      <description>at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now +2 minute at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test.</description>
     </item>
     
     <item>
@@ -35,24 +35,22 @@
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
-1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
+1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
  如果单纯运行一个java项目：  获得路径为：
 ${project}/target/classes
  如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
 所以如果是jar包启动并上传文件，则无法正确放到类路径下。
 所以需指定新的上传路径。
 在如下路径中：
-1[root@VM-0-11-centos app]# ls 2application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
-1spring: 2 resources: 3 static-locations: 4 - classpath:static/ 5 - file:/app/static/ 然后在文件上传是指定上传路径即可。
+1 2  [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
+1 2 3 4 5  spring: resources: static-locations: - classpath:static/ - file:/app/static/   然后在文件上传是指定上传路径即可。
 这里编写一个工具类如下：
 关注getUploadPath方法，它用于获取上传路径。
 首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
 比如，要上传一个头像：
  linux下：  返回/app/static/${uploadType}/${fileName}
 e.g. /app/static/avatar/test.jpg
- window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}
-e.g. ${project}/target/classes/static/avatar/test.jpg
-1public class FileUtils { 2 3 /** 4* @description: 获取上传路径 5* @author Jiang Zhihang 6* @date 2022/1/2 23:32 7* @param type 上传类型，如avatar，video 8* @param fileName 上传文件的名称 9*/ 10 public static String getUploadPath(String type, String fileName) throws FileNotFoundException, UnsupportedEncodingException { 11 String osName = System.</description>
+ window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}</description>
     </item>
     
     <item>
@@ -66,10 +64,8 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
  配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
   将jdk压缩包通过winsp上传至主机
   解压缩jdk压缩包
-1[root@VM-0-11-centos ~]# ls 2bin jdk-8u311-linux-x64.tar.gz passwd var 3[root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz 4... 5[root@VM-0-11-centos ~]# ls 6bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var   移动jdk到合适目录
-1[root@VM-0-11-centos ~]# mkdir /usr/local/java 2[root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java   配置环境变量 Linux相关配置文件解析 bashrc部分:
- /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:
- /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.</description>
+1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录
+1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:</description>
     </item>
     
     <item>
@@ -79,13 +75,13 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
       <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-alias myip=&amp;quot; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&amp;quot; test:
-[root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP curl cip.cc show:
+1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
+1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
 IP : ${my_ip} 地址 : 中国 中国
 数据二 : 上海市 | 腾讯云
 数据三 : 中国北京北京 | 腾讯
 URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1089/sshd 5 6tcp6 0 0 :::3306 :::* LISTEN 14528/mysqld 参数说明：</description>
+查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
     </item>
     
     <item>
@@ -94,10 +90,9 @@ URL : http://www.cip.cc/${my_ip}
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
-      <description>添加用户 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
+      <description>添加用户 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000:   x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
-[root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
-[root@VM-0-11-centos /]# useradd vbird [root@VM-0-11-centos /]# echo &amp;quot;658766&amp;quot; | passwd --stdin vbird Changing password for user vbird.</description>
+1 2 3 4 5 6  [root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully.</description>
     </item>
     
     <item>
@@ -106,7 +101,7 @@ URL : http://www.cip.cc/${my_ip}
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
-      <description>read命令  read -a variable_name 读取数组”array”  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5  read -p “prompt words” variable_name read -n limit_length variable_name  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words  read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else if []; then do something elif []; then do something else do something fi case case ${var} in &amp;quot;condition1&amp;quot;) do something ;; &amp;quot;condition2&amp;quot;) do something ;; *) #anything do something ;; esac 循环语句 while while [condition] do do something done when meet the condition, start the loop.</description>
+      <description>read命令  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7  if []; then do something elif []; then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
     </item>
     
     <item>
@@ -116,7 +111,7 @@ URL : http://www.cip.cc/${my_ip}
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
       <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
-last | grep &#39;root&#39; 比较重要，记忆：
+1  last | grep &amp;#39;root&amp;#39;   比较重要，记忆：
 grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename
 选项与参数：
 -a ：将 binary 文件以 text 文件的方式搜寻数据
@@ -126,10 +121,9 @@ grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filenam
 -v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行
 &amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
 awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}
-last -n 5 | awk &#39;{print $1 &amp;quot;\t&amp;quot; $3}&#39;  分隔字符  awk -F #-F指定分割字符
+1  last -n 5 | awk &amp;#39;{print $1 &amp;#34;\t&amp;#34; $3}&amp;#39;    分隔字符  awk -F #-F指定分割字符
 使用&amp;quot;,&amp;ldquo;分隔
-awk -F, &#39;{print $1,$2}&#39; log.txt  设置变量  awk -v # 设置变量
-设置变量k等于1</description>
+1  awk -F, &amp;#39;{print $1,$2}&amp;#39; log.</description>
     </item>
     
     <item>
@@ -144,11 +138,9 @@ unix mac linux的换行： \n
 unix to win 换行失败
 win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M
 文件编码 查看文件编码
-enca -L none file 文件编码转为UTF-8
-enca -L none -x UTF-8 file 查询历史命令 history 10 查看最近的10笔bash命令记录 !10 执行history中第10笔bash命令记录 修改vim中tab长度 设置vim中tab长度
-vim /etc/vimrc set tabstop=4 禁用烦人的蜂鸣声 禁用bash蜂鸣声
- /etc/inputrc &amp;quot;set bell-style none&amp;quot; 禁用vim蜂鸣声
- /etc/vimrc &amp;quot;:set noeb vb t_vb=&amp;quot; (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)</description>
+1  enca -L none file   文件编码转为UTF-8
+1  enca -L none -x UTF-8 file   查询历史命令 1 2 3  history 10 查看最近的10笔bash命令记录 !10 执行history中第10笔bash命令记录   修改vim中tab长度 设置vim中tab长度
+1 2 3  vim /etc/vimrc set tabstop=4   禁用烦人的蜂鸣声 禁用bash蜂鸣声</description>
     </item>
     
     <item>
@@ -158,20 +150,19 @@ vim /etc/vimrc set tabstop=4 禁用烦人的蜂鸣声 禁用bash蜂鸣声
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
       <description>问题的提出： 我们可以通过指令：
-ssh 用户名@IP 登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
+1  ssh 用户名@IP   登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
 通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
 实现免ip登录：   新建config文件
 若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。
   编辑代替名以及IP，端口号，用户。
-  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户 这样，即可通过
-ssh 代替名 进行登录咯！
-接着我们实现免密登录：  在本地生成密钥：  ssh-keygen 并选择生成在.ssh目录下即可，获得一把公钥和私钥。
+  1 2 3 4  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户   这样，即可通过
+1  ssh 代替名   进行登录咯！
+接着我们实现免密登录：  在本地生成密钥：  1  ssh-keygen   并选择生成在.ssh目录下即可，获得一把公钥和私钥。
 将名字带.pub的就是公钥了。
  将公钥发给远程主机  通过命令
-ssh-copy-id -i .ssh/公钥 用户名@IP 即可发送给远程主机。
+1  ssh-copy-id -i .ssh/公钥 用户名@IP   即可发送给远程主机。
 在window10中可能出现以下错误：
-ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。 则可先于命令行中运行以下代码：
-function ssh-copy-id([string]$userAtMachine, $args){ $publicKey = &amp;quot;$ENV:USERPROFILE&amp;quot; + &amp;quot;/.ssh/id_rsa.pub&amp;quot; if (!(Test-Path &amp;quot;$publicKey&amp;quot;)){ Write-Error &amp;quot;ERROR: failed to open ID file &#39;$publicKey&#39;: No such file&amp;quot; } else { &amp;amp; cat &amp;quot;$publicKey&amp;quot; | ssh $args $userAtMachine &amp;quot;umask 077; test -d .</description>
+1  ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。   则可先于命令行中运行以下代码：</description>
     </item>
     
   </channel>

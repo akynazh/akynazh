@@ -16,7 +16,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Linux实用操作之at工作调度" />
-<meta property="og:description" content="at命令 create job 1[root@VM-0-11-centos ~]# at 22:38 2at&gt; echo &#34;hello world&#34; &gt; ~/at-test.txt 3# ctrl D 4at&gt; &lt;EOT&gt; 5job 3 at Thu Mar 31 22:38:00 2022 6[root@VM-0-11-centos ~]# at now &#43;2 minute 7at&gt; echo &#34;hello kitty&#34; &gt;&gt; ~/at-test.txt 8# ctrl D 9at&gt; &lt;EOT&gt; 10job 4 at Thu Mar 31 22:39:00 2022 check job 1[root@VM-0-11-centos ~]# ls 2at-test.txt 3[root@VM-0-11-centos ~]# cat at-test.txt 4hello world 5 6[root@VM-0-11-centos ~]# atq # 查看将要运行的job 74 Thu Mar 31 22:39:00 2022 a root 8 9[root@VM-0-11-centos ~]# cat ~/at-test." />
+<meta property="og:description" content="at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&gt; echo &#34;hello world&#34; &gt; ~/at-test.txt # ctrl D at&gt; &lt;EOT&gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now &#43;2 minute at&gt; echo &#34;hello kitty&#34; &gt;&gt; ~/at-test.txt # ctrl D at&gt; &lt;EOT&gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bat%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-31T22:34:24+08:00" />
@@ -25,14 +25,14 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux实用操作之at工作调度"/>
-<meta name="twitter:description" content="at命令 create job 1[root@VM-0-11-centos ~]# at 22:38 2at&gt; echo &#34;hello world&#34; &gt; ~/at-test.txt 3# ctrl D 4at&gt; &lt;EOT&gt; 5job 3 at Thu Mar 31 22:38:00 2022 6[root@VM-0-11-centos ~]# at now &#43;2 minute 7at&gt; echo &#34;hello kitty&#34; &gt;&gt; ~/at-test.txt 8# ctrl D 9at&gt; &lt;EOT&gt; 10job 4 at Thu Mar 31 22:39:00 2022 check job 1[root@VM-0-11-centos ~]# ls 2at-test.txt 3[root@VM-0-11-centos ~]# cat at-test.txt 4hello world 5 6[root@VM-0-11-centos ~]# atq # 查看将要运行的job 74 Thu Mar 31 22:39:00 2022 a root 8 9[root@VM-0-11-centos ~]# cat ~/at-test."/>
+<meta name="twitter:description" content="at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&gt; echo &#34;hello world&#34; &gt; ~/at-test.txt # ctrl D at&gt; &lt;EOT&gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now &#43;2 minute at&gt; echo &#34;hello kitty&#34; &gt;&gt; ~/at-test.txt # ctrl D at&gt; &lt;EOT&gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test."/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -164,7 +164,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258Bat%25E5%25B7%25A5%25E4%25BD%259C%25E8%25B0%2583%25E5%25BA%25A6%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8bat%e5%b7%a5%e4%bd%9c%e8%b0%83%e5%ba%a6&description=at%e5%91%bd%e4%bb%a4%20create%20job%201%5broot%40VM-0-11-centos%20~%5d%23%20at%2022%3a38%202at%26gt%3b%20echo%20%26%2334%3bhello%20world%26%2334%3b%20%26gt%3b%20~%2fat-test.txt%203%23%20ctrl%20D%204at%26gt%3b%20%26lt%3bEOT%26gt%3b%205job%203%20at%20Thu%20Mar%2031%2022%3a38%3a00%202022%206%5broot%40VM-0-11-centos%20~%5d%23%20at%20now%20%2b2%20minute%207at%26gt%3b%20echo%20%26%2334%3bhello%20kitty%26%2334%3b%20%26gt%3b%26gt%3b%20~%2fat-test.txt%208%23%20ctrl%20D%209at%26gt%3b%20%26lt%3bEOT%26gt%3b%2010job%204%20at%20Thu%20Mar%2031%2022%3a39%3a00%202022%20check%20job%201%5broot%40VM-0-11-centos%20~%5d%23%20ls%202at-test.txt%203%5broot%40VM-0-11-centos%20~%5d%23%20cat%20at-test.txt%204hello%20world%205%206%5broot%40VM-0-11-centos%20~%5d%23%20atq%20%23%20%e6%9f%a5%e7%9c%8b%e5%b0%86%e8%a6%81%e8%bf%90%e8%a1%8c%e7%9a%84job%2074%20Thu%20Mar%2031%2022%3a39%3a00%202022%20a%20root%208%209%5broot%40VM-0-11-centos%20~%5d%23%20cat%20~%2fat-test." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258Bat%25E5%25B7%25A5%25E4%25BD%259C%25E8%25B0%2583%25E5%25BA%25A6%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8bat%e5%b7%a5%e4%bd%9c%e8%b0%83%e5%ba%a6&description=at%e5%91%bd%e4%bb%a4%20create%20job%201%202%203%204%205%206%207%208%209%2010%20%20%5broot%40VM-0-11-centos%20~%5d%23%20at%2022%3a38%20at%26gt%3b%20echo%20%26%2334%3bhello%20world%26%2334%3b%20%26gt%3b%20~%2fat-test.txt%20%23%20ctrl%20D%20at%26gt%3b%20%26lt%3bEOT%26gt%3b%20job%203%20at%20Thu%20Mar%2031%2022%3a38%3a00%202022%20%5broot%40VM-0-11-centos%20~%5d%23%20at%20now%20%2b2%20minute%20at%26gt%3b%20echo%20%26%2334%3bhello%20kitty%26%2334%3b%20%26gt%3b%26gt%3b%20~%2fat-test.txt%20%23%20ctrl%20D%20at%26gt%3b%20%26lt%3bEOT%26gt%3b%20job%204%20at%20Thu%20Mar%2031%2022%3a39%3a00%202022%20%20%20check%20job%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ls%20at-test." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -241,45 +241,99 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="at命令">at命令</h2>
 <h3 id="create-job">create job</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at 22:38</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello world&#34;</span> &gt; ~/at-test.txt
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#080;font-style:italic"># ctrl D</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>at&gt; &lt;EOT&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>job <span style="color:#666">3</span> at Thu Mar <span style="color:#666">31</span> 22:38:00 <span style="color:#666">2022</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at now +2 minute</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello kitty&#34;</span> &gt;&gt; ~/at-test.txt
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#080;font-style:italic"># ctrl D</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>at&gt; &lt;EOT&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>job <span style="color:#666">4</span> at Thu Mar <span style="color:#666">31</span> 22:39:00 <span style="color:#666">2022</span>
-</code></pre></div><h3 id="check-job">check job</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>at-test.txt
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat at-test.txt</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>hello world
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atq # 查看将要运行的job</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#666">4</span>       Thu Mar <span style="color:#666">31</span> 22:39:00 <span style="color:#666">2022</span> a root
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat ~/at-test.txt</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>hello world
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>hello kitty
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># jobs # 查看正在进行的job情况</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#666">[</span>2<span style="color:#666">]</span>+  Stopped                 at now + <span style="color:#666">5</span> minutes
-</code></pre></div><h3 id="cancel-job">cancel job</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at now + 1 minutes</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello monkey&#34;</span> &gt;&gt; ~/at-test.txt
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>at&gt; &lt;EOT&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>job <span style="color:#666">5</span> at Thu Mar <span style="color:#666">31</span> 22:40:00 <span style="color:#666">2022</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atq</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#666">5</span>       Thu Mar <span style="color:#666">31</span> 22:40:00 <span style="color:#666">2022</span> a root
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atrm 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>after some time...
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat ~/at-test.txt</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>hello world
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>hello kitty
-</code></pre></div>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at 22:38</span>
+at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello world&#34;</span> &gt; ~/at-test.txt
+<span style="color:#080;font-style:italic"># ctrl D</span>
+at&gt; &lt;EOT&gt;
+job <span style="color:#666">3</span> at Thu Mar <span style="color:#666">31</span> 22:38:00 <span style="color:#666">2022</span>
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at now +2 minute</span>
+at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello kitty&#34;</span> &gt;&gt; ~/at-test.txt
+<span style="color:#080;font-style:italic"># ctrl D</span>
+at&gt; &lt;EOT&gt;
+job <span style="color:#666">4</span> at Thu Mar <span style="color:#666">31</span> 22:39:00 <span style="color:#666">2022</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="check-job">check job</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls</span>
+at-test.txt
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat at-test.txt</span>
+hello world
+
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atq # 查看将要运行的job</span>
+<span style="color:#666">4</span>       Thu Mar <span style="color:#666">31</span> 22:39:00 <span style="color:#666">2022</span> a root
+
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat ~/at-test.txt</span>
+hello world
+hello kitty
+
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># jobs # 查看正在进行的job情况</span>
+<span style="color:#666">[</span>2<span style="color:#666">]</span>+  Stopped                 at now + <span style="color:#666">5</span> minutes
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="cancel-job">cancel job</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at now + 1 minutes</span>
+at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello monkey&#34;</span> &gt;&gt; ~/at-test.txt
+at&gt; &lt;EOT&gt;
+job <span style="color:#666">5</span> at Thu Mar <span style="color:#666">31</span> 22:40:00 <span style="color:#666">2022</span>
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atq</span>
+<span style="color:#666">5</span>       Thu Mar <span style="color:#666">31</span> 22:40:00 <span style="color:#666">2022</span> a root
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atrm 5</span>
+
+after some time...
+<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat ~/at-test.txt</span>
+hello world
+hello kitty
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
   </article>
 
@@ -296,7 +350,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -382,7 +436,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258Bat%25E5%25B7%25A5%25E4%25BD%259C%25E8%25B0%2583%25E5%25BA%25A6%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8bat%e5%b7%a5%e4%bd%9c%e8%b0%83%e5%ba%a6&description=at%e5%91%bd%e4%bb%a4%20create%20job%201%5broot%40VM-0-11-centos%20~%5d%23%20at%2022%3a38%202at%26gt%3b%20echo%20%26%2334%3bhello%20world%26%2334%3b%20%26gt%3b%20~%2fat-test.txt%203%23%20ctrl%20D%204at%26gt%3b%20%26lt%3bEOT%26gt%3b%205job%203%20at%20Thu%20Mar%2031%2022%3a38%3a00%202022%206%5broot%40VM-0-11-centos%20~%5d%23%20at%20now%20%2b2%20minute%207at%26gt%3b%20echo%20%26%2334%3bhello%20kitty%26%2334%3b%20%26gt%3b%26gt%3b%20~%2fat-test.txt%208%23%20ctrl%20D%209at%26gt%3b%20%26lt%3bEOT%26gt%3b%2010job%204%20at%20Thu%20Mar%2031%2022%3a39%3a00%202022%20check%20job%201%5broot%40VM-0-11-centos%20~%5d%23%20ls%202at-test.txt%203%5broot%40VM-0-11-centos%20~%5d%23%20cat%20at-test.txt%204hello%20world%205%206%5broot%40VM-0-11-centos%20~%5d%23%20atq%20%23%20%e6%9f%a5%e7%9c%8b%e5%b0%86%e8%a6%81%e8%bf%90%e8%a1%8c%e7%9a%84job%2074%20Thu%20Mar%2031%2022%3a39%3a00%202022%20a%20root%208%209%5broot%40VM-0-11-centos%20~%5d%23%20cat%20~%2fat-test." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258Bat%25E5%25B7%25A5%25E4%25BD%259C%25E8%25B0%2583%25E5%25BA%25A6%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8bat%e5%b7%a5%e4%bd%9c%e8%b0%83%e5%ba%a6&description=at%e5%91%bd%e4%bb%a4%20create%20job%201%202%203%204%205%206%207%208%209%2010%20%20%5broot%40VM-0-11-centos%20~%5d%23%20at%2022%3a38%20at%26gt%3b%20echo%20%26%2334%3bhello%20world%26%2334%3b%20%26gt%3b%20~%2fat-test.txt%20%23%20ctrl%20D%20at%26gt%3b%20%26lt%3bEOT%26gt%3b%20job%203%20at%20Thu%20Mar%2031%2022%3a38%3a00%202022%20%5broot%40VM-0-11-centos%20~%5d%23%20at%20now%20%2b2%20minute%20at%26gt%3b%20echo%20%26%2334%3bhello%20kitty%26%2334%3b%20%26gt%3b%26gt%3b%20~%2fat-test.txt%20%23%20ctrl%20D%20at%26gt%3b%20%26lt%3bEOT%26gt%3b%20job%204%20at%20Thu%20Mar%2031%2022%3a39%3a00%202022%20%20%20check%20job%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ls%20at-test." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

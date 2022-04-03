@@ -22,10 +22,9 @@
 下面介绍通过编写bat脚本自动化hugo写文章，提交发布文章的方法。
 Linux用户则使用shell编写脚本~
 自动化生成文章 通过 set /p 接收用户输入的文章名称
-1D: 2cd D:\@git\akynazh 3set input= 4set /p input=please input article name 5hugo new \post\%input%.md 自动化生成分类 通过copy命令，复制模板文件到categories下并命名
-1D: 2cd D:\@git\akynazh 3set input= 4set /p input=please input category name 5copy archetypes\categories.md content\categories\%input%.md 自动提交发布到github 普通提交 方法与以上类似，最后可以pause一下看看有没有问题产生
-1D: 2cd D:\@git\akynazh 3hugo 4set input= 5set /p input=please enter msg 6cd D:\@git\akynazh\public 7git add . 8git commit -m &#34;%input%&#34; 9git push 10pause 提交文章 只需要将上面的set部分修改一下即可
-1set input=publish article over~" />
+1 2 3 4 5  D: cd D:\@git\akynazh set input= set /p input=please input article name hugo new \post\%input%.md   自动化生成分类 通过copy命令，复制模板文件到categories下并命名
+1 2 3 4 5  D: cd D:\@git\akynazh set input= set /p input=please input category name copy archetypes\categories.md content\categories\%input%.md   自动提交发布到github 普通提交 方法与以上类似，最后可以pause一下看看有没有问题产生
+1 2 3 4 5 6 7 8 9 10  D: cd D:\@git\akynazh hugo set input= set /p input=please enter msg cd D:\@git\akynazh\public git add ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-18T19:41:03+08:00" />
@@ -40,17 +39,16 @@ Linux用户则使用shell编写脚本~
 下面介绍通过编写bat脚本自动化hugo写文章，提交发布文章的方法。
 Linux用户则使用shell编写脚本~
 自动化生成文章 通过 set /p 接收用户输入的文章名称
-1D: 2cd D:\@git\akynazh 3set input= 4set /p input=please input article name 5hugo new \post\%input%.md 自动化生成分类 通过copy命令，复制模板文件到categories下并命名
-1D: 2cd D:\@git\akynazh 3set input= 4set /p input=please input category name 5copy archetypes\categories.md content\categories\%input%.md 自动提交发布到github 普通提交 方法与以上类似，最后可以pause一下看看有没有问题产生
-1D: 2cd D:\@git\akynazh 3hugo 4set input= 5set /p input=please enter msg 6cd D:\@git\akynazh\public 7git add . 8git commit -m &#34;%input%&#34; 9git push 10pause 提交文章 只需要将上面的set部分修改一下即可
-1set input=publish article over~"/>
+1 2 3 4 5  D: cd D:\@git\akynazh set input= set /p input=please input article name hugo new \post\%input%.md   自动化生成分类 通过copy命令，复制模板文件到categories下并命名
+1 2 3 4 5  D: cd D:\@git\akynazh set input= set /p input=please input category name copy archetypes\categories.md content\categories\%input%.md   自动提交发布到github 普通提交 方法与以上类似，最后可以pause一下看看有没有问题产生
+1 2 3 4 5 6 7 8 9 10  D: cd D:\@git\akynazh hugo set input= set /p input=please enter msg cd D:\@git\akynazh\public git add ."/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -182,7 +180,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fhugo%25E5%25AE%259E%25E7%258E%25B0%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E7%25AB%25A0%25E5%25B9%25B6%25E6%258F%2590%25E4%25BA%25A4github%2f&name=Hugo%e5%ae%9e%e7%8e%b0%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%e5%b9%b6%e6%8f%90%e4%ba%a4github&description=%e5%89%8d%e8%a8%80%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%9a%84%e6%80%9d%e6%83%b3%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e9%a2%86%e5%9f%9f%e6%98%af%e9%9d%9e%e5%b8%b8%e9%87%8d%e8%a6%81%e7%9a%84%ef%bc%8c%e8%ae%a1%e7%ae%97%e6%9c%ba%ef%bc%8c%e6%9c%ac%e8%b4%a8%e4%b8%8a%e5%b0%b1%e6%98%af%e4%b8%ba%e4%ba%86%e9%80%9a%e8%bf%87%e8%87%aa%e5%8a%a8%e5%8c%96%ef%bc%8c%e6%96%b9%e4%be%bf%e6%88%91%e4%bb%ac%e7%9a%84%e7%94%9f%e6%b4%bb%ef%bc%8c%e6%8f%90%e9%ab%98%e5%8a%9e%e4%ba%8b%e7%9a%84%e6%95%88%e7%8e%87%e8%80%8c%e5%ad%98%e5%9c%a8%e7%9a%84%e3%80%82%0a%e6%89%80%e4%bb%a5%e5%9c%a8%e4%bd%bf%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%97%b6%ef%bc%8c%e5%9c%a8%e5%bc%80%e5%a7%8b%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%8a%9e%e4%ba%8b%e4%b9%8b%e5%89%8d%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%85%88%e6%83%b3%e6%83%b3%e8%bf%99%e4%bb%b6%e4%ba%8b%e7%9a%84%e9%82%a3%e4%ba%9b%e5%9c%b0%e6%96%b9%e5%8f%af%e4%bb%a5%e5%88%a9%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8c%96%e6%9d%a5%e5%b8%ae%e6%88%91%e4%bb%ac%e5%ae%8c%e6%88%90%e3%80%82%0a%e6%ad%a3%e6%98%af%e8%bf%99%e7%a7%8d%e6%87%92%e7%9a%84%e6%80%9d%e6%83%b3%ef%bc%8c%e4%bd%bf%e5%be%97%e4%ba%ba%e7%b1%bb%e4%b8%8d%e6%96%ad%e8%bf%9b%e6%ad%a5%ef%bc%8c%e6%94%80%e7%99%bb%e7%a7%91%e6%8a%80%e9%ab%98%e5%b3%b0%ef%bc%8c%e4%b8%8d%e6%98%af%e5%90%97%ef%bc%9f%5e-%5e%0a%e4%b8%8b%e9%9d%a2%e4%bb%8b%e7%bb%8d%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99bat%e8%84%9a%e6%9c%ac%e8%87%aa%e5%8a%a8%e5%8c%96hugo%e5%86%99%e6%96%87%e7%ab%a0%ef%bc%8c%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e6%96%87%e7%ab%a0%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0aLinux%e7%94%a8%e6%88%b7%e5%88%99%e4%bd%bf%e7%94%a8shell%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac~%0a%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%20%e9%80%9a%e8%bf%87%20set%20%2fp%20%e6%8e%a5%e6%94%b6%e7%94%a8%e6%88%b7%e8%be%93%e5%85%a5%e7%9a%84%e6%96%87%e7%ab%a0%e5%90%8d%e7%a7%b0%0a1D%3a%202cd%20D%3a%5c%40git%5cakynazh%203set%20input%3d%204set%20%2fp%20input%3dplease%20input%20article%20name%205hugo%20new%20%5cpost%5c%25input%25.md%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e5%88%86%e7%b1%bb%20%e9%80%9a%e8%bf%87copy%e5%91%bd%e4%bb%a4%ef%bc%8c%e5%a4%8d%e5%88%b6%e6%a8%a1%e6%9d%bf%e6%96%87%e4%bb%b6%e5%88%b0categories%e4%b8%8b%e5%b9%b6%e5%91%bd%e5%90%8d%0a1D%3a%202cd%20D%3a%5c%40git%5cakynazh%203set%20input%3d%204set%20%2fp%20input%3dplease%20input%20category%20name%205copy%20archetypes%5ccategories.md%20content%5ccategories%5c%25input%25.md%20%e8%87%aa%e5%8a%a8%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e5%88%b0github%20%e6%99%ae%e9%80%9a%e6%8f%90%e4%ba%a4%20%e6%96%b9%e6%b3%95%e4%b8%8e%e4%bb%a5%e4%b8%8a%e7%b1%bb%e4%bc%bc%ef%bc%8c%e6%9c%80%e5%90%8e%e5%8f%af%e4%bb%a5pause%e4%b8%80%e4%b8%8b%e7%9c%8b%e7%9c%8b%e6%9c%89%e6%b2%a1%e6%9c%89%e9%97%ae%e9%a2%98%e4%ba%a7%e7%94%9f%0a1D%3a%202cd%20D%3a%5c%40git%5cakynazh%203hugo%204set%20input%3d%205set%20%2fp%20input%3dplease%20enter%20msg%206cd%20D%3a%5c%40git%5cakynazh%5cpublic%207git%20add%20.%208git%20commit%20-m%20%26%2334%3b%25input%25%26%2334%3b%209git%20push%2010pause%20%e6%8f%90%e4%ba%a4%e6%96%87%e7%ab%a0%20%e5%8f%aa%e9%9c%80%e8%a6%81%e5%b0%86%e4%b8%8a%e9%9d%a2%e7%9a%84set%e9%83%a8%e5%88%86%e4%bf%ae%e6%94%b9%e4%b8%80%e4%b8%8b%e5%8d%b3%e5%8f%af%0a1set%20input%3dpublish%20article%20over~" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fhugo%25E5%25AE%259E%25E7%258E%25B0%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E7%25AB%25A0%25E5%25B9%25B6%25E6%258F%2590%25E4%25BA%25A4github%2f&name=Hugo%e5%ae%9e%e7%8e%b0%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%e5%b9%b6%e6%8f%90%e4%ba%a4github&description=%e5%89%8d%e8%a8%80%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%9a%84%e6%80%9d%e6%83%b3%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e9%a2%86%e5%9f%9f%e6%98%af%e9%9d%9e%e5%b8%b8%e9%87%8d%e8%a6%81%e7%9a%84%ef%bc%8c%e8%ae%a1%e7%ae%97%e6%9c%ba%ef%bc%8c%e6%9c%ac%e8%b4%a8%e4%b8%8a%e5%b0%b1%e6%98%af%e4%b8%ba%e4%ba%86%e9%80%9a%e8%bf%87%e8%87%aa%e5%8a%a8%e5%8c%96%ef%bc%8c%e6%96%b9%e4%be%bf%e6%88%91%e4%bb%ac%e7%9a%84%e7%94%9f%e6%b4%bb%ef%bc%8c%e6%8f%90%e9%ab%98%e5%8a%9e%e4%ba%8b%e7%9a%84%e6%95%88%e7%8e%87%e8%80%8c%e5%ad%98%e5%9c%a8%e7%9a%84%e3%80%82%0a%e6%89%80%e4%bb%a5%e5%9c%a8%e4%bd%bf%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%97%b6%ef%bc%8c%e5%9c%a8%e5%bc%80%e5%a7%8b%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%8a%9e%e4%ba%8b%e4%b9%8b%e5%89%8d%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%85%88%e6%83%b3%e6%83%b3%e8%bf%99%e4%bb%b6%e4%ba%8b%e7%9a%84%e9%82%a3%e4%ba%9b%e5%9c%b0%e6%96%b9%e5%8f%af%e4%bb%a5%e5%88%a9%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8c%96%e6%9d%a5%e5%b8%ae%e6%88%91%e4%bb%ac%e5%ae%8c%e6%88%90%e3%80%82%0a%e6%ad%a3%e6%98%af%e8%bf%99%e7%a7%8d%e6%87%92%e7%9a%84%e6%80%9d%e6%83%b3%ef%bc%8c%e4%bd%bf%e5%be%97%e4%ba%ba%e7%b1%bb%e4%b8%8d%e6%96%ad%e8%bf%9b%e6%ad%a5%ef%bc%8c%e6%94%80%e7%99%bb%e7%a7%91%e6%8a%80%e9%ab%98%e5%b3%b0%ef%bc%8c%e4%b8%8d%e6%98%af%e5%90%97%ef%bc%9f%5e-%5e%0a%e4%b8%8b%e9%9d%a2%e4%bb%8b%e7%bb%8d%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99bat%e8%84%9a%e6%9c%ac%e8%87%aa%e5%8a%a8%e5%8c%96hugo%e5%86%99%e6%96%87%e7%ab%a0%ef%bc%8c%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e6%96%87%e7%ab%a0%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0aLinux%e7%94%a8%e6%88%b7%e5%88%99%e4%bd%bf%e7%94%a8shell%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac~%0a%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%20%e9%80%9a%e8%bf%87%20set%20%2fp%20%e6%8e%a5%e6%94%b6%e7%94%a8%e6%88%b7%e8%be%93%e5%85%a5%e7%9a%84%e6%96%87%e7%ab%a0%e5%90%8d%e7%a7%b0%0a1%202%203%204%205%20%20D%3a%20cd%20D%3a%5c%40git%5cakynazh%20set%20input%3d%20set%20%2fp%20input%3dplease%20input%20article%20name%20hugo%20new%20%5cpost%5c%25input%25.md%20%20%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e5%88%86%e7%b1%bb%20%e9%80%9a%e8%bf%87copy%e5%91%bd%e4%bb%a4%ef%bc%8c%e5%a4%8d%e5%88%b6%e6%a8%a1%e6%9d%bf%e6%96%87%e4%bb%b6%e5%88%b0categories%e4%b8%8b%e5%b9%b6%e5%91%bd%e5%90%8d%0a1%202%203%204%205%20%20D%3a%20cd%20D%3a%5c%40git%5cakynazh%20set%20input%3d%20set%20%2fp%20input%3dplease%20input%20category%20name%20copy%20archetypes%5ccategories.md%20content%5ccategories%5c%25input%25.md%20%20%20%e8%87%aa%e5%8a%a8%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e5%88%b0github%20%e6%99%ae%e9%80%9a%e6%8f%90%e4%ba%a4%20%e6%96%b9%e6%b3%95%e4%b8%8e%e4%bb%a5%e4%b8%8a%e7%b1%bb%e4%bc%bc%ef%bc%8c%e6%9c%80%e5%90%8e%e5%8f%af%e4%bb%a5pause%e4%b8%80%e4%b8%8b%e7%9c%8b%e7%9c%8b%e6%9c%89%e6%b2%a1%e6%9c%89%e9%97%ae%e9%a2%98%e4%ba%a7%e7%94%9f%0a1%202%203%204%205%206%207%208%209%2010%20%20D%3a%20cd%20D%3a%5c%40git%5cakynazh%20hugo%20set%20input%3d%20set%20%2fp%20input%3dplease%20enter%20msg%20cd%20D%3a%5c%40git%5cakynazh%5cpublic%20git%20add%20." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -270,35 +268,80 @@ if (!doNotTrack) {
 <p>Linux用户则使用shell编写脚本~</p>
 <h2 id="自动化生成文章">自动化生成文章</h2>
 <p>通过 set /p 接收用户输入的文章名称</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>D:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#a2f;font-weight:bold">/p</span> <span style="color:#b8860b">input</span>=please input article name  
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>hugo new \post\<span style="color:#b8860b">%input%</span>.md
-</code></pre></div><h2 id="自动化生成分类">自动化生成分类</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">D:
+<span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh
+<span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=
+<span style="color:#a2f;font-weight:bold">set</span> <span style="color:#a2f;font-weight:bold">/p</span> <span style="color:#b8860b">input</span>=please input article name  
+hugo new \post\<span style="color:#b8860b">%input%</span>.md
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="自动化生成分类">自动化生成分类</h2>
 <p>通过copy命令，复制模板文件到categories下并命名</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>D:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#a2f;font-weight:bold">/p</span> <span style="color:#b8860b">input</span>=please input category name  
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#a2f;font-weight:bold">copy</span> archetypes\categories.md content\categories\<span style="color:#b8860b">%input%</span>.md
-</code></pre></div><h2 id="自动提交发布到github">自动提交发布到github</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">D:
+<span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh
+<span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=
+<span style="color:#a2f;font-weight:bold">set</span> <span style="color:#a2f;font-weight:bold">/p</span> <span style="color:#b8860b">input</span>=please input category name  
+<span style="color:#a2f;font-weight:bold">copy</span> archetypes\categories.md content\categories\<span style="color:#b8860b">%input%</span>.md
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="自动提交发布到github">自动提交发布到github</h2>
 <h3 id="普通提交">普通提交</h3>
 <p>方法与以上类似，最后可以pause一下看看有没有问题产生</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>D:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>hugo
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#a2f;font-weight:bold">/p</span> <span style="color:#b8860b">input</span>=please enter msg  
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh\public
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>git add .
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>git commit -m <span style="color:#b44">&#34;</span><span style="color:#b8860b">%input%</span><span style="color:#b44">&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>git push
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#a2f;font-weight:bold">pause</span>
-</code></pre></div><h3 id="提交文章">提交文章</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">D:
+<span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh
+hugo
+<span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=
+<span style="color:#a2f;font-weight:bold">set</span> <span style="color:#a2f;font-weight:bold">/p</span> <span style="color:#b8860b">input</span>=please enter msg  
+<span style="color:#a2f;font-weight:bold">cd</span> D:\@git\akynazh\public
+git add .
+git commit -m <span style="color:#b44">&#34;</span><span style="color:#b8860b">%input%</span><span style="color:#b44">&#34;</span>
+git push
+<span style="color:#a2f;font-weight:bold">pause</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="提交文章">提交文章</h3>
 <p>只需要将上面的set部分修改一下即可</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=publish article
-</code></pre></div><p>over~</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"><span style="color:#a2f;font-weight:bold">set</span> <span style="color:#b8860b">input</span>=publish article
+</code></pre></td></tr></table>
+</div>
+</div><p>over~</p>
 
     </div>
   </article>
@@ -316,7 +359,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -404,7 +447,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fhugo%25E5%25AE%259E%25E7%258E%25B0%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E7%25AB%25A0%25E5%25B9%25B6%25E6%258F%2590%25E4%25BA%25A4github%2f&name=Hugo%e5%ae%9e%e7%8e%b0%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%e5%b9%b6%e6%8f%90%e4%ba%a4github&description=%e5%89%8d%e8%a8%80%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%9a%84%e6%80%9d%e6%83%b3%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e9%a2%86%e5%9f%9f%e6%98%af%e9%9d%9e%e5%b8%b8%e9%87%8d%e8%a6%81%e7%9a%84%ef%bc%8c%e8%ae%a1%e7%ae%97%e6%9c%ba%ef%bc%8c%e6%9c%ac%e8%b4%a8%e4%b8%8a%e5%b0%b1%e6%98%af%e4%b8%ba%e4%ba%86%e9%80%9a%e8%bf%87%e8%87%aa%e5%8a%a8%e5%8c%96%ef%bc%8c%e6%96%b9%e4%be%bf%e6%88%91%e4%bb%ac%e7%9a%84%e7%94%9f%e6%b4%bb%ef%bc%8c%e6%8f%90%e9%ab%98%e5%8a%9e%e4%ba%8b%e7%9a%84%e6%95%88%e7%8e%87%e8%80%8c%e5%ad%98%e5%9c%a8%e7%9a%84%e3%80%82%0a%e6%89%80%e4%bb%a5%e5%9c%a8%e4%bd%bf%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%97%b6%ef%bc%8c%e5%9c%a8%e5%bc%80%e5%a7%8b%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%8a%9e%e4%ba%8b%e4%b9%8b%e5%89%8d%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%85%88%e6%83%b3%e6%83%b3%e8%bf%99%e4%bb%b6%e4%ba%8b%e7%9a%84%e9%82%a3%e4%ba%9b%e5%9c%b0%e6%96%b9%e5%8f%af%e4%bb%a5%e5%88%a9%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8c%96%e6%9d%a5%e5%b8%ae%e6%88%91%e4%bb%ac%e5%ae%8c%e6%88%90%e3%80%82%0a%e6%ad%a3%e6%98%af%e8%bf%99%e7%a7%8d%e6%87%92%e7%9a%84%e6%80%9d%e6%83%b3%ef%bc%8c%e4%bd%bf%e5%be%97%e4%ba%ba%e7%b1%bb%e4%b8%8d%e6%96%ad%e8%bf%9b%e6%ad%a5%ef%bc%8c%e6%94%80%e7%99%bb%e7%a7%91%e6%8a%80%e9%ab%98%e5%b3%b0%ef%bc%8c%e4%b8%8d%e6%98%af%e5%90%97%ef%bc%9f%5e-%5e%0a%e4%b8%8b%e9%9d%a2%e4%bb%8b%e7%bb%8d%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99bat%e8%84%9a%e6%9c%ac%e8%87%aa%e5%8a%a8%e5%8c%96hugo%e5%86%99%e6%96%87%e7%ab%a0%ef%bc%8c%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e6%96%87%e7%ab%a0%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0aLinux%e7%94%a8%e6%88%b7%e5%88%99%e4%bd%bf%e7%94%a8shell%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac~%0a%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%20%e9%80%9a%e8%bf%87%20set%20%2fp%20%e6%8e%a5%e6%94%b6%e7%94%a8%e6%88%b7%e8%be%93%e5%85%a5%e7%9a%84%e6%96%87%e7%ab%a0%e5%90%8d%e7%a7%b0%0a1D%3a%202cd%20D%3a%5c%40git%5cakynazh%203set%20input%3d%204set%20%2fp%20input%3dplease%20input%20article%20name%205hugo%20new%20%5cpost%5c%25input%25.md%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e5%88%86%e7%b1%bb%20%e9%80%9a%e8%bf%87copy%e5%91%bd%e4%bb%a4%ef%bc%8c%e5%a4%8d%e5%88%b6%e6%a8%a1%e6%9d%bf%e6%96%87%e4%bb%b6%e5%88%b0categories%e4%b8%8b%e5%b9%b6%e5%91%bd%e5%90%8d%0a1D%3a%202cd%20D%3a%5c%40git%5cakynazh%203set%20input%3d%204set%20%2fp%20input%3dplease%20input%20category%20name%205copy%20archetypes%5ccategories.md%20content%5ccategories%5c%25input%25.md%20%e8%87%aa%e5%8a%a8%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e5%88%b0github%20%e6%99%ae%e9%80%9a%e6%8f%90%e4%ba%a4%20%e6%96%b9%e6%b3%95%e4%b8%8e%e4%bb%a5%e4%b8%8a%e7%b1%bb%e4%bc%bc%ef%bc%8c%e6%9c%80%e5%90%8e%e5%8f%af%e4%bb%a5pause%e4%b8%80%e4%b8%8b%e7%9c%8b%e7%9c%8b%e6%9c%89%e6%b2%a1%e6%9c%89%e9%97%ae%e9%a2%98%e4%ba%a7%e7%94%9f%0a1D%3a%202cd%20D%3a%5c%40git%5cakynazh%203hugo%204set%20input%3d%205set%20%2fp%20input%3dplease%20enter%20msg%206cd%20D%3a%5c%40git%5cakynazh%5cpublic%207git%20add%20.%208git%20commit%20-m%20%26%2334%3b%25input%25%26%2334%3b%209git%20push%2010pause%20%e6%8f%90%e4%ba%a4%e6%96%87%e7%ab%a0%20%e5%8f%aa%e9%9c%80%e8%a6%81%e5%b0%86%e4%b8%8a%e9%9d%a2%e7%9a%84set%e9%83%a8%e5%88%86%e4%bf%ae%e6%94%b9%e4%b8%80%e4%b8%8b%e5%8d%b3%e5%8f%af%0a1set%20input%3dpublish%20article%20over~" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fhugo%25E5%25AE%259E%25E7%258E%25B0%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E7%25AB%25A0%25E5%25B9%25B6%25E6%258F%2590%25E4%25BA%25A4github%2f&name=Hugo%e5%ae%9e%e7%8e%b0%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%e5%b9%b6%e6%8f%90%e4%ba%a4github&description=%e5%89%8d%e8%a8%80%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%9a%84%e6%80%9d%e6%83%b3%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e9%a2%86%e5%9f%9f%e6%98%af%e9%9d%9e%e5%b8%b8%e9%87%8d%e8%a6%81%e7%9a%84%ef%bc%8c%e8%ae%a1%e7%ae%97%e6%9c%ba%ef%bc%8c%e6%9c%ac%e8%b4%a8%e4%b8%8a%e5%b0%b1%e6%98%af%e4%b8%ba%e4%ba%86%e9%80%9a%e8%bf%87%e8%87%aa%e5%8a%a8%e5%8c%96%ef%bc%8c%e6%96%b9%e4%be%bf%e6%88%91%e4%bb%ac%e7%9a%84%e7%94%9f%e6%b4%bb%ef%bc%8c%e6%8f%90%e9%ab%98%e5%8a%9e%e4%ba%8b%e7%9a%84%e6%95%88%e7%8e%87%e8%80%8c%e5%ad%98%e5%9c%a8%e7%9a%84%e3%80%82%0a%e6%89%80%e4%bb%a5%e5%9c%a8%e4%bd%bf%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%97%b6%ef%bc%8c%e5%9c%a8%e5%bc%80%e5%a7%8b%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%8a%9e%e4%ba%8b%e4%b9%8b%e5%89%8d%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%85%88%e6%83%b3%e6%83%b3%e8%bf%99%e4%bb%b6%e4%ba%8b%e7%9a%84%e9%82%a3%e4%ba%9b%e5%9c%b0%e6%96%b9%e5%8f%af%e4%bb%a5%e5%88%a9%e7%94%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8c%96%e6%9d%a5%e5%b8%ae%e6%88%91%e4%bb%ac%e5%ae%8c%e6%88%90%e3%80%82%0a%e6%ad%a3%e6%98%af%e8%bf%99%e7%a7%8d%e6%87%92%e7%9a%84%e6%80%9d%e6%83%b3%ef%bc%8c%e4%bd%bf%e5%be%97%e4%ba%ba%e7%b1%bb%e4%b8%8d%e6%96%ad%e8%bf%9b%e6%ad%a5%ef%bc%8c%e6%94%80%e7%99%bb%e7%a7%91%e6%8a%80%e9%ab%98%e5%b3%b0%ef%bc%8c%e4%b8%8d%e6%98%af%e5%90%97%ef%bc%9f%5e-%5e%0a%e4%b8%8b%e9%9d%a2%e4%bb%8b%e7%bb%8d%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99bat%e8%84%9a%e6%9c%ac%e8%87%aa%e5%8a%a8%e5%8c%96hugo%e5%86%99%e6%96%87%e7%ab%a0%ef%bc%8c%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e6%96%87%e7%ab%a0%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0aLinux%e7%94%a8%e6%88%b7%e5%88%99%e4%bd%bf%e7%94%a8shell%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac~%0a%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e6%96%87%e7%ab%a0%20%e9%80%9a%e8%bf%87%20set%20%2fp%20%e6%8e%a5%e6%94%b6%e7%94%a8%e6%88%b7%e8%be%93%e5%85%a5%e7%9a%84%e6%96%87%e7%ab%a0%e5%90%8d%e7%a7%b0%0a1%202%203%204%205%20%20D%3a%20cd%20D%3a%5c%40git%5cakynazh%20set%20input%3d%20set%20%2fp%20input%3dplease%20input%20article%20name%20hugo%20new%20%5cpost%5c%25input%25.md%20%20%20%e8%87%aa%e5%8a%a8%e5%8c%96%e7%94%9f%e6%88%90%e5%88%86%e7%b1%bb%20%e9%80%9a%e8%bf%87copy%e5%91%bd%e4%bb%a4%ef%bc%8c%e5%a4%8d%e5%88%b6%e6%a8%a1%e6%9d%bf%e6%96%87%e4%bb%b6%e5%88%b0categories%e4%b8%8b%e5%b9%b6%e5%91%bd%e5%90%8d%0a1%202%203%204%205%20%20D%3a%20cd%20D%3a%5c%40git%5cakynazh%20set%20input%3d%20set%20%2fp%20input%3dplease%20input%20category%20name%20copy%20archetypes%5ccategories.md%20content%5ccategories%5c%25input%25.md%20%20%20%e8%87%aa%e5%8a%a8%e6%8f%90%e4%ba%a4%e5%8f%91%e5%b8%83%e5%88%b0github%20%e6%99%ae%e9%80%9a%e6%8f%90%e4%ba%a4%20%e6%96%b9%e6%b3%95%e4%b8%8e%e4%bb%a5%e4%b8%8a%e7%b1%bb%e4%bc%bc%ef%bc%8c%e6%9c%80%e5%90%8e%e5%8f%af%e4%bb%a5pause%e4%b8%80%e4%b8%8b%e7%9c%8b%e7%9c%8b%e6%9c%89%e6%b2%a1%e6%9c%89%e9%97%ae%e9%a2%98%e4%ba%a7%e7%94%9f%0a1%202%203%204%205%206%207%208%209%2010%20%20D%3a%20cd%20D%3a%5c%40git%5cakynazh%20hugo%20set%20input%3d%20set%20%2fp%20input%3dplease%20enter%20msg%20cd%20D%3a%5c%40git%5cakynazh%5cpublic%20git%20add%20." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

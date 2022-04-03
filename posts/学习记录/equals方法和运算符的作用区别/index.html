@@ -19,10 +19,9 @@
 <meta property="og:description" content="equals方法与&quot;==&ldquo;的比较与分析 首先提出一个重要的点:
   == 比较时进行地址的比较
   equals 比较时进行值的比较
-  1String a = &#34;123&#34;; 2String b = &#34;123&#34;; 3System.out.println(a.equals(b)); // true 4System.out.println(a == b); // true 5 6String a1 = new String(&#34;123&#34;); 7String b1 = new String(&#34;123&#34;); 8System.out.println(a1.equals(b1)); // true 9System.out.println(a1 == b1); // false 好像没问题。
+  1 2 3 4 5 6 7 8 9  String a = &#34;123&#34;; String b = &#34;123&#34;; System.out.println(a.equals(b)); // true System.out.println(a == b); // true  String a1 = new String(&#34;123&#34;); String b1 = new String(&#34;123&#34;); System.out.println(a1.equals(b1)); // true System.out.println(a1 == b1); // false   好像没问题。
 然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较
-1public boolean equals(Object obj) { 2 return (this == obj); 3} 再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！
-1public boolean equals(Object anObject) { 2 if (this == anObject) { 3 return true; 4 } 5 if (anObject instanceof String) { 6 String aString = (String)anObject; 7 if (coder() == aString." />
+1 2 3  public boolean equals(Object obj) { return (this == obj); }   再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-25T00:21:05+08:00" />
@@ -34,17 +33,16 @@
 <meta name="twitter:description" content="equals方法与&quot;==&ldquo;的比较与分析 首先提出一个重要的点:
   == 比较时进行地址的比较
   equals 比较时进行值的比较
-  1String a = &#34;123&#34;; 2String b = &#34;123&#34;; 3System.out.println(a.equals(b)); // true 4System.out.println(a == b); // true 5 6String a1 = new String(&#34;123&#34;); 7String b1 = new String(&#34;123&#34;); 8System.out.println(a1.equals(b1)); // true 9System.out.println(a1 == b1); // false 好像没问题。
+  1 2 3 4 5 6 7 8 9  String a = &#34;123&#34;; String b = &#34;123&#34;; System.out.println(a.equals(b)); // true System.out.println(a == b); // true  String a1 = new String(&#34;123&#34;); String b1 = new String(&#34;123&#34;); System.out.println(a1.equals(b1)); // true System.out.println(a1 == b1); // false   好像没问题。
 然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较
-1public boolean equals(Object obj) { 2 return (this == obj); 3} 再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！
-1public boolean equals(Object anObject) { 2 if (this == anObject) { 3 return true; 4 } 5 if (anObject instanceof String) { 6 String aString = (String)anObject; 7 if (coder() == aString."/>
+1 2 3  public boolean equals(Object obj) { return (this == obj); }   再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！"/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -176,7 +174,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fequals%25E6%2596%25B9%25E6%25B3%2595%25E5%2592%258C%25E8%25BF%2590%25E7%25AE%2597%25E7%25AC%25A6%25E7%259A%2584%25E4%25BD%259C%25E7%2594%25A8%25E5%258C%25BA%25E5%2588%25AB%2f&name=equals%e6%96%b9%e6%b3%95%e5%92%8c%3d%3d%e8%bf%90%e7%ae%97%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8%e5%8c%ba%e5%88%ab&description=equals%e6%96%b9%e6%b3%95%e4%b8%8e%26quot%3b%3d%3d%26ldquo%3b%e7%9a%84%e6%af%94%e8%be%83%e4%b8%8e%e5%88%86%e6%9e%90%20%e9%a6%96%e5%85%88%e6%8f%90%e5%87%ba%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e7%82%b9%3a%0a%20%20%3d%3d%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a%20%20equals%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%80%bc%e7%9a%84%e6%af%94%e8%be%83%0a%20%201String%20a%20%3d%20%26%2334%3b123%26%2334%3b%3b%202String%20b%20%3d%20%26%2334%3b123%26%2334%3b%3b%203System.out.println%28a.equals%28b%29%29%3b%20%2f%2f%20true%204System.out.println%28a%20%3d%3d%20b%29%3b%20%2f%2f%20true%205%206String%20a1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%207String%20b1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%208System.out.println%28a1.equals%28b1%29%29%3b%20%2f%2f%20true%209System.out.println%28a1%20%3d%3d%20b1%29%3b%20%2f%2f%20false%20%e5%a5%bd%e5%83%8f%e6%b2%a1%e9%97%ae%e9%a2%98%e3%80%82%0a%e7%84%b6%e8%80%8c%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81Object%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e5%af%b9%e8%b1%a1%e4%b8%ad%e9%bb%98%e8%ae%a4equals%e6%96%b9%e6%b3%95%e8%bf%9b%e8%a1%8c%e7%9a%84%e6%98%af%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a1public%20boolean%20equals%28Object%20obj%29%20%7b%202%20return%20%28this%20%3d%3d%20obj%29%3b%203%7d%20%e5%86%8d%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81String%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0String%e7%b1%bb%e4%b8%ad%e9%87%8d%e5%86%99%e4%ba%86equals%e6%96%b9%e6%b3%95%ef%bc%8c%e8%a6%86%e7%9b%96%e6%8e%89%e4%ba%86Object%e7%9a%84equals%e6%96%b9%e6%b3%95%ef%bc%8c%e6%89%80%e4%bb%a5String%e7%9a%84equals%e6%98%af%e5%80%bc%e6%af%94%e8%be%83%ef%bc%81%0a1public%20boolean%20equals%28Object%20anObject%29%20%7b%202%20if%20%28this%20%3d%3d%20anObject%29%20%7b%203%20return%20true%3b%204%20%7d%205%20if%20%28anObject%20instanceof%20String%29%20%7b%206%20String%20aString%20%3d%20%28String%29anObject%3b%207%20if%20%28coder%28%29%20%3d%3d%20aString." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fequals%25E6%2596%25B9%25E6%25B3%2595%25E5%2592%258C%25E8%25BF%2590%25E7%25AE%2597%25E7%25AC%25A6%25E7%259A%2584%25E4%25BD%259C%25E7%2594%25A8%25E5%258C%25BA%25E5%2588%25AB%2f&name=equals%e6%96%b9%e6%b3%95%e5%92%8c%3d%3d%e8%bf%90%e7%ae%97%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8%e5%8c%ba%e5%88%ab&description=equals%e6%96%b9%e6%b3%95%e4%b8%8e%26quot%3b%3d%3d%26ldquo%3b%e7%9a%84%e6%af%94%e8%be%83%e4%b8%8e%e5%88%86%e6%9e%90%20%e9%a6%96%e5%85%88%e6%8f%90%e5%87%ba%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e7%82%b9%3a%0a%20%20%3d%3d%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a%20%20equals%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%80%bc%e7%9a%84%e6%af%94%e8%be%83%0a%20%201%202%203%204%205%206%207%208%209%20%20String%20a%20%3d%20%26%2334%3b123%26%2334%3b%3b%20String%20b%20%3d%20%26%2334%3b123%26%2334%3b%3b%20System.out.println%28a.equals%28b%29%29%3b%20%2f%2f%20true%20System.out.println%28a%20%3d%3d%20b%29%3b%20%2f%2f%20true%20%20String%20a1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%20String%20b1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%20System.out.println%28a1.equals%28b1%29%29%3b%20%2f%2f%20true%20System.out.println%28a1%20%3d%3d%20b1%29%3b%20%2f%2f%20false%20%20%20%e5%a5%bd%e5%83%8f%e6%b2%a1%e9%97%ae%e9%a2%98%e3%80%82%0a%e7%84%b6%e8%80%8c%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81Object%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e5%af%b9%e8%b1%a1%e4%b8%ad%e9%bb%98%e8%ae%a4equals%e6%96%b9%e6%b3%95%e8%bf%9b%e8%a1%8c%e7%9a%84%e6%98%af%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a1%202%203%20%20public%20boolean%20equals%28Object%20obj%29%20%7b%20return%20%28this%20%3d%3d%20obj%29%3b%20%7d%20%20%20%e5%86%8d%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81String%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0String%e7%b1%bb%e4%b8%ad%e9%87%8d%e5%86%99%e4%ba%86equals%e6%96%b9%e6%b3%95%ef%bc%8c%e8%a6%86%e7%9b%96%e6%8e%89%e4%ba%86Object%e7%9a%84equals%e6%96%b9%e6%b3%95%ef%bc%8c%e6%89%80%e4%bb%a5String%e7%9a%84equals%e6%98%af%e5%80%bc%e6%af%94%e8%be%83%ef%bc%81" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -256,35 +254,78 @@ if (!doNotTrack) {
 <p>equals 比较时进行<strong>值</strong>的比较</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>String a <span style="color:#666">=</span> <span style="color:#b44">&#34;123&#34;</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>String b <span style="color:#666">=</span> <span style="color:#b44">&#34;123&#34;</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>b<span style="color:#666">));</span> <span style="color:#080;font-style:italic">// true
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#080;font-style:italic"></span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a <span style="color:#666">==</span> b<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// true
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#080;font-style:italic"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>String a1 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> String<span style="color:#666">(</span><span style="color:#b44">&#34;123&#34;</span><span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>String b1 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> String<span style="color:#666">(</span><span style="color:#b44">&#34;123&#34;</span><span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a1<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>b1<span style="color:#666">));</span> <span style="color:#080;font-style:italic">// true
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span style="color:#080;font-style:italic"></span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a1 <span style="color:#666">==</span> b1<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// false
-</span></code></pre></div><p>好像没问题。</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String a <span style="color:#666">=</span> <span style="color:#b44">&#34;123&#34;</span><span style="color:#666">;</span>
+String b <span style="color:#666">=</span> <span style="color:#b44">&#34;123&#34;</span><span style="color:#666">;</span>
+System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>b<span style="color:#666">));</span> <span style="color:#080;font-style:italic">// true
+</span><span style="color:#080;font-style:italic"></span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a <span style="color:#666">==</span> b<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// true
+</span><span style="color:#080;font-style:italic"></span>
+String a1 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> String<span style="color:#666">(</span><span style="color:#b44">&#34;123&#34;</span><span style="color:#666">);</span>
+String b1 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> String<span style="color:#666">(</span><span style="color:#b44">&#34;123&#34;</span><span style="color:#666">);</span>
+System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a1<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>b1<span style="color:#666">));</span> <span style="color:#080;font-style:italic">// true
+</span><span style="color:#080;font-style:italic"></span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>a1 <span style="color:#666">==</span> b1<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// false
+</span></code></pre></td></tr></table>
+</div>
+</div><p>好像没问题。</p>
 <p>然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">boolean</span> <span style="color:#00a000">equals</span><span style="color:#666">(</span>Object obj<span style="color:#666">)</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">this</span> <span style="color:#666">==</span> obj<span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#666">}</span>
-</code></pre></div><p>再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">boolean</span> <span style="color:#00a000">equals</span><span style="color:#666">(</span>Object anObject<span style="color:#666">)</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">this</span> <span style="color:#666">==</span> anObject<span style="color:#666">)</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">true</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>anObject <span style="color:#a2f;font-weight:bold">instanceof</span> String<span style="color:#666">)</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        String aString <span style="color:#666">=</span> <span style="color:#666">(</span>String<span style="color:#666">)</span>anObject<span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>coder<span style="color:#666">()</span> <span style="color:#666">==</span> aString<span style="color:#666">.</span><span style="color:#b44">coder</span><span style="color:#666">())</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>            <span style="color:#a2f;font-weight:bold">return</span> isLatin1<span style="color:#666">()</span> <span style="color:#666">?</span> StringLatin1<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>value<span style="color:#666">,</span> aString<span style="color:#666">.</span><span style="color:#b44">value</span><span style="color:#666">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                              <span style="color:#666">:</span> StringUTF16<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>value<span style="color:#666">,</span> aString<span style="color:#666">.</span><span style="color:#b44">value</span><span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">false</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#666">}</span>
-</code></pre></div><p><strong>所以equals()不一定进行值的比较，在使用自己创建的类时，若想进行值的比较就必须重写equals()方法。</strong></p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">boolean</span> <span style="color:#00a000">equals</span><span style="color:#666">(</span>Object obj<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">this</span> <span style="color:#666">==</span> obj<span style="color:#666">);</span>
+<span style="color:#666">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">boolean</span> <span style="color:#00a000">equals</span><span style="color:#666">(</span>Object anObject<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">this</span> <span style="color:#666">==</span> anObject<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">true</span><span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+    <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>anObject <span style="color:#a2f;font-weight:bold">instanceof</span> String<span style="color:#666">)</span> <span style="color:#666">{</span>
+        String aString <span style="color:#666">=</span> <span style="color:#666">(</span>String<span style="color:#666">)</span>anObject<span style="color:#666">;</span>
+        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>coder<span style="color:#666">()</span> <span style="color:#666">==</span> aString<span style="color:#666">.</span><span style="color:#b44">coder</span><span style="color:#666">())</span> <span style="color:#666">{</span>
+            <span style="color:#a2f;font-weight:bold">return</span> isLatin1<span style="color:#666">()</span> <span style="color:#666">?</span> StringLatin1<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>value<span style="color:#666">,</span> aString<span style="color:#666">.</span><span style="color:#b44">value</span><span style="color:#666">)</span>
+                              <span style="color:#666">:</span> StringUTF16<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>value<span style="color:#666">,</span> aString<span style="color:#666">.</span><span style="color:#b44">value</span><span style="color:#666">);</span>
+        <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">false</span><span style="color:#666">;</span>
+<span style="color:#666">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>所以equals()不一定进行值的比较，在使用自己创建的类时，若想进行值的比较就必须重写equals()方法。</strong></p>
 <h2 id="如何重写equals方法">如何重写equals方法</h2>
 <ul>
 <li><strong>重写equals方法的目的</strong>：</li>
@@ -310,42 +351,88 @@ if (!doNotTrack) {
 </blockquote>
 <p>example:</p>
 <p>当两个人年龄相同时，我们认为这两个对象相同：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">Person</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#a2f;font-weight:bold">private</span> <span style="color:#0b0;font-weight:bold">int</span> age<span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#a2f;font-weight:bold">private</span> String name<span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#00a000">Person</span><span style="color:#666">(</span><span style="color:#0b0;font-weight:bold">int</span> age<span style="color:#666">,</span> String name<span style="color:#666">)</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">age</span> <span style="color:#666">=</span> age<span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">name</span> <span style="color:#666">=</span> name<span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#a2f">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#a2f;font-weight:bold">public</span> String <span style="color:#00a000">toString</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b44">&#34;Person{&#34;</span> <span style="color:#666">+</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>                <span style="color:#b44">&#34;age=&#34;</span> <span style="color:#666">+</span> age <span style="color:#666">+</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>                <span style="color:#b44">&#34;, name=&#39;&#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#b44">&#39;\&#39;&#39;</span> <span style="color:#666">+</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>                <span style="color:#b44">&#39;}&#39;</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#a2f">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">boolean</span> <span style="color:#00a000">equals</span><span style="color:#666">(</span>Object o<span style="color:#666">)</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">this</span> <span style="color:#666">==</span> o<span style="color:#666">)</span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">true</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>o <span style="color:#666">==</span> <span style="color:#a2f;font-weight:bold">null</span> <span style="color:#666">||</span> getClass<span style="color:#666">()</span> <span style="color:#666">!=</span> o<span style="color:#666">.</span><span style="color:#b44">getClass</span><span style="color:#666">())</span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">false</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        Person person <span style="color:#666">=</span> <span style="color:#666">(</span>Person<span style="color:#666">)</span> o<span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        <span style="color:#a2f;font-weight:bold">return</span> age <span style="color:#666">==</span> person<span style="color:#666">.</span><span style="color:#b44">age</span><span style="color:#666">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#a2f">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">hashCode</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        <span style="color:#a2f;font-weight:bold">return</span> Objects<span style="color:#666">.</span><span style="color:#b44">hash</span><span style="color:#666">(</span>age<span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#666">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#666">}</span>
-</code></pre></div><p>test:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Person p1 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>15<span style="color:#666">,</span> <span style="color:#b44">&#34;Mary&#34;</span><span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Person p2 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>15<span style="color:#666">,</span> <span style="color:#b44">&#34;Mark&#34;</span><span style="color:#666">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>p1<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>p2<span style="color:#666">));</span> <span style="color:#080;font-style:italic">// true
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#080;font-style:italic"></span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>p1 <span style="color:#666">==</span> p2<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// false
-</span></code></pre></div><p>over</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">Person</span> <span style="color:#666">{</span>
+    <span style="color:#a2f;font-weight:bold">private</span> <span style="color:#0b0;font-weight:bold">int</span> age<span style="color:#666">;</span>
+    <span style="color:#a2f;font-weight:bold">private</span> String name<span style="color:#666">;</span>
+
+    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#00a000">Person</span><span style="color:#666">(</span><span style="color:#0b0;font-weight:bold">int</span> age<span style="color:#666">,</span> String name<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">age</span> <span style="color:#666">=</span> age<span style="color:#666">;</span>
+        <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">name</span> <span style="color:#666">=</span> name<span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+
+    <span style="color:#a2f">@Override</span>
+    <span style="color:#a2f;font-weight:bold">public</span> String <span style="color:#00a000">toString</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+        <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b44">&#34;Person{&#34;</span> <span style="color:#666">+</span>
+                <span style="color:#b44">&#34;age=&#34;</span> <span style="color:#666">+</span> age <span style="color:#666">+</span>
+                <span style="color:#b44">&#34;, name=&#39;&#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#b44">&#39;\&#39;&#39;</span> <span style="color:#666">+</span>
+                <span style="color:#b44">&#39;}&#39;</span><span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+
+    <span style="color:#a2f">@Override</span>
+    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">boolean</span> <span style="color:#00a000">equals</span><span style="color:#666">(</span>Object o<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">this</span> <span style="color:#666">==</span> o<span style="color:#666">)</span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">true</span><span style="color:#666">;</span>
+        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>o <span style="color:#666">==</span> <span style="color:#a2f;font-weight:bold">null</span> <span style="color:#666">||</span> getClass<span style="color:#666">()</span> <span style="color:#666">!=</span> o<span style="color:#666">.</span><span style="color:#b44">getClass</span><span style="color:#666">())</span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">false</span><span style="color:#666">;</span>
+        Person person <span style="color:#666">=</span> <span style="color:#666">(</span>Person<span style="color:#666">)</span> o<span style="color:#666">;</span>
+        <span style="color:#a2f;font-weight:bold">return</span> age <span style="color:#666">==</span> person<span style="color:#666">.</span><span style="color:#b44">age</span><span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+
+    <span style="color:#a2f">@Override</span>
+    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">hashCode</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+        <span style="color:#a2f;font-weight:bold">return</span> Objects<span style="color:#666">.</span><span style="color:#b44">hash</span><span style="color:#666">(</span>age<span style="color:#666">);</span>
+    <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>test:</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Person p1 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>15<span style="color:#666">,</span> <span style="color:#b44">&#34;Mary&#34;</span><span style="color:#666">);</span>
+Person p2 <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>15<span style="color:#666">,</span> <span style="color:#b44">&#34;Mark&#34;</span><span style="color:#666">);</span>
+System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>p1<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span>p2<span style="color:#666">));</span> <span style="color:#080;font-style:italic">// true
+</span><span style="color:#080;font-style:italic"></span>System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>p1 <span style="color:#666">==</span> p2<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// false
+</span></code></pre></td></tr></table>
+</div>
+</div><p>over</p>
 
     </div>
   </article>
@@ -363,7 +450,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -444,7 +531,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fequals%25E6%2596%25B9%25E6%25B3%2595%25E5%2592%258C%25E8%25BF%2590%25E7%25AE%2597%25E7%25AC%25A6%25E7%259A%2584%25E4%25BD%259C%25E7%2594%25A8%25E5%258C%25BA%25E5%2588%25AB%2f&name=equals%e6%96%b9%e6%b3%95%e5%92%8c%3d%3d%e8%bf%90%e7%ae%97%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8%e5%8c%ba%e5%88%ab&description=equals%e6%96%b9%e6%b3%95%e4%b8%8e%26quot%3b%3d%3d%26ldquo%3b%e7%9a%84%e6%af%94%e8%be%83%e4%b8%8e%e5%88%86%e6%9e%90%20%e9%a6%96%e5%85%88%e6%8f%90%e5%87%ba%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e7%82%b9%3a%0a%20%20%3d%3d%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a%20%20equals%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%80%bc%e7%9a%84%e6%af%94%e8%be%83%0a%20%201String%20a%20%3d%20%26%2334%3b123%26%2334%3b%3b%202String%20b%20%3d%20%26%2334%3b123%26%2334%3b%3b%203System.out.println%28a.equals%28b%29%29%3b%20%2f%2f%20true%204System.out.println%28a%20%3d%3d%20b%29%3b%20%2f%2f%20true%205%206String%20a1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%207String%20b1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%208System.out.println%28a1.equals%28b1%29%29%3b%20%2f%2f%20true%209System.out.println%28a1%20%3d%3d%20b1%29%3b%20%2f%2f%20false%20%e5%a5%bd%e5%83%8f%e6%b2%a1%e9%97%ae%e9%a2%98%e3%80%82%0a%e7%84%b6%e8%80%8c%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81Object%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e5%af%b9%e8%b1%a1%e4%b8%ad%e9%bb%98%e8%ae%a4equals%e6%96%b9%e6%b3%95%e8%bf%9b%e8%a1%8c%e7%9a%84%e6%98%af%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a1public%20boolean%20equals%28Object%20obj%29%20%7b%202%20return%20%28this%20%3d%3d%20obj%29%3b%203%7d%20%e5%86%8d%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81String%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0String%e7%b1%bb%e4%b8%ad%e9%87%8d%e5%86%99%e4%ba%86equals%e6%96%b9%e6%b3%95%ef%bc%8c%e8%a6%86%e7%9b%96%e6%8e%89%e4%ba%86Object%e7%9a%84equals%e6%96%b9%e6%b3%95%ef%bc%8c%e6%89%80%e4%bb%a5String%e7%9a%84equals%e6%98%af%e5%80%bc%e6%af%94%e8%be%83%ef%bc%81%0a1public%20boolean%20equals%28Object%20anObject%29%20%7b%202%20if%20%28this%20%3d%3d%20anObject%29%20%7b%203%20return%20true%3b%204%20%7d%205%20if%20%28anObject%20instanceof%20String%29%20%7b%206%20String%20aString%20%3d%20%28String%29anObject%3b%207%20if%20%28coder%28%29%20%3d%3d%20aString." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fequals%25E6%2596%25B9%25E6%25B3%2595%25E5%2592%258C%25E8%25BF%2590%25E7%25AE%2597%25E7%25AC%25A6%25E7%259A%2584%25E4%25BD%259C%25E7%2594%25A8%25E5%258C%25BA%25E5%2588%25AB%2f&name=equals%e6%96%b9%e6%b3%95%e5%92%8c%3d%3d%e8%bf%90%e7%ae%97%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8%e5%8c%ba%e5%88%ab&description=equals%e6%96%b9%e6%b3%95%e4%b8%8e%26quot%3b%3d%3d%26ldquo%3b%e7%9a%84%e6%af%94%e8%be%83%e4%b8%8e%e5%88%86%e6%9e%90%20%e9%a6%96%e5%85%88%e6%8f%90%e5%87%ba%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e7%82%b9%3a%0a%20%20%3d%3d%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a%20%20equals%20%e6%af%94%e8%be%83%e6%97%b6%e8%bf%9b%e8%a1%8c%e5%80%bc%e7%9a%84%e6%af%94%e8%be%83%0a%20%201%202%203%204%205%206%207%208%209%20%20String%20a%20%3d%20%26%2334%3b123%26%2334%3b%3b%20String%20b%20%3d%20%26%2334%3b123%26%2334%3b%3b%20System.out.println%28a.equals%28b%29%29%3b%20%2f%2f%20true%20System.out.println%28a%20%3d%3d%20b%29%3b%20%2f%2f%20true%20%20String%20a1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%20String%20b1%20%3d%20new%20String%28%26%2334%3b123%26%2334%3b%29%3b%20System.out.println%28a1.equals%28b1%29%29%3b%20%2f%2f%20true%20System.out.println%28a1%20%3d%3d%20b1%29%3b%20%2f%2f%20false%20%20%20%e5%a5%bd%e5%83%8f%e6%b2%a1%e9%97%ae%e9%a2%98%e3%80%82%0a%e7%84%b6%e8%80%8c%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81Object%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e5%af%b9%e8%b1%a1%e4%b8%ad%e9%bb%98%e8%ae%a4equals%e6%96%b9%e6%b3%95%e8%bf%9b%e8%a1%8c%e7%9a%84%e6%98%af%e5%9c%b0%e5%9d%80%e7%9a%84%e6%af%94%e8%be%83%0a1%202%203%20%20public%20boolean%20equals%28Object%20obj%29%20%7b%20return%20%28this%20%3d%3d%20obj%29%3b%20%7d%20%20%20%e5%86%8d%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81String%e7%b1%bb%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0String%e7%b1%bb%e4%b8%ad%e9%87%8d%e5%86%99%e4%ba%86equals%e6%96%b9%e6%b3%95%ef%bc%8c%e8%a6%86%e7%9b%96%e6%8e%89%e4%ba%86Object%e7%9a%84equals%e6%96%b9%e6%b3%95%ef%bc%8c%e6%89%80%e4%bb%a5String%e7%9a%84equals%e6%98%af%e5%80%bc%e6%af%94%e8%be%83%ef%bc%81" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

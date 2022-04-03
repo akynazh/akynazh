@@ -16,9 +16,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Matlab基本用法整理" />
-<meta property="og:description" content="基本语法方面 提取矩阵某行或某列 1A(:, [2 3]) 返回第2和第3列 获取随机数 1randi(100); % 1 到 100 之间的随机整数 初始化数组 1zeros(1, 30); % 1行30列的全0数组 控制语句 1for i = 0 : 100 2 for j = 1 : 10 3 if (...)  4 ... 5 else 6 ... 7 end 8 end 9 ... 10end 格式化输出 1fprintf(&#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
-实例：求解二元一次方程
-1syms x y; 2s = x - 6 * y == 2; 3t = 5 * x &#43; 4 * y == 3; 4result = solve(s, t); 求平均值，中值与标准差 1A = [12 13 7 18 16 21 9 10 2 18]; 2A = sort(A); 3ave = mean(A); 4md = median(A); 5sigma = std(A); 解一阶导数方程 1syms x y; 2y = -0." />
+<meta property="og:description" content="基本语法方面 提取矩阵某行或某列 1  A(:, [2 3]) 返回第2和第3列   获取随机数 1  randi(100); % 1 到 100 之间的随机整数   初始化数组 1  zeros(1, 30); % 1行30列的全0数组   控制语句 1 2 3 4 5 6 7 8 9 10  for i = 0 : 100 for j = 1 : 10 if (...)  ... else ... end end ... end   格式化输出 1  fprintf(&#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&#34;, count, count / SUM);   初等数学方面 求解方程组 注：solve已经改版，不可传入字符串" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-06T20:41:12+08:00" />
@@ -27,16 +25,14 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Matlab基本用法整理"/>
-<meta name="twitter:description" content="基本语法方面 提取矩阵某行或某列 1A(:, [2 3]) 返回第2和第3列 获取随机数 1randi(100); % 1 到 100 之间的随机整数 初始化数组 1zeros(1, 30); % 1行30列的全0数组 控制语句 1for i = 0 : 100 2 for j = 1 : 10 3 if (...)  4 ... 5 else 6 ... 7 end 8 end 9 ... 10end 格式化输出 1fprintf(&#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
-实例：求解二元一次方程
-1syms x y; 2s = x - 6 * y == 2; 3t = 5 * x &#43; 4 * y == 3; 4result = solve(s, t); 求平均值，中值与标准差 1A = [12 13 7 18 16 21 9 10 2 18]; 2A = sort(A); 3ave = mean(A); 4md = median(A); 5sigma = std(A); 解一阶导数方程 1syms x y; 2y = -0."/>
+<meta name="twitter:description" content="基本语法方面 提取矩阵某行或某列 1  A(:, [2 3]) 返回第2和第3列   获取随机数 1  randi(100); % 1 到 100 之间的随机整数   初始化数组 1  zeros(1, 30); % 1行30列的全0数组   控制语句 1 2 3 4 5 6 7 8 9 10  for i = 0 : 100 for j = 1 : 10 if (...)  ... else ... end end ... end   格式化输出 1  fprintf(&#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&#34;, count, count / SUM);   初等数学方面 求解方程组 注：solve已经改版，不可传入字符串"/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.e403311e18d0fccba36be823053bde1dc1e526d022ec816781bcd1d02d6b9ce04c2eb3b1ebad5eb102ddf98cfd9f644fb12edf3fb085ae7ec9ae6c2323f4e3a8.css" integrity="sha512-5AMxHhjQ/Muja&#43;gjBTveHcHlJtAi7IFngbzR0C1rnOBMLrOx661esQLd&#43;Yz9n2RPsS7fP7CFrn7JrmwjI/TjqA=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.c19e1945407eaad6d096569efcd286a4fafb58d574547cb573ba8d3ee7db066e04cc312ae0296b4010b1975fe316c57f0b5e2b95003b3a13936f41a042360f36.css" integrity="sha512-wZ4ZRUB&#43;qtbQllae/NKGpPr7WNV0VHy1c7qNPufbBm4EzDEq4ClrQBCxl1/jFsV/C14rlQA7OhOTb0GgQjYPNg=="> 
 
   
   
@@ -168,7 +164,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fmatlab%25E5%259F%25BA%25E6%259C%25AC%25E7%2594%25A8%25E6%25B3%2595%25E6%2595%25B4%25E7%2590%2586%2f&name=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201for%20i%20%3d%200%20%3a%20100%202%20for%20j%20%3d%201%20%3a%2010%203%20if%20%28...%29%20%204%20...%205%20else%206%20...%207%20end%208%20end%209%20...%2010end%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2%0a%e5%ae%9e%e4%be%8b%ef%bc%9a%e6%b1%82%e8%a7%a3%e4%ba%8c%e5%85%83%e4%b8%80%e6%ac%a1%e6%96%b9%e7%a8%8b%0a1syms%20x%20y%3b%202s%20%3d%20x%20-%206%20%2a%20y%20%3d%3d%202%3b%203t%20%3d%205%20%2a%20x%20%2b%204%20%2a%20y%20%3d%3d%203%3b%204result%20%3d%20solve%28s%2c%20t%29%3b%20%e6%b1%82%e5%b9%b3%e5%9d%87%e5%80%bc%ef%bc%8c%e4%b8%ad%e5%80%bc%e4%b8%8e%e6%a0%87%e5%87%86%e5%b7%ae%201A%20%3d%20%5b12%2013%207%2018%2016%2021%209%2010%202%2018%5d%3b%202A%20%3d%20sort%28A%29%3b%203ave%20%3d%20mean%28A%29%3b%204md%20%3d%20median%28A%29%3b%205sigma%20%3d%20std%28A%29%3b%20%e8%a7%a3%e4%b8%80%e9%98%b6%e5%af%bc%e6%95%b0%e6%96%b9%e7%a8%8b%201syms%20x%20y%3b%202y%20%3d%20-0." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fmatlab%25E5%259F%25BA%25E6%259C%25AC%25E7%2594%25A8%25E6%25B3%2595%25E6%2595%25B4%25E7%2590%2586%2f&name=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201%20%20A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%20%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201%20%20randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%20%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201%20%20zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%20%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201%202%203%204%205%206%207%208%209%2010%20%20for%20i%20%3d%200%20%3a%20100%20for%20j%20%3d%201%20%3a%2010%20if%20%28...%29%20%20...%20else%20...%20end%20end%20...%20end%20%20%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201%20%20fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%20%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -279,207 +275,511 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="基本语法方面">基本语法方面</h2>
 <h3 id="提取矩阵某行或某列">提取矩阵某行或某列</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>A(:, [<span style="color:#666">2</span> <span style="color:#666">3</span>]) 返回第<span style="color:#666">2</span>和第<span style="color:#666">3</span>列
-</code></pre></div><h3 id="获取随机数">获取随机数</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>randi(<span style="color:#666">100</span>); <span style="color:#080;font-style:italic">% 1 到 100 之间的随机整数</span>
-</code></pre></div><h3 id="初始化数组">初始化数组</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a2f">zeros</span>(<span style="color:#666">1</span>, <span style="color:#666">30</span>); <span style="color:#080;font-style:italic">% 1行30列的全0数组</span>
-</code></pre></div><h3 id="控制语句">控制语句</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a2f;font-weight:bold">for</span> <span style="color:#a2f">i</span> = <span style="color:#666">0</span> : <span style="color:#666">100</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#a2f">j</span> = <span style="color:#666">1</span> : <span style="color:#666">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#080;font-style:italic">...) </span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>          <span style="color:#080;font-style:italic">...</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        <span style="color:#a2f;font-weight:bold">else</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>          <span style="color:#080;font-style:italic">...</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#a2f;font-weight:bold">end</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#a2f;font-weight:bold">end</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#080;font-style:italic">...</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#a2f;font-weight:bold">end</span>
-</code></pre></div><h3 id="格式化输出">格式化输出</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>fprintf(&#34;若选手选择改变，则成功次数为：<span style="color:#080;font-style:italic">%d, 成功率为：%f\n&#34;, count, count / SUM);</span>
-</code></pre></div><h2 id="初等数学方面">初等数学方面</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">A(:, [<span style="color:#666">2</span> <span style="color:#666">3</span>]) 返回第<span style="color:#666">2</span>和第<span style="color:#666">3</span>列
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="获取随机数">获取随机数</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">randi(<span style="color:#666">100</span>); <span style="color:#080;font-style:italic">% 1 到 100 之间的随机整数</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="初始化数组">初始化数组</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#a2f">zeros</span>(<span style="color:#666">1</span>, <span style="color:#666">30</span>); <span style="color:#080;font-style:italic">% 1行30列的全0数组</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="控制语句">控制语句</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#a2f;font-weight:bold">for</span> <span style="color:#a2f">i</span> = <span style="color:#666">0</span> : <span style="color:#666">100</span>
+    <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#a2f">j</span> = <span style="color:#666">1</span> : <span style="color:#666">10</span>
+        <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#080;font-style:italic">...) </span>
+          <span style="color:#080;font-style:italic">...</span>
+        <span style="color:#a2f;font-weight:bold">else</span> 
+          <span style="color:#080;font-style:italic">...</span>
+        <span style="color:#a2f;font-weight:bold">end</span>
+    <span style="color:#a2f;font-weight:bold">end</span>
+    <span style="color:#080;font-style:italic">...</span>
+<span style="color:#a2f;font-weight:bold">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="格式化输出">格式化输出</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">fprintf(&#34;若选手选择改变，则成功次数为：<span style="color:#080;font-style:italic">%d, 成功率为：%f\n&#34;, count, count / SUM);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="初等数学方面">初等数学方面</h2>
 <h3 id="求解方程组">求解方程组</h3>
 <p>注：solve已经改版，不可传入字符串</p>
 <p>实例：求解二元一次方程</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>syms x y;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>s = x <span style="color:#666">-</span> <span style="color:#666">6</span> <span style="color:#666">*</span> y <span style="color:#666">==</span> <span style="color:#666">2</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>t = <span style="color:#666">5</span> <span style="color:#666">*</span> x <span style="color:#666">+</span> <span style="color:#666">4</span> <span style="color:#666">*</span> y <span style="color:#666">==</span> <span style="color:#666">3</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>result = solve(s, t);
-</code></pre></div><h3 id="求平均值中值与标准差">求平均值，中值与标准差</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>A = [<span style="color:#666">12</span> <span style="color:#666">13</span> <span style="color:#666">7</span> <span style="color:#666">18</span> <span style="color:#666">16</span> <span style="color:#666">21</span> <span style="color:#666">9</span> <span style="color:#666">10</span> <span style="color:#666">2</span> <span style="color:#666">18</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>A = sort(A);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>ave = mean(A);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>md = median(A);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>sigma = std(A);
-</code></pre></div><h3 id="解一阶导数方程">解一阶导数方程</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>syms x y;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>y = <span style="color:#666">-</span><span style="color:#666">0.0283</span> <span style="color:#666">*</span> x^<span style="color:#666">2</span> <span style="color:#666">+</span> <span style="color:#666">0.7387</span> <span style="color:#666">*</span> x <span style="color:#666">+</span> <span style="color:#666">8.9191</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>my_x = solve(diff(y)); <span style="color:#080;font-style:italic">% diff(A)用于求导数</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>my_y = subs(y, x, my_x); <span style="color:#080;font-style:italic">% 当x=my_x时求y的值</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>fprintf(&#34;(<span style="color:#080;font-style:italic">%.2f, %.2f)\n&#34;, my_x, my_y);</span>
-</code></pre></div><h2 id="基础绘图方面">基础绘图方面</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">syms x y;
+s = x <span style="color:#666">-</span> <span style="color:#666">6</span> <span style="color:#666">*</span> y <span style="color:#666">==</span> <span style="color:#666">2</span>;
+t = <span style="color:#666">5</span> <span style="color:#666">*</span> x <span style="color:#666">+</span> <span style="color:#666">4</span> <span style="color:#666">*</span> y <span style="color:#666">==</span> <span style="color:#666">3</span>;
+result = solve(s, t);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="求平均值中值与标准差">求平均值，中值与标准差</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">A = [<span style="color:#666">12</span> <span style="color:#666">13</span> <span style="color:#666">7</span> <span style="color:#666">18</span> <span style="color:#666">16</span> <span style="color:#666">21</span> <span style="color:#666">9</span> <span style="color:#666">10</span> <span style="color:#666">2</span> <span style="color:#666">18</span>];
+A = sort(A);
+ave = mean(A);
+md = median(A);
+sigma = std(A);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="解一阶导数方程">解一阶导数方程</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">syms x y;
+y = <span style="color:#666">-</span><span style="color:#666">0.0283</span> <span style="color:#666">*</span> x^<span style="color:#666">2</span> <span style="color:#666">+</span> <span style="color:#666">0.7387</span> <span style="color:#666">*</span> x <span style="color:#666">+</span> <span style="color:#666">8.9191</span>;
+my_x = solve(diff(y)); <span style="color:#080;font-style:italic">% diff(A)用于求导数</span>
+my_y = subs(y, x, my_x); <span style="color:#080;font-style:italic">% 当x=my_x时求y的值</span>
+fprintf(&#34;(<span style="color:#080;font-style:italic">%.2f, %.2f)\n&#34;, my_x, my_y);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="基础绘图方面">基础绘图方面</h2>
 <h3 id="绘制二维图">绘制二维图</h3>
 <p>绘制二维图并设置x,y轴通过坐标原点</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>x = [<span style="color:#666">-</span><span style="color:#666">2.5</span><span style="color:#666">*</span><span style="color:#a2f">pi</span>:<span style="color:#666">0.1</span>:<span style="color:#666">2.5</span><span style="color:#666">*</span><span style="color:#a2f">pi</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>y = [<span style="color:#666">-</span><span style="color:#666">1</span>:<span style="color:#666">0.1</span>:<span style="color:#666">1</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>y = <span style="color:#a2f">cos</span>(x);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>plot(x,y)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>ax = gca;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>ax.XAxisLocation = <span style="color:#b44">&#39;origin&#39;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>ax.YAxisLocation = <span style="color:#b44">&#39;origin&#39;</span>;
-</code></pre></div><h3 id="绘制三维图">绘制三维图</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">x = [<span style="color:#666">-</span><span style="color:#666">2.5</span><span style="color:#666">*</span><span style="color:#a2f">pi</span>:<span style="color:#666">0.1</span>:<span style="color:#666">2.5</span><span style="color:#666">*</span><span style="color:#a2f">pi</span>];
+y = [<span style="color:#666">-</span><span style="color:#666">1</span>:<span style="color:#666">0.1</span>:<span style="color:#666">1</span>];
+y = <span style="color:#a2f">cos</span>(x);
+plot(x,y)
+ax = gca;
+ax.XAxisLocation = <span style="color:#b44">&#39;origin&#39;</span>;
+ax.YAxisLocation = <span style="color:#b44">&#39;origin&#39;</span>;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="绘制三维图">绘制三维图</h3>
 <p>使用mesh或surf，subplot进行分区</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>[x, y] = <span style="color:#a2f">meshgrid</span>(<span style="color:#666">-</span><span style="color:#666">5</span>:<span style="color:#666">0.1</span>:<span style="color:#666">5</span>, <span style="color:#666">-</span><span style="color:#666">3</span>:<span style="color:#666">0.1</span>:<span style="color:#666">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>z = x<span style="color:#666">.^</span><span style="color:#666">2</span> <span style="color:#666">+</span> y<span style="color:#666">.^</span><span style="color:#666">2</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>subplot(<span style="color:#666">1</span>,<span style="color:#666">2</span>,<span style="color:#666">1</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>surf(x, y, z);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>subplot(<span style="color:#666">1</span>,<span style="color:#666">2</span>,<span style="color:#666">2</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>mesh(x,y,z)
-</code></pre></div><h3 id="绘制等高线">绘制等高线</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>[x, y] = <span style="color:#a2f">meshgrid</span>(<span style="color:#666">-</span><span style="color:#666">5</span>:<span style="color:#666">0.1</span>:<span style="color:#666">5</span>, <span style="color:#666">-</span><span style="color:#666">3</span>:<span style="color:#666">0.1</span>:<span style="color:#666">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>z = x<span style="color:#666">.^</span><span style="color:#666">2</span> <span style="color:#666">+</span> y<span style="color:#666">.^</span><span style="color:#666">2</span>;<span style="color:#080;font-style:italic">%z就是高度</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>contour(x,y,z)<span style="color:#080;font-style:italic">%绘制等高线</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>subplot(<span style="color:#666">2</span>,<span style="color:#666">2</span>,<span style="color:#666">1</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>[C,h] = contour(x,y,z, <span style="color:#b44">&#39;ShowText&#39;</span>, <span style="color:#b44">&#39;on&#39;</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#080;font-style:italic">% [M,c] = contour(___) 返回等高线矩阵和等高线对象 c。</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#080;font-style:italic">% 显示等高线图后，使用 c 设置属性。</span>
-</code></pre></div><h2 id="高数和线代方面">高数和线代方面</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">[x, y] = <span style="color:#a2f">meshgrid</span>(<span style="color:#666">-</span><span style="color:#666">5</span>:<span style="color:#666">0.1</span>:<span style="color:#666">5</span>, <span style="color:#666">-</span><span style="color:#666">3</span>:<span style="color:#666">0.1</span>:<span style="color:#666">3</span>);
+z = x<span style="color:#666">.^</span><span style="color:#666">2</span> <span style="color:#666">+</span> y<span style="color:#666">.^</span><span style="color:#666">2</span>;
+subplot(<span style="color:#666">1</span>,<span style="color:#666">2</span>,<span style="color:#666">1</span>)
+surf(x, y, z);
+subplot(<span style="color:#666">1</span>,<span style="color:#666">2</span>,<span style="color:#666">2</span>)
+mesh(x,y,z)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="绘制等高线">绘制等高线</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">[x, y] = <span style="color:#a2f">meshgrid</span>(<span style="color:#666">-</span><span style="color:#666">5</span>:<span style="color:#666">0.1</span>:<span style="color:#666">5</span>, <span style="color:#666">-</span><span style="color:#666">3</span>:<span style="color:#666">0.1</span>:<span style="color:#666">3</span>);
+z = x<span style="color:#666">.^</span><span style="color:#666">2</span> <span style="color:#666">+</span> y<span style="color:#666">.^</span><span style="color:#666">2</span>;<span style="color:#080;font-style:italic">%z就是高度</span>
+contour(x,y,z)<span style="color:#080;font-style:italic">%绘制等高线</span>
+subplot(<span style="color:#666">2</span>,<span style="color:#666">2</span>,<span style="color:#666">1</span>)
+[C,h] = contour(x,y,z, <span style="color:#b44">&#39;ShowText&#39;</span>, <span style="color:#b44">&#39;on&#39;</span>);
+<span style="color:#080;font-style:italic">% [M,c] = contour(___) 返回等高线矩阵和等高线对象 c。</span>
+<span style="color:#080;font-style:italic">% 显示等高线图后，使用 c 设置属性。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="高数和线代方面">高数和线代方面</h2>
 <h3 id="泰勒级数第n项展开">泰勒级数第n项展开</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>T = taylor(f, x, <span style="color:#b44">&#39;Order&#39;</span>, n);
-</code></pre></div><h3 id="求极大线性无关组">求极大线性无关组</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>A =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>     <span style="color:#666">3</span>     <span style="color:#666">1</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>     <span style="color:#666">0</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>     <span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">0</span>     <span style="color:#666">8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#666">&gt;&gt;</span> [R <span style="color:#a2f">j</span>] = rref(A)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>R =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>     <span style="color:#666">1</span>     <span style="color:#666">0</span>    <span style="color:#666">-</span><span style="color:#666">1</span>     <span style="color:#666">5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>     <span style="color:#666">0</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>     <span style="color:#666">0</span>     <span style="color:#666">0</span>     <span style="color:#666">0</span>     <span style="color:#666">0</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#080;font-style:italic">%主元所在列数</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#a2f">j</span> =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#080;font-style:italic">% 即得到极大线性无关组</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#666">&gt;&gt;</span> M = A(:,[<span style="color:#666">1</span>,<span style="color:#666">2</span>])
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>M =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>     <span style="color:#666">0</span>     <span style="color:#666">1</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>     <span style="color:#666">2</span>     <span style="color:#666">1</span>
-</code></pre></div><h3 id="求ax--0基础解系">求Ax = 0基础解系</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>A =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>     <span style="color:#666">9</span>    <span style="color:#666">-</span><span style="color:#666">5</span>     <span style="color:#666">2</span>     <span style="color:#666">8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#080;font-style:italic">%求出最小有理数解</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#666">&gt;&gt;</span> r = rank(A);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#666">&gt;&gt;</span> X = null(A, <span style="color:#b44">&#39;r&#39;</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>X =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#666">0.1250</span>   <span style="color:#666">-</span><span style="color:#666">0.1250</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#666">0.6250</span>    <span style="color:#666">1.3750</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#666">1.0000</span>         <span style="color:#666">0</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>         <span style="color:#666">0</span>    <span style="color:#666">1.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#080;font-style:italic">%求出规范正交基</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#666">&gt;&gt;</span> X = null(A)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>X =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#666">0.1293</span>   <span style="color:#666">-</span><span style="color:#666">0.1052</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="color:#666">0.3860</span>    <span style="color:#666">0.7386</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#666">0.9041</span>   <span style="color:#666">-</span><span style="color:#666">0.2092</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>   <span style="color:#666">-</span><span style="color:#666">0.1302</span>    <span style="color:#666">0.6322</span>
-</code></pre></div><h3 id="左除与右除">左除与右除</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>右除正斜杠： A <span style="color:#666">/</span> B <span style="color:#666">-&gt;</span> A <span style="color:#666">*</span> inv(B)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>左除反斜杠： A <span style="color:#666">\</span> B <span style="color:#666">-&gt;</span> inv(A) <span style="color:#666">*</span> B
-</code></pre></div><h3 id="求ax--b特解">求Ax = b特解</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>A非方阵时，无法利用x = A^(<span style="color:#666">-</span><span style="color:#666">1</span>) <span style="color:#666">*</span> b
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>应该使用x = A <span style="color:#666">\</span> b
-</code></pre></div><h3 id="计算特征多项式及特征值">计算特征多项式及特征值</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#666">&gt;&gt;</span> A = [<span style="color:#666">1</span> <span style="color:#666">2</span> <span style="color:#666">3</span>; <span style="color:#666">2</span> <span style="color:#666">1</span> <span style="color:#666">3</span>; <span style="color:#666">3</span> <span style="color:#666">3</span> <span style="color:#666">6</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>A =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>     <span style="color:#666">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>     <span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>     <span style="color:#666">3</span>     <span style="color:#666">3</span>     <span style="color:#666">6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#666">&gt;&gt;</span> f = poly(A)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>f =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#666">1.0000</span>   <span style="color:#666">-</span><span style="color:#666">8.0000</span>   <span style="color:#666">-</span><span style="color:#666">9.0000</span>   <span style="color:#666">-</span><span style="color:#666">0.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#666">&gt;&gt;</span> lamda = roots(f)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>lamda =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#666">9.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>   <span style="color:#666">-</span><span style="color:#666">1.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>   <span style="color:#666">-</span><span style="color:#666">0.0000</span>
-</code></pre></div><h3 id="计算特征值的简易方法">计算特征值的简易方法</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#666">&gt;&gt;</span> eig(A)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#a2f">ans</span> =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>   <span style="color:#666">-</span><span style="color:#666">1.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>   <span style="color:#666">-</span><span style="color:#666">0.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    <span style="color:#666">9.0000</span>
-</code></pre></div><h3 id="计算特征值及对应特征向量">计算特征值及对应特征向量</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#666">&gt;&gt;</span> [Q, D] = eig(A)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>Q =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#666">0.7071</span>    <span style="color:#666">0.5774</span>    <span style="color:#666">0.4082</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>   <span style="color:#666">-</span><span style="color:#666">0.7071</span>    <span style="color:#666">0.5774</span>    <span style="color:#666">0.4082</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>         <span style="color:#666">0</span>   <span style="color:#666">-</span><span style="color:#666">0.5774</span>    <span style="color:#666">0.8165</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>D =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>   <span style="color:#666">-</span><span style="color:#666">1.0000</span>         <span style="color:#666">0</span>         <span style="color:#666">0</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>         <span style="color:#666">0</span>   <span style="color:#666">-</span><span style="color:#666">0.0000</span>         <span style="color:#666">0</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>         <span style="color:#666">0</span>         <span style="color:#666">0</span>    <span style="color:#666">9.0000</span>
-</code></pre></div><h3 id="使用命令eig把二次型标准化">使用命令eig把二次型标准化</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>同上，由D可得标准型，由Q可得正交变换法。
-</code></pre></div><h3 id="使用命令eig判断二次型的正定性">使用命令eig判断二次型的正定性</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>同上，观察D对角线元素正负性即可。
-</code></pre></div><h3 id="使用命令orth把向量组正交规范化">使用命令orth把向量组正交规范化</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>A =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>     <span style="color:#666">9</span>    <span style="color:#666">-</span><span style="color:#666">5</span>     <span style="color:#666">2</span>     <span style="color:#666">8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>   
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#666">&gt;&gt;</span> B = orth(A)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>B =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>   <span style="color:#666">-</span><span style="color:#666">0.2982</span>    <span style="color:#666">0.9545</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>   <span style="color:#666">-</span><span style="color:#666">0.9545</span>   <span style="color:#666">-</span><span style="color:#666">0.2982</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#080;font-style:italic">%满足B * B&#39; == eye(rank(A))</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#666">&gt;&gt;</span> B <span style="color:#666">*</span> B<span style="color:#666">&#39;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#a2f">ans</span> =
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#666">1.0000</span>    <span style="color:#666">0.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#666">0.0000</span>    <span style="color:#666">1.0000</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
-</code></pre></div>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">T = taylor(f, x, <span style="color:#b44">&#39;Order&#39;</span>, n);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="求极大线性无关组">求极大线性无关组</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">A =
+
+     <span style="color:#666">1</span>     <span style="color:#666">2</span>     <span style="color:#666">3</span>     <span style="color:#666">1</span>
+     <span style="color:#666">0</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>
+     <span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">0</span>     <span style="color:#666">8</span>
+
+<span style="color:#666">&gt;&gt;</span> [R <span style="color:#a2f">j</span>] = rref(A)
+
+R =
+
+     <span style="color:#666">1</span>     <span style="color:#666">0</span>    <span style="color:#666">-</span><span style="color:#666">1</span>     <span style="color:#666">5</span>
+     <span style="color:#666">0</span>     <span style="color:#666">1</span>     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>
+     <span style="color:#666">0</span>     <span style="color:#666">0</span>     <span style="color:#666">0</span>     <span style="color:#666">0</span>
+
+<span style="color:#080;font-style:italic">%主元所在列数</span>
+<span style="color:#a2f">j</span> =
+
+     <span style="color:#666">1</span>     <span style="color:#666">2</span>
+
+<span style="color:#080;font-style:italic">% 即得到极大线性无关组</span>
+
+<span style="color:#666">&gt;&gt;</span> M = A(:,[<span style="color:#666">1</span>,<span style="color:#666">2</span>])
+
+M =
+
+     <span style="color:#666">1</span>     <span style="color:#666">2</span>
+     <span style="color:#666">0</span>     <span style="color:#666">1</span>
+     <span style="color:#666">2</span>     <span style="color:#666">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="求ax--0基础解系">求Ax = 0基础解系</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">A =
+
+     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">3</span>
+     <span style="color:#666">9</span>    <span style="color:#666">-</span><span style="color:#666">5</span>     <span style="color:#666">2</span>     <span style="color:#666">8</span>
+
+<span style="color:#080;font-style:italic">%求出最小有理数解</span>
+<span style="color:#666">&gt;&gt;</span> r = rank(A);
+<span style="color:#666">&gt;&gt;</span> X = null(A, <span style="color:#b44">&#39;r&#39;</span>)
+
+X =
+
+    <span style="color:#666">0.1250</span>   <span style="color:#666">-</span><span style="color:#666">0.1250</span>
+    <span style="color:#666">0.6250</span>    <span style="color:#666">1.3750</span>
+    <span style="color:#666">1.0000</span>         <span style="color:#666">0</span>
+         <span style="color:#666">0</span>    <span style="color:#666">1.0000</span>
+
+<span style="color:#080;font-style:italic">%求出规范正交基</span>
+<span style="color:#666">&gt;&gt;</span> X = null(A)
+
+X =
+
+    <span style="color:#666">0.1293</span>   <span style="color:#666">-</span><span style="color:#666">0.1052</span>
+    <span style="color:#666">0.3860</span>    <span style="color:#666">0.7386</span>
+    <span style="color:#666">0.9041</span>   <span style="color:#666">-</span><span style="color:#666">0.2092</span>
+   <span style="color:#666">-</span><span style="color:#666">0.1302</span>    <span style="color:#666">0.6322</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="左除与右除">左除与右除</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">右除正斜杠： A <span style="color:#666">/</span> B <span style="color:#666">-&gt;</span> A <span style="color:#666">*</span> inv(B)
+左除反斜杠： A <span style="color:#666">\</span> B <span style="color:#666">-&gt;</span> inv(A) <span style="color:#666">*</span> B
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="求ax--b特解">求Ax = b特解</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">A非方阵时，无法利用x = A^(<span style="color:#666">-</span><span style="color:#666">1</span>) <span style="color:#666">*</span> b
+
+应该使用x = A <span style="color:#666">\</span> b
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="计算特征多项式及特征值">计算特征多项式及特征值</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#666">&gt;&gt;</span> A = [<span style="color:#666">1</span> <span style="color:#666">2</span> <span style="color:#666">3</span>; <span style="color:#666">2</span> <span style="color:#666">1</span> <span style="color:#666">3</span>; <span style="color:#666">3</span> <span style="color:#666">3</span> <span style="color:#666">6</span>]
+
+A =
+
+     <span style="color:#666">1</span>     <span style="color:#666">2</span>     <span style="color:#666">3</span>
+     <span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">3</span>
+     <span style="color:#666">3</span>     <span style="color:#666">3</span>     <span style="color:#666">6</span>
+
+<span style="color:#666">&gt;&gt;</span> f = poly(A)
+
+f =
+
+    <span style="color:#666">1.0000</span>   <span style="color:#666">-</span><span style="color:#666">8.0000</span>   <span style="color:#666">-</span><span style="color:#666">9.0000</span>   <span style="color:#666">-</span><span style="color:#666">0.0000</span>
+
+<span style="color:#666">&gt;&gt;</span> lamda = roots(f)
+
+lamda =
+
+    <span style="color:#666">9.0000</span>
+   <span style="color:#666">-</span><span style="color:#666">1.0000</span>
+   <span style="color:#666">-</span><span style="color:#666">0.0000</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="计算特征值的简易方法">计算特征值的简易方法</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#666">&gt;&gt;</span> eig(A)
+
+<span style="color:#a2f">ans</span> =
+
+   <span style="color:#666">-</span><span style="color:#666">1.0000</span>
+   <span style="color:#666">-</span><span style="color:#666">0.0000</span>
+    <span style="color:#666">9.0000</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="计算特征值及对应特征向量">计算特征值及对应特征向量</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#666">&gt;&gt;</span> [Q, D] = eig(A)
+
+Q =
+
+    <span style="color:#666">0.7071</span>    <span style="color:#666">0.5774</span>    <span style="color:#666">0.4082</span>
+   <span style="color:#666">-</span><span style="color:#666">0.7071</span>    <span style="color:#666">0.5774</span>    <span style="color:#666">0.4082</span>
+         <span style="color:#666">0</span>   <span style="color:#666">-</span><span style="color:#666">0.5774</span>    <span style="color:#666">0.8165</span>
+
+
+D =
+
+   <span style="color:#666">-</span><span style="color:#666">1.0000</span>         <span style="color:#666">0</span>         <span style="color:#666">0</span>
+         <span style="color:#666">0</span>   <span style="color:#666">-</span><span style="color:#666">0.0000</span>         <span style="color:#666">0</span>
+         <span style="color:#666">0</span>         <span style="color:#666">0</span>    <span style="color:#666">9.0000</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用命令eig把二次型标准化">使用命令eig把二次型标准化</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">同上，由D可得标准型，由Q可得正交变换法。
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用命令eig判断二次型的正定性">使用命令eig判断二次型的正定性</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">同上，观察D对角线元素正负性即可。
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用命令orth把向量组正交规范化">使用命令orth把向量组正交规范化</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">A =
+
+     <span style="color:#666">2</span>    <span style="color:#666">-</span><span style="color:#666">2</span>     <span style="color:#666">1</span>     <span style="color:#666">3</span>
+     <span style="color:#666">9</span>    <span style="color:#666">-</span><span style="color:#666">5</span>     <span style="color:#666">2</span>     <span style="color:#666">8</span>
+   
+<span style="color:#666">&gt;&gt;</span> B = orth(A)
+
+B =
+
+   <span style="color:#666">-</span><span style="color:#666">0.2982</span>    <span style="color:#666">0.9545</span>
+   <span style="color:#666">-</span><span style="color:#666">0.9545</span>   <span style="color:#666">-</span><span style="color:#666">0.2982</span>
+
+<span style="color:#080;font-style:italic">%满足B * B&#39; == eye(rank(A))</span>
+
+<span style="color:#666">&gt;&gt;</span> B <span style="color:#666">*</span> B<span style="color:#666">&#39;</span>
+
+<span style="color:#a2f">ans</span> =
+
+    <span style="color:#666">1.0000</span>    <span style="color:#666">0.0000</span>
+    <span style="color:#666">0.0000</span>    <span style="color:#666">1.0000</span>
+
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
   </article>
 
@@ -496,7 +796,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
@@ -613,7 +913,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fmatlab%25E5%259F%25BA%25E6%259C%25AC%25E7%2594%25A8%25E6%25B3%2595%25E6%2595%25B4%25E7%2590%2586%2f&name=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201for%20i%20%3d%200%20%3a%20100%202%20for%20j%20%3d%201%20%3a%2010%203%20if%20%28...%29%20%204%20...%205%20else%206%20...%207%20end%208%20end%209%20...%2010end%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2%0a%e5%ae%9e%e4%be%8b%ef%bc%9a%e6%b1%82%e8%a7%a3%e4%ba%8c%e5%85%83%e4%b8%80%e6%ac%a1%e6%96%b9%e7%a8%8b%0a1syms%20x%20y%3b%202s%20%3d%20x%20-%206%20%2a%20y%20%3d%3d%202%3b%203t%20%3d%205%20%2a%20x%20%2b%204%20%2a%20y%20%3d%3d%203%3b%204result%20%3d%20solve%28s%2c%20t%29%3b%20%e6%b1%82%e5%b9%b3%e5%9d%87%e5%80%bc%ef%bc%8c%e4%b8%ad%e5%80%bc%e4%b8%8e%e6%a0%87%e5%87%86%e5%b7%ae%201A%20%3d%20%5b12%2013%207%2018%2016%2021%209%2010%202%2018%5d%3b%202A%20%3d%20sort%28A%29%3b%203ave%20%3d%20mean%28A%29%3b%204md%20%3d%20median%28A%29%3b%205sigma%20%3d%20std%28A%29%3b%20%e8%a7%a3%e4%b8%80%e9%98%b6%e5%af%bc%e6%95%b0%e6%96%b9%e7%a8%8b%201syms%20x%20y%3b%202y%20%3d%20-0." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2fmatlab%25E5%259F%25BA%25E6%259C%25AC%25E7%2594%25A8%25E6%25B3%2595%25E6%2595%25B4%25E7%2590%2586%2f&name=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201%20%20A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%20%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201%20%20randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%20%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201%20%20zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%20%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201%202%203%204%205%206%207%208%209%2010%20%20for%20i%20%3d%200%20%3a%20100%20for%20j%20%3d%201%20%3a%2010%20if%20%28...%29%20%20...%20else%20...%20end%20end%20...%20end%20%20%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201%20%20fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%20%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
