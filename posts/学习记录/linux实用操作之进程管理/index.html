@@ -16,8 +16,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Linux实用操作之进程管理" />
-<meta property="og:description" content="查看进程 通常使用 ps -ef和ps aux
-ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
+<meta property="og:description" content="查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
  PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="posts" />
@@ -27,8 +26,7 @@ ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux实用操作之进程管理"/>
-<meta name="twitter:description" content="查看进程 通常使用 ps -ef和ps aux
-ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
+<meta name="twitter:description" content="查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
  PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下："/>
 
   
@@ -97,7 +95,7 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bat%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/" aria-label="Previous">
+          <a class="icon" href=" https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
@@ -170,7 +168,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E8%25BF%259B%25E7%25A8%258B%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e8%bf%9b%e7%a8%8b%20%e9%80%9a%e5%b8%b8%e4%bd%bf%e7%94%a8%20ps%20-ef%e5%92%8cps%20aux%0aps%20-ef%20%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20PPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20%20ps%20aux%20%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E8%25BF%259B%25E7%25A8%258B%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20PPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20%20ps%20aux%20%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -186,13 +184,14 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#查看进程">查看进程</a>
+    <li><a href="#查看所有进程">查看所有进程</a>
       <ul>
         <li><a href="#ps--ef">ps -ef</a></li>
         <li><a href="#ps-aux">ps aux</a></li>
-        <li><a href="#查看相关进程">查看相关进程</a></li>
+        <li><a href="#ps--l">ps -l</a></li>
       </ul>
     </li>
+    <li><a href="#查看相关进程">查看相关进程</a></li>
     <li><a href="#关于kill命令">关于kill命令</a></li>
     <li><a href="#停止进程">停止进程</a></li>
   </ul>
@@ -247,8 +246,7 @@ if (!doNotTrack) {
   
     
     <div class="content" itemprop="articleBody">
-      <h2 id="查看进程">查看进程</h2>
-<p>通常使用 <code>ps -ef</code>和<code>ps aux</code></p>
+      <h2 id="查看所有进程">查看所有进程</h2>
 <h3 id="ps--ef">ps -ef</h3>
 <ul>
 <li>-e : all processes (-A)</li>
@@ -298,37 +296,30 @@ USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
 <p>STAT状态位常见的状态字符有:</p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">D      //无法中断的休眠状态（通常 IO 的进程）； 
 R      //正在运行可中在队列中可过行的； 
 S      //处于休眠状态； 
 T      //停止或被追踪； 
-W      //进入内存交换 （从内核2.6开始无效）； 
-X      //死掉的进程 （基本很少见）； 
 Z      //僵尸进程； 
-&lt;      //优先级高的进程 
-N      //优先级较低的进程 
-L      //有些页被锁进内存； 
 s      //进程的领导者（在它之下有子进程）； 
 l      //多线程，克隆线程（使用 CLONE_THREAD, 类似 NPTL pthreads）； 
 +      //位于后台的进程组；
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="查看相关进程">查看相关进程</h3>
+</div><h3 id="ps--l">ps -l</h3>
+<p>仅查阅自己的bash相关程序</p>
+<p>&hellip;</p>
+<h2 id="查看相关进程">查看相关进程</h2>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -428,13 +419,14 @@ root     <span style="color:#666">26558</span> <span style="color:#666">24972</s
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#查看进程">查看进程</a>
+    <li><a href="#查看所有进程">查看所有进程</a>
       <ul>
         <li><a href="#ps--ef">ps -ef</a></li>
         <li><a href="#ps-aux">ps aux</a></li>
-        <li><a href="#查看相关进程">查看相关进程</a></li>
+        <li><a href="#ps--l">ps -l</a></li>
       </ul>
     </li>
+    <li><a href="#查看相关进程">查看相关进程</a></li>
     <li><a href="#关于kill命令">关于kill命令</a></li>
     <li><a href="#停止进程">停止进程</a></li>
   </ul>
@@ -486,7 +478,7 @@ root     <span style="color:#666">26558</span> <span style="color:#666">24972</s
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E8%25BF%259B%25E7%25A8%258B%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e8%bf%9b%e7%a8%8b%20%e9%80%9a%e5%b8%b8%e4%bd%bf%e7%94%a8%20ps%20-ef%e5%92%8cps%20aux%0aps%20-ef%20%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20PPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20%20ps%20aux%20%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E8%25BF%259B%25E7%25A8%258B%25E7%25AE%25A1%25E7%2590%2586%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20PPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20%20ps%20aux%20%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%20%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

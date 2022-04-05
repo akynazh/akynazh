@@ -213,7 +213,8 @@ if (!doNotTrack) {
     <li><a href="#sed命令操作文本">sed命令操作文本</a></li>
     <li><a href="#使用cut处理输出的结果">使用cut处理输出的结果</a></li>
     <li><a href="#使用sort和uniq处理结果">使用sort和uniq处理结果</a></li>
-    <li><a href="#文件读写">文件读写</a></li>
+    <li><a href="#dos与linux换行区别">Dos与Linux换行区别</a></li>
+    <li><a href="#文件编码相关">文件编码相关</a></li>
   </ul>
 </nav>
     </div>
@@ -379,53 +380,33 @@ if (!doNotTrack) {
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">last | cut -d &#39; &#39; -f 1 | sort | uniq
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="文件读写">文件读写</h2>
+</div><h2 id="dos与linux换行区别">Dos与Linux换行区别</h2>
+<p>首先知道：</p>
 <ul>
-<li>新建1.txt并进入编辑模式，ctrl+D离开</li>
+<li>回车 CR \r</li>
+<li>换行 LR \n</li>
 </ul>
+<p>win/dos的换行： \r\n</p>
+<p>unix mac linux的换行： \n</p>
+<p>unix to win 换行失败</p>
+<p>win to unix 多了\r -&gt; \r\n -&gt; ^M</p>
+<h2 id="文件编码相关">文件编码相关</h2>
+<p>查看文件编码</p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cat &gt; 1.txt
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">enca -L none file 
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>追加写入1.txt</li>
-</ul>
+</div><p>文件编码转为UTF-8</p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">echo &gt;&gt; 1.txt
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>新建test开始编辑并将~/.bashrc作为标准输入</li>
-</ul>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cat &gt; test &lt; ~/.bashrc
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>标准输出和标准错误输出都写入testfile</li>
-</ul>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">find /home -name .bashrc &gt; testfile 2&gt;&amp;1 
-or 
-find /home -name .bashrc &amp;&gt; testfile
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">enca -L none -x UTF-8 file 
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -482,7 +463,8 @@ find /home -name .bashrc &amp;&gt; testfile
     <li><a href="#sed命令操作文本">sed命令操作文本</a></li>
     <li><a href="#使用cut处理输出的结果">使用cut处理输出的结果</a></li>
     <li><a href="#使用sort和uniq处理结果">使用sort和uniq处理结果</a></li>
-    <li><a href="#文件读写">文件读写</a></li>
+    <li><a href="#dos与linux换行区别">Dos与Linux换行区别</a></li>
+    <li><a href="#文件编码相关">文件编码相关</a></li>
   </ul>
 </nav>
     </div>
