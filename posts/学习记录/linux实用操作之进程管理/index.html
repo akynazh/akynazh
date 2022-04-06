@@ -192,8 +192,15 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#查看相关进程">查看相关进程</a></li>
-    <li><a href="#关于kill命令">关于kill命令</a></li>
-    <li><a href="#停止进程">停止进程</a></li>
+    <li><a href="#终止或重启进程">终止或重启进程</a>
+      <ul>
+        <li><a href="#关于kill命令">关于kill命令</a></li>
+        <li><a href="#关于killall命令">关于killall命令</a></li>
+        <li><a href="#停止进程">停止进程</a></li>
+      </ul>
+    </li>
+    <li><a href="#背景工作切换">背景工作切换</a></li>
+    <li><a href="#离线管理">离线管理</a></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +226,7 @@ if (!doNotTrack) {
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          3 minute read
+          4 minute read
         </div>
         
         
@@ -334,7 +341,8 @@ root     <span style="color:#666">25889</span> <span style="color:#666">24972</s
 root     <span style="color:#666">26558</span> <span style="color:#666">24972</span>  <span style="color:#666">0</span> 17:51 pts/1    00:00:00 grep --color<span style="color:#666">=</span>auto java
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="关于kill命令">关于kill命令</h2>
+</div><h2 id="终止或重启进程">终止或重启进程</h2>
+<h3 id="关于kill命令">关于kill命令</h3>
 <p>kill用于想某个进程发送信号。</p>
 <p>列出所有序号代表的信号含义：</p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -360,14 +368,57 @@ root     <span style="color:#666">26558</span> <span style="color:#666">24972</s
 </li>
 </ul>
 <p>默认不带信号序号的kill就是SIGTERM，SIGTERM可以被阻塞、处理和忽略，因此有的进程可能无法按预期的结束。</p>
-<h2 id="停止进程">停止进程</h2>
-<p>获取相关进程PID，再通过kill终止占用该端口的程序：</p>
+<h3 id="关于killall命令">关于killall命令</h3>
+<p>无需PID，通过指定的名称进行对应进程的kill操作。</p>
+<p>killall [-iIe] -signal 指令名称</p>
+<p>-i: interactive, 互动式kill</p>
+<h3 id="停止进程">停止进程</h3>
+<ol>
+<li>获取相关进程PID，再通过kill终止占用该端口的程序：</li>
+</ol>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#a2f">kill</span> -9 PID
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>通过相关名称kill</li>
+</ol>
+<p>e.g. 依次询问每个htppd相关程序是否需要被终止</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">killall -i -9 httpd
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="背景工作切换">背景工作切换</h2>
+<ol>
+<li>观察当前工作状态： jobs</li>
+</ol>
+<p><code>jobs -l</code>可同时列出PID。</p>
+<ol start="2">
+<li>
+<p>将背景工作拿到前景来处理：fg %jobnumber</p>
+</li>
+<li>
+<p>让工作在背景的状态变成运行在：bg &amp;jobnumber</p>
+</li>
+</ol>
+<p>e.g.</p>
+<p>ctrl-z将工作放到背景后，默认情况下，工作将处于&quot;Stpped&quot;状态，使用bg开始运行。</p>
+<p>plus: &amp; 将工作放到背景“执行”。</p>
+<h2 id="离线管理">离线管理</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nohub test.sh &amp;
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -427,8 +478,15 @@ root     <span style="color:#666">26558</span> <span style="color:#666">24972</s
       </ul>
     </li>
     <li><a href="#查看相关进程">查看相关进程</a></li>
-    <li><a href="#关于kill命令">关于kill命令</a></li>
-    <li><a href="#停止进程">停止进程</a></li>
+    <li><a href="#终止或重启进程">终止或重启进程</a>
+      <ul>
+        <li><a href="#关于kill命令">关于kill命令</a></li>
+        <li><a href="#关于killall命令">关于killall命令</a></li>
+        <li><a href="#停止进程">停止进程</a></li>
+      </ul>
+    </li>
+    <li><a href="#背景工作切换">背景工作切换</a></li>
+    <li><a href="#离线管理">离线管理</a></li>
   </ul>
 </nav>
     </div>
