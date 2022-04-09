@@ -33,6 +33,15 @@
     </item>
     
     <item>
+      <title>Linux实用操作之文件操作</title>
+      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 05 Apr 2022 22:38:46 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <description>文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
+    </item>
+    
+    <item>
       <title>《强风吹拂》文摘</title>
       <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 03 Apr 2022 23:44:25 +0800</pubDate>
