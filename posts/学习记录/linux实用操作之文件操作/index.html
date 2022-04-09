@@ -327,7 +327,43 @@ d1  p
 /root/test/p/d1/d2/d3
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="文件重命名">文件重命名</h2>
+</div><p>cp后权限会发生改变，-p保持权限不变。</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos d3<span style="color:#666">]</span><span style="color:#080;font-style:italic"># touch f1</span>
+<span style="color:#666">[</span>root@VM-0-11-centos d3<span style="color:#666">]</span><span style="color:#080;font-style:italic"># chmod 777 f1</span>
+<span style="color:#666">[</span>root@VM-0-11-centos d3<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cp f1 f2</span>
+<span style="color:#666">[</span>root@VM-0-11-centos d3<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ll</span>
+total <span style="color:#666">0</span>
+-rwxrwxrwx <span style="color:#666">1</span> root root <span style="color:#666">0</span> Apr <span style="color:#666">10</span> 00:27 f1
+-rwxr-xr-x <span style="color:#666">1</span> root root <span style="color:#666">0</span> Apr <span style="color:#666">10</span> 00:38 f2
+<span style="color:#666">[</span>root@VM-0-11-centos d3<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cp -p f1 f3</span>
+<span style="color:#666">[</span>root@VM-0-11-centos d3<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ll</span>
+total <span style="color:#666">0</span>
+-rwxrwxrwx <span style="color:#666">1</span> root root <span style="color:#666">0</span> Apr <span style="color:#666">10</span> 00:27 f1
+-rwxr-xr-x <span style="color:#666">1</span> root root <span style="color:#666">0</span> Apr <span style="color:#666">10</span> 00:38 f2
+-rwxrwxrwx <span style="color:#666">1</span> root root <span style="color:#666">0</span> Apr <span style="color:#666">10</span> 00:27 f3
+</code></pre></td></tr></table>
+</div>
+</div><p>plus:</p>
+<p>-d：复制时保留链接。这里所说的链接相当于 Windows 系统中的快捷方式。</p>
+<p>-a: -dpR</p>
+<h2 id="文件重命名">文件重命名</h2>
 <p>rename or mv</p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
