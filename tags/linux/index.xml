@@ -24,7 +24,8 @@
       <pubDate>Tue, 05 Apr 2022 22:38:46 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
-      <description>文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
+      <description>观察文件信息 1 2  drwxr-xr-x 2 root root 4096 Jan 2 18:41 source 文件类型+文件权限 目录或链接个数 创建者 所在组 文件大小 修改日期 名称   关于文件类型：
+ d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件  文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
     </item>
     
     <item>
@@ -119,7 +120,7 @@ URL : http://www.cip.cc/${my_ip}
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
-      <description>shell参数  $# 参数个数 $@ 取出所有参数 ${0} 取出第一个参数  变量作用域 1 2 3 4 5 6 7 8  name=jzh echo $name # 输出 jzh bash echo $name # 输出 空 exit export name bash echo $name # 输出 jzh   read命令  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7  if []; then do something elif []; then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
+      <description>读取输入  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7  if []; then do something elif []; then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
     </item>
     
     <item>
