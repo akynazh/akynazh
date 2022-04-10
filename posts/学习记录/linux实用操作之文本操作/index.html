@@ -27,9 +27,10 @@ grep [-acinv] [&ndash;color=auto] &lsquo;搜寻字串&rsquo; filename
 -v ：反向选择，亦即显示出没有 &lsquo;搜寻字串&rsquo; 内容的那一行
 &ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
 awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &lsquo;{[pattern] action}&rsquo; {filenames}
-1  last -n 5 | awk &#39;{print $1 &#34;\t&#34; $3}&#39;    分隔字符  awk -F #-F指定分割字符
+1  last -n 5 | awk &#39;{print $1 &#34;\t&#34; $3}&#39;   注意必须是内双引号外单引号的形式。
+ 分隔字符  awk -F #-F指定所操作文件中的目标分割字符
 使用&quot;,&ldquo;分隔
-1  awk -F, &#39;{print $1,$2}&#39; log." />
+1  awk -F, &#39;{print $1 &#34; - &#34; $2}&#39; log." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-05T00:20:09+08:00" />
@@ -49,9 +50,10 @@ grep [-acinv] [&ndash;color=auto] &lsquo;搜寻字串&rsquo; filename
 -v ：反向选择，亦即显示出没有 &lsquo;搜寻字串&rsquo; 内容的那一行
 &ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
 awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &lsquo;{[pattern] action}&rsquo; {filenames}
-1  last -n 5 | awk &#39;{print $1 &#34;\t&#34; $3}&#39;    分隔字符  awk -F #-F指定分割字符
+1  last -n 5 | awk &#39;{print $1 &#34;\t&#34; $3}&#39;   注意必须是内双引号外单引号的形式。
+ 分隔字符  awk -F #-F指定所操作文件中的目标分割字符
 使用&quot;,&ldquo;分隔
-1  awk -F, &#39;{print $1,$2}&#39; log."/>
+1  awk -F, &#39;{print $1 &#34; - &#34; $2}&#39; log."/>
 
   
   
@@ -192,7 +194,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%2596%2587%25E6%259C%25AC%25E6%2593%258D%25E4%25BD%259C%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%96%87%e6%9c%ac%e6%93%8d%e4%bd%9c&description=%e4%bd%bf%e7%94%a8grep%e6%8a%93%e5%8f%96%e6%9c%9f%e6%9c%9b%e7%9a%84%e7%bb%93%e6%9e%9c%20%e5%9c%a8%e8%bf%87%e5%8e%bb%e7%99%bb%e5%bd%95%e4%b8%bb%e6%9c%ba%e7%9a%84%e4%ba%ba%e4%b8%ad%e6%88%aa%e5%8f%96%e7%99%bb%e5%bd%95%e4%bf%a1%e6%81%af%e5%90%abroot%e7%9a%84%e8%a1%8c%e4%bf%a1%e6%81%af%0a1%20%20last%20%7c%20grep%20%26%2339%3broot%26%2339%3b%20%20%20%e6%af%94%e8%be%83%e9%87%8d%e8%a6%81%ef%bc%8c%e8%ae%b0%e5%bf%86%ef%bc%9a%0agrep%20%5b-acinv%5d%20%5b%26ndash%3bcolor%3dauto%5d%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20filename%0a%e9%80%89%e9%a1%b9%e4%b8%8e%e5%8f%82%e6%95%b0%ef%bc%9a%0a-a%20%ef%bc%9a%e5%b0%86%20binary%20%e6%96%87%e4%bb%b6%e4%bb%a5%20text%20%e6%96%87%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%e6%90%9c%e5%af%bb%e6%95%b0%e6%8d%ae%0a-c%20%ef%bc%9a%e8%ae%a1%e7%ae%97%e6%89%be%e5%88%b0%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e7%9a%84%e6%ac%a1%e6%95%b0%0a-i%20%ef%bc%9a%e5%bf%bd%e7%95%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e7%9a%84%e4%b8%8d%e5%90%8c%ef%bc%8c%e6%89%80%e4%bb%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e8%a7%86%e4%b8%ba%e7%9b%b8%e5%90%8c%0a-n%20%ef%bc%9a%e9%a1%ba%e4%be%bf%e8%be%93%e5%87%ba%e8%a1%8c%e5%8f%b7%0a-v%20%ef%bc%9a%e5%8f%8d%e5%90%91%e9%80%89%e6%8b%a9%ef%bc%8c%e4%ba%a6%e5%8d%b3%e6%98%be%e7%a4%ba%e5%87%ba%e6%b2%a1%e6%9c%89%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e5%86%85%e5%ae%b9%e7%9a%84%e9%82%a3%e4%b8%80%e8%a1%8c%0a%26ndash%3bcolor%3dauto%20%ef%bc%9a%e5%8f%af%e4%bb%a5%e5%b0%86%e6%89%be%e5%88%b0%e7%9a%84%e5%85%b3%e9%94%ae%e5%ad%97%e9%83%a8%e5%88%86%e5%8a%a0%e4%b8%8a%e9%a2%9c%e8%89%b2%e7%9a%84%e6%98%be%e7%a4%ba%e5%96%94%0aawk%e5%91%bd%e4%bb%a4%e6%93%8d%e4%bd%9c%e6%96%87%e6%9c%ac%20%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%ef%bc%9a%e4%bb%a5tab%e9%9a%94%e5%bc%80%e6%89%93%e5%8d%b0%e5%89%8d%e4%ba%94%e8%a1%8c%e4%b8%ad%e6%af%8f%e8%a1%8c%e7%9a%84%e7%ac%ac%e4%b8%80%e5%92%8c%e7%ac%ac%e4%b8%89%e4%b8%aa%e5%ad%97%e7%ac%a6%20%20awk%20%26lsquo%3b%7b%5bpattern%5d%20action%7d%26rsquo%3b%20%7bfilenames%7d%0a1%20%20last%20-n%205%20%7c%20awk%20%26%2339%3b%7bprint%20%241%20%26%2334%3b%5ct%26%2334%3b%20%243%7d%26%2339%3b%20%20%20%20%e5%88%86%e9%9a%94%e5%ad%97%e7%ac%a6%20%20awk%20-F%20%23-F%e6%8c%87%e5%ae%9a%e5%88%86%e5%89%b2%e5%ad%97%e7%ac%a6%0a%e4%bd%bf%e7%94%a8%26quot%3b%2c%26ldquo%3b%e5%88%86%e9%9a%94%0a1%20%20awk%20-F%2c%20%26%2339%3b%7bprint%20%241%2c%242%7d%26%2339%3b%20log." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%2596%2587%25E6%259C%25AC%25E6%2593%258D%25E4%25BD%259C%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%96%87%e6%9c%ac%e6%93%8d%e4%bd%9c&description=%e4%bd%bf%e7%94%a8grep%e6%8a%93%e5%8f%96%e6%9c%9f%e6%9c%9b%e7%9a%84%e7%bb%93%e6%9e%9c%20%e5%9c%a8%e8%bf%87%e5%8e%bb%e7%99%bb%e5%bd%95%e4%b8%bb%e6%9c%ba%e7%9a%84%e4%ba%ba%e4%b8%ad%e6%88%aa%e5%8f%96%e7%99%bb%e5%bd%95%e4%bf%a1%e6%81%af%e5%90%abroot%e7%9a%84%e8%a1%8c%e4%bf%a1%e6%81%af%0a1%20%20last%20%7c%20grep%20%26%2339%3broot%26%2339%3b%20%20%20%e6%af%94%e8%be%83%e9%87%8d%e8%a6%81%ef%bc%8c%e8%ae%b0%e5%bf%86%ef%bc%9a%0agrep%20%5b-acinv%5d%20%5b%26ndash%3bcolor%3dauto%5d%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20filename%0a%e9%80%89%e9%a1%b9%e4%b8%8e%e5%8f%82%e6%95%b0%ef%bc%9a%0a-a%20%ef%bc%9a%e5%b0%86%20binary%20%e6%96%87%e4%bb%b6%e4%bb%a5%20text%20%e6%96%87%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%e6%90%9c%e5%af%bb%e6%95%b0%e6%8d%ae%0a-c%20%ef%bc%9a%e8%ae%a1%e7%ae%97%e6%89%be%e5%88%b0%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e7%9a%84%e6%ac%a1%e6%95%b0%0a-i%20%ef%bc%9a%e5%bf%bd%e7%95%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e7%9a%84%e4%b8%8d%e5%90%8c%ef%bc%8c%e6%89%80%e4%bb%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e8%a7%86%e4%b8%ba%e7%9b%b8%e5%90%8c%0a-n%20%ef%bc%9a%e9%a1%ba%e4%be%bf%e8%be%93%e5%87%ba%e8%a1%8c%e5%8f%b7%0a-v%20%ef%bc%9a%e5%8f%8d%e5%90%91%e9%80%89%e6%8b%a9%ef%bc%8c%e4%ba%a6%e5%8d%b3%e6%98%be%e7%a4%ba%e5%87%ba%e6%b2%a1%e6%9c%89%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e5%86%85%e5%ae%b9%e7%9a%84%e9%82%a3%e4%b8%80%e8%a1%8c%0a%26ndash%3bcolor%3dauto%20%ef%bc%9a%e5%8f%af%e4%bb%a5%e5%b0%86%e6%89%be%e5%88%b0%e7%9a%84%e5%85%b3%e9%94%ae%e5%ad%97%e9%83%a8%e5%88%86%e5%8a%a0%e4%b8%8a%e9%a2%9c%e8%89%b2%e7%9a%84%e6%98%be%e7%a4%ba%e5%96%94%0aawk%e5%91%bd%e4%bb%a4%e6%93%8d%e4%bd%9c%e6%96%87%e6%9c%ac%20%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%ef%bc%9a%e4%bb%a5tab%e9%9a%94%e5%bc%80%e6%89%93%e5%8d%b0%e5%89%8d%e4%ba%94%e8%a1%8c%e4%b8%ad%e6%af%8f%e8%a1%8c%e7%9a%84%e7%ac%ac%e4%b8%80%e5%92%8c%e7%ac%ac%e4%b8%89%e4%b8%aa%e5%ad%97%e7%ac%a6%20%20awk%20%26lsquo%3b%7b%5bpattern%5d%20action%7d%26rsquo%3b%20%7bfilenames%7d%0a1%20%20last%20-n%205%20%7c%20awk%20%26%2339%3b%7bprint%20%241%20%26%2334%3b%5ct%26%2334%3b%20%243%7d%26%2339%3b%20%20%20%e6%b3%a8%e6%84%8f%e5%bf%85%e9%a1%bb%e6%98%af%e5%86%85%e5%8f%8c%e5%bc%95%e5%8f%b7%e5%a4%96%e5%8d%95%e5%bc%95%e5%8f%b7%e7%9a%84%e5%bd%a2%e5%bc%8f%e3%80%82%0a%20%e5%88%86%e9%9a%94%e5%ad%97%e7%ac%a6%20%20awk%20-F%20%23-F%e6%8c%87%e5%ae%9a%e6%89%80%e6%93%8d%e4%bd%9c%e6%96%87%e4%bb%b6%e4%b8%ad%e7%9a%84%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2%e5%ad%97%e7%ac%a6%0a%e4%bd%bf%e7%94%a8%26quot%3b%2c%26ldquo%3b%e5%88%86%e9%9a%94%0a1%20%20awk%20-F%2c%20%26%2339%3b%7bprint%20%241%20%26%2334%3b%20-%20%26%2334%3b%20%242%7d%26%2339%3b%20log." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -214,7 +216,6 @@ if (!doNotTrack) {
     <li><a href="#使用cut处理输出的结果">使用cut处理输出的结果</a></li>
     <li><a href="#使用sort和uniq处理结果">使用sort和uniq处理结果</a></li>
     <li><a href="#dos与linux换行区别">Dos与Linux换行区别</a></li>
-    <li><a href="#文件编码相关">文件编码相关</a></li>
   </ul>
 </nav>
     </div>
@@ -299,17 +300,18 @@ if (!doNotTrack) {
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">last -n 5 | awk &#39;{print $1 &#34;\t&#34; $3}&#39;
 </code></pre></td></tr></table>
 </div>
-</div><ul>
+</div><p>注意必须是内双引号外单引号的形式。</p>
+<ul>
 <li>分隔字符</li>
 </ul>
-<p>awk -F  #-F指定分割字符</p>
+<p>awk -F  #-F指定所操作文件中的目标分割字符</p>
 <p>使用&quot;,&ldquo;分隔</p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">awk -F, &#39;{print $1,$2}&#39; log.txt
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">awk -F, &#39;{print $1 &#34; - &#34; $2}&#39; log.txt
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -350,7 +352,8 @@ if (!doNotTrack) {
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nl /etc/passwd | sed &#39;2,5d&#39;
 </code></pre></td></tr></table>
 </div>
-</div><ul>
+</div><p>注：nl可以额外输出行号</p>
+<ul>
 <li>&lsquo;2,$d&rsquo; 匹配删除了第2到最后一行的文本</li>
 <li>&lsquo;/root/d&rsquo; 匹配删除了含root的行的文本</li>
 </ul>
@@ -390,26 +393,7 @@ if (!doNotTrack) {
 <p>unix mac linux的换行： \n</p>
 <p>unix to win 换行失败</p>
 <p>win to unix 多了\r -&gt; \r\n -&gt; ^M</p>
-<h2 id="文件编码相关">文件编码相关</h2>
-<p>查看文件编码</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">enca -L none file 
-</code></pre></td></tr></table>
-</div>
-</div><p>文件编码转为UTF-8</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">enca -L none -x UTF-8 file 
-</code></pre></td></tr></table>
-</div>
-</div>
+
     </div>
   </article>
 
@@ -464,7 +448,6 @@ if (!doNotTrack) {
     <li><a href="#使用cut处理输出的结果">使用cut处理输出的结果</a></li>
     <li><a href="#使用sort和uniq处理结果">使用sort和uniq处理结果</a></li>
     <li><a href="#dos与linux换行区别">Dos与Linux换行区别</a></li>
-    <li><a href="#文件编码相关">文件编码相关</a></li>
   </ul>
 </nav>
     </div>
@@ -514,7 +497,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%2596%2587%25E6%259C%25AC%25E6%2593%258D%25E4%25BD%259C%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%96%87%e6%9c%ac%e6%93%8d%e4%bd%9c&description=%e4%bd%bf%e7%94%a8grep%e6%8a%93%e5%8f%96%e6%9c%9f%e6%9c%9b%e7%9a%84%e7%bb%93%e6%9e%9c%20%e5%9c%a8%e8%bf%87%e5%8e%bb%e7%99%bb%e5%bd%95%e4%b8%bb%e6%9c%ba%e7%9a%84%e4%ba%ba%e4%b8%ad%e6%88%aa%e5%8f%96%e7%99%bb%e5%bd%95%e4%bf%a1%e6%81%af%e5%90%abroot%e7%9a%84%e8%a1%8c%e4%bf%a1%e6%81%af%0a1%20%20last%20%7c%20grep%20%26%2339%3broot%26%2339%3b%20%20%20%e6%af%94%e8%be%83%e9%87%8d%e8%a6%81%ef%bc%8c%e8%ae%b0%e5%bf%86%ef%bc%9a%0agrep%20%5b-acinv%5d%20%5b%26ndash%3bcolor%3dauto%5d%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20filename%0a%e9%80%89%e9%a1%b9%e4%b8%8e%e5%8f%82%e6%95%b0%ef%bc%9a%0a-a%20%ef%bc%9a%e5%b0%86%20binary%20%e6%96%87%e4%bb%b6%e4%bb%a5%20text%20%e6%96%87%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%e6%90%9c%e5%af%bb%e6%95%b0%e6%8d%ae%0a-c%20%ef%bc%9a%e8%ae%a1%e7%ae%97%e6%89%be%e5%88%b0%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e7%9a%84%e6%ac%a1%e6%95%b0%0a-i%20%ef%bc%9a%e5%bf%bd%e7%95%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e7%9a%84%e4%b8%8d%e5%90%8c%ef%bc%8c%e6%89%80%e4%bb%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e8%a7%86%e4%b8%ba%e7%9b%b8%e5%90%8c%0a-n%20%ef%bc%9a%e9%a1%ba%e4%be%bf%e8%be%93%e5%87%ba%e8%a1%8c%e5%8f%b7%0a-v%20%ef%bc%9a%e5%8f%8d%e5%90%91%e9%80%89%e6%8b%a9%ef%bc%8c%e4%ba%a6%e5%8d%b3%e6%98%be%e7%a4%ba%e5%87%ba%e6%b2%a1%e6%9c%89%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e5%86%85%e5%ae%b9%e7%9a%84%e9%82%a3%e4%b8%80%e8%a1%8c%0a%26ndash%3bcolor%3dauto%20%ef%bc%9a%e5%8f%af%e4%bb%a5%e5%b0%86%e6%89%be%e5%88%b0%e7%9a%84%e5%85%b3%e9%94%ae%e5%ad%97%e9%83%a8%e5%88%86%e5%8a%a0%e4%b8%8a%e9%a2%9c%e8%89%b2%e7%9a%84%e6%98%be%e7%a4%ba%e5%96%94%0aawk%e5%91%bd%e4%bb%a4%e6%93%8d%e4%bd%9c%e6%96%87%e6%9c%ac%20%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%ef%bc%9a%e4%bb%a5tab%e9%9a%94%e5%bc%80%e6%89%93%e5%8d%b0%e5%89%8d%e4%ba%94%e8%a1%8c%e4%b8%ad%e6%af%8f%e8%a1%8c%e7%9a%84%e7%ac%ac%e4%b8%80%e5%92%8c%e7%ac%ac%e4%b8%89%e4%b8%aa%e5%ad%97%e7%ac%a6%20%20awk%20%26lsquo%3b%7b%5bpattern%5d%20action%7d%26rsquo%3b%20%7bfilenames%7d%0a1%20%20last%20-n%205%20%7c%20awk%20%26%2339%3b%7bprint%20%241%20%26%2334%3b%5ct%26%2334%3b%20%243%7d%26%2339%3b%20%20%20%20%e5%88%86%e9%9a%94%e5%ad%97%e7%ac%a6%20%20awk%20-F%20%23-F%e6%8c%87%e5%ae%9a%e5%88%86%e5%89%b2%e5%ad%97%e7%ac%a6%0a%e4%bd%bf%e7%94%a8%26quot%3b%2c%26ldquo%3b%e5%88%86%e9%9a%94%0a1%20%20awk%20-F%2c%20%26%2339%3b%7bprint%20%241%2c%242%7d%26%2339%3b%20log." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2flinux%25E5%25AE%259E%25E7%2594%25A8%25E6%2593%258D%25E4%25BD%259C%25E4%25B9%258B%25E6%2596%2587%25E6%259C%25AC%25E6%2593%258D%25E4%25BD%259C%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e6%96%87%e6%9c%ac%e6%93%8d%e4%bd%9c&description=%e4%bd%bf%e7%94%a8grep%e6%8a%93%e5%8f%96%e6%9c%9f%e6%9c%9b%e7%9a%84%e7%bb%93%e6%9e%9c%20%e5%9c%a8%e8%bf%87%e5%8e%bb%e7%99%bb%e5%bd%95%e4%b8%bb%e6%9c%ba%e7%9a%84%e4%ba%ba%e4%b8%ad%e6%88%aa%e5%8f%96%e7%99%bb%e5%bd%95%e4%bf%a1%e6%81%af%e5%90%abroot%e7%9a%84%e8%a1%8c%e4%bf%a1%e6%81%af%0a1%20%20last%20%7c%20grep%20%26%2339%3broot%26%2339%3b%20%20%20%e6%af%94%e8%be%83%e9%87%8d%e8%a6%81%ef%bc%8c%e8%ae%b0%e5%bf%86%ef%bc%9a%0agrep%20%5b-acinv%5d%20%5b%26ndash%3bcolor%3dauto%5d%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20filename%0a%e9%80%89%e9%a1%b9%e4%b8%8e%e5%8f%82%e6%95%b0%ef%bc%9a%0a-a%20%ef%bc%9a%e5%b0%86%20binary%20%e6%96%87%e4%bb%b6%e4%bb%a5%20text%20%e6%96%87%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%e6%90%9c%e5%af%bb%e6%95%b0%e6%8d%ae%0a-c%20%ef%bc%9a%e8%ae%a1%e7%ae%97%e6%89%be%e5%88%b0%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e7%9a%84%e6%ac%a1%e6%95%b0%0a-i%20%ef%bc%9a%e5%bf%bd%e7%95%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e7%9a%84%e4%b8%8d%e5%90%8c%ef%bc%8c%e6%89%80%e4%bb%a5%e5%a4%a7%e5%b0%8f%e5%86%99%e8%a7%86%e4%b8%ba%e7%9b%b8%e5%90%8c%0a-n%20%ef%bc%9a%e9%a1%ba%e4%be%bf%e8%be%93%e5%87%ba%e8%a1%8c%e5%8f%b7%0a-v%20%ef%bc%9a%e5%8f%8d%e5%90%91%e9%80%89%e6%8b%a9%ef%bc%8c%e4%ba%a6%e5%8d%b3%e6%98%be%e7%a4%ba%e5%87%ba%e6%b2%a1%e6%9c%89%20%26lsquo%3b%e6%90%9c%e5%af%bb%e5%ad%97%e4%b8%b2%26rsquo%3b%20%e5%86%85%e5%ae%b9%e7%9a%84%e9%82%a3%e4%b8%80%e8%a1%8c%0a%26ndash%3bcolor%3dauto%20%ef%bc%9a%e5%8f%af%e4%bb%a5%e5%b0%86%e6%89%be%e5%88%b0%e7%9a%84%e5%85%b3%e9%94%ae%e5%ad%97%e9%83%a8%e5%88%86%e5%8a%a0%e4%b8%8a%e9%a2%9c%e8%89%b2%e7%9a%84%e6%98%be%e7%a4%ba%e5%96%94%0aawk%e5%91%bd%e4%bb%a4%e6%93%8d%e4%bd%9c%e6%96%87%e6%9c%ac%20%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%ef%bc%9a%e4%bb%a5tab%e9%9a%94%e5%bc%80%e6%89%93%e5%8d%b0%e5%89%8d%e4%ba%94%e8%a1%8c%e4%b8%ad%e6%af%8f%e8%a1%8c%e7%9a%84%e7%ac%ac%e4%b8%80%e5%92%8c%e7%ac%ac%e4%b8%89%e4%b8%aa%e5%ad%97%e7%ac%a6%20%20awk%20%26lsquo%3b%7b%5bpattern%5d%20action%7d%26rsquo%3b%20%7bfilenames%7d%0a1%20%20last%20-n%205%20%7c%20awk%20%26%2339%3b%7bprint%20%241%20%26%2334%3b%5ct%26%2334%3b%20%243%7d%26%2339%3b%20%20%20%e6%b3%a8%e6%84%8f%e5%bf%85%e9%a1%bb%e6%98%af%e5%86%85%e5%8f%8c%e5%bc%95%e5%8f%b7%e5%a4%96%e5%8d%95%e5%bc%95%e5%8f%b7%e7%9a%84%e5%bd%a2%e5%bc%8f%e3%80%82%0a%20%e5%88%86%e9%9a%94%e5%ad%97%e7%ac%a6%20%20awk%20-F%20%23-F%e6%8c%87%e5%ae%9a%e6%89%80%e6%93%8d%e4%bd%9c%e6%96%87%e4%bb%b6%e4%b8%ad%e7%9a%84%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2%e5%ad%97%e7%ac%a6%0a%e4%bd%bf%e7%94%a8%26quot%3b%2c%26ldquo%3b%e5%88%86%e9%9a%94%0a1%20%20awk%20-F%2c%20%26%2339%3b%7bprint%20%241%20%26%2334%3b%20-%20%26%2334%3b%20%242%7d%26%2339%3b%20log." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

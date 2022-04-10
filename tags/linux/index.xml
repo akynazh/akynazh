@@ -140,9 +140,10 @@ grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filenam
 -v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行
 &amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
 awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的第一和第三个字符  awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}
-1  last -n 5 | awk &amp;#39;{print $1 &amp;#34;\t&amp;#34; $3}&amp;#39;    分隔字符  awk -F #-F指定分割字符
+1  last -n 5 | awk &amp;#39;{print $1 &amp;#34;\t&amp;#34; $3}&amp;#39;   注意必须是内双引号外单引号的形式。
+ 分隔字符  awk -F #-F指定所操作文件中的目标分割字符
 使用&amp;quot;,&amp;ldquo;分隔
-1  awk -F, &amp;#39;{print $1,$2}&amp;#39; log.</description>
+1  awk -F, &amp;#39;{print $1 &amp;#34; - &amp;#34; $2}&amp;#39; log.</description>
     </item>
     
     <item>
