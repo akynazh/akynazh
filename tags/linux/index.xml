@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 05 Apr 2022 23:01:48 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 23:21:41 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux实用操作之shell变量运算</title>
+      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
+      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# c=$((c+c)) [root@VM-0-11-centos ~]# echo $c 24   比较运算 指令：-eq -ne -lt -gt -ge -le
+1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
+    </item>
+    
     <item>
       <title>Linux实用操作之编辑命令与变量</title>
       <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
@@ -120,7 +130,7 @@ URL : http://www.cip.cc/${my_ip}
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
-      <description>读取输入  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7  if []; then do something elif []; then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
+      <description>读取输入  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7 8 9  if [] then do something elif [] then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
     </item>
     
     <item>
