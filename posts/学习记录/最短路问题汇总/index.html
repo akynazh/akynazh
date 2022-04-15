@@ -34,7 +34,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -244,96 +244,96 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <p>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为<strong>链式前向星</strong>或者邻接表。</p>
 <h2 id="迪杰斯特拉算法-ov2">迪杰斯特拉算法 O(V^2)</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">45
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXN <span style="color:#666">=</span> <span style="color:#666">100</span>;
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> INF <span style="color:#666">=</span> <span style="color:#666">0x3f3f3f3f</span>;
-<span style="color:#080;font-style:italic">// 有向无环图 DAG
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> V, E; 				<span style="color:#080;font-style:italic">// 顶点数和边数
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#080;font-style:italic">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#080;font-style:italic">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> visited[MAXN]; 		<span style="color:#080;font-style:italic">// 某点是否访问过，访问过则为1否则为0
-</span><span style="color:#080;font-style:italic"></span>
-<span style="color:#080;font-style:italic">// 初始化图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">init</span>() {
-	memset(graph, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(graph));
-	cin <span style="color:#666">&gt;&gt;</span> V <span style="color:#666">&gt;&gt;</span> E;
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, cost;
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span> ; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) {
-		cin <span style="color:#666">&gt;&gt;</span> from <span style="color:#666">&gt;&gt;</span> to <span style="color:#666">&gt;&gt;</span> cost;
-		graph[from][to] <span style="color:#666">=</span> cost;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXN = <span style="color:#ff0;font-weight:bold">100</span>;
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> INF = <span style="color:#ff0;font-weight:bold">0x3f3f3f3f</span>;
+<span style="color:#007f7f">// 有向无环图 DAG
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> V, E; 				<span style="color:#007f7f">// 顶点数和边数
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#007f7f">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#007f7f">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> visited[MAXN]; 		<span style="color:#007f7f">// 某点是否访问过，访问过则为1否则为0
+</span><span style="color:#007f7f"></span>
+<span style="color:#007f7f">// 初始化图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> init() {
+	memset(graph, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(graph));
+	cin &gt;&gt; V &gt;&gt; E;
+	<span style="color:#fff;font-weight:bold">int</span> from, to, cost;
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span> ; i &lt; E; i++) {
+		cin &gt;&gt; from &gt;&gt; to &gt;&gt; cost;
+		graph[from][to] = cost;
 	}
 }
-<span style="color:#080;font-style:italic">// 迪杰斯特拉算法求解最短路，针对点展开 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">Dijkstra</span>(<span style="color:#0b0;font-weight:bold">int</span> s) {
-	memset(d, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(d));
-	memset(visited, <span style="color:#666">0</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(visited));
-	visited[s] <span style="color:#666">=</span> <span style="color:#666">1</span>;
-	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; i<span style="color:#666">++</span>) d[i] <span style="color:#666">=</span> graph[s][i];
-	d[s] <span style="color:#666">=</span> <span style="color:#666">0</span>;
-	<span style="color:#0b0;font-weight:bold">int</span> k, min_cost;
-	<span style="color:#080;font-style:italic">// 无负边时最多更新n-1(其他结点数)次 
-</span><span style="color:#080;font-style:italic"></span>	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V <span style="color:#666">-</span> <span style="color:#666">1</span>; i<span style="color:#666">++</span>){
-		min_cost <span style="color:#666">=</span> INF;
-		<span style="color:#080;font-style:italic">// 寻找最未被访问的且权值最小的路径，需要优化的地方 
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> V; j<span style="color:#666">++</span>){
-			<span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#666">!</span>visited[j] <span style="color:#666">&amp;&amp;</span> d[j] <span style="color:#666">&lt;</span> min_cost){
-				k <span style="color:#666">=</span> j;
-				min_cost <span style="color:#666">=</span> d[j];
+<span style="color:#007f7f">// 迪杰斯特拉算法求解最短路，针对点展开 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> Dijkstra(<span style="color:#fff;font-weight:bold">int</span> s) {
+	memset(d, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(d));
+	memset(visited, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(visited));
+	visited[s] = <span style="color:#ff0;font-weight:bold">1</span>;
+	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V; i++) d[i] = graph[s][i];
+	d[s] = <span style="color:#ff0;font-weight:bold">0</span>;
+	<span style="color:#fff;font-weight:bold">int</span> k, min_cost;
+	<span style="color:#007f7f">// 无负边时最多更新n-1(其他结点数)次 
+</span><span style="color:#007f7f"></span>	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V - <span style="color:#ff0;font-weight:bold">1</span>; i++){
+		min_cost = INF;
+		<span style="color:#007f7f">// 寻找最未被访问的且权值最小的路径，需要优化的地方 
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>; j &lt; V; j++){
+			<span style="color:#fff;font-weight:bold">if</span>(!visited[j] &amp;&amp; d[j] &lt; min_cost){
+				k = j;
+				min_cost = d[j];
 			}
 		}
-		visited[k] <span style="color:#666">=</span> <span style="color:#666">1</span>;
-		<span style="color:#080;font-style:italic">// 利用找到的结点更新最短路径
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> V; j<span style="color:#666">++</span>){
-			<span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#666">!</span>visited[j] <span style="color:#666">&amp;&amp;</span> min_cost <span style="color:#666">+</span> graph[k][j] <span style="color:#666">&lt;</span> d[j]){
-				d[j] <span style="color:#666">=</span> min_cost <span style="color:#666">+</span> graph[k][j];
+		visited[k] = <span style="color:#ff0;font-weight:bold">1</span>;
+		<span style="color:#007f7f">// 利用找到的结点更新最短路径
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>; j &lt; V; j++){
+			<span style="color:#fff;font-weight:bold">if</span>(!visited[j] &amp;&amp; min_cost + graph[k][j] &lt; d[j]){
+				d[j] = min_cost + graph[k][j];
 			}
 		}
 	}
@@ -341,97 +341,97 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="迪杰斯特拉算法的堆优化-oelogv-不含负权就用它-">迪杰斯特拉算法的堆优化 O(ElogV) 不含负权就用它 ~</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">46
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXN <span style="color:#666">=</span> <span style="color:#666">100</span>;
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> INF <span style="color:#666">=</span> <span style="color:#666">0x3f3f3f3f</span>;
-<span style="color:#080;font-style:italic">// 有向无环图 DAG
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> V, E; 				<span style="color:#080;font-style:italic">// 顶点数和边数
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#080;font-style:italic">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#080;font-style:italic">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> visited[MAXN]; 		<span style="color:#080;font-style:italic">// 某点是否访问过，访问过则为1否则为0
-</span><span style="color:#080;font-style:italic"></span>
-<span style="color:#a2f;font-weight:bold">typedef</span> pair<span style="color:#666">&lt;</span><span style="color:#0b0;font-weight:bold">int</span>, <span style="color:#0b0;font-weight:bold">int</span><span style="color:#666">&gt;</span> P; <span style="color:#080;font-style:italic">// first: 最短距离 second：通往的顶点编号 
-</span><span style="color:#080;font-style:italic"></span>priority_queue<span style="color:#666">&lt;</span>P, vector<span style="color:#666">&lt;</span>P<span style="color:#666">&gt;</span>, greater<span style="color:#666">&lt;</span>P<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> que; <span style="color:#080;font-style:italic">// greater&lt;T&gt; 从小到大取出 
-</span><span style="color:#080;font-style:italic"></span>
-<span style="color:#080;font-style:italic">// 初始化图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">init</span>() {
-	memset(graph, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(graph));
-	cin <span style="color:#666">&gt;&gt;</span> V <span style="color:#666">&gt;&gt;</span> E;
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, cost;
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span> ; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) {
-		cin <span style="color:#666">&gt;&gt;</span> from <span style="color:#666">&gt;&gt;</span> to <span style="color:#666">&gt;&gt;</span> cost;
-		graph[from][to] <span style="color:#666">=</span> cost;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXN = <span style="color:#ff0;font-weight:bold">100</span>;
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> INF = <span style="color:#ff0;font-weight:bold">0x3f3f3f3f</span>;
+<span style="color:#007f7f">// 有向无环图 DAG
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> V, E; 				<span style="color:#007f7f">// 顶点数和边数
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#007f7f">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#007f7f">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> visited[MAXN]; 		<span style="color:#007f7f">// 某点是否访问过，访问过则为1否则为0
+</span><span style="color:#007f7f"></span>
+<span style="color:#fff;font-weight:bold">typedef</span> pair&lt;<span style="color:#fff;font-weight:bold">int</span>, <span style="color:#fff;font-weight:bold">int</span>&gt; P; <span style="color:#007f7f">// first: 最短距离 second：通往的顶点编号 
+</span><span style="color:#007f7f"></span>priority_queue&lt;P, vector&lt;P&gt;, greater&lt;P&gt; &gt; que; <span style="color:#007f7f">// greater&lt;T&gt; 从小到大取出 
+</span><span style="color:#007f7f"></span>
+<span style="color:#007f7f">// 初始化图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> init() {
+	memset(graph, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(graph));
+	cin &gt;&gt; V &gt;&gt; E;
+	<span style="color:#fff;font-weight:bold">int</span> from, to, cost;
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span> ; i &lt; E; i++) {
+		cin &gt;&gt; from &gt;&gt; to &gt;&gt; cost;
+		graph[from][to] = cost;
 	}
 }
-<span style="color:#080;font-style:italic">// 迪杰斯特拉算法堆优化求解最短路，针对点展开
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">Dijkstra_optimise</span>(<span style="color:#0b0;font-weight:bold">int</span> s) {
-	memset(d, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(d));
-	memset(visited, <span style="color:#666">0</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(visited));
-	<span style="color:#080;font-style:italic">// for(int i = 0; i &lt; V; i++) d[i] = graph[s][i];
-</span><span style="color:#080;font-style:italic"></span>	<span style="color:#080;font-style:italic">// 开始min_cost为0，若加上这一步，0 + graph[k][i]  == d[i] == graph[k][i]，导致无法更新队列 
-</span><span style="color:#080;font-style:italic"></span>	d[s] <span style="color:#666">=</span> <span style="color:#666">0</span>;
-	<span style="color:#0b0;font-weight:bold">int</span> k, min_cost;
-	que.push(P(<span style="color:#666">0</span>, s));
-	<span style="color:#a2f;font-weight:bold">while</span> (<span style="color:#666">!</span>que.empty()) {
-		P p <span style="color:#666">=</span> que.top(); que.pop();
-		<span style="color:#080;font-style:italic">// 通过堆优化直接获得了目标 
-</span><span style="color:#080;font-style:italic"></span>		min_cost <span style="color:#666">=</span> p.first;
-		k <span style="color:#666">=</span> p.second;
-		<span style="color:#080;font-style:italic">// 若已经有更短的路径则不更新 
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#a2f;font-weight:bold">if</span> (min_cost <span style="color:#666">&gt;</span> d[k]) <span style="color:#a2f;font-weight:bold">continue</span>;
-		visited[k] <span style="color:#666">=</span> <span style="color:#666">1</span>;
-		<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; i<span style="color:#666">++</span>) {
-			<span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>visited[i] <span style="color:#666">&amp;&amp;</span> min_cost <span style="color:#666">+</span> graph[k][i] <span style="color:#666">&lt;</span> d[i]) {
-				d[i] <span style="color:#666">=</span> graph[k][i] <span style="color:#666">+</span> min_cost;
+<span style="color:#007f7f">// 迪杰斯特拉算法堆优化求解最短路，针对点展开
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> Dijkstra_optimise(<span style="color:#fff;font-weight:bold">int</span> s) {
+	memset(d, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(d));
+	memset(visited, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(visited));
+	<span style="color:#007f7f">// for(int i = 0; i &lt; V; i++) d[i] = graph[s][i];
+</span><span style="color:#007f7f"></span>	<span style="color:#007f7f">// 开始min_cost为0，若加上这一步，0 + graph[k][i]  == d[i] == graph[k][i]，导致无法更新队列 
+</span><span style="color:#007f7f"></span>	d[s] = <span style="color:#ff0;font-weight:bold">0</span>;
+	<span style="color:#fff;font-weight:bold">int</span> k, min_cost;
+	que.push(P(<span style="color:#ff0;font-weight:bold">0</span>, s));
+	<span style="color:#fff;font-weight:bold">while</span> (!que.empty()) {
+		P p = que.top(); que.pop();
+		<span style="color:#007f7f">// 通过堆优化直接获得了目标 
+</span><span style="color:#007f7f"></span>		min_cost = p.first;
+		k = p.second;
+		<span style="color:#007f7f">// 若已经有更短的路径则不更新 
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">if</span> (min_cost &gt; d[k]) <span style="color:#fff;font-weight:bold">continue</span>;
+		visited[k] = <span style="color:#ff0;font-weight:bold">1</span>;
+		<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V; i++) {
+			<span style="color:#fff;font-weight:bold">if</span> (!visited[i] &amp;&amp; min_cost + graph[k][i] &lt; d[i]) {
+				d[i] = graph[k][i] + min_cost;
 				que.push(P(d[i], i));
 			}
 		} 
@@ -440,269 +440,269 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="贝尔曼福德算法-ove">贝尔曼福德算法 O(VE)</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">38
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#a2f;font-weight:bold">using</span> <span style="color:#a2f;font-weight:bold">namespace</span> std;
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXN <span style="color:#666">=</span> <span style="color:#666">100</span>;
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXE <span style="color:#666">=</span> <span style="color:#666">100</span>; 
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> INF <span style="color:#666">=</span> <span style="color:#666">0x3f3f3f3f</span>;
-<span style="color:#080;font-style:italic">// 有向无环图 DAG
-</span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">struct</span> <span style="color:#00f">Edge</span> {
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, cost;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">using</span> <span style="color:#fff;font-weight:bold">namespace</span> std;
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXN = <span style="color:#ff0;font-weight:bold">100</span>;
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXE = <span style="color:#ff0;font-weight:bold">100</span>; 
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> INF = <span style="color:#ff0;font-weight:bold">0x3f3f3f3f</span>;
+<span style="color:#007f7f">// 有向无环图 DAG
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">struct</span> Edge {
+	<span style="color:#fff;font-weight:bold">int</span> from, to, cost;
 };
-<span style="color:#0b0;font-weight:bold">int</span> V, E; 				<span style="color:#080;font-style:italic">// 顶点数和边数 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#080;font-style:italic">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
-</span><span style="color:#080;font-style:italic"></span>Edge edge[MAXE];		<span style="color:#080;font-style:italic">// 边集  
-</span><span style="color:#080;font-style:italic"></span>
-<span style="color:#080;font-style:italic">// 初始化图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">init</span>() {
-	cin <span style="color:#666">&gt;&gt;</span> V <span style="color:#666">&gt;&gt;</span> E;
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, cost;
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span> ; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) 
-		cin <span style="color:#666">&gt;&gt;</span> edge[i].from <span style="color:#666">&gt;&gt;</span> edge[i].to <span style="color:#666">&gt;&gt;</span> edge[i].cost;
+<span style="color:#fff;font-weight:bold">int</span> V, E; 				<span style="color:#007f7f">// 顶点数和边数 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#007f7f">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
+</span><span style="color:#007f7f"></span>Edge edge[MAXE];		<span style="color:#007f7f">// 边集  
+</span><span style="color:#007f7f"></span>
+<span style="color:#007f7f">// 初始化图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> init() {
+	cin &gt;&gt; V &gt;&gt; E;
+	<span style="color:#fff;font-weight:bold">int</span> from, to, cost;
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span> ; i &lt; E; i++) 
+		cin &gt;&gt; edge[i].from &gt;&gt; edge[i].to &gt;&gt; edge[i].cost;
 }
-<span style="color:#080;font-style:italic">// 贝尔曼福德算法求解最短路，针对边展开 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">Bellman_Ford</span>(<span style="color:#0b0;font-weight:bold">int</span> s)
+<span style="color:#007f7f">// 贝尔曼福德算法求解最短路，针对边展开 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> Bellman_Ford(<span style="color:#fff;font-weight:bold">int</span> s)
 {
-	memset(d, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(d));
-	d[s] <span style="color:#666">=</span> <span style="color:#666">0</span>;
-	<span style="color:#a2f;font-weight:bold">while</span> (<span style="color:#666">1</span>) {
-		<span style="color:#0b0;font-weight:bold">int</span> flag <span style="color:#666">=</span> <span style="color:#666">0</span>;
-		<span style="color:#080;font-style:italic">// DAG下最少更新E次
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) {
-			Edge e <span style="color:#666">=</span> edge[i];
-			<span style="color:#a2f;font-weight:bold">if</span> (d[e.from] <span style="color:#666">!=</span> INF <span style="color:#666">&amp;&amp;</span> d[e.to] <span style="color:#666">&gt;</span> d[e.from] <span style="color:#666">+</span> e.cost) {
-				d[e.to] <span style="color:#666">=</span> d[e.from] <span style="color:#666">+</span> e.cost;
-				flag <span style="color:#666">=</span> <span style="color:#666">1</span>;
+	memset(d, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(d));
+	d[s] = <span style="color:#ff0;font-weight:bold">0</span>;
+	<span style="color:#fff;font-weight:bold">while</span> (<span style="color:#ff0;font-weight:bold">1</span>) {
+		<span style="color:#fff;font-weight:bold">int</span> flag = <span style="color:#ff0;font-weight:bold">0</span>;
+		<span style="color:#007f7f">// DAG下最少更新E次
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; E; i++) {
+			Edge e = edge[i];
+			<span style="color:#fff;font-weight:bold">if</span> (d[e.from] != INF &amp;&amp; d[e.to] &gt; d[e.from] + e.cost) {
+				d[e.to] = d[e.from] + e.cost;
+				flag = <span style="color:#ff0;font-weight:bold">1</span>;
 			}
 		}
-		<span style="color:#080;font-style:italic">// 如果没出现更新则退出
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>flag) <span style="color:#a2f;font-weight:bold">break</span>;
+		<span style="color:#007f7f">// 如果没出现更新则退出
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">if</span> (!flag) <span style="color:#fff;font-weight:bold">break</span>;
 	} 
 } 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="贝尔曼福德算法优化spfa--优先队列含负边就用它">贝尔曼福德算法优化（SPFA + 优先队列）含负边就用它~</h2>
 <p>虽然大家都说SPFA已死，但其实是说笑罢了，含负权边或者负环的题还真离不开这东西~</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">52
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXN <span style="color:#666">=</span> <span style="color:#666">100</span>;
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> INF <span style="color:#666">=</span> <span style="color:#666">0x3f3f3f3f</span>;
-<span style="color:#080;font-style:italic">// 有向无环图 DAG
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> V, E; 				<span style="color:#080;font-style:italic">// 顶点数和边数
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#080;font-style:italic">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#080;font-style:italic">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> vis[MAXN]; 		 <span style="color:#080;font-style:italic">// 结点是否已入队 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> push_count[MAXN]; <span style="color:#080;font-style:italic">// 结点入队次数，若大于等于V，则证明存在负环 
-</span><span style="color:#080;font-style:italic"></span>priority_queue<span style="color:#666">&lt;</span><span style="color:#0b0;font-weight:bold">int</span>, vector<span style="color:#666">&lt;</span><span style="color:#0b0;font-weight:bold">int</span><span style="color:#666">&gt;</span>, greater<span style="color:#666">&lt;</span><span style="color:#0b0;font-weight:bold">int</span><span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> que; <span style="color:#080;font-style:italic">// greater&lt;T&gt; 从小到大取出 
-</span><span style="color:#080;font-style:italic"></span>
-<span style="color:#080;font-style:italic">// 初始化图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">init</span>() {
-	memset(graph, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(graph));
-	cin <span style="color:#666">&gt;&gt;</span> V <span style="color:#666">&gt;&gt;</span> E;
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, cost;
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span> ; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) {
-		cin <span style="color:#666">&gt;&gt;</span> from <span style="color:#666">&gt;&gt;</span> to <span style="color:#666">&gt;&gt;</span> cost;
-		graph[from][to] <span style="color:#666">=</span> cost;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXN = <span style="color:#ff0;font-weight:bold">100</span>;
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> INF = <span style="color:#ff0;font-weight:bold">0x3f3f3f3f</span>;
+<span style="color:#007f7f">// 有向无环图 DAG
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> V, E; 				<span style="color:#007f7f">// 顶点数和边数
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#007f7f">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> d[MAXN]; 			<span style="color:#007f7f">// 从某点s出发到其它任意结点的最短路径长度，初始值为INF 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> vis[MAXN]; 		 <span style="color:#007f7f">// 结点是否已入队 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> push_count[MAXN]; <span style="color:#007f7f">// 结点入队次数，若大于等于V，则证明存在负环 
+</span><span style="color:#007f7f"></span>priority_queue&lt;<span style="color:#fff;font-weight:bold">int</span>, vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;, greater&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; &gt; que; <span style="color:#007f7f">// greater&lt;T&gt; 从小到大取出 
+</span><span style="color:#007f7f"></span>
+<span style="color:#007f7f">// 初始化图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> init() {
+	memset(graph, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(graph));
+	cin &gt;&gt; V &gt;&gt; E;
+	<span style="color:#fff;font-weight:bold">int</span> from, to, cost;
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span> ; i &lt; E; i++) {
+		cin &gt;&gt; from &gt;&gt; to &gt;&gt; cost;
+		graph[from][to] = cost;
 	}
 }
-<span style="color:#080;font-style:italic">// SPFA算法求解最短路 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">SPFA</span>(<span style="color:#0b0;font-weight:bold">int</span> s) {
-	memset(d, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(d));
-	memset(vis, <span style="color:#666">0</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(vis));
-	memset(push_count, <span style="color:#666">0</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(push_count));
-	d[s] <span style="color:#666">=</span> <span style="color:#666">0</span>;
+<span style="color:#007f7f">// SPFA算法求解最短路 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> SPFA(<span style="color:#fff;font-weight:bold">int</span> s) {
+	memset(d, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(d));
+	memset(vis, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(vis));
+	memset(push_count, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(push_count));
+	d[s] = <span style="color:#ff0;font-weight:bold">0</span>;
 	que.push(s);
-	vis[s] <span style="color:#666">=</span> <span style="color:#666">1</span>;
-	push_count[s]<span style="color:#666">++</span>;
-	<span style="color:#a2f;font-weight:bold">while</span> (<span style="color:#666">!</span>que.empty()) {
-		<span style="color:#0b0;font-weight:bold">int</span> flag <span style="color:#666">=</span> <span style="color:#666">0</span>; <span style="color:#080;font-style:italic">// 负环判断 
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#0b0;font-weight:bold">int</span> v <span style="color:#666">=</span> que.top(); que.pop(); vis[v] <span style="color:#666">=</span> <span style="color:#666">0</span>;
-		<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; i<span style="color:#666">++</span>) {
-			<span style="color:#a2f;font-weight:bold">if</span> (d[v] <span style="color:#666">+</span> graph[v][i] <span style="color:#666">&lt;</span> d[i]) {
-				d[i] <span style="color:#666">=</span> d[v] <span style="color:#666">+</span> graph[v][i];
-				<span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>vis[i]) {
+	vis[s] = <span style="color:#ff0;font-weight:bold">1</span>;
+	push_count[s]++;
+	<span style="color:#fff;font-weight:bold">while</span> (!que.empty()) {
+		<span style="color:#fff;font-weight:bold">int</span> flag = <span style="color:#ff0;font-weight:bold">0</span>; <span style="color:#007f7f">// 负环判断 
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">int</span> v = que.top(); que.pop(); vis[v] = <span style="color:#ff0;font-weight:bold">0</span>;
+		<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V; i++) {
+			<span style="color:#fff;font-weight:bold">if</span> (d[v] + graph[v][i] &lt; d[i]) {
+				d[i] = d[v] + graph[v][i];
+				<span style="color:#fff;font-weight:bold">if</span> (!vis[i]) {
 					que.push(i);
-					vis[i] <span style="color:#666">=</span> <span style="color:#666">1</span>;
-					push_count[i]<span style="color:#666">++</span>;
-					<span style="color:#a2f;font-weight:bold">if</span> (push_count[i] <span style="color:#666">&gt;=</span> V) {
-						flag <span style="color:#666">=</span> <span style="color:#666">1</span>;
-						<span style="color:#a2f;font-weight:bold">break</span>;
+					vis[i] = <span style="color:#ff0;font-weight:bold">1</span>;
+					push_count[i]++;
+					<span style="color:#fff;font-weight:bold">if</span> (push_count[i] &gt;= V) {
+						flag = <span style="color:#ff0;font-weight:bold">1</span>;
+						<span style="color:#fff;font-weight:bold">break</span>;
 					}
 				}
 			}
 		}
-		<span style="color:#a2f;font-weight:bold">if</span> (flag) {
-			cout <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34;有负环&#34;</span> <span style="color:#666">&lt;&lt;</span> endl;
-			<span style="color:#a2f;font-weight:bold">break</span>;
+		<span style="color:#fff;font-weight:bold">if</span> (flag) {
+			cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;有负环&#34;</span> &lt;&lt; endl;
+			<span style="color:#fff;font-weight:bold">break</span>;
 		} 
 	} 
 }
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="弗洛伊德算法-ov3-多源问题可以考虑用它">弗洛伊德算法 O(V^3) 多源问题可以考虑用它~</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXN <span style="color:#666">=</span> <span style="color:#666">100</span>;
-<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> INF <span style="color:#666">=</span> <span style="color:#666">0x3f3f3f3f</span>;
-<span style="color:#080;font-style:italic">// 有向无环图 DAG
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> V, E; 				<span style="color:#080;font-style:italic">// 顶点数和边数
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#080;font-style:italic">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> d[MAXN][MAXN];		<span style="color:#080;font-style:italic">// 从任意结点出发到其它任意结点的最短路径长度，初始值为INF
-</span><span style="color:#080;font-style:italic"></span> 
-<span style="color:#080;font-style:italic">// 初始化图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">init</span>() {
-	memset(graph, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(graph));
-	cin <span style="color:#666">&gt;&gt;</span> V <span style="color:#666">&gt;&gt;</span> E;
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, cost;
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span> ; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) {
-		cin <span style="color:#666">&gt;&gt;</span> from <span style="color:#666">&gt;&gt;</span> to <span style="color:#666">&gt;&gt;</span> cost;
-		graph[from][to] <span style="color:#666">=</span> cost;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXN = <span style="color:#ff0;font-weight:bold">100</span>;
+<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> INF = <span style="color:#ff0;font-weight:bold">0x3f3f3f3f</span>;
+<span style="color:#007f7f">// 有向无环图 DAG
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> V, E; 				<span style="color:#007f7f">// 顶点数和边数
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> graph[MAXN][MAXN];  <span style="color:#007f7f">// DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> d[MAXN][MAXN];		<span style="color:#007f7f">// 从任意结点出发到其它任意结点的最短路径长度，初始值为INF
+</span><span style="color:#007f7f"></span> 
+<span style="color:#007f7f">// 初始化图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> init() {
+	memset(graph, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(graph));
+	cin &gt;&gt; V &gt;&gt; E;
+	<span style="color:#fff;font-weight:bold">int</span> from, to, cost;
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span> ; i &lt; E; i++) {
+		cin &gt;&gt; from &gt;&gt; to &gt;&gt; cost;
+		graph[from][to] = cost;
 	}
 }
-<span style="color:#080;font-style:italic">// 弗洛伊德算法求解最短路
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">Floyd</span>()
+<span style="color:#007f7f">// 弗洛伊德算法求解最短路
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> Floyd()
 {
-	<span style="color:#080;font-style:italic">// 初始化矩阵d 
-</span><span style="color:#080;font-style:italic"></span>	memset(d, <span style="color:#666">0x3f</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(d));
-	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; i<span style="color:#666">++</span>)
-		<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> V; j<span style="color:#666">++</span>)
-			d[i][j] <span style="color:#666">=</span> graph[i][j];
-	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> k <span style="color:#666">=</span> <span style="color:#666">0</span>; k <span style="color:#666">&lt;</span> V; k<span style="color:#666">++</span>){<span style="color:#080;font-style:italic">//以顶点k为中转
-</span><span style="color:#080;font-style:italic"></span>		<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; i<span style="color:#666">++</span>){<span style="color:#080;font-style:italic">//从顶点i到顶点j
-</span><span style="color:#080;font-style:italic"></span>			<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> V; j<span style="color:#666">++</span>){
-				<span style="color:#a2f;font-weight:bold">if</span> (d[i][j] <span style="color:#666">&gt;</span> d[i][k] <span style="color:#666">+</span> d[k][j]) 
-					d[i][j] <span style="color:#666">=</span> d[i][k] <span style="color:#666">+</span> d[k][j];
+	<span style="color:#007f7f">// 初始化矩阵d 
+</span><span style="color:#007f7f"></span>	memset(d, <span style="color:#ff0;font-weight:bold">0x3f</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(d));
+	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V; i++)
+		<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>; j &lt; V; j++)
+			d[i][j] = graph[i][j];
+	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> k = <span style="color:#ff0;font-weight:bold">0</span>; k &lt; V; k++){<span style="color:#007f7f">//以顶点k为中转
+</span><span style="color:#007f7f"></span>		<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V; i++){<span style="color:#007f7f">//从顶点i到顶点j
+</span><span style="color:#007f7f"></span>			<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>; j &lt; V; j++){
+				<span style="color:#fff;font-weight:bold">if</span> (d[i][j] &gt; d[i][k] + d[k][j]) 
+					d[i][j] = d[i][k] + d[k][j];
 			}
 		} 
 	} 
@@ -711,78 +711,78 @@ if (!doNotTrack) {
 </div>
 </div><p><strong>附：</strong></p>
 <h2 id="链式前向星">链式前向星</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">int</span> MAXN <span style="color:#666">=</span> <span style="color:#666">100</span>;
-<span style="color:#a2f;font-weight:bold">struct</span> <span style="color:#00f">Edge</span> {
-	<span style="color:#0b0;font-weight:bold">int</span> to; <span style="color:#080;font-style:italic">// 边的终点 
-</span><span style="color:#080;font-style:italic"></span>	<span style="color:#0b0;font-weight:bold">int</span> next; <span style="color:#080;font-style:italic">// 与该边同起点的下一条边的编号 
-</span><span style="color:#080;font-style:italic"></span>	<span style="color:#0b0;font-weight:bold">int</span> w; <span style="color:#080;font-style:italic">// 边的权值 
-</span><span style="color:#080;font-style:italic"></span>};
-Edge edge[MAXN]; <span style="color:#080;font-style:italic">// 所有边的集合
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> head[MAXN]; <span style="color:#080;font-style:italic">// 所有起点的第一条边的编号，初始化为-1 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">int</span> V, E;
-<span style="color:#080;font-style:italic">// 建立图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">build</span>() {
-	<span style="color:#0b0;font-weight:bold">int</span> from, to, w, cnt <span style="color:#666">=</span> <span style="color:#666">0</span>;
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> E; i<span style="color:#666">++</span>) {
-		cin <span style="color:#666">&gt;&gt;</span> from <span style="color:#666">&gt;&gt;</span> to <span style="color:#666">&gt;&gt;</span> w;
-		edge[cnt].to <span style="color:#666">=</span> to;
-		edge[cnt].w <span style="color:#666">=</span> w;
-		edge[cnt].next <span style="color:#666">=</span> head[from]; 
-        <span style="color:#080;font-style:italic">// 因此可将head初始化为-1，当next为-1时代表以该点为起点的边访问结束 
-</span><span style="color:#080;font-style:italic"></span>		head[from] <span style="color:#666">=</span> cnt<span style="color:#666">++</span>;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> MAXN = <span style="color:#ff0;font-weight:bold">100</span>;
+<span style="color:#fff;font-weight:bold">struct</span> Edge {
+	<span style="color:#fff;font-weight:bold">int</span> to; <span style="color:#007f7f">// 边的终点 
+</span><span style="color:#007f7f"></span>	<span style="color:#fff;font-weight:bold">int</span> next; <span style="color:#007f7f">// 与该边同起点的下一条边的编号 
+</span><span style="color:#007f7f"></span>	<span style="color:#fff;font-weight:bold">int</span> w; <span style="color:#007f7f">// 边的权值 
+</span><span style="color:#007f7f"></span>};
+Edge edge[MAXN]; <span style="color:#007f7f">// 所有边的集合
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> head[MAXN]; <span style="color:#007f7f">// 所有起点的第一条边的编号，初始化为-1 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> V, E;
+<span style="color:#007f7f">// 建立图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> build() {
+	<span style="color:#fff;font-weight:bold">int</span> from, to, w, cnt = <span style="color:#ff0;font-weight:bold">0</span>;
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; E; i++) {
+		cin &gt;&gt; from &gt;&gt; to &gt;&gt; w;
+		edge[cnt].to = to;
+		edge[cnt].w = w;
+		edge[cnt].next = head[from]; 
+        <span style="color:#007f7f">// 因此可将head初始化为-1，当next为-1时代表以该点为起点的边访问结束 
+</span><span style="color:#007f7f"></span>		head[from] = cnt++;
 	}
 }
-<span style="color:#080;font-style:italic">// 遍历整个图 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">traverse</span>() {
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; i<span style="color:#666">++</span>) {
-		<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> head[i]; j <span style="color:#666">!=</span> <span style="color:#666">-</span><span style="color:#666">1</span>; j <span style="color:#666">=</span> edge[j].next) {
-			cout <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34; from &#34;</span> <span style="color:#666">&lt;&lt;</span> i <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34; to &#34;</span> <span style="color:#666">&lt;&lt;</span> edge[j].to <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34; weight: &#34;</span> <span style="color:#666">&lt;&lt;</span> edge[j].w <span style="color:#666">&lt;&lt;</span> endl;
+<span style="color:#007f7f">// 遍历整个图 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> traverse() {
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; V; i++) {
+		<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> j = head[i]; j != -<span style="color:#ff0;font-weight:bold">1</span>; j = edge[j].next) {
+			cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34; from &#34;</span> &lt;&lt; i &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34; to &#34;</span> &lt;&lt; edge[j].to &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34; weight: &#34;</span> &lt;&lt; edge[j].w &lt;&lt; endl;
 		}
 	}
 }
-<span style="color:#080;font-style:italic">// 遍历某个结点的邻接点 
-</span><span style="color:#080;font-style:italic"></span><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">traverse_v</span>(<span style="color:#0b0;font-weight:bold">int</span> v) {
-	<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> head[v]; i <span style="color:#666">!=</span> <span style="color:#666">-</span><span style="color:#666">1</span>; i <span style="color:#666">=</span> edge[i].next) {
-		cout <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34; from &#34;</span> <span style="color:#666">&lt;&lt;</span> v <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34; to &#34;</span> <span style="color:#666">&lt;&lt;</span> edge[i].to <span style="color:#666">&lt;&lt;</span> <span style="color:#b44">&#34; weight: &#34;</span> <span style="color:#666">&lt;&lt;</span> edge[i].w <span style="color:#666">&lt;&lt;</span> endl; 
+<span style="color:#007f7f">// 遍历某个结点的邻接点 
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> traverse_v(<span style="color:#fff;font-weight:bold">int</span> v) {
+	<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = head[v]; i != -<span style="color:#ff0;font-weight:bold">1</span>; i = edge[i].next) {
+		cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34; from &#34;</span> &lt;&lt; v &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34; to &#34;</span> &lt;&lt; edge[i].to &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34; weight: &#34;</span> &lt;&lt; edge[i].w &lt;&lt; endl; 
 	}
 }
 </code></pre></td></tr></table>
@@ -805,7 +805,7 @@ Edge edge[MAXN]; <span style="color:#080;font-style:italic">// 所有边的集�
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

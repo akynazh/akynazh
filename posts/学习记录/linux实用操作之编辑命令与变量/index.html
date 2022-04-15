@@ -34,7 +34,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -265,136 +265,136 @@ if (!doNotTrack) {
 </ul>
 <h3 id="编辑etcbashrc文件">编辑/etc/bashrc文件</h3>
 <p>也可以选择编辑/etc/profile。</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># vim /etc/bashrc # 进行全局配置</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">[root@VM-0-11-centos ~]<span style="color:#007f7f"># vim /etc/bashrc # 进行全局配置</span>
 
 进行添加如下：
 
-<span style="color:#080;font-style:italic">#JAVA</span>
-<span style="color:#a2f">export</span> <span style="color:#b8860b">JAVA_HOME</span><span style="color:#666">=</span>/usr/local/java/jdk1.8.0_311
-<span style="color:#a2f">export</span> <span style="color:#b8860b">PATH</span><span style="color:#666">=</span><span style="color:#b8860b">$JAVA_HOME</span>/bin:<span style="color:#b8860b">$PATH</span>
-<span style="color:#a2f">export</span> <span style="color:#b8860b">CLASSPATH</span><span style="color:#666">=</span>.:<span style="color:#b8860b">$JAVA_HOME</span>/lib/dt.jar:<span style="color:#b8860b">$JAVA_HOME</span>/lib/tools.jar
+<span style="color:#007f7f">#JAVA</span>
+<span style="color:#fff;font-weight:bold">export</span> JAVA_HOME=/usr/local/java/jdk1.8.0_311
+<span style="color:#fff;font-weight:bold">export</span> PATH=$JAVA_HOME/bin:$PATH
+<span style="color:#fff;font-weight:bold">export</span> CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 </code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>使配置文件生效：</li>
 </ul>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a2f">source</span> /etc/bashrc
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#fff;font-weight:bold">source</span> /etc/bashrc
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="验证java环境">验证Java环境：</h3>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># java -version</span>
-java version <span style="color:#b44">&#34;1.8.0_311&#34;</span>
-Java<span style="color:#666">(</span>TM<span style="color:#666">)</span> SE Runtime Environment <span style="color:#666">(</span>build 1.8.0_311-b11<span style="color:#666">)</span>
-Java HotSpot<span style="color:#666">(</span>TM<span style="color:#666">)</span> 64-Bit Server VM <span style="color:#666">(</span>build 25.311-b11, mixed mode<span style="color:#666">)</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># javac</span>
-Usage: javac &lt;options&gt; &lt;<span style="color:#a2f">source</span> files&gt;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">[root@VM-0-11-centos ~]<span style="color:#007f7f"># java -version</span>
+java version <span style="color:#0ff;font-weight:bold">&#34;1.8.0_311&#34;</span>
+Java(TM) SE Runtime Environment (build 1.8.0_311-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode)
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># javac</span>
+Usage: javac &lt;options&gt; &lt;<span style="color:#fff;font-weight:bold">source</span> files&gt;
 where possible options include:
 ...
 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="为某一个用户添加alias">为某一个用户添加alias</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/etc/.bashrc
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/etc/.bashrc
 ------
-<span style="color:#a2f">alias</span> <span style="color:#b8860b">lm</span><span style="color:#666">=</span><span style="color:#b44">&#39;ls -al | more&#39;</span>
+<span style="color:#fff;font-weight:bold">alias</span> lm=<span style="color:#0ff;font-weight:bold">&#39;ls -al | more&#39;</span>
 ------
 
-<span style="color:#a2f">source</span> ~/etc/.bashrc
+<span style="color:#fff;font-weight:bold">source</span> ~/etc/.bashrc
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="为所有用户添加alias">为所有用户添加alias</h2>
 <p>登录linux系统，首先执行<code>/etc/profile.d</code>中的文件，再去执行<code>~/etc/.bashrc</code>中的文件。</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cd /etc/profile.d</span>
-<span style="color:#666">[</span>root@VM-0-11-centos profile.d<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># cd /etc/profile.d</span>
+[root@VM-0-11-centos profile.d]<span style="color:#007f7f"># ls</span>
 256term.csh                   colorgrep.csh  csh.local  less.sh   which2.csh
 256term.sh                    colorgrep.sh   lang.csh   sh.local  which2.sh
 abrt-console-notification.sh  colorls.csh    lang.sh    vim.csh
 bash_completion.sh            colorls.sh     less.csh   vim.sh
-<span style="color:#080;font-style:italic"># 可以看到这里有很多脚本文件</span>
+<span style="color:#007f7f"># 可以看到这里有很多脚本文件</span>
 
-<span style="color:#080;font-style:italic"># 编辑自己的脚本文件</span>
-<span style="color:#666">[</span>root@VM-0-11-centos profile.d<span style="color:#666">]</span><span style="color:#080;font-style:italic"># vim allalias.sh</span>
+<span style="color:#007f7f"># 编辑自己的脚本文件</span>
+[root@VM-0-11-centos profile.d]<span style="color:#007f7f"># vim allalias.sh</span>
 ------
-<span style="color:#a2f">alias</span> <span style="color:#b8860b">lm</span><span style="color:#666">=</span><span style="color:#b44">&#39;ls -al | more&#39;</span>
+<span style="color:#fff;font-weight:bold">alias</span> lm=<span style="color:#0ff;font-weight:bold">&#39;ls -al | more&#39;</span>
 ------
 
-<span style="color:#080;font-style:italic"># 使生效</span>
-<span style="color:#666">[</span>root@VM-0-11-centos profile.d<span style="color:#666">]</span><span style="color:#080;font-style:italic"># source /etc/profile</span>
+<span style="color:#007f7f"># 使生效</span>
+[root@VM-0-11-centos profile.d]<span style="color:#007f7f"># source /etc/profile</span>
 
-<span style="color:#080;font-style:italic"># test</span>
-<span style="color:#666">[</span>root@VM-0-11-centos profile.d<span style="color:#666">]</span><span style="color:#080;font-style:italic"># lm</span>
-total <span style="color:#666">92</span>
-drwxr-xr-x.  <span style="color:#666">2</span> root root  <span style="color:#666">4096</span> Apr  <span style="color:#666">5</span> 22:56 .
-drwxr-xr-x. <span style="color:#666">90</span> root root <span style="color:#666">12288</span> Apr  <span style="color:#666">5</span> 22:49 ..
--rw-r--r--   <span style="color:#666">1</span> root root   <span style="color:#666">771</span> Nov <span style="color:#666">17</span>  <span style="color:#666">2020</span> 256term.csh
+<span style="color:#007f7f"># test</span>
+[root@VM-0-11-centos profile.d]<span style="color:#007f7f"># lm</span>
+total <span style="color:#ff0;font-weight:bold">92</span>
+drwxr-xr-x.  <span style="color:#ff0;font-weight:bold">2</span> root root  <span style="color:#ff0;font-weight:bold">4096</span> Apr  <span style="color:#ff0;font-weight:bold">5</span> 22:56 .
+drwxr-xr-x. <span style="color:#ff0;font-weight:bold">90</span> root root <span style="color:#ff0;font-weight:bold">12288</span> Apr  <span style="color:#ff0;font-weight:bold">5</span> 22:49 ..
+-rw-r--r--   <span style="color:#ff0;font-weight:bold">1</span> root root   <span style="color:#ff0;font-weight:bold">771</span> Nov <span style="color:#ff0;font-weight:bold">17</span>  <span style="color:#ff0;font-weight:bold">2020</span> 256term.csh
 ......
 </code></pre></td></tr></table>
 </div>
@@ -415,7 +415,7 @@ drwxr-xr-x. <span style="color:#666">90</span> root root <span style="color:#666
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

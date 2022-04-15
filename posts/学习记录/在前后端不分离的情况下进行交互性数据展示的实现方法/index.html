@@ -48,7 +48,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -307,16 +307,16 @@ if (!doNotTrack) {
 <li>前端将该数据删除或修改为指定默认值</li>
 </ul>
 <p>这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#666">&lt;</span>script th<span style="color:#666">:</span>inline<span style="color:#666">=</span><span style="color:#b44">&#34;javascript&#34;</span><span style="color:#666">&gt;</span>
-<span style="color:#080;font-style:italic">// 这里可以通过session访问值
-</span><span style="color:#080;font-style:italic"></span><span style="color:#666">&lt;</span><span style="">/script&gt;</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">&lt;script th:inline=<span style="color:#0ff;font-weight:bold">&#34;javascript&#34;</span>&gt;
+<span style="color:#007f7f">// 这里可以通过session访问值
+</span><span style="color:#007f7f"></span>&lt;<span style="color:#f00">/script&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="缺陷-1">缺陷</h3>
@@ -331,20 +331,20 @@ if (!doNotTrack) {
 </ul>
 <h3 id="示例提醒用户首先进行登录">示例：提醒用户首先进行登录</h3>
 <h4 id="后端代码">后端代码</h4>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f">@GetMapping</span><span style="color:#666">(</span><span style="color:#b44">&#34;/loginFirst&#34;</span><span style="color:#666">)</span>
-<span style="color:#a2f;font-weight:bold">public</span> String <span style="color:#00a000">loginFirst</span><span style="color:#666">(</span>RedirectAttributesModelMap model<span style="color:#666">)</span> <span style="color:#666">{</span>
-    model<span style="color:#666">.</span><span style="color:#b44">addFlashAttribute</span><span style="color:#666">(</span><span style="color:#b44">&#34;msg&#34;</span><span style="color:#666">,</span> <span style="color:#b44">&#34;请先进行登录&#34;</span><span style="color:#666">);</span>
-    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b44">&#34;redirect:/&#34;</span><span style="color:#666">;</span>
-<span style="color:#666">}</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@GetMapping(<span style="color:#0ff;font-weight:bold">&#34;/loginFirst&#34;</span>)
+<span style="color:#fff;font-weight:bold">public</span> String loginFirst(RedirectAttributesModelMap model) {
+    model.<span style="color:#007f7f">addFlashAttribute</span>(<span style="color:#0ff;font-weight:bold">&#34;msg&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;请先进行登录&#34;</span>);
+    <span style="color:#fff;font-weight:bold">return</span> <span style="color:#0ff;font-weight:bold">&#34;redirect:/&#34;</span>;
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>解析：</p>
@@ -358,89 +358,89 @@ if (!doNotTrack) {
 </ol>
 <h4 id="前端代码">前端代码</h4>
 <p>必须注意，这里外部js无法通过$('#msg').val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#008000;font-weight:bold">div</span> <span style="color:#b44">class</span><span style="color:#666">=</span><span style="color:#b44">&#34;alert&#34;</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
-&lt;<span style="color:#008000;font-weight:bold">input</span> <span style="color:#b44">id</span><span style="color:#666">=</span><span style="color:#b44">&#34;msg&#34;</span> <span style="color:#b44">value</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">style</span><span style="color:#666">=</span><span style="color:#b44">&#34;display: none&#34;</span>/&gt;
-&lt;<span style="color:#008000;font-weight:bold">script</span> <span style="color:#b44">th:inline</span><span style="color:#666">=</span><span style="color:#b44">&#34;javascript&#34;</span>&gt;
-    <span style="color:#a2f;font-weight:bold">let</span> msg <span style="color:#666">=</span> [[${msg}]];
-    <span style="color:#a2f">document</span>.getElementById(<span style="color:#b44">&#34;msg&#34;</span>).setAttribute(<span style="color:#b44">&#34;value&#34;</span>, msg.toString());
-&lt;/<span style="color:#008000;font-weight:bold">script</span>&gt;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">class</span>=<span style="color:#0ff;font-weight:bold">&#34;alert&#34;</span>&gt;&lt;/<span style="font-weight:bold">div</span>&gt;
+&lt;<span style="font-weight:bold">input</span> <span style="color:#007f7f">id</span>=<span style="color:#0ff;font-weight:bold">&#34;msg&#34;</span> <span style="color:#007f7f">value</span>=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span> <span style="color:#007f7f">style</span>=<span style="color:#0ff;font-weight:bold">&#34;display: none&#34;</span>/&gt;
+&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">th:inline</span>=<span style="color:#0ff;font-weight:bold">&#34;javascript&#34;</span>&gt;
+    <span style="color:#fff;font-weight:bold">let</span> msg = [[${msg}]];
+    <span style="color:#fff;font-weight:bold">document</span>.getElementById(<span style="color:#0ff;font-weight:bold">&#34;msg&#34;</span>).setAttribute(<span style="color:#0ff;font-weight:bold">&#34;value&#34;</span>, msg.toString());
+&lt;/<span style="font-weight:bold">script</span>&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>这里可以在inline部分完成所有信息展示操作，但由于thymeleaf内联js无法调用jquery代码，所以我把msg存到隐藏域中，再通过jquery代码调用</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$(<span style="color:#a2f">document</span>).ready(<span style="color:#a2f;font-weight:bold">function</span> () {
-    <span style="color:#a2f;font-weight:bold">let</span> msg <span style="color:#666">=</span> $(<span style="color:#b44">&#39;#msg&#39;</span>).val();
-    <span style="color:#a2f;font-weight:bold">if</span> (msg <span style="color:#666">!==</span> <span style="color:#b44">&#39;&#39;</span> <span style="color:#666">&amp;&amp;</span> msg <span style="color:#666">!=</span> <span style="color:#a2f;font-weight:bold">null</span>) {
-        $(<span style="color:#b44">&#39;.alert&#39;</span>).html(msg).addClass(<span style="color:#b44">&#39;alert-info&#39;</span>).show().delay(<span style="color:#666">1500</span>).fadeOut();
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$(<span style="color:#fff;font-weight:bold">document</span>).ready(<span style="color:#fff;font-weight:bold">function</span> () {
+    <span style="color:#fff;font-weight:bold">let</span> msg = $(<span style="color:#0ff;font-weight:bold">&#39;#msg&#39;</span>).val();
+    <span style="color:#fff;font-weight:bold">if</span> (msg !== <span style="color:#0ff;font-weight:bold">&#39;&#39;</span> &amp;&amp; msg != <span style="color:#fff;font-weight:bold">null</span>) {
+        $(<span style="color:#0ff;font-weight:bold">&#39;.alert&#39;</span>).html(msg).addClass(<span style="color:#0ff;font-weight:bold">&#39;alert-info&#39;</span>).show().delay(<span style="color:#ff0;font-weight:bold">1500</span>).fadeOut();
     }
 })
 </code></pre></td></tr></table>
 </div>
 </div><p>提示信息的css代码</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#080;font-style:italic">/* 触发方式: $(&#39;.alert&#39;).html(&#34;errorMsg&#34;).addClass(&#39;alert-info&#39;).show().delay(1500).fadeOut();*/</span>
-.<span style="color:#00f">alert</span> {
-    <span style="color:#a2f;font-weight:bold">display</span>: <span style="color:#a2f;font-weight:bold">none</span>;
-    <span style="color:#a2f;font-weight:bold">position</span>: <span style="color:#a2f;font-weight:bold">fixed</span>;
-    <span style="color:#a2f;font-weight:bold">top</span>: <span style="color:#666">10</span><span style="color:#0b0;font-weight:bold">%</span>;
-    <span style="color:#a2f;font-weight:bold">left</span>: <span style="color:#666">50</span><span style="color:#0b0;font-weight:bold">%</span>;
-    <span style="color:#a2f;font-weight:bold">min-width</span>: <span style="color:#666">150</span><span style="color:#0b0;font-weight:bold">px</span>;
-    <span style="color:#a2f;font-weight:bold">margin-left</span>: <span style="color:#666">-100</span><span style="color:#0b0;font-weight:bold">px</span>;
-    <span style="color:#a2f;font-weight:bold">z-index</span>: <span style="color:#666">99999</span>;
-    <span style="color:#a2f;font-weight:bold">padding</span>: <span style="color:#666">15</span><span style="color:#0b0;font-weight:bold">px</span>;
-    <span style="color:#a2f;font-weight:bold">border</span>: <span style="color:#666">1</span><span style="color:#0b0;font-weight:bold">px</span> <span style="color:#a2f;font-weight:bold">solid</span> <span style="color:#a2f;font-weight:bold">transparent</span>;
-    <span style="color:#a2f;font-weight:bold">border-radius</span>: <span style="color:#666">5</span><span style="color:#0b0;font-weight:bold">px</span>;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#007f7f">/* 触发方式: $(&#39;.alert&#39;).html(&#34;errorMsg&#34;).addClass(&#39;alert-info&#39;).show().delay(1500).fadeOut();*/</span>
+.alert {
+    <span style="color:#fff;font-weight:bold">display</span>: <span style="color:#fff;font-weight:bold">none</span>;
+    <span style="color:#fff;font-weight:bold">position</span>: <span style="color:#fff;font-weight:bold">fixed</span>;
+    <span style="color:#fff;font-weight:bold">top</span>: <span style="color:#ff0;font-weight:bold">10</span><span style="color:#fff;font-weight:bold">%</span>;
+    <span style="color:#fff;font-weight:bold">left</span>: <span style="color:#ff0;font-weight:bold">50</span><span style="color:#fff;font-weight:bold">%</span>;
+    <span style="color:#fff;font-weight:bold">min-width</span>: <span style="color:#ff0;font-weight:bold">150</span><span style="color:#fff;font-weight:bold">px</span>;
+    <span style="color:#fff;font-weight:bold">margin-left</span>: <span style="color:#ff0;font-weight:bold">-100</span><span style="color:#fff;font-weight:bold">px</span>;
+    <span style="color:#fff;font-weight:bold">z-index</span>: <span style="color:#ff0;font-weight:bold">99999</span>;
+    <span style="color:#fff;font-weight:bold">padding</span>: <span style="color:#ff0;font-weight:bold">15</span><span style="color:#fff;font-weight:bold">px</span>;
+    <span style="color:#fff;font-weight:bold">border</span>: <span style="color:#ff0;font-weight:bold">1</span><span style="color:#fff;font-weight:bold">px</span> <span style="color:#fff;font-weight:bold">solid</span> <span style="color:#fff;font-weight:bold">transparent</span>;
+    <span style="color:#fff;font-weight:bold">border-radius</span>: <span style="color:#ff0;font-weight:bold">5</span><span style="color:#fff;font-weight:bold">px</span>;
 }
-.<span style="color:#00f">alert-info</span> {
-    <span style="color:#a2f;font-weight:bold">color</span>: <span style="color:#a2f;font-weight:bold">white</span>;
-    <span style="color:#a2f;font-weight:bold">text-align</span>: <span style="color:#a2f;font-weight:bold">center</span>;
-    <span style="color:#a2f;font-weight:bold">font-family</span>: <span style="color:#b44">&#34;Times New Roman&#34;</span>, SansSerif, <span style="color:#a2f;font-weight:bold">sans-serif</span>;
-    <span style="color:#a2f;font-weight:bold">background-color</span>: <span style="color:#a2f;font-weight:bold">black</span>;
-    <span style="color:#a2f;font-weight:bold">background-image</span>: <span style="color:#a2f">linear-gradient</span>(<span style="color:#a2f;font-weight:bold">to</span> <span style="color:#a2f;font-weight:bold">bottom</span>, <span style="color:#a2f;font-weight:bold">gray</span>, <span style="color:#a2f;font-weight:bold">black</span>);
-    <span style="color:#a2f;font-weight:bold">border-color</span>: <span style="color:#a2f;font-weight:bold">black</span>;
+.alert-info {
+    <span style="color:#fff;font-weight:bold">color</span>: <span style="color:#fff;font-weight:bold">white</span>;
+    <span style="color:#fff;font-weight:bold">text-align</span>: <span style="color:#fff;font-weight:bold">center</span>;
+    <span style="color:#fff;font-weight:bold">font-family</span>: <span style="color:#0ff;font-weight:bold">&#34;Times New Roman&#34;</span>, SansSerif, <span style="color:#fff;font-weight:bold">sans-serif</span>;
+    <span style="color:#fff;font-weight:bold">background-color</span>: <span style="color:#fff;font-weight:bold">black</span>;
+    <span style="color:#fff;font-weight:bold">background-image</span>: <span style="color:#fff;font-weight:bold">linear-gradient</span>(<span style="color:#fff;font-weight:bold">to</span> <span style="color:#fff;font-weight:bold">bottom</span>, <span style="color:#fff;font-weight:bold">gray</span>, <span style="color:#fff;font-weight:bold">black</span>);
+    <span style="color:#fff;font-weight:bold">border-color</span>: <span style="color:#fff;font-weight:bold">black</span>;
 }
 </code></pre></td></tr></table>
 </div>
@@ -470,7 +470,7 @@ if (!doNotTrack) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

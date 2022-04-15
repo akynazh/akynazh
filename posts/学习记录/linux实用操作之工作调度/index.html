@@ -32,7 +32,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -249,157 +249,157 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="at命令">at命令</h2>
 <h3 id="create-job">create job</h3>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at 22:38</span>
-at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello world&#34;</span> &gt; ~/at-test.txt
-<span style="color:#080;font-style:italic"># ctrl D</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># at 22:38</span>
+at&gt; <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;hello world&#34;</span> &gt; ~/at-test.txt
+<span style="color:#007f7f"># ctrl D</span>
 at&gt; &lt;EOT&gt;
-job <span style="color:#666">3</span> at Thu Mar <span style="color:#666">31</span> 22:38:00 <span style="color:#666">2022</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at now +2 minute</span>
-at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello kitty&#34;</span> &gt;&gt; ~/at-test.txt
-<span style="color:#080;font-style:italic"># ctrl D</span>
+job <span style="color:#ff0;font-weight:bold">3</span> at Thu Mar <span style="color:#ff0;font-weight:bold">31</span> 22:38:00 <span style="color:#ff0;font-weight:bold">2022</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># at now +2 minute</span>
+at&gt; <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;hello kitty&#34;</span> &gt;&gt; ~/at-test.txt
+<span style="color:#007f7f"># ctrl D</span>
 at&gt; &lt;EOT&gt;
-job <span style="color:#666">4</span> at Thu Mar <span style="color:#666">31</span> 22:39:00 <span style="color:#666">2022</span>
+job <span style="color:#ff0;font-weight:bold">4</span> at Thu Mar <span style="color:#ff0;font-weight:bold">31</span> 22:39:00 <span style="color:#ff0;font-weight:bold">2022</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="check-job">check job</h3>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># ls</span>
 at-test.txt
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat at-test.txt</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># cat at-test.txt</span>
 hello world
 
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atq # 查看将要运行的job</span>
-<span style="color:#666">4</span>       Thu Mar <span style="color:#666">31</span> 22:39:00 <span style="color:#666">2022</span> a root
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># atq # 查看将要运行的job</span>
+<span style="color:#ff0;font-weight:bold">4</span>       Thu Mar <span style="color:#ff0;font-weight:bold">31</span> 22:39:00 <span style="color:#ff0;font-weight:bold">2022</span> a root
 
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat ~/at-test.txt</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># cat ~/at-test.txt</span>
 hello world
 hello kitty
 
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># jobs # 查看正在进行的job情况</span>
-<span style="color:#666">[</span>2<span style="color:#666">]</span>+  Stopped                 at now + <span style="color:#666">5</span> minutes
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># jobs # 查看正在进行的job情况</span>
+[2]+  Stopped                 at now + <span style="color:#ff0;font-weight:bold">5</span> minutes
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="cancel-job">cancel job</h3>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># at now + 1 minutes</span>
-at&gt; <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;hello monkey&#34;</span> &gt;&gt; ~/at-test.txt
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># at now + 1 minutes</span>
+at&gt; <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;hello monkey&#34;</span> &gt;&gt; ~/at-test.txt
 at&gt; &lt;EOT&gt;
-job <span style="color:#666">5</span> at Thu Mar <span style="color:#666">31</span> 22:40:00 <span style="color:#666">2022</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atq</span>
-<span style="color:#666">5</span>       Thu Mar <span style="color:#666">31</span> 22:40:00 <span style="color:#666">2022</span> a root
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># atrm 5</span>
+job <span style="color:#ff0;font-weight:bold">5</span> at Thu Mar <span style="color:#ff0;font-weight:bold">31</span> 22:40:00 <span style="color:#ff0;font-weight:bold">2022</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># atq</span>
+<span style="color:#ff0;font-weight:bold">5</span>       Thu Mar <span style="color:#ff0;font-weight:bold">31</span> 22:40:00 <span style="color:#ff0;font-weight:bold">2022</span> a root
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># atrm 5</span>
 
 after some time...
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat ~/at-test.txt</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># cat ~/at-test.txt</span>
 hello world
 hello kitty
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="crontab命令">crontab命令</h2>
 <h3 id="基本使用">基本使用</h3>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;font-style:italic"># 新建调度工作</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic">#crontab -e</span>
-<span style="color:#080;font-style:italic"># 进入vim界面</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#007f7f"># 新建调度工作</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f">#crontab -e</span>
+<span style="color:#007f7f"># 进入vim界面</span>
 ------
-<span style="color:#080;font-style:italic">#分 时 日 月 周   </span>
+<span style="color:#007f7f">#分 时 日 月 周   </span>
 */1  *  *  *  * test.sh
-<span style="color:#080;font-style:italic"># 每一分钟执行一次</span>
+<span style="color:#007f7f"># 每一分钟执行一次</span>
 ------
 
-<span style="color:#080;font-style:italic"># 查看调度工作队列</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># crontab -l</span>
+<span style="color:#007f7f"># 查看调度工作队列</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># crontab -l</span>
 */1 * * * * test.sh
-<span style="color:#080;font-style:italic"># 删除所有调度工作</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># crontab -r</span>
-<span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># crontab -l</span>
-no crontab <span style="color:#a2f;font-weight:bold">for</span> root
+<span style="color:#007f7f"># 删除所有调度工作</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># crontab -r</span>
+[root@VM-0-11-centos ~]<span style="color:#007f7f"># crontab -l</span>
+no crontab <span style="color:#fff;font-weight:bold">for</span> root
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="查看crontab执行历史记录">查看crontab执行历史记录</h3>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#a2f">cd</span> /var/log
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fff;font-weight:bold">cd</span> /var/log
 tail -100 cron
 
-<span style="color:#080;font-style:italic"># 可以看到每一分钟执行一次的工作正常进行着</span>
-Apr  <span style="color:#666">5</span> 23:25:01 VM-0-11-centos CROND<span style="color:#666">[</span>8026<span style="color:#666">]</span>: <span style="color:#666">(</span>root<span style="color:#666">)</span> CMD <span style="color:#666">(</span>flock -xn /tmp/stargate.lock -c <span style="color:#b44">&#39;/usr/local/qcloud/stargate/admin/start.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span style="color:#666">)</span>
-Apr  <span style="color:#666">5</span> 23:26:01 VM-0-11-centos CROND<span style="color:#666">[</span>8168<span style="color:#666">]</span>: <span style="color:#666">(</span>root<span style="color:#666">)</span> CMD <span style="color:#666">(</span>flock -xn /tmp/stargate.lock -c <span style="color:#b44">&#39;/usr/local/qcloud/stargate/admin/start.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span style="color:#666">)</span>
-Apr  <span style="color:#666">5</span> 23:27:01 VM-0-11-centos CROND<span style="color:#666">[</span>8304<span style="color:#666">]</span>: <span style="color:#666">(</span>root<span style="color:#666">)</span> CMD <span style="color:#666">(</span>flock -xn /tmp/stargate.lock -c <span style="color:#b44">&#39;/usr/local/qcloud/stargate/admin/start.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span style="color:#666">)</span>
+<span style="color:#007f7f"># 可以看到每一分钟执行一次的工作正常进行着</span>
+Apr  <span style="color:#ff0;font-weight:bold">5</span> 23:25:01 VM-0-11-centos CROND[8026]: (root) CMD (flock -xn /tmp/stargate.lock -c <span style="color:#0ff;font-weight:bold">&#39;/usr/local/qcloud/stargate/admin/start.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span>)
+Apr  <span style="color:#ff0;font-weight:bold">5</span> 23:26:01 VM-0-11-centos CROND[8168]: (root) CMD (flock -xn /tmp/stargate.lock -c <span style="color:#0ff;font-weight:bold">&#39;/usr/local/qcloud/stargate/admin/start.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span>)
+Apr  <span style="color:#ff0;font-weight:bold">5</span> 23:27:01 VM-0-11-centos CROND[8304]: (root) CMD (flock -xn /tmp/stargate.lock -c <span style="color:#0ff;font-weight:bold">&#39;/usr/local/qcloud/stargate/admin/start.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span>)
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -419,7 +419,7 @@ Apr  <span style="color:#666">5</span> 23:27:01 VM-0-11-centos CROND<span style=
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

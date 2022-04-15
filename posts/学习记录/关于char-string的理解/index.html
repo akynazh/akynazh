@@ -38,7 +38,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -245,159 +245,159 @@ if (!doNotTrack) {
     
     <div class="content" itemprop="articleBody">
       <h2 id="关于char与char的区别">关于char[]与char*的区别</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#0b0;font-weight:bold">char</span> s1[] <span style="color:#666">=</span> <span style="color:#b44">&#34;abc&#34;</span>;
-cout <span style="color:#666">&lt;&lt;</span> s1 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// abc
-</span><span style="color:#080;font-style:italic"></span>s1[<span style="color:#666">1</span>] <span style="color:#666">=</span> <span style="color:#b44">&#39;d&#39;</span>; <span style="color:#080;font-style:italic">// 改变值
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> s1 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// adc
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">char</span> s1[] = <span style="color:#0ff;font-weight:bold">&#34;abc&#34;</span>;
+cout &lt;&lt; s1 &lt;&lt; endl; <span style="color:#007f7f">// abc
+</span><span style="color:#007f7f"></span>s1[<span style="color:#ff0;font-weight:bold">1</span>] = <span style="color:#0ff;font-weight:bold">&#39;d&#39;</span>; <span style="color:#007f7f">// 改变值
+</span><span style="color:#007f7f"></span>cout &lt;&lt; s1 &lt;&lt; endl; <span style="color:#007f7f">// adc
 </span></code></pre></td></tr></table>
 </div>
 </div><p>&ldquo;abc&quot;为<strong>字符串常量</strong>，s1为<strong>指针常量</strong>，即指针是一个常量，所以指向<strong>地址</strong>不能改变，指向地址的<strong>值</strong>可变</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">char</span><span style="color:#666">*</span> s2 <span style="color:#666">=</span> <span style="color:#b44">&#34;abc&#34;</span>; <span style="color:#080;font-style:italic">// const是默认存在的
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> s2 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// abc
-</span><span style="color:#080;font-style:italic"></span>s2 <span style="color:#666">=</span> <span style="color:#b44">&#34;dfs&#34;</span>; <span style="color:#080;font-style:italic">// 改变地址
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> s2 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// dfs
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">char</span>* s2 = <span style="color:#0ff;font-weight:bold">&#34;abc&#34;</span>; <span style="color:#007f7f">// const是默认存在的
+</span><span style="color:#007f7f"></span>cout &lt;&lt; s2 &lt;&lt; endl; <span style="color:#007f7f">// abc
+</span><span style="color:#007f7f"></span>s2 = <span style="color:#0ff;font-weight:bold">&#34;dfs&#34;</span>; <span style="color:#007f7f">// 改变地址
+</span><span style="color:#007f7f"></span>cout &lt;&lt; s2 &lt;&lt; endl; <span style="color:#007f7f">// dfs
 </span></code></pre></td></tr></table>
 </div>
 </div><p>&ldquo;abc&quot;为<strong>字符串常量</strong>，s2为<strong>常量指针</strong>，指向<strong>地址</strong>可变，但指向的地址的<strong>值</strong>不能变</p>
 <p>以上两者皆可用于函数传值</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">print_str</span>(<span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">char</span> <span style="color:#666">*</span> str) {
-    printf(<span style="color:#b44">&#34;%s</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#b44">&#34;</span>, str);
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">void</span> print_str(<span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">char</span> * str) {
+    printf(<span style="color:#0ff;font-weight:bold">&#34;%s</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>, str);
 }
 
-print_str(s1); <span style="color:#080;font-style:italic">// adc
-</span><span style="color:#080;font-style:italic"></span>print_str(s2); <span style="color:#080;font-style:italic">// dfs
+print_str(s1); <span style="color:#007f7f">// adc
+</span><span style="color:#007f7f"></span>print_str(s2); <span style="color:#007f7f">// dfs
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="关于string和charchar的关系">关于string和char[],char*的关系</h2>
 <ul>
 <li>string是类，string是对一个字符串的引用值</li>
 </ul>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">char</span><span style="color:#666">*</span> s1 <span style="color:#666">=</span> <span style="color:#b44">&#34;abc&#34;</span>;
-string s <span style="color:#666">=</span> s1;
-cout <span style="color:#666">&lt;&lt;</span> s <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// abc
-</span><span style="color:#080;font-style:italic"></span>s <span style="color:#666">+=</span> <span style="color:#b44">&#34;a&#34;</span>;
-cout <span style="color:#666">&lt;&lt;</span> s <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// abca 
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> s1 <span style="color:#666">&lt;&lt;</span> endl; 
-<span style="color:#080;font-style:italic">// abc 证明string只是引用了s1
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">char</span>* s1 = <span style="color:#0ff;font-weight:bold">&#34;abc&#34;</span>;
+string s = s1;
+cout &lt;&lt; s &lt;&lt; endl; <span style="color:#007f7f">// abc
+</span><span style="color:#007f7f"></span>s += <span style="color:#0ff;font-weight:bold">&#34;a&#34;</span>;
+cout &lt;&lt; s &lt;&lt; endl; <span style="color:#007f7f">// abca 
+</span><span style="color:#007f7f"></span>cout &lt;&lt; s1 &lt;&lt; endl; 
+<span style="color:#007f7f">// abc 证明string只是引用了s1
 </span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>string引用字符串示例</li>
 </ul>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">char</span> <span style="color:#666">*</span>s1 <span style="color:#666">=</span> <span style="color:#b44">&#34;123&#34;</span>;
-string str1 <span style="color:#666">=</span> s1; <span style="color:#080;font-style:italic">// 若要这样赋值s1必须加const
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> str1 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 123
-</span><span style="color:#080;font-style:italic"></span>
-<span style="color:#0b0;font-weight:bold">char</span> s2[] <span style="color:#666">=</span> <span style="color:#b44">&#34;234&#34;</span>;
-string str2 <span style="color:#666">=</span> s2;
-cout <span style="color:#666">&lt;&lt;</span> str2 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 234
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">char</span> *s1 = <span style="color:#0ff;font-weight:bold">&#34;123&#34;</span>;
+string str1 = s1; <span style="color:#007f7f">// 若要这样赋值s1必须加const
+</span><span style="color:#007f7f"></span>cout &lt;&lt; str1 &lt;&lt; endl; <span style="color:#007f7f">// 123
+</span><span style="color:#007f7f"></span>
+<span style="color:#fff;font-weight:bold">char</span> s2[] = <span style="color:#0ff;font-weight:bold">&#34;234&#34;</span>;
+string str2 = s2;
+cout &lt;&lt; str2 &lt;&lt; endl; <span style="color:#007f7f">// 234
 </span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>string转char*</li>
 </ul>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a2f;font-weight:bold">const</span> <span style="color:#0b0;font-weight:bold">char</span><span style="color:#666">*</span> s1_1 <span style="color:#666">=</span> str1.c_str(); 
-<span style="color:#080;font-style:italic">// c_str 转 const char*
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> s1_1 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 123
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">char</span>* s1_1 = str1.c_str(); 
+<span style="color:#007f7f">// c_str 转 const char*
+</span><span style="color:#007f7f"></span>cout &lt;&lt; s1_1 &lt;&lt; endl; <span style="color:#007f7f">// 123
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="charchar与int的相互转换">char*,char[]与int的相互转换</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#0b0;font-weight:bold">int</span> v1 <span style="color:#666">=</span> atoi(s1);
-cout <span style="color:#666">&lt;&lt;</span> v1 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 123
-</span><span style="color:#080;font-style:italic"></span>v1 <span style="color:#666">+=</span> <span style="color:#666">1</span>;
-<span style="color:#0b0;font-weight:bold">char</span> str11[<span style="color:#666">100</span>]; 
-itoa(v1, str11, <span style="color:#666">10</span>); <span style="color:#080;font-style:italic">// 10代表十进制
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> str11 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 124
-</span><span style="color:#080;font-style:italic">// 下面的会失败
-</span><span style="color:#080;font-style:italic">// const char* str111;
-</span><span style="color:#080;font-style:italic">// itoa(v1, str111, 10); // 失败
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">int</span> v1 = atoi(s1);
+cout &lt;&lt; v1 &lt;&lt; endl; <span style="color:#007f7f">// 123
+</span><span style="color:#007f7f"></span>v1 += <span style="color:#ff0;font-weight:bold">1</span>;
+<span style="color:#fff;font-weight:bold">char</span> str11[<span style="color:#ff0;font-weight:bold">100</span>]; 
+itoa(v1, str11, <span style="color:#ff0;font-weight:bold">10</span>); <span style="color:#007f7f">// 10代表十进制
+</span><span style="color:#007f7f"></span>cout &lt;&lt; str11 &lt;&lt; endl; <span style="color:#007f7f">// 124
+</span><span style="color:#007f7f">// 下面的会失败
+</span><span style="color:#007f7f">// const char* str111;
+</span><span style="color:#007f7f">// itoa(v1, str111, 10); // 失败
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="string与int的相互转换">string与int的相互转换</h2>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#0b0;font-weight:bold">int</span> val <span style="color:#666">=</span> <span style="color:#666">223</span>;
-string str3 <span style="color:#666">=</span> to_string(val); 
-<span style="color:#080;font-style:italic">// C++11新特性 只适用于string (char[]和char*不可以)
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> str3 <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 223
-</span><span style="color:#080;font-style:italic"></span>val <span style="color:#666">=</span> stoi(str3, <span style="color:#666">0</span>, <span style="color:#666">10</span>); <span style="color:#080;font-style:italic">// 0为起始位置 10即十进制
-</span><span style="color:#080;font-style:italic"></span>cout <span style="color:#666">&lt;&lt;</span> val <span style="color:#666">&lt;&lt;</span> endl; <span style="color:#080;font-style:italic">// 223
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fff;font-weight:bold">int</span> val = <span style="color:#ff0;font-weight:bold">223</span>;
+string str3 = to_string(val); 
+<span style="color:#007f7f">// C++11新特性 只适用于string (char[]和char*不可以)
+</span><span style="color:#007f7f"></span>cout &lt;&lt; str3 &lt;&lt; endl; <span style="color:#007f7f">// 223
+</span><span style="color:#007f7f"></span>val = stoi(str3, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#ff0;font-weight:bold">10</span>); <span style="color:#007f7f">// 0为起始位置 10即十进制
+</span><span style="color:#007f7f"></span>cout &lt;&lt; val &lt;&lt; endl; <span style="color:#007f7f">// 223
 </span></code></pre></td></tr></table>
 </div>
 </div><p>over</p>
@@ -420,7 +420,7 @@ string str3 <span style="color:#666">=</span> to_string(val);
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

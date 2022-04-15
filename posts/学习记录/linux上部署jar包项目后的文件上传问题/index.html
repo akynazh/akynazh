@@ -64,7 +64,7 @@ e.g. /app/static/avatar/test.jpg
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -267,14 +267,14 @@ if (!doNotTrack) {
     
     <div class="content" itemprop="articleBody">
       <p>在进行上传文件时，一般会先获取项目类路径：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">File relativePathFile <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> File<span style="color:#666">(</span>URLDecoder<span style="color:#666">.</span><span style="color:#b44">decode</span><span style="color:#666">(</span>ResourceUtils<span style="color:#666">.</span><span style="color:#b44">getURL</span><span style="color:#666">(</span><span style="color:#b44">&#34;classpath:&#34;</span><span style="color:#666">).</span><span style="color:#b44">getPath</span><span style="color:#666">(),</span> <span style="color:#b44">&#34;utf-8&#34;</span><span style="color:#666">));</span>
-String absolutePath <span style="color:#666">=</span> relativePathFile<span style="color:#666">.</span><span style="color:#b44">getAbsoluteFile</span><span style="color:#666">().</span><span style="color:#b44">getPath</span><span style="color:#666">();</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">File relativePathFile = <span style="color:#fff;font-weight:bold">new</span> File(URLDecoder.<span style="color:#007f7f">decode</span>(ResourceUtils.<span style="color:#007f7f">getURL</span>(<span style="color:#0ff;font-weight:bold">&#34;classpath:&#34;</span>).<span style="color:#007f7f">getPath</span>(), <span style="color:#0ff;font-weight:bold">&#34;utf-8&#34;</span>));
+String absolutePath = relativePathFile.<span style="color:#007f7f">getAbsoluteFile</span>().<span style="color:#007f7f">getPath</span>();
 </code></pre></td></tr></table>
 </div>
 </div><p>首先取得相对路径，再进一步取得绝对路径，结果如下：</p>
@@ -290,31 +290,31 @@ String absolutePath <span style="color:#666">=</span> relativePathFile<span styl
 <p>所以如果是jar包启动并上传文件，则无法正确放到类路径下。</p>
 <p>所以需指定新的上传路径。</p>
 <p>在如下路径中：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#666">[</span>root@VM-0-11-centos app<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos app]<span style="color:#007f7f"># ls</span>
 application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 </code></pre></td></tr></table>
 </div>
 </div><p>假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a0a000">spring:</span>
-    resources<span style="color:#666">:</span>
-        <span style="color:#a2f;font-weight:bold">static</span><span style="color:#666">-</span>locations<span style="color:#666">:</span>
-            <span style="color:#666">-</span> classpath<span style="color:#666">:</span><span style="color:#a2f;font-weight:bold">static</span><span style="color:#666">/</span>
-            <span style="color:#666">-</span> file<span style="color:#666">:/</span>app<span style="color:#666">/</span><span style="color:#a2f;font-weight:bold">static</span><span style="color:#666">/</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">spring:
+    resources:
+        <span style="color:#fff;font-weight:bold">static</span>-locations:
+            - classpath:<span style="color:#fff;font-weight:bold">static</span>/
+            - file:/app/<span style="color:#fff;font-weight:bold">static</span>/
 </code></pre></td></tr></table>
 </div>
 </div><p>然后在文件上传是指定上传路径即可。</p>
@@ -332,105 +332,105 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
 </ul>
 <p>返回 <code>${project}/target/classes/static/${uploadType}/${fileName}</code></p>
 <p>e.g. <code>${project}/target/classes/static/avatar/test.jpg</code></p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">48
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">FileUtils</span> <span style="color:#666">{</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">class</span> FileUtils {
 
-    <span style="color:#080;font-style:italic">/**
-</span><span style="color:#080;font-style:italic">     * @description: 获取上传路径
-</span><span style="color:#080;font-style:italic">     * @author Jiang Zhihang
-</span><span style="color:#080;font-style:italic">     * @date 2022/1/2 23:32
-</span><span style="color:#080;font-style:italic">     * @param type 上传类型，如avatar，video
-</span><span style="color:#080;font-style:italic">     * @param fileName 上传文件的名称
-</span><span style="color:#080;font-style:italic">     */</span>
-    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">static</span> String <span style="color:#00a000">getUploadPath</span><span style="color:#666">(</span>String type<span style="color:#666">,</span> String fileName<span style="color:#666">)</span> <span style="color:#a2f;font-weight:bold">throws</span> FileNotFoundException<span style="color:#666">,</span> UnsupportedEncodingException <span style="color:#666">{</span>
-        String osName <span style="color:#666">=</span> System<span style="color:#666">.</span><span style="color:#b44">getProperty</span><span style="color:#666">(</span><span style="color:#b44">&#34;os.name&#34;</span><span style="color:#666">);</span>
+    <span style="color:#007f7f">/**
+</span><span style="color:#007f7f">     * @description: 获取上传路径
+</span><span style="color:#007f7f">     * @author Jiang Zhihang
+</span><span style="color:#007f7f">     * @date 2022/1/2 23:32
+</span><span style="color:#007f7f">     * @param type 上传类型，如avatar，video
+</span><span style="color:#007f7f">     * @param fileName 上传文件的名称
+</span><span style="color:#007f7f">     */</span>
+    <span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">static</span> String getUploadPath(String type, String fileName) <span style="color:#fff;font-weight:bold">throws</span> FileNotFoundException, UnsupportedEncodingException {
+        String osName = System.<span style="color:#007f7f">getProperty</span>(<span style="color:#0ff;font-weight:bold">&#34;os.name&#34;</span>);
 
-        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>osName<span style="color:#666">.</span><span style="color:#b44">equals</span><span style="color:#666">(</span><span style="color:#b44">&#34;Linux&#34;</span><span style="color:#666">))</span> <span style="color:#666">{</span> <span style="color:#080;font-style:italic">// 部署于Linux主机上时获取的上传路径
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#080;font-style:italic">// 返回/app/static/${uploadType}/${fileName}
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#080;font-style:italic">// e.g. /app/static/avatar/test.jpg
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#a2f;font-weight:bold">return</span> File<span style="color:#666">.</span><span style="color:#b44">separator</span> <span style="color:#666">+</span> <span style="color:#b44">&#34;app/static/&#34;</span> <span style="color:#666">+</span> type <span style="color:#666">+</span> <span style="color:#b44">&#34;/&#34;</span> <span style="color:#666">+</span> fileName<span style="color:#666">;</span>
-        <span style="color:#666">}</span> <span style="color:#a2f;font-weight:bold">else</span> <span style="color:#666">{</span>
-            <span style="color:#080;font-style:italic">// 获取上传地址
-</span><span style="color:#080;font-style:italic"></span>            File relativePathFile <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> File<span style="color:#666">(</span>URLDecoder<span style="color:#666">.</span><span style="color:#b44">decode</span><span style="color:#666">(</span>ResourceUtils<span style="color:#666">.</span><span style="color:#b44">getURL</span><span style="color:#666">(</span><span style="color:#b44">&#34;classpath:&#34;</span><span style="color:#666">).</span><span style="color:#b44">getPath</span><span style="color:#666">(),</span> <span style="color:#b44">&#34;utf-8&#34;</span><span style="color:#666">));</span>
-            String absolutePath <span style="color:#666">=</span> relativePathFile<span style="color:#666">.</span><span style="color:#b44">getAbsoluteFile</span><span style="color:#666">().</span><span style="color:#b44">getPath</span><span style="color:#666">();</span>
-            <span style="color:#080;font-style:italic">// 获取得路径为：
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#080;font-style:italic">// ${project}/target/classes
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#080;font-style:italic">// 或
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#080;font-style:italic">// /root/file:/root/${jar包名}!/BOOT-INF/classes!  [centos7.9下]
-</span><span style="color:#080;font-style:italic"></span>
-            <span style="color:#080;font-style:italic">// 返回 ${project}/target/classes/static/${uploadType}/${fileName}
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#080;font-style:italic">// e.g. ${project}/target/classes/static/avatar/test.jpg
-</span><span style="color:#080;font-style:italic"></span>            <span style="color:#a2f;font-weight:bold">return</span> absolutePath <span style="color:#666">+</span> <span style="color:#b44">&#34;/static/&#34;</span> <span style="color:#666">+</span> type <span style="color:#666">+</span> <span style="color:#b44">&#34;/&#34;</span> <span style="color:#666">+</span> fileName<span style="color:#666">;</span>
-        <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
+        <span style="color:#fff;font-weight:bold">if</span> (osName.<span style="color:#007f7f">equals</span>(<span style="color:#0ff;font-weight:bold">&#34;Linux&#34;</span>)) { <span style="color:#007f7f">// 部署于Linux主机上时获取的上传路径
+</span><span style="color:#007f7f"></span>            <span style="color:#007f7f">// 返回/app/static/${uploadType}/${fileName}
+</span><span style="color:#007f7f"></span>            <span style="color:#007f7f">// e.g. /app/static/avatar/test.jpg
+</span><span style="color:#007f7f"></span>            <span style="color:#fff;font-weight:bold">return</span> File.<span style="color:#007f7f">separator</span> + <span style="color:#0ff;font-weight:bold">&#34;app/static/&#34;</span> + type + <span style="color:#0ff;font-weight:bold">&#34;/&#34;</span> + fileName;
+        } <span style="color:#fff;font-weight:bold">else</span> {
+            <span style="color:#007f7f">// 获取上传地址
+</span><span style="color:#007f7f"></span>            File relativePathFile = <span style="color:#fff;font-weight:bold">new</span> File(URLDecoder.<span style="color:#007f7f">decode</span>(ResourceUtils.<span style="color:#007f7f">getURL</span>(<span style="color:#0ff;font-weight:bold">&#34;classpath:&#34;</span>).<span style="color:#007f7f">getPath</span>(), <span style="color:#0ff;font-weight:bold">&#34;utf-8&#34;</span>));
+            String absolutePath = relativePathFile.<span style="color:#007f7f">getAbsoluteFile</span>().<span style="color:#007f7f">getPath</span>();
+            <span style="color:#007f7f">// 获取得路径为：
+</span><span style="color:#007f7f"></span>            <span style="color:#007f7f">// ${project}/target/classes
+</span><span style="color:#007f7f"></span>            <span style="color:#007f7f">// 或
+</span><span style="color:#007f7f"></span>            <span style="color:#007f7f">// /root/file:/root/${jar包名}!/BOOT-INF/classes!  [centos7.9下]
+</span><span style="color:#007f7f"></span>
+            <span style="color:#007f7f">// 返回 ${project}/target/classes/static/${uploadType}/${fileName}
+</span><span style="color:#007f7f"></span>            <span style="color:#007f7f">// e.g. ${project}/target/classes/static/avatar/test.jpg
+</span><span style="color:#007f7f"></span>            <span style="color:#fff;font-weight:bold">return</span> absolutePath + <span style="color:#0ff;font-weight:bold">&#34;/static/&#34;</span> + type + <span style="color:#0ff;font-weight:bold">&#34;/&#34;</span> + fileName;
+        }
+    }
 
-    <span style="color:#080;font-style:italic">/**
-</span><span style="color:#080;font-style:italic">     * @description: 获取文件后缀名
-</span><span style="color:#080;font-style:italic">     * @author Jiang Zhihang
-</span><span style="color:#080;font-style:italic">     * @date 2022/1/2 23:37
-</span><span style="color:#080;font-style:italic">     */</span>
-    <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">static</span> String <span style="color:#00a000">getFileType</span><span style="color:#666">(</span>MultipartFile file<span style="color:#666">)</span> <span style="color:#666">{</span>
-        String type <span style="color:#666">=</span> file<span style="color:#666">.</span><span style="color:#b44">getContentType</span><span style="color:#666">();</span>
-        String fileType<span style="color:#666">;</span>
-        <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>type <span style="color:#666">==</span> <span style="color:#a2f;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">null</span><span style="color:#666">;</span>
-        <span style="color:#a2f;font-weight:bold">else</span> <span style="color:#666">{</span>
-            <span style="color:#080;font-style:italic">// type -&gt; img/jpg
-</span><span style="color:#080;font-style:italic"></span>            fileType <span style="color:#666">=</span> type<span style="color:#666">.</span><span style="color:#b44">substring</span><span style="color:#666">(</span>type<span style="color:#666">.</span><span style="color:#b44">indexOf</span><span style="color:#666">(</span><span style="color:#b44">&#39;/&#39;</span><span style="color:#666">)</span> <span style="color:#666">+</span> 1<span style="color:#666">);</span>
-            <span style="color:#a2f;font-weight:bold">return</span> fileType<span style="color:#666">;</span>
-        <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+    <span style="color:#007f7f">/**
+</span><span style="color:#007f7f">     * @description: 获取文件后缀名
+</span><span style="color:#007f7f">     * @author Jiang Zhihang
+</span><span style="color:#007f7f">     * @date 2022/1/2 23:37
+</span><span style="color:#007f7f">     */</span>
+    <span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">static</span> String getFileType(MultipartFile file) {
+        String type = file.<span style="color:#007f7f">getContentType</span>();
+        String fileType;
+        <span style="color:#fff;font-weight:bold">if</span> (type == <span style="color:#fff;font-weight:bold">null</span>) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">null</span>;
+        <span style="color:#fff;font-weight:bold">else</span> {
+            <span style="color:#007f7f">// type -&gt; img/jpg
+</span><span style="color:#007f7f"></span>            fileType = type.<span style="color:#007f7f">substring</span>(type.<span style="color:#007f7f">indexOf</span>(<span style="color:#0ff;font-weight:bold">&#39;/&#39;</span>) + 1);
+            <span style="color:#fff;font-weight:bold">return</span> fileType;
+        }
+    }
+}
 
 </code></pre></td></tr></table>
 </div>
@@ -452,7 +452,7 @@ application.yaml  LonersHub-0.0.1-SNAPSHOT.jar static
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

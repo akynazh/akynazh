@@ -38,7 +38,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -245,113 +245,113 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="问题的提出">问题的提出</h2>
 <p>在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。通过了解，发现可以采用导入Gson包的方式调用方法实现这个功能：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Person p = new Person(1, &#34;jzh&#34;);
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Person p = new Person(1, &#34;jzh&#34;);
 Gson gson = new Gson();
 String p_json = gson.toJson(p);
 Person p1 = gson.fromJson(p_json, Person.class);
 </code></pre></td></tr></table>
 </div>
 </div><p>从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;</span> people <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> ArrayList<span style="color:#666">&lt;&gt;();</span>
-people<span style="color:#666">.</span><span style="color:#b44">add</span><span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>1<span style="color:#666">,</span> <span style="color:#b44">&#34;jzh&#34;</span><span style="color:#666">));</span>
-people<span style="color:#666">.</span><span style="color:#b44">add</span><span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>2<span style="color:#666">,</span> <span style="color:#b44">&#34;zh&#34;</span><span style="color:#666">));</span>
-people<span style="color:#666">.</span><span style="color:#b44">add</span><span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> Person<span style="color:#666">(</span>3<span style="color:#666">,</span> <span style="color:#b44">&#34;z&#34;</span><span style="color:#666">));</span>
-String ps_json <span style="color:#666">=</span> gson<span style="color:#666">.</span><span style="color:#b44">toJson</span><span style="color:#666">(</span>people<span style="color:#666">);</span>
-ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;</span> people1 <span style="color:#666">=</span> gson<span style="color:#666">.</span><span style="color:#b44">fromJson</span><span style="color:#666">(</span>ps_json<span style="color:#666">,</span><span style="color:#a2f;font-weight:bold">new</span> TypeToken<span style="color:#666">&lt;</span>ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;&gt;()</span> <span style="color:#666">{</span>
-        <span style="color:#666">}.</span><span style="color:#b44">getType</span><span style="color:#666">());</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ArrayList&lt;Person&gt; people = <span style="color:#fff;font-weight:bold">new</span> ArrayList&lt;&gt;();
+people.<span style="color:#007f7f">add</span>(<span style="color:#fff;font-weight:bold">new</span> Person(1, <span style="color:#0ff;font-weight:bold">&#34;jzh&#34;</span>));
+people.<span style="color:#007f7f">add</span>(<span style="color:#fff;font-weight:bold">new</span> Person(2, <span style="color:#0ff;font-weight:bold">&#34;zh&#34;</span>));
+people.<span style="color:#007f7f">add</span>(<span style="color:#fff;font-weight:bold">new</span> Person(3, <span style="color:#0ff;font-weight:bold">&#34;z&#34;</span>));
+String ps_json = gson.<span style="color:#007f7f">toJson</span>(people);
+ArrayList&lt;Person&gt; people1 = gson.<span style="color:#007f7f">fromJson</span>(ps_json,<span style="color:#fff;font-weight:bold">new</span> TypeToken&lt;ArrayList&lt;Person&gt;&gt;() {
+        }.<span style="color:#007f7f">getType</span>());
 </code></pre></td></tr></table>
 </div>
 </div><p>这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken<!-- raw HTML omitted -->实现。</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">MyType</span> <span style="color:#a2f;font-weight:bold">extends</span> TypeToken<span style="color:#666">&lt;</span>ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;&gt;</span> <span style="color:#666">{}</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">class</span> MyType <span style="color:#fff;font-weight:bold">extends</span> TypeToken&lt;ArrayList&lt;Person&gt;&gt; {}
 
-ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;</span> people1 <span style="color:#666">=</span> gson<span style="color:#666">.</span><span style="color:#b44">fromJson</span><span style="color:#666">(</span>ps_json<span style="color:#666">,</span> <span style="color:#a2f;font-weight:bold">new</span> MyType<span style="color:#666">().</span><span style="color:#b44">getType</span><span style="color:#666">());</span>
+ArrayList&lt;Person&gt; people1 = gson.<span style="color:#007f7f">fromJson</span>(ps_json, <span style="color:#fff;font-weight:bold">new</span> MyType().<span style="color:#007f7f">getType</span>());
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>那么问题来了，这里底层是怎么实现转换的呢？为什么要使用TypeToken<!-- raw HTML omitted -->?</strong></p>
 <h2 id="问题的思考与解决">问题的思考与解决</h2>
 <p>首先我们通过阅读源码寻找答案。</p>
 <p>gson源码中的TypeToken<!-- raw HTML omitted -->类:</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">TypeToken</span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span> <span style="color:#666">{</span>
-    <span style="color:#a2f;font-weight:bold">final</span> Class<span style="color:#666">&lt;?</span> <span style="color:#a2f;font-weight:bold">super</span> T<span style="color:#666">&gt;</span> rawType<span style="color:#666">;</span>
-    <span style="color:#a2f;font-weight:bold">final</span> Type type<span style="color:#666">;</span>
-    <span style="color:#a2f;font-weight:bold">final</span> <span style="color:#0b0;font-weight:bold">int</span> hashCode<span style="color:#666">;</span>
-<span style="color:#666">}</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">class</span> TypeToken&lt;T&gt; {
+    <span style="color:#fff;font-weight:bold">final</span> Class&lt;? <span style="color:#fff;font-weight:bold">super</span> T&gt; rawType;
+    <span style="color:#fff;font-weight:bold">final</span> Type type;
+    <span style="color:#fff;font-weight:bold">final</span> <span style="color:#fff;font-weight:bold">int</span> hashCode;
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>constructor:</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">protected</span> <span style="color:#00a000">TypeToken</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">type</span> <span style="color:#666">=</span> getSuperclassTypeParameter<span style="color:#666">(</span>getClass<span style="color:#666">());</span>
-    <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">rawType</span> <span style="color:#666">=</span> <span style="color:#666">(</span>Class<span style="color:#666">&lt;?</span> <span style="color:#a2f;font-weight:bold">super</span> T<span style="color:#666">&gt;)</span> $Gson$Types<span style="color:#666">.</span><span style="color:#b44">getRawType</span><span style="color:#666">(</span>type<span style="color:#666">);</span>
-    <span style="color:#a2f;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#b44">hashCode</span> <span style="color:#666">=</span> type<span style="color:#666">.</span><span style="color:#b44">hashCode</span><span style="color:#666">();</span>
-<span style="color:#666">}</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">protected</span> TypeToken() {
+    <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">type</span> = getSuperclassTypeParameter(getClass());
+    <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">rawType</span> = (Class&lt;? <span style="color:#fff;font-weight:bold">super</span> T&gt;) $Gson$Types.<span style="color:#007f7f">getRawType</span>(type);
+    <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">hashCode</span> = type.<span style="color:#007f7f">hashCode</span>();
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>这里我们主要研究type成员。</p>
 <p>通过方法getSuperclassTypeParameter:</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">static</span> Type <span style="color:#00a000">getSuperclassTypeParameter</span><span style="color:#666">(</span>Class<span style="color:#666">&lt;?&gt;</span> subclass<span style="color:#666">)</span> <span style="color:#666">{</span>
-    Type superclass <span style="color:#666">=</span> subclass<span style="color:#666">.</span><span style="color:#b44">getGenericSuperclass</span><span style="color:#666">();</span>
-    <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>superclass <span style="color:#a2f;font-weight:bold">instanceof</span> Class<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#a2f;font-weight:bold">throw</span> <span style="color:#a2f;font-weight:bold">new</span> RuntimeException<span style="color:#666">(</span><span style="color:#b44">&#34;Missing type parameter.&#34;</span><span style="color:#666">);</span>
-    <span style="color:#666">}</span>
-    ParameterizedType parameterized <span style="color:#666">=</span> <span style="color:#666">(</span>ParameterizedType<span style="color:#666">)</span> superclass<span style="color:#666">;</span>
-    <span style="color:#a2f;font-weight:bold">return</span> $Gson$Types<span style="color:#666">.</span><span style="color:#b44">canonicalize</span><span style="color:#666">(</span>parameterized<span style="color:#666">.</span><span style="color:#b44">getActualTypeArguments</span><span style="color:#666">()[</span>0<span style="color:#666">]);</span>
-<span style="color:#666">}</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">static</span> Type getSuperclassTypeParameter(Class&lt;?&gt; subclass) {
+    Type superclass = subclass.<span style="color:#007f7f">getGenericSuperclass</span>();
+    <span style="color:#fff;font-weight:bold">if</span> (superclass <span style="color:#fff;font-weight:bold">instanceof</span> Class) {
+        <span style="color:#fff;font-weight:bold">throw</span> <span style="color:#fff;font-weight:bold">new</span> RuntimeException(<span style="color:#0ff;font-weight:bold">&#34;Missing type parameter.&#34;</span>);
+    }
+    ParameterizedType parameterized = (ParameterizedType) superclass;
+    <span style="color:#fff;font-weight:bold">return</span> $Gson$Types.<span style="color:#007f7f">canonicalize</span>(parameterized.<span style="color:#007f7f">getActualTypeArguments</span>()[0]);
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>在这里我们就可以找到答案了：</p>
@@ -363,48 +363,48 @@ ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;
 <li><input disabled="" type="checkbox"> 获取parameterized的第一个参数</li>
 </ul>
 <p><strong>一. 从一个Class对象中，获取该对象父类接收到的参数化类型（泛型）</strong></p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Type superclass <span style="color:#666">=</span> subclass<span style="color:#666">.</span><span style="color:#b44">getGenericSuperclass</span><span style="color:#666">();</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Type superclass = subclass.<span style="color:#007f7f">getGenericSuperclass</span>();
 </code></pre></td></tr></table>
 </div>
 </div><p>其中subclass为：</p>
 <p>class 包名.Type.TypeTest.TypeToken&lt;java.util.ArrayList&lt;包名.Type.Person&raquo;</p>
 <p>通过前面知道，我们通过继承（或者匿名内部类）的方式创建了一个类，那么我们则可以通过getGenericSuperclass()方法获取这个类的父类，而且是包含了我们需要的类型参数的父类！</p>
 <p><strong>二. 判断type类型</strong></p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>superclass <span style="color:#a2f;font-weight:bold">instanceof</span> Class<span style="color:#666">)</span> <span style="color:#666">{</span>
-	<span style="color:#a2f;font-weight:bold">throw</span> <span style="color:#a2f;font-weight:bold">new</span> RuntimeException<span style="color:#666">(</span><span style="color:#b44">&#34;Missing type parameter.&#34;</span><span style="color:#666">);</span> <span style="color:#080;font-style:italic">// 不是带参数类型
-</span><span style="color:#080;font-style:italic"></span><span style="color:#666">}</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">if</span> (superclass <span style="color:#fff;font-weight:bold">instanceof</span> Class) {
+	<span style="color:#fff;font-weight:bold">throw</span> <span style="color:#fff;font-weight:bold">new</span> RuntimeException(<span style="color:#0ff;font-weight:bold">&#34;Missing type parameter.&#34;</span>); <span style="color:#007f7f">// 不是带参数类型
+</span><span style="color:#007f7f"></span>}
 </code></pre></td></tr></table>
 </div>
 </div><p>Type是一个接口，Class，ParameterizedType等类型都实现了Type，我们需要确保传入的类型参数是一个带参数的类ParameterizedType而不是Class。</p>
 <p><strong>三. 强制转换为ParameterizedType类型，即带参数类型，可以调用对应方法获取参数</strong></p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ParameterizedType parameterized <span style="color:#666">=</span> <span style="color:#666">(</span>ParameterizedType<span style="color:#666">)</span> superclass<span style="color:#666">;</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ParameterizedType parameterized = (ParameterizedType) superclass;
 </code></pre></td></tr></table>
 </div>
 </div><p>parameterized : 包名.Type.TypeToken&lt;java.util.ArrayList&lt;包名.Type.Person&raquo;</p>
 <p><strong>四. 获取parameterized的第一个参数，即java.util.ArrayList&lt;包名.Type.Person&gt;</strong></p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">parameterized<span style="color:#666">.</span><span style="color:#b44">getActualTypeArguments</span><span style="color:#666">()[</span>0<span style="color:#666">];</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">parameterized.<span style="color:#007f7f">getActualTypeArguments</span>()[0];
 </code></pre></td></tr></table>
 </div>
 </div><p>源码中的canonicalize方法是实例化一个ParameterizedTypeImpl对象的方法，可以不予理会。</p>
@@ -428,7 +428,7 @@ ArrayList<span style="color:#666">&lt;</span>Person<span style="color:#666">&gt;
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

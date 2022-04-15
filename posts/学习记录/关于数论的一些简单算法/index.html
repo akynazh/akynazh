@@ -54,7 +54,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -288,33 +288,33 @@ if (!doNotTrack) {
 <p>1.建立is_prime_small[]和is_prime[]数组，初始化为true；</p>
 <p>2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。</p>
 <p>相应代码：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#a2f;font-weight:bold">typedef</span> <span style="color:#0b0;font-weight:bold">long</span> <span style="color:#0b0;font-weight:bold">long</span> ll;
-<span style="color:#0b0;font-weight:bold">bool</span> is_prime[MAX1];
-<span style="color:#0b0;font-weight:bold">bool</span> is_prime_small[MAX2];
-<span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">sieve</span>(ll a, ll b) {
-	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) is_prime_small[i] <span style="color:#666">=</span> <span style="color:#a2f">true</span>;
-	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) is_prime[i] <span style="color:#666">=</span> <span style="color:#a2f">true</span>;
-	<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; (ll)i <span style="color:#666">*</span> i <span style="color:#666">&lt;</span> b; i<span style="color:#666">++</span>) {
-		<span style="color:#a2f;font-weight:bold">if</span>(is_prime_small[i]){
-			<span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">2</span> <span style="color:#666">*</span> i; (ll)j <span style="color:#666">*</span> j <span style="color:#666">&lt;</span> b; j <span style="color:#666">+=</span> i) is_prime_small[j] <span style="color:#666">=</span> <span style="color:#a2f">false</span>;
-			<span style="color:#a2f;font-weight:bold">for</span>(ll j <span style="color:#666">=</span> max( <span style="color:#666">2ll</span>, (a <span style="color:#666">+</span> i <span style="color:#666">-</span> <span style="color:#666">1</span>) <span style="color:#666">/</span> i) ) <span style="color:#666">*</span> i; j <span style="color:#666">&lt;</span> b; j <span style="color:#666">+=</span> i) is_prime[j <span style="color:#666">-</span> a] <span style="color:#666">=</span> <span style="color:#a2f">false</span>;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">typedef</span> <span style="color:#fff;font-weight:bold">long</span> <span style="color:#fff;font-weight:bold">long</span> ll;
+<span style="color:#fff;font-weight:bold">bool</span> is_prime[MAX1];
+<span style="color:#fff;font-weight:bold">bool</span> is_prime_small[MAX2];
+<span style="color:#fff;font-weight:bold">void</span> sieve(ll a, ll b) {
+	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; (ll)i * i &lt; b; i++) is_prime_small[i] = <span style="color:#fff;font-weight:bold">true</span>;
+	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; (ll)i * i &lt; b; i++) is_prime[i] = <span style="color:#fff;font-weight:bold">true</span>;
+	<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">2</span>; (ll)i * i &lt; b; i++) {
+		<span style="color:#fff;font-weight:bold">if</span>(is_prime_small[i]){
+			<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">2</span> * i; (ll)j * j &lt; b; j += i) is_prime_small[j] = <span style="color:#fff;font-weight:bold">false</span>;
+			<span style="color:#fff;font-weight:bold">for</span>(ll j = max( <span style="color:#ff0;font-weight:bold">2ll</span>, (a + i - <span style="color:#ff0;font-weight:bold">1</span>) / i) ) * i; j &lt; b; j += i) is_prime[j - a] = <span style="color:#fff;font-weight:bold">false</span>;
 		}
 	}
 } 
@@ -343,29 +343,29 @@ if (!doNotTrack) {
 <p>result = 9 * 6561</p>
 <p>可以推出幂的结果等于变化中所有当<strong>指数为奇数时底数之积</strong></p>
 <p>相应代码：</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#a2f;font-weight:bold">typedef</span> <span style="color:#0b0;font-weight:bold">long</span> <span style="color:#0b0;font-weight:bold">long</span> ll;
-ll <span style="color:#00a000">mod_pow</span>(ll x, ll n, ll mod) {
-	ll res <span style="color:#666">=</span> <span style="color:#666">1</span>;
-	<span style="color:#a2f;font-weight:bold">while</span>(n <span style="color:#666">&gt;</span> <span style="color:#666">0</span>) {
-		<span style="color:#a2f;font-weight:bold">if</span>(n <span style="color:#666">&amp;</span> <span style="color:#666">1</span> <span style="color:#666">==</span> <span style="color:#666">1</span>) res <span style="color:#666">=</span> res <span style="color:#666">*</span> x <span style="color:#666">%</span> mod;
-		x <span style="color:#666">=</span> x <span style="color:#666">*</span> x <span style="color:#666">%</span> mod;
-		n <span style="color:#666">&gt;&gt;=</span> <span style="color:#666">1</span>;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">typedef</span> <span style="color:#fff;font-weight:bold">long</span> <span style="color:#fff;font-weight:bold">long</span> ll;
+ll mod_pow(ll x, ll n, ll mod) {
+	ll res = <span style="color:#ff0;font-weight:bold">1</span>;
+	<span style="color:#fff;font-weight:bold">while</span>(n &gt; <span style="color:#ff0;font-weight:bold">0</span>) {
+		<span style="color:#fff;font-weight:bold">if</span>(n &amp; <span style="color:#ff0;font-weight:bold">1</span> == <span style="color:#ff0;font-weight:bold">1</span>) res = res * x % mod;
+		x = x * x % mod;
+		n &gt;&gt;= <span style="color:#ff0;font-weight:bold">1</span>;
 	}	
-	<span style="color:#a2f;font-weight:bold">return</span> res;
+	<span style="color:#fff;font-weight:bold">return</span> res;
 }
 </code></pre></td></tr></table>
 </div>
@@ -374,17 +374,17 @@ ll <span style="color:#00a000">mod_pow</span>(ll x, ll n, ll mod) {
 <h3 id="gcd辗转相除法求最大公约数">gcd辗转相除法求最大公约数</h3>
 <p>思路</p>
 <p>反复交换取余，直到小的数为0.</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">gcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b){
-	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#a2f;font-weight:bold">return</span> a;
-	<span style="color:#a2f;font-weight:bold">return</span> gcd(b, a <span style="color:#666">%</span> b);
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> gcd(<span style="color:#fff;font-weight:bold">int</span> a, <span style="color:#fff;font-weight:bold">int</span> b){
+	<span style="color:#fff;font-weight:bold">if</span>(b == <span style="color:#ff0;font-weight:bold">0</span>) <span style="color:#fff;font-weight:bold">return</span> a;
+	<span style="color:#fff;font-weight:bold">return</span> gcd(b, a % b);
 }
 </code></pre></td></tr></table>
 </div>
@@ -405,33 +405,33 @@ ll <span style="color:#00a000">mod_pow</span>(ll x, ll n, ll mod) {
 <p>由等式可知上层的x,y可以由下层的x1,y1来求,则可以通过递归来实现。</p>
 <p>又由（1），当b == 0, a * 1 + b * 0 == a == gcd(a,b)</p>
 <p>则此时x == 1, y == 0, 一定会出现在递归末尾。</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">exgcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>x, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>y){
-	<span style="color:#0b0;font-weight:bold">int</span> d <span style="color:#666">=</span> a;
-	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">!=</span> <span style="color:#666">0</span>){
-		d <span style="color:#666">=</span> exgcd(b, a<span style="color:#666">%</span>b, x, y);
-		<span style="color:#0b0;font-weight:bold">int</span> temp <span style="color:#666">=</span> y;
-		y <span style="color:#666">=</span> x <span style="color:#666">-</span> (a <span style="color:#666">/</span> b) <span style="color:#666">*</span> y; <span style="color:#080;font-style:italic">//上一层的y
-</span><span style="color:#080;font-style:italic"></span>		x <span style="color:#666">=</span> temp; <span style="color:#080;font-style:italic">//上一层的x
-</span><span style="color:#080;font-style:italic"></span>	}<span style="color:#a2f;font-weight:bold">else</span>{
-		x <span style="color:#666">=</span> <span style="color:#666">1</span>; y <span style="color:#666">=</span> <span style="color:#666">0</span>;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> exgcd(<span style="color:#fff;font-weight:bold">int</span> a, <span style="color:#fff;font-weight:bold">int</span> b, <span style="color:#fff;font-weight:bold">int</span> &amp;x, <span style="color:#fff;font-weight:bold">int</span> &amp;y){
+	<span style="color:#fff;font-weight:bold">int</span> d = a;
+	<span style="color:#fff;font-weight:bold">if</span>(b != <span style="color:#ff0;font-weight:bold">0</span>){
+		d = exgcd(b, a%b, x, y);
+		<span style="color:#fff;font-weight:bold">int</span> temp = y;
+		y = x - (a / b) * y; <span style="color:#007f7f">//上一层的y
+</span><span style="color:#007f7f"></span>		x = temp; <span style="color:#007f7f">//上一层的x
+</span><span style="color:#007f7f"></span>	}<span style="color:#fff;font-weight:bold">else</span>{
+		x = <span style="color:#ff0;font-weight:bold">1</span>; y = <span style="color:#ff0;font-weight:bold">0</span>;
 	}
-	<span style="color:#a2f;font-weight:bold">return</span> d;
+	<span style="color:#fff;font-weight:bold">return</span> d;
 }
 </code></pre></td></tr></table>
 </div>
@@ -452,7 +452,7 @@ ll <span style="color:#00a000">mod_pow</span>(ll x, ll n, ll mod) {
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>

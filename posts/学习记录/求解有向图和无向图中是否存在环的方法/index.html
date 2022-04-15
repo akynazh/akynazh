@@ -36,7 +36,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.bb6d043251f1035ccd7bddc8843310f4d2bf13b7c07f787a8ab850b3bb0f430cc2f41f4bccf8cdc5af4ef3832abc7aead17f98dd8fb4d6746b510cfa838f9d7e.css" integrity="sha512-u20EMlHxA1zNe93IhDMQ9NK/E7fAf3h6irhQs7sPQwzC9B9LzPjNxa9O84MqvHrq0X&#43;Y3Y&#43;01nRrUQz6g4&#43;dfg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.40ede2ff608386ca749c938a93e21ea5c5ff74066fc1144960980eafa16a686b0ffeb14668c9c82e3ac6f586bb323b9bfba91b7a7f94ab2391b610f96c441867.css" integrity="sha512-QO3i/2CDhsp0nJOKk&#43;IepcX/dAZvwRRJYJgOr6FqaGsP/rFGaMnILjrG9Ya7Mjub&#43;6kben&#43;UqyORthD5bEQYZw=="> 
 
   
   
@@ -243,42 +243,42 @@ if (!doNotTrack) {
       <h2 id="求解无向图中是否存在环">求解无向图中是否存在环</h2>
 <p>无向图中是否存在环，可以通过DFS来实现。</p>
 <p>由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#0b0;font-weight:bold">int</span> mat[maxn][maxn], vis[maxn];
-<span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">dfs</span>(<span style="color:#0b0;font-weight:bold">int</span> v) {
-    vis[v] <span style="color:#666">=</span> <span style="color:#666">1</span>;
-    <span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num; i<span style="color:#666">++</span>) <span style="color:#a2f;font-weight:bold">if</span> (mat[v][i]) {
-        <span style="color:#a2f;font-weight:bold">if</span> (vis[i] <span style="color:#666">||</span> dfs(i)) <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">1</span>; <span style="color:#080;font-style:italic">// 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环
-</span><span style="color:#080;font-style:italic"></span>    }
-    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">0</span>;
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> mat[maxn][maxn], vis[maxn];
+<span style="color:#fff;font-weight:bold">int</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v) {
+    vis[v] = <span style="color:#ff0;font-weight:bold">1</span>;
+    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; num; i++) <span style="color:#fff;font-weight:bold">if</span> (mat[v][i]) {
+        <span style="color:#fff;font-weight:bold">if</span> (vis[i] || dfs(i)) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">1</span>; <span style="color:#007f7f">// 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环
+</span><span style="color:#007f7f"></span>    }
+    <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">0</span>;
 }
 
-memset(vis, <span style="color:#666">0</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(vis));
-<span style="color:#0b0;font-weight:bold">int</span> flag <span style="color:#666">=</span> <span style="color:#666">0</span>; <span style="color:#080;font-style:italic">// 无环标志
-</span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> num; j<span style="color:#666">++</span>) {
-    <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>vis[j]) flag <span style="color:#666">=</span> dfs(j); 
-    <span style="color:#080;font-style:italic">// 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点
-</span><span style="color:#080;font-style:italic"></span>    <span style="color:#a2f;font-weight:bold">if</span> (flag) <span style="color:#a2f;font-weight:bold">break</span>; <span style="color:#080;font-style:italic">// 如果在该连通子图中找到环则直接结束递归
-</span><span style="color:#080;font-style:italic"></span>} 
+memset(vis, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(vis));
+<span style="color:#fff;font-weight:bold">int</span> flag = <span style="color:#ff0;font-weight:bold">0</span>; <span style="color:#007f7f">// 无环标志
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>; j &lt; num; j++) {
+    <span style="color:#fff;font-weight:bold">if</span> (!vis[j]) flag = dfs(j); 
+    <span style="color:#007f7f">// 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点
+</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">if</span> (flag) <span style="color:#fff;font-weight:bold">break</span>; <span style="color:#007f7f">// 如果在该连通子图中找到环则直接结束递归
+</span><span style="color:#007f7f"></span>} 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="求解有向图中是否存在环">求解有向图中是否存在环</h2>
@@ -292,58 +292,58 @@ memset(vis, <span style="color:#666">0</span>, <span style="color:#a2f;font-weig
 <p>由于存在拓扑序的一个充要条件是：</p>
 <p><strong>算法进栈结点数等于总结点数</strong></p>
 <p>所以比较进栈的结点数和总的结点数即可！</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">topo</span>() {
-    stack<span style="color:#666">&lt;</span><span style="color:#0b0;font-weight:bold">int</span><span style="color:#666">&gt;</span> st;
-    <span style="color:#0b0;font-weight:bold">int</span> ncount <span style="color:#666">=</span> <span style="color:#666">0</span>;
-    <span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num; i<span style="color:#666">++</span>) <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>in_num[i]) st.push(i); <span style="color:#080;font-style:italic">// 找到第一个入度为0的结点
-</span><span style="color:#080;font-style:italic"></span>    <span style="color:#a2f;font-weight:bold">while</span>(<span style="color:#666">!</span>st.empty()) {
-        <span style="color:#0b0;font-weight:bold">int</span> k <span style="color:#666">=</span> st.top(); st.pop(); ncount<span style="color:#666">++</span>;
-        <span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num; i<span style="color:#666">++</span>) {
-            <span style="color:#a2f;font-weight:bold">if</span> (mat[k][i]) 
-                <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">--</span>in_num[i] <span style="color:#666">==</span> <span style="color:#666">0</span>) st.push(i); <span style="color:#080;font-style:italic">// 如果减去1后入度为0则属于拓扑序结点，进栈
-</span><span style="color:#080;font-style:italic"></span>        }
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> topo() {
+    stack&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; st;
+    <span style="color:#fff;font-weight:bold">int</span> ncount = <span style="color:#ff0;font-weight:bold">0</span>;
+    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; num; i++) <span style="color:#fff;font-weight:bold">if</span> (!in_num[i]) st.push(i); <span style="color:#007f7f">// 找到第一个入度为0的结点
+</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">while</span>(!st.empty()) {
+        <span style="color:#fff;font-weight:bold">int</span> k = st.top(); st.pop(); ncount++;
+        <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; num; i++) {
+            <span style="color:#fff;font-weight:bold">if</span> (mat[k][i]) 
+                <span style="color:#fff;font-weight:bold">if</span> (--in_num[i] == <span style="color:#ff0;font-weight:bold">0</span>) st.push(i); <span style="color:#007f7f">// 如果减去1后入度为0则属于拓扑序结点，进栈
+</span><span style="color:#007f7f"></span>        }
     }
-    <span style="color:#a2f;font-weight:bold">return</span> ncount;
+    <span style="color:#fff;font-weight:bold">return</span> ncount;
 }
 
-memset(in_num, <span style="color:#666">0</span>, <span style="color:#a2f;font-weight:bold">sizeof</span>(in_num));
-<span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> num; j<span style="color:#666">++</span>)
-    <span style="color:#a2f;font-weight:bold">for</span> (<span style="color:#0b0;font-weight:bold">int</span> k <span style="color:#666">=</span> <span style="color:#666">0</span>; k <span style="color:#666">&lt;</span> num; k<span style="color:#666">++</span>) {
-        scanf(<span style="color:#b44">&#34;%d&#34;</span>, <span style="color:#666">&amp;</span>mat[j][k]);
-        <span style="color:#a2f;font-weight:bold">if</span> (mat[j][k]) in_num[k]<span style="color:#666">++</span>; <span style="color:#080;font-style:italic">// 计算入度
-</span><span style="color:#080;font-style:italic"></span>    }
-<span style="color:#0b0;font-weight:bold">int</span> ncount <span style="color:#666">=</span> topo(); <span style="color:#080;font-style:italic">// 如果拓扑序中进栈的结点小于总结点数则证明含有环
-</span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">if</span> (ncount <span style="color:#666">&lt;</span> num) ans.push_back(<span style="color:#666">1</span>); <span style="color:#080;font-style:italic">// 1表示有环
-</span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">else</span> ans.push_back(<span style="color:#666">0</span>);
+memset(in_num, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span>(in_num));
+<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>; j &lt; num; j++)
+    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> k = <span style="color:#ff0;font-weight:bold">0</span>; k &lt; num; k++) {
+        scanf(<span style="color:#0ff;font-weight:bold">&#34;%d&#34;</span>, &amp;mat[j][k]);
+        <span style="color:#fff;font-weight:bold">if</span> (mat[j][k]) in_num[k]++; <span style="color:#007f7f">// 计算入度
+</span><span style="color:#007f7f"></span>    }
+<span style="color:#fff;font-weight:bold">int</span> ncount = topo(); <span style="color:#007f7f">// 如果拓扑序中进栈的结点小于总结点数则证明含有环
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">if</span> (ncount &lt; num) ans.push_back(<span style="color:#ff0;font-weight:bold">1</span>); <span style="color:#007f7f">// 1表示有环
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">else</span> ans.push_back(<span style="color:#ff0;font-weight:bold">0</span>);
 
 }
 </code></pre></td></tr></table>
@@ -366,7 +366,7 @@ memset(in_num, <span style="color:#666">0</span>, <span style="color:#a2f;font-w
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label=""
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
