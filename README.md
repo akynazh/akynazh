@@ -54,11 +54,11 @@ Batchfile    30 mins         █░░░░░░░░░░░░░░░░
 <h3> :alien: Latest Blog Posts</h3>
   
 <!-- BLOG-POST-LIST:START -->
+- [《消失的十三级台阶》摘录](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%8D%81%E4%B8%89%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%91%98%E5%BD%95/)
 - [Linux实用操作之shell变量运算](https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/)
 - [Linux实用操作之系统服务管理](https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/)
 - [太宰治书籍摘录](https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E5%A4%AA%E5%AE%B0%E6%B2%BB%E4%B9%A6%E7%B1%8D%E6%91%98%E5%BD%95/)
 - [Linux实用操作之编辑命令与变量](https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/)
-- [Linux实用操作之文件操作](https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/)
 <!-- BLOG-POST-LIST:END -->
 
 </td>
