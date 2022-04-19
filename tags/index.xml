@@ -7,13 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 15 Apr 2022 13:02:21 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Apr 2022 13:48:19 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>文摘 book</title>
-      <link>https://akynazh.site/tags/%E6%96%87%E6%91%98-book/</link>
+      <title>cmd</title>
+      <link>https://akynazh.site/tags/cmd/</link>
+      <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/cmd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>https://akynazh.site/tags/powershell/</link>
+      <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>window</title>
+      <link>https://akynazh.site/tags/window/</link>
+      <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/window/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>book</title>
+      <link>https://akynazh.site/tags/book/</link>
       <pubDate>Fri, 15 Apr 2022 13:02:21 +0800</pubDate>
       
-      <guid>https://akynazh.site/tags/%E6%96%87%E6%91%98-book/</guid>
+      <guid>https://akynazh.site/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文摘</title>
+      <link>https://akynazh.site/tags/%E6%96%87%E6%91%98/</link>
+      <pubDate>Fri, 15 Apr 2022 13:02:21 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/%E6%96%87%E6%91%98/</guid>
       <description></description>
     </item>
     
@@ -27,29 +63,11 @@
     </item>
     
     <item>
-      <title>book</title>
-      <link>https://akynazh.site/tags/book/</link>
-      <pubDate>Fri, 08 Apr 2022 23:24:44 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>太宰治</title>
       <link>https://akynazh.site/tags/%E5%A4%AA%E5%AE%B0%E6%B2%BB/</link>
       <pubDate>Fri, 08 Apr 2022 23:24:44 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/%E5%A4%AA%E5%AE%B0%E6%B2%BB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>文摘</title>
-      <link>https://akynazh.site/tags/%E6%96%87%E6%91%98/</link>
-      <pubDate>Fri, 08 Apr 2022 23:24:44 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/%E6%96%87%E6%91%98/</guid>
       <description></description>
     </item>
     
@@ -234,29 +252,11 @@
     </item>
     
     <item>
-      <title>cmd</title>
-      <link>https://akynazh.site/tags/cmd/</link>
-      <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/cmd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>script</title>
       <link>https://akynazh.site/tags/script/</link>
       <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>window</title>
-      <link>https://akynazh.site/tags/window/</link>
-      <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/window/</guid>
       <description></description>
     </item>
     

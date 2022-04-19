@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>window on AKYNAZH</title>
-    <link>https://akynazh.site/tags/window/</link>
-    <description>Recent content in window on AKYNAZH</description>
+    <title>powershell on AKYNAZH</title>
+    <link>https://akynazh.site/tags/powershell/</link>
+    <description>Recent content in powershell on AKYNAZH</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 19 Apr 2022 13:48:19 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/window/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Apr 2022 13:48:19 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Window实用命令记录之文件操作</title>
       <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
@@ -30,31 +30,6 @@
 参数列表:
  /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。  e.g.
 1 2 3  TASKKILL /IM notepad.exe TASKKILL /PID 1230 /PID 1241 /PID 1253 /T TASKKILL /F /IM cmd.</description>
-    </item>
-    
-    <item>
-      <title>Window增加右键打开选项</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
-      <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
-      <description>加入注册表界面   win+R
-  regedit
-  增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
-计算机\HKEY_CLASSES_ROOT*\shell
-  新建项 Vscode
-  右键Vscode并新建项command
- 编辑command默认选项值为： ${vscodepath}\Code.exe %1  %1是可选的参数，这里必须要加，表示作用于该文件。
-  编辑Vscode值
-  编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）
-  编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)
-    增加目录下右键打开选项 以window terminal作为实例 注册表页面下进入：
-计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
-  新建项 Terminal
-  右键Terminal 新建项command
- 编辑command默认选项值为：${terminalpath}\wt.exe    编辑Terminal值
-  编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
-  编辑右键显示图标：新建字符串值icon 添加：${terminalicon}</description>
     </item>
     
   </channel>
