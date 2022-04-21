@@ -4,6 +4,7 @@
     (global.$Snow = factory());
   }(this, (function () { 'use strict';
 
+    // 判断浏览器所在机器类型
     function isMobile() {
       let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       return flag;
@@ -45,16 +46,13 @@
       this.randomColor = false;                     // 随机显示rgb颜色
       this.stayedcss = {};                          // 留底后的css 默认无样式
   
+      // 如果是手机则改变参数
       if (isMobile()) {
-        alert("mobile")
-        this.color = 'yellow';
         this.maxSize = 2;
         this.maxImgSize = 5;
-        this.num = 5;
-        this.limit = 50;
-        this.speed = 25;
-      } else {
-        alert("pc")
+        this.num = 3;
+        this.limit = 15;
+        this.speed = 30;
       }
 
       // 进行配置判断 如果存在用户自定义的配置 则覆盖默认配置
@@ -371,17 +369,24 @@
   
   })));
   
-var snow1 = new $Snow({
+// 生成雪类型一
+var snow1 = new $Snow();
+
+// 生成雪类型二
+var snow2 = new $Snow({
     img: true,
-    stay: true,
-    imgurl: './images/snow.png',
+    imgurl: '/images/snow.png',
+    num: 3,
+    limit: 10,
     css: {
-        animation: 'rotate 3s linear infinite'
-    }
+      animation: 'rotate 7s linear infinite'
+    },
+    stayedcss: {
+      animationPlayState: 'paused',
+    },
 });
 
-var snow2 = new $Snow();
-
+// 下雪一段时间后停止
 // setTimeout(function() {
 //     snow1.stop();
 //     snow1 = null;
