@@ -21,7 +21,7 @@
       this.pause = false;                           // 标志是否暂停
 
       this.color = '#fff';                          // 雪花颜色 默认白色
-      this.opacity = 0.7;                         // 雪花不透明度 默认不透明
+      this.opacity = 0.6;                         // 雪花不透明度 默认不透明
       this.randombase = 1000;                       // 生产雪花的时间间隔随值 默认1.5秒
       this.num = 10;                                 // 每次生产雪花的随机数量 默认8
       this.limit = 50;                             // 每个页面的雪花上限 默认150
@@ -32,13 +32,13 @@
       this.maxSize = 3;                             // 雪花的最大宽度 默认4
       this.maxImgSize = 15;                         // 图片雪花的最大宽度 默认30
       this.hideType = 'fadeout';                      // 雪花留底后消失的方式 默认缩小隐藏
-      this.hideDuration = 600;                      // 雪花从开始消失到消失的持续时间 默认0.3秒
+      this.hideDuration = 1000;                      // 雪花从开始消失到消失的持续时间 默认0.3秒
       this.isOffsetOnTouch = false;                  // 移动端是否根据手势产生偏移 默认是
       this.isPause = false;                          // 当页面失去焦点的时候是否暂停下雪 默认是
       this.shadow = true;                           // 是否显示阴影
       this.shadowColor = '#fff';                    // 默认操作的阴影颜色
-      this.shadowBlur = 5;                         // 阴影模糊半径
-      this.shadowSize = 3;                          // 阴影尺寸
+      this.shadowBlur = 2;                         // 阴影模糊半径
+      this.shadowSize = 1;                          // 阴影尺寸
       this.zIndex = 99999;                          // 曾经控制
       this.reversionOffset = false;                 // 是否反向偏移
       this.css = {};                                // 自定义css对象 默认空
@@ -49,10 +49,10 @@
       // 如果是手机则改变参数
       if (isMobile()) {
         this.maxSize = 2;
-        this.maxImgSize = 5;
-        this.num = 3;
-        this.limit = 15;
-        this.speed = 30;
+        this.maxImgSize = 10;
+        this.num = 5;
+        this.limit = 30;
+        this.speed = 25;
       }
 
       // 进行配置判断 如果存在用户自定义的配置 则覆盖默认配置
@@ -375,9 +375,23 @@ var snow1 = new $Snow();
 // 生成雪类型二
 var snow2 = new $Snow({
     img: true,
-    imgurl: '/images/snow.png',
-    num: 3,
-    limit: 10,
+    imgurl: '/images/snow1.png',
+    num: 2,
+    limit: 4,
+    css: {
+      animation: 'rotate 7s linear infinite'
+    },
+    stayedcss: {
+      animationPlayState: 'paused',
+    },
+});
+
+// 生成雪类型三
+var snow3 = new $Snow({
+    img: true,
+    imgurl: '/images/snow2.png',
+    num: 2,
+    limit: 4,
     css: {
       animation: 'rotate 7s linear infinite'
     },
@@ -392,4 +406,7 @@ var snow2 = new $Snow({
 //     snow1 = null;
 //     snow2.stop();
 //     snow2 = null;
+//     snow3.stop();
+//     snow3 = null;
 // }, 30000)
+
