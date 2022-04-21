@@ -3,6 +3,8 @@
     typeof define === 'function' && define.amd ? define(factory) :
     (global.$Snow = factory());
   }(this, (function () { 'use strict';
+
+
   
     function Snow(option) {
       this.wrap = document.createElement('div');    // 容器
@@ -13,18 +15,18 @@
       this.count = 0;                               // 雪花总数
       this.isStop = false;                          // 标志是否要停止下雪
       this.pause = false;                           // 标志是否暂停
-  
+
       this.color = '#fff';                          // 雪花颜色 默认白色
       this.opacity = 0.7;                         // 雪花不透明度 默认不透明
       this.randombase = 1000;                       // 生产雪花的时间间隔随值 默认1.5秒
-      this.num = 20;                                 // 每次生产雪花的随机数量 默认8
-      this.limit = 100;                             // 每个页面的雪花上限 默认150
+      this.num = 10;                                 // 每次生产雪花的随机数量 默认8
+      this.limit = 50;                             // 每个页面的雪花上限 默认150
       this.isOffset = false;                         // 标志是否随着鼠标产生雪花偏移 默认是
       this.stay = true;                            // 雪花是否会在底部停留 默认不停留
       this.stayTime = 1000;                         // 雪花在底部停留的时间 默认1.5秒
       this.speed = 15;                              // 雪花的下坠随机速度 默认10
       this.maxSize = 3;                             // 雪花的最大宽度 默认4
-      this.maxImgSize = 30;                         // 图片雪花的最大宽度 默认30
+      this.maxImgSize = 15;                         // 图片雪花的最大宽度 默认30
       this.hideType = 'fadeout';                      // 雪花留底后消失的方式 默认缩小隐藏
       this.hideDuration = 600;                      // 雪花从开始消失到消失的持续时间 默认0.3秒
       this.isOffsetOnTouch = false;                  // 移动端是否根据手势产生偏移 默认是
@@ -354,4 +356,20 @@
   
   })));
   
-  var snow = new $Snow();
+var snow1 = new $Snow({
+    img: true,
+    stay: true,
+    imgurl: './images/snow.png',
+    css: {
+        animation: 'rotate 3s linear infinite'
+    }
+});
+
+var snow2 = new $Snow();
+
+// setTimeout(function() {
+//     snow1.stop();
+//     snow1 = null;
+//     snow2.stop();
+//     snow2 = null;
+// }, 30000)
