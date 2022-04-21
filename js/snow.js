@@ -46,11 +46,14 @@
       this.stayedcss = {};                          // 留底后的css 默认无样式
   
       if (isMobile()) {
+        alert("mobile")
         this.maxSize = 2;
         this.maxImgSize = 5;
         this.num = 5;
         this.limit = 50;
         this.speed = 25;
+      } else {
+        alert("pc")
       }
 
       // 进行配置判断 如果存在用户自定义的配置 则覆盖默认配置
