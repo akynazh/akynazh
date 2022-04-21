@@ -4,8 +4,11 @@
     (global.$Snow = factory());
   }(this, (function () { 'use strict';
 
+    function isMobile() {
+      let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      return flag;
+    }
 
-  
     function Snow(option) {
       this.wrap = document.createElement('div');    // 容器
       this.offset = 0;                              // 偏移量
@@ -42,6 +45,14 @@
       this.randomColor = false;                     // 随机显示rgb颜色
       this.stayedcss = {};                          // 留底后的css 默认无样式
   
+      if (isMobile()) {
+        this.maxSize = 2;
+        this.maxImgSize = 5;
+        this.num = 5;
+        this.limit = 50;
+        this.speed = 25;
+      }
+
       // 进行配置判断 如果存在用户自定义的配置 则覆盖默认配置
       if (option) {
         this.opacity = option.opacity || this.opacity;
