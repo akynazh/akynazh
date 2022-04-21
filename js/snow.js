@@ -47,6 +47,7 @@
   
       if (isMobile()) {
         alert("mobile")
+        this.color = 'yellow';
         this.maxSize = 2;
         this.maxImgSize = 5;
         this.num = 5;
