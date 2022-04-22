@@ -24,7 +24,7 @@
       this.opacity = 0.6;                         // 雪花不透明度 默认不透明
       this.randombase = 1000;                       // 生产雪花的时间间隔随值 默认1.5秒
       this.num = 10;                                 // 每次生产雪花的随机数量 默认8
-      this.limit = 50;                             // 每个页面的雪花上限 默认150
+      this.limit = 60;                             // 每个页面的雪花上限 默认150
       this.isOffset = false;                         // 标志是否随着鼠标产生雪花偏移 默认是
       this.stay = true;                            // 雪花是否会在底部停留 默认不停留
       this.stayTime = 1000;                         // 雪花在底部停留的时间 默认1.5秒
@@ -375,7 +375,7 @@ var snow1 = new $Snow();
 // 生成雪类型二
 var snow2 = new $Snow({
     img: true,
-    imgurl: '/images/snow1.png',
+    imgurl: '/images/wsnow1.png',
     num: 2,
     limit: 4,
     css: {
@@ -389,7 +389,7 @@ var snow2 = new $Snow({
 // 生成雪类型三
 var snow3 = new $Snow({
     img: true,
-    imgurl: '/images/snow2.png',
+    imgurl: '/images/bsnow2.png',
     num: 2,
     limit: 4,
     css: {
