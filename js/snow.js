@@ -45,7 +45,7 @@
       this.constrain = false;                       // 如果是图片显示 则保持长宽比例 默认否 为强制正方形
       this.randomColor = false;                     // 随机显示rgb颜色
       this.stayedcss = {};                          // 留底后的css 默认无样式
-  
+
       // 如果是手机则改变参数
       if (isMobile()) {
         this.maxSize = 2;
