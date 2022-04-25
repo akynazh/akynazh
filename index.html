@@ -13,6 +13,7 @@
 </style>
 <head>
 	<meta name="generator" content="Hugo 0.89.3" />
+  <link rel="stylesheet" href="https://akynazh.site/css/search.css" />
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -81,7 +82,6 @@ if (!doNotTrack) {
 
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
-    
     <header id="header">
   <a href="https://akynazh.site">
   
@@ -114,7 +114,6 @@ if (!doNotTrack) {
     
 <section id="about">
 <p><b>“死并非作为生的对立面，而是作为生的一部分永存。”</b></p>
-<p>I enjoying coding and reading, both of them give me a sense of happiness.</p>
 <p>Here comes my recent weekly coding record:</p>
 <pre style="white-space: pre-warp; border: 0; padding: 0;" id="record"></pre>
 
@@ -139,7 +138,38 @@ if (!doNotTrack) {
 
 
 
-  
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="aa-input-container" id="aa-input-container">
+                    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for what you need" name="search" autocomplete="off" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("2D2Z2BVSGA", "45d49616fa5890bd6de7456ea0b42be2");
+var index = client.initIndex('akynazh');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            var des_url = suggestion.uri;
+            var reg = /[《》（）]/g;
+            des_url = des_url.toLowerCase().replace(reg, "");
+            return '<span>' + '<a href="' + des_url + '"">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
   </section>
 
   <section id="writing">
