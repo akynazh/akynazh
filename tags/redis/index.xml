@@ -23,15 +23,8 @@
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
-      <description>Open, Connect And Config open redis:
-redis-server  connect to redis:
-redis-cli  disconnect:
-1  redis-cli shutdown   show chinese:
-redis-cli --raw  connect to remote redis:
-redis-cli -h host -p port -a password  get redis config:
-config get {config_name}  Data Type list:
-1 2 3  lpush clist redis lpush clist mysql lrange clist 0 100   key:
-1 2 3 4 5 6 7 8  127.</description>
+      <description>Open, Connect And Config  open redis:  1  redis-server   connect to redis:  1  redis-cli   disconnect:  1  redis-cli shutdown   show chinese:  1  redis-cli --raw   connect to remote redis:  1  redis-cli -h host -p port -a password   get redis config:  1  config get {config_name}   Data Type list:
+1 2 3  lpush clist redis lpush clist mysql lrange clist 0 100   key:</description>
     </item>
     
   </channel>
