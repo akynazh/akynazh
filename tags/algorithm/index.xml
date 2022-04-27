@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 05 Dec 2021 12:34:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图的着色问题汇总</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
 代码解决：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  vector&amp;lt;int&amp;gt; G[MAX_V]; int vertexes; int edges; int color[MAX_V]; //二分图，颜色为1或-1 bool dfs(int v, int c) { color[v] = c; for (int i = 0; i &amp;lt; G[v].size(); i++) { if (color[G[v][i]] == c) return false; if (color[G[v][i]] == 0 &amp;amp;&amp;amp; !dfs(G[v][i], -c)) return false; } return true; } void solve() { for (int i = 0; i &amp;lt; vertexes; i++) { if (color[i] == 0) { if (!</description>
@@ -21,10 +21,10 @@
     
     <item>
       <title>求解有向图和无向图中是否存在环的方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
 由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  int mat[maxn][maxn], vis[maxn]; int dfs(int v) { vis[v] = 1; for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环  } return 0; } memset(vis, 0, sizeof(vis)); int flag = 0; // 无环标志 for (int j = 0; j &amp;lt; num; j++) { if (!</description>
@@ -32,10 +32,10 @@
     
     <item>
       <title>矩阵快速幂的介绍及其应用</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
+      <link>https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
       <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
       <description>矩阵快速幂介绍 题目描述
 给定n×n的矩阵A，求 A^k。
 输入格式
@@ -53,20 +53,20 @@
     
     <item>
       <title>最短路问题汇总</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
 迪杰斯特拉算法 O(V^2) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  const int MAXN = 100; const int INF = 0x3f3f3f3f; // 有向无环图 DAG int V, E; // 顶点数和边数 int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0  // 初始化图 void init() { memset(graph, 0x3f, sizeof(graph)); cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; int from, to, cost; for (int i = 0 ; i &amp;lt; E; i++) { cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; graph[from][to] = cost; } } // 迪杰斯特拉算法求解最短路，针对点展开 void Dijkstra(int s) { memset(d, 0x3f, sizeof(d)); memset(visited, 0, sizeof(visited)); visited[s] = 1; for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; d[s] = 0; int k, min_cost; // 无负边时最多更新n-1(其他结点数)次 	for(int i = 0; i &amp;lt; V - 1; i++){ min_cost = INF; // 寻找最未被访问的且权值最小的路径，需要优化的地方 	for(int j = 0; j &amp;lt; V; j++){ if(!</description>
     </item>
     
     <item>
       <title>关于数论的一些简单算法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
       <description>关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
 算法思路：

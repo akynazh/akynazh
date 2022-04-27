@@ -10,10 +10,10 @@
     <lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
       <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 步骤  后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值  缺陷 这个方法我使用过，但是效果并不好，原因如下：
@@ -27,10 +27,10 @@
     
     <item>
       <title>Linux上部署JAR包项目后的文件上传问题</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
 1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
  如果单纯运行一个java项目：  获得路径为：
@@ -52,10 +52,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Linux主机部署springboot项目全过程</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
       <description>注：部署环境为centos7.9版本
 操作步骤如下：
  配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
@@ -67,10 +67,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
       <description>提出问题 先看一个例子：
 当两个人年龄相同时，我们认为这两个对象相同：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;#34;Person{&amp;#34; + &amp;#34;age=&amp;#34; + age + &amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + &amp;#39;}&amp;#39;; } @Override public boolean equals(Object o) { if (this == o) return true; if (o == null || getClass() !</description>
@@ -78,10 +78,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>equals方法和==运算符的作用区别</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
+      <link>https://akynazh.site/posts/study/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
+      <guid>https://akynazh.site/posts/study/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
       <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
   == 比较时进行地址的比较
   equals 比较时进行值的比较
@@ -92,10 +92,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Java中通过反射获取带参数类型的方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。通过了解，发现可以采用导入Gson包的方式调用方法实现这个功能：
 1 2 3 4  Person p = new Person(1, &amp;#34;jzh&amp;#34;); Gson gson = new Gson(); String p_json = gson.toJson(p); Person p1 = gson.fromJson(p_json, Person.class);   从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：
 1 2 3 4 5 6 7  ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); people.add(new Person(1, &amp;#34;jzh&amp;#34;)); people.add(new Person(2, &amp;#34;zh&amp;#34;)); people.add(new Person(3, &amp;#34;z&amp;#34;)); String ps_json = gson.toJson(people); ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json,new TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt;() { }.getType());   这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken实现。

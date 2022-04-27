@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 06 Feb 2022 20:41:12 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Matlab基本用法整理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</link>
       <pubDate>Sun, 06 Feb 2022 20:41:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</guid>
       <description>基本语法方面 提取矩阵某行或某列 1  A(:, [2 3]) 返回第2和第3列   获取随机数 1  randi(100); % 1 到 100 之间的随机整数   初始化数组 1  zeros(1, 30); % 1行30列的全0数组   控制语句 1 2 3 4 5 6 7 8 9 10  for i = 0 : 100 for j = 1 : 10 if (...)  ... else ... end end ... end   格式化输出 1  fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM);   初等数学方面 求解方程组 注：solve已经改版，不可传入字符串</description>
     </item>
     

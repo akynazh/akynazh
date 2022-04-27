@@ -10,10 +10,10 @@
     <lastBuildDate>Sat, 12 Feb 2022 21:46:13 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/shiro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SpringBoot&#43;Vue&#43;Shiro的Demo项目</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://akynazh.site/posts/study/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Sat, 12 Feb 2022 21:46:13 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://akynazh.site/posts/study/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</guid>
       <description>前言 Github地址：SpringBoot-Vue-Demo
 相关项目：lonersHub，前后端不分离的基础web项目。
 欢迎star学习。

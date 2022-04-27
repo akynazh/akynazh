@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 19 Apr 2022 13:48:19 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/window/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Window实用命令记录之文件操作</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <link>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
       <description>创建文件或文件夹 cmd下创建文件 1  type nul &amp;gt; test.jpg   powershell下创建文件 1  new-item test.jpg   创建文件夹 1  mkdir test   重命名文件 注意不能指定到新的路径。
 1  PS D:\a\tmp\test&amp;gt; ren test.txt my.txt   移动文件 该命令也可用于重命名。
 1  PS D:\a\tmp\test&amp;gt; move test.jpg mydir   复制文件和文件夹 copy无法递归复制，而xcopy可以。
@@ -22,10 +22,10 @@
     
     <item>
       <title>Window实用命令记录之进程与网络控制</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</link>
+      <link>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</guid>
+      <guid>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</guid>
       <description>进程相关 tasklist  tasklist用于查看运行的进程 findstr相当于linux的grep  1 2 3 4  PS C:\Users\akyna&amp;gt; Tasklist | findstr Code Code.exe 19184 Console 1 94,012 K Code.exe 19300 Console 1 26,324 K ......   taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
  /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。  e.g.
@@ -34,10 +34,10 @@
     
     <item>
       <title>Window增加右键打开选项</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+      <link>https://akynazh.site/posts/study/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+      <guid>https://akynazh.site/posts/study/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
       <description>加入注册表界面   win+R
   regedit
   增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：

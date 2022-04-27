@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 25 Apr 2022 20:39:14 +0800</lastBuildDate><atom:link href="https://akynazh.site/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《挪威的森林》文摘四</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/</link>
+      <link>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/</link>
       <pubDate>Mon, 25 Apr 2022 20:39:14 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/</guid>
       <description>第十一章 在辗转反侧的不眠之夜，我想起直子的种种音容笑貌，不容我不想起。因为我心里关于直子的记忆堆积如山，只要稍稍开启一点缝隙，它们便争先恐后，鼓涌而出，而我根本无法遏止其突发的攻势。
  就是这样，直子的形象如同汹涌而来的潮水向我联翩袭来，将我的身体冲往奇妙的地带。在这奇妙地带里，我同死者共同生活。直子也在这里活着，同我交谈，同我拥抱。在这个地方，所谓死，并非是使生完结的决定性因素，而仅仅是构成生的众多因素之一。直子在这里仍在含有死的前提下继续生存，并且对我这样说：“不要紧，渡边君，那不过是一死罢了，别介意。”
  木月死时，我从他的死中学到一个道理，并将其作为大彻大悟的人生真谛铭刻或力图铭刻在心。那便是：“死并非生的对立面，死潜伏在我们的生之中。”
@@ -29,10 +29,10 @@
     
     <item>
       <title>Window实用命令记录之文件操作</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <link>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
       <description>创建文件或文件夹 cmd下创建文件 1  type nul &amp;gt; test.jpg   powershell下创建文件 1  new-item test.jpg   创建文件夹 1  mkdir test   重命名文件 注意不能指定到新的路径。
 1  PS D:\a\tmp\test&amp;gt; ren test.txt my.txt   移动文件 该命令也可用于重命名。
 1  PS D:\a\tmp\test&amp;gt; move test.jpg mydir   复制文件和文件夹 copy无法递归复制，而xcopy可以。
@@ -41,10 +41,10 @@
     
     <item>
       <title>Window实用命令记录之进程与网络控制</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</link>
+      <link>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</guid>
+      <guid>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/</guid>
       <description>进程相关 tasklist  tasklist用于查看运行的进程 findstr相当于linux的grep  1 2 3 4  PS C:\Users\akyna&amp;gt; Tasklist | findstr Code Code.exe 19184 Console 1 94,012 K Code.exe 19300 Console 1 26,324 K ......   taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
  /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。  e.g.
@@ -53,10 +53,10 @@
     
     <item>
       <title>《挪威的森林》文摘三</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%89/</link>
+      <link>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%89/</link>
       <pubDate>Mon, 18 Apr 2022 20:31:46 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%89/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%89/</guid>
       <description>第十章 一九六九年这一年，总是令我想起进退两难的泥沼——每迈一步都几乎把整只鞋陷掉那般的滞重而深沉的泥沼。而我就在这片泥沼中气喘吁吁地挪动脚步，前方一无所见，后面渺无来者，只有昏暗的泥沼无边无际地延展开去。甚至时光都随着我的步调而流淌得十分吃力。身边的人早已经遥遥领先，惟独我和我的时间在泥沼中艰难地往来爬行。
 我四周的世界则面临一切沧桑巨变。约翰·科尔特兰死了，还有很多人死了。人们在呼喊变革，仿佛变革正在席卷每个角落。然而这些无一不是虚构的毫无意义的背景画面而已。我则几乎没有抬头，日复一日地打发时光。在我眼里，只有漫无边际的泥沼。往前落下右脚，拔起左脚，再拔起右脚。我判断不出我位于何处，也不具有自己是在朝正确方向前进的信心。我之所以一步步挪动步履，只是因为我必须挪动，而无论去哪里。
  下午过去，黄昏来临，继而隐隐泛青的夜色笼罩了院落。“海鸥”早已不见踪影。我又开始观看樱花。在我眼里，春夜里的樱花，宛如从开裂的皮肤中鼓胀出来的烂肉，整个院子都充满烂肉那甜腻而沉闷的腐臭气味。我转而想起直子的裸体。直子娇美的裸体横陈在夜色之中，无数植物的嫩芽从其肌肤中争相萌出，在天外来风的吹拂下，鲜绿的幼芽轻轻摇颤不止。我想，那般巧夺天工的肢体为什么非生病不可呢？他们为什么不肯放直子一条生路呢？
@@ -72,10 +72,10 @@
     
     <item>
       <title>《斜阳》文摘</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%96%9C%E9%98%B3%E6%96%87%E6%91%98/</link>
+      <link>https://akynazh.site/posts/book/%E6%96%9C%E9%98%B3%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 17 Apr 2022 23:13:28 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%96%9C%E9%98%B3%E6%96%87%E6%91%98/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%96%9C%E9%98%B3%E6%96%87%E6%91%98/</guid>
       <description>作者：太宰治
 第三章 心里没着没落，感觉好像无所凭依，似乎怎么也活不下去了——这就是所谓的不安心情吧。胸口仿佛一阵阵痛苦的浪潮在拍打、涌来，就好像黄昏时分骤雨初歇，而后天空匆匆掠过一片片白云似的，使我心脏忽而收紧，忽而松弛，脉搏失常无规律，呼吸也变得困难，眼前发黑，全身的力气仿佛从十指尖上溜掉了一样，毛线都打不下去。
 第四章 我在第一封信里曾经提到过我心中飘过的彩虹，这道彩虹并不像萤光或者星光那样高尚和美丽，假如是那样淡淡而幽远的话，我就不会这样痛苦，甚至能够逐渐将您忘掉了。我心中的彩虹是一座火焰之桥，我的思念几乎要将我的心都烧焦了。
@@ -84,10 +84,10 @@
     
     <item>
       <title>《挪威的森林》文摘二</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%BA%8C/</link>
+      <link>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%BA%8C/</link>
       <pubDate>Sat, 16 Apr 2022 18:03:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%BA%8C/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%BA%8C/</guid>
       <description>作者：村上春树
 第七章 “见不到你固然是痛苦的，但倘若没有你，我在东京的生活将更不堪忍受。正因为一清早我就在床上想你，我才下决心拧紧发条，自强不息地生活下去。如同你在那边自强不息一样，我在这里也必须自强不息。”
  嘈杂的周日街头使我的心头舒展开来。我在通勤电车一般拥挤不堪的纪伊国屋书店里买了一本福克纳的《八月之光》，然后挑一家听起来声音开到尽可能大的爵士酒吧走进去，一边听奥内特·科尔曼和巴顿·帕维尔洛的唱片，一边喝又热又不好喝的咖啡，翻看刚买的书。五点半时，合上书，出门吃了简单的晚饭。我不由心想：这样的星期日以后将重复几十次、几百次吧？“安静的、平和的、孤独的星期日”——我出声说道。星期日我是不上发条的。
@@ -104,10 +104,10 @@
     
     <item>
       <title>《消失的十三级台阶》摘录</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%8D%81%E4%B8%89%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%91%98%E5%BD%95/</link>
+      <link>https://akynazh.site/posts/book/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%8D%81%E4%B8%89%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%91%98%E5%BD%95/</link>
       <pubDate>Fri, 15 Apr 2022 13:02:21 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%8D%81%E4%B8%89%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%91%98%E5%BD%95/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%8D%81%E4%B8%89%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%91%98%E5%BD%95/</guid>
       <description>作者：高野和明
 第三章 调查 人在正义的名义下审判另一个人的时候，所谓的正义并不存在普遍的标准。
  犯罪所破坏的并不仅仅是眼睛看得到的东西，而是深深地侵入人们心中，破坏了人们心中最根本的东西。
@@ -118,10 +118,10 @@
     
     <item>
       <title>《人间失格》文摘</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E6%96%87%E6%91%98/</link>
+      <link>https://akynazh.site/posts/book/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E6%96%87%E6%91%98/</link>
       <pubDate>Thu, 14 Apr 2022 23:13:01 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E6%96%87%E6%91%98/</guid>
+      <guid>https://akynazh.site/posts/book/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E6%96%87%E6%91%98/</guid>
       <description>作者：太宰治
 手记之二 新学年伊始，山樱树在强韧的褐色嫩叶烘托和蔚蓝的大海映衬下，绽放绚烂的花朵，待到落英缤纷时节，如飞雪般坠下的樱花飘飘洒洒散向大海，装点着海面，随波荡漾，被浪花复又拍打回岸边。
  真孤单……比起她冗长的身世来，仅就这一句叹息便足以唤起我的共鸣。我一直期待着，可是，我从未从这世上的女人口中听到过这句话，这使我感到奇怪和难以理解。不过，虽然她没有用语言说出“孤单”两字，但似乎她身上就散发着这般无言的孤寂，好似有股一寸来宽的气流带包裹着她，在她身旁，我好像也被那股气流包裹，与我特有的带刺的阴郁气流相互交融，犹如落入水底附着在岩石上的枯叶，使我得以从恐惧和不安中抽离。
@@ -130,10 +130,10 @@
     
     <item>
       <title>《挪威的森林》文摘一</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%80/</link>
+      <link>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%80/</link>
       <pubDate>Thu, 14 Apr 2022 23:11:22 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%80/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%80/</guid>
       <description>作者：村上春树
 第一章 即使在经历过十八度春秋的今天，我仍可真切地记起那片草地的风景。连日温馨的霏霏细雨，将夏日的尘埃冲洗无余。片片山坡叠青泻翠，抽穗的芒草在十月金风的吹拂下蜿蜒起伏，逶迤的薄云紧贴着仿佛冻僵的湛蓝的天穹。凝眸望去，长空寥廓，但觉双目隐隐作痛。清风抚过草地，微微拂动她满头秀发，旋即向杂木林吹去。树梢上的叶片簌簌低语，狗的吠声由远而近，若有若无，细微得如同从另一世界的入口处传来。此外便万籁俱寂了。耳畔不闻任何声响，身边没有任何人擦过。只见两只火团样的小鸟，受惊似的从草丛中腾起，朝杂木林方向飞去。
  当然，只要有时间，我总会忆起她的面容。那冷冰冰的小手，那流线型泻下的手感爽适的秀发，那圆圆的软软的耳垂以及紧靠其底端的小小黑痣，那冬日常穿的格调高雅的驼绒大衣，那总是定定地注视对方眼睛发问的惯常动作，那不时奇妙地发出的微微颤抖的语声（就像在强风中的山冈上说话一样）随着这些印象的叠涌，她的面庞突然而自然地浮现出来。最先现出的是她的侧脸。大概因为我总是同她并肩走路的缘故，最先想起来的每每是她的侧影。随之，她朝我转过脸，甜甜地一笑，微微地歪头，轻轻地启齿，定定地看着我的双眼，仿佛在一泓清澈的泉水里寻觅稍纵即逝的小鱼的行踪。
@@ -146,20 +146,20 @@
     
     <item>
       <title>Linux实用操作之shell变量运算</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
       <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
       <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# c=$((c+c)) [root@VM-0-11-centos ~]# echo $c 24   比较运算 指令：-eq -ne -lt -gt -ge -le
 1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
     </item>
     
     <item>
       <title>Linux实用操作之系统服务管理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
       <pubDate>Tue, 12 Apr 2022 22:42:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
       <description>systemctl指令  立即启动一个服务  systemctl start apache.service
 立即停止一个服务  systemctl stop apache.service
 重启一个服务  systemctl restart apache.service
@@ -170,30 +170,30 @@ Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
     
     <item>
       <title>Linux实用操作之编辑命令与变量</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
       <pubDate>Tue, 05 Apr 2022 23:01:48 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
       <description>配置环境变量（以Java为例） Linux相关配置文件解析  bashrc部分:   /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:   /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。
 1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version &amp;#34;1.</description>
     </item>
     
     <item>
       <title>Linux实用操作之文件操作</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Tue, 05 Apr 2022 22:38:46 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
       <description>观察文件信息 1 2  drwxr-xr-x 2 root root 4096 Jan 2 18:41 source 文件类型+文件权限+目录或链接个数+创建者+所在组+文件大小+修改日期+名称   关于文件类型：
  d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件  文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
     </item>
     
     <item>
       <title>《强风吹拂》文摘</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/</link>
+      <link>https://akynazh.site/posts/book/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 03 Apr 2022 23:44:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/</guid>
+      <guid>https://akynazh.site/posts/book/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/</guid>
       <description>作者：三浦紫苑
 第四章. 纪录赛登场 “看了你这三个月来的表现，我越来越相信自己没看错人，”
 清濑接着说，“你很有天分，也很有潜力。所以呢，阿走，你一定要更相信自己，不要急着想一飞冲天。变强需要时间，也可以说它永远没有终点。长跑是值得一生投入的竞赛，有些人即使老了，仍然没有放弃慢跑或马拉松运动。”
@@ -208,10 +208,10 @@ Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
     
     <item>
       <title>《解忧杂货店》文摘</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E6%96%87%E6%91%98/</link>
+      <link>https://akynazh.site/posts/book/%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 03 Apr 2022 23:41:50 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E6%96%87%E6%91%98/</guid>
+      <guid>https://akynazh.site/posts/book/%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E6%96%87%E6%91%98/</guid>
       <description>作者：东野圭吾
 第四章. 听着披头士默祷 人与人之间的关系往往不是因为某些具体的原因而断绝。
 不，即使表面上有种原因，其实是因为彼此的心已经不在一起，事后才牵强附会地找这些借口。
@@ -229,10 +229,10 @@ Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
     
     <item>
       <title>《我的青春恋爱物语果然有问题》文摘四</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</link>
+      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</link>
       <pubDate>Sun, 03 Apr 2022 23:27:20 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</guid>
       <description>作者：渡航
 卷十三 第八章. 祈祷至少不要再出错。 「我过得很愉快。这还是第一次。觉得跟别人一起度过的时间是自在舒适的，我很高兴……」
 她带着泫然欲泣的表情，看起来真的很幸福。我再也无法否定，制止她。
@@ -295,29 +295,29 @@ Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
     
     <item>
       <title>Linux实用操作之进程管理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
       <pubDate>Thu, 31 Mar 2022 22:55:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
       <description>查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
  PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下：</description>
     </item>
     
     <item>
       <title>Linux实用操作之工作调度</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
       <pubDate>Thu, 31 Mar 2022 22:34:24 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
       <description>at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now +2 minute at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test.</description>
     </item>
     
     <item>
       <title>山脉游览录</title>
-      <link>https://akynazh.site/posts/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</link>
+      <link>https://akynazh.site/posts/life/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</guid>
+      <guid>https://akynazh.site/posts/life/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</guid>
       <description>山的记忆 每一座山都有独特的感觉，每一座山都有自己的故事。
 我和征服过的每一座山都有一段故事。
 我的山脉游览录，记录那些年那些山。
@@ -338,10 +338,10 @@ Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
     
     <item>
       <title>Python自动爬取花瓣网任意面板中所有图片</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</link>
+      <link>https://akynazh.site/posts/study/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</link>
       <pubDate>Sun, 13 Feb 2022 00:14:23 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</guid>
+      <guid>https://akynazh.site/posts/study/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/</guid>
       <description>注：该项目只适用于旧版花瓣，但其中的思路值得领会。对于新版花瓣编写的代码，逻辑差别不大。
 需要安装的库  urllib easygui selenium webdriver_manager  获取过程  进入面板内 复制当前面板url 启动该脚本按提示进行即可  代码编写流程 分析pin图特点 查看面板源码，可以在对应的script中找到面板中图片的json数据。
 在app.page[&amp;ldquo;board&amp;rdquo;]下可以找到&amp;quot;pins&amp;quot;:[{&amp;hellip;}],主要图片ID(pin)位于这里面。
@@ -357,10 +357,10 @@ Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
     
     <item>
       <title>SpringBoot&#43;Vue&#43;Shiro的Demo项目</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://akynazh.site/posts/study/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Sat, 12 Feb 2022 21:46:13 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://akynazh.site/posts/study/springboot&#43;vue&#43;shiro%E7%9A%84demo%E9%A1%B9%E7%9B%AE/</guid>
       <description>前言 Github地址：SpringBoot-Vue-Demo
 相关项目：lonersHub，前后端不分离的基础web项目。
 欢迎star学习。
@@ -373,10 +373,10 @@ SpringBoot整合Vue的一个Demo，同时后端整合了Shiro+Jwt+Redis的安全
     
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/</guid>
       <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 步骤  后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值  缺陷 这个方法我使用过，但是效果并不好，原因如下：
@@ -390,10 +390,10 @@ SpringBoot整合Vue的一个Demo，同时后端整合了Shiro+Jwt+Redis的安全
     
     <item>
       <title>简洁之美</title>
-      <link>https://akynazh.site/posts/%E6%97%A5%E5%B8%B8%E6%9D%82%E6%80%9D/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/</link>
+      <link>https://akynazh.site/posts/life/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/</link>
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E6%97%A5%E5%B8%B8%E6%9D%82%E6%80%9D/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/</guid>
+      <guid>https://akynazh.site/posts/life/%E7%AE%80%E6%B4%81%E4%B9%8B%E7%BE%8E/</guid>
       <description>身处繁杂的社会生活 现代社会，是一个信息爆炸的时代，是一个充满无尽焦虑的时代，是一个繁杂的时代。
 在离不开网络的世界里，我们难以摆脱网络上各种信息的侵扰，参差不齐的信息爬满了我们的心房。
 在竞争相当激烈的当代社会，我们变得更加焦虑，思绪更加杂乱。
@@ -427,19 +427,19 @@ SpringBoot整合Vue的一个Demo，同时后端整合了Shiro+Jwt+Redis的安全
     
     <item>
       <title>Matlab基本用法整理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</link>
       <pubDate>Sun, 06 Feb 2022 20:41:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</guid>
       <description>基本语法方面 提取矩阵某行或某列 1  A(:, [2 3]) 返回第2和第3列   获取随机数 1  randi(100); % 1 到 100 之间的随机整数   初始化数组 1  zeros(1, 30); % 1行30列的全0数组   控制语句 1 2 3 4 5 6 7 8 9 10  for i = 0 : 100 for j = 1 : 10 if (...)  ... else ... end end ... end   格式化输出 1  fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM);   初等数学方面 求解方程组 注：solve已经改版，不可传入字符串</description>
     </item>
     
     <item>
       <title>Linux上部署JAR包项目后的文件上传问题</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
 1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
  如果单纯运行一个java项目：  获得路径为：
@@ -461,10 +461,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Linux主机部署springboot项目全过程</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
       <description>注：部署环境为centos7.9版本
 操作步骤如下：
  配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
@@ -476,10 +476,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Linux实用操作之网络管理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 03 Jan 2022 00:27:58 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
       <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
 1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
 1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
@@ -492,10 +492,10 @@ URL : http://www.cip.cc/${my_ip}
     
     <item>
       <title>Linux实用操作之权限管理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
       <description>添加用户 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000:   x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
 1 2 3 4 5 6  [root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully.</description>
@@ -503,29 +503,29 @@ URL : http://www.cip.cc/${my_ip}
     
     <item>
       <title>Redis学习记录（二）</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
+      <link>https://akynazh.site/posts/study/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
+      <guid>https://akynazh.site/posts/study/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
       <description>事务 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;#34;java&amp;#34; 127.0.0.1:6379&amp;gt; get book &amp;#34;java&amp;#34; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil)   获取key 获取指定key 1  keys * # 获取所有key   1  keys pattern # 根据pattern获取key   1 2 3 4  - * 代表匹配任意字符 - ?</description>
     </item>
     
     <item>
       <title>Redis学习记录（一）</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
+      <link>https://akynazh.site/posts/study/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
+      <guid>https://akynazh.site/posts/study/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
       <description>Open, Connect And Config  open redis:  1  redis-server   connect to redis:  1  redis-cli   disconnect:  1  redis-cli shutdown   show chinese:  1  redis-cli --raw   connect to remote redis:  1  redis-cli -h host -p port -a password   get redis config:  1  config get {config_name}   Data Type list:
 1 2 3  lpush clist redis lpush clist mysql lrange clist 0 100   key:</description>
     </item>
     
     <item>
       <title>Git实用操作之初始化与分支管理</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
       <description>git初次拉取远程仓库  从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码  1 2 3 4 5 6 7 8 9  &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程仓库 &amp;gt; git push origin master # 将本地分支推送到远程仓库   这里执行完 git commit -m “init”后，我们查看一下本地分支信息：
 1 2  &amp;gt; git branch * master   可见git自动为我们本地创建了一个master分支。
 执行完git push origin master后，我们查看一下本地分支与远程分支的映射关系：</description>
@@ -533,19 +533,19 @@ URL : http://www.cip.cc/${my_ip}
     
     <item>
       <title>Linux实用操作之流程控制</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Thu, 09 Dec 2021 20:33:45 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
       <description>读取输入  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7 8 9  if [] then do something elif [] then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
     </item>
     
     <item>
       <title>图的着色问题汇总</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
 代码解决：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  vector&amp;lt;int&amp;gt; G[MAX_V]; int vertexes; int edges; int color[MAX_V]; //二分图，颜色为1或-1 bool dfs(int v, int c) { color[v] = c; for (int i = 0; i &amp;lt; G[v].size(); i++) { if (color[G[v][i]] == c) return false; if (color[G[v][i]] == 0 &amp;amp;&amp;amp; !dfs(G[v][i], -c)) return false; } return true; } void solve() { for (int i = 0; i &amp;lt; vertexes; i++) { if (color[i] == 0) { if (!</description>
@@ -553,10 +553,10 @@ URL : http://www.cip.cc/${my_ip}
     
     <item>
       <title>Linux实用操作之文本操作</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
       <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
 1  last | grep &amp;#39;root&amp;#39;   比较重要，记忆：
 grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename
@@ -576,10 +576,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>求解有向图和无向图中是否存在环的方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
 由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  int mat[maxn][maxn], vis[maxn]; int dfs(int v) { vis[v] = 1; for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环  } return 0; } memset(vis, 0, sizeof(vis)); int flag = 0; // 无环标志 for (int j = 0; j &amp;lt; num; j++) { if (!</description>
@@ -587,10 +587,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/</guid>
       <description>提出问题 先看一个例子：
 当两个人年龄相同时，我们认为这两个对象相同：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;#34;Person{&amp;#34; + &amp;#34;age=&amp;#34; + age + &amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + &amp;#39;}&amp;#39;; } @Override public boolean equals(Object o) { if (this == o) return true; if (o == null || getClass() !</description>
@@ -598,10 +598,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>equals方法和==运算符的作用区别</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
+      <link>https://akynazh.site/posts/study/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Thu, 25 Nov 2021 00:21:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
+      <guid>https://akynazh.site/posts/study/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/</guid>
       <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
   == 比较时进行地址的比较
   equals 比较时进行值的比较
@@ -612,10 +612,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>跑步记忆</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</link>
+      <link>https://akynazh.site/posts/life/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</link>
       <pubDate>Tue, 23 Nov 2021 18:20:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://akynazh.site/posts/life/%E6%88%91%E7%9A%84%E8%B7%91%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</guid>
       <description>仔细想想自己坚持跑步也有好几年了，中间也停滞过一段时间。
 一. 接触 记得，初中是我真正接触跑步的开始。
  因为说起初中的运动生活，就会想起那位挚友，那位一起骑行，跑步的挚友。
@@ -655,10 +655,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>Cmd重要且实用的一些命令</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</link>
+      <link>https://akynazh.site/posts/study/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://akynazh.site/posts/study/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
       <description>写入文件  写入hello字符串（同时新建了a.txt）  1  echo hello &amp;gt; a.txt    追加写入hello字符串  1  echo hello &amp;gt;&amp;gt; a.txt    将a.txt内容追加写入b.txt  1  type a.txt &amp;gt;&amp;gt; b.txt   新建文件  新建空文件a.txt  1  type null &amp;gt; a.txt   换行（分号换行输出） 1  echo hello; echo peter   关于程序编译 test.cpp: 一个含cin输入的程序
 编译cpp
 1  g++ test.cpp -o test   以1.in作为标准输入，2.out作为标准输出执行test
@@ -667,10 +667,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>Window增加右键打开选项</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
+      <link>https://akynazh.site/posts/study/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
+      <guid>https://akynazh.site/posts/study/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/</guid>
       <description>加入注册表界面   win+R
   regedit
   增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
@@ -692,10 +692,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>矩阵快速幂的介绍及其应用</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
+      <link>https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
       <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
       <description>矩阵快速幂介绍 题目描述
 给定n×n的矩阵A，求 A^k。
 输入格式
@@ -713,10 +713,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>Hugo实现自动化生成文章并提交github</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</link>
+      <link>https://akynazh.site/posts/study/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</link>
       <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</guid>
+      <guid>https://akynazh.site/posts/study/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</guid>
       <description>前言 自动化的思想在计算机领域是非常重要的，计算机，本质上就是为了通过自动化，方便我们的生活，提高办事的效率而存在的。
 所以在使用计算机时，在开始用计算机办事之前，可以先想想这件事的那些地方可以利用计算机的自动化来帮我们完成。
 正是这种懒的思想，使得人类不断进步，攀登科技高峰，不是吗？^-^
@@ -730,10 +730,10 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>Java中通过反射获取带参数类型的方法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 17 Nov 2021 23:30:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>问题的提出 在后端与前端进行数据传送时，需要先把数据进行类型转换，从前端获得的字符串类型（由json类型数据转化而成），转换成一个Java类。通过了解，发现可以采用导入Gson包的方式调用方法实现这个功能：
 1 2 3 4  Person p = new Person(1, &amp;#34;jzh&amp;#34;); Gson gson = new Gson(); String p_json = gson.toJson(p); Person p1 = gson.fromJson(p_json, Person.class);   从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：
 1 2 3 4 5 6 7  ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); people.add(new Person(1, &amp;#34;jzh&amp;#34;)); people.add(new Person(2, &amp;#34;zh&amp;#34;)); people.add(new Person(3, &amp;#34;z&amp;#34;)); String ps_json = gson.toJson(people); ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json,new TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt;() { }.getType());   这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken实现。
@@ -742,20 +742,20 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>最短路问题汇总</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
 迪杰斯特拉算法 O(V^2) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  const int MAXN = 100; const int INF = 0x3f3f3f3f; // 有向无环图 DAG int V, E; // 顶点数和边数 int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0  // 初始化图 void init() { memset(graph, 0x3f, sizeof(graph)); cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; int from, to, cost; for (int i = 0 ; i &amp;lt; E; i++) { cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; graph[from][to] = cost; } } // 迪杰斯特拉算法求解最短路，针对点展开 void Dijkstra(int s) { memset(d, 0x3f, sizeof(d)); memset(visited, 0, sizeof(visited)); visited[s] = 1; for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; d[s] = 0; int k, min_cost; // 无负边时最多更新n-1(其他结点数)次 	for(int i = 0; i &amp;lt; V - 1; i++){ min_cost = INF; // 寻找最未被访问的且权值最小的路径，需要优化的地方 	for(int j = 0; j &amp;lt; V; j++){ if(!</description>
     </item>
     
     <item>
       <title>《我的青春恋爱物语果然有问题》文摘二</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/</link>
+      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/</link>
       <pubDate>Sat, 03 Jul 2021 16:44:36 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/</guid>
       <description>作者：渡航
 卷八 第一章. 不用说也知道，这正是比企谷小町的逆鳞所在 我们终将失去拥有的一切。此乃不变的真理。
 尽管如此——
@@ -815,10 +815,10 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>《我的青春恋爱物语果然有问题》文摘三</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</link>
+      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</link>
       <pubDate>Fri, 11 Jun 2021 23:19:00 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</guid>
       <description>作者：渡航
 卷十 第七章. 不论何时，叶山隼人总是迎合众人期待 她满意地舒一口气，把脸抬起。我们之间的距离，瞬间拉近到脸颊快碰在一起。
 「……」
@@ -852,10 +852,10 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>《我的青春恋爱物语果然有问题》文摘一</title>
-      <link>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/</link>
+      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/</link>
       <pubDate>Sun, 11 Apr 2021 11:51:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/</guid>
+      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/</guid>
       <description>作者：渡航
 卷二 第五章. 比企谷八幡再一次回归原来的道路 「才不是那样子……根本不是那样……」
 她说得很小声。由比滨总是那么温柔，所以直到最后仍旧温柔。
@@ -876,20 +876,20 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>Linux实用操作之修改默认配置</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/</link>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 03 Jan 2021 00:10:38 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/</guid>
       <description>修改vim中tab长度 设置vim中tab长度
 1 2 3  vim /etc/vimrc set tabstop=4   禁用烦人的蜂鸣声  禁用bash蜂鸣声  1 2 3  vim /etc/inputrc ------ 取消&amp;#34;set bell-style none&amp;#34;注释   禁用vim蜂鸣声  1 2 3  vim /etc/vimrc ------ 添加&amp;#34;set noeb vb t_vb=&amp;#34;   (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)</description>
     </item>
     
     <item>
       <title>关于char*, char[], string的理解</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
       <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
       <description>关于char[]与char*的区别 1 2 3 4  char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc s1[1] = &amp;#39;d&amp;#39;; // 改变值 cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc   &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
 1 2 3 4  const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc s2 = &amp;#34;dfs&amp;#34;; // 改变地址 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs   &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
 以上两者皆可用于函数传值
@@ -898,10 +898,10 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>二次元随想</title>
-      <link>https://akynazh.site/posts/%E6%97%A5%E5%B8%B8%E6%9D%82%E6%80%9D/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</link>
+      <link>https://akynazh.site/posts/life/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</link>
       <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E6%97%A5%E5%B8%B8%E6%9D%82%E6%80%9D/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</guid>
+      <guid>https://akynazh.site/posts/life/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%9A%8F%E6%83%B3/</guid>
       <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头，这是一种难以言说的情愫。
 也许是对一段故事谢幕的不舍。欣赏一部优秀的作品，走进另一个世界，见证一段故事。在故事尾声，我总希望剧情能不断延长下去。可就像一段青春时光，一段故事总要落幕。结束了的就只能成为回忆&amp;hellip;&amp;hellip;虚拟世界里的东西，往往是现实中难以企及的。
 也许是对二次元世界的那种向往。 二次元世界有着独特的美感，每一个画面都扣人心弦，那种干净的，美好的画面，都是现实中难以遇见的。尤其是京阿尼的冰菓，每一帧画面都是精品。所以在经历了一段时间的美感洗礼之后又回到现实，我也许因此莫名的迷惘，失落吧。
@@ -913,10 +913,10 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <link>https://akynazh.site/posts/study/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://akynazh.site/posts/study/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
       <description>问题的提出： 我们可以通过指令：
 1  ssh 用户名@IP   登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
 通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
@@ -935,10 +935,10 @@ Linux用户则使用shell编写脚本~
     
     <item>
       <title>关于数论的一些简单算法</title>
-      <link>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
       <description>关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
 算法思路：
