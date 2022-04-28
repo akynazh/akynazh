@@ -2,23 +2,267 @@
     {
         "title": "About",
         "uri": "about",
-        "content": "2022 4 22           2022 4 3                         2022 3 21    Github     2022 2 6          2021 11 17            hugo    2021 11 16            2021 9",
-        "objectID": "about"
+        "content": "2022 4 27    gallery               2022 4 25              2022 4 22           2022 4 3                         2022 3 21    Github     2022 2 6          2021 11 17            hugo    2021 11 16            2021 9",
+        "objectID": "about",
+        "type": "about"
     },
     {
         "title": "Gallery",
         "uri": "gallery",
         "content": "",
-        "objectID": "gallery"
+        "objectID": "gallery",
+        "type": "gallery"
+    },
+    {
+        "title": "《人间失格》文摘",
+        "uri": "posts/Book/《人间失格》文摘",
+        "content": "",
+        "objectID": "posts/Book/《人间失格》文摘",
+        "date": "2022-04-14T15:13:01.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《强风吹拂》文摘",
+        "uri": "posts/Book/《强风吹拂》文摘",
+        "content": "",
+        "objectID": "posts/Book/《强风吹拂》文摘",
+        "date": "2022-04-03T15:44:25.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《我的青春恋爱物语果然有问题》文摘一",
+        "uri": "posts/Book/《我的青春恋爱物语果然有问题》文摘一",
+        "content": "",
+        "objectID": "posts/Book/《我的青春恋爱物语果然有问题》文摘一",
+        "date": "2021-04-11T03:51:03.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "春物",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《我的青春恋爱物语果然有问题》文摘三",
+        "uri": "posts/Book/《我的青春恋爱物语果然有问题》文摘三",
+        "content": "",
+        "objectID": "posts/Book/《我的青春恋爱物语果然有问题》文摘三",
+        "date": "2021-06-11T15:19:00.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "春物",
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《我的青春恋爱物语果然有问题》文摘二",
+        "uri": "posts/Book/《我的青春恋爱物语果然有问题》文摘二",
+        "content": "",
+        "objectID": "posts/Book/《我的青春恋爱物语果然有问题》文摘二",
+        "date": "2021-07-03T08:44:36.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "春物",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《我的青春恋爱物语果然有问题》文摘四",
+        "uri": "posts/Book/《我的青春恋爱物语果然有问题》文摘四",
+        "content": "1",
+        "objectID": "posts/Book/《我的青春恋爱物语果然有问题》文摘四",
+        "date": "2022-04-03T15:27:20.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "春物",
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《挪威的森林》文摘一",
+        "uri": "posts/Book/《挪威的森林》文摘一",
+        "content": "N360",
+        "objectID": "posts/Book/《挪威的森林》文摘一",
+        "date": "2022-04-14T15:11:22.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《挪威的森林》文摘三",
+        "uri": "posts/Book/《挪威的森林》文摘三",
+        "content": "",
+        "objectID": "posts/Book/《挪威的森林》文摘三",
+        "date": "2022-04-18T12:31:46.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《挪威的森林》文摘二",
+        "uri": "posts/Book/《挪威的森林》文摘二",
+        "content": "",
+        "objectID": "posts/Book/《挪威的森林》文摘二",
+        "date": "2022-04-16T10:03:53.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《挪威的森林》文摘四",
+        "uri": "posts/Book/《挪威的森林》文摘四",
+        "content": "",
+        "objectID": "posts/Book/《挪威的森林》文摘四",
+        "date": "2022-04-25T12:39:14.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《斜阳》文摘",
+        "uri": "posts/Book/《斜阳》文摘",
+        "content": "",
+        "objectID": "posts/Book/《斜阳》文摘",
+        "date": "2022-04-17T15:13:28.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "《消失的十三级台阶》摘录",
+        "uri": "posts/Book/《消失的十三级台阶》摘录",
+        "content": "",
+        "objectID": "posts/Book/《消失的十三级台阶》摘录",
+        "date": "2022-04-15T05:02:21.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "文摘",
+            "book"
+        ]
+    },
+    {
+        "title": "《解忧杂货店》文摘",
+        "uri": "posts/Book/《解忧杂货店》文摘",
+        "content": "",
+        "objectID": "posts/Book/《解忧杂货店》文摘",
+        "date": "2022-04-03T15:41:50.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "book",
+            "文摘"
+        ]
+    },
+    {
+        "title": "二次元随想",
+        "uri": "posts/Life/二次元随想",
+        "content": "",
+        "objectID": "posts/Life/二次元随想",
+        "date": "2020-11-28T10:24:12.000Z",
+        "categories": [
+            "Life"
+        ],
+        "tags": [
+            "acgn",
+            "thinking"
+        ]
+    },
+    {
+        "title": "山脉游览录",
+        "uri": "posts/Life/山脉游览录",
+        "content": "",
+        "objectID": "posts/Life/山脉游览录",
+        "date": "2022-03-21T10:02:04.000Z",
+        "categories": [
+            "Life"
+        ],
+        "tags": [
+            "life",
+            "journey"
+        ]
+    },
+    {
+        "title": "跑步记忆",
+        "uri": "posts/Life/我的跑步记录与总结",
+        "content": "",
+        "objectID": "posts/Life/我的跑步记录与总结",
+        "date": "2021-11-23T10:20:39.000Z",
+        "categories": [
+            "Life"
+        ],
+        "tags": [
+            "life",
+            "running"
+        ]
+    },
+    {
+        "title": "简洁之美",
+        "uri": "posts/Life/简洁之美",
+        "content": "",
+        "objectID": "posts/Life/简洁之美",
+        "date": "2022-02-06T13:42:50.000Z",
+        "categories": [
+            "Life"
+        ],
+        "tags": [
+            "thinking",
+            "life"
+        ]
     },
     {
         "title": "Cmd重要且实用的一些命令",
-        "uri": "posts/学习记录/cmd重要且实用的一些命令",
+        "uri": "posts/Study/cmd重要且实用的一些命令",
         "content": "hello         a txt  echo hello   a txt     hello    echo hello    a txt  a txt      b txt type a txt    b txt           a txt type null   a txt            echo hello  echo peter        test cpp     cin        cpp g   test cpp  o test  1 in       2 out        test test 2 out test_err cpp                          log txt         g   test_err cpp  o terr 2  log txt         cmd   bash    vim _            1 py notepad 1 py           vscode        vscode    1 py           code 1 py",
-        "objectID": "posts/学习记录/cmd重要且实用的一些命令",
+        "objectID": "posts/Study/cmd重要且实用的一些命令",
         "date": "2021-11-20T10:17:33.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "script",
@@ -27,12 +271,12 @@
     },
     {
         "title": "equals方法和==运算符的作用区别",
-        "uri": "posts/学习记录/equals方法和==运算符的作用区别",
+        "uri": "posts/Study/equals方法和==运算符的作用区别",
         "content": "equals                                     equals           String    123   String b    123   System out println a equals b       true System out println a    b      true String a1   new String  123    String b1   new String  123    System out println a1 equals b1       true System out println a1    b1      false              Object           equals            public boolean equals Object obj    return  this    obj          String      String     equals       Object equals     String equals      public boolean equals Object anObject     this    anObject    return true     anObject instanceof String    String aString    String anObject   coder      aString coder      return isLatin1     StringLatin1 equals value  aString value    StringUTF16 equals value  aString value       return false      equals                                    equals          equals     equals         equals                                       equals       1        otherObject               other       2   this otherObject        3   otherObject   null    4   this otherObject     equals               getclass                           instanceof      5  otherObject                 6                   Object equals        core Java       instanceof               or            getClass                                     example                         class Person   private int age  private String name  public Person int age  String name    this age   age  this name   name     Override public String toString     return  Person      age     age      name      name                  Override public boolean equals Object o     this    o  return true   o    null    getClass      o getClass    return false  Person person    Person  o  return age    person age     Override public int hashCode     return Objects hash age       test  Person p1   new Person 15   Mary    Person p2   new Person 15   Mark    System out println p1 equals p2       true System out println p1    p2      false",
-        "objectID": "posts/学习记录/equals方法和==运算符的作用区别",
+        "objectID": "posts/Study/equals方法和==运算符的作用区别",
         "date": "2021-11-24T16:21:05.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "java"
@@ -40,12 +284,12 @@
     },
     {
         "title": "Git实用操作之初始化与分支管理",
-        "uri": "posts/学习记录/git实用操作",
+        "uri": "posts/Study/git实用操作",
         "content": "git          github             url                    git init            git     git add                   git        index    git commit  m  init                     git remote add origin   url             git push origin master                        git branch master   git            master          git branch  a master remotes origin master   git branch  vv master 3a31f4c init                     git                git branch  u origin devr           devr       git branch  vv                             git push   push                                   git branch  u origin master Branch  master  set track remote branch  master   origin     git branch  vv master 3a31f4c  origin master  init              git     git branch  a        git branch dev   dev   git branch  d dev   dev   git checkout dev    dev   git checkout  b dev       dev   git            git fetch origin master dev    origin   master       dev   git checkout dev    dev   git merge FETCH_HEAD       commit         dev     git checkout dev     dev   git pull origin master    origin   master            commit",
-        "objectID": "posts/学习记录/git实用操作",
+        "objectID": "posts/Study/git实用操作",
         "date": "2021-12-10T10:10:07.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "git",
@@ -54,12 +298,12 @@
     },
     {
         "title": "Hugo实现自动化生成文章并提交github",
-        "uri": "posts/学习记录/hugo实现自动化生成文章并提交github",
+        "uri": "posts/Study/hugo实现自动化生成文章并提交github",
         "content": "bat     hugo               Linux     shell                 set  p             D  cd D   git akynazh set input  set  p input please input article name hugo new  post  input  md           copy          categories     D  cd D   git akynazh set input  set  p input please input category name copy archetypes categories md content categories  input  md        github                  pause            D  cd D   git akynazh hugo set input  set  p input please enter msg cd D   git akynazh public git add   git commit  m   input   git push pause             set         set input publish article over",
-        "objectID": "posts/学习记录/hugo实现自动化生成文章并提交github",
+        "objectID": "posts/Study/hugo实现自动化生成文章并提交github",
         "date": "2021-11-18T11:41:03.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "script",
@@ -68,12 +312,12 @@
     },
     {
         "title": "Java中通过反射获取带参数类型的方法",
-        "uri": "posts/学习记录/Java中通过反射获取带参数类型的方法",
+        "uri": "posts/Study/Java中通过反射获取带参数类型的方法",
         "content": "json               Java               Gson                Person p   new Person 1   jzh    Gson gson   new Gson    String p_json   gson toJson p   Person p1   gson fromJson p_json  Person class       gson fromJson                            class                   ArrayList people   new ArrayList    people add new Person 1   jzh     people add new Person 2   zh     people add new Person 3   z     String ps_json   gson toJson people   ArrayList people1   gson fromJson ps_json new TypeToken        getType                                    TypeToken    class MyType extends TypeToken     ArrayList people1   gson fromJson ps_json  new MyType   getType                                TypeToken                           gson    TypeToken   public class TypeToken   final Class rawType  final Type type  final int hashCode    constructor  protected TypeToken     this type   getSuperclassTypeParameter getClass     this rawType    Class   Gson Types getRawType type   this hashCode   type hashCode              type        getSuperclassTypeParameter  static Type getSuperclassTypeParameter Class subclass    Type superclass   subclass getGenericSuperclass     superclass instanceof Class    throw new RuntimeException  Missing type parameter       ParameterizedType parameterized    ParameterizedType  superclass  return  Gson Types canonicalize parameterized getActualTypeArguments   0                                       Class                               type            ParameterizedType         parameterized             Class                         Type superclass   subclass getGenericSuperclass      subclass   class    Type TypeTest TypeToken                                           getGenericSuperclass                                      type    superclass instanceof Class    throw new RuntimeException  Missing type parameter                  Type      Class ParameterizedType       Type                      ParameterizedType   Class          ParameterizedType                       ParameterizedType parameterized    ParameterizedType  superclass  parameterized      Type TypeToken       parameterized        java util ArrayList parameterized getActualTypeArguments   0       canonicalize        ParameterizedTypeImpl                                                                                                   TypeToken                  getGenericSuperclass                      TypeToken    T          ArrayList      getGenericSuperclass             ParameterizedType",
-        "objectID": "posts/学习记录/Java中通过反射获取带参数类型的方法",
+        "objectID": "posts/Study/Java中通过反射获取带参数类型的方法",
         "date": "2021-11-17T15:30:04.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "java"
@@ -81,12 +325,12 @@
     },
     {
         "title": "Java重写equals方法的同时为什么要重写hashcode方法",
-        "uri": "posts/学习记录/Java重写equals方法的同时为什么要重写hashcode方法",
+        "uri": "posts/Study/Java重写equals方法的同时为什么要重写hashcode方法",
         "content": "class Person   private int age  private String name  public Person int age  String name    this age   age  this name   name     Override public String toString     return  Person      age     age      name      name                  Override public boolean equals Object o     this    o  return true   o    null    getClass      o getClass    return false  Person person    Person  o  return age    person age     Override public int hashCode     return Objects hash age                     equals          hashcode       Override public int hashCode     return Objects hash age       equals     hashcode                 hash                                                                       hashcode                    10000                    10000                   equals                                                    hashcode                        O 1                     hashcode          equals     true     hashcode                     hashcode                        Java                 equals Object obj         hashcode         equals Object obj        true          hashcode                             hashcode                             hashcode",
-        "objectID": "posts/学习记录/Java重写equals方法的同时为什么要重写hashcode方法",
+        "objectID": "posts/Study/Java重写equals方法的同时为什么要重写hashcode方法",
         "date": "2021-11-26T01:23:27.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "java"
@@ -94,12 +338,12 @@
     },
     {
         "title": "Linux上部署JAR包项目后的文件上传问题",
-        "uri": "posts/学习记录/Linux上部署JAR包项目后的文件上传问题",
+        "uri": "posts/Study/Linux上部署JAR包项目后的文件上传问题",
         "content": "File relativePathFile   new File URLDecoder decode ResourceUtils getURL  classpath    getPath     utf 8     String absolutePath   relativePathFile getAbsoluteFile   getPath                                      java                jar     Linux                   jar                                            root VM 0 11 centos app   ls application yaml LonersHub 0 0 1 SNAPSHOT jar static            jar       static      jar           application yaml      spring  resources  static locations  classpath static  file  app static                                   getUploadPath                                                       linux                                                      linux      e g  window      e g  public class FileUtils        description          author Jiang Zhihang  date 2022 1 2 23 32  param type       avatar video  param fileName            public static String getUploadPath String type  String fileName  throws FileNotFoundException  UnsupportedEncodingException   String osName   System getProperty  os name     osName equals  Linux            Linux                  app static   uploadType    fileName     e g   app static avatar test jpg return File separator    app static     type         fileName    else             File relativePathFile   new File URLDecoder decode ResourceUtils getURL  classpath    getPath     utf 8     String absolutePath   relativePathFile getAbsoluteFile   getPath                    project  target classes          root file  root   jar     BOOT INF classes   centos7 9           project  target classes static   uploadType    fileName     e g    project  target classes static avatar test jpg return absolutePath     static     type         fileName           description           author Jiang Zhihang  date 2022 1 2 23 37    public static String getFileType MultipartFile file    String type   file getContentType    String fileType   type    null  return null  else      type    img jpg fileType   type substring type indexOf        1   return fileType        OVER",
-        "objectID": "posts/学习记录/Linux上部署JAR包项目后的文件上传问题",
+        "objectID": "posts/Study/Linux上部署JAR包项目后的文件上传问题",
         "date": "2022-01-02T16:38:12.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "java",
@@ -108,12 +352,12 @@
     },
     {
         "title": "Linux主机部署springboot项目全过程",
-        "uri": "posts/学习记录/Linux主机部署springboot项目全过程",
+        "uri": "posts/Study/Linux主机部署springboot项目全过程",
         "content": "centos7 9                 Java         mysql         redis               JAR      Java     JDK   jdk     jdk 8u311 linux x64 tar gz  jdk     winsp         jdk     root VM 0 11 centos     ls bin jdk 8u311 linux x64 tar gz passwd var  root VM 0 11 centos     tar  zxvf jdk 8u311 linux x64 tar gz      root VM 0 11 centos     ls bin jdk1 8 0_311 jdk 8u311 linux x64 tar gz passwd var   jdk       root VM 0 11 centos     mkdir  usr local java  root VM 0 11 centos     mv   jdk1 8 0_311  usr local java        Linux         bashrc     etc bashrc              shell        etc skel  bashrc                           bashrc    bashrc               shell     profile     etc profile                   etc skel bashprofile                           bashrprofile    bash_profile                      etc bashrc           etc profile   root VM 0 11 centos     vim  etc bashrc                   JAVA export JAVAHOME  usr local java jdk1 8 0311 export PATH  JAVA_HOME bin  PATH export CLASSPATH    JAVAHOME lib dt jar  JAVAHOME lib tools jar          source  etc bashrc   Java     root VM 0 11 centos     java  version java version  1 8 0_311  Java TM  SE Runtime Environment  build 1 8 0_311 b11  Java HotSpot TM  64 Bit Server VM  build 25 311 b11  mixed mode   root VM 0 11 centos     javac Usage  javac possible options include        mysql   yum    mysql57        centos7 9      yum    mysql57    mysql80 community release el7 3 noarch rpm     root VM 0 11 centos     wget https   dev mysql com get mysql80 community release el7 3 noarch rpm        2022 01 02 12 07 24  133 KB s     mysql80 community release el7 3 noarch rpm  saved  26024 26024    mysql80 community release el7 3 noarch rpm     root VM 0 11 centos     rpm  Uvh mysql80 community release el7 3 noarch rpm        Updating   installing    1 mysql80 community release el7 3                                    100        etc yum repos d         root VM 0 11 centos     ls  etc yum repos d   grep mysql mysql community repo mysql community source repo  mysql80  mysql57  root VM 0 11 centos     yum config manager   disable mysql80 community  root VM 0 11 centos     yum config manager   enable mysql57 community            root VM 0 11 centos     yum repolist enabled   grep mysql mysql connectors community x86_64 MySQL Connectors Community 221 mysql tools community x86_64 MySQL Tools Community 135 mysql57 community x86_64 MySQL 5 7 Community Server 544   mysql57  root VM 0 11 centos     yum install mysql community server        Installed  mysql community libs x8664 0 5 7 36 1 el7 mysql community libs compat x8664 0 5 7 36 1 el7 mysql community server x86_64 0 5 7 36 1 el7          mysql   mysql    root VM 0 11 centos     service mysqld start Redirecting  bin systemctl start mysqld service   mysql      root VM 0 11 centos     systemctl status mysqld service   mysqld service   MySQL Server Loaded  loaded   usr lib systemd system mysqld service  enabled  vendor preset  disabled  Active  active  running  Sun 2022 01 02 12 21 47 CST  11s ago        Jan 02 12 21 41 VM 0 11 centos systemd 1   Starting MySQL Server    Jan 02 12 21 47 VM 0 11 centos systemd 1   Started MySQL Server    mysql   root       mysql root          mysql  root VM 0 11 centos     grep  temporary password   var log mysqld log 2022 01 02T04 21 43 962084Z 1  Note  temporary password generated root localhost  mkjhMuJBe3         mkjhMuJBe3    root VM 0 11 centos     mysql  uroot  p Enter password           Welcome MySQL monitor  Commands end    g  MySQL connection id 3 Server version  5 7 36     mysql    root       mysql  ALTER USER  root   localhost  IDENTIFIED  658766 Jzh   Query OK  0 rows affected  0 00 sec          mysql mysql  GRANT PRIVILEGES    root      IDENTIFIED  658766 Jzh  GRANT OPTION  Query OK  0 rows affected  1 warning  0 00 sec  mysql  FLUSH PRIVILEGES  Query OK  0 rows affected  0 00 sec         mysql  root VM 0 11 centos     systemctl enable mysqld  root VM 0 11 centos     systemctl daemon reload   mysql     utf 8        mysql  SHOW VARIABLES  character                                                                Variable_name   Value                                                               charactersetclient   utf8     charactersetconnection   utf8     charactersetdatabase   latin1     charactersetfilesystem   binary     charactersetresults   utf8     charactersetserver   latin1     charactersetsystem   utf8     charactersetsdir    usr share mysql charsets                                                                 etc my cnf    root VM 0 11 centos     vim  etc my cnf  mysqld      charactersetserver utf8 init connect  SET NAMES utf8    mysql    root VM 0 11 centos     systemctl restart mysqld service       mysql  SHOW VARIABLES  character                                                                Variable_name   Value                                                               charactersetclient   utf8     charactersetconnection   utf8     charactersetdatabase   utf8     charactersetfilesystem   binary     charactersetresults   utf8     charactersetserver   utf8     charactersetsystem   utf8     charactersetsdi",
-        "objectID": "posts/学习记录/Linux主机部署springboot项目全过程",
+        "objectID": "posts/Study/Linux主机部署springboot项目全过程",
         "date": "2022-01-02T16:30:25.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux",
@@ -123,12 +367,12 @@
     },
     {
         "title": "Linux实用操作之shell变量运算",
-        "uri": "posts/学习记录/Linux实用操作之shell变量运算",
+        "uri": "posts/Study/Linux实用操作之shell变量运算",
         "content": "bash  root VM 0 11 centos     a 1  root VM 0 11 centos     echo  a 1  root VM 0 11 centos     b    a 12    root VM 0 11 centos     echo  b 12  root VM 0 11 centos     c    c c    root VM 0 11 centos     echo  c 24            eq  ne  lt  gt  ge  le  shell a 10  root VM 0 11 centos        a  eq 10      echo yes yes  root VM 0 11 centos        a  ge 11      echo yes    echo no no       a  o  bash  root VM 0 11 centos     a 10 b 12   root VM 0 11 centos        a  lt 11  a  b  lt 13      echo yes    echo no yes  root VM 0 11 centos        a  lt 11  a  b  lt 11      echo yes    echo no no          z  zero           0  0   true  str                true   bash  root VM 0 11 centos        z  jzh       echo yes    echo no no  root VM 0 11 centos        jzh     zh       echo yes    echo no no         r  read  w  write  x  exec  s           e  exist    s      false          true   bash  root VM 0 11 centos     touch t sh  root VM 0 11 centos     ll         rw r  r   1 root root 0 Apr 12 23 52 t sh  root VM 0 11 centos        s   t sh      echo yes    echo no no  root VM 0 11 centos        e   t sh      echo yes    echo no yes",
-        "objectID": "posts/学习记录/Linux实用操作之shell变量运算",
+        "objectID": "posts/Study/Linux实用操作之shell变量运算",
         "date": "2022-04-12T15:21:41.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -136,12 +380,12 @@
     },
     {
         "title": "Linux实用操作之修改默认配置",
-        "uri": "posts/学习记录/Linux实用操作之修改默认配置",
+        "uri": "posts/Study/Linux实用操作之修改默认配置",
         "content": "vim tab     vim tab   vim  etc vimrc set tabstop 4            bash    vim  etc inputrc    set bell style none      vim    vim  etc vimrc    set noeb vb t_vb    vb visual bell           t_vb",
-        "objectID": "posts/学习记录/Linux实用操作之修改默认配置",
+        "objectID": "posts/Study/Linux实用操作之修改默认配置",
         "date": "2021-01-02T16:10:38.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -149,12 +393,12 @@
     },
     {
         "title": "Linux实用操作之工作调度",
-        "uri": "posts/学习记录/Linux实用操作之工作调度",
+        "uri": "posts/Study/Linux实用操作之工作调度",
         "content": "at   create job  root VM 0 11 centos     22 38 at  echo  hello world      at test txt ctrl D at  job 3 Thu Mar 31 22 38 00 2022  root VM 0 11 centos      2 minute at  echo  hello kitty       at test txt ctrl D at  job 4 Thu Mar 31 22 39 00 2022 check job  root VM 0 11 centos     ls at test txt  root VM 0 11 centos     cat at test txt hello world  root VM 0 11 centos     atq          job 4 Thu Mar 31 22 39 00 2022 root  root VM 0 11 centos     cat   at test txt hello world hello kitty  root VM 0 11 centos     jobs          job    2   Stopped   5 minutes cancel job  root VM 0 11 centos       1 minutes at  echo  hello monkey       at test txt at  job 5 Thu Mar 31 22 40 00 2022  root VM 0 11 centos     atq 5 Thu Mar 31 22 40 00 2022 root  root VM 0 11 centos     atrm 5 time     root VM 0 11 centos     cat   at test txt hello world hello kitty crontab                root VM 0 11 centos    crontab  e   vim               1       test sh                    root VM 0 11 centos     crontab  l  1       test sh           root VM 0 11 centos     crontab  r  root VM 0 11 centos     crontab  l no crontab root   crontab       cd  var log tail  100 cron                      Apr 5 23 25 01 VM 0 11 centos CROND 8026    root  CMD  flock  xn  tmp stargate lock  c   usr local qcloud stargate admin start sh    dev null 2  1     Apr 5 23 26 01 VM 0 11 centos CROND 8168    root  CMD  flock  xn  tmp stargate lock  c   usr local qcloud stargate admin start sh    dev null 2  1     Apr 5 23 27 01 VM 0 11 centos CROND 8304    root  CMD  flock  xn  tmp stargate lock  c   usr local qcloud stargate admin start sh    dev null 2  1",
-        "objectID": "posts/学习记录/Linux实用操作之工作调度",
+        "objectID": "posts/Study/Linux实用操作之工作调度",
         "date": "2022-03-31T14:34:24.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -162,12 +406,12 @@
     },
     {
         "title": "Linux实用操作之文件操作",
-        "uri": "posts/学习记录/Linux实用操作之文件操作",
+        "uri": "posts/Study/Linux实用操作之文件操作",
         "content": "bash drwxr xr x 2 root root 4096 Jan 2 18 41 source                                                  d  directory    file l  link p  pipeline      b  block       c  character        s  socket             bash  root VM 0 11 centos d3   touch f1  root VM 0 11 centos d3   ll total 0  rw r  r   1 root root 0 Apr 10 00 26 f1  d         root VM 0 11 centos d3   touch  d  2022 4 10 00 27  f1  root VM 0 11 centos d3   ll total 0  rw r  r   1 root root 0 Apr 10 00 27 f1         bash  root VM 0 11 centos test   mkdir  p d1 d2 d3  root VM 0 11 centos test   cd d1 d2 d3  root VM 0 11 centos d3   pwd           root test d1 d2 d3         bash  root VM 0 11 centos test   ls t1 sh t2 sh t3 sh tmp  root VM 0 11 centos test   mv   sh tmp   root VM 0 11 centos test   ls tmp t1 sh t2 sh t3 sh         bash  root VM 0 11 centos test   mkdir  p d1 d2 d3       p          p d2 d3  root VM 0 11 centos test   mkdir p  root VM 0 11 centos test   cp  R d1 p   root VM 0 11 centos test   ls d1 p  root VM 0 11 centos test   cd p d1 d2 d3  root VM 0 11 centos d3   pwd  root test p d1 d2 d3   plus  cp          p        d                    Windows           a   dpR       rename mv  bash  root VM 0 11 centos test   touch jzh  root VM 0 11 centos test   mv jzh akyna    bash  root VM 0 11 centos test   touch file 1  5  txt  root VM 0 11 centos test   ls file1 txt file2 txt file3 txt file4 txt file5 txt  root VM 0 11 centos test   rename  txt  sh   txt  root VM 0 11 centos test   ls file1 sh file2 sh file3 sh file4 sh file5 sh            r  recurse  f  force  no ask  bash  root VM 0 11 centos d3   ls   test d1 p  root VM 0 11 centos d3   rm  rf    root VM 0 11 centos d3   ls   rmdir               1 txt        ctrl D     cat   1 txt       1 txt   echo    1 txt     test         bashrc         cat   test testfile 2  1 find  home  name  bashrc    testfile                   enca  L none file         UTF 8   enca  L none  x UTF 8 file",
-        "objectID": "posts/学习记录/Linux实用操作之文件操作",
+        "objectID": "posts/Study/Linux实用操作之文件操作",
         "date": "2022-04-05T14:38:46.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -175,12 +419,12 @@
     },
     {
         "title": "Linux实用操作之文本操作",
-        "uri": "posts/学习记录/Linux实用操作之文本操作",
+        "uri": "posts/Study/Linux实用操作之文本操作",
         "content": "grep                         root     last   grep  root           grep   acinv     color auto         filename         a    binary     text            c                   i                      n          v                               color auto                      awk              tab                    awk    pattern  action    filenames  last  n 5   awk   print  1   t   3                          awk  F   F                        awk  F    print  1        2   log txt      awk  v            k  1 awk  vk 1   print  1   1 k   log txt   awk   awk  k  awk_script   file    my awk  log txt awk  k my awk log txt sed                      nl  etc passwd   sed  2 5d    nl          2  d        2           root d        root      a  add c  commute d  delete i  insert p  print s  s old new g   cut                           echo  PATH   cut  d      f 3 5   sort uniq        last                         last   cut  d      f 1   sort   uniq Dos Linux              CR  r    LR  n win dos      r n unix mac linux      n unix win      win unix    r     r n     M",
-        "objectID": "posts/学习记录/Linux实用操作之文本操作",
+        "objectID": "posts/Study/Linux实用操作之文本操作",
         "date": "2021-12-04T16:20:09.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -188,12 +432,12 @@
     },
     {
         "title": "Linux实用操作之权限管理",
-        "uri": "posts/学习记录/Linux实用操作之权限管理",
+        "uri": "posts/Study/Linux实用操作之权限管理",
         "content": "root VM 0 11 centos     useradd jzh  root VM 0 11 centos     id jzh uid 1000 jzh  gid 1000 jzh  groups 1000 jzh   root VM 0 11 centos     grep jzh  etc passwd  etc shadow  etc group  etc passwd jzh x 1000 1000   home jzh  bin bash  etc shadow jzh    18980 0 99999 7     etc group jzh x 1000  x        shadow                    useradd          root VM 0 11 centos     passwd jzh Changing password user jzh  New password  BAD PASSWORD  password shorter 8 characters Retype new password  passwd  authentication tokens updated successfully                                    root VM 0 11 centos     useradd vbird  root VM 0 11 centos     echo  658766    passwd   stdin vbird Changing password user vbird  passwd  authentication tokens updated successfully   root VM 0 11 centos     chage  d 0 vbird    d                 vbird      vbird 101 34 217 138 s password  required change password immediately  root enforced  Last login  Mon Dec 20 00 04 51 2021 113 200 174 13 WARNING  password expired  change password login again                Changing password user vbird  Changing password vbird   current  UNIX password  New password  Retype new password  passwd  authentication tokens updated successfully             root VM 0 11 centos     groupadd testgroup  root VM 0 11 centos     gpasswd testgroup Changing password group testgroup New Password  Re enter new password   root VM 0 11 centos     gpasswd  A vbird testgroup  root VM 0 11 centos     grep testgroup  etc group  etc gshadow  etc group testgroup x 1002   etc gshadow testgroup  1 9v24LYZE V yYwmmoaKNpe9 zCPK3U  vbird    vbird          ACL                                           setfacl getfacl  m     acl         x     acl    R       root VM 0 11 centos tmp   touch acl       root VM 0 11 centos tmp   setfacl  m u jzh rx acl    jzh               root VM 0 11 centos tmp   setfacl  m g testgroup rwx acl  root VM 0 11 centos tmp   getfacl acl file  acl owner  root group  root user  rw  user jzh r x group  r   group testgroup rwx mask  rwx other  r      su       root   su   jzh     jzh",
-        "objectID": "posts/学习记录/Linux实用操作之权限管理",
+        "objectID": "posts/Study/Linux实用操作之权限管理",
         "date": "2021-12-20T02:15:34.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -201,12 +445,12 @@
     },
     {
         "title": "Linux实用操作之流程控制",
-        "uri": "posts/学习记录/Linux实用操作之流程控制",
+        "uri": "posts/Study/Linux实用操作之流程控制",
         "content": "read  a variable_name      array   root VM 0 11 centos tmp   read  a arr 1 2 3 4 5  root VM 0 11 centos tmp   echo   arr 0   1  root VM 0 11 centos tmp   echo   arr 4   5 read  p  prompt words  variable_name read  n limitlength variablename  root VM 0 11 centos tmp   read  n 5 kk words root VM 0 11 centos tmp   echo  kk words read  s variable_name  silent       read  t time variable_name  time               else    something elif    something else something fi case case   var   condition1   something     condition2   something        anything something    esac       condition  something done when meet condition  start loop  until until  condition  something done when meet condition  end loop  usage1  var con1 con2 con3     something done usage2  var   array      usage3  var   seq 1 100       var  1  100      usage4    i 1",
-        "objectID": "posts/学习记录/Linux实用操作之流程控制",
+        "objectID": "posts/Study/Linux实用操作之流程控制",
         "date": "2021-12-09T12:33:45.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -214,12 +458,12 @@
     },
     {
         "title": "Linux实用操作之系统服务管理",
-        "uri": "posts/学习记录/Linux实用操作之系统服务管理",
+        "uri": "posts/Study/Linux实用操作之系统服务管理",
         "content": "systemctl            systemctl start apache service          systemctl stop apache service        systemctl restart apache service               systemctl reload apache service              systemctl daemon reload Unit         Unit Description       Requires    unit    daemon         Service Type                     Type simple       ExecStart            Type forking   fork                         Type oneshot       Systemd                  Type dbus       D Bus   Type notify             Systemd         Type idle                     ExecStart           ExecStartPre               ExecStartPost               ExecReload              ExecStop              ExecStopPost               RestartSec               Restart        Systemd                 always       on success on failure on abnormal on abort on watchdog TimeoutSec    Systemd               Environment        Install WantedBy        Target   Unit   enable           etc systemd system     Target   wants          RequiredBy          Target   Unit   enable           etc systemd system     Target   required          Alias   Unit         Also   Unit   enable            Unit                  systemd   systemd          usr lib systemd system                      etc systemd system                  service     vim  etc systemd system test service test service  Unit  Description service test  Service  Type simple ExecStart  bin bash  c     test service sh   Install  WantedBy multi user target            bash  root VM 0 11 centos     systemctl daemon reload  root VM 0 11 centos     systemctl start test service  root VM 0 11 centos     systemctl status test service   test service   service test Loaded  loaded   etc systemd system test service  disabled  vendor preset  disabled  Active  active  running  Wed 2022 04 13 00 04 24 CST  4s ago Main PID  15428  bash  CGroup   system slice test service   15428  bin bash  c   test service sh   now    15429  bin bash  c   test service sh   now    15430   15432 sleep 30s Apr 13 00 04 24 VM 0 11 centos systemd 1   Started service test      Unit     Systemd       Unit             journalctl                           journalctl  n 20           journalctl  usr lib systemd systemd           journalctl _PID 1      Unit     journalctl  u nginx service",
-        "objectID": "posts/学习记录/Linux实用操作之系统服务管理",
+        "objectID": "posts/Study/Linux实用操作之系统服务管理",
         "date": "2022-04-12T14:42:27.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -227,12 +471,12 @@
     },
     {
         "title": "Linux实用操作之编辑命令与变量",
-        "uri": "posts/学习记录/Linux实用操作之编辑命令与变量",
+        "uri": "posts/Study/Linux实用操作之编辑命令与变量",
         "content": "Java    Linux         bashrc     etc bashrc              shell        etc skel  bashrc                           bashrc    bashrc               shell     profile     etc profile                   etc skel bashprofile                           bashrprofile    bash_profile                      etc bashrc           etc profile   shell  root VM 0 11 centos     vim  etc bashrc                   JAVA export JAVAHOME  usr local java jdk1 8 0311 export PATH  JAVA_HOME bin  PATH export CLASSPATH    JAVAHOME lib dt jar  JAVAHOME lib tools jar             shell source  etc bashrc     Java     shell  root VM 0 11 centos     java  version java version  1 8 0_311  Java TM  SE Runtime Environment  build 1 8 0_311 b11  Java HotSpot TM  64 Bit Server VM  build 25 311 b11  mixed mode   root VM 0 11 centos     javac Usage  javac possible options include                alias  bash vim   etc  bashrc alias lm  ls  al   more  source   etc  bashrc          alias   linux        etc profile d           etc  bashrc       bash  root VM 0 11 centos     cd  etc profile d  root VM 0 11 centos profile d   ls 256term csh colorgrep csh csh local less sh which2 csh 256term sh colorgrep sh lang csh sh local which2 sh abrt console notification sh colorls csh lang sh vim csh bash_completion sh colorls sh less csh vim sh                          root VM 0 11 centos profile d   vim allalias sh alias lm  ls  al   more       root VM 0 11 centos profile d   source  etc profile test  root VM 0 11 centos profile d   lm total 92 drwxr xr x  2 root root 4096 Apr 5 22 56   drwxr xr x  90 root root 12288 Apr 5 22 49     rw r  r   1 root root 771 Nov 17 2020 256term csh",
-        "objectID": "posts/学习记录/Linux实用操作之编辑命令与变量",
+        "objectID": "posts/Study/Linux实用操作之编辑命令与变量",
         "date": "2022-04-05T15:01:48.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -240,12 +484,12 @@
     },
     {
         "title": "Linux实用操作之网络管理",
-        "uri": "posts/学习记录/Linux实用操作之网络管理",
+        "uri": "posts/Study/Linux实用操作之网络管理",
         "content": "IP grep  inet  sed  inet   netmask     alias myip   ifconfig eth0   grep  inet     sed  s inet  g    sed  s netmask     g   test   root VM 0 11 centos     myip 172 17 0 11     IP curl cip cc show  IP     my_ip                                               URL   http   www cip cc   my_ip    IP      root VM 0 11 centos     netstat  ntlp Active Internet connections  only servers  Proto Recv Q Send Q Local Address Foreign Address State PID Program name tcp 0 0 0 0 0 0 22 0 0 0 0   LISTEN 1089 sshd tcp6 0 0    3306      LISTEN 14528 mysqld       n          t     TCP l      listen   p                    3306         root VM 0 11 centos     lsof  i 3306 COMMAND PID USER FD TYPE DEVICE SIZE OFF NODE NAME mysqld 14528 mysql 17u IPv6 779103 0t0 TCP   mysql  LISTEN                 centos7 9    firewall                  root VM 0 11 centos     systemctl start firewalld     80    root VM 0 11 centos     firewall cmd   zone public   add port 8080 tcp   permanent      root VM 0 11 centos     firewall cmd   reload            root VM 0 11 centos     firewall cmd   zone public   list ports 8080 tcp 3306 tcp 80 tcp",
-        "objectID": "posts/学习记录/Linux实用操作之网络管理",
+        "objectID": "posts/Study/Linux实用操作之网络管理",
         "date": "2022-01-02T16:27:58.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux",
@@ -254,12 +498,12 @@
     },
     {
         "title": "Linux实用操作之进程管理",
-        "uri": "posts/学习记录/Linux实用操作之进程管理",
+        "uri": "posts/Study/Linux实用操作之进程管理",
         "content": "ps  ef  e   processes   A   f   full format  including command lines  root VM 0 11 centos     ps  ef   head  n 1 UID PID PPID C STIME TTY TIME CMD       PPID    ID C   CPU    STIME    start time  TTY           CMD          ps aux a  tty  including users    a      u  user oriented format x  processes without controlling ttys  root VM 0 11 centos     ps  aux   head  n 1 USER PID  CPU  MEM VSZ RSS TTY STAT START TIME COMMAND        MEM         VSZ             KB  RSS             KB           STAT      STAT             D                IO       R                   S           T           Z         s                     l               CLONE_THREAD     NPTL pthreads               ps  l       bash                 root VM 0 11 centos     ps  ef   head  n 1  ps  ef   grep java UID PID PPID C STIME TTY TIME CMD root 25889 24972 4 17 46 pts 1 00 00 11 java  jar LonersHub 0 0 1 SNAPSHOT jar root 26558 24972 0 17 51 pts 1 00 00 00 grep   color auto java           kill   kill                             root VM 0 11 centos     kill  l 1  SIGHUP 2  SIGINT 3  SIGQUIT 4  SIGILL 5  SIGTRAP 6  SIGABRT 7  SIGBUS 8  SIGFPE 9  SIGKILL                 1  SIGHUP          9  SIGKILL          15  SIGTERM                     kill  SIGTERM SIGTERM                                killall     PID               kill    killall   iIe   signal       i  interactive     kill            PID    kill            kill  9 PID       kill e g        htppd            killall  i  9 httpd                  jobs jobs  l     PID               fg  jobnumber                bg  jobnumber e g     ctrl z vim              vim      Stpped      bg      plus                      nohub test sh",
-        "objectID": "posts/学习记录/Linux实用操作之进程管理",
+        "objectID": "posts/Study/Linux实用操作之进程管理",
         "date": "2022-03-31T14:55:53.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux"
@@ -267,12 +511,12 @@
     },
     {
         "title": "Matlab基本用法整理",
-        "uri": "posts/学习记录/matlab基本用法整理",
+        "uri": "posts/Study/matlab基本用法整理",
         "content": "A     2 3      2  3        randi 100     1   100               zeros 1  30     1 30   0          0   100 j   1   10           else     end end     end       fprintf                  d        f n   count  count   SUM                  solve                         syms x y  s   x   6   y    2  t   5   x   4   y    3  result   solve s  t                  12 13 7 18 16 21 9 10 2 18     sort A   ave   mean A   md   median A   sigma   std A           syms x y  y    0 0283   x 2   0 7387   x   8 9191  my_x   solve diff y      diff A       myy   subs y  x  myx      x my_x  y   fprintf     2f    2f  n   myx  myy                        x y        x     2 5pi 0 1 2 5pi   y     1 0 1 1   y   cos x   plot x y  ax   gca  ax XAxisLocation    origin   ax YAxisLocation    origin           mesh surf subplot      x  y    meshgrid  5 0 1 5   3 0 1 3   z   x  2   y  2  subplot 1 2 1  surf x  y  z   subplot 1 2 2  mesh x y z         x  y    meshgrid  5 0 1 5   3 0 1 3   z   x  2   y  2  z     contour x y z        subplot 2 2 1   C h    contour x y z   ShowText    on       M c    contour _                c               c                    n    T   taylor f  x   Order   n              1 2 3 1 0 1 2  2 2 1 0 8     R j    rref A  R   1 0  1 5 0 1 2  2 0 0 0 0         j   1 2                 M   A    1 2   M   1 2 0 1 2 1  Ax   0       2  2 1 3 9  5 2 8              r   rank A      X   null A   r   X   0 1250  0 1250 0 6250 1 3750 1 0000 0 0 1 0000             X   null A  X   0 1293  0 1052 0 3860 0 7386 0 9041  0 2092  0 1302 0 6322                B      inv B           B    inv A    B  Ax   b   A         x   A   1    b     x     b                   1 2 3  2 1 3  3 3 6    1 2 3 2 1 3 3 3 6    f   poly A  f   1 0000  8 0000  9 0000  0 0000    lamda   roots f  lamda   9 0000  1 0000  0 0000               eig A  ans    1 0000  0 0000 9 0000                  Q  D    eig A  Q   0 7071 0 5774 0 4082  0 7071 0 5774 0 4082 0  0 5774 0 8165 D    1 0000 0 0 0  0 0000 0 0 0 9 0000     eig            D       Q             eig               D                orth            2  2 1 3 9  5 2 8    B   orth A  B    0 2982 0 9545  0 9545  0 2982    B   B     eye rank A      B   B  ans   1 0000 0 0000 0 0000 1 0000",
-        "objectID": "posts/学习记录/matlab基本用法整理",
+        "objectID": "posts/Study/matlab基本用法整理",
         "date": "2022-02-06T12:41:12.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "matlab",
@@ -281,12 +525,12 @@
     },
     {
         "title": "Python自动爬取花瓣网任意面板中所有图片",
-        "uri": "posts/学习记录/Python自动爬取花瓣网任意面板中所有图片",
-        "content": "urllib easygui selenium webdriver_manager                  url                       pin                 script         json     app page  board        pins              ID pin              ID pin                   http   huaban com pins pinId                                                                                                                      data id  data id          pin          webdriver                 data id                      github    Huaban Board Auto Download",
-        "objectID": "posts/学习记录/Python自动爬取花瓣网任意面板中所有图片",
+        "uri": "posts/Study/Python自动爬取花瓣网任意面板中所有图片",
+        "content": "urllib easygui selenium webdriver_manager                  url                       pin                 script         json     app page  board        pins              ID pin              ID pin                   http   huaban com pins pinId                                                                                                                      data id  data id          pin          webdriver                 data id                                   import urllib request import urllib error import re import os import datetime import easygui import time selenium import webdriver selenium webdriver chrome service import Service selenium webdriver common import service webdriver_manager import driver webdriver_manager chrome import ChromeDriverManager import winsound             pin def getpins url  num_   my_options   webdriver ChromeOptions   myoptions addargument  start maximized   myoptions addargument    ignore certificate errors   myoptions addargument    ignore ssl errors   myoptions addexperimental_option  excludeSwitches     enable automation    enable logging    driver   webdriver Chrome service Service ChromeDriverManager   install     options my_options      chromedriver                      wdm drivers chromedriver                 driver get url_  js    window scrollTo 0 document body scrollHeight      js         pattern   re compile r data id     d      pins_   set                  set                           set                            num   int num_  tries   num   15   1                   15    pin True  tries    1 html_   driver page_source pins1   re findall pattern  html          pin   pins2   set pins1    pin     pin   pins update pins2                 driver execute_script js  time sleep 1              tries",
+        "objectID": "posts/Study/Python自动爬取花瓣网任意面板中所有图片",
         "date": "2022-02-12T16:14:23.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "python",
@@ -296,12 +540,12 @@
     },
     {
         "title": "Redis学习记录（一）",
-        "uri": "posts/学习记录/redis学习记录（一）",
+        "uri": "posts/Study/redis学习记录（一）",
         "content": "Open  Connect Config open redis  redis server connect redis  redis cli disconnect  redis cli shutdown show chinese  redis cli   raw connect remote redis  redis cli  h host  p port  a password redis config  config  config_name  Data Type list  lpush clist redis lpush clist mysql lrange clist 0 100 key  127 0 0 1 6379  set mkey sos OK 127 0 0 1 6379  mkey  sos  127 0 0 1 6379  del mkey  integer  1 127 0 0 1 6379  mkey  nil  keys               127 0 0 1 6379  hmset mkeys B b C c OK 127 0 0 1 6379  hget mkeys B  b  set  127 0 0 1 6379  sadd mkey 123  integer  1 127 0 0 1 6379  sadd mkey 123  integer  0 127 0 0 1 6379  smembers mkey 1   123  sorted_set                                        127 0 0 1 6379  zadd zs 1 ak  integer  1 127 0 0 1 6379  zadd zs 1  integer  1 127 0 0 1 6379  zrangebyscore zs 0 100 1   ak  2   to  127 0 0 1 6379  zadd zs 1 redis  integer  1 127 0 0 1 6379  zrangebyscore zs 0 100 1   ak  2   redis  3   to  127 0 0 1 6379  zadd zs 0 pp  integer  1 127 0 0 1 6379  zrangebyscore zs 0 100 1   pp  2   ak  3   redis  4   to  Password    PS C  Users akyna  redis cli 127 0 0 1 6379  config requirepass 1   requirepass  2     127 0 0 1 6379  config set requirepass 12345 OK 127 0 0 1 6379  config requirepass  error  NOAUTH Authentication required  127 0 0 1 6379  auth 12345          OK 127 0 0 1 6379  config requirepass 1   requirepass  2   12345             127 0 0 1 6379  exit PS C  Users akyna  redis cli 127 0 0 1 6379  auth 12345 OK 127 0 0 1 6379  config requirepass 1   requirepass  2   12345      server          Linux                      redis conf         requirepass   password            redis server redis conf",
-        "objectID": "posts/学习记录/redis学习记录（一）",
+        "objectID": "posts/Study/redis学习记录（一）",
         "date": "2021-12-14T15:40:44.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "redis",
@@ -310,12 +554,12 @@
     },
     {
         "title": "Redis学习记录（二）",
-        "uri": "posts/学习记录/redis学习记录（二）",
+        "uri": "posts/Study/redis学习记录（二）",
         "content": "127 0 0 1 6379  multi        OK 127 0 0 1 6379  set book java QUEUED 127 0 0 1 6379  book QUEUED 127 0 0 1 6379  exec        1  OK 2   java  127 0 0 1 6379  book  java  127 0 0 1 6379  multi OK 127 0 0 1 6379  set name peter QUEUED 127 0 0 1 6379  discard        OK 127 0 0 1 6379  exec  error  ERR EXEC without MULTI 127 0 0 1 6379  name  nil    key     key keys         key keys pattern     pattern  key                                      1 3     1 3   1 10     1 10       x                        e g  127 0 0 1 6379  keys   1   book  2   mkeys  3   zset  4   mkey  127 0 0 1 6379  keys m  1   mkeys  2   mkey    key   127 0 0 1 6379  keys   1   book  2   mkeys  3   zset  4   mkey  127 0 0 1 6379  dbsize     key    integer  4   key 127 0 0 1 6379  flushall            key OK 127 0 0 1 6379  keys    empty list set  flushdb            key redis           127 0 0 1 6379  config databases 1   databases  2   16     16               redis cli  127 0 0 1 6379  subscribe news Reading messages     press Ctrl C quit  1   subscribe  2   news  3   integer  1      redis cli  PS C  Users akyna  redis cli 127 0 0 1 6379  publish news  hello   integer  1 127 0 0 1 6379  publish news  world   integer  1      redis cli           127 0 0 1 6379  subscribe news Reading messages     press Ctrl C quit  1   subscribe  2   news  3   integer  1 1   message  2   news  3   hello  1   message  2   news  3   world",
-        "objectID": "posts/学习记录/redis学习记录（二）",
+        "objectID": "posts/Study/redis学习记录（二）",
         "date": "2021-12-20T02:15:05.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "redis",
@@ -324,12 +568,12 @@
     },
     {
         "title": "SpringBoot+Vue+Shiro的Demo项目",
-        "uri": "posts/学习记录/SpringBoot+Vue+Shiro的Demo项目",
+        "uri": "posts/Study/SpringBoot+Vue+Shiro的Demo项目",
         "content": "Github   SpringBoot Vue Demo      lonersHub          web      star    SpringBoot  Vue   Demo        Shiro Jwt Redis           demo                      shiro                 SpringBoot MyBatisPlus Shiro Redis       CREATE TABLE t_user   userId bigint 20  NOT NULL AUTO_INCREMENT  userName varchar 255  NOT NULL  userPassword varchar 255  NOT NULL  userEmail varchar 255  NOT NULL  userRole varchar 255  NOT NULL  userPermission varchar 255  DEFAULT NULL  PRIMARY KEY  userId    ENGINE InnoDB AUTO_INCREMENT 5 DEFAULT CHARSET utf8      ID                                  1 student student student qq com student view 2 teacher teacher teacher qq com teacher view 3 admin1 admin1 admin1 qq com admin view 4 admin2 admin2 admin2 qq com admin  view edit                                   springboot        org springframework boot spring boot configuration processor org crazycake shiro redis spring boot starter 3 2 1 cn hutool hutool all 5 3 3 io jsonwebtoken jjwt 0 9 1 org springframework boot spring boot starter validation org springframework boot spring boot starter web com baomidou mybatis plus boot starter 3 5 1 org springframework boot spring boot devtools runtime true mysql mysql connector java runtime org projectlombok lombok true org springframework boot spring boot starter test test org junit vintage junit vintage engine   application yaml spring  application  name  springboot vue demo datasource  driver class name  com mysql cj jdbc Driver url  jdbc mysql   localhost 3306 test serverTimezone UTC username  root password  123456 redis  port  6379 jedis  pool  max active  1000 max wait   1 min idle  5 max idle  10 timeout  6000 server  port  8080 mybatis plus  configuration  map underscore to camel case  false            version 1 0  description User     Author Jiang Zhihang  Date 2022 2 4 20 57     Data  AllArgsConstructor  NoArgsConstructor  ToString  TableName  t_user   public class User implements Serializable    TableId value    userId   type   IdType AUTO  private Long userId   NotBlank message              private String userName   NotBlank message             private String userPassword   NotBlank message              Email message             private String userEmail  private String userRole  private String userPermission           mapper  service  public interface UserService extends IService     Service public class UserServiceImpl extends ServiceImpl implements UserService     public interface UserMapper extends BaseMapper       Mybatis      mapper                 version 1 0  description MyBatisPlus    Author Jiang Zhihang  Date 2022 2 4 21 26     Configuration  EnableTransactionManagement  MapperScan  com jzh springbootvuedemo mapper   public class MbpConfig    Bean public MybatisPlusInterceptor mybatisPlusInterceptor     MybatisPlusInterceptor interceptor   new MybatisPlusInterceptor    interceptor addInnerInterceptor new PaginationInnerInterceptor DbType H2    return interceptor    public OptimisticLockerInnerInterceptor optimisticLockerInnerInterceptor     return new OptimisticLockerInnerInterceptor          Jwt         application yaml      Jwt         auth  jwt  secret  dasfjlsajdlkeeawrljawr213jfsad expire  43200   expire      new Date                       token      token  claims    token   token          version 1 0  description Jwt     Author Jiang Zhihang  Date 2022 2 4 22 39     Data  Component  Slf4j  ConfigurationProperties prefix    auth jwt   public class JwtUtils   private String secret  private int expire       description    token  author Jiang Zhihang  date 2022 2 4 22 50    public String createToken String email    Date nowDate   new Date    Date expireDate   new Date nowDate getTime     expire   1000L        1000ms return Jwts builder    setHeaderParam  typ    JWT    setSubject email   setIssuedAt nowDate   setExpiration expireDate   signWith SignatureAlgorithm HS256  secret   compact           description       token  claims    token  author Jiang Zhihang  date 2022 2 4 22 53    public Claims getClaimsByToken String token    try   return Jwts parser    setSigningKey secret   parseClaimsJws token   getBody      catch  Exception e    log error  token error       e getMessage     return null           description    token      author Jiang Zhihang  date 2022 2 4 23 09    public boolean isTokenExpired Date expireDate    return expireDate before new Date           JwtToken  JwtToken   Shiro   AuthenticationToken   Shiro         version 1 0  description token   Author Jiang Zhihang  Date 2022 2 4 22 57    public class JwtToken implements AuthenticationToken   private final String token  public JwtToken String token    this token   token     Override public Object getPrincipal     return token     Override public Object getCredentials     return token        AccountProfile    Shiro              version 1 0  description  Author Jiang Zhihang  Date 2022 2 5 21 25     Data  AllArgsConstructor  NoArgsConstructor  ToString public class AccountProfile implements Serializable   private String email                          private String phone  private String name                   RedisManager   AccountProfi",
-        "objectID": "posts/学习记录/SpringBoot+Vue+Shiro的Demo项目",
+        "objectID": "posts/Study/SpringBoot+Vue+Shiro的Demo项目",
         "date": "2022-02-12T13:46:13.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "springboot",
@@ -340,12 +584,12 @@
     },
     {
         "title": "SSH免密且免IP登录远程主机的方法以及遇到的一些问题",
-        "uri": "posts/学习记录/ssh免密且免IP登录远程主机的方法以及遇到的一些问题",
+        "uri": "posts/Study/ssh免密且免IP登录远程主机的方法以及遇到的一些问题",
         "content": "ssh     IP                ip                                          RSA                    IP    config              ip      config    window       ssh         config     linux     ssh_config           IP         Host       HostName   IP Port       User              ssh                                 ssh keygen        ssh                      pub                       ssh copy id  i  ssh        IP             window10           ssh copy id       ssh copy id      cmdlet                                   function ssh copy id  string  userAtMachine   args    publicKey     ENV USERPROFILE       ssh id_rsa pub     Test Path   publicKey     Write Error  ERROR  failed open ID file   publicKey   No file    else     cat   publicKey    ssh  args  userAtMachine  umask 077  test  d  ssh    mkdir  ssh   cat     ssh authorized_keys    exit 1                                                                                                      no matching key exchange method found  offer  diffie hellman group1 sha1                             ssh_config config             Host       HostName   IP Port       User      KexAlgorithms  diffie hellman group1 sha1                                                                                               idrsa idrsa pub                                                           key        ssh idrsacentos79    idrsacentos79 idrsacentos79 pub       config      Host       HostName   IP Port       User      IdentityFile    ssh idrsacentos79   ssh copy id            publicKey     ENV USERPROFILE       ssh idrsacentos79 pub      function ssh copy id  string  userAtMachine   args    publicKey     ENV USERPROFILE       ssh idrsacentos79 pub             Test Path   publicKey     Write Error  ERROR  failed open ID file   publicKey   No file    else     cat   publicKey    ssh  args  userAtMachine  umask 077  test  d  ssh    mkdir  ssh   cat     ssh authorized_keys    exit 1                        over",
-        "objectID": "posts/学习记录/ssh免密且免IP登录远程主机的方法以及遇到的一些问题",
+        "objectID": "posts/Study/ssh免密且免IP登录远程主机的方法以及遇到的一些问题",
         "date": "2020-11-17T09:56:03.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "linux",
@@ -355,12 +599,12 @@
     },
     {
         "title": "Window增加右键打开选项",
-        "uri": "posts/学习记录/Window增加右键打开选项",
+        "uri": "posts/Study/Window增加右键打开选项",
         "content": "win R regedit             vscode                       HKEYCLASSESROOT   shell     Vscode   Vscode    command   command         1                          Vscode                Open vscode                              icon                  window terminal                   HKEYCLASSESROOT Directory Background shell     Terminal   Terminal    command   command          Terminal                Open terminal                              icon       window terminal json                           profiles      defaults      startingDirectory",
-        "objectID": "posts/学习记录/Window增加右键打开选项",
+        "objectID": "posts/Study/Window增加右键打开选项",
         "date": "2021-11-20T10:10:30.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "window"
@@ -368,12 +612,12 @@
     },
     {
         "title": "Window实用命令记录之文件操作",
-        "uri": "posts/学习记录/Window实用命令记录之文件操作",
+        "uri": "posts/Study/Window实用命令记录之文件操作",
         "content": "cmd        type nul   test jpg   powershell        new item test jpg           mkdir test                        PS D  a tmp test  ren test txt my txt                      PS D  a tmp test  move test jpg mydir            copy        xcopy      PS D  a tmp test mydir  copy test jpg test1 jpg     mydir not empty PS D  a tmp test  copy mydir mydir1 PS D  a tmp test  ls mydir1 empty PS D  a tmp test  xcopy mydir mydir2    mydir2             F      D        D mydir test jpg mydir test1 jpg     2                del      powershell    rm  rd rmdir         rd  R",
-        "objectID": "posts/学习记录/Window实用命令记录之文件操作",
+        "objectID": "posts/Study/Window实用命令记录之文件操作",
         "date": "2022-04-19T05:48:19.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "window",
@@ -383,12 +627,12 @@
     },
     {
         "title": "Window实用命令记录之进程与网络控制",
-        "uri": "posts/学习记录/Window实用命令记录之进程与网络控制",
+        "uri": "posts/Study/Window实用命令记录之进程与网络控制",
         "content": "tasklist tasklist          findstr   linux grep   PS C  Users akyna  Tasklist   findstr Code Code exe 19184 Console 1 94 012 K Code exe 19300 Console 1 26 324 K          taskkill           ID  PID                    PID processid           PID   IM imagename                 T                    F                      e g    TASKKILL  IM notepad exe TASKKILL  PID 1230  PID 1241  PID 1253  T TASKKILL  F  IM cmd exe  T        ipconfig              ipconfig           ip     ipconfig  all     mac     ipconfig  displaydns     dns       ipconfig  flushdns     dns     ping                   ping jingyan baidu com   ping  t jingyan baidu com   ping 1000     ping  n 10 jingyan baidu com   ping        netstat                  TCP IP                 netstat  ano            a               n                 o                 ID   r             t  u      tcp udp        t                u",
-        "objectID": "posts/学习记录/Window实用命令记录之进程与网络控制",
+        "objectID": "posts/Study/Window实用命令记录之进程与网络控制",
         "date": "2022-04-18T15:10:39.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "window",
@@ -398,12 +642,12 @@
     },
     {
         "title": "关于char*, char[], string的理解",
-        "uri": "posts/学习记录/关于char, string的理解",
+        "uri": "posts/Study/关于char, string的理解",
         "content": "char   char     char s1      abc   cout   s1   endl     abc s1 1     d          cout   s1   endl     adc  abc        s1                                   const char  s2    abc      const       cout   s2   endl     abc s2    dfs           cout   s2   endl     dfs  abc        s2                                      void print_str const char   str    printf   s n   str     print_str s1      adc print_str s2      dfs   string char   char     string   string            const char  s1    abc   string s   s1  cout   s   endl     abc s     a   cout   s   endl     abca cout   s1   endl     abc   string     s1 string        const char  s1    123   string str1   s1           s1   const cout   str1   endl     123 char s2      234   string str2   s2  cout   str2   endl     234 string char  const char  s11   str1 cstr       c_str   const char  cout   s1_1   endl     123 char  char   int      int v1   atoi s1   cout   v1   endl     123 v1    1  char str11 100   itoa v1  str11  10      10      cout   str11   endl     124              const char  str111     itoa v1  str111  10         string int      int val   223  string str3   to_string val      C  11        string  char   char      cout   str3   endl     223 val   stoi str3  0  10      0      10     cout   val   endl     223 Author  akynazh Blog  akynazh site",
-        "objectID": "posts/学习记录/关于char, string的理解",
+        "objectID": "posts/Study/关于char, string的理解",
         "date": "2020-12-05T04:37:32.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "c/c++"
@@ -411,12 +655,12 @@
     },
     {
         "title": "关于数论的一些简单算法",
-        "uri": "posts/学习记录/关于数论的一些简单算法",
+        "uri": "posts/Study/关于数论的一些简单算法",
         "content": "1       1000000000000                 TLE                 1   is_prime         true  2  2         2        2                    true                             false  2        21479862  21499877                                                       1   isprimesmall   is_prime         true  2     a  b        2    b   isprimesmall                a  b            false        typedef long long ll  bool is_prime MAX1   bool isprimesmall MAX2   void sieve ll a  ll b    for int   0   ll i     1    t ix   t  ix     ix   t    i               a b  p    a p b p  p                                                     n    x n mod n   x  1 0    if n   1    1  res   res   x   mod  x   x   x   mod  n     1    return res                            gcd                            0  int gcd int a  int b   if b    0  return a  return gcd b    b     exgcd                   a b           x y  ax      gcd a b     ax      m    m   gcd a b        a   a  b   b             ax      1          gcd a b     1          gcd a b       x y         x y       ax      gcd a b   1   bx1    a   b  y1    gcd a b   a   b       a   b    b    ay1   b    x1   a   b    y1     gcd a b   2    1  2     x    y1 y     x1    a   b    y1          x y      x1 y1                  1   b    0    1   b   0       gcd a b     x    1  y    0              int exgcd int a  int b  int  x  int  y   int d   a  if b    0   d   exgcd b  a b  x  y   int temp   y  y   x    a   b    y        y x   temp        x  else  x   1  y   0    return d",
-        "objectID": "posts/学习记录/关于数论的一些简单算法",
+        "objectID": "posts/Study/关于数论的一些简单算法",
         "date": "2020-11-17T09:25:21.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "algorithm"
@@ -424,12 +668,12 @@
     },
     {
         "title": "最短路问题汇总",
-        "uri": "posts/学习记录/最短路问题汇总",
+        "uri": "posts/Study/最短路问题汇总",
         "content": "O V 2  const int MAXN   100  const int INF   0x3f3f3f3f           DAG int V  E            int graphMAXN     DAG         INF     INF    cost  int d MAXN         s                     INF int visited MAXN                   1   0         void init     memset graph  0x3f  sizeof graph    cin    V    E  int from  to  cost   int   0           cost  graphfrom   cost                            void Dijkstra int s    memset d  0x3f  sizeof d    memset visited  0  sizeof visited    visited s    1  for int   0  P     first       second         priority_queue  greater   que     greater                void init     memset graph  0x3f  sizeof graph    cin    V    E  int from  to  cost   int   0           cost  graphfrom   cost                               void Dijkstra_optimise int s    memset d  0x3f  sizeof d    memset visited  0  sizeof visited       for int   0  d k   continue  visited k    1   int   0    V    E  int from  to  cost   int   0     edge i  from    edge i  to    edge i  cost                          void Bellman_Ford int s    memset d  0x3f  sizeof d    d s    0   1    int flag   0     DAG     E   int   0  d e from    e cost    d e to    d e from    e cost  flag   1                      flag  break                SPFA                      SPFA                                const int MAXN   100  const int INF   0x3f3f3f3f           DAG int V  E            int graphMAXN     DAG         INF     INF    cost  int d MAXN         s                     INF int vis MAXN              int push_count MAXN                  V         priority_queue  greater   que     greater                void init     memset graph  0x3f  sizeof graph    cin    V    E  int from  to  cost   int   0           cost  graphfrom   cost         SPFA        void SPFA int s    memset d  0x3f  sizeof d    memset vis  0  sizeof vis    memset pushcount  0  sizeof pushcount    d s    0  que push s   vis s    1  push_count s       que empty      int flag   0          int v   que top    que pop    vis v    0   int   0    V    flag   1  break           flag    cout   V    E  int from  to  cost   int   0           cost  graphfrom   cost                     void Floyd             d memset d  0x3f  sizeof d    for int   0  di   dk  di   di   dk                   const int MAXN   100  struct Edge   int to          int next                    int w             Edge edge MAXN             int head MAXN                        1 int V  E         void build     int from  to  w  cnt   0   int   0          w  edge cnt  to   to  edge cnt  w   w  edge cnt  next   head from          head     1  next  1                head from    cnt                 void traverse      int   0    V  i       int j   head i   j     1  j   edge j  next    cout                 edge j  to     weight      edge j  w   endl                      void traverse_v int v     int   head v       1    edge i  next    cout         v         edge i  to     weight      edge i  w   endl      over",
-        "objectID": "posts/学习记录/最短路问题汇总",
+        "objectID": "posts/Study/最短路问题汇总",
         "date": "2021-11-17T09:55:32.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "algorithm"
@@ -437,12 +681,12 @@
     },
     {
         "title": "图的着色问题汇总",
-        "uri": "posts/学习记录/图的着色问题汇总",
+        "uri": "posts/Study/图的着色问题汇总",
         "content": "2                             vector G MAX_V   int vertexes  int edges  int color MAX_V            1  1 bool dfs int v  int c    color v    c   int   0  V            ccount     int   1    c_min  return        v   V            cmin   min cmin  num_color   return     int   1    min_room  return         x   c_stu              minroom   min minroom  count_room   return     int   1",
-        "objectID": "posts/学习记录/图的着色问题汇总",
+        "objectID": "posts/Study/图的着色问题汇总",
         "date": "2021-12-05T04:34:05.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "algorithm"
@@ -450,12 +694,12 @@
     },
     {
         "title": "在前后端不分离的情况下进行交互性数据展示的实现方法",
-        "uri": "posts/学习记录/在前后端不分离的情况下进行交互性数据展示的实现方法",
+        "uri": "posts/Study/在前后端不分离的情况下进行交互性数据展示的实现方法",
         "content": "web                                                       Thymeleaf                                              cookie                addCookie                cookie            cookie                                  cookie              cookie             cookie           session                session            session                                      js         session         thymeleaf                   session                             session                                                RedirectAttributesModelMap             SpringMVC       RedirectAttributesModelMap model                   thymeleaf                               GetMapping   loginFirst   public String loginFirst RedirectAttributesModelMap model    model addFlashAttribute  msg              return  redirect           RedirectAttributesModelMap    redirect    model       addFlashAttribute        session                  RedirectAttributesModelMap                   js        msg   val    th value            thymeleaf     js           let msg       msg     document getElementById  msg   setAttribute  value   msg toString          inline                thymeleaf  js    jquery       msg          jquery       document  ready function      let msg       msg   val     msg           msg    null        alert   html msg  addClass  alert info   show   delay 1500  fadeOut              css                alert   html  errorMsg   addClass  alert info   show   delay 1500  fadeOut       alert   display  none  position  fixed  top  10   left  50   min width  150px  margin left   100px  z index  99999  padding  15px  border  1px solid transparent  border radius  5px     alert info   color  white  text align  center  font family   Times New Roman   SansSerif  sans serif  background color  black  background image  linear gradient to bottom  gray  black   border color  black                        session          springmvc                           RedirectAttributesModelMap   addFlashAttribute           js  th value         thymeleaf  js                    js",
-        "objectID": "posts/学习记录/在前后端不分离的情况下进行交互性数据展示的实现方法",
+        "objectID": "posts/Study/在前后端不分离的情况下进行交互性数据展示的实现方法",
         "date": "2022-02-10T16:05:25.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "springboot",
@@ -464,27 +708,13 @@
         ]
     },
     {
-        "title": "跑步记忆",
-        "uri": "posts/学习记录/我的跑步记录与总结",
-        "content": "",
-        "objectID": "posts/学习记录/我的跑步记录与总结",
-        "date": "2021-11-23T10:20:39.000Z",
-        "categories": [
-            "生活记录"
-        ],
-        "tags": [
-            "life",
-            "running"
-        ]
-    },
-    {
         "title": "求解有向图和无向图中是否存在环的方法",
-        "uri": "posts/学习记录/求解有向图和无向图中是否存在环的方法",
+        "uri": "posts/Study/求解有向图和无向图中是否存在环的方法",
         "content": "DFS                                        dfs                                                 int matmaxn  vis maxn   int dfs int v    vis v    1   int   0  st  int ncount   0   int   0    num  i      in_num i   st push i              0    while  st empty      int k   st top    st pop    ncount     int   0    num  i       matk     in_num i     0  st push i          1    0                return ncount    memset innum  0  sizeof innum     int j   0  j   num  j     int k   0  k   num  k      scanf   d    matj    matj  in_num k               int ncount   topo                                ncount   num  ans push_back 1      1     else ans push_back 0",
-        "objectID": "posts/学习记录/求解有向图和无向图中是否存在环的方法",
+        "objectID": "posts/Study/求解有向图和无向图中是否存在环的方法",
         "date": "2021-12-02T15:50:44.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "algorithm"
@@ -492,243 +722,15 @@
     },
     {
         "title": "矩阵快速幂的介绍及其应用",
-        "uri": "posts/学习记录/矩阵快速幂的介绍及其应用",
+        "uri": "posts/Study/矩阵快速幂的介绍及其应用",
         "content": "n n   A   A k               n k    n    n     i   j    Aij          A k  n    n    i  j    Aij        10 9 7    1 0   if n   1    1  res   res   x   mod                  x   x   x   mod          n     1            return res                   Matrix Pow_Mod Matrix m          Matrix M  for int   1     1            return M       Mul               Matrix Mul Matrix m1  Matrix m2              Matrix M  for int   1  2          n   m        f 1    f 2          f n                     p                                                                                                                                                                                                                                 n     f n 2  1                       long long n  mod  sum   0  struct Matrix  long long mat3     Matrix Mul Matrix m  Matrix mf  int t          m  mf m  Matrix M  for int   1   Fn 2  Fn 1         2        while num    if num   1  mf   Mul m  mf  1   m   Mul m  m  2   num     1    return m_f mat1    int main     scanf   lld lld    n   mod   sum   Pow_Mod n    1     f 1      f n    f n 2  1 printf   lld   sum   mod   return 0",
-        "objectID": "posts/学习记录/矩阵快速幂的介绍及其应用",
+        "objectID": "posts/Study/矩阵快速幂的介绍及其应用",
         "date": "2021-11-18T15:47:15.000Z",
         "categories": [
-            "学习记录"
+            "Study"
         ],
         "tags": [
             "algorithm"
-        ]
-    },
-    {
-        "title": "二次元随想",
-        "uri": "posts/日常杂思/二次元随想",
-        "content": "",
-        "objectID": "posts/日常杂思/二次元随想",
-        "date": "2020-11-28T10:24:12.000Z",
-        "categories": [
-            "日常杂思"
-        ],
-        "tags": [
-            "acgn",
-            "thinking"
-        ]
-    },
-    {
-        "title": "简洁之美",
-        "uri": "posts/日常杂思/简洁之美",
-        "content": "",
-        "objectID": "posts/日常杂思/简洁之美",
-        "date": "2022-02-06T13:42:50.000Z",
-        "categories": [
-            "日常杂思"
-        ],
-        "tags": [
-            "thinking",
-            "life"
-        ]
-    },
-    {
-        "title": "山脉游览录",
-        "uri": "posts/生活记录/山脉游览录",
-        "content": "",
-        "objectID": "posts/生活记录/山脉游览录",
-        "date": "2022-03-21T10:02:04.000Z",
-        "categories": [
-            "生活记录"
-        ],
-        "tags": [
-            "life",
-            "journey"
-        ]
-    },
-    {
-        "title": "《人间失格》文摘",
-        "uri": "posts/阅读记录/《人间失格》文摘",
-        "content": "",
-        "objectID": "posts/阅读记录/《人间失格》文摘",
-        "date": "2022-04-14T15:13:01.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《强风吹拂》文摘",
-        "uri": "posts/阅读记录/《强风吹拂》文摘",
-        "content": "",
-        "objectID": "posts/阅读记录/《强风吹拂》文摘",
-        "date": "2022-04-03T15:44:25.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《我的青春恋爱物语果然有问题》文摘一",
-        "uri": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘一",
-        "content": "",
-        "objectID": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘一",
-        "date": "2021-04-11T03:51:03.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "春物",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《我的青春恋爱物语果然有问题》文摘三",
-        "uri": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘三",
-        "content": "",
-        "objectID": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘三",
-        "date": "2021-06-11T15:19:00.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "春物",
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《我的青春恋爱物语果然有问题》文摘二",
-        "uri": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘二",
-        "content": "",
-        "objectID": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘二",
-        "date": "2021-07-03T08:44:36.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "春物",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《我的青春恋爱物语果然有问题》文摘四",
-        "uri": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘四",
-        "content": "1",
-        "objectID": "posts/阅读记录/《我的青春恋爱物语果然有问题》文摘四",
-        "date": "2022-04-03T15:27:20.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "春物",
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《挪威的森林》文摘一",
-        "uri": "posts/阅读记录/《挪威的森林》文摘一",
-        "content": "N360",
-        "objectID": "posts/阅读记录/《挪威的森林》文摘一",
-        "date": "2022-04-24T15:11:22.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《挪威的森林》文摘三",
-        "uri": "posts/阅读记录/《挪威的森林》文摘三",
-        "content": "",
-        "objectID": "posts/阅读记录/《挪威的森林》文摘三",
-        "date": "2022-04-25T12:31:46.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《挪威的森林》文摘二",
-        "uri": "posts/阅读记录/《挪威的森林》文摘二",
-        "content": "",
-        "objectID": "posts/阅读记录/《挪威的森林》文摘二",
-        "date": "2022-04-25T10:03:53.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《挪威的森林》文摘四",
-        "uri": "posts/阅读记录/《挪威的森林》文摘四",
-        "content": "",
-        "objectID": "posts/阅读记录/《挪威的森林》文摘四",
-        "date": "2022-04-25T12:39:14.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《斜阳》文摘",
-        "uri": "posts/阅读记录/《斜阳》文摘",
-        "content": "",
-        "objectID": "posts/阅读记录/《斜阳》文摘",
-        "date": "2022-04-17T15:13:28.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
-        ]
-    },
-    {
-        "title": "《消失的十三级台阶》摘录",
-        "uri": "posts/阅读记录/《消失的十三级台阶》摘录",
-        "content": "",
-        "objectID": "posts/阅读记录/《消失的十三级台阶》摘录",
-        "date": "2022-04-15T05:02:21.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "文摘",
-            "book"
-        ]
-    },
-    {
-        "title": "《解忧杂货店》文摘",
-        "uri": "posts/阅读记录/《解忧杂货店》文摘",
-        "content": "",
-        "objectID": "posts/阅读记录/《解忧杂货店》文摘",
-        "date": "2022-04-03T15:41:50.000Z",
-        "categories": [
-            "阅读记录"
-        ],
-        "tags": [
-            "book",
-            "文摘"
         ]
     }
 ]
