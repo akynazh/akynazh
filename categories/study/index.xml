@@ -19,7 +19,7 @@
 创建一个Index 保存Index的名称。
 下载hugo-algolia 1  npm install -g hugo-algolia   编写config.yaml 网站根目录下创建config.yaml，如果默认网站配置文件是它则无需该操作。
 编写参数如下：
-1 2 3 4 5 6  --- algolia: index: &amp;#34;akynazh&amp;#34; # Index名称 key: &amp;#34;45d49616fa5890bd6de7456ea0b42be2&amp;#34; appID: &amp;#34;2D2Z2BVSGA&amp;#34; ---   生成algolia.json 网站根目录下运行：
+1 2 3 4 5 6  --- algolia: index: &amp;#34;{indexName}&amp;#34; key: &amp;#34;{key}&amp;#34; appID: &amp;#34;{appID}&amp;#34; ---   生成algolia.json 网站根目录下运行：
 1  hugo-algolia -s   即可生成{site}/public/algolia.json。
 这样该数据也同步到了algolia账户下，可以去官网查看。
 前往algolia的indices进行搜索类型的设置 可以选择按tag，category，content等内容进行搜索，并指定优先级。
