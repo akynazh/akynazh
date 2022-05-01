@@ -58,7 +58,7 @@
         "uri": "posts/Book/《我的青春恋爱物语果然有问题》文摘三",
         "content": "",
         "objectID": "posts/Book/《我的青春恋爱物语果然有问题》文摘三",
-        "date": "2021-06-11T15:19:00.000Z",
+        "date": "2022-03-11T15:19:00.000Z",
         "categories": [
             "Book"
         ],
@@ -326,6 +326,19 @@
         "tags": [
             "hugo",
             "web"
+        ]
+    },
+    {
+        "title": "Java与C++中的值传递和引用传递解析",
+        "uri": "posts/Study/Java与C++中的值传递和引用传递解析",
+        "content": "Java       C               Java         3        java public static void change1 String str  int num    str    world             new       num   100    public static void change2 User user    user age   1  user name    mary     public static void change3 User user    user   new User 1   mary               java public static void main String   args    String str    hello   int num   1  System out println str         num      hello 1 change1 str  num   System out println str         num      hello 1 System out println                        User user   new User 123   peter    System out println user name         user age      peter 123 change2 user   System out println user name         user age      mary 1 System out println                        user   new User 123   peter    System out println user name         user age      peter 123 change3 user   System out println user name         user age      peter 123      change2 3          java                                                                  change1            java        String          String         String   char      final                          new             change3     C           java                                 C           2        cpp void change1 User  user    user  age   999  user  name    mary     void change2 User  user    user   new User 999   mary               cpp User  user1   new User 21   peter    cout age name age name age name age name age name age name   endl     999 mary                              Java",
+        "objectID": "posts/Study/Java与C++中的值传递和引用传递解析",
+        "date": "2022-05-01T12:16:39.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "java cpp"
         ]
     },
     {
