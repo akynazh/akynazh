@@ -1,3 +1,9 @@
+## 👻 Welcome To My Repository
+
+<table width="960px">
+<tr>
+<td valign="top" width="50%">
+
 <h3> :bug: My Weekly Coding Record </h3>
 
 <!--START_SECTION:waka-->
@@ -12,8 +18,10 @@ SCSS             41 mins         █░░░░░░░░░░░░░░�
 ```
 
 <!--END_SECTION:waka-->
+</td>
 
-<h3> My blog: &nbsp<a href="https://akynazh.site">AKYNAZH</a> </h3>
+<td valign="top" width="50%">  
+<h3> My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 
 <h3> :alien: Latest Blog Posts</h3>
   
@@ -24,3 +32,7 @@ SCSS             41 mins         █░░░░░░░░░░░░░░�
 - [《挪威的森林》文摘四](https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/)
 - [Window实用命令记录之文件操作](https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/)
 <!-- BLOG-POST-LIST:END -->
+
+</td>
+</tr>
+</table>
