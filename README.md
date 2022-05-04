@@ -1,6 +1,4 @@
-## 👻 Welcome 
-
-<table width="960px">
+<table width="980px">
 <tr>
 <td valign="top" width="50%">
 
