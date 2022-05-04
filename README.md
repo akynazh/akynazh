@@ -1,10 +1,10 @@
-## 👻 Welcome To My Repository
+## 👻 Welcome 
 
 <table width="960px">
 <tr>
 <td valign="top" width="50%">
 
-<h3> :bug: My Weekly Coding Record </h3>
+<h3> :bug: My weekly coding record </h3>
 
 <!--START_SECTION:waka-->
 
@@ -21,9 +21,8 @@ SCSS             41 mins         █░░░░░░░░░░░░░░�
 </td>
 
 <td valign="top" width="50%">  
-<h3> My Blog 👉 <a href="https://akynazh.site">AKYNAZH</a> </h3>
 
-<h3> :alien: Latest Blog Posts</h3>
+<h3> :alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3>
   
 <!-- BLOG-POST-LIST:START -->
 - [Java与C++中的值传递和引用传递解析](https://akynazh.site/posts/study/java%E4%B8%8Ec++%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/)
