@@ -178,6 +178,19 @@
         ]
     },
     {
+        "title": "《杀死一只知更鸟》文摘二",
+        "uri": "posts/Book/《杀死一只知更鸟》文摘二",
+        "content": "",
+        "objectID": "posts/Book/《杀死一只知更鸟》文摘二",
+        "date": "2022-05-09T03:34:32.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "digest"
+        ]
+    },
+    {
         "title": "《消失的十三级台阶》摘录",
         "uri": "posts/Book/《消失的十三级台阶》摘录",
         "content": "",
@@ -373,6 +386,19 @@
         "content": "JDK JRE JVM         Java                                                                                                                                      Java                              Java                     Java                         class                JVM                                    Java                               java int   1    i    System out println i         1                                                                                                                                                                                                                                                                                                                                Java                                                      overload     override                                                                                                                                                                                                                                                                                      abstract class     interface                public               Java8                                   static final                                                        extends                     public        public protected default                       private                                                        JDK8                                                                              jdk9                     jdk7 jdk9 Java           jdk 7                                              jdk 8                      jdk 9                    final           final                          final              final               final            final                                                          Java     Java                                                                                                                                                           Object      clone                                                                                                BIO NIO AIO BIO blocking I O          IO                                                                                                     BIO                                             JDK1 4                  NIO     java non blocking IO    JDK      API   JDK1 4    Java                         NIO   New IO   NIO                                                          IO          AIO JDK 7     Asynchronous I O         IO     I O             Reactor   Proactor Java   NIO    Reactor",
         "objectID": "posts/Study/Java复习笔记一",
         "date": "2022-04-28T02:55:06.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "java"
+        ]
+    },
+    {
+        "title": "Java复习笔记二",
+        "uri": "posts/Study/Java复习笔记二",
+        "content": "try finally  return try  return  finally  return          finally                   try           finally          try return       try finally     return      try return   finally return     try return   return   x    x              java public class TryReturnTest   public int test1 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally      return x    public int test2 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally    return x      public static void main String   args    TryReturnTest test   new TryReturnTest    System out println test test1 0       finally 2 System out println test test2 0       finally 7       String   StringBuilder StringBuffer      String String                String           String        StringBuffer   String                synchronized          StringBuilder StringBuffer                    Java8  JDK              String                    StringBuilder   append        Java                   Integer       java public static void main String   args    Integer   127  Integer b   127  Integer b1   new Integer 127   System out println a    b     true System out println b    b1     false Integer c   128  Integer d   128  System out println c    d     false           Integer   127           Integer                        Integer                             128   127              new    Integer                Integer        a1    b1     false    Integer                                  Integer               128   127         JVM XX AutoBoxCacheMax                          int            Integer valueOf      IntegerCache  Integer valueOf                       IntegerCache                Integer     IntegerCache                           java private static class IntegerCache      static       Integer     for int k   0  k   cache length  k    cache k    new Integer j                Synchronized Synchronized                                                          synchronized                                                                              synchronized                            Synchronized    synchronized this       this                    synchronized          synchronized Demo class              synchronized obj       synchronized                   demo1 demo2                        demo1 demo2                  java       public class Demo   private Object lock1   new Object    private Object lock2   new Object    public void demo1     synchronized  lock1     true                        System out println Thread currentThread           public void demo2     synchronized  lock2     true    System out println Thread currentThread               demo1             lock1     demo2             lock2         1  demo1   2  demo2",
+        "objectID": "posts/Study/Java复习笔记二",
+        "date": "2022-05-09T16:12:16.000Z",
         "categories": [
             "Study"
         ],
