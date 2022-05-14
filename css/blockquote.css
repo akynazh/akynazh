@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
+blockquote {
+    font-size: 1.0em;
+    margin: 10px 10px 10px 4px;
+    /* font-style: italic; */
+    color: white;
+    padding: 1.0em 35px 1.0em 50px;
+    border-left: 8px solid #78C0A8;
+    line-height: 1.8;
+    position: relative;
+    background: #424242;
+}
+
+blockquote::before {
+    font-family: Arial;
+    content: "\201C";
+    color: #78C0A8;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+blockquote::after {
+    content: '';
+}
+
+blockquote span {
+    display: block;
+    color: #333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1em;
+}
