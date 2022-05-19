@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-cn">
 <head>
   <link rel="stylesheet" href="https://akynazh.site/css/search.css" />
   <link rel="stylesheet" href="https://akynazh.site/css/blockquote.css" />
@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Java复习笔记二 | Melancholy Rhapsody</title>
+  <title> Java中值得思考的点 | Melancholy Rhapsody</title>
   <link rel = 'canonical' href = 'https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/'>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Java复习笔记二" />
+  <meta property="og:title" content="Java中值得思考的点" />
 <meta property="og:description" content="try和finally中的return try中有return，而finally中无return，会先将值暂存，无论finally语句中对该值做什么处理，最终返回的都是try语句中的暂存值。另外，finally语句中执行的语句先于try的return之前执行。
 当try与finally语句中均有return语句，会忽略try中return，执行finally的return。注意如果try的return语句是return &#43;&#43;x，则&#43;&#43;x是会执行的。
 验证如下：
@@ -30,7 +30,7 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Java复习笔记二"/>
+<meta name="twitter:title" content="Java中值得思考的点"/>
 <meta name="twitter:description" content="try和finally中的return try中有return，而finally中无return，会先将值暂存，无论finally语句中对该值做什么处理，最终返回的都是try语句中的暂存值。另外，finally语句中执行的语句先于try的return之前执行。
 当try与finally语句中均有return语句，会忽略try中return，执行finally的return。注意如果try的return语句是return &#43;&#43;x，则&#43;&#43;x是会执行的。
 验证如下：
@@ -41,7 +41,7 @@
     
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.853bc0dc8b79ff7e21eeb6f9b5718024b51b5c8874fcef125269908a7e3acfca2d131e0f0dbdaf89def05230690db4751c7f00dc1c9e1658efbc59ba7a17e6ce.css" integrity="sha512-hTvA3It5/34h7rb5tXGAJLUbXIh0/O8SUmmQin46z8otEx4PDb2vid7wUjBpDbR1HH8A3ByeFljvvFm6ehfmzg=="> 
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.346fb3fd6cc069ccfe2410c9d5ee2876283f3ef89dee4ac36235f68a0e4052977d58853e020c6024ce1f3d6d1ed4e586720d8542f34f4bf0a6fbd1b8c418b516.css" integrity="sha512-NG&#43;z/WzAacz&#43;JBDJ1e4odig/Pvid7krDYjX2ig5AUpd9WIU&#43;AgxgJM4fPW0e1OWGcg2FQvNPS/Cm&#43;9G4xBi1Fg=="> 
 
   
   
@@ -145,42 +145,42 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&text=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&text=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&is_video=false&description=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&is_video=false&description=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&name=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c&description=try%e5%92%8cfinally%e4%b8%ad%e7%9a%84return%20try%e4%b8%ad%e6%9c%89return%ef%bc%8c%e8%80%8cfinally%e4%b8%ad%e6%97%a0return%ef%bc%8c%e4%bc%9a%e5%85%88%e5%b0%86%e5%80%bc%e6%9a%82%e5%ad%98%ef%bc%8c%e6%97%a0%e8%ae%bafinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%af%b9%e8%af%a5%e5%80%bc%e5%81%9a%e4%bb%80%e4%b9%88%e5%a4%84%e7%90%86%ef%bc%8c%e6%9c%80%e7%bb%88%e8%bf%94%e5%9b%9e%e7%9a%84%e9%83%bd%e6%98%aftry%e8%af%ad%e5%8f%a5%e4%b8%ad%e7%9a%84%e6%9a%82%e5%ad%98%e5%80%bc%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8cfinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8c%e7%9a%84%e8%af%ad%e5%8f%a5%e5%85%88%e4%ba%8etry%e7%9a%84return%e4%b9%8b%e5%89%8d%e6%89%a7%e8%a1%8c%e3%80%82%0a%e5%bd%93try%e4%b8%8efinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%9d%87%e6%9c%89return%e8%af%ad%e5%8f%a5%ef%bc%8c%e4%bc%9a%e5%bf%bd%e7%95%a5try%e4%b8%adreturn%ef%bc%8c%e6%89%a7%e8%a1%8cfinally%e7%9a%84return%e3%80%82%e6%b3%a8%e6%84%8f%e5%a6%82%e6%9e%9ctry%e7%9a%84return%e8%af%ad%e5%8f%a5%e6%98%afreturn%20%2b%2bx%ef%bc%8c%e5%88%99%2b%2bx%e6%98%af%e4%bc%9a%e6%89%a7%e8%a1%8c%e7%9a%84%e3%80%82%0a%e9%aa%8c%e8%af%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%2024%2025%2026%2027%2028%2029%2030%2031%2032%20%20public%20class%20TryReturnTest%20%7b%20public%20int%20test1%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e.printStackTrace%28%29%3b%20%7d%20finally%20%7b%20x%20%2b%3d%205%3b%20System.out.println%28%26%2334%3bfinally%26%2334%3b%29%3b%20%7d%20return%20x%3b%20%7d%20public%20int%20test2%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&name=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9&description=try%e5%92%8cfinally%e4%b8%ad%e7%9a%84return%20try%e4%b8%ad%e6%9c%89return%ef%bc%8c%e8%80%8cfinally%e4%b8%ad%e6%97%a0return%ef%bc%8c%e4%bc%9a%e5%85%88%e5%b0%86%e5%80%bc%e6%9a%82%e5%ad%98%ef%bc%8c%e6%97%a0%e8%ae%bafinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%af%b9%e8%af%a5%e5%80%bc%e5%81%9a%e4%bb%80%e4%b9%88%e5%a4%84%e7%90%86%ef%bc%8c%e6%9c%80%e7%bb%88%e8%bf%94%e5%9b%9e%e7%9a%84%e9%83%bd%e6%98%aftry%e8%af%ad%e5%8f%a5%e4%b8%ad%e7%9a%84%e6%9a%82%e5%ad%98%e5%80%bc%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8cfinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8c%e7%9a%84%e8%af%ad%e5%8f%a5%e5%85%88%e4%ba%8etry%e7%9a%84return%e4%b9%8b%e5%89%8d%e6%89%a7%e8%a1%8c%e3%80%82%0a%e5%bd%93try%e4%b8%8efinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%9d%87%e6%9c%89return%e8%af%ad%e5%8f%a5%ef%bc%8c%e4%bc%9a%e5%bf%bd%e7%95%a5try%e4%b8%adreturn%ef%bc%8c%e6%89%a7%e8%a1%8cfinally%e7%9a%84return%e3%80%82%e6%b3%a8%e6%84%8f%e5%a6%82%e6%9e%9ctry%e7%9a%84return%e8%af%ad%e5%8f%a5%e6%98%afreturn%20%2b%2bx%ef%bc%8c%e5%88%99%2b%2bx%e6%98%af%e4%bc%9a%e6%89%a7%e8%a1%8c%e7%9a%84%e3%80%82%0a%e9%aa%8c%e8%af%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%2024%2025%2026%2027%2028%2029%2030%2031%2032%20%20public%20class%20TryReturnTest%20%7b%20public%20int%20test1%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e.printStackTrace%28%29%3b%20%7d%20finally%20%7b%20x%20%2b%3d%205%3b%20System.out.println%28%26%2334%3bfinally%26%2334%3b%29%3b%20%7d%20return%20x%3b%20%7d%20public%20int%20test2%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&t=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&t=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -199,12 +199,7 @@ if (!doNotTrack) {
         <li><a href="#理解integer缓存">理解Integer缓存</a></li>
       </ul>
     </li>
-    <li><a href="#关于synchronized">关于Synchronized</a>
-      <ul>
-        <li><a href="#synchronized方法">Synchronized方法</a></li>
-        <li><a href="#synchronized代码块">Synchronized代码块</a></li>
-      </ul>
-    </li>
+    <li><a href="#bionioaio">BIO、NIO、AIO</a></li>
   </ul>
 </nav>
     </div>
@@ -215,7 +210,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Java复习笔记二
+        Java中值得思考的点
       </h1>
       <div class="meta">
         
@@ -229,7 +224,7 @@ if (!doNotTrack) {
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          7 minute read
+          6 minute read
         </div>
         
         
@@ -399,86 +394,23 @@ if (!doNotTrack) {
 }
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="关于synchronized">关于Synchronized</h2>
-<h3 id="synchronized方法">Synchronized方法</h3>
-<ul>
+</div><h2 id="bionioaio">BIO、NIO、AIO</h2>
+<ol>
 <li>
-<p>静态方法上的锁</p>
-<p>静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。</p>
+<p>BIO (blocking I/O): 就是传统的 IO，同步阻塞。</p>
 </li>
 <li>
-<p>普通方法上的锁</p>
-<p>实例方法并不是类所独有的，每个对象实例独立拥有它，它并不被对象实例所共享。在实例方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个对象实例。</p>
+<p>NIO (non-blocking IO): 同步非阻塞，服务器端用一个线程处理多个连接，客户端发送的连接请求会注册到多路复用器上，多路复用器轮询到连接有 IO 请求就进行处理。NIO 的数据是面向缓冲区Buffer的，必须从 Buffer 中读取或写入。</p>
 </li>
-</ul>
-<h3 id="synchronized代码块">Synchronized代码块</h3>
-<ul>
-<li><code>synchronized(this){...}</code></li>
-</ul>
-<p>this关键字所代表的意思是该对象实例，这种用法synchronized锁住的是对象实例。</p>
-<ul>
-<li><code>synchronized(Demo.class){...}</code></li>
-</ul>
-<p>锁的是该类。</p>
-<ul>
-<li><code>synchronized(obj){...}</code></li>
-</ul>
-<p>synchronized同步代码块对对象内部的实例加锁。</p>
-<p>假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。</p>
-<p>代码如下：</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007f7f">/*
-</span><span style="color:#007f7f">
-</span><span style="color:#007f7f">*/</span>
-<span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">class</span> Demo {
-    <span style="color:#fff;font-weight:bold">private</span> Object lock1 = <span style="color:#fff;font-weight:bold">new</span> Object();
-    <span style="color:#fff;font-weight:bold">private</span> Object lock2 = <span style="color:#fff;font-weight:bold">new</span> Object();
-
-    <span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">void</span> demo1() {
-        <span style="color:#fff;font-weight:bold">synchronized</span> (lock1) {
-            <span style="color:#fff;font-weight:bold">while</span> (<span style="color:#fff;font-weight:bold">true</span>) {  <span style="color:#007f7f">//死循环目的是为了让线程一直持有该锁
-</span><span style="color:#007f7f"></span>                System.<span style="color:#007f7f">out</span>.<span style="color:#007f7f">println</span>(Thread.<span style="color:#007f7f">currentThread</span>());
-            }
-        }
-    }
-
-    <span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">void</span> demo2() {
-        <span style="color:#fff;font-weight:bold">synchronized</span> (lock2) {
-            <span style="color:#fff;font-weight:bold">while</span> (<span style="color:#fff;font-weight:bold">true</span>) {
-                System.<span style="color:#007f7f">out</span>.<span style="color:#007f7f">println</span>(Thread.<span style="color:#007f7f">currentThread</span>());
-            }
-        }
-    }
-}
-</code></pre></td></tr></table>
-</div>
-</div><p>demo1方法中的同步代码块锁住的是lock1对象实例，demo2方法中的同步代码块锁住的是lock2对象实例。如果线程1执行demo1，线程2执行demo2，由于两个方法抢占的是不同的对象实例锁，也就是说两个线程均能获取到锁执行各自的方法。</p>
+</ol>
+<p><img src="/article/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/6.png" alt=""></p>
+<p>每个 Channel 对应一个 Buffer。</p>
+<p>Selector 对应一个线程，一个线程对应多个 Channel。</p>
+<p>Selector 会根据不同的事件，在各个通道上切换。</p>
+<p>Buffer 是内存块，底层是数据。</p>
+<ol start="3">
+<li>AIO：JDK 7 引入了 Asynchronous I/O，是异步不阻塞的 IO。在进行 I/O 编程中，常用到两种模式：Reactor 和 Proactor。Java 的 NIO 就是 Reactor，当有事件触发时，服务器端得到通知，进行相应的处理，完成后才通知服务端程序启动线程去处理，一般适用于连接数较多且连接时间较长的应用。</li>
+</ol>
 
     </div>
   </article>
@@ -536,12 +468,7 @@ if (!doNotTrack) {
         <li><a href="#理解integer缓存">理解Integer缓存</a></li>
       </ul>
     </li>
-    <li><a href="#关于synchronized">关于Synchronized</a>
-      <ul>
-        <li><a href="#synchronized方法">Synchronized方法</a></li>
-        <li><a href="#synchronized代码块">Synchronized代码块</a></li>
-      </ul>
-    </li>
+    <li><a href="#bionioaio">BIO、NIO、AIO</a></li>
   </ul>
 </nav>
     </div>
@@ -561,42 +488,42 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&text=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&text=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&is_video=false&description=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&is_video=false&description=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&title=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&name=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c&description=try%e5%92%8cfinally%e4%b8%ad%e7%9a%84return%20try%e4%b8%ad%e6%9c%89return%ef%bc%8c%e8%80%8cfinally%e4%b8%ad%e6%97%a0return%ef%bc%8c%e4%bc%9a%e5%85%88%e5%b0%86%e5%80%bc%e6%9a%82%e5%ad%98%ef%bc%8c%e6%97%a0%e8%ae%bafinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%af%b9%e8%af%a5%e5%80%bc%e5%81%9a%e4%bb%80%e4%b9%88%e5%a4%84%e7%90%86%ef%bc%8c%e6%9c%80%e7%bb%88%e8%bf%94%e5%9b%9e%e7%9a%84%e9%83%bd%e6%98%aftry%e8%af%ad%e5%8f%a5%e4%b8%ad%e7%9a%84%e6%9a%82%e5%ad%98%e5%80%bc%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8cfinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8c%e7%9a%84%e8%af%ad%e5%8f%a5%e5%85%88%e4%ba%8etry%e7%9a%84return%e4%b9%8b%e5%89%8d%e6%89%a7%e8%a1%8c%e3%80%82%0a%e5%bd%93try%e4%b8%8efinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%9d%87%e6%9c%89return%e8%af%ad%e5%8f%a5%ef%bc%8c%e4%bc%9a%e5%bf%bd%e7%95%a5try%e4%b8%adreturn%ef%bc%8c%e6%89%a7%e8%a1%8cfinally%e7%9a%84return%e3%80%82%e6%b3%a8%e6%84%8f%e5%a6%82%e6%9e%9ctry%e7%9a%84return%e8%af%ad%e5%8f%a5%e6%98%afreturn%20%2b%2bx%ef%bc%8c%e5%88%99%2b%2bx%e6%98%af%e4%bc%9a%e6%89%a7%e8%a1%8c%e7%9a%84%e3%80%82%0a%e9%aa%8c%e8%af%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%2024%2025%2026%2027%2028%2029%2030%2031%2032%20%20public%20class%20TryReturnTest%20%7b%20public%20int%20test1%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e.printStackTrace%28%29%3b%20%7d%20finally%20%7b%20x%20%2b%3d%205%3b%20System.out.println%28%26%2334%3bfinally%26%2334%3b%29%3b%20%7d%20return%20x%3b%20%7d%20public%20int%20test2%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&name=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9&description=try%e5%92%8cfinally%e4%b8%ad%e7%9a%84return%20try%e4%b8%ad%e6%9c%89return%ef%bc%8c%e8%80%8cfinally%e4%b8%ad%e6%97%a0return%ef%bc%8c%e4%bc%9a%e5%85%88%e5%b0%86%e5%80%bc%e6%9a%82%e5%ad%98%ef%bc%8c%e6%97%a0%e8%ae%bafinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%af%b9%e8%af%a5%e5%80%bc%e5%81%9a%e4%bb%80%e4%b9%88%e5%a4%84%e7%90%86%ef%bc%8c%e6%9c%80%e7%bb%88%e8%bf%94%e5%9b%9e%e7%9a%84%e9%83%bd%e6%98%aftry%e8%af%ad%e5%8f%a5%e4%b8%ad%e7%9a%84%e6%9a%82%e5%ad%98%e5%80%bc%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8cfinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8c%e7%9a%84%e8%af%ad%e5%8f%a5%e5%85%88%e4%ba%8etry%e7%9a%84return%e4%b9%8b%e5%89%8d%e6%89%a7%e8%a1%8c%e3%80%82%0a%e5%bd%93try%e4%b8%8efinally%e8%af%ad%e5%8f%a5%e4%b8%ad%e5%9d%87%e6%9c%89return%e8%af%ad%e5%8f%a5%ef%bc%8c%e4%bc%9a%e5%bf%bd%e7%95%a5try%e4%b8%adreturn%ef%bc%8c%e6%89%a7%e8%a1%8cfinally%e7%9a%84return%e3%80%82%e6%b3%a8%e6%84%8f%e5%a6%82%e6%9e%9ctry%e7%9a%84return%e8%af%ad%e5%8f%a5%e6%98%afreturn%20%2b%2bx%ef%bc%8c%e5%88%99%2b%2bx%e6%98%af%e4%bc%9a%e6%89%a7%e8%a1%8c%e7%9a%84%e3%80%82%0a%e9%aa%8c%e8%af%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%2024%2025%2026%2027%2028%2029%2030%2031%2032%20%20public%20class%20TryReturnTest%20%7b%20public%20int%20test1%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e.printStackTrace%28%29%3b%20%7d%20finally%20%7b%20x%20%2b%3d%205%3b%20System.out.println%28%26%2334%3bfinally%26%2334%3b%29%3b%20%7d%20return%20x%3b%20%7d%20public%20int%20test2%28int%20x%29%20%7b%20try%20%7b%20x%20%2b%3d%201%3b%20return%20%2b%2bx%3b%20%7d%20catch%20%28Exception%20e%29%20%7b%20e." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&t=Java%e5%a4%8d%e4%b9%a0%e7%ac%94%e8%ae%b0%e4%ba%8c" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fjava%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%25E4%25BA%258C%2f&t=Java%e4%b8%ad%e5%80%bc%e5%be%97%e6%80%9d%e8%80%83%e7%9a%84%e7%82%b9" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

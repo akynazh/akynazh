@@ -5,9 +5,26 @@
     <link>https://akynazh.site/tags/git/</link>
     <description>Recent content in git on Melancholy Rhapsody</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 22:12:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git实用操作之解决冲突</title>
+      <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 19 May 2022 22:12:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</guid>
+      <description>首先提交当前分支修改：
+1 2  git add . git commit -m &amp;#34;msg&amp;#34;   这时如果其他分支对当前提交分支进行了修改，直接push上去则会失败并提醒进行冲突的解决。
+因此，进行pull，将更改拉取下来进行冲突的解决。
+1  git pull   这时有2种可能的情况，要么其他分支的修改地方和自己的修改的地方不冲突，要么冲突。
+如果不冲突且接受其他分支的容易修改，则可以直接push上去了。
+如果冲突了，则对所有冲突的地方merge，即在提示冲突的地方进行修改的选择即可。
+1 2 3 4 5  &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD hello world ======= hello kitty &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; another-branch   HEAD标记&amp;quot;Current Change&amp;quot;，即当前分支的修改，&amp;ldquo;another-branch&amp;quot;标记其他分支的修改，两者之间用&amp;rdquo;===&amp;ldquo;隔开。
+修改完成后，重新进行完整的提交即可：
+1 2 3  git add . git commit -m &amp;#34;msg&amp;#34; git push   over.</description>
+    </item>
+    
     <item>
       <title>Git实用操作之初始化与分支管理</title>
       <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</link>

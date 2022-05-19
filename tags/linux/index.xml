@@ -5,16 +5,25 @@
     <link>https://akynazh.site/tags/linux/</link>
     <description>Recent content in linux on Melancholy Rhapsody</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 12 Apr 2022 23:21:41 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 22:52:52 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker简单使用过程记录</title>
+      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 19 May 2022 22:52:52 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
+    </item>
+    
     <item>
       <title>Linux实用操作之shell变量运算</title>
       <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
       <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
-      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# c=$((c+c)) [root@VM-0-11-centos ~]# echo $c 24   比较运算 指令：-eq -ne -lt -gt -ge -le
+      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
 1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
     </item>
     

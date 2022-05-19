@@ -5,11 +5,55 @@
     <link>https://akynazh.site/categories/study/</link>
     <description>Recent content in Study on Melancholy Rhapsody</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 10 May 2022 00:12:16 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 22:52:52 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Java复习笔记二</title>
+      <title>Docker简单使用过程记录</title>
+      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 19 May 2022 22:52:52 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
+    </item>
+    
+    <item>
+      <title>Synchronized到底锁了谁</title>
+      <link>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</link>
+      <pubDate>Thu, 19 May 2022 22:43:45 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</guid>
+      <description>Synchronized方法   静态方法上的锁
+静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
+  普通方法上的锁
+实例方法并不是类所独有的，每个对象实例独立拥有它，它并不被对象实例所共享。在实例方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个对象实例。
+  Synchronized代码块  synchronized(this){...}  this关键字所代表的意思是该对象实例，这种用法synchronized锁住的是对象实例。
+ synchronized(Demo.class){...}  锁的是该类。
+ synchronized(obj){...}  synchronized同步代码块对对象内部的实例加锁。
+假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。
+代码如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  public class Demo { private Object lock1 = new Object(); private Object lock2 = new Object(); public void demo1() { synchronized (lock1) { while (true) { //死循环目的是为了让线程一直持有该锁  System.</description>
+    </item>
+    
+    <item>
+      <title>Git实用操作之解决冲突</title>
+      <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 19 May 2022 22:12:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</guid>
+      <description>首先提交当前分支修改：
+1 2  git add . git commit -m &amp;#34;msg&amp;#34;   这时如果其他分支对当前提交分支进行了修改，直接push上去则会失败并提醒进行冲突的解决。
+因此，进行pull，将更改拉取下来进行冲突的解决。
+1  git pull   这时有2种可能的情况，要么其他分支的修改地方和自己的修改的地方不冲突，要么冲突。
+如果不冲突且接受其他分支的容易修改，则可以直接push上去了。
+如果冲突了，则对所有冲突的地方merge，即在提示冲突的地方进行修改的选择即可。
+1 2 3 4 5  &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD hello world ======= hello kitty &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; another-branch   HEAD标记&amp;quot;Current Change&amp;quot;，即当前分支的修改，&amp;ldquo;another-branch&amp;quot;标记其他分支的修改，两者之间用&amp;rdquo;===&amp;ldquo;隔开。
+修改完成后，重新进行完整的提交即可：
+1 2 3  git add . git commit -m &amp;#34;msg&amp;#34; git push   over.</description>
+    </item>
+    
+    <item>
+      <title>Java中值得思考的点</title>
       <link>https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
       <pubDate>Tue, 10 May 2022 00:12:16 +0800</pubDate>
       
@@ -106,7 +150,7 @@ Java的参数传递 先定义3个方法如下：
       <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
-      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# c=$((c+c)) [root@VM-0-11-centos ~]# echo $c 24   比较运算 指令：-eq -ne -lt -gt -ge -le
+      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
 1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
     </item>
     

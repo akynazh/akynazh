@@ -5,9 +5,70 @@
     <link>https://akynazh.site/</link>
     <description>Recent content on Melancholy Rhapsody</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sat, 14 May 2022 11:47:43 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 22:52:52 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker简单使用过程记录</title>
+      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 19 May 2022 22:52:52 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
+    </item>
+    
+    <item>
+      <title>Synchronized到底锁了谁</title>
+      <link>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</link>
+      <pubDate>Thu, 19 May 2022 22:43:45 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</guid>
+      <description>Synchronized方法   静态方法上的锁
+静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
+  普通方法上的锁
+实例方法并不是类所独有的，每个对象实例独立拥有它，它并不被对象实例所共享。在实例方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个对象实例。
+  Synchronized代码块  synchronized(this){...}  this关键字所代表的意思是该对象实例，这种用法synchronized锁住的是对象实例。
+ synchronized(Demo.class){...}  锁的是该类。
+ synchronized(obj){...}  synchronized同步代码块对对象内部的实例加锁。
+假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。
+代码如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  public class Demo { private Object lock1 = new Object(); private Object lock2 = new Object(); public void demo1() { synchronized (lock1) { while (true) { //死循环目的是为了让线程一直持有该锁  System.</description>
+    </item>
+    
+    <item>
+      <title>Git实用操作之解决冲突</title>
+      <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 19 May 2022 22:12:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</guid>
+      <description>首先提交当前分支修改：
+1 2  git add . git commit -m &amp;#34;msg&amp;#34;   这时如果其他分支对当前提交分支进行了修改，直接push上去则会失败并提醒进行冲突的解决。
+因此，进行pull，将更改拉取下来进行冲突的解决。
+1  git pull   这时有2种可能的情况，要么其他分支的修改地方和自己的修改的地方不冲突，要么冲突。
+如果不冲突且接受其他分支的容易修改，则可以直接push上去了。
+如果冲突了，则对所有冲突的地方merge，即在提示冲突的地方进行修改的选择即可。
+1 2 3 4 5  &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD hello world ======= hello kitty &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; another-branch   HEAD标记&amp;quot;Current Change&amp;quot;，即当前分支的修改，&amp;ldquo;another-branch&amp;quot;标记其他分支的修改，两者之间用&amp;rdquo;===&amp;ldquo;隔开。
+修改完成后，重新进行完整的提交即可：
+1 2 3  git add . git commit -m &amp;#34;msg&amp;#34; git push   over.</description>
+    </item>
+    
+    <item>
+      <title>《1984》文摘</title>
+      <link>https://akynazh.site/posts/book/1984%E6%96%87%E6%91%98/</link>
+      <pubDate>Thu, 19 May 2022 20:22:22 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/book/1984%E6%96%87%E6%91%98/</guid>
+      <description>作者：乔治·奥威尔
+第6章  温斯顿把手垂到身边，缓慢地将肺部又吸满空气，他的大脑滑向一个双重思想的迷宫世界。知道又不知道；明白全部事实，却说着精心编造的谎言；同时拥有两种针锋相对的意见，一方面知道两者之间的矛盾，一方面又两者都相信；利用逻辑来反逻辑；一方面批判道德，一方面又自认为有道德；相信不可能有民主，另一方面又相信党是民主的保卫者；忘掉一切需要忘记的，然后随时在需要记起时再回想起来，接着马上再忘掉——最重要的是，对这个过程本身，也要照此处理。最奥妙之处在于：要清醒地诱导自己进入不清醒状态，然后再次意识不到刚刚对自己实行的催眠行为。甚至理解“双重思想”这个词，也要用到双重思想。
+ 第10章  除非他们觉醒，否则永远不会反抗；但除非他们反抗，否则不会觉醒。
+ 第12章  一定要捍卫显而易见、质朴和真实的一切，不言而喻的就是真实的，在这一点上不可动摇！实体世界是存在的，其定律不可改变。石头是硬的，水是湿的，缺少支撑的物体会向地心方向坠落。怀着这种感觉，他是在向奥布兰说话，同时也在提出一条重要的公理。他写道：自由就是说二加二等于四的自由。若此成立，其他同理。
+ 第19章  温斯顿在床上又待了几分钟。房间内正在变暗，他往光亮处挪了一点，盯着看那块玻璃镇纸。它让人百看不厌之处，不是珊瑚，而是玻璃内部。它很厚，但又几乎像空气一样透明。那块玻璃的表面像天空的穹顶，包容了一个小小的世界，各种特点无不具备。他感觉能够进入其中，而实际上他已经身处其中，跟那张红木床、折叠桌还有钢雕版画及镇纸本身一起都在其中。镇纸就是他所在的房间，珊瑚是茱莉娅和他自己的生命，被固定在清澈透明的玻璃中心，并成为一种永恒之物。
+ 第28章  “双重思想”意味着在一个人的脑子里，同时拥有两种相互矛盾的信念，而且两种都接受。党的知识分子明白他的记忆必须往哪个方向改变，因此他知道自己在玩弄现实，然而通过实行“双重思想”，也能让他心安理得地认为现实不曾被改变。这个过程一定要有意识地进行，否则过程中精确度就不够；而且它也一定要无意识地进行，否则会带来一种做伪的感觉，因而会有罪过感。“双重思想”是英社的核心，因为党最基本的行为，是进行有意识的欺骗，同时又保持目的的坚定性，那需要绝对诚实。讲着别有用心的谎言，同时又真心实意相信这些谎言；忘掉一切变得有碍的行为，然后一旦再次需要，又从遗忘中拣回来；否认客观现实的存在，同时又考虑到被否认的现实——这些都缺一不可。甚至在使用“双重思想”这个词时，也需要进行“双重思想”。因为使用这个词时，是承认在篡改现实，通过再来一次“双重思想”，就会清除这种认识，如此循环不已，谎言总跨在真实的前面。最终以“双重思想”为手段，党就能够——我们都明白，可能在几千年内仍然能够——左右历史进程。
+  作为少数派，即使是一个人的少数派，也并不能说明你疯了。世界上存在着真理和非真理，如果你坚守的是真理，即使要跟整个世界对抗，你也不会是疯的。正在下沉的夕阳把一缕黄色光线从窗户斜射进来，照在枕头上。他闭上眼睛，照在脸上的阳光和挨着他的那个女孩的光滑躯体给了他一种强烈的、催人欲睡的、自信的感觉。他是安全的，一切正常。他嘴里咕哝着“理智不是个统计学概念”就睡着了，他觉得这句话蕴藏了深刻的智慧。
+ 第29章  每个人来说，天空都是同样的天空，无论在欧亚国或者东亚国或者这里。天空下的人们也几乎完全一样——在所有地方，包括全世界，有着上亿跟这里一样的人们，他们对彼此的存在一无所知，被仇恨和谎言之墙所隔，但仍然几乎完全一样。他们从未学会思考，但正是在他们的心里、肚子里和肌肉里，储备着某一天将推翻这个世界的力量。如果有希望，它就在群众身上！
+ </description>
+    </item>
+    
     <item>
       <title>《挪威的森林》中的披头士</title>
       <link>https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E4%B8%AD%E7%9A%84beatles/</link>
@@ -24,7 +85,7 @@
     </item>
     
     <item>
-      <title>Java复习笔记二</title>
+      <title>Java中值得思考的点</title>
       <link>https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
       <pubDate>Tue, 10 May 2022 00:12:16 +0800</pubDate>
       
@@ -281,7 +342,7 @@ Java的参数传递 先定义3个方法如下：
       <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
-      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# c=$((c+c)) [root@VM-0-11-centos ~]# echo $c 24   比较运算 指令：-eq -ne -lt -gt -ge -le
+      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
 1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
     </item>
     
@@ -1098,7 +1159,7 @@ Linux用户则使用shell编写脚本~
       <guid>https://akynazh.site/gallery/</guid>
       <description>“我心中的彩虹是一座火焰之桥，我的思念几乎要将我的心都烧焦了。” ——太宰治
  
- “死并非生的对立面，而作为生的一部分永存。” —— 村上春树
+ “死并非生的对立面，而是作为生的一部分永存。” —— 村上春树
  
  “你的眼睛可真好看，里面有晴雨，日月，山川，江河，云雾，花鸟……但我的眼睛更好看，因为我的眼里，有你。” ——余光中
  

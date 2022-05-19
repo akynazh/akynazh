@@ -14,6 +14,19 @@
         "type": "gallery"
     },
     {
+        "title": "《1984》文摘",
+        "uri": "posts/Book/《1984》文摘",
+        "content": "6                                                                                                                                                                                                                                                                                            10                                    12                                                                                                                                                     19                                                                                                                                                                                                                         28                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               29",
+        "objectID": "posts/Book/《1984》文摘",
+        "date": "2022-05-19T12:22:22.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "digest"
+        ]
+    },
+    {
         "title": "《人间失格》文摘",
         "uri": "posts/Book/《人间失格》文摘",
         "content": "",
@@ -118,8 +131,7 @@
             "Book"
         ],
         "tags": [
-            "digest",
-            "村上春树"
+            "digest"
         ]
     },
     {
@@ -132,8 +144,7 @@
             "Book"
         ],
         "tags": [
-            "digest",
-            "村上春树"
+            "digest"
         ]
     },
     {
@@ -146,8 +157,7 @@
             "Book"
         ],
         "tags": [
-            "digest",
-            "村上春树"
+            "digest"
         ]
     },
     {
@@ -160,8 +170,7 @@
             "Book"
         ],
         "tags": [
-            "digest",
-            "村上春树"
+            "digest"
         ]
     },
     {
@@ -313,6 +322,20 @@
         ]
     },
     {
+        "title": "Docker简单使用过程记录",
+        "uri": "posts/Study/docker简单使用过程记录",
+        "content": "docker    bash  root VM 0 11 centos     curl  sSL https   get daocloud io docker   sh  root VM 0 11 centos     systemctl start docker     docker  ubuntu        ubuntu    root VM 0 11 centos     docker run ubuntu 15 10  bin echo  hello world  Unable find image  ubuntu 15 10  locally 15 10  Pulling library ubuntu 7dcf5a444392  Pull complete 759aa75f3cee  Pull complete 3fa871dc8a2b  Pull complete 224c42ae46e7  Pull complete Digest  sha256 02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status  Downloaded newer image ubuntu 15 10 hello world     docker  ubuntu   bash    bash  root VM 0 11 centos     docker run  i  t ubuntu 15 10  bin bash root fda3220ed59f    echo hello hello root fda3220ed59f    cat  proc version Linux version 3 10 0 1160 45 1 el7 x86_64  mockbuild kbuilder bsys centos org   gcc version 4 8 5 20150623  Red Hat 4 8 5 44   GCC     1 SMP Wed Oct 13 17 20 51 UTC 2021 root fda3220ed59f    ls bin dev home lib64 mnt proc run srv tmp var boot etc lib media opt root sbin sys usr root fda3220ed59f    exit exit            bash  root VM 0 11 centos     docker run  d ubuntu 15 10  bin sh  c  while true  echo hello  sleep 1  done  6668bf16629c8466ecbc32d77978e993c34a0c1c6f51bab420dcc6b89dc85063  root VM 0 11 centos     docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 6668bf16629c ubuntu 15 10   bin sh  c  while t   6 seconds ago 5 seconds charming_chaum               bash  root VM 0 11 centos     docker stop 6668bf16629c8466ecbc32d77978e993c34a0c1c6f51bab420dcc6b89dc85063  root VM 0 11 centos     docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES",
+        "objectID": "posts/Study/docker简单使用过程记录",
+        "date": "2022-05-19T14:52:52.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "linux",
+            "docker"
+        ]
+    },
+    {
         "title": "equals方法和==运算符的作用区别",
         "uri": "posts/Study/equals方法和==运算符的作用区别",
         "content": "equals                                     equals           String    123   String b    123   System out println a equals b       true System out println a    b      true String a1   new String  123    String b1   new String  123    System out println a1 equals b1       true System out println a1    b1      false              Object           equals            public boolean equals Object obj    return  this    obj          String      String     equals       Object equals     String equals      public boolean equals Object anObject     this    anObject    return true     anObject instanceof String    String aString    String anObject   coder      aString coder      return isLatin1     StringLatin1 equals value  aString value    StringUTF16 equals value  aString value       return false      equals                                    equals          equals     equals         equals                                       equals       1        otherObject               other       2   this otherObject        3   otherObject   null    4   this otherObject     equals               getclass                           instanceof      5  otherObject                 6                   Object equals        core Java       instanceof               or            getClass                                     example                         class Person   private int age  private String name  public Person int age  String name    this age   age  this name   name     Override public String toString     return  Person      age     age      name      name                  Override public boolean equals Object o     this    o  return true   o    null    getClass      o getClass    return false  Person person    Person  o  return age    person age     Override public int hashCode     return Objects hash age       test  Person p1   new Person 15   Mary    Person p2   new Person 15   Mark    System out println p1 equals p2       true System out println p1    p2      false",
@@ -337,6 +360,19 @@
         "tags": [
             "git",
             "github"
+        ]
+    },
+    {
+        "title": "Git实用操作之解决冲突",
+        "uri": "posts/Study/Git实用操作之解决冲突",
+        "content": "git add   git commit  m  msg                           push                       pull                   git pull      2                                                            push                    merge                              another branch   HEAD   Current Change            another branch                                              git add   git commit  m  msg  git push   over",
+        "objectID": "posts/Study/Git实用操作之解决冲突",
+        "date": "2022-05-19T14:12:54.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "git"
         ]
     },
     {
@@ -407,9 +443,9 @@
         ]
     },
     {
-        "title": "Java复习笔记二",
+        "title": "Java中值得思考的点",
         "uri": "posts/Study/Java复习笔记二",
-        "content": "try finally  return try  return  finally  return          finally                   try           finally          try return       try finally     return      try return   finally return     try return   return   x    x              java public class TryReturnTest   public int test1 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally      return x    public int test2 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally    return x      public static void main String   args    TryReturnTest test   new TryReturnTest    System out println test test1 0       finally 2 System out println test test2 0       finally 7       String   StringBuilder StringBuffer      String String                String           String        StringBuffer   String                synchronized          StringBuilder StringBuffer                    Java8  JDK              String                    StringBuilder   append        Java                   Integer       java public static void main String   args    Integer   127  Integer b   127  Integer b1   new Integer 127   System out println a    b     true System out println b    b1     false Integer c   128  Integer d   128  System out println c    d     false           Integer   127           Integer                        Integer                             128   127              new    Integer                Integer        a1    b1     false    Integer                                  Integer               128   127         JVM XX AutoBoxCacheMax                          int            Integer valueOf      IntegerCache  Integer valueOf                       IntegerCache                Integer     IntegerCache                           java private static class IntegerCache      static       Integer     for int k   0  k   cache length  k    cache k    new Integer j                Synchronized Synchronized                                                          synchronized                                                                              synchronized                            Synchronized    synchronized this       this                    synchronized          synchronized Demo class              synchronized obj       synchronized                   demo1 demo2                        demo1 demo2                  java       public class Demo   private Object lock1   new Object    private Object lock2   new Object    public void demo1     synchronized  lock1     true                        System out println Thread currentThread           public void demo2     synchronized  lock2     true    System out println Thread currentThread               demo1             lock1     demo2             lock2         1  demo1   2  demo2",
+        "content": "try finally  return try  return  finally  return          finally                   try           finally          try return       try finally     return      try return   finally return     try return   return   x    x              java public class TryReturnTest   public int test1 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally      return x    public int test2 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally    return x      public static void main String   args    TryReturnTest test   new TryReturnTest    System out println test test1 0       finally 2 System out println test test2 0       finally 7       String   StringBuilder StringBuffer      String String                String           String        StringBuffer   String                synchronized          StringBuilder StringBuffer                    Java8  JDK              String                    StringBuilder   append        Java                   Integer       java public static void main String   args    Integer   127  Integer b   127  Integer b1   new Integer 127   System out println a    b     true System out println b    b1     false Integer c   128  Integer d   128  System out println c    d     false           Integer   127           Integer                        Integer                             128   127              new    Integer                Integer        a1    b1     false    Integer                                  Integer               128   127         JVM XX AutoBoxCacheMax                          int            Integer valueOf      IntegerCache  Integer valueOf                       IntegerCache                Integer     IntegerCache                           java private static class IntegerCache      static       Integer     for int k   0  k   cache length  k    cache k    new Integer j              BIO NIO AIO BIO  blocking I O         IO       NIO  non blocking IO                                                          IO         NIO          Buffer      Buffer            Channel      Buffer  Selector                 Channel  Selector                    Buffer             AIO JDK 7     Asynchronous I O         IO     I O             Reactor   Proactor Java   NIO    Reactor",
         "objectID": "posts/Study/Java复习笔记二",
         "date": "2022-05-09T16:12:16.000Z",
         "categories": [
@@ -464,7 +500,7 @@
     {
         "title": "Linux实用操作之shell变量运算",
         "uri": "posts/Study/Linux实用操作之shell变量运算",
-        "content": "bash  root VM 0 11 centos     a 1  root VM 0 11 centos     echo  a 1  root VM 0 11 centos     b    a 12    root VM 0 11 centos     echo  b 12  root VM 0 11 centos     c    c c    root VM 0 11 centos     echo  c 24            eq  ne  lt  gt  ge  le  shell a 10  root VM 0 11 centos        a  eq 10      echo yes yes  root VM 0 11 centos        a  ge 11      echo yes    echo no no       a  o  bash  root VM 0 11 centos     a 10 b 12   root VM 0 11 centos        a  lt 11  a  b  lt 13      echo yes    echo no yes  root VM 0 11 centos        a  lt 11  a  b  lt 11      echo yes    echo no no          z  zero           0  0   true  str                true   bash  root VM 0 11 centos        z  jzh       echo yes    echo no no  root VM 0 11 centos        jzh     zh       echo yes    echo no no         r  read  w  write  x  exec  s           e  exist    s      false          true   bash  root VM 0 11 centos     touch t sh  root VM 0 11 centos     ll         rw r  r   1 root root 0 Apr 12 23 52 t sh  root VM 0 11 centos        s   t sh      echo yes    echo no no  root VM 0 11 centos        e   t sh      echo yes    echo no yes",
+        "content": "bash  root VM 0 11 centos     a 1  root VM 0 11 centos     echo  a 1  root VM 0 11 centos     b    a 12    root VM 0 11 centos     echo  b 12  root VM 0 11 centos     b    b b    root VM 0 11 centos     echo  b 24            eq  ne  lt  gt  ge  le  shell a 10  root VM 0 11 centos        a  eq 10      echo yes yes  root VM 0 11 centos        a  ge 11      echo yes    echo no no       a  o  bash  root VM 0 11 centos     a 10 b 12   root VM 0 11 centos        a  lt 11  a  b  lt 13      echo yes    echo no yes  root VM 0 11 centos        a  lt 11  a  b  lt 11      echo yes    echo no no          z  zero           0  0   true  str                true   bash  root VM 0 11 centos        z  jzh       echo yes    echo no no  root VM 0 11 centos        jzh     zh       echo yes    echo no no         r  read  w  write  x  exec  s           e  exist    s      false          true   bash  root VM 0 11 centos     touch t sh  root VM 0 11 centos     ll         rw r  r   1 root root 0 Apr 12 23 52 t sh  root VM 0 11 centos        s   t sh      echo yes    echo no no  root VM 0 11 centos        e   t sh      echo yes    echo no yes",
         "objectID": "posts/Study/Linux实用操作之shell变量运算",
         "date": "2022-04-12T15:21:41.000Z",
         "categories": [
@@ -675,6 +711,19 @@
             "linux",
             "ssh",
             "network"
+        ]
+    },
+    {
+        "title": "Synchronized到底锁了谁",
+        "uri": "posts/Study/Synchronized到底锁了谁",
+        "content": "Synchronized                                                          synchronized                                                                              synchronized                            Synchronized    synchronized this       this                    synchronized          synchronized Demo class              synchronized obj       synchronized                   demo1 demo2                        demo1 demo2                  java public class Demo   private Object lock1   new Object    private Object lock2   new Object    public void demo1     synchronized  lock1     true                        System out println Thread currentThread           public void demo2     synchronized  lock2     true    System out println Thread currentThread               demo1             lock1     demo2             lock2          1  demo1   2  demo2",
+        "objectID": "posts/Study/Synchronized到底锁了谁",
+        "date": "2022-05-19T14:43:45.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "java"
         ]
     },
     {
