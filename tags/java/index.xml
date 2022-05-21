@@ -27,39 +27,30 @@
     </item>
     
     <item>
-      <title>Java中值得思考的点</title>
-      <link>https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
+      <title>Java复习笔记</title>
+      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 10 May 2022 00:12:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</guid>
-      <description>try和finally中的return try中有return，而finally中无return，会先将值暂存，无论finally语句中对该值做什么处理，最终返回的都是try语句中的暂存值。另外，finally语句中执行的语句先于try的return之前执行。
-当try与finally语句中均有return语句，会忽略try中return，执行finally的return。注意如果try的return语句是return ++x，则++x是会执行的。
-验证如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  public class TryReturnTest { public int test1(int x) { try { x += 1; return ++x; } catch (Exception e) { e.printStackTrace(); } finally { x += 5; System.out.println(&amp;#34;finally&amp;#34;); } return x; } public int test2(int x) { try { x += 1; return ++x; } catch (Exception e) { e.</description>
-    </item>
-    
-    <item>
-      <title>Java复习笔记一</title>
-      <link>https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</link>
-      <pubDate>Thu, 28 Apr 2022 10:55:06 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</guid>
+      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
   编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
   解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
   Java 语言既具有编译型语言的特征，也具有解释型语言的特征，因为 Java 程序要经过先编译，后解释两个步骤。
 由 Java 编写的程序需要先经过编译步骤，生成字节码（*.class 文件），这种字节码必须再经过 JVM，解释成操作系统能识别的机器码，在由操作系统执行。
 因此，我们可以认为 Java 语言编译与解释并存。
-自增运算：看一下这段代码运行结果？ 1 2 3  int i = 1; i = i++; System.out.println(i);   答案是 1。
-面向对象和面向过程的区别? 面向过程 ：面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的一次调用就可以。
-面向对象 ：面向对象，把构成问题的事务分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事件在解决整个问题的过程所发生的行为。 目的是为了写出通用的代码，加强代码的重用，屏蔽差异性。
-多态定义及其实现方式 所谓多态就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定，即⼀个引用变量到底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪个类中实现的方法，必须在由程序运行期间才能决定。
-在 Java 中有两种形式可以实现多态：继承（多个子类对同⼀方法的重写）和接口（实现接口并覆盖接口中同⼀方法）。
 重载（overload）和重写（override）的区别？ 方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时的多态性。
 重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；
 重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。
 方法重载的规则：
- 方法名一致，参数列表中参数的顺序，类型，个数不同。 重载与方法的返回值无关，存在于父类和子类，同类中。 可以抛出不同的异常，可以有不同修饰符。  抽象类(abstract class)和接口(interface)有什么区别？   接口的方法默认是public，所有方法在接口中不能有实现(Java8开始接口方法可以有默认实现），而抽象类可以有非抽象的方法。</description>
+ 方法名一致，参数列表中参数的顺序，类型，个数不同。 重载与方法的返回值无关，存在于父类和子类，同类中。 可以抛出不同的异常，可以有不同修饰符。  抽象类(abstract class)和接口(interface)有什么区别？   接口的方法默认是public，所有方法在接口中不能有实现(Java8开始接口方法可以有默认实现），而抽象类可以有非抽象的方法。
+  接口中除了static、final变量，不能有其他变量，而抽象类中则不⼀定。
+  ⼀个类可以实现多个接口，但只能实现⼀个抽象类。接口自己本身可以通过extends关键字扩展多个接口。
+  接口方法默认修饰符是public，抽象方法可以有public、protected和default这些修饰符（抽象方法就是为了被重写所以不能使用private关键字修饰）。
+  从设计层面来说，抽象是对类的抽象，是⼀种模板设计，而接口是对行为的抽象，是⼀种行为的规范。
+  在jdk8中，接口也可以定义静态方法，可以直接用接口名调用。实现类和实现是不可以调用的。如果同时实现两个接口，接口中定义了⼀样的默认方法，则必须重写，不然会报错。
+  jdk9的接口被允许定义私有方法 。
+    总结⼀下jdk7~jdk9中接口的变化：
+  在 jdk 7 或更早版本中，接口里面只能有常量变量和抽象方法。这些接口方法必须由选择实现接口的类实现。</description>
     </item>
     
     <item>
