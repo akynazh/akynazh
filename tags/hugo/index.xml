@@ -28,22 +28,5 @@
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  &amp;lt;div id=&amp;#34;modalSearch&amp;#34; class=&amp;#34;modal fade&amp;#34; role=&amp;#34;dialog&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;modal-dialog&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;modal-content&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;modal-body&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;aa-input-container&amp;#34; id=&amp;#34;aa-input-container&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;search&amp;#34; id=&amp;#34;aa-search-input&amp;#34; class=&amp;#34;aa-input-search&amp;#34; placeholder=&amp;#34;write here.</description>
     </item>
     
-    <item>
-      <title>Hugo实现自动化生成文章并提交github</title>
-      <link>https://akynazh.site/posts/study/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</link>
-      <pubDate>Thu, 18 Nov 2021 19:41:03 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/hugo%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0%E5%B9%B6%E6%8F%90%E4%BA%A4github/</guid>
-      <description>前言 自动化的思想在计算机领域是非常重要的，计算机，本质上就是为了通过自动化，方便我们的生活，提高办事的效率而存在的。
-所以在使用计算机时，在开始用计算机办事之前，可以先想想这件事的那些地方可以利用计算机的自动化来帮我们完成。
-正是这种懒的思想，使得人类不断进步，攀登科技高峰，不是吗？^-^
-下面介绍通过编写bat脚本自动化hugo写文章，提交发布文章的方法。
-Linux用户则使用shell编写脚本~
-自动化生成文章 通过 set /p 接收用户输入的文章名称
-1 2 3 4 5  D: cd D:\@git\akynazh set input= set /p input=please input article name hugo new \post\%input%.md   自动化生成分类 通过copy命令，复制模板文件到categories下并命名
-1 2 3 4 5  D: cd D:\@git\akynazh set input= set /p input=please input category name copy archetypes\categories.md content\categories\%input%.md   自动提交发布到github 普通提交 方法与以上类似，最后可以pause一下看看有没有问题产生
-1 2 3 4 5 6 7 8 9 10  D: cd D:\@git\akynazh hugo set input= set /p input=please enter msg cd D:\@git\akynazh\public git add .</description>
-    </item>
-    
   </channel>
 </rss>

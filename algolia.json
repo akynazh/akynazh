@@ -316,8 +316,7 @@
             "Life"
         ],
         "tags": [
-            "life",
-            "running"
+            "life"
         ]
     },
     {
@@ -386,20 +385,6 @@
         ],
         "tags": [
             "git"
-        ]
-    },
-    {
-        "title": "Hugo实现自动化生成文章并提交github",
-        "uri": "posts/Study/Hugo实现自动化生成文章并提交github",
-        "content": "bat     hugo               Linux     shell                 set  p             D  cd D   git akynazh set input  set  p input please input article name hugo new  post  input  md           copy          categories     D  cd D   git akynazh set input  set  p input please input category name copy archetypes categories md content categories  input  md        github                  pause            D  cd D   git akynazh hugo set input  set  p input please enter msg cd D   git akynazh public git add   git commit  m   input   git push pause             set         set input publish article over",
-        "objectID": "posts/Study/Hugo实现自动化生成文章并提交github",
-        "date": "2021-11-18T11:41:03.000Z",
-        "categories": [
-            "Study"
-        ],
-        "tags": [
-            "script",
-            "hugo"
         ]
     },
     {
