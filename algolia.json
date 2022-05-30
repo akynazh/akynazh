@@ -252,6 +252,19 @@
         ]
     },
     {
+        "title": "海子的诗",
+        "uri": "posts/Book/海子的诗",
+        "content": "",
+        "objectID": "posts/Book/海子的诗",
+        "date": "2022-05-30T12:11:37.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "poem"
+        ]
+    },
+    {
         "title": "Java复习笔记",
         "uri": "posts/Java复习笔记",
         "content": "JDK JRE JVM         Java                                                                                                                                      Java                              Java                     Java                         class                JVM                                    Java               overload     override                                                                                                                                                                                                                                                                                      abstract class     interface                public               Java8                                   static final                                                       extends                     public        public protected default                       private                                                       jdk8                                                                             jdk9                   jdk7 jdk9          jdk 7                                              jdk 8                      jdk 9                    try finally  return  try  return  finally  return          finally                   try           finally          try return       try finally     return      try return   finally return     try return   return   x    x              java public class TryReturnTest   public int test1 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally      return x    public int test2 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally    return x      public static void main String   args    TryReturnTest test   new TryReturnTest    System out println test test1 0       finally 2 System out println test test2 0       finally 7       String   StringBuilder StringBuffer      String String                String           String        StringBuffer   String                synchronized          StringBuilder StringBuffer                    Java8  JDK              String                    StringBuilder   append        Java                   Integer       java public static void main String   args    Integer   127  Integer b   127  Integer b1   new Integer 127   System out println a    b     true System out println b    b1     false Integer c   128  Integer d   128  System out println c    d     false           Integer   127           Integer                        Integer                             128   127              new    Integer                Integer        a1    b1     false    Integer                                  Integer               128   127         JVM XX AutoBoxCacheMax                          int            Integer valueOf      IntegerCache  Integer valueOf                       IntegerCache                Integer     IntegerCache                           java private static class IntegerCache      static       Integer     for int k   0  k   cache length  k    cache k    new Integer j              BIO NIO AIO BIO  blocking I O         IO       NIO  non blocking IO                                                          IO         NIO          Buffer      Buffer            Channel      Buffer  Selector                 Channel  Selector                    Buffer             AIO JDK 7     Asynchronous I O         IO     I O             Reactor   Proactor Java   NIO    Reactor",
