@@ -1,8 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
 .aa-input-container {
   display: inline-block;
-  width: 85%;
-  font-family: 'Times New Roman', 'Microsoft YaHei', 'Heiti SC';
+  width: 90%;
 }
 .aa-input-container span,.aa-input-container input {
     width: inherit;
@@ -14,7 +13,6 @@
   box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
   -webkit-transition: .2s;
   transition: .2s;
-  font-size: 12px;
   outline: none;
   box-sizing: border-box;
   color: white;
