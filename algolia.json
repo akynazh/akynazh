@@ -433,7 +433,8 @@
             "Study"
         ],
         "tags": [
-            "java cpp"
+            "java",
+            "cpp"
         ]
     },
     {
@@ -765,14 +766,14 @@
     {
         "title": "关于char*, char[], string的理解",
         "uri": "posts/Study/关于char, string的理解",
-        "content": "char   char     char s1      abc   cout   s1   endl     abc s1 1     d          cout   s1   endl     adc  abc        s1                                   const char  s2    abc      const       cout   s2   endl     abc s2    dfs           cout   s2   endl     dfs  abc        s2                                      void print_str const char   str    printf   s n   str     print_str s1      adc print_str s2      dfs   string char   char     string   string            const char  s1    abc   string s   s1  cout   s   endl     abc s     a   cout   s   endl     abca cout   s1   endl     abc   string     s1 string        const char  s1    123   string str1   s1           s1   const cout   str1   endl     123 char s2      234   string str2   s2  cout   str2   endl     234 string char  const char  s11   str1 cstr       c_str   const char  cout   s1_1   endl     123 char  char   int      int v1   atoi s1   cout   v1   endl     123 v1    1  char str11 100   itoa v1  str11  10      10      cout   str11   endl     124              const char  str111     itoa v1  str111  10         string int      int val   223  string str3   to_string val      C  11        string  char   char      cout   str3   endl     223 val   stoi str3  0  10      0      10     cout   val   endl     223 Author  akynazh Blog  akynazh site",
+        "content": "char   char     char s1      abc   cout   s1   endl     abc s1 1     d          cout   s1   endl     adc  abc        s1                                   const char  s2    abc      const       cout   s2   endl     abc s2    dfs           cout   s2   endl     dfs  abc        s2                                      void print_str const char   str    printf   s n   str     print_str s1      adc print_str s2      dfs   string char   char     string   string            const char  s1    abc   string s   s1  cout   s   endl     abc s     a   cout   s   endl     abca cout   s1   endl     abc   string     s1 string        const char  s1    123   string str1   s1           s1   const cout   str1   endl     123 char s2      234   string str2   s2  cout   str2   endl     234 string char  const char  s11   str1 cstr       c_str   const char  cout   s1_1   endl     123 char  char   int      int v1   atoi s1   cout   v1   endl     123 v1    1  char str11 100   itoa v1  str11  10      10      cout   str11   endl     124              const char  str111     itoa v1  str111  10         string int      int val   223  string str3   to_string val      C  11        string  char   char      cout   str3   endl     223 val   stoi str3  0  10      0      10     cout   val   endl     223 over",
         "objectID": "posts/Study/关于char, string的理解",
         "date": "2020-12-05T04:37:32.000Z",
         "categories": [
             "Study"
         ],
         "tags": [
-            "c/c++"
+            "cpp"
         ]
     },
     {
