@@ -27,33 +27,6 @@
     </item>
     
     <item>
-      <title>Java复习笔记</title>
-      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Tue, 10 May 2022 00:12:16 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
-  编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
-  解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
-  Java 语言既具有编译型语言的特征，也具有解释型语言的特征，因为 Java 程序要经过先编译，后解释两个步骤。
-由 Java 编写的程序需要先经过编译步骤，生成字节码（*.class 文件），这种字节码必须再经过 JVM，解释成操作系统能识别的机器码，在由操作系统执行。
-因此，我们可以认为 Java 语言编译与解释并存。
-重载（overload）和重写（override）的区别？ 方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时的多态性。
-重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；
-重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。
-方法重载的规则：
- 方法名一致，参数列表中参数的顺序，类型，个数不同。 重载与方法的返回值无关，存在于父类和子类，同类中。 可以抛出不同的异常，可以有不同修饰符。  抽象类(abstract class)和接口(interface)有什么区别？   接口的方法默认是public，所有方法在接口中不能有实现(Java8开始接口方法可以有默认实现），而抽象类可以有非抽象的方法。
-  接口中除了static、final变量，不能有其他变量，而抽象类中则不⼀定。
-  ⼀个类可以实现多个接口，但只能实现⼀个抽象类。接口自己本身可以通过extends关键字扩展多个接口。
-  接口方法默认修饰符是public，抽象方法可以有public、protected和default这些修饰符（抽象方法就是为了被重写所以不能使用private关键字修饰）。
-  从设计层面来说，抽象是对类的抽象，是⼀种模板设计，而接口是对行为的抽象，是⼀种行为的规范。
-  在jdk8中，接口也可以定义静态方法，可以直接用接口名调用。实现类和实现是不可以调用的。如果同时实现两个接口，接口中定义了⼀样的默认方法，则必须重写，不然会报错。
-  jdk9的接口被允许定义私有方法 。
-    总结⼀下jdk7~jdk9中接口的变化：
-  在 jdk 7 或更早版本中，接口里面只能有常量变量和抽象方法。这些接口方法必须由选择实现接口的类实现。</description>
-    </item>
-    
-    <item>
       <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
       <link>https://akynazh.site/posts/study/java%E4%B8%8Ec&#43;&#43;%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Sun, 01 May 2022 20:16:39 +0800</pubDate>
@@ -157,6 +130,33 @@ e.g. /app/static/avatar/test.jpg
 1 2 3 4  Person p = new Person(1, &amp;#34;jzh&amp;#34;); Gson gson = new Gson(); String p_json = gson.toJson(p); Person p1 = gson.fromJson(p_json, Person.class);   从中可见gson.fromJson的第二个参数就是一个类对象，针对于无参的类可以直接通过.class获取类对象，然而有参怎么办呢？如下：
 1 2 3 4 5 6 7  ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); people.add(new Person(1, &amp;#34;jzh&amp;#34;)); people.add(new Person(2, &amp;#34;zh&amp;#34;)); people.add(new Person(3, &amp;#34;z&amp;#34;)); String ps_json = gson.toJson(people); ArrayList&amp;lt;Person&amp;gt; people1 = gson.fromJson(ps_json,new TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt;() { }.getType());   这里通过创建匿名内部类的方式实现了转换，也可以通过创建类继承于TypeToken实现。
 1 2 3  class MyType extends TypeToken&amp;lt;ArrayList&amp;lt;Person&amp;gt;&amp;gt; {} ArrayList&amp;lt;Person&amp;gt; people1 = gson.</description>
+    </item>
+    
+    <item>
+      <title>Java复习笔记</title>
+      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 10 May 2021 00:12:16 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
+  编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
+  解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
+  Java 语言既具有编译型语言的特征，也具有解释型语言的特征，因为 Java 程序要经过先编译，后解释两个步骤。
+由 Java 编写的程序需要先经过编译步骤，生成字节码（*.class 文件），这种字节码必须再经过 JVM，解释成操作系统能识别的机器码，在由操作系统执行。
+因此，我们可以认为 Java 语言编译与解释并存。
+重载（overload）和重写（override）的区别？ 方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时的多态性。
+重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；
+重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。
+方法重载的规则：
+ 方法名一致，参数列表中参数的顺序，类型，个数不同。 重载与方法的返回值无关，存在于父类和子类，同类中。 可以抛出不同的异常，可以有不同修饰符。  抽象类(abstract class)和接口(interface)有什么区别？   接口的方法默认是public，所有方法在接口中不能有实现(Java8开始接口方法可以有默认实现），而抽象类可以有非抽象的方法。
+  接口中除了static、final变量，不能有其他变量，而抽象类中则不⼀定。
+  ⼀个类可以实现多个接口，但只能实现⼀个抽象类。接口自己本身可以通过extends关键字扩展多个接口。
+  接口方法默认修饰符是public，抽象方法可以有public、protected和default这些修饰符（抽象方法就是为了被重写所以不能使用private关键字修饰）。
+  从设计层面来说，抽象是对类的抽象，是⼀种模板设计，而接口是对行为的抽象，是⼀种行为的规范。
+  在jdk8中，接口也可以定义静态方法，可以直接用接口名调用。实现类和实现是不可以调用的。如果同时实现两个接口，接口中定义了⼀样的默认方法，则必须重写，不然会报错。
+  jdk9的接口被允许定义私有方法 。
+    总结⼀下jdk7~jdk9中接口的变化：
+  在 jdk 7 或更早版本中，接口里面只能有常量变量和抽象方法。这些接口方法必须由选择实现接口的类实现。</description>
     </item>
     
   </channel>

@@ -278,7 +278,7 @@
         "uri": "posts/Java复习笔记",
         "content": "JDK JRE JVM         Java                                                                                                                                      Java                              Java                     Java                         class                JVM                                    Java               overload     override                                                                                                                                                                                                                                                                                      abstract class     interface                public               Java8                                   static final                                                       extends                     public        public protected default                       private                                                       jdk8                                                                             jdk9                   jdk7 jdk9          jdk 7                                              jdk 8                      jdk 9                    try finally  return  try  return  finally  return          finally                   try           finally          try return       try finally     return      try return   finally return     try return   return   x    x              java public class TryReturnTest   public int test1 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally      return x    public int test2 int x    try   x    1  return   x    catch  Exception e    e printStackTrace      finally   x    5  System out println  finally    return x      public static void main String   args    TryReturnTest test   new TryReturnTest    System out println test test1 0       finally 2 System out println test test2 0       finally 7       String   StringBuilder StringBuffer      String String                String           String        StringBuffer   String                synchronized          StringBuilder StringBuffer                    Java8  JDK              String                    StringBuilder   append        Java                   Integer       java public static void main String   args    Integer   127  Integer b   127  Integer b1   new Integer 127   System out println a    b     true System out println b    b1     false Integer c   128  Integer d   128  System out println c    d     false           Integer   127           Integer                        Integer                             128   127              new    Integer                Integer        a1    b1     false    Integer                                  Integer               128   127         JVM XX AutoBoxCacheMax                          int            Integer valueOf      IntegerCache  Integer valueOf                       IntegerCache                Integer     IntegerCache                           java private static class IntegerCache      static       Integer     for int k   0  k   cache length  k    cache k    new Integer j              BIO NIO AIO BIO  blocking I O         IO       NIO  non blocking IO                                                          IO         NIO          Buffer      Buffer            Channel      Buffer  Selector                 Channel  Selector                    Buffer             AIO JDK 7     Asynchronous I O         IO     I O             Reactor   Proactor Java   NIO    Reactor",
         "objectID": "posts/Java复习笔记",
-        "date": "2022-05-09T16:12:16.000Z",
+        "date": "2021-05-09T16:12:16.000Z",
         "categories": [
             "Study"
         ],
@@ -854,6 +854,33 @@
         ],
         "tags": [
             "algorithm"
+        ]
+    },
+    {
+        "title": "使用x86_64汇编写一个自旋锁",
+        "uri": "posts/使用x86_64汇编写一个自旋锁",
+        "content": "1      0                       spinlock       0     1                                    spinlock                       spinlock                                                            0                 spinlock              x86_64         Intel    c          void lock long  p    long   0  c   1  printf  try lock    n    asm   push rax  n t   push rcx  n t   spin_lock   n t   mov rcx    c   n t   mov rax    a   n t              p  rax  0      p rcx   1   p   1   rax        lock cmpxchg   p   rcx  n t   jne spin_lock  n t   pop rcx  n t   pop rax  n t     p   m   p     a  r  a    c  r  c     rcx    rax              void unlock long  p    asm   mov   p   0   n t     p   m   p         AT T    c void lock long  p    long   0  c   1  printf  try lock    n    asm   pushq   rax  n t   pushq   rcx  n t   spin_lock   n t   movq  1    rcx  n t   movq  2    rax  n t   lock cmpxchg   rcx   0  n t   jne spin_lock  n t   popq   rcx  n t   popq   rax  n t      m   p     r  c    r  a      rcx     rax       void unlock long  p    asm   movq  0   0   n t      r   p                cpp  include  include  include    intel          gcc  pthread  masm intel  o s spinlock c          void lock long  p    long   0  c   1  printf  try lock    n    asm   push rax  n t   push rcx  n t   spin_lock   n t   mov rcx    c   n t   mov rax    a   n t              p  rax  0      p rcx   1   p   1   rax        lock cmpxchg   p   rcx  n t   jne spin_lock  n t   pop rcx  n t   pop rax  n t     p   m   p     a  r  a    c  r  c     rcx    rax              void unlock long  p    asm   mov   p   0   n t     p   m   p                void mythread void args    long  p    long   args                    sleep 2          unlock p   printf  after unlock   ld n    p     int main     long   1               long  p    a                  pthread_t t1  pthread_create  t1  NULL  mythread   void  p   printf  before lock   ld n    p              lock p   pthread_join t1  NULL   printf  after lock   ld n    p   return 0          intel                 gcc  pthread  masm intel  o s spinlock c         AT T     gcc  pthread  o s spinlock c        masm intel   gcc      AT T                  c lock  1 try lock    unlock  0 lock  1         1                       2s                                1              over",
+        "objectID": "posts/使用x86_64汇编写一个自旋锁",
+        "date": "2022-06-09T15:37:51.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "汇编语言",
+            "os"
+        ]
+    },
+    {
+        "title": "通过Wireshark分析TCP原理",
+        "uri": "posts/通过Wireshark分析TCP原理",
+        "content": "Wireshark         ftp        tcp                                                       ftp window11 ip 172 23 224 1         vsftpd wsl2 ubuntu18  ip 172 23 234 65            Wireshark       vEthernet WSL                ip addr  172 23 234 65  tcp        ftp       PS C  Users akyna  ftp 172 23 234 65     172 23 234 65  220  vsFTPd 3 0 3  200 Always UTF8 mode     172 23 234 65  none    akyna 331 Please specify password      230 Login successful  ftp  put a txt 200 PORT command successful  Consider using PASV  150 Ok send data  226 Transfer complete  ftp     42       0 00  42000 00                                Wireshark                                                                                         client  6518   server         SYN Seq server   21                  server        SYN ACK Seq client             client        Seq        Ack    Ack server      Seq                             client  6540 server  20                       server  21   Response 150 Ok send data  client  6518  PSH                  client          42   PSH          server       Ack          1 42     client   FIN          server   FIN           client  ACK  server           client  6518   Response 226 Transfer complete  server  21                           server   FIN    client                  client   FIN   ACK   server         server  ACK                client                client  FIN    server              server       ACK client          ftp      over",
+        "objectID": "posts/通过Wireshark分析TCP原理",
+        "date": "2022-06-09T15:18:55.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "tcp"
         ]
     }
 ]

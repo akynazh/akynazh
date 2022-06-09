@@ -286,16 +286,16 @@ if (!doNotTrack) {
 <h3 id="分析pin图特点">分析pin图特点</h3>
 <p>查看面板源码，可以在对应的script中找到面板中图片的json数据。</p>
 <p>在app.page[&ldquo;board&rdquo;]下可以找到&quot;pins&quot;:[{&hellip;}]，主要图片ID(pin)位于这里面。</p>
-<p><img src="/article/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/1.png" alt=""></p>
+<p><img src="https://akynazh-1306716395.cos.ap-beijing.myqcloud.com/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%871.png" alt=""></p>
 <p>获取到图片的ID(pin)之后可以对应访问点击图片后进入的地址http://huaban.com/pins/pinId/，并获取页面源码：</p>
-<p><img src="/article/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/2.png" alt=""></p>
+<p><img src="https://akynazh-1306716395.cos.ap-beijing.myqcloud.com/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%872.png" alt=""></p>
 <p>显然可见主要图片的源码特征，书写对应正则表达式可以获取图片真实地址。</p>
 <h3 id="分析滚动特点">分析滚动特点</h3>
 <p>通过滚动页面我们可以发现<strong>加载规律</strong>：</p>
 <p>原来的图片对应的代码：</p>
-<p><img src="/article/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/3.png" alt=""></p>
+<p><img src="https://akynazh-1306716395.cos.ap-beijing.myqcloud.com/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%873.png" alt=""></p>
 <p>经过滚动，原来的代码逐渐被一些新的代码取代：</p>
-<p><img src="/article/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/4.png" alt=""></p>
+<p><img src="https://akynazh-1306716395.cos.ap-beijing.myqcloud.com/Python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%874.png" alt=""></p>
 <p>而不难发现他们都有对应的<strong>data-id</strong>!而data-id就是图片地址中对应的<strong>pin</strong>。</p>
 <p>所以我们可以通过<strong>webdriver滚动加载页面</strong>，<strong>每滚动一次就进行一次data-id的读取</strong>，并利用<strong>集合进行去重</strong>即可。</p>
 <h3 id="具体实现">具体实现</h3>
