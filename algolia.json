@@ -764,6 +764,34 @@
         ]
     },
     {
+        "title": "Window添加命令别名的方法",
+        "uri": "posts/Study/Window添加命令别名的方法",
+        "content": "CMD              exesc                     exesc bat                                        exesc    exesc bat                     bat                    doskey                             window     powershell            powershell  alias      PowerShell         ps1 PS C  Users akyna  set alias escc esc PS C  Users akyna  escc                     function     ps1 PS C  Users akyna  function func nircmd emptybin  PS C  Users akyna  set alias ctrash func PS C  Users akyna  ctrash                        shell          export alias my alias txt        alias    shell    import alias my alias txt        PwerShell      ps1 PS C  Users akyna  remove item alias escc PS C  Users akyna  escc escc  term  escc  not recognized name cmdlet  function  script file  executable program         PowerShell             PowerShell     echo  profile      powershell                              ps1 function                                        ExecutionPolicy      RemoteSigned      Get ExecutionPolicy               PowerShell    Set ExecutionPolicy RemoteSigned       PowerShell        Ps        ps1       function ctrash   nircmd emptybin            function esc   python D  script exec_script py           github function pushsc   D  cd D  script git add   git commit  m  add modify  git push pause     powershell function updateps   winget upgrade powershell     vscode function updatevs   taskkill  f  t  im code exe move D  a VSCode  D  a vs zip Bandizip exe x  o  D  tools3 vscode Microsoft VS Code   aoa  D  a vs zip  del D  a vs zip code pause     over",
+        "objectID": "posts/Study/Window添加命令别名的方法",
+        "date": "2022-06-24T14:52:59.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "window",
+            "powershell"
+        ]
+    },
+    {
+        "title": "使用x86_64汇编写一个自旋锁",
+        "uri": "posts/Study/使用x86_64汇编写一个自旋锁",
+        "content": "1      0                       spinlock       0     1                                    spinlock                       spinlock                                                            0                 spinlock              x86_64         Intel    c          void lock long  p    long   0  c   1  printf  try lock    n    asm   push rax  n t   push rcx  n t   spin_lock   n t   mov rcx    c   n t   mov rax    a   n t              p  rax  0      p rcx   1   p   1   rax        lock cmpxchg   p   rcx  n t   jne spin_lock  n t   pop rcx  n t   pop rax  n t     p   m   p     a  r  a    c  r  c     rcx    rax              void unlock long  p    asm   mov   p   0   n t     p   m   p         AT T    c void lock long  p    long   0  c   1  printf  try lock    n    asm   pushq   rax  n t   pushq   rcx  n t   spin_lock   n t   movq  1    rcx  n t   movq  2    rax  n t   lock cmpxchg   rcx   0  n t   jne spin_lock  n t   popq   rcx  n t   popq   rax  n t      m   p     r  c    r  a      rcx     rax       void unlock long  p    asm   movq  0   0   n t      r   p                     1                                0               1   cpp  include  include  include    intel          gcc  pthread  masm intel  o s spinlock c          void lock long  p    long   0  c   1  printf  try lock    n    asm   push rax  n t   push rcx  n t   spin_lock   n t   mov rcx    c   n t   mov rax    a   n t              p  rax  0      p rcx   1   p   1   rax        lock cmpxchg   p   rcx  n t   jne spin_lock  n t   pop rcx  n t   pop rax  n t     p   m   p     a  r  a    c  r  c     rcx    rax              void unlock long  p    asm   mov   p   0   n t     p   m   p                void mythread void args    long  p    long   args                    sleep 2          unlock p   printf  after unlock   ld n    p     int main     long   1               long  p    a                  pthread_t t1  pthread_create  t1  NULL  mythread   void  p   printf  before lock   ld n    p              lock p   pthread_join t1  NULL   printf  after lock   ld n    p   return 0          intel                 gcc  pthread  masm intel  o s spinlock c         AT T     gcc  pthread  o s spinlock c        masm intel   gcc      AT T                  c lock  1 try lock    unlock  0 lock  1         1                       2s                                1              over",
+        "objectID": "posts/Study/使用x86_64汇编写一个自旋锁",
+        "date": "2022-06-09T15:37:51.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "汇编语言",
+            "os"
+        ]
+    },
+    {
         "title": "关于char*, char[], string的理解",
         "uri": "posts/Study/关于char, string的理解",
         "content": "char   char     char s1      abc   cout   s1   endl     abc s1 1     d          cout   s1   endl     adc  abc        s1                                   const char  s2    abc      const       cout   s2   endl     abc s2    dfs           cout   s2   endl     dfs  abc        s2                                      void print_str const char   str    printf   s n   str     print_str s1      adc print_str s2      dfs   string char   char     string   string            const char  s1    abc   string s   s1  cout   s   endl     abc s     a   cout   s   endl     abca cout   s1   endl     abc   string     s1 string        const char  s1    123   string str1   s1           s1   const cout   str1   endl     123 char s2      234   string str2   s2  cout   str2   endl     234 string char  const char  s11   str1 cstr       c_str   const char  cout   s1_1   endl     123 char  char   int      int v1   atoi s1   cout   v1   endl     123 v1    1  char str11 100   itoa v1  str11  10      10      cout   str11   endl     124              const char  str111     itoa v1  str111  10         string int      int val   223  string str3   to_string val      C  11        string  char   char      cout   str3   endl     223 val   stoi str3  0  10      0      10     cout   val   endl     223 over",
@@ -857,24 +885,10 @@
         ]
     },
     {
-        "title": "使用x86_64汇编写一个自旋锁",
-        "uri": "posts/使用x86_64汇编写一个自旋锁",
-        "content": "1      0                       spinlock       0     1                                    spinlock                       spinlock                                                            0                 spinlock              x86_64         Intel    c          void lock long  p    long   0  c   1  printf  try lock    n    asm   push rax  n t   push rcx  n t   spin_lock   n t   mov rcx    c   n t   mov rax    a   n t              p  rax  0      p rcx   1   p   1   rax        lock cmpxchg   p   rcx  n t   jne spin_lock  n t   pop rcx  n t   pop rax  n t     p   m   p     a  r  a    c  r  c     rcx    rax              void unlock long  p    asm   mov   p   0   n t     p   m   p         AT T    c void lock long  p    long   0  c   1  printf  try lock    n    asm   pushq   rax  n t   pushq   rcx  n t   spin_lock   n t   movq  1    rcx  n t   movq  2    rax  n t   lock cmpxchg   rcx   0  n t   jne spin_lock  n t   popq   rcx  n t   popq   rax  n t      m   p     r  c    r  a      rcx     rax       void unlock long  p    asm   movq  0   0   n t      r   p                cpp  include  include  include    intel          gcc  pthread  masm intel  o s spinlock c          void lock long  p    long   0  c   1  printf  try lock    n    asm   push rax  n t   push rcx  n t   spin_lock   n t   mov rcx    c   n t   mov rax    a   n t              p  rax  0      p rcx   1   p   1   rax        lock cmpxchg   p   rcx  n t   jne spin_lock  n t   pop rcx  n t   pop rax  n t     p   m   p     a  r  a    c  r  c     rcx    rax              void unlock long  p    asm   mov   p   0   n t     p   m   p                void mythread void args    long  p    long   args                    sleep 2          unlock p   printf  after unlock   ld n    p     int main     long   1               long  p    a                  pthread_t t1  pthread_create  t1  NULL  mythread   void  p   printf  before lock   ld n    p              lock p   pthread_join t1  NULL   printf  after lock   ld n    p   return 0          intel                 gcc  pthread  masm intel  o s spinlock c         AT T     gcc  pthread  o s spinlock c        masm intel   gcc      AT T                  c lock  1 try lock    unlock  0 lock  1         1                       2s                                1              over",
-        "objectID": "posts/使用x86_64汇编写一个自旋锁",
-        "date": "2022-06-09T15:37:51.000Z",
-        "categories": [
-            "Study"
-        ],
-        "tags": [
-            "汇编语言",
-            "os"
-        ]
-    },
-    {
         "title": "通过Wireshark分析TCP原理",
-        "uri": "posts/通过Wireshark分析TCP原理",
+        "uri": "posts/Study/通过Wireshark分析TCP原理",
         "content": "Wireshark         ftp        tcp                                                       ftp window11 ip 172 23 224 1         vsftpd wsl2 ubuntu18  ip 172 23 234 65            Wireshark       vEthernet WSL                ip addr  172 23 234 65  tcp        ftp       PS C  Users akyna  ftp 172 23 234 65     172 23 234 65  220  vsFTPd 3 0 3  200 Always UTF8 mode     172 23 234 65  none    akyna 331 Please specify password      230 Login successful  ftp  put a txt 200 PORT command successful  Consider using PASV  150 Ok send data  226 Transfer complete  ftp     42       0 00  42000 00                                Wireshark                                                                                         client  6518   server         SYN Seq server   21                  server        SYN ACK Seq client             client        Seq        Ack    Ack server      Seq                             client  6540 server  20                       server  21   Response 150 Ok send data  client  6518  PSH                  client          42   PSH          server       Ack          1 42     client   FIN          server   FIN           client  ACK  server           client  6518   Response 226 Transfer complete  server  21                           server   FIN    client                  client   FIN   ACK   server         server  ACK                client                client  FIN    server              server       ACK client          ftp      over",
-        "objectID": "posts/通过Wireshark分析TCP原理",
+        "objectID": "posts/Study/通过Wireshark分析TCP原理",
         "date": "2022-06-09T15:18:55.000Z",
         "categories": [
             "Study"

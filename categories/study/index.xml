@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 09 Jun 2022 23:37:51 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 22:52:59 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Window添加命令别名的方法</title>
+      <link>https://akynazh.site/posts/study/window%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/window%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>CMD添加自定义命令 假如我想通过exesc这个命令运行一些操作命令：
+ 在某路径下新建exesc.bat文件，该文件包含了一些自定义的指令； 将该路径加入环境变量； 命令行即可通过键入exesc命令执行exesc.bat。  以后添加任何命令都可以在这个路径中新建bat文件编写别名，非常方便。
+还有一种方法是doskey方法，但是个人感觉不如这一种方法高效方便，不再说明。
+现在window一般都使用powershell作为命令行工具，下面介绍powershell设置alias的方法。
+为PowerShell设置临时的别名 1 2 3  PS C:\Users\akyna&amp;gt; set-alias escc esc PS C:\Users\akyna&amp;gt; escc ......   如果带参数，则可以通过function进行：
+1 2 3  PS C:\Users\akyna&amp;gt; function func{nircmd emptybin} PS C:\Users\akyna&amp;gt; set-alias ctrash func PS C:\Users\akyna&amp;gt; ctrash   这样的别名只是在当前会话下有效，开启另一个shell就失效了。
+可以通过export-alias my-alias.txt导出当前会话下的alias，在其他shell中，通过import-alias my-alias.txt即可使用。
+删除PwerShell临时别名 1 2 3 4  PS C:\Users\akyna&amp;gt; remove-item alias:escc PS C:\Users\akyna&amp;gt; escc escc: The term &amp;#39;escc&amp;#39; is not recognized as a name of a cmdlet, function, script file, or executable program.</description>
+    </item>
+    
     <item>
       <title>使用x86_64汇编写一个自旋锁</title>
       <link>https://akynazh.site/posts/study/%E4%BD%BF%E7%94%A8x86_64%E6%B1%87%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E6%97%8B%E9%94%81/</link>

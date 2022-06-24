@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 09 Jun 2022 23:37:51 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 22:52:59 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>powershell</title>
+      <link>https://akynazh.site/tags/powershell/</link>
+      <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>window</title>
+      <link>https://akynazh.site/tags/window/</link>
+      <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/window/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>os</title>
       <link>https://akynazh.site/tags/os/</link>
@@ -131,24 +149,6 @@
       <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/cmd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>powershell</title>
-      <link>https://akynazh.site/tags/powershell/</link>
-      <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/powershell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>window</title>
-      <link>https://akynazh.site/tags/window/</link>
-      <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/window/</guid>
       <description></description>
     </item>
     
