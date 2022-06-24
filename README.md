@@ -7,12 +7,12 @@
 <!--START_SECTION:waka-->
 
 ```text
-Markdown     1 hr 41 mins    ████████▓░░░░░░░░░░░░░░░░   34.57 %
-Python       1 hr 8 mins     █████▓░░░░░░░░░░░░░░░░░░░   23.22 %
-HTML         1 hr 6 mins     █████▓░░░░░░░░░░░░░░░░░░░   22.78 %
-Batchfile    24 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   08.41 %
-JSON         15 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.19 %
-JavaScript   11 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.79 %
+JavaScript   9 mins          █████████░░░░░░░░░░░░░░░░   36.18 %
+Markdown     7 mins          ███████░░░░░░░░░░░░░░░░░░   28.63 %
+Python       5 mins          █████▒░░░░░░░░░░░░░░░░░░░   21.46 %
+C++          2 mins          ██░░░░░░░░░░░░░░░░░░░░░░░   08.21 %
+Batchfile    1 min           █▒░░░░░░░░░░░░░░░░░░░░░░░   05.31 %
+XML          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 %
 ```
 
 <!--END_SECTION:waka-->
@@ -23,8 +23,8 @@ JavaScript   11 mins         █░░░░░░░░░░░░░░░░
 <h3> :alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3>
   
 <!-- BLOG-POST-LIST:START -->
-- [使用x86_64汇编写一个自旋锁](https://akynazh.site/posts/%E4%BD%BF%E7%94%A8x86_64%E6%B1%87%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E6%97%8B%E9%94%81/)
-- [通过Wireshark分析TCP原理](https://akynazh.site/posts/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/)
+- [使用x86_64汇编写一个自旋锁](https://akynazh.site/posts/study/%E4%BD%BF%E7%94%A8x86_64%E6%B1%87%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E6%97%8B%E9%94%81/)
+- [通过Wireshark分析TCP原理](https://akynazh.site/posts/study/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/)
 - [乙一短篇摘录](https://akynazh.site/posts/book/%E4%B9%99%E4%B8%80%E7%9F%AD%E7%AF%87%E6%91%98%E5%BD%95/)
 - [海子的诗](https://akynazh.site/posts/book/%E6%B5%B7%E5%AD%90%E7%9A%84%E8%AF%97/)
 - [Docker简单使用过程记录](https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/)
