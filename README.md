@@ -1,6 +1,3 @@
-<table>
-<tr>
-<td>
 
 <h3> :bug: My weekly coding record </h3>
 
@@ -16,9 +13,6 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 ```
 
 <!--END_SECTION:waka-->
-</td>
-
-<td>  
 
 <h3> :alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3>
   
@@ -29,7 +23,3 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 - [乙一短篇摘录](https://akynazh.site/posts/book/%E4%B9%99%E4%B8%80%E7%9F%AD%E7%AF%87%E6%91%98%E5%BD%95/)
 - [海子的诗](https://akynazh.site/posts/book/%E6%B5%B7%E5%AD%90%E7%9A%84%E8%AF%97/)
 <!-- BLOG-POST-LIST:END -->
-
-</td>
-</tr>
-</table>
