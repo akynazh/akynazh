@@ -5,17 +5,17 @@ jobs:
         name: Tencent Cloudbase Github Action Example
         steps: 
         - name: Checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v1
         # 使用云开发 Github Action 部署
         - name: Deploy static to Tencent CloudBase
           id: deployStatic
-          uses: TencentCloudBase/cloudbase-action@v2.0.1
+          uses: TencentCloudBase/cloudbase-action@v1.1.1
           with: 
             # 云开发的访问密钥 secretId 和 secretKey
             secretId: AKID2uWswkHXWEgrnTt3wXswjGWVEhtpUszq
             secretKey: bvyjESO3SaQzIK5ZmiOnvoQlpc9PO5Wf
             # 云开发的环境id
             envId: akynazh-blog-9gz34ziy65c70099
-            
+
             # # Github 项目静态文件的路径
             # staticSrcPath: public

@@ -19,14 +19,15 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Window添加命令别名的方法" />
-<meta property="og:description" content="CMD添加自定义命令 假如我想通过exesc这个命令运行一些操作命令：
- 在某路径下新建exesc.bat文件，该文件包含了一些自定义的指令； 将该路径加入环境变量； 命令行即可通过键入exesc命令执行exesc.bat。  以后添加任何命令都可以在这个路径中新建bat文件编写别名，非常方便。
-还有一种方法是doskey方法，但是个人感觉不如这一种方法高效方便，不再说明。
-现在window一般都使用powershell作为命令行工具，下面介绍powershell设置alias的方法。
-为PowerShell设置临时的别名 1 2 3  PS C:\Users\akyna&gt; set-alias escc esc PS C:\Users\akyna&gt; escc ......   如果带参数，则可以通过function进行：
-1 2 3  PS C:\Users\akyna&gt; function func{nircmd emptybin} PS C:\Users\akyna&gt; set-alias ctrash func PS C:\Users\akyna&gt; ctrash   这样的别名只是在当前会话下有效，开启另一个shell就失效了。
-可以通过export-alias my-alias.txt导出当前会话下的alias，在其他shell中，通过import-alias my-alias.txt即可使用。
-删除PwerShell临时别名 1 2 3 4  PS C:\Users\akyna&gt; remove-item alias:escc PS C:\Users\akyna&gt; escc escc: The term &#39;escc&#39; is not recognized as a name of a cmdlet, function, script file, or executable program." />
+<meta property="og:description" content="前言 下面将介绍3种方法：
+ CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名  CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
+1  doskey ls=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ======   $*表示还可能有其他命令参数，^&amp;^&amp;用于分开多条命令。
+单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。
+设置永久的别名 可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：
+ 编写脚本：  1 2 3  @echo off doskey ls=dir /b $* doskey lss=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ======   添加路径到注册表  在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
+也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。
+优缺点 通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。
+PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3  PS C:\Users\akyna&gt; set-alias escc esc PS C:\Users\akyna&gt; escc ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/study/window%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-24T22:52:59+08:00" />
@@ -35,14 +36,15 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Window添加命令别名的方法"/>
-<meta name="twitter:description" content="CMD添加自定义命令 假如我想通过exesc这个命令运行一些操作命令：
- 在某路径下新建exesc.bat文件，该文件包含了一些自定义的指令； 将该路径加入环境变量； 命令行即可通过键入exesc命令执行exesc.bat。  以后添加任何命令都可以在这个路径中新建bat文件编写别名，非常方便。
-还有一种方法是doskey方法，但是个人感觉不如这一种方法高效方便，不再说明。
-现在window一般都使用powershell作为命令行工具，下面介绍powershell设置alias的方法。
-为PowerShell设置临时的别名 1 2 3  PS C:\Users\akyna&gt; set-alias escc esc PS C:\Users\akyna&gt; escc ......   如果带参数，则可以通过function进行：
-1 2 3  PS C:\Users\akyna&gt; function func{nircmd emptybin} PS C:\Users\akyna&gt; set-alias ctrash func PS C:\Users\akyna&gt; ctrash   这样的别名只是在当前会话下有效，开启另一个shell就失效了。
-可以通过export-alias my-alias.txt导出当前会话下的alias，在其他shell中，通过import-alias my-alias.txt即可使用。
-删除PwerShell临时别名 1 2 3 4  PS C:\Users\akyna&gt; remove-item alias:escc PS C:\Users\akyna&gt; escc escc: The term &#39;escc&#39; is not recognized as a name of a cmdlet, function, script file, or executable program."/>
+<meta name="twitter:description" content="前言 下面将介绍3种方法：
+ CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名  CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
+1  doskey ls=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ======   $*表示还可能有其他命令参数，^&amp;^&amp;用于分开多条命令。
+单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。
+设置永久的别名 可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：
+ 编写脚本：  1 2 3  @echo off doskey ls=dir /b $* doskey lss=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ======   添加路径到注册表  在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
+也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。
+优缺点 通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。
+PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3  PS C:\Users\akyna&gt; set-alias escc esc PS C:\Users\akyna&gt; escc ."/>
 
   
   
@@ -177,7 +179,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fwindow%25E6%25B7%25BB%25E5%258A%25A0%25E5%2591%25BD%25E4%25BB%25A4%25E5%2588%25AB%25E5%2590%258D%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%2f&name=Window%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=CMD%e6%b7%bb%e5%8a%a0%e8%87%aa%e5%ae%9a%e4%b9%89%e5%91%bd%e4%bb%a4%20%e5%81%87%e5%a6%82%e6%88%91%e6%83%b3%e9%80%9a%e8%bf%87exesc%e8%bf%99%e4%b8%aa%e5%91%bd%e4%bb%a4%e8%bf%90%e8%a1%8c%e4%b8%80%e4%ba%9b%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%ef%bc%9a%0a%20%e5%9c%a8%e6%9f%90%e8%b7%af%e5%be%84%e4%b8%8b%e6%96%b0%e5%bb%baexesc.bat%e6%96%87%e4%bb%b6%ef%bc%8c%e8%af%a5%e6%96%87%e4%bb%b6%e5%8c%85%e5%90%ab%e4%ba%86%e4%b8%80%e4%ba%9b%e8%87%aa%e5%ae%9a%e4%b9%89%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%9b%20%e5%b0%86%e8%af%a5%e8%b7%af%e5%be%84%e5%8a%a0%e5%85%a5%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%ef%bc%9b%20%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%8d%b3%e5%8f%af%e9%80%9a%e8%bf%87%e9%94%ae%e5%85%a5exesc%e5%91%bd%e4%bb%a4%e6%89%a7%e8%a1%8cexesc.bat%e3%80%82%20%20%e4%bb%a5%e5%90%8e%e6%b7%bb%e5%8a%a0%e4%bb%bb%e4%bd%95%e5%91%bd%e4%bb%a4%e9%83%bd%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%bf%99%e4%b8%aa%e8%b7%af%e5%be%84%e4%b8%ad%e6%96%b0%e5%bb%babat%e6%96%87%e4%bb%b6%e7%bc%96%e5%86%99%e5%88%ab%e5%90%8d%ef%bc%8c%e9%9d%9e%e5%b8%b8%e6%96%b9%e4%be%bf%e3%80%82%0a%e8%bf%98%e6%9c%89%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e6%98%afdoskey%e6%96%b9%e6%b3%95%ef%bc%8c%e4%bd%86%e6%98%af%e4%b8%aa%e4%ba%ba%e6%84%9f%e8%a7%89%e4%b8%8d%e5%a6%82%e8%bf%99%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e9%ab%98%e6%95%88%e6%96%b9%e4%be%bf%ef%bc%8c%e4%b8%8d%e5%86%8d%e8%af%b4%e6%98%8e%e3%80%82%0a%e7%8e%b0%e5%9c%a8window%e4%b8%80%e8%88%ac%e9%83%bd%e4%bd%bf%e7%94%a8powershell%e4%bd%9c%e4%b8%ba%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b7%a5%e5%85%b7%ef%bc%8c%e4%b8%8b%e9%9d%a2%e4%bb%8b%e7%bb%8dpowershell%e8%ae%be%e7%bd%aealias%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201%202%203%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20......%20%20%20%e5%a6%82%e6%9e%9c%e5%b8%a6%e5%8f%82%e6%95%b0%ef%bc%8c%e5%88%99%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87function%e8%bf%9b%e8%a1%8c%ef%bc%9a%0a1%202%203%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20function%20func%7bnircmd%20emptybin%7d%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20ctrash%20func%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ctrash%20%20%20%e8%bf%99%e6%a0%b7%e7%9a%84%e5%88%ab%e5%90%8d%e5%8f%aa%e6%98%af%e5%9c%a8%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e6%9c%89%e6%95%88%ef%bc%8c%e5%bc%80%e5%90%af%e5%8f%a6%e4%b8%80%e4%b8%aashell%e5%b0%b1%e5%a4%b1%e6%95%88%e4%ba%86%e3%80%82%0a%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87export-alias%20my-alias.txt%e5%af%bc%e5%87%ba%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e7%9a%84alias%ef%bc%8c%e5%9c%a8%e5%85%b6%e4%bb%96shell%e4%b8%ad%ef%bc%8c%e9%80%9a%e8%bf%87import-alias%20my-alias.txt%e5%8d%b3%e5%8f%af%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%88%a0%e9%99%a4PwerShell%e4%b8%b4%e6%97%b6%e5%88%ab%e5%90%8d%201%202%203%204%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20remove-item%20alias%3aescc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20escc%3a%20The%20term%20%26%2339%3bescc%26%2339%3b%20is%20not%20recognized%20as%20a%20name%20of%20a%20cmdlet%2c%20function%2c%20script%20file%2c%20or%20executable%20program." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fwindow%25E6%25B7%25BB%25E5%258A%25A0%25E5%2591%25BD%25E4%25BB%25A4%25E5%2588%25AB%25E5%2590%258D%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%2f&name=Window%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=%e5%89%8d%e8%a8%80%20%e4%b8%8b%e9%9d%a2%e5%b0%86%e4%bb%8b%e7%bb%8d3%e7%a7%8d%e6%96%b9%e6%b3%95%ef%bc%9a%0a%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20PowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e9%80%9a%e8%bf%87%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e7%9a%84%e6%96%b9%e5%bc%8f%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%20%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87doskey%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e3%80%82%0a1%20%20doskey%20ls%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%20%20%24%2a%e8%a1%a8%e7%a4%ba%e8%bf%98%e5%8f%af%e8%83%bd%e6%9c%89%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4%e5%8f%82%e6%95%b0%ef%bc%8c%5e%26amp%3b%5e%26amp%3b%e7%94%a8%e4%ba%8e%e5%88%86%e5%bc%80%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4%e3%80%82%0a%e5%8d%95%e7%ba%af%e5%9c%a8%e4%b8%80%e4%b8%aacmd%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8doskey%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%ef%bc%8c%e5%88%ab%e5%90%8d%e5%8f%aa%e8%83%bd%e5%9c%a8%e8%af%a5%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8%e3%80%82%0a%e8%ae%be%e7%bd%ae%e6%b0%b8%e4%b9%85%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b0%86doskey%e5%91%bd%e4%bb%a4%e5%86%99%e5%85%a5bat%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%86%8d%e6%8a%8a%e8%84%9a%e6%9c%ac%e8%b7%af%e5%be%84%e6%b7%bb%e5%8a%a0%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8Autorun%e5%ae%9e%e7%8e%b0%e6%b0%b8%e4%b9%85%e4%b8%94%e6%89%80%e6%9c%89cmd%e9%83%bd%e5%8f%af%e7%94%a8%e7%9a%84%e5%88%ab%e5%90%8d%ef%bc%8c%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac%ef%bc%9a%20%201%202%203%20%20%40echo%20off%20doskey%20ls%3ddir%20%2fb%20%24%2a%20doskey%20lss%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%20%20%e6%b7%bb%e5%8a%a0%e8%b7%af%e5%be%84%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8%20%20%e5%9c%a8HKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cCommand%20Processor%e4%b8%8b%e7%9a%84Autorun%e4%b8%ad%ef%bc%8c%e5%b0%86%e6%95%b0%e5%80%bc%e8%ae%be%e4%b8%badoskey%e5%91%bd%e4%bb%a4%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9a%84%e8%b7%af%e5%be%84%e5%8d%b3%e5%8f%af%e3%80%82%e8%bf%99%e6%a0%b7%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e8%ae%be%e7%bd%ae%e5%a5%bd%e7%9a%84%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%b9%9f%e5%8f%af%e5%9c%a8HKEY_CURRENT_USER%e4%b8%8b%e7%9a%84%e5%af%b9%e5%ba%94%e4%bd%8d%e7%bd%ae%e8%ae%be%e7%bd%ae%ef%bc%8c%e5%8f%aa%e9%92%88%e5%af%b9%e5%bd%93%e5%89%8d%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%bc%98%e7%bc%ba%e7%82%b9%20%e9%80%9a%e8%bf%87doskey%e7%9a%84%e6%96%b9%e5%bc%8f%ef%bc%8c%e6%8c%ba%e6%96%b9%e4%be%bf%e7%9a%84%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8%e5%91%bd%e4%bb%a4%e9%9d%9e%e5%b8%b8%e5%a4%9a%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%8d%e6%98%af%e5%be%88%e6%96%b9%e4%be%bf%ef%bc%8c%e5%90%8c%e6%97%b6%ef%bc%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e5%91%bd%e4%bb%a4%e8%bf%98%e4%b8%8d%e5%8f%af%e4%bb%a5%e5%9c%a8powershell%e4%b8%8b%e8%bf%90%e8%a1%8c%e3%80%82%0aPowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201%202%203%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -193,11 +195,29 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#cmd添加自定义命令">CMD添加自定义命令</a></li>
-    <li><a href="#为powershell设置临时的别名">为PowerShell设置临时的别名</a></li>
-    <li><a href="#删除pwershell临时别名">删除PwerShell临时别名</a></li>
-    <li><a href="#为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</a></li>
-    <li><a href="#我的ps别名配置参考">我的Ps别名配置参考</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#cmd添加别名的方法">CMD添加别名的方法</a>
+      <ul>
+        <li><a href="#设置临时的别名">设置临时的别名</a></li>
+        <li><a href="#设置永久的别名">设置永久的别名</a></li>
+        <li><a href="#优缺点">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#powershell添加别名的方法">PowerShell添加别名的方法</a>
+      <ul>
+        <li><a href="#为powershell设置临时的别名">为PowerShell设置临时的别名</a></li>
+        <li><a href="#删除pwershell临时别名">删除PwerShell临时别名</a></li>
+        <li><a href="#为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</a></li>
+        <li><a href="#优缺点-1">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#通过添加环境变量的方式设置别名">通过添加环境变量的方式设置别名</a>
+      <ul>
+        <li><a href="#操作方法">操作方法</a></li>
+        <li><a href="#优缺点-2">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
     </div>
@@ -222,7 +242,7 @@ if (!doNotTrack) {
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          4 minute read
+          7 minute read
         </div>
         
         
@@ -252,17 +272,52 @@ if (!doNotTrack) {
   
     
     <div class="content" itemprop="articleBody">
-      <h2 id="cmd添加自定义命令">CMD添加自定义命令</h2>
-<p>假如我想通过exesc这个命令运行一些操作命令：</p>
+      <h2 id="前言">前言</h2>
+<p>下面将介绍3种方法：</p>
 <ul>
-<li>在某路径下新建exesc.bat文件，该文件包含了一些自定义的指令；</li>
-<li>将该路径加入环境变量；</li>
-<li>命令行即可通过键入exesc命令执行exesc.bat。</li>
+<li>CMD添加别名的方法</li>
+<li>PowerShell添加别名的方法</li>
+<li>通过添加环境变量的方式设置别名</li>
 </ul>
-<p>以后添加任何命令都可以在这个路径中新建bat文件编写别名，非常方便。</p>
-<p>还有一种方法是doskey方法，但是个人感觉不如这一种方法高效方便，不再说明。</p>
-<p>现在window一般都使用powershell作为命令行工具，下面介绍powershell设置alias的方法。</p>
-<h2 id="为powershell设置临时的别名">为PowerShell设置临时的别名</h2>
+<h2 id="cmd添加别名的方法">CMD添加别名的方法</h2>
+<h3 id="设置临时的别名">设置临时的别名</h3>
+<p>可以通过doskey命令实现。</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">doskey ls=echo ====== <span style="color:#0ff;font-weight:bold">^&amp;^&amp;</span> dir /b $* <span style="color:#0ff;font-weight:bold">^&amp;^&amp;</span> echo ======
+</code></pre></td></tr></table>
+</div>
+</div><p><code>$*</code>表示还可能有其他命令参数，<code>^&amp;^&amp;</code>用于分开多条命令。</p>
+<p>单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。</p>
+<h3 id="设置永久的别名">设置永久的别名</h3>
+<p>可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：</p>
+<ol>
+<li>编写脚本：</li>
+</ol>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">@<span style="color:#fff;font-weight:bold">echo</span> off
+doskey ls=dir /b $*
+doskey lss=echo ====== <span style="color:#0ff;font-weight:bold">^&amp;^&amp;</span> dir /b $* <span style="color:#0ff;font-weight:bold">^&amp;^&amp;</span> echo ======
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>添加路径到注册表</li>
+</ol>
+<p>在<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor</code>下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。</p>
+<p>也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。</p>
+<h3 id="优缺点">优缺点</h3>
+<p>通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。</p>
+<h2 id="powershell添加别名的方法">PowerShell添加别名的方法</h2>
+<h3 id="为powershell设置临时的别名">为PowerShell设置临时的别名</h3>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -290,7 +345,7 @@ if (!doNotTrack) {
 </div>
 </div><p>这样的别名只是在当前会话下有效，开启另一个shell就失效了。</p>
 <p>可以通过<code>export-alias my-alias.txt</code>导出当前会话下的alias，在其他shell中，通过<code>import-alias my-alias.txt</code>即可使用。</p>
-<h2 id="删除pwershell临时别名">删除PwerShell临时别名</h2>
+<h3 id="删除pwershell临时别名">删除PwerShell临时别名</h3>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -305,11 +360,11 @@ escc<span style="color:#f00">:</span> The term <span style="color:#0ff;font-weig
 ...
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</h2>
-<ul>
+</div><h3 id="为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</h3>
+<ol>
 <li>打开 PowerShell ，运行 echo $profile，会输出一个powershell配置文件的路径。</li>
 <li>打开文件，按以下格式可以设置多条别名：</li>
-</ul>
+</ol>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -318,12 +373,8 @@ escc<span style="color:#f00">:</span> The term <span style="color:#0ff;font-weig
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1"><span style="color:#fff;font-weight:bold">function</span> 别名 { 需要替代的命令<span style="color:#f00">，</span>可以包含空格 }
 </code></pre></td></tr></table>
 </div>
-</div><p>以下为可能需要的操作，因为你的ExecutionPolicy可能已经设为RemoteSigned了。通过命令<code>Get-ExecutionPolicy</code>即可知道。</p>
-<ul>
-<li>以管理员身份打开 PowerShell，执行 <code>Set-ExecutionPolicy RemoteSigned</code>。</li>
-<li>重新启动 PowerShell ，完成。</li>
-</ul>
-<h2 id="我的ps别名配置参考">我的Ps别名配置参考</h2>
+</div><p><strong>e.g.</strong></p>
+<p>一个升级vscode的命令：</p>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
@@ -337,49 +388,9 @@ escc<span style="color:#f00">:</span> The term <span style="color:#0ff;font-weig
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1"><span style="color:#007f7f"># 清空回收站</span>
-<span style="color:#fff;font-weight:bold">function</span> ctrash {
-    nircmd emptybin
-}
-<span style="color:#007f7f"># 执行我的脚本选项</span>
-<span style="color:#fff;font-weight:bold">function</span> esc {
-    python D:\script\exec_script.py
-}
-<span style="color:#007f7f"># 推送脚本文件夹到github</span>
-<span style="color:#fff;font-weight:bold">function</span> pushsc {
-    D:
-    <span style="color:#fff;font-weight:bold">cd </span>D:\script
-    git add .
-    git commit -m <span style="color:#0ff;font-weight:bold">&#34;add or modify&#34;</span>
-    git push
-    pause
-}
-<span style="color:#007f7f"># 升级powershell</span>
-<span style="color:#fff;font-weight:bold">function</span> updateps {
-    winget upgrade powershell
-}
-<span style="color:#007f7f"># 升级vscode</span>
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1"><span style="color:#007f7f"># 升级vscode</span>
 <span style="color:#fff;font-weight:bold">function</span> updatevs {
     taskkill /f /t /im code.exe
     <span style="color:#fff;font-weight:bold">move </span>D:\a\VSCode* D:\a\vs.zip
@@ -388,9 +399,43 @@ escc<span style="color:#f00">:</span> The term <span style="color:#0ff;font-weig
     code
     pause
 }
+<span style="color:#007f7f">#其他别名</span>
+...
 </code></pre></td></tr></table>
 </div>
-</div><p>over.</p>
+</div><p>以后，新的别名都可以继续添加在该文件中，非常方便。</p>
+<ol start="3">
+<li>
+<p>将ExecutionPolicy设为RemoteSigned。</p>
+<ul>
+<li>以管理员身份打开 PowerShell，执行 <code>Set-ExecutionPolicy RemoteSigned</code>。</li>
+<li>重新启动 PowerShell ，完成。</li>
+</ul>
+</li>
+</ol>
+<h3 id="优缺点-1">优缺点</h3>
+<p>对于命令非常多的情况很方便，但是无法在cmd下运行别名。</p>
+<p>下面介绍一种同时适用于powershell和cmd的方式。</p>
+<h2 id="通过添加环境变量的方式设置别名">通过添加环境变量的方式设置别名</h2>
+<h3 id="操作方法">操作方法</h3>
+<p>假如我想通过exesc这个命令运行一些操作命令：</p>
+<ul>
+<li>在路径my_path下新建exesc.bat文件，该文件包含了一系列操作命令；</li>
+<li>将my_path加入环境变量；</li>
+<li>命令行即可通过键入exesc命令执行exesc.bat。</li>
+</ul>
+<p>以后添加任何命令都可以在这个路径中新建bat文件编写别名，非常方便。</p>
+<p>这样在powershell和cmd中都可以使用通过这个方法设置好的别名，但是注意，前提是这个脚本中的命令同时适用于powershell和cmd，比如，如果该脚本中存在一个<code>ls</code>命令，但是cmd没有这个命令，那么cmd就无法使用该别名，但是你可以先通过上面介绍的doskey方法设置好ls别名，这样就可以愉快使用了。</p>
+<h3 id="优缺点-2">优缺点</h3>
+<p>个人感觉是很不错的方法，但是一个别名对应一个文件，不是很方便，无法在一个文件中同时指定所有别名。</p>
+<p>如果想实现通用性，必须兼顾cmd和powershell都存在的命令。如果想使用powershell很多特有的命令，那么实现通用性是比较麻烦的。</p>
+<h2 id="总结">总结</h2>
+<p>如果你只使用powershell，那么只使用上面第二种方法就好了，这是最舒服的方法。</p>
+<p>如果你只是用cmd，那么就考虑用powershell吧，它可比cmd强大多啦，内置了许多linux命令别名以及一些强大的命令。如果实在不想换，那就用第一种老方法。</p>
+<p>第三种方法，可以视情况而定使用。</p>
+<hr>
+<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong></p>
+<p>over.</p>
 
     </div>
   </article>
@@ -440,11 +485,29 @@ escc<span style="color:#f00">:</span> The term <span style="color:#0ff;font-weig
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#cmd添加自定义命令">CMD添加自定义命令</a></li>
-    <li><a href="#为powershell设置临时的别名">为PowerShell设置临时的别名</a></li>
-    <li><a href="#删除pwershell临时别名">删除PwerShell临时别名</a></li>
-    <li><a href="#为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</a></li>
-    <li><a href="#我的ps别名配置参考">我的Ps别名配置参考</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#cmd添加别名的方法">CMD添加别名的方法</a>
+      <ul>
+        <li><a href="#设置临时的别名">设置临时的别名</a></li>
+        <li><a href="#设置永久的别名">设置永久的别名</a></li>
+        <li><a href="#优缺点">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#powershell添加别名的方法">PowerShell添加别名的方法</a>
+      <ul>
+        <li><a href="#为powershell设置临时的别名">为PowerShell设置临时的别名</a></li>
+        <li><a href="#删除pwershell临时别名">删除PwerShell临时别名</a></li>
+        <li><a href="#为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</a></li>
+        <li><a href="#优缺点-1">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#通过添加环境变量的方式设置别名">通过添加环境变量的方式设置别名</a>
+      <ul>
+        <li><a href="#操作方法">操作方法</a></li>
+        <li><a href="#优缺点-2">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
     </div>
@@ -494,7 +557,7 @@ escc<span style="color:#f00">:</span> The term <span style="color:#0ff;font-weig
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fwindow%25E6%25B7%25BB%25E5%258A%25A0%25E5%2591%25BD%25E4%25BB%25A4%25E5%2588%25AB%25E5%2590%258D%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%2f&name=Window%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=CMD%e6%b7%bb%e5%8a%a0%e8%87%aa%e5%ae%9a%e4%b9%89%e5%91%bd%e4%bb%a4%20%e5%81%87%e5%a6%82%e6%88%91%e6%83%b3%e9%80%9a%e8%bf%87exesc%e8%bf%99%e4%b8%aa%e5%91%bd%e4%bb%a4%e8%bf%90%e8%a1%8c%e4%b8%80%e4%ba%9b%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%ef%bc%9a%0a%20%e5%9c%a8%e6%9f%90%e8%b7%af%e5%be%84%e4%b8%8b%e6%96%b0%e5%bb%baexesc.bat%e6%96%87%e4%bb%b6%ef%bc%8c%e8%af%a5%e6%96%87%e4%bb%b6%e5%8c%85%e5%90%ab%e4%ba%86%e4%b8%80%e4%ba%9b%e8%87%aa%e5%ae%9a%e4%b9%89%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%9b%20%e5%b0%86%e8%af%a5%e8%b7%af%e5%be%84%e5%8a%a0%e5%85%a5%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%ef%bc%9b%20%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%8d%b3%e5%8f%af%e9%80%9a%e8%bf%87%e9%94%ae%e5%85%a5exesc%e5%91%bd%e4%bb%a4%e6%89%a7%e8%a1%8cexesc.bat%e3%80%82%20%20%e4%bb%a5%e5%90%8e%e6%b7%bb%e5%8a%a0%e4%bb%bb%e4%bd%95%e5%91%bd%e4%bb%a4%e9%83%bd%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%bf%99%e4%b8%aa%e8%b7%af%e5%be%84%e4%b8%ad%e6%96%b0%e5%bb%babat%e6%96%87%e4%bb%b6%e7%bc%96%e5%86%99%e5%88%ab%e5%90%8d%ef%bc%8c%e9%9d%9e%e5%b8%b8%e6%96%b9%e4%be%bf%e3%80%82%0a%e8%bf%98%e6%9c%89%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e6%98%afdoskey%e6%96%b9%e6%b3%95%ef%bc%8c%e4%bd%86%e6%98%af%e4%b8%aa%e4%ba%ba%e6%84%9f%e8%a7%89%e4%b8%8d%e5%a6%82%e8%bf%99%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e9%ab%98%e6%95%88%e6%96%b9%e4%be%bf%ef%bc%8c%e4%b8%8d%e5%86%8d%e8%af%b4%e6%98%8e%e3%80%82%0a%e7%8e%b0%e5%9c%a8window%e4%b8%80%e8%88%ac%e9%83%bd%e4%bd%bf%e7%94%a8powershell%e4%bd%9c%e4%b8%ba%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b7%a5%e5%85%b7%ef%bc%8c%e4%b8%8b%e9%9d%a2%e4%bb%8b%e7%bb%8dpowershell%e8%ae%be%e7%bd%aealias%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201%202%203%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20......%20%20%20%e5%a6%82%e6%9e%9c%e5%b8%a6%e5%8f%82%e6%95%b0%ef%bc%8c%e5%88%99%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87function%e8%bf%9b%e8%a1%8c%ef%bc%9a%0a1%202%203%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20function%20func%7bnircmd%20emptybin%7d%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20ctrash%20func%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ctrash%20%20%20%e8%bf%99%e6%a0%b7%e7%9a%84%e5%88%ab%e5%90%8d%e5%8f%aa%e6%98%af%e5%9c%a8%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e6%9c%89%e6%95%88%ef%bc%8c%e5%bc%80%e5%90%af%e5%8f%a6%e4%b8%80%e4%b8%aashell%e5%b0%b1%e5%a4%b1%e6%95%88%e4%ba%86%e3%80%82%0a%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87export-alias%20my-alias.txt%e5%af%bc%e5%87%ba%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e7%9a%84alias%ef%bc%8c%e5%9c%a8%e5%85%b6%e4%bb%96shell%e4%b8%ad%ef%bc%8c%e9%80%9a%e8%bf%87import-alias%20my-alias.txt%e5%8d%b3%e5%8f%af%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%88%a0%e9%99%a4PwerShell%e4%b8%b4%e6%97%b6%e5%88%ab%e5%90%8d%201%202%203%204%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20remove-item%20alias%3aescc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20escc%3a%20The%20term%20%26%2339%3bescc%26%2339%3b%20is%20not%20recognized%20as%20a%20name%20of%20a%20cmdlet%2c%20function%2c%20script%20file%2c%20or%20executable%20program." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fwindow%25E6%25B7%25BB%25E5%258A%25A0%25E5%2591%25BD%25E4%25BB%25A4%25E5%2588%25AB%25E5%2590%258D%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595%2f&name=Window%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=%e5%89%8d%e8%a8%80%20%e4%b8%8b%e9%9d%a2%e5%b0%86%e4%bb%8b%e7%bb%8d3%e7%a7%8d%e6%96%b9%e6%b3%95%ef%bc%9a%0a%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20PowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e9%80%9a%e8%bf%87%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e7%9a%84%e6%96%b9%e5%bc%8f%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%20%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87doskey%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e3%80%82%0a1%20%20doskey%20ls%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%20%20%24%2a%e8%a1%a8%e7%a4%ba%e8%bf%98%e5%8f%af%e8%83%bd%e6%9c%89%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4%e5%8f%82%e6%95%b0%ef%bc%8c%5e%26amp%3b%5e%26amp%3b%e7%94%a8%e4%ba%8e%e5%88%86%e5%bc%80%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4%e3%80%82%0a%e5%8d%95%e7%ba%af%e5%9c%a8%e4%b8%80%e4%b8%aacmd%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8doskey%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%ef%bc%8c%e5%88%ab%e5%90%8d%e5%8f%aa%e8%83%bd%e5%9c%a8%e8%af%a5%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8%e3%80%82%0a%e8%ae%be%e7%bd%ae%e6%b0%b8%e4%b9%85%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b0%86doskey%e5%91%bd%e4%bb%a4%e5%86%99%e5%85%a5bat%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%86%8d%e6%8a%8a%e8%84%9a%e6%9c%ac%e8%b7%af%e5%be%84%e6%b7%bb%e5%8a%a0%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8Autorun%e5%ae%9e%e7%8e%b0%e6%b0%b8%e4%b9%85%e4%b8%94%e6%89%80%e6%9c%89cmd%e9%83%bd%e5%8f%af%e7%94%a8%e7%9a%84%e5%88%ab%e5%90%8d%ef%bc%8c%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac%ef%bc%9a%20%201%202%203%20%20%40echo%20off%20doskey%20ls%3ddir%20%2fb%20%24%2a%20doskey%20lss%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%20%20%e6%b7%bb%e5%8a%a0%e8%b7%af%e5%be%84%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8%20%20%e5%9c%a8HKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cCommand%20Processor%e4%b8%8b%e7%9a%84Autorun%e4%b8%ad%ef%bc%8c%e5%b0%86%e6%95%b0%e5%80%bc%e8%ae%be%e4%b8%badoskey%e5%91%bd%e4%bb%a4%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9a%84%e8%b7%af%e5%be%84%e5%8d%b3%e5%8f%af%e3%80%82%e8%bf%99%e6%a0%b7%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e8%ae%be%e7%bd%ae%e5%a5%bd%e7%9a%84%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%b9%9f%e5%8f%af%e5%9c%a8HKEY_CURRENT_USER%e4%b8%8b%e7%9a%84%e5%af%b9%e5%ba%94%e4%bd%8d%e7%bd%ae%e8%ae%be%e7%bd%ae%ef%bc%8c%e5%8f%aa%e9%92%88%e5%af%b9%e5%bd%93%e5%89%8d%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%bc%98%e7%bc%ba%e7%82%b9%20%e9%80%9a%e8%bf%87doskey%e7%9a%84%e6%96%b9%e5%bc%8f%ef%bc%8c%e6%8c%ba%e6%96%b9%e4%be%bf%e7%9a%84%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8%e5%91%bd%e4%bb%a4%e9%9d%9e%e5%b8%b8%e5%a4%9a%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%8d%e6%98%af%e5%be%88%e6%96%b9%e4%be%bf%ef%bc%8c%e5%90%8c%e6%97%b6%ef%bc%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e5%91%bd%e4%bb%a4%e8%bf%98%e4%b8%8d%e5%8f%af%e4%bb%a5%e5%9c%a8powershell%e4%b8%8b%e8%bf%90%e8%a1%8c%e3%80%82%0aPowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201%202%203%20%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
