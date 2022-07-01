@@ -1,6 +1,6 @@
 <table>
 <tr>
-<td valign="top" width="50%">
+<td>
 
 <h3> :bug: My weekly coding record </h3>
 
@@ -18,7 +18,7 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 <!--END_SECTION:waka-->
 </td>
 
-<td valign="top" width="50%">  
+<td>  
 
 <h3> :alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3>
   
