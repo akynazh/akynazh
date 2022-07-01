@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<th align="center"><h3>:bug: My weekly coding record</h3></th>
+<th align="center"><h3>:bug: My weekly coding record :bug:</h3></th>
 <th align="center"><h3>:alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3></th>
 </tr>
 <tr>
