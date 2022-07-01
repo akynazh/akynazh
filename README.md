@@ -16,8 +16,12 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 
 
 
-  <img src="" alt="Metrics" width="400">
- 
+# 📊 Metrics [<img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=280144&theme=dark" alt="" align="right" width="190" height="41">](https://www.producthunt.com/posts/github-metrics?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-github-metrics)
+
+[![Continuous integration](https://github.com/lowlighter/metrics/actions/workflows/ci.yml/badge.svg)](https://github.com/lowlighter/metrics/actions/workflows/ci.yml)
+
+Generate metrics that can be embedded everywhere, including your GitHub profile readme! Supports users, organizations, and even repositories!
+
 <table>
   <tr>
     <th align="center">For user accounts</th>
@@ -25,12 +29,13 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
   </tr>
   <tr>
     <td align="center">
-<img alt="" width="400" src="/metrics.plugin.rss.svg" alt=""></img>
+    <img alt="" width="400" src="/metrics.plugin.rss.svg" alt=""></img>
+<img alt="" width="400" src="/metrics.plugin.isocalendar.svg" alt=""></img>
+<img alt="" width="400" src="https://github.com/lowlighter/metrics/blob/examples/metrics.classic.svg" alt=""></img>
 </td>
 <td align="center">
-<img alt="" width="400" src="/metrics.plugin.isocalendar.svg" alt=""></img>
+<img alt="" width="400" src="https://github.com/lowlighter/metrics/blob/examples/metrics.organization.svg" alt=""></img>
 <img alt="" width="400" src="/metrics.plugin.languages.svg" alt=""></img>
-
 </td>
   </tr>
   <tr>
@@ -383,5 +388,124 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 </table>
 
 
+# 📚 Documentation
+
+
+> <sup>*⚠️ This is the documentation of **v3.25-beta** (`@master`/`@main` branches) which includes [unreleased features](https://github.com/lowlighter/metrics/compare/latest...master) planned for next release. See documentation for current released version [**v3.24** (`@latest` branch) here](https://github.com/lowlighter/metrics/blob/latest/README.md).* </sup>
+
+
+
+## 🦮 Setup
+
+There are several ways to setup metrics, each having its advantages and disadvantages:
+
+* [⚙️ Using GitHub Action on a profile repository *(~10 min)*](/.github/readme/partials/documentation/setup/action.md)
+  * ✔️ All features
+  * ✔️ High availability (no downtimes)
+  * ➖ Configuration can be a bit time-consuming
+* [💕 Using the shared instance *(~1 min)*](/.github/readme/partials/documentation/setup/shared.md)
+  * ✔️ Easily configurable and previewable
+  * ➖ Limited features *(compute-intensive features are disabled)*
+* [🏗️ Deploying a web instance *(~20 min)*](/.github/readme/partials/documentation/setup/web.md)
+  * ✔️ Create another shared instance
+  * ➖ Requires some sysadmin knowledge
+* [🐳 Using command line with docker *(~2 min)*](/.github/readme/partials/documentation/setup/docker.md)
+  * ✔️ Suited for one-time rendering
+* [🔧 Local setup for development *(~20 min)*](/.github/readme/partials/documentation/setup/local.md)
+
+Additional resources for setup:
+* [🏦 Configure metrics for organizations](/.github/readme/partials/documentation/organizations.md)
+* [🏠 Run metrics on self-hosted runners](/.github/readme/partials/documentation/selfhosted.md)
+* [🧰 Template/Plugin compatibility matrix](/.github/readme/partials/documentation/compatibility.md)
+## 🖼️ Templates
+
+Templates lets you change general appearance of rendered metrics.
+
+
+* [📗 Classic template <sub>`classic`</sub>](/source/templates/classic/README.md)
+* [📘 Repository template <sub>`repository`</sub>](/source/templates/repository/README.md)
+* [📙 Terminal template <sub>`terminal`</sub>](/source/templates/terminal/README.md)
+* [📒 Markdown template <sub>`markdown`</sub>](/source/templates/markdown/README.md)
+* [📕 Community templates <sub>`community`</sub>](/source/templates/community/README.md)
+
+## 🧩 Plugins
+
+Plugins provide additional content and lets you customize rendered metrics.
+
+**📦 Maintained by core team**
+
+* **Core plugins**
+  * [🗃️ Base content <sub>`base`</sub>](/source/plugins/base/README.md)
+  * [🧱 Core <sub>`core`</sub>](/source/plugins/core/README.md)
+* **Github plugins**
+  * [🏆 Achievements <sub>`achievements`</sub>](/source/plugins/achievements/README.md)
+  * [📰 Recent activity <sub>`activity`</sub>](/source/plugins/activity/README.md)
+  * [📆 Calendar <sub>`calendar`</sub>](/source/plugins/calendar/README.md)
+  * [♐ Code snippet of the day <sub>`code`</sub>](/source/plugins/code/README.md)
+  * [🏅 Repository contributors <sub>`contributors`</sub>](/source/plugins/contributors/README.md)
+  * [💬 Discussions <sub>`discussions`</sub>](/source/plugins/discussions/README.md)
+  * [🎟️ Follow-up of issues and pull requests <sub>`followup`</sub>](/source/plugins/followup/README.md)
+  * [🎫 Gists <sub>`gists`</sub>](/source/plugins/gists/README.md)
+  * [💡 Coding habits <sub>`habits`</sub>](/source/plugins/habits/README.md)
+  * [🙋 Introduction <sub>`introduction`</sub>](/source/plugins/introduction/README.md)
+  * [📅 Isometric commit calendar <sub>`isocalendar`</sub>](/source/plugins/isocalendar/README.md)
+  * [🈷️ Most used languages <sub>`languages`</sub>](/source/plugins/languages/README.md)
+  * [📜 Repository licenses <sub>`licenses`</sub>](/source/plugins/licenses/README.md)
+  * [👨‍💻 Lines of code changed <sub>`lines`</sub>](/source/plugins/lines/README.md)
+  * [🎩 Notable contributions <sub>`notable`</sub>](/source/plugins/notable/README.md)
+  * [🧑‍🤝‍🧑 People plugin <sub>`people`</sub>](/source/plugins/people/README.md)
+  * [🗂️ Active projects <sub>`projects`</sub>](/source/plugins/projects/README.md)
+  * [🎭 Comment reactions <sub>`reactions`</sub>](/source/plugins/reactions/README.md)
+  * [📓 Repositories <sub>`repositories`</sub>](/source/plugins/repositories/README.md)
+  * [🌇 GitHub Skyline 3D calendar <sub>`skyline`</sub>](/source/plugins/skyline/README.md)
+  * [💕 GitHub Sponsors <sub>`sponsors`</sub>](/source/plugins/sponsors/README.md)
+  * [✨ Stargazers over last weeks <sub>`stargazers`</sub>](/source/plugins/stargazers/README.md)
+  * [💫 Starlists <sub>`starlists`</sub>](/source/plugins/starlists/README.md)
+  * [🌟 Recently starred repositories <sub>`stars`</sub>](/source/plugins/stars/README.md)
+  * [💭 GitHub Community Support <sub>`support`</sub>](/source/plugins/support/README.md)
+  * [📌 Starred topics <sub>`topics`</sub>](/source/plugins/topics/README.md)
+  * [🧮 Repositories traffic <sub>`traffic`</sub>](/source/plugins/traffic/README.md)
+* **Social plugins**
+  * [🌸 Anilist watch list and reading list <sub>`anilist`</sub>](/source/plugins/anilist/README.md)
+  * [🎼 Music plugin <sub>`music`</sub>](/source/plugins/music/README.md)
+  * [⏱️ Website performances <sub>`pagespeed`</sub>](/source/plugins/pagespeed/README.md)
+  * [✒️ Recent posts <sub>`posts`</sub>](/source/plugins/posts/README.md)
+  * [🗼 Rss feed <sub>`rss`</sub>](/source/plugins/rss/README.md)
+  * [🗨️ StackOverflow plugin <sub>`stackoverflow`</sub>](/source/plugins/stackoverflow/README.md)
+  * [🐤 Latest tweets <sub>`tweets`</sub>](/source/plugins/tweets/README.md)
+  * [⏰ WakaTime plugin <sub>`wakatime`</sub>](/source/plugins/wakatime/README.md)
+
+**🎲 Maintained by community**
+* **[Community plugins](/source/plugins/community/README.md)**
+  * [🥠 Fortune <sub>`fortune`</sub>](/source/plugins/community/fortune/README.md) by [@lowlighter](https://github.com/lowlighter)
+  * [💉 Nightscout <sub>`nightscout`</sub>](/source/plugins/community/nightscout/README.md) by [@legoandmars](https://github.com/legoandmars)
+  * [💩 PoopMap plugin <sub>`poopmap`</sub>](/source/plugins/community/poopmap/README.md) by [@matievisthekat](https://github.com/matievisthekat)
+  * [📸 Website screenshot <sub>`screenshot`</sub>](/source/plugins/community/screenshot/README.md) by [@lowlighter](https://github.com/lowlighter)
+  * [💹 Stock prices <sub>`stock`</sub>](/source/plugins/community/stock/README.md) by [@lowlighter](https://github.com/lowlighter)
+
+## 💪 Contributing
+
+If you are interested in contributing, the following resources may interest you:
+
+* [💪 Contribution guide](/CONTRIBUTING.md)
+* [🧬 Architecture](/ARCHITECTURE.md)
+* [📜 License](/LICENSE)
+* **:octocat: GitHub resources**
+  * [📖 GitHub GraphQL API](https://docs.github.com/en/graphql)
+  * [📖 GitHub GraphQL Explorer](https://docs.github.com/en/free-pro-team@latest/graphql/overview/explorer)
+  * [📖 GitHub Rest API](https://docs.github.com/en/rest)
+  * [📖 GitHub Octicons](https://github.com/primer/octicons)
+
+Use [`💬 discussions`](https://github.com/lowlighter/metrics/discussions) for feedback, new features suggestions, bugs reports or to request help for installation.
+
+
+## 📜 License
+
+```
+MIT License
+Copyright (c) 2020-present lowlighter
+```
+
+![Sponsors](https://github.com/lowlighter/metrics/blob/examples/metrics.sponsors.svg)
 
 
