@@ -17,5 +17,5 @@ jobs:
             # 云开发的环境id
             envId: akynazh-blog-9gz34ziy65c70099
 
-            # # Github 项目静态文件的路径
-            # staticSrcPath: public
+            # Github 项目静态文件的路径
+            staticSrcPath: public
