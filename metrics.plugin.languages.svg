@@ -21,10 +21,11 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="200.4638223313307" height="8" fill="#b07219"/>
-                    <rect mask="url(#languages-bar)" x="200.4638223313307" y="0" width="116.33620995586952" height="8" fill="#9400ff"/>
-                    <rect mask="url(#languages-bar)" x="316.8000322872002" y="0" width="95.83325331117763" height="8" fill="#555555"/>
-                    <rect mask="url(#languages-bar)" x="412.6332855983778" y="0" width="47.366714401622154" height="8" fill="#f34b7d"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="190.33329985887875" height="8" fill="#b07219"/>
+                    <rect mask="url(#languages-bar)" x="190.33329985887875" y="0" width="110.45711129551425" height="8" fill="#9400ff"/>
+                    <rect mask="url(#languages-bar)" x="300.790411154393" y="0" width="90.99028007547608" height="8" fill="#555555"/>
+                    <rect mask="url(#languages-bar)" x="391.78069122986903" y="0" width="44.97301782778979" height="8" fill="#f34b7d"/>
+                    <rect mask="url(#languages-bar)" x="436.7537090576588" y="0" width="23.246290942341133" height="8" fill="#f1e05a"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
                     <div class="field center no-wrap language">
@@ -50,6 +51,12 @@
                             <path fill="#f34b7d" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         C++
+                    </div>
+                    <div class="field center no-wrap language">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                            <path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        JavaScript
                     </div>
                 </div>
             </section>
