@@ -33,6 +33,7 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 <img alt="" width="400" src="/metrics.plugin.languages.svg" alt=""></img>
 </td>
   </tr>
+  <!--
   <tr>
     <th colspan="2" align="center">
       <h3><a href="/README.md#-plugins">🧩 Customizable with 40 plugins and 266 options!</a></h3>
@@ -380,6 +381,7 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
       <a href="https://github.com/lowlighter/metrics/fork">Fork this repository</a> and edit HTML, CSS, JS and <a href="https://github.com/mde/ejs">EJS</a> for even more customization!
     </td>
   </tr>
+<!-->
 </table>
 
 
