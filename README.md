@@ -22,6 +22,7 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 <!--END_SECTION:waka-->
 </td>
 <td align="center">
+  <img align="center" src="/metrics.plugin.isocalendar.svg" alt="Metrics" width="400">
 
 <!-- BLOG-POST-LIST:START -->
 - [Window添加命令别名的方法](https://akynazh.site/posts/study/window%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/)
