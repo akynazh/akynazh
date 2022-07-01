@@ -1,13 +1,13 @@
-<img src="/github-metrics.svg" alt="Metrics" width="400">
-
 <table>
 <tr>
 <th align="center"><h3>:bug: My weekly coding record :bug:</h3></th>
 <th align="center"><h3>:alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3></th>
+
+<img align="center" src="/metrics.plugin.rss.svg" alt="Metrics" width="400">
 </tr>
 <tr>
 <td align="center">
-<img align="center" src="/github-metrics.svg" alt="Metrics" width="400">
+
 <!--START_SECTION:waka-->
 
 ```text
