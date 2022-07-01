@@ -1,11 +1,11 @@
 <table>
 <tr>
-<th align="center"><h3>:bug: My weekly coding record :bug:</h3></th>
-<th align="center"><h3>:alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3></th>
+<th align="center">:alien: Latest posts from <a href="https://akynazh.site">my blog</a></th>
+<th align="center">:bug: My weekly coding record :bug:</th>
 </tr>
 <tr>
 <td align="center">
-<img align="center" src="/metrics.plugin.rss.svg" alt="Metrics" width="400">
+<img src="/metrics.plugin.rss.svg" alt="Metrics" width="400">
 
 <!--START_SECTION:waka-->
 <!--
@@ -22,10 +22,7 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 <!--END_SECTION:waka-->
 </td>
 <td align="center">
-  <img align="center" src="/metrics.plugin.isocalendar.svg" alt="Metrics" width="400">
-
-
-
+<img src="/metrics.plugin.isocalendar.svg" alt="Metrics" width="400">
 </td>
 </tr>
 </table>
