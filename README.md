@@ -1,6 +1,8 @@
 
 <h3> :bug: My weekly coding record </h3>
 
+<pre width="500px">
+
 <!--START_SECTION:waka-->
 
 ```text
@@ -13,6 +15,7 @@ VBScript     1 min           ▒░░░░░░░░░░░░░░░░
 ```
 
 <!--END_SECTION:waka-->
+</pre>
 
 <h3> :alien: Latest posts from <a href="https://akynazh.site">my blog</a></h3>
   
