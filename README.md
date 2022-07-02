@@ -5,7 +5,8 @@
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="/github-metrics.svg" alt=""></img>
+      <img src="/metrics.terminal.svg" alt=""></img>
+      <img src="/metrics.classic.svg" alt=""></img>
       <img src="/metrics.plugin.rss.svg" alt=""></img>
     </td>
     <td align="center" width="50%">
