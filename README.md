@@ -5,7 +5,7 @@
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="/metrics.plugin.rss.svg" alt=""></img>
+      <img src="/github-metrics.svg" alt=""></img>
       <img src="/metrics.plugin.isocalendar.svg" alt=""></img>
     </td>
     <td align="center" width="50%">
