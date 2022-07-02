@@ -12,9 +12,22 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: user_info_classic
+        uses: lowlighter/metrics@latest
         with:
+          filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+          
+      - name: user_info_terminal
+        uses: lowlighter/metrics@latest
+        with:
+          template: terminal
+          filename: metrics.terminal.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, metadata
+      
       - name: WakaTime
         uses: lowlighter/metrics@latest
         with:
@@ -24,6 +37,7 @@ jobs:
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          
       - name: Most used
         uses: lowlighter/metrics@latest
         with:
@@ -35,6 +49,7 @@ jobs:
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
             gnuplot
           plugin_languages_limit: 5
+          
       - name: Half-year calendar
         uses: lowlighter/metrics@latest
         with:
@@ -42,6 +57,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_isocalendar: yes
+          
       - name: News from hackernews
         uses: lowlighter/metrics@latest
         with:
