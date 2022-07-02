@@ -6,7 +6,9 @@
   <tr>
     <td align="center" width="50%">
       <img src="/metrics.classic.svg" alt=""></img>
+  <p text-align="left">
   Latest published articles from <a href="https://akynazh.site">my blog</a>
+  </p>
       <img src="/metrics.plugin.rss.svg" alt=""></img>
     </td>
     <td align="center" width="50%">
