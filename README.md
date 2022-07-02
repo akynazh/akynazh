@@ -1,18 +1,15 @@
 <table>
   <tr>
-    <th><a href="/source/templates/terminal/README.md"> About Me </a></th>
-    <th><a href="/source/templates/markdown/README.md"> Coding Record </a></th>
+    <th><a href="https://akynazh.site"> About Me </a></th>
+    <th><a href="https://github.com/akynazh"> Coding Record </a></th>
   </tr>
   <tr>
     <td align="center" width="50%">
       <img src="/metrics.classic.svg" alt=""></img>
-  <p text-align="left">
-  Latest published articles from <a href="https://akynazh.site">my blog</a>
-  </p>
-      <img src="/metrics.plugin.rss.svg" alt=""></img>
+      <img src="/metrics.plugin.isocalendar.svg" alt=""></img>
     </td>
     <td align="center" width="50%">
-      <img src="/metrics.plugin.isocalendar.svg" alt=""></img>
+      <img src="/metrics.plugin.rss.svg" alt=""></img>
       <img src="/metrics.plugin.wakatime.svg" alt=""></img>
       <img src="/metrics.plugin.languages.svg" alt=""></img>
     </td>
