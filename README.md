@@ -8,8 +8,10 @@
       <img src="/github-metrics.svg" alt=""></img>
       <img src="/metrics.plugin.rss.svg" alt=""></img>
     </td>
-    <td align="center" width="50%"><a href="https://akynzh.site">
-  <img src="/metrics.plugin.isocalendar.svg" alt=""></img></a>
+    <td align="center" width="50%">
+  <a href="https://akynzh.site">
+    <img src="/metrics.plugin.isocalendar.svg" alt=""></img>
+  </a>
       <img src="/metrics.plugin.wakatime.svg" alt=""></img>
       <img src="/metrics.plugin.languages.svg" alt=""></img>
     </td>
