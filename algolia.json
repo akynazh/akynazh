@@ -222,6 +222,19 @@
         ]
     },
     {
+        "title": "《菊与刀》文摘",
+        "uri": "posts/Book/《菊与刀》文摘",
+        "content": "5                                                                                                                                                                                                                                                                                        Thank you               I sorry                   I feel heel                                   8                                                                                                                                                                                 el valor Espanol              die Ehre",
+        "objectID": "posts/Book/《菊与刀》文摘",
+        "date": "2022-07-02T07:14:43.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": [
+            "excerpt"
+        ]
+    },
+    {
         "title": "《解忧杂货店》文摘",
         "uri": "posts/Book/《解忧杂货店》文摘",
         "content": "",
@@ -766,7 +779,7 @@
     {
         "title": "Window添加命令别名的方法",
         "uri": "posts/Study/Window添加命令别名的方法",
-        "content": "CMD              exesc                     exesc bat                                        exesc    exesc bat                     bat                    doskey                             window     powershell            powershell  alias      PowerShell         ps1 PS C  Users akyna  set alias escc esc PS C  Users akyna  escc                     function     ps1 PS C  Users akyna  function func nircmd emptybin  PS C  Users akyna  set alias ctrash func PS C  Users akyna  ctrash                        shell          export alias my alias txt        alias    shell    import alias my alias txt        PwerShell      ps1 PS C  Users akyna  remove item alias escc PS C  Users akyna  escc escc  term  escc  not recognized name cmdlet  function  script file  executable program         PowerShell             PowerShell     echo  profile      powershell                              ps1 function                                        ExecutionPolicy      RemoteSigned      Get ExecutionPolicy               PowerShell    Set ExecutionPolicy RemoteSigned       PowerShell        Ps        ps1       function ctrash   nircmd emptybin            function esc   python D  script exec_script py           github function pushsc   D  cd D  script git add   git commit  m  add modify  git push pause     powershell function updateps   winget upgrade powershell     vscode function updatevs   taskkill  f  t  im code exe move D  a VSCode  D  a vs zip Bandizip exe x  o  D  tools3 vscode Microsoft VS Code   aoa  D  a vs zip  del D  a vs zip code pause     over",
+        "content": "3     CMD        PowerShell                        CMD                    doskey       bat doskey ls echo             dir  b         echo                                            cmd     doskey                               doskey    bat               Autorun       cmd                      bat  echo off doskey ls dir  b    doskey lss echo             dir  b         echo                    HKEYLOCALMACHINE SOFTWARE Microsoft Command Processor  Autorun       doskey                                  HKEYCURRENTUSER                            doskey                                        powershell     PowerShell         PowerShell         ps1 PS C  Users akyna  set alias escc esc PS C  Users akyna  escc                     function     ps1 PS C  Users akyna  function func nircmd emptybin  PS C  Users akyna  set alias ctrash func PS C  Users akyna  ctrash                        shell          export alias my alias txt        alias    shell    import alias my alias txt        PwerShell      ps1 PS C  Users akyna  remove item alias escc PS C  Users akyna  escc escc  term  escc  not recognized name cmdlet  function  script file  executable program         PowerShell             PowerShell     echo  profile      powershell                              ps1 function                         e g      vscode      ps1   vscode function updatevs   taskkill  f  t  im code exe move D  a VSCode  D  a vs zip Bandizip exe x  o  D  tools3 vscode Microsoft VS Code   aoa  D  a vs zip  del D  a vs zip code pause                                          ExecutionPolicy  RemoteSigned           PowerShell    Set ExecutionPolicy RemoteSigned       PowerShell                             cmd                  powershell cmd                                exesc                 my_path   exesc bat                   my_path                 exesc    exesc bat                     bat                powershell cmd                                        powershell cmd              ls     cmd         cmd                      doskey     ls                                                                                 cmd powershell            powershell                                powershell                                 cmd       powershell     cmd          linux                                                  Blog  akynazh over",
         "objectID": "posts/Study/Window添加命令别名的方法",
         "date": "2022-06-24T14:52:59.000Z",
         "categories": [

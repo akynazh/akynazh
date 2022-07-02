@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://akynazh.site/categories/book/</loc>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
+  </url><url>
     <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2022-06-24T22:52:59+08:00</lastmod>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/excerpt/</loc>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/</loc>
-    <lastmod>2022-06-24T22:52:59+08:00</lastmod>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/</loc>
-    <lastmod>2022-06-24T22:52:59+08:00</lastmod>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/book/%E8%8F%8A%E4%B8%8E%E5%88%80%E6%96%87%E6%91%98/</loc>
+    <lastmod>2022-07-02T15:14:43+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/powershell/</loc>
     <lastmod>2022-06-24T22:52:59+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/study/</loc>
-    <lastmod>2022-06-24T22:52:59+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/</loc>
     <lastmod>2022-06-24T22:52:59+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/window/</loc>
@@ -40,12 +49,6 @@
   </url><url>
     <loc>https://akynazh.site/posts/study/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2022-06-09T23:18:55+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/book/</loc>
-    <lastmod>2022-06-06T22:00:13+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/excerpt/</loc>
-    <lastmod>2022-06-06T22:00:13+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/book/%E4%B9%99%E4%B8%80%E7%9F%AD%E7%AF%87%E6%91%98%E5%BD%95/</loc>
     <lastmod>2022-06-06T22:00:13+08:00</lastmod>
