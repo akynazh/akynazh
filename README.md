@@ -1,7 +1,7 @@
 <table>
   <tr>
-    <th><a href="/source/templates/terminal/README.md">📙 Terminal template</a></th>
-    <th><a href="/source/templates/markdown/README.md">📒 Markdown template</a></th>
+    <th><a href="/source/templates/terminal/README.md"> About Me </a></th>
+    <th><a href="/source/templates/markdown/README.md"> Coding Record </a></th>
   </tr>
   <tr>
     <td align="center" width="50%">
