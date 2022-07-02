@@ -344,24 +344,7 @@
     <th><a href="https://metrics.lecoq.io">📊 Metrics embed</a></th>
     <th><a href="https://metrics.lecoq.io/about">✨ Metrics insights</a></th>
   </tr>
-  <tr>
-    <td align="center">
-      Embed metrics images on your profile or blog!<br>
-      Use <a href="https://github.com/marketplace/actions/metrics-embed">GitHub actions</a> for even more features!<br>
-      <img src="/.github/readme/imgs/features_embed.gif" width="441">
-    </td>
-    <td align="center">
-      Share your metrics with friends and on social medias!<br>
-      No configuration needed!<br>
-      <img src="/.github/readme/imgs/features_insights.gif" width="441">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <b>Power user?</b><br>
-      <a href="https://github.com/lowlighter/metrics/fork">Fork this repository</a> and edit HTML, CSS, JS and <a href="https://github.com/mde/ejs">EJS</a> for even more customization!
-    </td>
-  </tr>
+
 </table>
 
 
