@@ -35,7 +35,7 @@ jobs:
           token: NOT_NEEDED
           base: ""
           plugin_wakatime: yes
-          plugin_wakatime_sections: time, projects-graphs, languages
+          plugin_wakatime_sections: time, projects-graphs, languages-graphs
           plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
           
       - name: Most used
