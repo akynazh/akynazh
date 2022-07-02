@@ -9,6 +9,7 @@
       <img src="/metrics.plugin.isocalendar.svg" alt=""></img>
     </td>
     <td align="center" width="50%">
+      <img src="/metrics.plugin.wakatime.svg" alt=""></img>
       <img src="/metrics.plugin.languages.svg" alt=""></img>
     </td>
   </tr>
