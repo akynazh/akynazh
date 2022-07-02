@@ -15,6 +15,15 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+      - name: WakaTime
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.wakatime.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
       - name: Most used
         uses: lowlighter/metrics@latest
         with:
@@ -41,7 +50,7 @@ jobs:
           base: ""
           plugin_rss: yes
           plugin_rss_source: https://akynazh.site/index.xml
-          plugin_rss_limit: 4
+          plugin_rss_limit: 5
           name: Recently used
 
 
