@@ -49,10 +49,10 @@
       // 如果是手机则改变参数
       if (isMobile()) {
         this.maxSize = 2;
-        this.maxImgSize = 10;
-        this.num = 5;
-        this.limit = 30;
-        this.speed = 25;
+        this.maxImgSize = 5;
+        this.num = 3;
+        this.limit = 10;
+        this.speed = 15;
       }
 
       // 进行配置判断 如果存在用户自定义的配置 则覆盖默认配置
