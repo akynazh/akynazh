@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eureka on Melancholy Rhapsody</title>
+    <link>https://akynazh.site/tags/eureka/</link>
+    <description>Recent content in eureka on Melancholy Rhapsody</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 17 Jul 2022 11:39:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/eureka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eureka配置过程与理解</title>
+      <link>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</guid>
+      <description>Eureka微服务架构图  服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。  引入Eureka依赖说明   client端：
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     server端：
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     7001和7002端口关键配置内容   开启EnableEurekaServer注解
+1 2 3 4 5 6 7  @SpringBootApplication @EnableEurekaServer public class EurekaMain7001 { public static void main(String[] args) { SpringApplication.run(EurekaMain7001.class, args); } }     application.yml文件配置</description>
+    </item>
+    
+  </channel>
+</rss>

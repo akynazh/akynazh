@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 12 Jul 2022 23:11:48 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 11:39:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eureka配置过程与理解</title>
+      <link>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</guid>
+      <description>Eureka微服务架构图  服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。  引入Eureka依赖说明   client端：
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     server端：
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     7001和7002端口关键配置内容   开启EnableEurekaServer注解
+1 2 3 4 5 6 7  @SpringBootApplication @EnableEurekaServer public class EurekaMain7001 { public static void main(String[] args) { SpringApplication.run(EurekaMain7001.class, args); } }     application.yml文件配置</description>
+    </item>
+    
     <item>
       <title>《雪国》文摘</title>
       <link>https://akynazh.site/posts/book/%E9%9B%AA%E5%9B%BD%E6%96%87%E6%91%98/</link>
@@ -62,6 +74,17 @@
 也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。
 优缺点 通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。
 PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3  PS C:\Users\akyna&amp;gt; set-alias escc esc PS C:\Users\akyna&amp;gt; escc .</description>
+    </item>
+    
+    <item>
+      <title>《电子邮件》</title>
+      <link>https://akynazh.site/drafts/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Sat, 18 Jun 2022 20:34:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/drafts/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/</guid>
+      <description>1. 你好，我的名字是渡边彻，平时喜欢读书和写信。
+写些什么信，写给谁？写些无意义的话语，写给自己。
+所以我不用寄信，不需要邮票，不需要考虑别人的感情。</description>
     </item>
     
     <item>
@@ -1146,10 +1169,10 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     
     <item>
       <title>Java复习笔记</title>
-      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://akynazh.site/drafts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 10 May 2021 00:12:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://akynazh.site/drafts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
   编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
   解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
@@ -1284,6 +1307,37 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
 2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。
 相应代码：
 1 2 3 4 5 6 7 8 9 10 11 12 13  typedef long long ll; bool is_prime[MAX1]; bool is_prime_small[MAX2]; void sieve(ll a, ll b) { for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime_small[i] = true; for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime[i] = true; for(int i = 2; (ll)i * i &amp;lt; b; i++) { if(is_prime_small[i]){ for(int j = 2 * i; (ll)j * j &amp;lt; b; j += i) is_prime_small[j] = false; for(ll j = max( 2ll, (a + i - 1) / i) ) * i; j &amp;lt; b; j += i) is_prime[j - a] = false; } } }   注意点：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://akynazh.site/drafts/idea/idea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://akynazh.site/drafts/idea/idea/</guid>
+      <description>IDEA开启RunDashboard 1 2 3 4 5 6 7 8 9  # .idea/workspace.xml &amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; &amp;lt;set&amp;gt; &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; &amp;lt;/set&amp;gt; &amp;lt;/option&amp;gt; &amp;lt;/component&amp;gt;   IDEA关闭拼写 1  Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo   IDEA配置快捷输入 IDEA常用快捷键 alt + ctrl + L : 格式化
+ctrl + shift + r : 替换字符
+ctrl + r : 在当前文件中替换字符
+ctrl + shift + n : 搜索类
+ctrl + f : 在当前文件下搜索字符</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://akynazh.site/drafts/mysql/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://akynazh.site/drafts/mysql/mysql/</guid>
+      <description>数据库配置 1 2 3 4 5 6  datasource: type: com.alibaba.druid.pool.DruidDataSource driver-class-name: com.mysql.cj.jdbc.Driver url: jdbc:mysql://localhost:3306/springcloudtest?serverTimezone=UTC&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=false username: root password: ******   Mysql版本对应 Mapper.xml 1 2  &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE mapper PUBLIC &amp;#34;-//mybatis.org//DTD Mapper 3.0//EN&amp;#34; &amp;#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&amp;#34;&amp;gt;   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://akynazh.site/drafts/note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://akynazh.site/drafts/note/</guid>
+      <description>更改访问权限  右键，点击属性； 切换到安全，点击高级； 在安全设置下，点击更改； 输入要选择的对象名称Everyone； 在安全设置下，勾选“替换子容器和对象的所有者”； 点击确定，弹出窗口，等待更改所有权完毕，点击确定。  vscode运行c#  下载.NET框架 将C:\Windows\Microsoft.NET\Framework64\v4.0.30319加入Path vscode下载coderunner 添加coderunner配置:  1 2 3  &amp;#34;code-runner.executorMap&amp;#34;:{ &amp;#34;csharp&amp;#34;: &amp;#34;csc /nologo /utf8output $fileName &amp;amp;&amp;amp; .\\$fileNameWithoutExt&amp;#34; },   tex文档转docx 1  pandoc divideBet.tex -o test.docx   bootstrap开发 1 2 3 4  &amp;lt;link href=&amp;#34;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;   thymeleaf开发 1  &amp;lt;html lang=&amp;#34;en&amp;#34; xmlns:th=&amp;#34;http://www.thymeleaf.org&amp;#34;&amp;gt;   vue开发 1 2 3 4 5 6 7 8 9 10  npm run serve //部署项目并开启端口监听 npm run build //部署项目到dist目录  // 开启端口监听dist内项目 npm install -g serve cd dist serve -p 8081 // 永久 nohup serve -p 8081 &amp;amp;   TS开发 安装 1 2 3  npm install -g typescript tsc -v   自动生成js 1 2 3 4 5 6 7  1).</description>
     </item>
     
     <item>

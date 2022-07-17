@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 19 May 2022 22:43:45 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 11:39:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eureka配置过程与理解</title>
+      <link>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</guid>
+      <description>Eureka微服务架构图  服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。  引入Eureka依赖说明   client端：
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     server端：
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     7001和7002端口关键配置内容   开启EnableEurekaServer注解
+1 2 3 4 5 6 7  @SpringBootApplication @EnableEurekaServer public class EurekaMain7001 { public static void main(String[] args) { SpringApplication.run(EurekaMain7001.class, args); } }     application.yml文件配置</description>
+    </item>
+    
     <item>
       <title>Synchronized到底锁了谁</title>
       <link>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</link>
@@ -134,10 +146,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Java复习笔记</title>
-      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://akynazh.site/drafts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 10 May 2021 00:12:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://akynazh.site/drafts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
   编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
   解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
