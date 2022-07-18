@@ -146,10 +146,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Java复习笔记</title>
-      <link>https://akynazh.site/drafts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 10 May 2021 00:12:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/drafts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
   编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
   解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。

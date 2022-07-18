@@ -7,6 +7,17 @@
         "type": "about"
     },
     {
+        "title": "《电子邮件》",
+        "uri": "drafts/book/电子邮件",
+        "content": "1",
+        "objectID": "drafts/book/电子邮件",
+        "date": "2022-06-18T12:34:44.000Z",
+        "categories": [
+            "Book"
+        ],
+        "tags": []
+    },
+    {
         "title": "Gallery",
         "uri": "gallery",
         "content": "",
@@ -409,6 +420,21 @@
         ]
     },
     {
+        "title": "Eureka配置过程与理解",
+        "uri": "posts/Study/Eureka配置过程与理解",
+        "content": "Eureka                  8001 8002                     80     8001 8002                   7001 7002             Eureka     client    xml org springframework cloud spring cloud starter netflix eureka client   server    xml org springframework cloud spring cloud starter netflix eureka server   7001 7002           EnableEurekaServer    java  SpringBootApplication  EnableEurekaServer public class EurekaMain7001   public static void main String   args    SpringApplication run EurekaMain7001 class  args         application yml       7001      7002       yml eureka  instance  hostname  eureka7001 com client  false              register with eureka  false false                                    fetch registry  false service url     Eureka Server                        defaultZone  http   eureka7002 com 7002 eureka      defaultZone                           eureka7001 com eureka7002 com      localhost               8001 8002           EnableEurekaClient    java  SpringBootApplication  EnableEurekaClient public class PaymentMain8001   public static void main String   args    SpringApplication run PaymentMain8001 class  args          EnableEurekaClient      Eureka       application yml     eureka       yml eureka  client  register with eureka  true            fetch registry  true        eureka           service url           defaultZone  http   eureka7001 com 7001 eureka  http   eureka7002 com 7002 eureka instance  instance id  payment8001 prefer ip address  true      instance    ip            yml spring  application  name  cloud payment service                             80           EnableEurekaClient    java  SpringBootApplication  EnableEurekaClient public class OrderMain80   public static void main String   args    SpringApplication run OrderMain80 class  args           RestTemplate         java  Configuration public class ApplicationContextConfig    Bean  LoadBalanced             public RestTemplate getRestTemplate     return new RestTemplate          Controller              java  RestController  Slf4j public class OrderController   public static final String PAYMENT_URL    http   CLOUD PAYMENT SERVICE    Resource private RestTemplate restTemplate   GetMapping   consumer payment create   public CommonResult create  RequestParam value    serial   String serial    Payment payment   new Payment 0L  serial   log info  serial      serial   return restTemplate postForObject PAYMENT_URL     payment create   payment  CommonResult class      GetMapping   consumer payment get  id    public CommonResult getPayment  PathVariable  id   Long id    return restTemplate getForObject PAYMENT_URL     payment get     id  CommonResult class             Controller   GetMapping     restTemplate getForObject   restTemplate postForObject    get post              http            application name               http   localhost 7001  http   eureka7001 com 7001                 http   localhost consumer payment get 3                   json    code  200   message             8001    data    id  3  serial   ajefskldfa        json    code  200   message             8002    data    id  3  serial   ajefskldfa",
+        "objectID": "posts/Study/Eureka配置过程与理解",
+        "date": "2022-07-17T03:39:35.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "eureka",
+            "springcloud",
+            "java"
+        ]
+    },
+    {
         "title": "Git实用操作之初始化与分支管理",
         "uri": "posts/Study/Git实用操作之初始化与分支管理",
         "content": "git          github             url                    git init            git     git add                   git        index    git commit  m  init                     git remote add origin   url             git push origin master                        git branch master   git            master          git branch  a master remotes origin master   git branch  vv master 3a31f4c init                     git                git branch  u origin devr      devr     origin       git branch  vv                             git push   push                                   git branch  u origin master Branch  master  set track remote branch  master   origin     git branch  vv master 3a31f4c  origin master  init              git     git branch  a        git branch dev   dev   git branch  d dev   dev   git checkout dev    dev   git checkout  b dev       dev   git            git fetch origin master dev    origin   master       dev   git checkout dev    dev   git merge FETCH_HEAD       commit         dev     git checkout dev     dev   git pull origin master    origin   master            commit",
@@ -534,7 +560,7 @@
     {
         "title": "Linux实用操作之修改默认配置",
         "uri": "posts/Study/Linux实用操作之修改默认配置",
-        "content": "vim tab     vim tab   vim  etc vimrc set tabstop 4            bash    vim  etc inputrc    set bell style none      vim    vim  etc vimrc    set noeb vb t_vb    vb visual bell           t_vb",
+        "content": "vim tab     vim tab   vim  etc vimrc set tabstop 4   vim       vim  etc vimrc set shiftwidth 4            bash    vim  etc inputrc    set bell style none      vim    vim  etc vimrc    set noeb vb t_vb    vb visual bell           t_vb",
         "objectID": "posts/Study/Linux实用操作之修改默认配置",
         "date": "2021-01-02T16:10:38.000Z",
         "categories": [
@@ -612,9 +638,9 @@
     {
         "title": "Linux实用操作之系统服务管理",
         "uri": "posts/Study/Linux实用操作之系统服务管理",
-        "content": "systemctl            systemctl start apache service          systemctl stop apache service        systemctl restart apache service               systemctl reload apache service              systemctl daemon reload Unit         Unit Description       Requires    unit    daemon         Service Type                     Type simple       ExecStart            Type forking   fork                         Type oneshot       Systemd                  Type dbus       D Bus   Type notify             Systemd         Type idle                     ExecStart           ExecStartPre               ExecStartPost               ExecReload              ExecStop              ExecStopPost               RestartSec               Restart        Systemd                 always       on success on failure on abnormal on abort on watchdog TimeoutSec    Systemd               Environment        Install WantedBy        Target   Unit   enable           etc systemd system     Target   wants          RequiredBy          Target   Unit   enable           etc systemd system     Target   required          Alias   Unit         Also   Unit   enable            Unit                  systemd   systemd          usr lib systemd system                      etc systemd system                  service     vim  etc systemd system test service test service  Unit  Description service test  Service  Type simple ExecStart  bin bash  c     test service sh   Install  WantedBy multi user target            bash  root VM 0 11 centos     systemctl daemon reload  root VM 0 11 centos     systemctl start test service  root VM 0 11 centos     systemctl status test service   test service   service test Loaded  loaded   etc systemd system test service  disabled  vendor preset  disabled  Active  active  running  Wed 2022 04 13 00 04 24 CST  4s ago Main PID  15428  bash  CGroup   system slice test service   15428  bin bash  c   test service sh   now    15429  bin bash  c   test service sh   now    15430   15432 sleep 30s Apr 13 00 04 24 VM 0 11 centos systemd 1   Started service test      Unit     Systemd       Unit             journalctl                           journalctl  n 20           journalctl  usr lib systemd systemd           journalctl _PID 1      Unit     journalctl  u nginx service",
+        "content": "systemctl           systemctl start my service         systemctl stop my service       systemctl restart my service              systemctl reload my service             systemctl daemon reload        systemctl enable my service        systemctl disable my service          systemctl is enabled my service         systemctl status my service       systemctl   type service service chkconfig       service my service start     service my service stop     service my service restart         service my service status           chkconfig my service on off          chkconfig   list Unit         Unit Description       Requires    unit    daemon         Service Type                     Type simple       ExecStart            Type forking   fork                         Type oneshot       Systemd                  Type dbus       D Bus   Type notify             Systemd         Type idle                     ExecStart           ExecStartPre               ExecStartPost               ExecReload              ExecStop              ExecStopPost               RestartSec               Restart        Systemd                 always       on success on failure on abnormal on abort on watchdog TimeoutSec    Systemd               Environment        Install WantedBy        Target   Unit   enable           etc systemd system     Target   wants          RequiredBy          Target   Unit   enable           etc systemd system     Target   required          Alias   Unit         Also   Unit   enable            Unit                  systemd   systemd          usr lib systemd system                      etc systemd system                  service     vim  etc systemd system test service test service  Unit  Description service test  Service  Type simple ExecStart  bin bash  c     test service sh   Install  WantedBy multi user target            bash  root VM 0 11 centos     systemctl daemon reload  root VM 0 11 centos     systemctl start test service  root VM 0 11 centos     systemctl status test service   test service   service test Loaded  loaded   etc systemd system test service  disabled  vendor preset  disabled  Active  active  running  Wed 2022 04 13 00 04 24 CST  4s ago Main PID  15428  bash  CGroup   system slice test service   15428  bin bash  c   test service sh   now    15429  bin bash  c   test service sh   now    15430   15432 sleep 30s Apr 13 00 04 24 VM 0 11 centos systemd 1   Started service test      Unit     Systemd       Unit             journalctl                           journalctl  n 20           journalctl  usr lib systemd systemd           journalctl _PID 1      Unit     journalctl  u nginx service",
         "objectID": "posts/Study/Linux实用操作之系统服务管理",
-        "date": "2022-04-12T14:42:27.000Z",
+        "date": "2022-07-18T14:42:27.000Z",
         "categories": [
             "Study"
         ],
