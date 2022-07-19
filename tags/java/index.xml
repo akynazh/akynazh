@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sun, 17 Jul 2022 11:39:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 12:00:37 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zookeeper配置过程与测试</title>
+      <link>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 19 Jul 2022 12:00:37 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+      <description>配置zookeeper环境  下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。 将zookeeper解压缩到/usr/local/zookeeper3.7.1。 编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中） 修改或添加以下内容： 1 2  dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir   注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。 配置环境变量如下： 1 2 3  # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin   接着通过source命令生效。 开启zookeeper连接（前置条件：已配好java环境）：zkServer.sh start 查看连接情况： 1 2 3 4 5 6  zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone   可见已经开启成功了。 客户端进行连接：zkCli.sh  1 2 3  [zk: localhost:2181(CONNECTED) 1] ls / [zookeeper] [zk: localhost:2181(CONNECTED) 2] get /zookeeper   编写springcloud服务代码  关于pom.</description>
+    </item>
+    
     <item>
       <title>Eureka配置过程与理解</title>
       <link>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</link>
@@ -146,10 +155,10 @@ e.g. /app/static/avatar/test.jpg
     
     <item>
       <title>Java复习笔记</title>
-      <link>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://akynazh.site/drafts/java/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 10 May 2021 00:12:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://akynazh.site/drafts/java/java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
   编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
   解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
