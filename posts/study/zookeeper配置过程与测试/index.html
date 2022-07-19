@@ -19,7 +19,15 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Zookeeper配置过程与测试" />
-<meta property="og:description" content="配置zookeeper环境  下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。 将zookeeper解压缩到/usr/local/zookeeper3.7.1。 编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中） 修改或添加以下内容： 1 2  dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir   注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。 配置环境变量如下： 1 2 3  # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin   接着通过source命令生效。 开启zookeeper连接（前置条件：已配好java环境）：zkServer.sh start 查看连接情况： 1 2 3 4 5 6  zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone   可见已经开启成功了。 客户端进行连接：zkCli.sh  1 2 3  [zk: localhost:2181(CONNECTED) 1] ls / [zookeeper] [zk: localhost:2181(CONNECTED) 2] get /zookeeper   编写springcloud服务代码  关于pom." />
+<meta property="og:description" content="配置zookeeper环境   下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。
+  将zookeeper解压缩到/usr/local/zookeeper3.7.1。
+  编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中） 修改或添加以下内容：
+1 2  dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir   注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。
+  配置环境变量如下：
+1 2 3  # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin   接着通过source命令生效。
+  开启zookeeper连接（前置条件：已配好java环境）：zkServer.sh start
+  查看连接情况：
+1 2 3 4 5 6  zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone   可见已经开启成功了。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-19T12:00:37+08:00" />
@@ -28,7 +36,15 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zookeeper配置过程与测试"/>
-<meta name="twitter:description" content="配置zookeeper环境  下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。 将zookeeper解压缩到/usr/local/zookeeper3.7.1。 编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中） 修改或添加以下内容： 1 2  dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir   注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。 配置环境变量如下： 1 2 3  # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin   接着通过source命令生效。 开启zookeeper连接（前置条件：已配好java环境）：zkServer.sh start 查看连接情况： 1 2 3 4 5 6  zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone   可见已经开启成功了。 客户端进行连接：zkCli.sh  1 2 3  [zk: localhost:2181(CONNECTED) 1] ls / [zookeeper] [zk: localhost:2181(CONNECTED) 2] get /zookeeper   编写springcloud服务代码  关于pom."/>
+<meta name="twitter:description" content="配置zookeeper环境   下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。
+  将zookeeper解压缩到/usr/local/zookeeper3.7.1。
+  编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中） 修改或添加以下内容：
+1 2  dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir   注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。
+  配置环境变量如下：
+1 2 3  # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin   接着通过source命令生效。
+  开启zookeeper连接（前置条件：已配好java环境）：zkServer.sh start
+  查看连接情况：
+1 2 3 4 5 6  zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone   可见已经开启成功了。"/>
 
   
   
@@ -163,7 +179,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fzookeeper%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E4%25B8%258E%25E6%25B5%258B%25E8%25AF%2595%2f&name=Zookeeper%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e6%b5%8b%e8%af%95&description=%e9%85%8d%e7%bd%aezookeeper%e7%8e%af%e5%a2%83%20%20%e4%b8%8b%e8%bd%bd%e5%b9%b6%e8%a7%a3%e5%8e%8bzookeeper%e5%8c%85%e4%b8%bazookeeper3.7.1%ef%bc%88%e5%81%87%e8%ae%be%e4%b8%8b%e8%bd%bd%e7%9a%84%e6%98%af3.7.1%e7%89%88%e6%9c%ac%ef%bc%89%e3%80%82%20%e5%b0%86zookeeper%e8%a7%a3%e5%8e%8b%e7%bc%a9%e5%88%b0%2fusr%2flocal%2fzookeeper3.7.1%e3%80%82%20%e7%bc%96%e8%be%91zookeeper%e5%8c%85%e5%86%85%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%2fconf%2fzoo.cfg%ef%bc%88%e5%85%88%e5%88%9b%e5%bb%ba%ef%bc%8c%e5%86%8d%e5%b0%86zoo_sample.cfg%e5%86%85%e5%ae%b9%e5%a4%8d%e5%88%b6%e5%88%b0%e5%85%b6%e4%b8%ad%ef%bc%89%20%e4%bf%ae%e6%94%b9%e6%88%96%e6%b7%bb%e5%8a%a0%e4%bb%a5%e4%b8%8b%e5%86%85%e5%ae%b9%ef%bc%9a%201%202%20%20dataDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataDir%20dataLogDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataLogDir%20%20%20%e6%b3%a8%e6%84%8f%e5%90%8c%e6%97%b6%e5%88%9b%e5%bb%ba%e5%af%b9%e5%ba%94%e6%96%87%e4%bb%b6%e5%a4%b9%e3%80%82%e5%85%b6%e4%b8%ad%e7%ab%af%e5%8f%a3%e5%8f%b7%e9%bb%98%e8%ae%a4%e4%b8%ba2181%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%e3%80%82%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e5%a6%82%e4%b8%8b%ef%bc%9a%201%202%203%20%20%23%20zookeeper%20export%20ZOOKEEPER_HOME%3d%2fusr%2flocal%2fzookeeper3.7.1%20export%20PATH%3d%24PATH%3a%24ZOOKEEPER_HOME%2fbin%20%20%20%e6%8e%a5%e7%9d%80%e9%80%9a%e8%bf%87source%e5%91%bd%e4%bb%a4%e7%94%9f%e6%95%88%e3%80%82%20%e5%bc%80%e5%90%afzookeeper%e8%bf%9e%e6%8e%a5%ef%bc%88%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6%ef%bc%9a%e5%b7%b2%e9%85%8d%e5%a5%bdjava%e7%8e%af%e5%a2%83%ef%bc%89%ef%bc%9azkServer.sh%20start%20%e6%9f%a5%e7%9c%8b%e8%bf%9e%e6%8e%a5%e6%83%85%e5%86%b5%ef%bc%9a%201%202%203%204%205%206%20%20zkServer.sh%20status%20ZooKeeper%20JMX%20enabled%20by%20default%20Using%20config%3a%20%2fusr%2flocal%2fzookeeper3.7.1%2fbin%2f..%2fconf%2fzoo.cfg%20Client%20port%20found%3a%202181.%20Client%20address%3a%20localhost.%20Client%20SSL%3a%20false.%20Mode%3a%20standalone%20%20%20%e5%8f%af%e8%a7%81%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e6%88%90%e5%8a%9f%e4%ba%86%e3%80%82%20%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bf%9b%e8%a1%8c%e8%bf%9e%e6%8e%a5%ef%bc%9azkCli.sh%20%201%202%203%20%20%5bzk%3a%20localhost%3a2181%28CONNECTED%29%201%5d%20ls%20%2f%20%5bzookeeper%5d%20%5bzk%3a%20localhost%3a2181%28CONNECTED%29%202%5d%20get%20%2fzookeeper%20%20%20%e7%bc%96%e5%86%99springcloud%e6%9c%8d%e5%8a%a1%e4%bb%a3%e7%a0%81%20%20%e5%85%b3%e4%ba%8epom." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fzookeeper%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E4%25B8%258E%25E6%25B5%258B%25E8%25AF%2595%2f&name=Zookeeper%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e6%b5%8b%e8%af%95&description=%e9%85%8d%e7%bd%aezookeeper%e7%8e%af%e5%a2%83%20%20%20%e4%b8%8b%e8%bd%bd%e5%b9%b6%e8%a7%a3%e5%8e%8bzookeeper%e5%8c%85%e4%b8%bazookeeper3.7.1%ef%bc%88%e5%81%87%e8%ae%be%e4%b8%8b%e8%bd%bd%e7%9a%84%e6%98%af3.7.1%e7%89%88%e6%9c%ac%ef%bc%89%e3%80%82%0a%20%20%e5%b0%86zookeeper%e8%a7%a3%e5%8e%8b%e7%bc%a9%e5%88%b0%2fusr%2flocal%2fzookeeper3.7.1%e3%80%82%0a%20%20%e7%bc%96%e8%be%91zookeeper%e5%8c%85%e5%86%85%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%2fconf%2fzoo.cfg%ef%bc%88%e5%85%88%e5%88%9b%e5%bb%ba%ef%bc%8c%e5%86%8d%e5%b0%86zoo_sample.cfg%e5%86%85%e5%ae%b9%e5%a4%8d%e5%88%b6%e5%88%b0%e5%85%b6%e4%b8%ad%ef%bc%89%20%e4%bf%ae%e6%94%b9%e6%88%96%e6%b7%bb%e5%8a%a0%e4%bb%a5%e4%b8%8b%e5%86%85%e5%ae%b9%ef%bc%9a%0a1%202%20%20dataDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataDir%20dataLogDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataLogDir%20%20%20%e6%b3%a8%e6%84%8f%e5%90%8c%e6%97%b6%e5%88%9b%e5%bb%ba%e5%af%b9%e5%ba%94%e6%96%87%e4%bb%b6%e5%a4%b9%e3%80%82%e5%85%b6%e4%b8%ad%e7%ab%af%e5%8f%a3%e5%8f%b7%e9%bb%98%e8%ae%a4%e4%b8%ba2181%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%e3%80%82%0a%20%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%20%20%23%20zookeeper%20export%20ZOOKEEPER_HOME%3d%2fusr%2flocal%2fzookeeper3.7.1%20export%20PATH%3d%24PATH%3a%24ZOOKEEPER_HOME%2fbin%20%20%20%e6%8e%a5%e7%9d%80%e9%80%9a%e8%bf%87source%e5%91%bd%e4%bb%a4%e7%94%9f%e6%95%88%e3%80%82%0a%20%20%e5%bc%80%e5%90%afzookeeper%e8%bf%9e%e6%8e%a5%ef%bc%88%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6%ef%bc%9a%e5%b7%b2%e9%85%8d%e5%a5%bdjava%e7%8e%af%e5%a2%83%ef%bc%89%ef%bc%9azkServer.sh%20start%0a%20%20%e6%9f%a5%e7%9c%8b%e8%bf%9e%e6%8e%a5%e6%83%85%e5%86%b5%ef%bc%9a%0a1%202%203%204%205%206%20%20zkServer.sh%20status%20ZooKeeper%20JMX%20enabled%20by%20default%20Using%20config%3a%20%2fusr%2flocal%2fzookeeper3.7.1%2fbin%2f..%2fconf%2fzoo.cfg%20Client%20port%20found%3a%202181.%20Client%20address%3a%20localhost.%20Client%20SSL%3a%20false.%20Mode%3a%20standalone%20%20%20%e5%8f%af%e8%a7%81%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e6%88%90%e5%8a%9f%e4%ba%86%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -241,10 +257,15 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="配置zookeeper环境">配置zookeeper环境</h2>
 <ol>
-<li>下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。</li>
-<li>将zookeeper解压缩到/usr/local/zookeeper3.7.1。</li>
-<li>编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中）
-修改或添加以下内容：
+<li>
+<p>下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。</p>
+</li>
+<li>
+<p>将zookeeper解压缩到/usr/local/zookeeper3.7.1。</p>
+</li>
+<li>
+<p>编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中）
+修改或添加以下内容：</p>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -255,8 +276,10 @@ if (!doNotTrack) {
 dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir
 </code></pre></td></tr></table>
 </div>
-</div>注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。</li>
-<li>配置环境变量如下：
+</div><p>注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。</p>
+</li>
+<li>
+<p>配置环境变量如下：</p>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -269,9 +292,13 @@ export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1
 export PATH=$PATH:$ZOOKEEPER_HOME/bin
 </code></pre></td></tr></table>
 </div>
-</div>接着通过source命令生效。</li>
-<li>开启zookeeper连接（前置条件：已配好java环境）：<code>zkServer.sh start</code></li>
-<li>查看连接情况：
+</div><p>接着通过source命令生效。</p>
+</li>
+<li>
+<p>开启zookeeper连接（前置条件：已配好java环境）：<code>zkServer.sh start</code></p>
+</li>
+<li>
+<p>查看连接情况：</p>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -290,9 +317,10 @@ Client port found: 2181. Client address: localhost. Client SSL: false.
 Mode: standalone
 </code></pre></td></tr></table>
 </div>
-</div>可见已经开启成功了。</li>
-<li>客户端进行连接：<code>zkCli.sh</code></li>
-</ol>
+</div><p>可见已经开启成功了。</p>
+</li>
+<li>
+<p>客户端进行连接：<code>zkCli.sh</code></p>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -305,7 +333,9 @@ Mode: standalone
 [zk: localhost:2181(CONNECTED) 2] get /zookeeper
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="编写springcloud服务代码">编写springcloud服务代码</h2>
+</div></li>
+</ol>
+<h2 id="编写springcloud服务代码">编写springcloud服务代码</h2>
 <ol>
 <li>关于pom.xml
 除了一些基本包的导入之外，关于zookeeper包的导入：
@@ -575,7 +605,7 @@ Mode: standalone
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fzookeeper%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E4%25B8%258E%25E6%25B5%258B%25E8%25AF%2595%2f&name=Zookeeper%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e6%b5%8b%e8%af%95&description=%e9%85%8d%e7%bd%aezookeeper%e7%8e%af%e5%a2%83%20%20%e4%b8%8b%e8%bd%bd%e5%b9%b6%e8%a7%a3%e5%8e%8bzookeeper%e5%8c%85%e4%b8%bazookeeper3.7.1%ef%bc%88%e5%81%87%e8%ae%be%e4%b8%8b%e8%bd%bd%e7%9a%84%e6%98%af3.7.1%e7%89%88%e6%9c%ac%ef%bc%89%e3%80%82%20%e5%b0%86zookeeper%e8%a7%a3%e5%8e%8b%e7%bc%a9%e5%88%b0%2fusr%2flocal%2fzookeeper3.7.1%e3%80%82%20%e7%bc%96%e8%be%91zookeeper%e5%8c%85%e5%86%85%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%2fconf%2fzoo.cfg%ef%bc%88%e5%85%88%e5%88%9b%e5%bb%ba%ef%bc%8c%e5%86%8d%e5%b0%86zoo_sample.cfg%e5%86%85%e5%ae%b9%e5%a4%8d%e5%88%b6%e5%88%b0%e5%85%b6%e4%b8%ad%ef%bc%89%20%e4%bf%ae%e6%94%b9%e6%88%96%e6%b7%bb%e5%8a%a0%e4%bb%a5%e4%b8%8b%e5%86%85%e5%ae%b9%ef%bc%9a%201%202%20%20dataDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataDir%20dataLogDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataLogDir%20%20%20%e6%b3%a8%e6%84%8f%e5%90%8c%e6%97%b6%e5%88%9b%e5%bb%ba%e5%af%b9%e5%ba%94%e6%96%87%e4%bb%b6%e5%a4%b9%e3%80%82%e5%85%b6%e4%b8%ad%e7%ab%af%e5%8f%a3%e5%8f%b7%e9%bb%98%e8%ae%a4%e4%b8%ba2181%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%e3%80%82%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e5%a6%82%e4%b8%8b%ef%bc%9a%201%202%203%20%20%23%20zookeeper%20export%20ZOOKEEPER_HOME%3d%2fusr%2flocal%2fzookeeper3.7.1%20export%20PATH%3d%24PATH%3a%24ZOOKEEPER_HOME%2fbin%20%20%20%e6%8e%a5%e7%9d%80%e9%80%9a%e8%bf%87source%e5%91%bd%e4%bb%a4%e7%94%9f%e6%95%88%e3%80%82%20%e5%bc%80%e5%90%afzookeeper%e8%bf%9e%e6%8e%a5%ef%bc%88%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6%ef%bc%9a%e5%b7%b2%e9%85%8d%e5%a5%bdjava%e7%8e%af%e5%a2%83%ef%bc%89%ef%bc%9azkServer.sh%20start%20%e6%9f%a5%e7%9c%8b%e8%bf%9e%e6%8e%a5%e6%83%85%e5%86%b5%ef%bc%9a%201%202%203%204%205%206%20%20zkServer.sh%20status%20ZooKeeper%20JMX%20enabled%20by%20default%20Using%20config%3a%20%2fusr%2flocal%2fzookeeper3.7.1%2fbin%2f..%2fconf%2fzoo.cfg%20Client%20port%20found%3a%202181.%20Client%20address%3a%20localhost.%20Client%20SSL%3a%20false.%20Mode%3a%20standalone%20%20%20%e5%8f%af%e8%a7%81%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e6%88%90%e5%8a%9f%e4%ba%86%e3%80%82%20%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bf%9b%e8%a1%8c%e8%bf%9e%e6%8e%a5%ef%bc%9azkCli.sh%20%201%202%203%20%20%5bzk%3a%20localhost%3a2181%28CONNECTED%29%201%5d%20ls%20%2f%20%5bzookeeper%5d%20%5bzk%3a%20localhost%3a2181%28CONNECTED%29%202%5d%20get%20%2fzookeeper%20%20%20%e7%bc%96%e5%86%99springcloud%e6%9c%8d%e5%8a%a1%e4%bb%a3%e7%a0%81%20%20%e5%85%b3%e4%ba%8epom." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fzookeeper%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E4%25B8%258E%25E6%25B5%258B%25E8%25AF%2595%2f&name=Zookeeper%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e6%b5%8b%e8%af%95&description=%e9%85%8d%e7%bd%aezookeeper%e7%8e%af%e5%a2%83%20%20%20%e4%b8%8b%e8%bd%bd%e5%b9%b6%e8%a7%a3%e5%8e%8bzookeeper%e5%8c%85%e4%b8%bazookeeper3.7.1%ef%bc%88%e5%81%87%e8%ae%be%e4%b8%8b%e8%bd%bd%e7%9a%84%e6%98%af3.7.1%e7%89%88%e6%9c%ac%ef%bc%89%e3%80%82%0a%20%20%e5%b0%86zookeeper%e8%a7%a3%e5%8e%8b%e7%bc%a9%e5%88%b0%2fusr%2flocal%2fzookeeper3.7.1%e3%80%82%0a%20%20%e7%bc%96%e8%be%91zookeeper%e5%8c%85%e5%86%85%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%2fconf%2fzoo.cfg%ef%bc%88%e5%85%88%e5%88%9b%e5%bb%ba%ef%bc%8c%e5%86%8d%e5%b0%86zoo_sample.cfg%e5%86%85%e5%ae%b9%e5%a4%8d%e5%88%b6%e5%88%b0%e5%85%b6%e4%b8%ad%ef%bc%89%20%e4%bf%ae%e6%94%b9%e6%88%96%e6%b7%bb%e5%8a%a0%e4%bb%a5%e4%b8%8b%e5%86%85%e5%ae%b9%ef%bc%9a%0a1%202%20%20dataDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataDir%20dataLogDir%3d%2fusr%2flocal%2fzookeeper3.7.1%2fdataLogDir%20%20%20%e6%b3%a8%e6%84%8f%e5%90%8c%e6%97%b6%e5%88%9b%e5%bb%ba%e5%af%b9%e5%ba%94%e6%96%87%e4%bb%b6%e5%a4%b9%e3%80%82%e5%85%b6%e4%b8%ad%e7%ab%af%e5%8f%a3%e5%8f%b7%e9%bb%98%e8%ae%a4%e4%b8%ba2181%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%e3%80%82%0a%20%20%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%20%20%23%20zookeeper%20export%20ZOOKEEPER_HOME%3d%2fusr%2flocal%2fzookeeper3.7.1%20export%20PATH%3d%24PATH%3a%24ZOOKEEPER_HOME%2fbin%20%20%20%e6%8e%a5%e7%9d%80%e9%80%9a%e8%bf%87source%e5%91%bd%e4%bb%a4%e7%94%9f%e6%95%88%e3%80%82%0a%20%20%e5%bc%80%e5%90%afzookeeper%e8%bf%9e%e6%8e%a5%ef%bc%88%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6%ef%bc%9a%e5%b7%b2%e9%85%8d%e5%a5%bdjava%e7%8e%af%e5%a2%83%ef%bc%89%ef%bc%9azkServer.sh%20start%0a%20%20%e6%9f%a5%e7%9c%8b%e8%bf%9e%e6%8e%a5%e6%83%85%e5%86%b5%ef%bc%9a%0a1%202%203%204%205%206%20%20zkServer.sh%20status%20ZooKeeper%20JMX%20enabled%20by%20default%20Using%20config%3a%20%2fusr%2flocal%2fzookeeper3.7.1%2fbin%2f..%2fconf%2fzoo.cfg%20Client%20port%20found%3a%202181.%20Client%20address%3a%20localhost.%20Client%20SSL%3a%20false.%20Mode%3a%20standalone%20%20%20%e5%8f%af%e8%a7%81%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e6%88%90%e5%8a%9f%e4%ba%86%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
