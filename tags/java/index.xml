@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 19 Jul 2022 12:00:37 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 16:34:39 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consul配置过程及测试</title>
+      <link>https://akynazh.site/posts/study/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 19 Jul 2022 16:34:39 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</guid>
+      <description>前言 类似于zookeeper和eureka，也起到微服务注册中心的作用。
+配置Consul环境  下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。  编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于consul包的导入： 1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-consul-discovery&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;    关于application.yml  1 2 3 4 5 6 7 8 9 10  spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name}   启动类添加@EnableDiscoveryClient注解。  consul测试 较为简单，访问localhost:8500查看即可。
+From My Blog: akynazh.
+Over.</description>
+    </item>
+    
     <item>
       <title>Zookeeper配置过程与测试</title>
       <link>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
