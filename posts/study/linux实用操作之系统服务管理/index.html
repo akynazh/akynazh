@@ -399,21 +399,23 @@ Apr <span style="color:#ff0;font-weight:bold">13</span> 00:04:24 VM-0-11-centos 
 </div><h2 id="查看unit启动日志">查看Unit启动日志</h2>
 <p>Systemd统一管理了所有Unit的启动日志，因此只需要使用journalctl命令就可以查看到服务的日志。</p>
 <ol>
-<li>显示尾部指定行数的日志</li>
-</ol>
+<li>
+<p>显示尾部指定行数的日志</p>
 <p><code>journalctl -n 20</code></p>
-<ol start="2">
-<li>查看指定服务的日志</li>
-</ol>
+</li>
+<li>
+<p>查看指定服务的日志</p>
 <p><code>journalctl /usr/lib/systemd/systemd</code></p>
-<ol start="3">
-<li>查看指定进程的日志</li>
-</ol>
+</li>
+<li>
+<p>查看指定进程的日志</p>
 <p><code>journalctl _PID=1</code></p>
-<ol start="4">
-<li>查看某个 Unit 的日志</li>
-</ol>
+</li>
+<li>
+<p>查看某个 Unit 的日志</p>
 <p><code>journalctl -u nginx.service</code></p>
+</li>
+</ol>
 
     </div>
   </article>
