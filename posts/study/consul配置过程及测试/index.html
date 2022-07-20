@@ -19,8 +19,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Consul配置过程及测试" />
-<meta property="og:description" content="前言 类似于zookeeper和eureka，也起到微服务注册中心的作用。
-配置Consul环境  下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。  编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于consul包的导入： 1 2 3 4  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-consul-discovery&lt;/artifactId&gt; &lt;/dependency&gt;    关于application.yml  1 2 3 4 5 6 7 8 9 10  spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name}   启动类添加@EnableDiscoveryClient注解。  consul测试 较为简单，访问localhost:8500查看即可。
+<meta property="og:description" content="前言 类似于zookeeper和eureka，也起到微服务注册中心的作用, 满足分布式系统中的CP原则，是弱可用性的。
+不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。
+配置Consul环境  下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。  编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于consul包的导入：  1 2 3 4  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-consul-discovery&lt;/artifactId&gt; &lt;/dependency&gt;   关于application.yml  1 2 3 4 5 6 7 8 9 10  spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name}   启动类添加@EnableDiscoveryClient注解。  consul测试 较为简单，访问localhost:8500查看即可。
 From My Blog: akynazh.
 Over." />
 <meta property="og:type" content="article" />
@@ -31,8 +32,9 @@ Over." />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Consul配置过程及测试"/>
-<meta name="twitter:description" content="前言 类似于zookeeper和eureka，也起到微服务注册中心的作用。
-配置Consul环境  下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。  编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于consul包的导入： 1 2 3 4  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-consul-discovery&lt;/artifactId&gt; &lt;/dependency&gt;    关于application.yml  1 2 3 4 5 6 7 8 9 10  spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name}   启动类添加@EnableDiscoveryClient注解。  consul测试 较为简单，访问localhost:8500查看即可。
+<meta name="twitter:description" content="前言 类似于zookeeper和eureka，也起到微服务注册中心的作用, 满足分布式系统中的CP原则，是弱可用性的。
+不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。
+配置Consul环境  下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。  编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于consul包的导入：  1 2 3 4  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-consul-discovery&lt;/artifactId&gt; &lt;/dependency&gt;   关于application.yml  1 2 3 4 5 6 7 8 9 10  spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name}   启动类添加@EnableDiscoveryClient注解。  consul测试 较为简单，访问localhost:8500查看即可。
 From My Blog: akynazh.
 Over."/>
 
@@ -169,7 +171,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fconsul%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E5%258F%258A%25E6%25B5%258B%25E8%25AF%2595%2f&name=Consul%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e5%8f%8a%e6%b5%8b%e8%af%95&description=%e5%89%8d%e8%a8%80%20%e7%b1%bb%e4%bc%bc%e4%ba%8ezookeeper%e5%92%8ceureka%ef%bc%8c%e4%b9%9f%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%e3%80%82%0a%e9%85%8d%e7%bd%aeConsul%e7%8e%af%e5%a2%83%20%20%e4%b8%8b%e8%bd%bdconsul%ef%bc%8c%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e3%80%82%20%e8%bf%90%e8%a1%8cconsul%20agent%20-dev%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1%e3%80%82%20%e9%bb%98%e8%ae%a4%e7%ab%af%e5%8f%a3%e4%b8%ba8500%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e8%bf%9b%e5%85%a5%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%20%20%e7%bc%96%e5%86%99springcloud%e6%9c%8d%e5%8a%a1%e4%bb%a3%e7%a0%81%20%20%e5%85%b3%e4%ba%8epom.xml%20%e9%99%a4%e4%ba%86%e4%b8%80%e4%ba%9b%e5%9f%ba%e6%9c%ac%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%e4%b9%8b%e5%a4%96%ef%bc%8c%e5%85%b3%e4%ba%8econsul%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%ef%bc%9a%201%202%203%204%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-consul-discovery%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%20%e5%85%b3%e4%ba%8eapplication.yml%20%201%202%203%204%205%206%207%208%209%2010%20%20spring%3a%20application%3a%20name%3a%20cloud-consumer-order%20cloud%3a%20consul%3a%20host%3a%20localhost%20port%3a%208500%20discovery%3a%20service-name%3a%20%24%7bspring.application.name%7d%20%20%20%e5%90%af%e5%8a%a8%e7%b1%bb%e6%b7%bb%e5%8a%a0%40EnableDiscoveryClient%e6%b3%a8%e8%a7%a3%e3%80%82%20%20consul%e6%b5%8b%e8%af%95%20%e8%be%83%e4%b8%ba%e7%ae%80%e5%8d%95%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e6%9f%a5%e7%9c%8b%e5%8d%b3%e5%8f%af%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fconsul%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E5%258F%258A%25E6%25B5%258B%25E8%25AF%2595%2f&name=Consul%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e5%8f%8a%e6%b5%8b%e8%af%95&description=%e5%89%8d%e8%a8%80%20%e7%b1%bb%e4%bc%bc%e4%ba%8ezookeeper%e5%92%8ceureka%ef%bc%8c%e4%b9%9f%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%2c%20%e6%bb%a1%e8%b6%b3%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84CP%e5%8e%9f%e5%88%99%ef%bc%8c%e6%98%af%e5%bc%b1%e5%8f%af%e7%94%a8%e6%80%a7%e7%9a%84%e3%80%82%0a%e4%b8%8d%e5%90%8c%e4%ba%8ezookeeper%e5%92%8ceureka%e8%bf%99%e4%b8%a4%e7%a7%8d%e4%b8%bb%e8%a6%81%e7%94%b1Java%e7%bc%96%e5%86%99%e7%9a%84%e8%af%ad%e8%a8%80%ef%bc%8c%e5%ae%83%e4%b8%bb%e8%a6%81%e7%94%b1Go%e8%af%ad%e8%a8%80%e7%bc%96%e5%86%99%e3%80%82%0a%e9%85%8d%e7%bd%aeConsul%e7%8e%af%e5%a2%83%20%20%e4%b8%8b%e8%bd%bdconsul%ef%bc%8c%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e3%80%82%20%e8%bf%90%e8%a1%8cconsul%20agent%20-dev%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1%e3%80%82%20%e9%bb%98%e8%ae%a4%e7%ab%af%e5%8f%a3%e4%b8%ba8500%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e8%bf%9b%e5%85%a5%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%20%20%e7%bc%96%e5%86%99springcloud%e6%9c%8d%e5%8a%a1%e4%bb%a3%e7%a0%81%20%20%e5%85%b3%e4%ba%8epom.xml%20%e9%99%a4%e4%ba%86%e4%b8%80%e4%ba%9b%e5%9f%ba%e6%9c%ac%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%e4%b9%8b%e5%a4%96%ef%bc%8c%e5%85%b3%e4%ba%8econsul%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%ef%bc%9a%20%201%202%203%204%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-consul-discovery%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%e5%85%b3%e4%ba%8eapplication.yml%20%201%202%203%204%205%206%207%208%209%2010%20%20spring%3a%20application%3a%20name%3a%20cloud-consumer-order%20cloud%3a%20consul%3a%20host%3a%20localhost%20port%3a%208500%20discovery%3a%20service-name%3a%20%24%7bspring.application.name%7d%20%20%20%e5%90%af%e5%8a%a8%e7%b1%bb%e6%b7%bb%e5%8a%a0%40EnableDiscoveryClient%e6%b3%a8%e8%a7%a3%e3%80%82%20%20consul%e6%b5%8b%e8%af%95%20%e8%be%83%e4%b8%ba%e7%ae%80%e5%8d%95%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e6%9f%a5%e7%9c%8b%e5%8d%b3%e5%8f%af%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -213,7 +215,7 @@ if (!doNotTrack) {
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          1 minute read
+          2 minute read
         </div>
         
         
@@ -247,7 +249,8 @@ if (!doNotTrack) {
     
     <div class="content" itemprop="articleBody">
       <h2 id="前言">前言</h2>
-<p>类似于zookeeper和eureka，也起到微服务注册中心的作用。</p>
+<p>类似于zookeeper和eureka，也起到微服务注册中心的作用, 满足分布式系统中的CP原则，是弱可用性的。</p>
+<p>不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。</p>
 <h2 id="配置consul环境">配置Consul环境</h2>
 <ol>
 <li>下载consul，配置环境变量。</li>
@@ -257,7 +260,8 @@ if (!doNotTrack) {
 <h2 id="编写springcloud服务代码">编写springcloud服务代码</h2>
 <ol>
 <li>关于pom.xml
-除了一些基本包的导入之外，关于consul包的导入：
+除了一些基本包的导入之外，关于consul包的导入：</li>
+</ol>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
@@ -272,7 +276,7 @@ if (!doNotTrack) {
 <span style="font-weight:bold">&lt;/dependency&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div></li>
+</div><ol start="2">
 <li>关于application.yml</li>
 </ol>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -410,7 +414,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fconsul%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E5%258F%258A%25E6%25B5%258B%25E8%25AF%2595%2f&name=Consul%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e5%8f%8a%e6%b5%8b%e8%af%95&description=%e5%89%8d%e8%a8%80%20%e7%b1%bb%e4%bc%bc%e4%ba%8ezookeeper%e5%92%8ceureka%ef%bc%8c%e4%b9%9f%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%e3%80%82%0a%e9%85%8d%e7%bd%aeConsul%e7%8e%af%e5%a2%83%20%20%e4%b8%8b%e8%bd%bdconsul%ef%bc%8c%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e3%80%82%20%e8%bf%90%e8%a1%8cconsul%20agent%20-dev%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1%e3%80%82%20%e9%bb%98%e8%ae%a4%e7%ab%af%e5%8f%a3%e4%b8%ba8500%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e8%bf%9b%e5%85%a5%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%20%20%e7%bc%96%e5%86%99springcloud%e6%9c%8d%e5%8a%a1%e4%bb%a3%e7%a0%81%20%20%e5%85%b3%e4%ba%8epom.xml%20%e9%99%a4%e4%ba%86%e4%b8%80%e4%ba%9b%e5%9f%ba%e6%9c%ac%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%e4%b9%8b%e5%a4%96%ef%bc%8c%e5%85%b3%e4%ba%8econsul%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%ef%bc%9a%201%202%203%204%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-consul-discovery%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%20%e5%85%b3%e4%ba%8eapplication.yml%20%201%202%203%204%205%206%207%208%209%2010%20%20spring%3a%20application%3a%20name%3a%20cloud-consumer-order%20cloud%3a%20consul%3a%20host%3a%20localhost%20port%3a%208500%20discovery%3a%20service-name%3a%20%24%7bspring.application.name%7d%20%20%20%e5%90%af%e5%8a%a8%e7%b1%bb%e6%b7%bb%e5%8a%a0%40EnableDiscoveryClient%e6%b3%a8%e8%a7%a3%e3%80%82%20%20consul%e6%b5%8b%e8%af%95%20%e8%be%83%e4%b8%ba%e7%ae%80%e5%8d%95%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e6%9f%a5%e7%9c%8b%e5%8d%b3%e5%8f%af%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fconsul%25E9%2585%258D%25E7%25BD%25AE%25E8%25BF%2587%25E7%25A8%258B%25E5%258F%258A%25E6%25B5%258B%25E8%25AF%2595%2f&name=Consul%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e5%8f%8a%e6%b5%8b%e8%af%95&description=%e5%89%8d%e8%a8%80%20%e7%b1%bb%e4%bc%bc%e4%ba%8ezookeeper%e5%92%8ceureka%ef%bc%8c%e4%b9%9f%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%2c%20%e6%bb%a1%e8%b6%b3%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84CP%e5%8e%9f%e5%88%99%ef%bc%8c%e6%98%af%e5%bc%b1%e5%8f%af%e7%94%a8%e6%80%a7%e7%9a%84%e3%80%82%0a%e4%b8%8d%e5%90%8c%e4%ba%8ezookeeper%e5%92%8ceureka%e8%bf%99%e4%b8%a4%e7%a7%8d%e4%b8%bb%e8%a6%81%e7%94%b1Java%e7%bc%96%e5%86%99%e7%9a%84%e8%af%ad%e8%a8%80%ef%bc%8c%e5%ae%83%e4%b8%bb%e8%a6%81%e7%94%b1Go%e8%af%ad%e8%a8%80%e7%bc%96%e5%86%99%e3%80%82%0a%e9%85%8d%e7%bd%aeConsul%e7%8e%af%e5%a2%83%20%20%e4%b8%8b%e8%bd%bdconsul%ef%bc%8c%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e3%80%82%20%e8%bf%90%e8%a1%8cconsul%20agent%20-dev%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1%e3%80%82%20%e9%bb%98%e8%ae%a4%e7%ab%af%e5%8f%a3%e4%b8%ba8500%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e8%bf%9b%e5%85%a5%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%20%20%e7%bc%96%e5%86%99springcloud%e6%9c%8d%e5%8a%a1%e4%bb%a3%e7%a0%81%20%20%e5%85%b3%e4%ba%8epom.xml%20%e9%99%a4%e4%ba%86%e4%b8%80%e4%ba%9b%e5%9f%ba%e6%9c%ac%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%e4%b9%8b%e5%a4%96%ef%bc%8c%e5%85%b3%e4%ba%8econsul%e5%8c%85%e7%9a%84%e5%af%bc%e5%85%a5%ef%bc%9a%20%201%202%203%204%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-consul-discovery%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%e5%85%b3%e4%ba%8eapplication.yml%20%201%202%203%204%205%206%207%208%209%2010%20%20spring%3a%20application%3a%20name%3a%20cloud-consumer-order%20cloud%3a%20consul%3a%20host%3a%20localhost%20port%3a%208500%20discovery%3a%20service-name%3a%20%24%7bspring.application.name%7d%20%20%20%e5%90%af%e5%8a%a8%e7%b1%bb%e6%b7%bb%e5%8a%a0%40EnableDiscoveryClient%e6%b3%a8%e8%a7%a3%e3%80%82%20%20consul%e6%b5%8b%e8%af%95%20%e8%be%83%e4%b8%ba%e7%ae%80%e5%8d%95%ef%bc%8c%e8%ae%bf%e9%97%aelocalhost%3a8500%e6%9f%a5%e7%9c%8b%e5%8d%b3%e5%8f%af%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
