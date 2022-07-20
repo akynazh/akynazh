@@ -954,6 +954,21 @@
         ]
     },
     {
+        "title": "理解Ribbon并自己实现负载均衡",
+        "uri": "posts/Study/理解Ribbon并自己实现负载均衡",
+        "content": "LB                                                                          LB    LB    LB                   LB             Nginx    F5                                        LB  LB                                                         Ribbon     LB                                      Ribbon              eureka   ribbon   xml org springframework cloud spring cloud starter netflix eureka client         java  Configuration public class ApplicationContextConfig    Bean  LoadBalanced             public RestTemplate getRestTemplate     return new RestTemplate                         Ribbon               IRule                          RoundRobinRule               RandomRule                            java  Configuration public class MyRibbonRule    Bean public IRule myRule     return new RandomRule                     java  SpringBootApplication  EnableEurekaClient  RibbonClient name  CLOUD PAYMENT SERVICE   configuration   MyRibbonRule class  public class OrderMain80   public static void main String   args    SpringApplication run OrderMain80 class  args                    LB                             ServiceInstance   java public interface LoadBalancer   ServiceInstance getServiceInstance List instances                   instances       instances     java  Component public class MyLoadBalancer implements LoadBalancer   private AtomicInteger aint   new AtomicInteger 0   public final int myCAS     int expect  next         expect   aint get    next    expect   1    Integer MAX_VALUE   aint compareAndSet expect  next   return next       Override public ServiceInstance getServiceInstance List instances     instances    null    instances size   instances   discoveryClient getInstances  CLOUD PAYMENT SERVICE    ServiceInstance instance   loadBalancer getServiceInstance instances   log info  lbtest      instance getUri   toString     return restTemplate getForObject instance getUri       payment lb   String class       Blog  akynazh  Over",
+        "objectID": "posts/Study/理解Ribbon并自己实现负载均衡",
+        "date": "2022-07-20T09:07:35.000Z",
+        "categories": [
+            "Study"
+        ],
+        "tags": [
+            "java",
+            "springcloud",
+            "ribbon"
+        ]
+    },
+    {
         "title": "矩阵快速幂的介绍及其应用",
         "uri": "posts/Study/矩阵快速幂的介绍及其应用",
         "content": "n n   A   A k               n k    n    n     i   j    Aij          A k  n    n    i  j    Aij        10 9 7    1 0   if n   1    1  res   res   x   mod                  x   x   x   mod          n     1            return res                   Matrix Pow_Mod Matrix m          Matrix M  for int   1     1            return M       Mul               Matrix Mul Matrix m1  Matrix m2              Matrix M  for int   1  2          n   m        f 1    f 2          f n                     p                                                                                                                                                                                                                                 n     f n 2  1                       long long n  mod  sum   0  struct Matrix  long long mat3     Matrix Mul Matrix m  Matrix mf  int t          m  mf m  Matrix M  for int   1   Fn 2  Fn 1         2        while num    if num   1  mf   Mul m  mf  1   m   Mul m  m  2   num     1    return m_f mat1    int main     scanf   lld lld    n   mod   sum   Pow_Mod n    1     f 1      f n    f n 2  1 printf   lld   sum   mod   return 0",

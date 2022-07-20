@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 19 Jul 2022 16:34:39 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 17:07:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>理解Ribbon并自己实现负载均衡</title>
+      <link>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <pubDate>Wed, 20 Jul 2022 17:07:35 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <description>负载均衡（LB）是什么 对于用户的某个请求，将有多个相同功能的服务点服务该请求，某个服务点挂了，其他服务点还是可以进行服务，这样就实现了系统的高可用。
+关于集中式LB和进程内LB 集中式LB 在服务的消费方和提供方之间使用独立的LB设施，（软硬件均可，软件如Nginx，硬件如F5），由该设施负责把访问请求通过某种策略（可自行指定）转发至服务的提供方。
+进程内LB 将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务点进行服务。
+Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消费方通过它获取服务提供方的地址。
+使用Ribbon实现负载均衡  关于导包 注意eureka内置了ribbon。 1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 已经包含了ribbon --&amp;gt; &amp;lt;/dependency&amp;gt;    开启注解 1 2 3 4 5 6 7 8  @Configuration public class ApplicationContextConfig { @Bean @LoadBalanced // 赋予负载均衡能力  public RestTemplate getRestTemplate() { return new RestTemplate(); } }    访问相同服务名地址即可。  修改Ribbon负载均衡规则 所有规则均实现了IRule接口，通过查看接口实现类即可知道规则的种类。
+默认是RoundRobinRule（轮询）这一规则。
+下面修改为RandomRule（随机）这一规则：
+ 在启动类扫描不到的包下创建规则： 1 2 3 4 5 6 7  @Configuration public class MyRibbonRule { @Bean public IRule myRule() { return new RandomRule(); } }    在启动类指定规则： 1 2 3 4 5 6 7 8  @SpringBootApplication @EnableEurekaClient @RibbonClient(name=&amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;, configuration = MyRibbonRule.</description>
+    </item>
+    
     <item>
       <title>Consul配置过程及测试</title>
       <link>https://akynazh.site/posts/study/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</link>
