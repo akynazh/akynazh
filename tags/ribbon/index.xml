@@ -18,7 +18,7 @@
 关于集中式LB和进程内LB 集中式LB 在服务的消费方和提供方之间使用独立的LB设施，（软硬件均可，软件如Nginx，硬件如F5），由该设施负责把访问请求通过某种策略（可自行指定）转发至服务的提供方。
 进程内LB 将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务点进行服务。
 Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消费方通过它获取服务提供方的地址。
-使用Ribbon实现负载均衡  关于导包 注意eureka内置了ribbon。 1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 已经包含了ribbon --&amp;gt; &amp;lt;/dependency&amp;gt;    开启注解 1 2 3 4 5 6 7 8  @Configuration public class ApplicationContextConfig { @Bean @LoadBalanced // 赋予负载均衡能力  public RestTemplate getRestTemplate() { return new RestTemplate(); } }    访问相同服务名地址即可。  修改Ribbon负载均衡规则 所有规则均实现了IRule接口，通过查看接口实现类即可知道规则的种类。
+使用Ribbon实现负载均衡  关于导包 1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 已经包含了ribbon --&amp;gt; &amp;lt;/dependency&amp;gt;   注意eureka内置了ribbon。 开启注解 1 2 3 4 5 6 7 8  @Configuration public class ApplicationContextConfig { @Bean @LoadBalanced // 赋予负载均衡能力  public RestTemplate getRestTemplate() { return new RestTemplate(); } }    访问相同服务名地址即可。  修改Ribbon负载均衡规则 所有规则均实现了IRule接口，通过查看接口实现类即可知道规则的种类。
 默认是RoundRobinRule（轮询）这一规则。
 下面修改为RandomRule（随机）这一规则：
  在启动类扫描不到的包下创建规则： 1 2 3 4 5 6 7  @Configuration public class MyRibbonRule { @Bean public IRule myRule() { return new RandomRule(); } }    在启动类指定规则： 1 2 3 4 5 6 7 8  @SpringBootApplication @EnableEurekaClient @RibbonClient(name=&amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;, configuration = MyRibbonRule.</description>
