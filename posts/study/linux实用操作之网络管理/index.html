@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  <link rel="stylesheet" href="https://akynazh.site/css/search.css" />
-  <link rel="stylesheet" href="https://akynazh.site/css/blockquote.css" />
-
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-regular-400.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
   <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Linux实用操作之网络管理 | Melancholy Rhapsody</title>
-  <link rel = 'canonical' href = 'https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/'>
+  <link rel='canonical' href='https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/'>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -46,15 +47,16 @@ URL : http://www.cip.cc/${my_ip}
 
   
   
-    
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.a03c873c5073ef0a3d3f9243e599570f7b62a88678eee622c0a38638752cc74dfebd95b905a51c1898241037fedf257844836da1ba6b28b6280ea444df35c9f5.css" integrity="sha512-oDyHPFBz7wo9P5JD5ZlXD3tiqIZ47uYiwKOGOHUsx03&#43;vZW5BaUcGJgkEDf&#43;3yV4RINtobprKLYoDqRE3zXJ9Q=="> 
+  
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.e3651ad593c0b08c12a1df3660f1212df19a068952fcf75ae5a4371715cc78f3917db7df3b994c1dbb07f51f2991eab265ae5cc32af53d1cf2f0df511d7e54cd.css" integrity="sha512-42Ua1ZPAsIwSod82YPEhLfGaBolS/Pda5aQ3FxXMePORfbffO5lMHbsH9R8pkeqyZa5cwyr1PRzy8N9RHX5UzQ==">
 
   
   
+  <link rel="stylesheet" href="https://akynazh.site/css/my-style.css"> 
   
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -68,7 +70,7 @@ URL : http://www.cip.cc/${my_ip}
   
   
   
-    
+  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -83,7 +85,6 @@ if (!doNotTrack) {
   
   
 </head>
-
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
@@ -259,32 +260,32 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="查看内网ip">查看内网IP</h2>
 <p>grep抓取inet行，sed删除inet字串和netmask.*字串</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">alias myip=&#34; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&#34;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">alias myip=&#34; ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/inet//g&#39; | sed &#39;s/netmask.*$//g&#39;&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p>test:</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos ~]# myip
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos ~]# myip
          172.17.0.11
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="查看外网ip">查看外网IP</h2>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl cip.cc
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl cip.cc
 </code></pre></td></tr></table>
 </div>
 </div><p>show:</p>
@@ -294,22 +295,22 @@ if (!doNotTrack) {
 <p>数据三  : 中国北京北京 | 腾讯</p>
 <p>URL     : <a href="http://www.cip.cc/$%7Bmy_ip%7D">http://www.cip.cc/${my_ip}</a></p>
 <h2 id="查看ip端口状况">查看IP端口状况</h2>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># netstat -ntlp</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># netstat -ntlp</span>
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
-tcp        <span style="color:#ff0;font-weight:bold">0</span>      <span style="color:#ff0;font-weight:bold">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1089/sshd
+tcp        <span style="color:#f60">0</span>      <span style="color:#f60">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1089/sshd
 
-tcp6       <span style="color:#ff0;font-weight:bold">0</span>      <span style="color:#ff0;font-weight:bold">0</span> :::3306                 :::*                    LISTEN      14528/mysqld
+tcp6       <span style="color:#f60">0</span>      <span style="color:#f60">0</span> :::3306                 :::*                    LISTEN      14528/mysqld
 </code></pre></td></tr></table>
 </div>
 </div><p>参数说明：</p>
@@ -321,48 +322,48 @@ tcp6       <span style="color:#ff0;font-weight:bold">0</span>      <span style="
 </ul>
 <p>另外一种方法：</p>
 <p>获取3306端口运行状况：</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># lsof -i:3306</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># lsof -i:3306</span>
 COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-mysqld  <span style="color:#ff0;font-weight:bold">14528</span> mysql   17u  IPv6 <span style="color:#ff0;font-weight:bold">779103</span>      0t0  TCP *:mysql (LISTEN)
+mysqld  <span style="color:#f60">14528</span> mysql   17u  IPv6 <span style="color:#f60">779103</span>      0t0  TCP *:mysql (LISTEN)
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="开启与关闭端口">开启与关闭端口</h2>
 <p>这里实验环境为centos7.9，我采用firewall来实现需求。</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#007f7f"># 首先打开防火墙服务</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># systemctl start firewalld </span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># 首先打开防火墙服务</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># systemctl start firewalld </span>
 
-<span style="color:#007f7f"># 永久开启80端口</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># firewall-cmd --zone=public --add-port=8080/tcp --permanent </span>
+<span style="color:#0f0"># 永久开启80端口</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># firewall-cmd --zone=public --add-port=8080/tcp --permanent </span>
 
-<span style="color:#007f7f"># 使生效</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># firewall-cmd --reload</span>
+<span style="color:#0f0"># 使生效</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># firewall-cmd --reload</span>
 
-<span style="color:#007f7f"># 查看已经开启的端口</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># firewall-cmd --zone=public --list-ports</span>
+<span style="color:#0f0"># 查看已经开启的端口</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># firewall-cmd --zone=public --list-ports</span>
 8080/tcp 3306/tcp 80/tcp
 
 </code></pre></td></tr></table>

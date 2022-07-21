@@ -7,11 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sun, 05 Dec 2021 12:34:05 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>理解快速幂运算并进行应用</title>
+      <link>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</guid>
+      <description>快速幂运算的解释 问n是否满足$x^n % n = x (1 &amp;lt; x &amp;lt; n)$？
+先由一个例子引入：
+$3^{11} = 3 \times 9^5 = 3 \times 9 \times 81^2 = 3 \times 9 \times 6561^1$
+$result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
+可见发现这次运算中，幂的结果等于变化中所有当指数为奇数时底数之积。其中，每次运算均发生指数除二（对应二进制右移一位），且当该指数为奇数时，原式乘上底数。
+而这个过程其实相当于一个数进行模2取余求二进制数的过程，每次都除2，当模2余1，即对应二进制最末位为1时乘上底数，则由此可以推知快速幂运算的算法过程。
+这个结论是可以证明的，如下：
+对于任何十进制正整数n，设其对应二进制数为&amp;quot;$b_m&amp;hellip;b_3b_2b_1$&amp;quot;，则有：
+ 二进制转十进制：$n = 1b_1+2b_2+4b_3+&amp;hellip;+2^{m-1}b_m$； 幂的二进制展开：$x^n = x^{1b_1}x^{2b_2}x^{4b_3}&amp;hellip;x^{2^{m-1}b_m}$。  则对于$x^n$的求解，可以转化为：
+ 计算$x^1,x^2,x^4&amp;hellip;x^{m-1}$的值，相当于$x=x^2$的过程； 获取二进制各位$b_1,b_2,b_3,&amp;hellip;,b_m$的值，相当于模2求余的过程。  上述过程中，当$b_i=0$时，$x^{2^{i-1}b_i}=1$，反之为$x^{2^{i-1}}$，由此可以顺利计算$x^n$。
+相应代码：
+1 2 3 4 5 6 7 8 9 10  typedef long long ll; ll mod_pow(ll x, ll n, ll mod) { ll res = 1; while(n &amp;gt; 0) { if(n &amp;amp; 1 == 1) res = res * x % mod; // 一个数&amp;amp;1的结果就是取该数二进制的最末位 	x = x * x % mod; n &amp;gt;&amp;gt;= 1; }	return res; }   注意，运用位运算可以提高效率！</description>
+    </item>
+    
     <item>
       <title>图的着色问题汇总</title>
       <link>https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
+      <pubDate>Sat, 05 Dec 2020 12:34:05 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
@@ -22,7 +42,7 @@
     <item>
       <title>求解有向图和无向图中是否存在环的方法</title>
       <link>https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Thu, 02 Dec 2021 23:50:44 +0800</pubDate>
+      <pubDate>Wed, 02 Dec 2020 23:50:44 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
@@ -33,7 +53,7 @@
     <item>
       <title>矩阵快速幂的介绍及其应用</title>
       <link>https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
-      <pubDate>Thu, 18 Nov 2021 23:47:15 +0800</pubDate>
+      <pubDate>Wed, 18 Nov 2020 23:47:15 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
       <description>矩阵快速幂介绍 题目描述
@@ -54,7 +74,7 @@
     <item>
       <title>最短路问题汇总</title>
       <link>https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Wed, 17 Nov 2021 17:55:32 +0800</pubDate>
+      <pubDate>Tue, 17 Nov 2020 17:55:32 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
@@ -62,23 +82,35 @@
     </item>
     
     <item>
-      <title>关于数论的一些简单算法</title>
-      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Tue, 17 Nov 2020 17:25:21 +0800</pubDate>
+      <title>关于辗转相除法和扩展欧几里得算法</title>
+      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 21 Jul 2020 20:48:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/</guid>
-      <description>关于素数 1.埃氏筛法 问1000000000000以内有多少个素数？
+      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
+      <description>gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
+1 2 3 4  int gcd(int a, int b){ if(b == 0) return a; return gcd(b, a % b); }   exgcd扩展欧几里得算法 先介绍贝祖定理：
+若a,b为整数，则一定存在整数x,y，使得$ax + by = gcd(a,b)$。
+即若$ax + by = m$有解，则m一定为gcd(a,b)的若干倍。
+下面是一道题：
+有a, -a, b, -b四个整数，各用几次可以使得$ax + by = 1$?
+由上述思想则可知gcd(a,b)等于1，可编写一个返回值为gcd(a,b)同时递归计算x和y的函数。
+关于求出x和y推导过程：
+由$ax + by = gcd(a,b)$ (1)
+通过辗转相除法的思想得：$bx_1 + (a % b) y_1 = gcd(a,b)$
+由$a % b = a - (a \div b) \times b$带入得:</description>
+    </item>
+    
+    <item>
+      <title>有关素数的一些算法</title>
+      <link>https://akynazh.site/posts/study/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 21 Jul 2020 20:43:04 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/</guid>
+      <description>埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
 算法思路：
-1.建立is_prime[]数组，初始化为true；
-2.从2开始筛取，(注意从2开始很重要，因为2为素数，否则需要改变相应后续操作)，若为true，则继续判断是否为素数，若为素数，则将所有该素数的倍数置为false。
-2.区间筛法 问[21479862, 21499877)之间有多少个素数？
-这时若采用埃氏筛法，会浪费大量时间计算前面未涉及的区间，这时考虑区间筛法。
-算法思路：
-1.建立is_prime_small[]和is_prime[]数组，初始化为true；
-2.对区间[a, b)，只需要对 [2, 根号b) 在is_prime_small[]进行埃氏筛法，同一循环内对[a, b)中相应素数倍数元素置为false。
-相应代码：
-1 2 3 4 5 6 7 8 9 10 11 12 13  typedef long long ll; bool is_prime[MAX1]; bool is_prime_small[MAX2]; void sieve(ll a, ll b) { for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime_small[i] = true; for(int i = 0; (ll)i * i &amp;lt; b; i++) is_prime[i] = true; for(int i = 2; (ll)i * i &amp;lt; b; i++) { if(is_prime_small[i]){ for(int j = 2 * i; (ll)j * j &amp;lt; b; j += i) is_prime_small[j] = false; for(ll j = max( 2ll, (a + i - 1) / i) ) * i; j &amp;lt; b; j += i) is_prime[j - a] = false; } } }   注意点：</description>
+ 建立is_prime[]数组，初始化为true； 从2开始筛取，(注意从2开始很重要，因为2为素数，否则需要改变相应后续操作)，若为true，则继续判断是否为素数，若为素数，则将所有该素数的倍数置为false。  相应代码：
+1 2 3 4 5 6 7 8 9 10 11 12 13  bool is_prime[MAXN]; //返回n以内的素数个数 int sieve(int n) { int c = 0; for (int i = 2; i &amp;lt;= n; ++i) is_prime[i] = true; for (int i = 2; i &amp;lt;= n; ++i) if (is_prime[i]) { c++; for (int j = 2 * i; j &amp;lt;= n; j += i) is_prime[j] = false; } return c; }   区间筛法 问[21479862, 21499877)之间有多少个素数？</description>
     </item>
     
   </channel>

@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Wed, 20 Jul 2022 17:07:35 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>algorithm</title>
+      <link>https://akynazh.site/tags/algorithm/</link>
+      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://akynazh.site/tags/math/</link>
+      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://akynazh.site/tags/hugo/</link>
+      <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://akynazh.site/tags/web/</link>
+      <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/web/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>java</title>
       <link>https://akynazh.site/tags/java/</link>
@@ -171,24 +207,6 @@
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://akynazh.site/tags/hugo/</link>
-      <pubDate>Mon, 25 Apr 2022 23:46:01 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://akynazh.site/tags/web/</link>
-      <pubDate>Mon, 25 Apr 2022 23:46:01 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cmd</title>
       <link>https://akynazh.site/tags/cmd/</link>
       <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
@@ -216,15 +234,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://akynazh.site/tags/python/</link>
-      <pubDate>Sun, 13 Feb 2022 00:14:23 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>springboot</title>
       <link>https://akynazh.site/tags/springboot/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
@@ -239,24 +248,6 @@
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/thinking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>math</title>
-      <link>https://akynazh.site/tags/math/</link>
-      <pubDate>Sun, 06 Feb 2022 20:41:12 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>matlab</title>
-      <link>https://akynazh.site/tags/matlab/</link>
-      <pubDate>Sun, 06 Feb 2022 20:41:12 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/matlab/</guid>
       <description></description>
     </item>
     
@@ -297,24 +288,6 @@
     </item>
     
     <item>
-      <title>algorithm</title>
-      <link>https://akynazh.site/tags/algorithm/</link>
-      <pubDate>Sun, 05 Dec 2021 12:34:05 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>script</title>
-      <link>https://akynazh.site/tags/script/</link>
-      <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>acgn</title>
       <link>https://akynazh.site/tags/acgn/</link>
       <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
@@ -324,11 +297,38 @@
     </item>
     
     <item>
+      <title>script</title>
+      <link>https://akynazh.site/tags/script/</link>
+      <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ssh</title>
       <link>https://akynazh.site/tags/ssh/</link>
       <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://akynazh.site/tags/python/</link>
+      <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matlab</title>
+      <link>https://akynazh.site/tags/matlab/</link>
+      <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/matlab/</guid>
       <description></description>
     </item>
     

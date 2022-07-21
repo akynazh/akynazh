@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sat, 20 Nov 2021 18:17:33 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2020 18:17:33 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/script/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cmd重要且实用的一些命令</title>
       <link>https://akynazh.site/posts/study/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Sat, 20 Nov 2021 18:17:33 +0800</pubDate>
+      <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</guid>
       <description>写入文件  写入hello字符串（同时新建了a.txt）  1  echo hello &amp;gt; a.txt    追加写入hello字符串  1  echo hello &amp;gt;&amp;gt; a.txt    将a.txt内容追加写入b.txt  1  type a.txt &amp;gt;&amp;gt; b.txt   新建文件  新建空文件a.txt  1  type null &amp;gt; a.txt   换行（分号换行输出） 1  echo hello; echo peter   关于程序编译 test.cpp: 一个含cin输入的程序

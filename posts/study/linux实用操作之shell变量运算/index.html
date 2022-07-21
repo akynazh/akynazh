@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  <link rel="stylesheet" href="https://akynazh.site/css/search.css" />
-  <link rel="stylesheet" href="https://akynazh.site/css/blockquote.css" />
-
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-regular-400.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
   <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Linux实用操作之shell变量运算 | Melancholy Rhapsody</title>
-  <link rel = 'canonical' href = 'https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/'>
+  <link rel='canonical' href='https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/'>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -34,15 +35,16 @@
 
   
   
-    
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.a03c873c5073ef0a3d3f9243e599570f7b62a88678eee622c0a38638752cc74dfebd95b905a51c1898241037fedf257844836da1ba6b28b6280ea444df35c9f5.css" integrity="sha512-oDyHPFBz7wo9P5JD5ZlXD3tiqIZ47uYiwKOGOHUsx03&#43;vZW5BaUcGJgkEDf&#43;3yV4RINtobprKLYoDqRE3zXJ9Q=="> 
+  
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.e3651ad593c0b08c12a1df3660f1212df19a068952fcf75ae5a4371715cc78f3917db7df3b994c1dbb07f51f2991eab265ae5cc32af53d1cf2f0df511d7e54cd.css" integrity="sha512-42Ua1ZPAsIwSod82YPEhLfGaBolS/Pda5aQ3FxXMePORfbffO5lMHbsH9R8pkeqyZa5cwyr1PRzy8N9RHX5UzQ==">
 
   
   
+  <link rel="stylesheet" href="https://akynazh.site/css/my-style.css"> 
   
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -56,7 +58,7 @@
   
   
   
-    
+  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -71,7 +73,6 @@ if (!doNotTrack) {
   
   
 </head>
-
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
@@ -243,62 +244,62 @@ if (!doNotTrack) {
     
     <div class="content" itemprop="articleBody">
       <h2 id="算术运算">算术运算</h2>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">9
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># a=1</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># echo $a</span>
-<span style="color:#ff0;font-weight:bold">1</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># b=$((a*12))</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># echo $b</span>
-<span style="color:#ff0;font-weight:bold">12</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># b=$((b+b))</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># echo $b</span>
-<span style="color:#ff0;font-weight:bold">24</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># a=1</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># echo $a</span>
+<span style="color:#f60">1</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># b=$((a*12))</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># echo $b</span>
+<span style="color:#f60">12</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># b=$((b+b))</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># echo $b</span>
+<span style="color:#f60">24</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="比较运算">比较运算</h2>
 <p>指令：-eq -ne -lt -gt -ge -le</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">a=<span style="color:#ff0;font-weight:bold">10</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ $a -eq 10 ] &amp;&amp; echo yes</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#eedd82">a</span>=<span style="color:#f60">10</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ $a -eq 10 ] &amp;&amp; echo yes</span>
 yes
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ $a -ge 11 ] &amp;&amp; echo yes || echo no</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ $a -ge 11 ] &amp;&amp; echo yes || echo no</span>
 no
 </code></pre></td></tr></table>
 </div>
 </div><p>指令：-a -o</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># a=10;b=12;</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ $a -lt 11 -a $b -lt 13 ] &amp;&amp; echo yes || echo no</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># a=10;b=12;</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ $a -lt 11 -a $b -lt 13 ] &amp;&amp; echo yes || echo no</span>
 yes
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ $a -lt 11 -a $b -lt 11 ] &amp;&amp; echo yes || echo no</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ $a -lt 11 -a $b -lt 11 ] &amp;&amp; echo yes || echo no</span>
 no
 </code></pre></td></tr></table>
 </div>
@@ -307,17 +308,17 @@ no
 <li>-z（即zero）检测字符串长度是否为0，为0返回 true。</li>
 <li>str检测字符串是否为空，不为空返回 true。</li>
 </ol>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ -z &#34;jzh&#34; ] &amp;&amp; echo yes || echo no</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># [ -z &#34;jzh&#34; ] &amp;&amp; echo yes || echo no</span>
 no
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ &#34;jzh&#34; = &#34;zh&#34; ] &amp;&amp; echo yes || echo no</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ &#34;jzh&#34; = &#34;zh&#34; ] &amp;&amp; echo yes || echo no</span>
 no
 </code></pre></td></tr></table>
 </div>
@@ -330,25 +331,25 @@ no
 <li>-e 即exist</li>
 </ol>
 <p>只有-s成立时是返回false，其他都是成立时返回true。</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#007f7f"># touch t.sh</span>
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># ll</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># touch t.sh</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># ll</span>
 ......
--rw-r--r-- <span style="color:#ff0;font-weight:bold">1</span> root root    <span style="color:#ff0;font-weight:bold">0</span> Apr <span style="color:#ff0;font-weight:bold">12</span> 23:52 t.sh
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ -s ./t.sh ] &amp;&amp; echo yes || echo no</span>
+-rw-r--r-- <span style="color:#f60">1</span> root root    <span style="color:#f60">0</span> Apr <span style="color:#f60">12</span> 23:52 t.sh
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ -s ./t.sh ] &amp;&amp; echo yes || echo no</span>
 no
-[root@VM-0-11-centos ~]<span style="color:#007f7f"># [ -e ./t.sh ] &amp;&amp; echo yes || echo no</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># [ -e ./t.sh ] &amp;&amp; echo yes || echo no</span>
 yes
 </code></pre></td></tr></table>
 </div>

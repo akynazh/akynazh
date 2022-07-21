@@ -21,20 +21,20 @@
       this.pause = false;                           // 标志是否暂停
 
       this.color = '#fff';                          // 雪花颜色 默认白色
-      this.opacity = 0.6;                         // 雪花不透明度 默认不透明
-      this.randombase = 1000;                       // 生产雪花的时间间隔随值 默认1.5秒
-      this.num = 10;                                 // 每次生产雪花的随机数量 默认8
-      this.limit = 60;                             // 每个页面的雪花上限 默认150
+      this.opacity = 0.8;                         // 雪花不透明度 默认不透明
+      this.randombase = 2000;                       // 生产雪花的时间间隔随值 默认1.5秒
+      this.num = 5;                                 // 每次生产雪花的随机数量 默认8
+      this.limit = 20;                             // 每个页面的雪花上限 默认150
       this.isOffset = false;                         // 标志是否随着鼠标产生雪花偏移 默认是
       this.stay = true;                            // 雪花是否会在底部停留 默认不停留
       this.stayTime = 1000;                         // 雪花在底部停留的时间 默认1.5秒
       this.speed = 15;                              // 雪花的下坠随机速度 默认10
-      this.maxSize = 3;                             // 雪花的最大宽度 默认4
-      this.maxImgSize = 15;                         // 图片雪花的最大宽度 默认30
+      this.maxSize = 2;                             // 雪花的最大宽度 默认4
+      this.maxImgSize = 10;                         // 图片雪花的最大宽度 默认30
       this.hideType = 'fadeout';                      // 雪花留底后消失的方式 默认缩小隐藏
       this.hideDuration = 1000;                      // 雪花从开始消失到消失的持续时间 默认0.3秒
       this.isOffsetOnTouch = false;                  // 移动端是否根据手势产生偏移 默认是
-      this.isPause = false;                          // 当页面失去焦点的时候是否暂停下雪 默认是
+      this.isPause = true;                          // 当页面失去焦点的时候是否暂停下雪 默认是
       this.shadow = true;                           // 是否显示阴影
       this.shadowColor = '#fff';                    // 默认操作的阴影颜色
       this.shadowBlur = 2;                         // 阴影模糊半径
@@ -49,10 +49,11 @@
       // 如果是手机则改变参数
       if (isMobile()) {
         this.maxSize = 2;
-        this.maxImgSize = 5;
+        this.randombase = 3000;
+        this.maxImgSize = 4;
         this.num = 3;
         this.limit = 10;
-        this.speed = 15;
+        this.speed = 10;
       }
 
       // 进行配置判断 如果存在用户自定义的配置 则覆盖默认配置
