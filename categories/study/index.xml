@@ -14,7 +14,7 @@
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</guid>
-      <description>快速幂运算的解释 问n是否满足$x^n % n = x (1 &amp;lt; x &amp;lt; n)$？
+      <description>快速幂运算的解释 问n是否满足$x^n \mod n = x (1 &amp;lt; x &amp;lt; n)$？
 先由一个例子引入：
 $3^{11} = 3 \times 9^5 = 3 \times 9 \times 81^2 = 3 \times 9 \times 6561^1$
 $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
@@ -644,8 +644,8 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
 由上述思想则可知gcd(a,b)等于1，可编写一个返回值为gcd(a,b)同时递归计算x和y的函数。
 关于求出x和y推导过程：
 由$ax + by = gcd(a,b)$ (1)
-通过辗转相除法的思想得：$bx_1 + (a % b) y_1 = gcd(a,b)$
-由$a % b = a - (a \div b) \times b$带入得:</description>
+通过辗转相除法的思想得：$bx_1 + (a \mod b) y_1 = gcd(a,b)$
+由$a \mod b = a - (a \div b) \times b$带入得:</description>
     </item>
     
     <item>
