@@ -7,7 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 17:39:24 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenFeign使用记录</title>
+      <link>https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 22 Jul 2022 17:39:24 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <description>为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + &amp;quot;/payment/create&amp;quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
+OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。
+使用OpenFeign   关于pom.xml
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     关于application.yml
+除了基本配置内容外，注意以下配置：
+1 2 3 4 5 6 7 8  # 设置feign客户端超时时间（默认为1秒） ribbon: ReadTimeout: 5000 ConnectTimeout: 5000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口
+ 首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = &amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;) public interface PaymentService { @GetMapping(&amp;#34;/payment/get/{id}&amp;#34;) CommonResult&amp;lt;Payment&amp;gt; getPaymentById(@PathVariable(&amp;#34;id&amp;#34;) Long id); @PostMapping(&amp;#34;/payment/create&amp;#34;) CommonResult&amp;lt;Integer&amp;gt; createPayment(@RequestBody Payment payment); }     调用接口</description>
+    </item>
+    
     <item>
       <title>理解快速幂运算并进行应用</title>
       <link>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</link>

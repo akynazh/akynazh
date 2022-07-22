@@ -57,6 +57,15 @@
     
     <item>
       <title></title>
+      <link>https://akynazh.site/drafts/git/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://akynazh.site/drafts/git/git/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  升级Git至2.0版本 1. 下载编译工具 yum -y groupinstall &amp;#34;Development Tools&amp;#34; 2. 下载依赖包 yum -y install zlib-devel perl-ExtUtils-MakeMaker asciidoc xmlto openssl-devel 3. 下载 Git 最新版本的源代码 wget https://www.kernel.org/pub/software/scm/git/git-2.13.3.tar.gz --no-check-certificate 4. 解压 tar -zxvf git-2.13.3.tar.gz 5. 进入目录配置 cd git-2.13.3 ./configure --prefix=/usr/local/git 6. 安装 make &amp;amp;&amp;amp; make install 7. 配置全局路径 export PATH=&amp;#34;/usr/local/git/bin:$PATH&amp;#34; source /etc/profile 8. 查看git版本 git --version   </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://akynazh.site/drafts/idea/idea/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

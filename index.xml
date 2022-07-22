@@ -7,7 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 17:39:24 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenFeign使用记录</title>
+      <link>https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 22 Jul 2022 17:39:24 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <description>为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + &amp;quot;/payment/create&amp;quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
+OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。
+使用OpenFeign   关于pom.xml
+1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     关于application.yml
+除了基本配置内容外，注意以下配置：
+1 2 3 4 5 6 7 8  # 设置feign客户端超时时间（默认为1秒） ribbon: ReadTimeout: 5000 ConnectTimeout: 5000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口
+ 首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = &amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;) public interface PaymentService { @GetMapping(&amp;#34;/payment/get/{id}&amp;#34;) CommonResult&amp;lt;Payment&amp;gt; getPaymentById(@PathVariable(&amp;#34;id&amp;#34;) Long id); @PostMapping(&amp;#34;/payment/create&amp;#34;) CommonResult&amp;lt;Integer&amp;gt; createPayment(@RequestBody Payment payment); }     调用接口</description>
+    </item>
+    
     <item>
       <title>理解快速幂运算并进行应用</title>
       <link>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</link>
@@ -1390,6 +1405,15 @@ URL : http://www.cip.cc/${my_ip}
       
       <guid>https://akynazh.site/drafts/fore-end/fore-end/</guid>
       <description>thymeleaf开发 1  &amp;lt;html lang=&amp;#34;en&amp;#34; xmlns:th=&amp;#34;http://www.thymeleaf.org&amp;#34;&amp;gt;   bootstrap开发 1 2 3 4  &amp;lt;link href=&amp;#34;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;   vue开发 1 2 3 4 5 6 7 8 9 10  npm run serve //部署项目并开启端口监听 npm run build //部署项目到dist目录  // 开启端口监听dist内项目 npm install -g serve cd dist serve -p 8081 // 永久 nohup serve -p 8081 &amp;amp;   TS开发 安装 1 2 3  npm install -g typescript tsc -v   自动生成js 1 2 3 4 5 6 7  1).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://akynazh.site/drafts/git/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://akynazh.site/drafts/git/git/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  升级Git至2.0版本 1. 下载编译工具 yum -y groupinstall &amp;#34;Development Tools&amp;#34; 2. 下载依赖包 yum -y install zlib-devel perl-ExtUtils-MakeMaker asciidoc xmlto openssl-devel 3. 下载 Git 最新版本的源代码 wget https://www.kernel.org/pub/software/scm/git/git-2.13.3.tar.gz --no-check-certificate 4. 解压 tar -zxvf git-2.13.3.tar.gz 5. 进入目录配置 cd git-2.13.3 ./configure --prefix=/usr/local/git 6. 安装 make &amp;amp;&amp;amp; make install 7. 配置全局路径 export PATH=&amp;#34;/usr/local/git/bin:$PATH&amp;#34; source /etc/profile 8. 查看git版本 git --version   </description>
     </item>
     
     <item>
