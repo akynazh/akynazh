@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>springboot on Melancholy Rhapsody</title>
+    <title>springboot on Norwegian Wood</title>
     <link>https://akynazh.site/tags/springboot/</link>
-    <description>Recent content in springboot on Melancholy Rhapsody</description>
+    <description>Recent content in springboot on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
@@ -28,7 +28,7 @@
     <item>
       <title>Linux主机部署springboot项目全过程</title>
       <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
-      <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
+      <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
       <description>注：部署环境为centos7.9版本

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on Melancholy Rhapsody</title>
+    <title>linux on Norwegian Wood</title>
     <link>https://akynazh.site/tags/linux/</link>
-    <description>Recent content in linux on Melancholy Rhapsody</description>
+    <description>Recent content in linux on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
@@ -15,120 +15,6 @@
       
       <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
       <description>systemctl指令  立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service  service和chkconfig指令  启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list  Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  - Unit - Description，服务的描述 - Requires，定义此unit需在哪个daemon启动后才能够启动 - Service - Type，定义启动时的进程行为。它有以下几种值。 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 - Type=dbus，当前服务通过D-Bus启动 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 - Type=idle，若有其他任务执行完毕，当前服务才会运行 - ExecStart，启动当前服务的命令 - ExecStartPre，启动当前服务之前执行的命令 - ExecStartPost，启动当前服务之后执行的命令 - ExecReload，重启当前服务时执行的命令 - ExecStop，停止当前服务时执行的命令 - ExecStopPost，停止当其服务之后执行的命令 - RestartSec，自动重启当前服务间隔的秒数 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 - Environment，指定环境变量 - Install - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.</description>
-    </item>
-    
-    <item>
-      <title>Docker简单使用过程记录</title>
-      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Thu, 19 May 2022 22:52:52 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
-      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之shell变量运算</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
-      <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
-      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
-1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之编辑命令与变量</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
-      <pubDate>Tue, 05 Apr 2022 23:01:48 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
-      <description>配置环境变量（以Java为例） Linux相关配置文件解析  bashrc部分:   /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:   /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。
-1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version &amp;#34;1.</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之文件操作</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Tue, 05 Apr 2022 22:38:46 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
-      <description>观察文件信息 1 2  drwxr-xr-x 2 root root 4096 Jan 2 18:41 source 文件类型+文件权限+目录或链接个数+创建者+所在组+文件大小+修改日期+名称   关于文件类型：
- d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件  文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之进程管理</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Thu, 31 Mar 2022 22:55:53 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
-      <description>查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
- PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下：</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之工作调度</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
-      <pubDate>Thu, 31 Mar 2022 22:34:24 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
-      <description>at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now +2 minute at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test.</description>
-    </item>
-    
-    <item>
-      <title>Linux上部署JAR包项目后的文件上传问题</title>
-      <link>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
-      <description>在进行上传文件时，一般会先获取项目类路径：
-1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
- 如果单纯运行一个java项目：  获得路径为：
-${project}/target/classes
- 如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
-所以如果是jar包启动并上传文件，则无法正确放到类路径下。
-所以需指定新的上传路径。
-在如下路径中：
-1 2  [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
-1 2 3 4 5  spring: resources: static-locations: - classpath:static/ - file:/app/static/   然后在文件上传是指定上传路径即可。
-这里编写一个工具类如下：
-关注getUploadPath方法，它用于获取上传路径。
-首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
-比如，要上传一个头像：
- linux下：  返回/app/static/${uploadType}/${fileName}
-e.g. /app/static/avatar/test.jpg
- window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}</description>
-    </item>
-    
-    <item>
-      <title>Linux主机部署springboot项目全过程</title>
-      <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
-      <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-      <description>注：部署环境为centos7.9版本
-操作步骤如下：
- 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
-  将jdk压缩包通过winsp上传至主机
-  解压缩jdk压缩包
-1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录
-1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之网络管理</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Mon, 03 Jan 2022 00:27:58 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
-      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
-1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
-IP : ${my_ip} 地址 : 中国 中国
-数据二 : 上海市 | 腾讯云
-数据三 : 中国北京北京 | 腾讯
-URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
     </item>
     
     <item>
@@ -172,6 +58,120 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
  分隔字符  awk -F #-F指定所操作文件中的目标分割字符
 使用&amp;quot;,&amp;ldquo;分隔
 1  awk -F, &amp;#39;{print $1 &amp;#34; - &amp;#34; $2}&amp;#39; log.</description>
+    </item>
+    
+    <item>
+      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <description>在进行上传文件时，一般会先获取项目类路径：
+1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
+ 如果单纯运行一个java项目：  获得路径为：
+${project}/target/classes
+ 如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
+所以如果是jar包启动并上传文件，则无法正确放到类路径下。
+所以需指定新的上传路径。
+在如下路径中：
+1 2  [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
+1 2 3 4 5  spring: resources: static-locations: - classpath:static/ - file:/app/static/   然后在文件上传是指定上传路径即可。
+这里编写一个工具类如下：
+关注getUploadPath方法，它用于获取上传路径。
+首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
+比如，要上传一个头像：
+ linux下：  返回/app/static/${uploadType}/${fileName}
+e.g. /app/static/avatar/test.jpg
+ window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}</description>
+    </item>
+    
+    <item>
+      <title>Linux主机部署springboot项目全过程</title>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <description>注：部署环境为centos7.9版本
+操作步骤如下：
+ 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+  将jdk压缩包通过winsp上传至主机
+  解压缩jdk压缩包
+1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录
+1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:</description>
+    </item>
+    
+    <item>
+      <title>Docker简单使用过程记录</title>
+      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之shell变量运算</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Mon, 12 Apr 2021 23:21:41 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
+      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
+1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之编辑命令与变量</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Mon, 05 Apr 2021 23:01:48 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
+      <description>配置环境变量（以Java为例） Linux相关配置文件解析  bashrc部分:   /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:   /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。
+1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version &amp;#34;1.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之文件操作</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 05 Apr 2021 22:38:46 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <description>观察文件信息 1 2  drwxr-xr-x 2 root root 4096 Jan 2 18:41 source 文件类型+文件权限+目录或链接个数+创建者+所在组+文件大小+修改日期+名称   关于文件类型：
+ d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件  文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之进程管理</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 31 Mar 2021 22:55:53 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
+      <description>查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
+ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下：</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之工作调度</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Wed, 31 Mar 2021 22:34:24 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
+      <description>at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now +2 minute at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之网络管理</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
+      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
+1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
+1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
+IP : ${my_ip} 地址 : 中国 中国
+数据二 : 上海市 | 腾讯云
+数据三 : 中国北京北京 | 腾讯
+URL : http://www.cip.cc/${my_ip}
+查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
     </item>
     
     <item>

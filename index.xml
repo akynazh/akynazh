@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Melancholy Rhapsody</title>
+    <title>Norwegian Wood</title>
     <link>https://akynazh.site/</link>
-    <description>Recent content on Melancholy Rhapsody</description>
+    <description>Recent content on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
@@ -284,50 +284,6 @@ Intel语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
     </item>
     
     <item>
-      <title>Docker简单使用过程记录</title>
-      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Thu, 19 May 2022 22:52:52 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
-      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
-    </item>
-    
-    <item>
-      <title>Synchronized到底锁了谁</title>
-      <link>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</link>
-      <pubDate>Thu, 19 May 2022 22:43:45 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</guid>
-      <description>Synchronized方法   静态方法上的锁
-静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
-  普通方法上的锁
-实例方法并不是类所独有的，每个对象实例独立拥有它，它并不被对象实例所共享。在实例方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个对象实例。
-  Synchronized代码块  synchronized(this){...}  this关键字所代表的意思是该对象实例，这种用法synchronized锁住的是对象实例。
- synchronized(Demo.class){...}  锁的是该类。
- synchronized(obj){...}  synchronized同步代码块对对象内部的实例加锁。
-假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。
-代码如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  public class Demo { private Object lock1 = new Object(); private Object lock2 = new Object(); public void demo1() { synchronized (lock1) { while (true) { //死循环目的是为了让线程一直持有该锁  System.</description>
-    </item>
-    
-    <item>
-      <title>Git实用操作之解决冲突</title>
-      <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</link>
-      <pubDate>Thu, 19 May 2022 22:12:54 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</guid>
-      <description>首先提交当前分支修改：
-1 2  git add . git commit -m &amp;#34;msg&amp;#34;   这时如果其他分支对当前提交分支进行了修改，直接push上去则会失败并提醒进行冲突的解决。
-因此，进行pull，将更改拉取下来进行冲突的解决。
-1  git pull   这时有2种可能的情况，要么其他分支的修改地方和自己的修改的地方不冲突，要么冲突。
-如果不冲突且接受其他分支的容易修改，则可以直接push上去了。
-如果冲突了，则对所有冲突的地方merge，即在提示冲突的地方进行修改的选择即可。
-1 2 3 4 5  &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD hello world ======= hello kitty &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; another-branch   HEAD标记&amp;quot;Current Change&amp;quot;，即当前分支的修改，&amp;ldquo;another-branch&amp;quot;标记其他分支的修改，两者之间用&amp;rdquo;===&amp;ldquo;隔开。
-修改完成后，重新进行完整的提交即可：
-1 2 3  git add . git commit -m &amp;#34;msg&amp;#34; git push   over.</description>
-    </item>
-    
-    <item>
       <title>《1984》文摘</title>
       <link>https://akynazh.site/posts/book/1984%E6%96%87%E6%91%98/</link>
       <pubDate>Thu, 19 May 2022 20:22:22 +0800</pubDate>
@@ -414,18 +370,6 @@ Intel语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
     </item>
     
     <item>
-      <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
-      <link>https://akynazh.site/posts/study/java%E4%B8%8Ec&#43;&#43;%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/</link>
-      <pubDate>Sun, 01 May 2022 20:16:39 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/java%E4%B8%8Ec&#43;&#43;%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/</guid>
-      <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
-Java的参数传递 先定义3个方法如下：
-1 2 3 4 5 6 7 8 9 10 11  public static void change1(String str, int num) { str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象!  num = 100; } public static void change2(User user) { user.age = 1; user.name = &amp;#34;mary&amp;#34;; } public static void change3(User user) { user = new User(1, &amp;#34;mary&amp;#34;); }   进行测试：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  public static void main(String[] args) { String str = &amp;#34;hello&amp;#34;; int num = 1; System.</description>
-    </item>
-    
-    <item>
       <title>《论持久战》文摘</title>
       <link>https://akynazh.site/posts/book/%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98%E6%96%87%E6%91%98/</link>
       <pubDate>Thu, 28 Apr 2022 20:27:08 +0800</pubDate>
@@ -459,18 +403,6 @@ Java的参数传递 先定义3个方法如下：
 良久，绿子用沉静的声音开口道：“你现在哪里？”
 我现在哪里？
 我拿着听筒扬起脸，飞快地环视电话亭四周。我现在哪里？我不知道这里是哪里，全然摸不着头脑。这里究竟是哪里？目力所及，无不是不知走去哪里的无数男男女女。我在哪里也不是的场所的正中央，不断地呼唤着绿子。</description>
-    </item>
-    
-    <item>
-      <title>Window实用命令记录之文件操作</title>
-      <link>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Tue, 19 Apr 2022 13:48:19 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
-      <description>创建文件或文件夹 cmd下创建文件 1  type nul &amp;gt; test.jpg   powershell下创建文件 1  new-item test.jpg   创建文件夹 1  mkdir test   重命名文件 注意不能指定到新的路径。
-1  PS D:\a\tmp\test&amp;gt; ren test.txt my.txt   移动文件 该命令也可用于重命名。
-1  PS D:\a\tmp\test&amp;gt; move test.jpg mydir   复制文件和文件夹 copy无法递归复制，而xcopy可以。
-1  PS D:\a\tmp\test\mydir&amp;gt; copy test.jpg test1.jpg   1 2 3 4 5 6 7 8 9 10 11 12  # mydir not empty PS D:\a\tmp\test&amp;gt; copy mydir mydir1 PS D:\a\tmp\test&amp;gt; ls mydir1 # empty PS D:\a\tmp\test&amp;gt; xcopy mydir mydir2 目标 mydir2 是文件名 还是目录名 (F = 文件，D = 目录)?</description>
     </item>
     
     <item>
@@ -568,36 +500,6 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>Linux实用操作之shell变量运算</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
-      <pubDate>Tue, 12 Apr 2022 23:21:41 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
-      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
-1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之编辑命令与变量</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
-      <pubDate>Tue, 05 Apr 2022 23:01:48 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
-      <description>配置环境变量（以Java为例） Linux相关配置文件解析  bashrc部分:   /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:   /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。
-1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version &amp;#34;1.</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之文件操作</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Tue, 05 Apr 2022 22:38:46 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
-      <description>观察文件信息 1 2  drwxr-xr-x 2 root root 4096 Jan 2 18:41 source 文件类型+文件权限+目录或链接个数+创建者+所在组+文件大小+修改日期+名称   关于文件类型：
- d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件  文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
-    </item>
-    
-    <item>
       <title>《强风吹拂》文摘</title>
       <link>https://akynazh.site/posts/book/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 03 Apr 2022 23:44:25 +0800</pubDate>
@@ -628,91 +530,6 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>春物文摘四</title>
-      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</link>
-      <pubDate>Sun, 03 Apr 2022 23:27:20 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</guid>
-      <description>作者：渡航
-卷十三 第八章. 祈祷至少不要再出错。 「我过得很愉快。这还是第一次。觉得跟别人一起度过的时间是自在舒适的，我很高兴……」
-她带着泫然欲泣的表情，看起来真的很幸福。我再也无法否定，制止她。
-我无力地放下手，雪之下道谢似地点一下头，接着说：
-「我从来没有像这样跟别人争执，吵架……在别人面前哭过。两个人一起出去的时候，也非常紧张。一堆事都不懂，从来没有体验过……连可以依赖别人都不知道。所以，才会在哪里搞错了……」
-我抬头看着天花板，倾听她用颤抖的声音自言自语。
-远方的夕阳刺痛双眼，即使如此，我依然无法闭上眼，只是忧郁地吐出一口气。
-「这种像赝品的关系是错误的。和你追求的事物肯定不一样。」
-卷十四 序章1 季节轮转，春日再临。
-即便重复着一成不变的日常，今日也总是崭新的。
-即便困于烦恼，难觅答案，重复着错误，也只能不厌其烦地重新问过——为了知晓新的答案。
-不付诸言语便无法传达，可就算说出口也仍不足够。
-无论何时得出的答案都是错误的，扭曲得几近无法挽回的关系，是令人无可奈何的伪物。
-———所以，至少，要在这个仿造品上留下足以毁坏的伤痕，变成那仅仅只有一个的真物。
-我故意犯错的青春，要让它结束掉———
-已然逝去的季节，与将要来临的崭新季节。
-持续着错误的故事结束……之后青春一定还将继续。
-第七章. 触碰到的温度，切实地传达着那份情感 在她走了几步之后，我跟了上去。
-看着远去的背影，我伸出了手，却又不由地犹豫起来。
-我明白，如果要继续谈话的话，只要叫住她就行了。
-即使继续像那样走下去，交谈也并不困难。
-再说了，根本不可能没有特别的理由就去触碰她的手。
-但是，理由确实存在。唯一的，不容退让的理由。
-「……放手了的话，就再也抓不住了啊」
-脱口而出的话语，就像是在说给自己听一样。
-不对，是为了说给自己听才会说出那样的话。接着，我伸出了手。
-单手推着自行车我的样子有些狼狈，而且手里还出了很多汗，也不清楚该用多大的力道。
-即便如此，我还是抓住了雪之下的袖口。
-把那纤细到令我惊讶的手腕紧紧地收入掌中。
-「…………」
- 开始说话之后，由于强烈的自我厌恶手中的力气不断地减弱。
-说出这种话的自己简直恶心得令人作呕。
-抓着雪之下的手腕的手一点点下滑，松开，然后无力地垂落下去。
-但是，雪之下并没有逃走，而是停在了那里。
-在摸了摸袖口稍作整理的时候，用自己的手紧握住方才被我抓住的地方。
-虽然没有看向我这边，但是至少看上去有继续听下去的意思。
-对此感到安心之后，我不紧不慢地开口道。
-「可能你并不期望……但是我想把关系维持下去。不是义务，而是意愿的问题。……所以，给我扭曲你人生的权利」
- 「我没有足以改变人生的影响力啊，大概，我和你也都会像其他人一样升学，不情愿地就职，就那样认真地活着。但是，互相关联之后，会莫名其妙地做出绕远路啊，原地踏步啊之类的各种各样的事情吧……所以，人生会稍微扭曲一些」
-「我也是这么想的，相遇，相谈，相知，相离……每次，都会感到扭曲」
- 想必，太过别扭的我，太过直率的她，在他人眼中都是扭曲的形状吧。
-虽然完全没有相同之处，在扭曲这一点上恐怕是一样的。
-不知不觉间，每一次的相触，每次一次的碰撞，都在稍稍改变了我们的形状。
-这样的改变不断累积，已经到了无法还原的地步了。
- 如果有让传达变得更简单的话语就好了。
-如果是更加单纯的感情就好了。
-如果只是恋慕、思慕的话一定不会这么向往。『再也抓不住』什么的，不会这么想。
-「应该不足以支付扭曲人生的代价吧，不过嘛，全都会去做的。不需要的话就扔掉吧。嫌麻烦的话忘掉也无所谓。是我这边擅自做出的决定你不用勉强自己回复」
-雪之下轻哼了一声，点了点头。
-「我要好好说了哦」
-然后，轻轻地把额头抵在我的肩口。
-「你的人生，请交给我吧」
-「……好沉重」
-不经意间，气息漏出了我的嘴角。仿佛是在抗议一般，雪之下的额头再一次轻轻地撞了过来。
-「真的不知道其他的说法了，所以这也是没办法的啊……」
-她像猫一样把额头靠了过来，仿佛小猫轻咬一般抓着我的胸膛。
-触碰到的温热，一定在确切地传达着用千言万语也说不清的心意。
-第八章. 那扇门再次打开。 我默默地把手递了过去。</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之进程管理</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Thu, 31 Mar 2022 22:55:53 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
-      <description>查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
- PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下：</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之工作调度</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
-      <pubDate>Thu, 31 Mar 2022 22:34:24 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
-      <description>at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now +2 minute at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test.</description>
-    </item>
-    
-    <item>
       <title>山脉游览录</title>
       <link>https://akynazh.site/posts/life/%E5%B1%B1%E8%84%89%E6%B8%B8%E8%A7%88%E5%BD%95/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
@@ -734,43 +551,6 @@ Java的参数传递 先定义3个方法如下：
 天池附近的山。
 优雅的池子和静谧的山。
 未来的山 &amp;hellip;&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>春物文摘三</title>
-      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</link>
-      <pubDate>Fri, 11 Mar 2022 23:19:00 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</guid>
-      <description>作者：渡航
-卷十 第七章. 不论何时，叶山隼人总是迎合众人期待 她满意地舒一口气，把脸抬起。我们之间的距离，瞬间拉近到脸颊快碰在一起。
-「……」
-两个人就这么僵住。
-雪之下的肌肤宛如冬天的白雪，乌黑的双眼仿佛在荡漾，每眨一下，修长的睫毛跟着轻柔摇曳。往底下走，是姣好尖挺的鼻梁，以及绽放笑容、呼出热气的嘴唇。
-她削瘦的的肩膀微微一颤，瀑布般的长发随之晃动。
-我赶紧往后仰，跟她拉开距离。结果不知动到什么地方，某处的伤口突然痛了一下。
-「嗯……谢谢你帮忙消毒。」
-「……没什么，不是什么大不了的事。」
-卷十二 第五章. 果然，一色彩羽是最强的后辈。 舞会上的雪之下
-倒不如说合身过头了。单色调的燕尾服，更彰显了雪之下白皙明净的肌肤之美；
-伸长的衣摆和长裤也令她修长俏丽的美腿更为凸显；
-举手投足间，她那扎为一束的秀发如波浪般律动，又为她添了几分虚幻朦胧之意；
-再与她纤瘦的身材相映成趣后，「薄幸的美少年」一词仿佛呼之欲出。
-光是她那工整标致的五官，便使她散发着一种倒错美的气息，我甚至感到了危险。
- 舞会上的结衣
-近乎于白的淡粉、带着透明感的布料，此般色调搭配，又或者说是因为这种款式，给人一种分外的成熟感。
-衣襟张得很开，腰部那块也束了一圈，而这又更勾勒出她傲人的身体曲线。
-裙摆本身很长，不过因为开衩开的很深，所以看上去丝毫不笨重；倒不如说若是她转动身体，这礼服就好似随风起舞般的轻盈。
-她一向缠成团子头的头发，如今编的好似花冠，让我不禁想起某位王子大人提过的称呼。
-第七章. 就算，知道会后悔这个选择。 最终只剩下我们的事了。因为相互依赖，所有没有比我们更好理解的了。
-说来容易，正因被人依靠，我才能够弄清自己的存在价值。
-我自己也很容易地信服。
-然而，这并不是答案。相互依赖是形式，但非人的感情所在。即便可以用作借口，也无法成为理由。
-抽丝剥茧，尽心竭力，声嘶力竭，最终心里只剩下了恋恋不舍。
-可是，我唯独不想说出这话。因为这个理由太逊了。然而，不说出来，这位老师就不会让我前行。我很清楚，因为如此，她才对我道歉。
-所以，我疲惫地、重重地叹了一口气，迫不得已，小声地开口说道。
-「……因为我承诺过，总有一天会对她伸出援手。」
-因为她拜托过我，这理由十分平常而又极为理所当然，这话语不带感情而又毫无逻辑可言，这措辞实在无聊而又陈词滥调透顶，我对向她出手相助，真的是厌恶至极。</description>
     </item>
     
     <item>
@@ -828,62 +608,6 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>Linux上部署JAR包项目后的文件上传问题</title>
-      <link>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Mon, 03 Jan 2022 00:38:12 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
-      <description>在进行上传文件时，一般会先获取项目类路径：
-1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
- 如果单纯运行一个java项目：  获得路径为：
-${project}/target/classes
- 如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
-所以如果是jar包启动并上传文件，则无法正确放到类路径下。
-所以需指定新的上传路径。
-在如下路径中：
-1 2  [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
-1 2 3 4 5  spring: resources: static-locations: - classpath:static/ - file:/app/static/   然后在文件上传是指定上传路径即可。
-这里编写一个工具类如下：
-关注getUploadPath方法，它用于获取上传路径。
-首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
-比如，要上传一个头像：
- linux下：  返回/app/static/${uploadType}/${fileName}
-e.g. /app/static/avatar/test.jpg
- window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}</description>
-    </item>
-    
-    <item>
-      <title>Linux主机部署springboot项目全过程</title>
-      <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
-      <pubDate>Mon, 03 Jan 2022 00:30:25 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
-      <description>注：部署环境为centos7.9版本
-操作步骤如下：
- 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
-  将jdk压缩包通过winsp上传至主机
-  解压缩jdk压缩包
-1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录
-1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:</description>
-    </item>
-    
-    <item>
-      <title>Linux实用操作之网络管理</title>
-      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Mon, 03 Jan 2022 00:27:58 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
-      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
-1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
-IP : ${my_ip} 地址 : 中国 中国
-数据二 : 上海市 | 腾讯云
-数据三 : 中国北京北京 | 腾讯
-URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
-    </item>
-    
-    <item>
       <title>Linux实用操作之权限管理</title>
       <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
@@ -931,6 +655,18 @@ URL : http://www.cip.cc/${my_ip}
       
       <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
       <description>读取输入  read -a variable_name 读取数组”array”  1 2 3 4 5 6  [root@VM-0-11-centos tmp]# read -a arr 1 2 3 4 5 [root@VM-0-11-centos tmp]# echo ${arr[0]} 1 [root@VM-0-11-centos tmp]# echo ${arr[4]} 5    read -p “prompt words” variable_name read -n limit_length variable_name  1 2 3  [root@VM-0-11-centos tmp]# read -n 5 kk words[root@VM-0-11-centos tmp]# echo $kk words    read -s variable_name “silent”输入不显示 read -t time variable_name “time”限定时间输入  条件判断语句 if else 1 2 3 4 5 6 7 8 9  if [] then do something elif [] then do something else do something fi   case 1 2 3 4 5 6 7 8 9 10 11  case ${var} in &amp;#34;condition1&amp;#34;) do something ;; &amp;#34;condition2&amp;#34;) do something ;; *) #anything do something ;; esac   循环语句 while 1 2 3 4  while [condition] do do something done   when meet the condition, start the loop.</description>
+    </item>
+    
+    <item>
+      <title>关于char*, char[], string的理解</title>
+      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>关于char[]与char*的区别 1 2 3 4  char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc s1[1] = &amp;#39;d&amp;#39;; // 改变值 cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc   &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
+1 2 3 4  const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc s2 = &amp;#34;dfs&amp;#34;; // 改变地址 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs   &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
+以上两者皆可用于函数传值
+1 2 3 4 5 6  void print_str(const char * str) { printf(&amp;#34;%s\n&amp;#34;, str); } print_str(s1); // adc print_str(s2); // dfs   关于string和char[],char*的关系  string是类，string是对一个字符串的引用值  1 2 3 4 5 6 7  const char* s1 = &amp;#34;abc&amp;#34;; string s = s1; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc s += &amp;#34;a&amp;#34;; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 证明string只是引用了s1    string引用字符串示例  1 2 3 4 5 6 7  const char *s1 = &amp;#34;123&amp;#34;; string str1 = s1; // 若要这样赋值s1必须加const cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123  char s2[] = &amp;#34;234&amp;#34;; string str2 = s2; cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234    string转char*  1 2 3  const char* s1_1 = str1.</description>
     </item>
     
     <item>
@@ -1060,9 +796,196 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     </item>
     
     <item>
+      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/</guid>
+      <description>在进行上传文件时，一般会先获取项目类路径：
+1 2  File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath();   首先取得相对路径，再进一步取得绝对路径，结果如下：
+ 如果单纯运行一个java项目：  获得路径为：
+${project}/target/classes
+ 如果是运行jar包，且是在Linux系统上，则获得路径大致为：  .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
+所以如果是jar包启动并上传文件，则无法正确放到类路径下。
+所以需指定新的上传路径。
+在如下路径中：
+1 2  [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
+1 2 3 4 5  spring: resources: static-locations: - classpath:static/ - file:/app/static/   然后在文件上传是指定上传路径即可。
+这里编写一个工具类如下：
+关注getUploadPath方法，它用于获取上传路径。
+首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
+比如，要上传一个头像：
+ linux下：  返回/app/static/${uploadType}/${fileName}
+e.g. /app/static/avatar/test.jpg
+ window下：  返回 ${project}/target/classes/static/${uploadType}/${fileName}</description>
+    </item>
+    
+    <item>
+      <title>Linux主机部署springboot项目全过程</title>
+      <link>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/</guid>
+      <description>注：部署环境为centos7.9版本
+操作步骤如下：
+ 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz
+  将jdk压缩包通过winsp上传至主机
+  解压缩jdk压缩包
+1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录
+1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:</description>
+    </item>
+    
+    <item>
+      <title>春物文摘四</title>
+      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</link>
+      <pubDate>Wed, 23 Jun 2021 23:27:20 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/</guid>
+      <description>作者：渡航
+卷十三 第八章. 祈祷至少不要再出错。 「我过得很愉快。这还是第一次。觉得跟别人一起度过的时间是自在舒适的，我很高兴……」
+她带着泫然欲泣的表情，看起来真的很幸福。我再也无法否定，制止她。
+我无力地放下手，雪之下道谢似地点一下头，接着说：
+「我从来没有像这样跟别人争执，吵架……在别人面前哭过。两个人一起出去的时候，也非常紧张。一堆事都不懂，从来没有体验过……连可以依赖别人都不知道。所以，才会在哪里搞错了……」
+我抬头看着天花板，倾听她用颤抖的声音自言自语。
+远方的夕阳刺痛双眼，即使如此，我依然无法闭上眼，只是忧郁地吐出一口气。
+「这种像赝品的关系是错误的。和你追求的事物肯定不一样。」
+卷十四 序章1 季节轮转，春日再临。
+即便重复着一成不变的日常，今日也总是崭新的。
+即便困于烦恼，难觅答案，重复着错误，也只能不厌其烦地重新问过——为了知晓新的答案。
+不付诸言语便无法传达，可就算说出口也仍不足够。
+无论何时得出的答案都是错误的，扭曲得几近无法挽回的关系，是令人无可奈何的伪物。
+———所以，至少，要在这个仿造品上留下足以毁坏的伤痕，变成那仅仅只有一个的真物。
+我故意犯错的青春，要让它结束掉———
+已然逝去的季节，与将要来临的崭新季节。
+持续着错误的故事结束……之后青春一定还将继续。
+第七章. 触碰到的温度，切实地传达着那份情感 在她走了几步之后，我跟了上去。
+看着远去的背影，我伸出了手，却又不由地犹豫起来。
+我明白，如果要继续谈话的话，只要叫住她就行了。
+即使继续像那样走下去，交谈也并不困难。
+再说了，根本不可能没有特别的理由就去触碰她的手。
+但是，理由确实存在。唯一的，不容退让的理由。
+「……放手了的话，就再也抓不住了啊」
+脱口而出的话语，就像是在说给自己听一样。
+不对，是为了说给自己听才会说出那样的话。接着，我伸出了手。
+单手推着自行车我的样子有些狼狈，而且手里还出了很多汗，也不清楚该用多大的力道。
+即便如此，我还是抓住了雪之下的袖口。
+把那纤细到令我惊讶的手腕紧紧地收入掌中。
+「…………」
+ 开始说话之后，由于强烈的自我厌恶手中的力气不断地减弱。
+说出这种话的自己简直恶心得令人作呕。
+抓着雪之下的手腕的手一点点下滑，松开，然后无力地垂落下去。
+但是，雪之下并没有逃走，而是停在了那里。
+在摸了摸袖口稍作整理的时候，用自己的手紧握住方才被我抓住的地方。
+虽然没有看向我这边，但是至少看上去有继续听下去的意思。
+对此感到安心之后，我不紧不慢地开口道。
+「可能你并不期望……但是我想把关系维持下去。不是义务，而是意愿的问题。……所以，给我扭曲你人生的权利」
+ 「我没有足以改变人生的影响力啊，大概，我和你也都会像其他人一样升学，不情愿地就职，就那样认真地活着。但是，互相关联之后，会莫名其妙地做出绕远路啊，原地踏步啊之类的各种各样的事情吧……所以，人生会稍微扭曲一些」
+「我也是这么想的，相遇，相谈，相知，相离……每次，都会感到扭曲」
+ 想必，太过别扭的我，太过直率的她，在他人眼中都是扭曲的形状吧。
+虽然完全没有相同之处，在扭曲这一点上恐怕是一样的。
+不知不觉间，每一次的相触，每次一次的碰撞，都在稍稍改变了我们的形状。
+这样的改变不断累积，已经到了无法还原的地步了。
+ 如果有让传达变得更简单的话语就好了。
+如果是更加单纯的感情就好了。
+如果只是恋慕、思慕的话一定不会这么向往。『再也抓不住』什么的，不会这么想。
+「应该不足以支付扭曲人生的代价吧，不过嘛，全都会去做的。不需要的话就扔掉吧。嫌麻烦的话忘掉也无所谓。是我这边擅自做出的决定你不用勉强自己回复」
+雪之下轻哼了一声，点了点头。
+「我要好好说了哦」
+然后，轻轻地把额头抵在我的肩口。
+「你的人生，请交给我吧」
+「……好沉重」
+不经意间，气息漏出了我的嘴角。仿佛是在抗议一般，雪之下的额头再一次轻轻地撞了过来。
+「真的不知道其他的说法了，所以这也是没办法的啊……」
+她像猫一样把额头靠了过来，仿佛小猫轻咬一般抓着我的胸膛。
+触碰到的温热，一定在确切地传达着用千言万语也说不清的心意。
+第八章. 那扇门再次打开。 我默默地把手递了过去。</description>
+    </item>
+    
+    <item>
+      <title>Docker简单使用过程记录</title>
+      <link>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <description>开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
+    </item>
+    
+    <item>
+      <title>Synchronized到底锁了谁</title>
+      <link>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</link>
+      <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/</guid>
+      <description>Synchronized方法   静态方法上的锁
+静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
+  普通方法上的锁
+实例方法并不是类所独有的，每个对象实例独立拥有它，它并不被对象实例所共享。在实例方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个对象实例。
+  Synchronized代码块  synchronized(this){...}  this关键字所代表的意思是该对象实例，这种用法synchronized锁住的是对象实例。
+ synchronized(Demo.class){...}  锁的是该类。
+ synchronized(obj){...}  synchronized同步代码块对对象内部的实例加锁。
+假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。
+代码如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  public class Demo { private Object lock1 = new Object(); private Object lock2 = new Object(); public void demo1() { synchronized (lock1) { while (true) { //死循环目的是为了让线程一直持有该锁  System.</description>
+    </item>
+    
+    <item>
+      <title>Git实用操作之解决冲突</title>
+      <link>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Wed, 19 May 2021 22:12:54 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/</guid>
+      <description>首先提交当前分支修改：
+1 2  git add . git commit -m &amp;#34;msg&amp;#34;   这时如果其他分支对当前提交分支进行了修改，直接push上去则会失败并提醒进行冲突的解决。
+因此，进行pull，将更改拉取下来进行冲突的解决。
+1  git pull   这时有2种可能的情况，要么其他分支的修改地方和自己的修改的地方不冲突，要么冲突。
+如果不冲突且接受其他分支的容易修改，则可以直接push上去了。
+如果冲突了，则对所有冲突的地方merge，即在提示冲突的地方进行修改的选择即可。
+1 2 3 4 5  &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD hello world ======= hello kitty &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; another-branch   HEAD标记&amp;quot;Current Change&amp;quot;，即当前分支的修改，&amp;ldquo;another-branch&amp;quot;标记其他分支的修改，两者之间用&amp;rdquo;===&amp;ldquo;隔开。
+修改完成后，重新进行完整的提交即可：
+1 2 3  git add . git commit -m &amp;#34;msg&amp;#34; git push   over.</description>
+    </item>
+    
+    <item>
+      <title>春物文摘三</title>
+      <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</link>
+      <pubDate>Thu, 13 May 2021 23:19:00 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/</guid>
+      <description>作者：渡航
+卷十 第七章. 不论何时，叶山隼人总是迎合众人期待 她满意地舒一口气，把脸抬起。我们之间的距离，瞬间拉近到脸颊快碰在一起。
+「……」
+两个人就这么僵住。
+雪之下的肌肤宛如冬天的白雪，乌黑的双眼仿佛在荡漾，每眨一下，修长的睫毛跟着轻柔摇曳。往底下走，是姣好尖挺的鼻梁，以及绽放笑容、呼出热气的嘴唇。
+她削瘦的的肩膀微微一颤，瀑布般的长发随之晃动。
+我赶紧往后仰，跟她拉开距离。结果不知动到什么地方，某处的伤口突然痛了一下。
+「嗯……谢谢你帮忙消毒。」
+「……没什么，不是什么大不了的事。」
+卷十二 第五章. 果然，一色彩羽是最强的后辈。 舞会上的雪之下
+倒不如说合身过头了。单色调的燕尾服，更彰显了雪之下白皙明净的肌肤之美；
+伸长的衣摆和长裤也令她修长俏丽的美腿更为凸显；
+举手投足间，她那扎为一束的秀发如波浪般律动，又为她添了几分虚幻朦胧之意；
+再与她纤瘦的身材相映成趣后，「薄幸的美少年」一词仿佛呼之欲出。
+光是她那工整标致的五官，便使她散发着一种倒错美的气息，我甚至感到了危险。
+ 舞会上的结衣
+近乎于白的淡粉、带着透明感的布料，此般色调搭配，又或者说是因为这种款式，给人一种分外的成熟感。
+衣襟张得很开，腰部那块也束了一圈，而这又更勾勒出她傲人的身体曲线。
+裙摆本身很长，不过因为开衩开的很深，所以看上去丝毫不笨重；倒不如说若是她转动身体，这礼服就好似随风起舞般的轻盈。
+她一向缠成团子头的头发，如今编的好似花冠，让我不禁想起某位王子大人提过的称呼。
+第七章. 就算，知道会后悔这个选择。 最终只剩下我们的事了。因为相互依赖，所有没有比我们更好理解的了。
+说来容易，正因被人依靠，我才能够弄清自己的存在价值。
+我自己也很容易地信服。
+然而，这并不是答案。相互依赖是形式，但非人的感情所在。即便可以用作借口，也无法成为理由。
+抽丝剥茧，尽心竭力，声嘶力竭，最终心里只剩下了恋恋不舍。
+可是，我唯独不想说出这话。因为这个理由太逊了。然而，不说出来，这位老师就不会让我前行。我很清楚，因为如此，她才对我道歉。
+所以，我疲惫地、重重地叹了一口气，迫不得已，小声地开口说道。
+「……因为我承诺过，总有一天会对她伸出援手。」
+因为她拜托过我，这理由十分平常而又极为理所当然，这话语不带感情而又毫无逻辑可言，这措辞实在无聊而又陈词滥调透顶，我对向她出手相助，真的是厌恶至极。</description>
+    </item>
+    
+    <item>
       <title>春物文摘二</title>
       <link>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/</link>
-      <pubDate>Sat, 03 Jul 2021 16:44:36 +0800</pubDate>
+      <pubDate>Tue, 11 May 2021 16:44:36 +0800</pubDate>
       
       <guid>https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/</guid>
       <description>作者：渡航
@@ -1150,6 +1073,40 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     </item>
     
     <item>
+      <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
+      <link>https://akynazh.site/posts/study/java%E4%B8%8Ec&#43;&#43;%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/java%E4%B8%8Ec&#43;&#43;%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/</guid>
+      <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
+Java的参数传递 先定义3个方法如下：
+1 2 3 4 5 6 7 8 9 10 11  public static void change1(String str, int num) { str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象!  num = 100; } public static void change2(User user) { user.age = 1; user.name = &amp;#34;mary&amp;#34;; } public static void change3(User user) { user = new User(1, &amp;#34;mary&amp;#34;); }   进行测试：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  public static void main(String[] args) { String str = &amp;#34;hello&amp;#34;; int num = 1; System.</description>
+    </item>
+    
+    <item>
+      <title>Window实用命令记录之文件操作</title>
+      <link>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <description>创建文件或文件夹 cmd下创建文件 1  type nul &amp;gt; test.jpg   powershell下创建文件 1  new-item test.jpg   创建文件夹 1  mkdir test   重命名文件 注意不能指定到新的路径。
+1  PS D:\a\tmp\test&amp;gt; ren test.txt my.txt   移动文件 该命令也可用于重命名。
+1  PS D:\a\tmp\test&amp;gt; move test.jpg mydir   复制文件和文件夹 copy无法递归复制，而xcopy可以。
+1  PS D:\a\tmp\test\mydir&amp;gt; copy test.jpg test1.jpg   1 2 3 4 5 6 7 8 9 10 11 12  # mydir not empty PS D:\a\tmp\test&amp;gt; copy mydir mydir1 PS D:\a\tmp\test&amp;gt; ls mydir1 # empty PS D:\a\tmp\test&amp;gt; xcopy mydir mydir2 目标 mydir2 是文件名 还是目录名 (F = 文件，D = 目录)?</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之shell变量运算</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Mon, 12 Apr 2021 23:21:41 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/</guid>
+      <description>算术运算 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# echo $a 1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 [root@VM-0-11-centos ~]# b=$((b+b)) [root@VM-0-11-centos ~]# echo $b 24   比较运算 指令：-eq -ne -lt -gt -ge -le
+1 2 3 4 5  a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no   指令：-a -o</description>
+    </item>
+    
+    <item>
       <title>《人间失格》文摘</title>
       <link>https://akynazh.site/posts/book/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 11 Apr 2021 23:13:01 +0800</pubDate>
@@ -1186,6 +1143,61 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
     </item>
     
     <item>
+      <title>Linux实用操作之编辑命令与变量</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Mon, 05 Apr 2021 23:01:48 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
+      <description>配置环境变量（以Java为例） Linux相关配置文件解析  bashrc部分:   /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:   /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。
+1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version &amp;#34;1.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之文件操作</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 05 Apr 2021 22:38:46 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <description>观察文件信息 1 2  drwxr-xr-x 2 root root 4096 Jan 2 18:41 source 文件类型+文件权限+目录或链接个数+创建者+所在组+文件大小+修改日期+名称   关于文件类型：
+ d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件  文件创建 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos d3]# touch f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:26 f1 # -d 修改创建时间 [root@VM-0-11-centos d3]# touch -d &amp;#34;2022/4/10 00:27&amp;#34; f1 [root@VM-0-11-centos d3]# ll total 0 -rw-r--r-- 1 root root 0 Apr 10 00:27 f1   目录创建 1 2 3 4  [root@VM-0-11-centos test]# mkdir -p d1/d2/d3 [root@VM-0-11-centos test]# cd d1/d2/d3 [root@VM-0-11-centos d3]# pwd # 查看当前路径 /root/test/d1/d2/d3   文件移动 1 2 3 4 5  [root@VM-0-11-centos test]# ls t1.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之进程管理</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 31 Mar 2021 22:55:53 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
+      <description>查看所有进程 ps -ef  -e : all processes (-A) -f : full-format, including command lines  1 2  [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD   解释如下：
+ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数  ps aux  a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys  1 2  [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND   解释如下：</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之工作调度</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Wed, 31 Mar 2021 22:34:24 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/</guid>
+      <description>at命令 create job 1 2 3 4 5 6 7 8 9 10  [root@VM-0-11-centos ~]# at 22:38 at&amp;gt; echo &amp;#34;hello world&amp;#34; &amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 3 at Thu Mar 31 22:38:00 2022 [root@VM-0-11-centos ~]# at now +2 minute at&amp;gt; echo &amp;#34;hello kitty&amp;#34; &amp;gt;&amp;gt; ~/at-test.txt # ctrl D at&amp;gt; &amp;lt;EOT&amp;gt; job 4 at Thu Mar 31 22:39:00 2022   check job 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# ls at-test.</description>
+    </item>
+    
+    <item>
+      <title>Linux实用操作之网络管理</title>
+      <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
+      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
+1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
+1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
+IP : ${my_ip} 地址 : 中国 中国
+数据二 : 上海市 | 腾讯云
+数据三 : 中国北京北京 | 腾讯
+URL : http://www.cip.cc/${my_ip}
+查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
+    </item>
+    
+    <item>
       <title>Linux实用操作之修改默认配置</title>
       <link>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 03 Jan 2021 00:10:38 +0800</pubDate>
@@ -1193,18 +1205,6 @@ awk命令操作文本  格式化输出：以tab隔开打印前五行中每行的
       <guid>https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/</guid>
       <description>修改vim中tab长度 设置vim中tab长度
 1 2 3  vim /etc/vimrc set tabstop=4   修改vim自动缩进长度 1 2 3  vim /etc/vimrc set shiftwidth=4   禁用烦人的蜂鸣声  禁用bash蜂鸣声  1 2 3  vim /etc/inputrc ------ 取消&amp;#34;set bell-style none&amp;#34;注释   禁用vim蜂鸣声  1 2 3  vim /etc/vimrc ------ 添加&amp;#34;set noeb vb t_vb=&amp;#34;   (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)</description>
-    </item>
-    
-    <item>
-      <title>关于char*, char[], string的理解</title>
-      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</link>
-      <pubDate>Sat, 05 Dec 2020 12:37:32 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-      <description>关于char[]与char*的区别 1 2 3 4  char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc s1[1] = &amp;#39;d&amp;#39;; // 改变值 cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc   &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
-1 2 3 4  const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc s2 = &amp;#34;dfs&amp;#34;; // 改变地址 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs   &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
-以上两者皆可用于函数传值
-1 2 3 4 5 6  void print_str(const char * str) { printf(&amp;#34;%s\n&amp;#34;, str); } print_str(s1); // adc print_str(s2); // dfs   关于string和char[],char*的关系  string是类，string是对一个字符串的引用值  1 2 3 4 5 6 7  const char* s1 = &amp;#34;abc&amp;#34;; string s = s1; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc s += &amp;#34;a&amp;#34;; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 证明string只是引用了s1    string引用字符串示例  1 2 3 4 5 6 7  const char *s1 = &amp;#34;123&amp;#34;; string str1 = s1; // 若要这样赋值s1必须加const cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123  char s2[] = &amp;#34;234&amp;#34;; string str2 = s2; cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234    string转char*  1 2 3  const char* s1_1 = str1.</description>
     </item>
     
     <item>
