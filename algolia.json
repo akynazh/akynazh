@@ -1,5 +1,25 @@
 [
         {
+          "objectID": "Wsl主要操作记录",
+          "url": "https://akynazh.site/posts/study/wsl%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
+          "title": "Wsl主要操作记录",
+          "date": "2022-07-23T17:34:52+08:00",
+          "tags": ["wsl","linux"],
+          "categories": ["Study"],
+          "summary": "wsl在window开机后自启ssh服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务} # 或者使用service/systemctl命令   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d \u0026lt;DistributionName\u0026gt; -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表\nwsl修改默认登录用户 \u0026lt;DistributionName\u0026gt; config --default-user root: 将登录默认用户设为root\n手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：\n1 2 3  # Set the user when launching a distribution with WSL.",
+          "content": "wsl在window开机后自启ssh服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务} # 或者使用service/systemctl命令   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d \u0026lt;DistributionName\u0026gt; -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表\nwsl修改默认登录用户 \u0026lt;DistributionName\u0026gt; config --default-user root: 将登录默认用户设为root\n手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：\n1 2 3  # Set the user when launching a distribution with WSL. [user] default = root   然后重启wsl即可完成。\n切换wsl1和wsl2 1  wsl --set-version \u0026lt;distribution name\u0026gt; \u0026lt;versionNumber\u0026gt;   \u0026lt;versionNumber\u0026gt;值为1或2，对应wsl1和wsl2。\n升级ubuntu发行版本 1 2 3  apt update apt upgrade do-release-upgrade -d   升级wsl的linux内核版本 1  wsl --update   可以使用wsl --update rollback 命令回滚到内核的上一版本。\n卸载wsl 1  wsl --unregister \u0026lt;DistributionName\u0026gt;   From My Blog: akynazh.\nOver.\n"
+        }, 
+        {
+          "objectID": "Wsl自定义安装位置",
+          "url": "https://akynazh.site/posts/study/wsl%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE/",
+          "title": "Wsl自定义安装位置",
+          "date": "2022-07-23T17:27:31+08:00",
+          "tags": ["wsl","linux"],
+          "categories": ["Study"],
+          "summary": "自定义wsl安装位置  下载wsl-ubuntu：  20.04版本：https://aka.ms/wslubuntu2004 18.04版本：https://aka.ms/wsl-ubuntu-1804 其他版本自行前往官网查找。   下载后得到AppxBundle文件CanonicalGroupLimited.UbuntuonWindows_2004.2021.825.0.AppxBundle，将后缀名改为zip，然后解压。 解压后得到如下内容： 选择Ubuntu_2004.2021.825.0_x64.appx（64位）或Ubuntu_2004.2021.825.0_ARM64.appx（32位）均可，将后缀名改为zip，然后解压。 解压后得到如下内容： 双击ubuntu.exe，即可开始安装wsl-ubuntu。 安装完成后得到该目录下得到虚拟盘：  安装时会让你指定用户名和密码，这个用户是默认添加到sudoers里的，如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。  From My Blog: akynazh.\nOver.",
+          "content": "自定义wsl安装位置  下载wsl-ubuntu：  20.04版本：https://aka.ms/wslubuntu2004 18.04版本：https://aka.ms/wsl-ubuntu-1804 其他版本自行前往官网查找。   下载后得到AppxBundle文件CanonicalGroupLimited.UbuntuonWindows_2004.2021.825.0.AppxBundle，将后缀名改为zip，然后解压。 解压后得到如下内容： 选择Ubuntu_2004.2021.825.0_x64.appx（64位）或Ubuntu_2004.2021.825.0_ARM64.appx（32位）均可，将后缀名改为zip，然后解压。 解压后得到如下内容： 双击ubuntu.exe，即可开始安装wsl-ubuntu。 安装完成后得到该目录下得到虚拟盘：  安装时会让你指定用户名和密码，这个用户是默认添加到sudoers里的，如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。  From My Blog: akynazh.\nOver.\n"
+        }, 
+        {
           "objectID": "OpenFeign使用记录",
           "url": "https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/",
           "title": "OpenFeign使用记录",
@@ -796,8 +816,8 @@
           "date": "0001-01-01T00:00:00Z",
           "tags": null,
           "categories": null,
-          "summary": "Linux开启ssh服务   下载OpenSSH\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  查看linux发行版本 1  lsb_release -a   查看linux操作系统信息 1  uname -a   wsl开机自启服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务}   再赋予init.",
-          "content": "Linux开启ssh服务   下载OpenSSH\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  查看linux发行版本 1  lsb_release -a   查看linux操作系统信息 1  uname -a   wsl开机自启服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务}   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d Ubuntu-18.04 -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  "
+          "summary": "Linux开启ssh服务   下载OpenSSH；\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo ssh-keygen -A: 生成hostkeys；\n  sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  查看linux发行版本 1  lsb_release -a   查看linux操作系统信息 1  uname -a   关于apt apt update：从服务器检查并且更新本地仓库软件版本信息，通过apt list --upgradable进行查看可更新软件。",
+          "content": "Linux开启ssh服务   下载OpenSSH；\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo ssh-keygen -A: 生成hostkeys；\n  sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  查看linux发行版本 1  lsb_release -a   查看linux操作系统信息 1  uname -a   关于apt apt update：从服务器检查并且更新本地仓库软件版本信息，通过apt list --upgradable进行查看可更新软件。\napt upgrade：更新已安装的软件。\n"
         }, 
         {
           "objectID": "mysql",
