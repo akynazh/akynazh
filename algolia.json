@@ -1,17 +1,37 @@
 [
         {
+          "objectID": "Linux实用操作之系统服务管理",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/",
+          "title": "Linux实用操作之系统服务管理",
+          "date": "2022-07-24T20:42:27+08:00",
+          "tags": ["linux"],
+          "categories": ["Study"],
+          "summary": "systemctl指令  立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service  service和chkconfig指令  启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list  Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  - Unit - Description，服务的描述 - Requires，定义此unit需在哪个daemon启动后才能够启动 - Service - Type，定义启动时的进程行为。它有以下几种值。 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 - Type=dbus，当前服务通过D-Bus启动 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 - Type=idle，若有其他任务执行完毕，当前服务才会运行 - ExecStart，启动当前服务的命令 - ExecStartPre，启动当前服务之前执行的命令 - ExecStartPost，启动当前服务之后执行的命令 - ExecReload，重启当前服务时执行的命令 - ExecStop，停止当前服务时执行的命令 - ExecStopPost，停止当其服务之后执行的命令 - RestartSec，自动重启当前服务间隔的秒数 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 - Environment，指定环境变量 - Install - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.",
+          "content": "systemctl指令  立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service  service和chkconfig指令  启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list  Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  - Unit - Description，服务的描述 - Requires，定义此unit需在哪个daemon启动后才能够启动 - Service - Type，定义启动时的进程行为。它有以下几种值。 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 - Type=dbus，当前服务通过D-Bus启动 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 - Type=idle，若有其他任务执行完毕，当前服务才会运行 - ExecStart，启动当前服务的命令 - ExecStartPre，启动当前服务之前执行的命令 - ExecStartPost，启动当前服务之后执行的命令 - ExecReload，重启当前服务时执行的命令 - ExecStop，停止当前服务时执行的命令 - ExecStopPost，停止当其服务之后执行的命令 - RestartSec，自动重启当前服务间隔的秒数 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 - Environment，指定环境变量 - Install - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.wants后缀构成的子目录中 - RequiredBy，它的值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.required后缀构成的子目录中 - Alias，当前Unit可用于启动的别名 - Also，当前Unit激活(enable)时，会被同时激活的其他Unit   自定义服务启动 服务的管理通过systemd进行，systemd大部分配置文件位于/usr/lib/systemd/system/内，一般不在这进行修改。\n修改的位置位于/etc/systemd/system内，在这里可以加入自己的服务。\n新建service文件 1 2 3 4 5 6 7 8 9 10 11 12  vim /etc/systemd/system/test.service # test.service [Unit] Description=service test [Service] Type=simple ExecStart=/bin/bash -c \u0026#34; ~/test-service.sh\u0026#34; [Install] WantedBy=multi-user.target   开启服务并观察 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# systemctl daemon-reload [root@VM-0-11-centos ~]# systemctl start test.service [root@VM-0-11-centos ~]# systemctl status test.service ● test.service - service test Loaded: loaded (/etc/systemd/system/test.service; disabled; vendor preset: disabled) Active: active (running) since Wed 2022-04-13 00:04:24 CST; 4s ago Main PID: 15428 (bash) CGroup: /system.slice/test.service ├─15428 /bin/bash -c ~/test-service.sh | at now; ├─15429 /bin/bash -c ~/test-service.sh | at now; ├─15430 at now └─15432 sleep 30s Apr 13 00:04:24 VM-0-11-centos systemd[1]: Started service test.   查看Unit启动日志 Systemd统一管理了所有Unit的启动日志，因此只需要使用journalctl命令就可以查看到服务的日志。\n 显示尾部指定行数的日志：journalctl -n 20 查看指定服务的日志：journalctl /usr/lib/systemd/systemd 查看指定进程的日志：journalctl _PID=1 查看某个 Unit 的日志：journalctl -u nginx.service  Linux开启ssh服务   下载OpenSSH；\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo ssh-keygen -A: 生成hostkeys；\n  sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  "
+        }, 
+        {
+          "objectID": "Linux配置Mysql环境",
+          "url": "https://akynazh.site/posts/study/database/linux%E9%85%8D%E7%BD%AEmysql%E7%8E%AF%E5%A2%83/",
+          "title": "Linux配置Mysql环境",
+          "date": "2022-07-23T21:27:15+08:00",
+          "tags": ["linux","mysql","database"],
+          "categories": ["Study"],
+          "summary": "安装mysql yum方式安装mysql   获取mysql的rpm包 可从地址https://dev.mysql.com/downloads/repo/yum/，找到适合自己发行版本的rpm包下载。下面下载的是适用于CentOS7版本的。\n1 2 3  [root@VM-0-11-centos ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm ...... 2022-01-02 12:07:24 (133 KB/s) - ‘mysql80-community-release-el7-3.noarch.rpm’ saved [26024/26024]     安装mysql的rpm包\n1 2 3 4  [root@VM-0-11-centos ~]# rpm -Uvh mysql80-community-release-el7-3.noarch.rpm ...... Updating / installing... 1:mysql80-community-release-el7-3 ################################# [100%]   这时查看/etc/yum.repos.d即可以看到如下内容：\n1 2 3  [root@VM-0-11-centos ~]# ls /etc/yum.repos.d | grep mysql mysql-community.repo mysql-community-source.repo     （可选）将mysql80换为mysql57\n1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# yum-config-manager --disable mysql80-community [root@VM-0-11-centos ~]# yum-config-manager --enable mysql57-community # 查看是否切换成功： [root@VM-0-11-centos ~]# yum repolist enabled | grep mysql mysql-connectors-community/x86_64 MySQL Connectors Community 221 mysql-tools-community/x86_64 MySQL Tools Community 135 mysql57-community/x86_64 MySQL 5.",
+          "content": "安装mysql yum方式安装mysql   获取mysql的rpm包 可从地址https://dev.mysql.com/downloads/repo/yum/，找到适合自己发行版本的rpm包下载。下面下载的是适用于CentOS7版本的。\n1 2 3  [root@VM-0-11-centos ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm ...... 2022-01-02 12:07:24 (133 KB/s) - ‘mysql80-community-release-el7-3.noarch.rpm’ saved [26024/26024]     安装mysql的rpm包\n1 2 3 4  [root@VM-0-11-centos ~]# rpm -Uvh mysql80-community-release-el7-3.noarch.rpm ...... Updating / installing... 1:mysql80-community-release-el7-3 ################################# [100%]   这时查看/etc/yum.repos.d即可以看到如下内容：\n1 2 3  [root@VM-0-11-centos ~]# ls /etc/yum.repos.d | grep mysql mysql-community.repo mysql-community-source.repo     （可选）将mysql80换为mysql57\n1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# yum-config-manager --disable mysql80-community [root@VM-0-11-centos ~]# yum-config-manager --enable mysql57-community # 查看是否切换成功： [root@VM-0-11-centos ~]# yum repolist enabled | grep mysql mysql-connectors-community/x86_64 MySQL Connectors Community 221 mysql-tools-community/x86_64 MySQL Tools Community 135 mysql57-community/x86_64 MySQL 5.7 Community Server 544     安装mysql\n1 2 3 4 5 6  [root@VM-0-11-centos ~]# yum install mysql-community-server ...... Installed: mysql-community-libs.x86_64 0:5.7.36-1.el7 mysql-community-libs-compat.x86_64 0:5.7.36-1.el7 mysql-community-server.x86_64 0:5.7.36-1.el7 ......     apt方式安装mysql 1  apt install mysql-server   运行mysql 以下操作均在CentOS上执行，在其他linux发行版上，一些操作命令和目录的位置会有差别。\n1 2 3 4 5 6 7 8 9 10 11  # 开启mysql服务 [root@VM-0-11-centos ~]# systemctl start mysqld # 查看mysql服务状态 [root@VM-0-11-centos ~]# systemctl status mysqld ● mysqld.service - MySQL Server Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled) Active: active (running) since Sun 2022-01-02 12:21:47 CST; 11s ago ...... Jan 02 12:21:41 VM-0-11-centos systemd[1]: Starting MySQL Server... Jan 02 12:21:47 VM-0-11-centos systemd[1]: Started MySQL Server.   配置mysql 设置root密码  获取root默认密码（也可能初始没有密码） 1 2 3  [root@VM-0-11-centos ~]# grep \u0026#39;temporary password\u0026#39; /var/log/mysqld.log 2022-01-02T04:21:43.962084Z 1 [Note] A temporary password is generated for root@localhost: mkjhMuJBe3,% # 则默认密码为mkjhMuJBe3,%    登录mysql 1 2 3 4 5 6 7  [root@VM-0-11-centos ~]# mysql -u root -p Enter password: # 输入默认密码 Welcome to the MySQL monitor. Commands end with ; or \\g. Your MySQL connection id is 3 Server version: 5.7.36 ... mysql\u0026gt;    修改root账户登录密码 1 2  mysql\u0026gt; ALTER USER \u0026#39;root\u0026#39;@\u0026#39;localhost\u0026#39; IDENTIFIED BY \u0026#39;658766@Jzh\u0026#39;; Query OK, 0 rows affected (0.00 sec)     设置允许远程访问mysql 1 2 3 4  mysql\u0026gt; GRANT ALL PRIVILEGES ON *.* TO \u0026#39;root\u0026#39;@\u0026#39;%\u0026#39; IDENTIFIED BY \u0026#39;658766@Jzh\u0026#39; WITH GRANT OPTION; Query OK, 0 rows affected, 1 warning (0.00 sec) mysql\u0026gt; FLUSH PRIVILEGES; Query OK, 0 rows affected (0.00 sec)   设置开机自启动mysql 1 2  [root@VM-0-11-centos ~]# systemctl enable mysqld [root@VM-0-11-centos ~]# systemctl daemon-reload   设置默认编码为utf-8   查看原来编码\n1 2 3 4 5 6 7 8 9 10 11 12 13  mysql\u0026gt; SHOW VARIABLES LIKE \u0026#39;character%\u0026#39;; +--------------------------+----------------------------+ | Variable_name | Value | +--------------------------+----------------------------+ | character_set_client | utf8 | | character_set_connection | utf8 | | character_set_database | latin1 | | character_set_filesystem | binary | | character_set_results | utf8 | | character_set_server | latin1 | | character_set_system | utf8 | | character_sets_dir | /usr/share/mysql/charsets/ | +--------------------------+----------------------------+     编辑/etc/my.cnf文件\n1 2 3 4 5  [root@VM-0-11-centos ~]# vim /etc/my.cnf [mysqld]下新增： character_set_server=utf8 init-connect=\u0026#39;SET NAMES utf8\u0026#39;     重启mysql服务\n1  [root@VM-0-11-centos ~]# systemctl restart mysqld     再查看编码\n1 2 3 4 5 6 7 8 9 10 11 12 13 14  mysql\u0026gt; SHOW VARIABLES LIKE \u0026#39;character%\u0026#39;; +--------------------------+----------------------------+ | Variable_name | Value | +--------------------------+----------------------------+ | character_set_client | utf8 | | character_set_connection | utf8 | | character_set_database | utf8 | | character_set_filesystem | binary | | character_set_results | utf8 | | character_set_server | utf8 | | character_set_system | utf8 | | character_sets_dir | /usr/share/mysql/charsets/ | +--------------------------+----------------------------+ 8 rows in set (0.01 sec)     From My Blog: akynazh.\nOver.\n"
+        }, 
+        {
           "objectID": "Wsl主要操作记录",
-          "url": "https://akynazh.site/posts/study/wsl%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
+          "url": "https://akynazh.site/posts/study/window/wsl%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
           "title": "Wsl主要操作记录",
           "date": "2022-07-23T17:34:52+08:00",
           "tags": ["wsl","linux"],
           "categories": ["Study"],
-          "summary": "wsl在window开机后自启ssh服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务} # 或者使用service/systemctl命令   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d \u0026lt;DistributionName\u0026gt; -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表\nwsl修改默认登录用户 \u0026lt;DistributionName\u0026gt; config --default-user root: 将登录默认用户设为root\n手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：\n1 2 3  # Set the user when launching a distribution with WSL.",
-          "content": "wsl在window开机后自启ssh服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务} # 或者使用service/systemctl命令   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d \u0026lt;DistributionName\u0026gt; -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表\nwsl修改默认登录用户 \u0026lt;DistributionName\u0026gt; config --default-user root: 将登录默认用户设为root\n手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：\n1 2 3  # Set the user when launching a distribution with WSL. [user] default = root   然后重启wsl即可完成。\n切换wsl1和wsl2 1  wsl --set-version \u0026lt;distribution name\u0026gt; \u0026lt;versionNumber\u0026gt;   \u0026lt;versionNumber\u0026gt;值为1或2，对应wsl1和wsl2。\n升级ubuntu发行版本 1 2 3  apt update apt upgrade do-release-upgrade -d   升级wsl的linux内核版本 1  wsl --update   可以使用wsl --update rollback 命令回滚到内核的上一版本。\n卸载wsl 1  wsl --unregister \u0026lt;DistributionName\u0026gt;   From My Blog: akynazh.\nOver.\n"
+          "summary": "wsl在window开机后自启ssh服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务} # 或者使用service/systemctl命令   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d \u0026lt;DistributionName\u0026gt; -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  wsl一些常用命令  wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表  wsl修改默认登录用户 \u0026lt;DistributionName\u0026gt; config --default-user root: 将登录默认用户设为root\n手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：\n1 2 3  # Set the user when launching a distribution with WSL.",
+          "content": "wsl在window开机后自启ssh服务   wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：\n1  /etc/init.d/${需要的服务} # 或者使用service/systemctl命令   再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl\n  window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：\n1  wsl -d \u0026lt;DistributionName\u0026gt; -u root /etc/init.wsl   其中，版本通过wsl -l查看。\n  wsl一些常用命令  wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表  wsl修改默认登录用户 \u0026lt;DistributionName\u0026gt; config --default-user root: 将登录默认用户设为root\n手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：\n1 2 3  # Set the user when launching a distribution with WSL. [user] default = root   然后重启wsl即可完成。\n切换wsl1和wsl2 1  wsl --set-version \u0026lt;distribution name\u0026gt; \u0026lt;versionNumber\u0026gt;   \u0026lt;versionNumber\u0026gt;值为1或2，对应wsl1和wsl2。\n升级ubuntu发行版本 1 2 3  apt update apt upgrade do-release-upgrade -d   升级wsl的linux内核版本 1  wsl --update   可以使用wsl --update rollback 命令回滚到内核的上一版本。\n卸载wsl 1  wsl --unregister \u0026lt;DistributionName\u0026gt;   From My Blog: akynazh.\nOver.\n"
         }, 
         {
           "objectID": "Wsl自定义安装位置",
-          "url": "https://akynazh.site/posts/study/wsl%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE/",
+          "url": "https://akynazh.site/posts/study/window/wsl%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE/",
           "title": "Wsl自定义安装位置",
           "date": "2022-07-23T17:27:31+08:00",
           "tags": ["wsl","linux"],
@@ -21,17 +41,17 @@
         }, 
         {
           "objectID": "OpenFeign使用记录",
-          "url": "https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/",
+          "url": "https://akynazh.site/posts/study/web/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/",
           "title": "OpenFeign使用记录",
           "date": "2022-07-22T17:39:24+08:00",
           "tags": ["springcloud","java"],
           "categories": ["Study"],
-          "summary": "为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + \u0026quot;/payment/create\u0026quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。\nOpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。\n使用OpenFeign   关于pom.xml\n1 2 3 4  \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.springframework.cloud\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;spring-cloud-starter-openfeign\u0026lt;/artifactId\u0026gt; \u0026lt;/dependency\u0026gt;     关于application.yml\n除了基本配置内容外，注意以下配置：\n1 2 3 4 5 6 7 8  # 设置feign客户端超时时间（默认为1秒） ribbon: ReadTimeout: 5000 ConnectTimeout: 5000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口\n 首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = \u0026#34;CLOUD-PAYMENT-SERVICE\u0026#34;) public interface PaymentService { @GetMapping(\u0026#34;/payment/get/{id}\u0026#34;) CommonResult\u0026lt;Payment\u0026gt; getPaymentById(@PathVariable(\u0026#34;id\u0026#34;) Long id); @PostMapping(\u0026#34;/payment/create\u0026#34;) CommonResult\u0026lt;Integer\u0026gt; createPayment(@RequestBody Payment payment); }     调用接口",
-          "content": "为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + \u0026quot;/payment/create\u0026quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。\nOpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。\n使用OpenFeign   关于pom.xml\n1 2 3 4  \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.springframework.cloud\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;spring-cloud-starter-openfeign\u0026lt;/artifactId\u0026gt; \u0026lt;/dependency\u0026gt;     关于application.yml\n除了基本配置内容外，注意以下配置：\n1 2 3 4 5 6 7 8  # 设置feign客户端超时时间（默认为1秒） ribbon: ReadTimeout: 5000 ConnectTimeout: 5000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口\n 首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = \u0026#34;CLOUD-PAYMENT-SERVICE\u0026#34;) public interface PaymentService { @GetMapping(\u0026#34;/payment/get/{id}\u0026#34;) CommonResult\u0026lt;Payment\u0026gt; getPaymentById(@PathVariable(\u0026#34;id\u0026#34;) Long id); @PostMapping(\u0026#34;/payment/create\u0026#34;) CommonResult\u0026lt;Integer\u0026gt; createPayment(@RequestBody Payment payment); }     调用接口\n注入PaymentController接口，然后即可调用它的方法。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  @RestController @Slf4j public class PaymentController { @Resource private PaymentService paymentService; @PostMapping(\u0026#34;/consumer/payment/create\u0026#34;) public CommonResult\u0026lt;Integer\u0026gt; create(@RequestBody Payment payment) { return paymentService.createPayment(payment); } @GetMapping(\u0026#34;/consumer/payment/get/{id}\u0026#34;) public CommonResult\u0026lt;Payment\u0026gt; getPayment(@PathVariable(\u0026#34;id\u0026#34;) Long id) { return paymentService.getPaymentById(id); } }     配置日志输出级别\n返回Logger.Level对象，放入spring容器中\n1 2 3 4 5 6 7  @Configuration public class FeignConfig { @Bean Logger.Level feignLogLevel() { return Logger.Level.BASIC; } }     From My Blog: akynazh.\nOver.\n"
+          "summary": "为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + \u0026quot;/payment/create\u0026quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。\nOpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。\n使用OpenFeign   关于pom.xml\n1 2 3 4  \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.springframework.cloud\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;spring-cloud-starter-openfeign\u0026lt;/artifactId\u0026gt; \u0026lt;/dependency\u0026gt;     关于application.yml\n除了基本配置内容外，注意以下配置：\n1 2 3 4 5 6 7 8 9 10 11  feign: # 设置feign客户端超时时间（默认为1秒） client: config: default: ConnectTimeOut: 10000 ReadTimeOut: 10000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口\n 首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = \u0026#34;CLOUD-PAYMENT-SERVICE\u0026#34;) public interface PaymentService { @GetMapping(\u0026#34;/payment/get/{id}\u0026#34;) CommonResult\u0026lt;Payment\u0026gt; getPaymentById(@PathVariable(\u0026#34;id\u0026#34;) Long id); @PostMapping(\u0026#34;/payment/create\u0026#34;) CommonResult\u0026lt;Integer\u0026gt; createPayment(@RequestBody Payment payment); }     调用接口",
+          "content": "为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + \u0026quot;/payment/create\u0026quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。\nOpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。\n使用OpenFeign   关于pom.xml\n1 2 3 4  \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.springframework.cloud\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;spring-cloud-starter-openfeign\u0026lt;/artifactId\u0026gt; \u0026lt;/dependency\u0026gt;     关于application.yml\n除了基本配置内容外，注意以下配置：\n1 2 3 4 5 6 7 8 9 10 11  feign: # 设置feign客户端超时时间（默认为1秒） client: config: default: ConnectTimeOut: 10000 ReadTimeOut: 10000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口\n 首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = \u0026#34;CLOUD-PAYMENT-SERVICE\u0026#34;) public interface PaymentService { @GetMapping(\u0026#34;/payment/get/{id}\u0026#34;) CommonResult\u0026lt;Payment\u0026gt; getPaymentById(@PathVariable(\u0026#34;id\u0026#34;) Long id); @PostMapping(\u0026#34;/payment/create\u0026#34;) CommonResult\u0026lt;Integer\u0026gt; createPayment(@RequestBody Payment payment); }     调用接口\n注入PaymentController接口，然后即可调用它的方法。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  @RestController @Slf4j public class PaymentController { @Resource private PaymentService paymentService; @PostMapping(\u0026#34;/consumer/payment/create\u0026#34;) public CommonResult\u0026lt;Integer\u0026gt; create(@RequestBody Payment payment) { return paymentService.createPayment(payment); } @GetMapping(\u0026#34;/consumer/payment/get/{id}\u0026#34;) public CommonResult\u0026lt;Payment\u0026gt; getPayment(@PathVariable(\u0026#34;id\u0026#34;) Long id) { return paymentService.getPaymentById(id); } }     配置日志输出级别\n返回Logger.Level对象，放入spring容器中\n1 2 3 4 5 6 7  @Configuration public class FeignConfig { @Bean Logger.Level feignLogLevel() { return Logger.Level.BASIC; } }     From My Blog: akynazh.\nOver.\n"
         }, 
         {
           "objectID": "理解快速幂运算并进行应用",
-          "url": "https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/",
           "title": "理解快速幂运算并进行应用",
           "date": "2022-07-21T20:44:54+08:00",
           "tags": ["algorithm","math"],
@@ -41,7 +61,7 @@
         }, 
         {
           "objectID": "Hugo通过Algolia添加站内搜索功能",
-          "url": "https://akynazh.site/posts/study/hugo%E9%80%9A%E8%BF%87algolia%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/",
+          "url": "https://akynazh.site/posts/study/web/hugo%E9%80%9A%E8%BF%87algolia%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/",
           "title": "Hugo通过Algolia添加站内搜索功能",
           "date": "2022-07-20T23:46:01+08:00",
           "tags": ["hugo","web"],
@@ -51,7 +71,7 @@
         }, 
         {
           "objectID": "理解Ribbon并自己实现负载均衡",
-          "url": "https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/",
+          "url": "https://akynazh.site/posts/study/web/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/",
           "title": "理解Ribbon并自己实现负载均衡",
           "date": "2022-07-20T17:07:35+08:00",
           "tags": ["java","springcloud","ribbon"],
@@ -61,7 +81,7 @@
         }, 
         {
           "objectID": "Consul配置过程及测试",
-          "url": "https://akynazh.site/posts/study/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/",
+          "url": "https://akynazh.site/posts/study/web/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/",
           "title": "Consul配置过程及测试",
           "date": "2022-07-19T16:34:39+08:00",
           "tags": ["consul","springcloud","java"],
@@ -71,7 +91,7 @@
         }, 
         {
           "objectID": "Zookeeper配置过程与测试",
-          "url": "https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/",
+          "url": "https://akynazh.site/posts/study/web/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/",
           "title": "Zookeeper配置过程与测试",
           "date": "2022-07-19T12:00:37+08:00",
           "tags": ["java","zookeeper","springcloud"],
@@ -80,18 +100,8 @@
           "content": "前言 Zookeeper类似于Eureka，起到微服务注册中心的作用，满足分布式系统中的CP原则，是弱可用性的。\n配置zookeeper环境   下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。\n  将zookeeper解压缩到/usr/local/zookeeper3.7.1。\n  编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中） 修改或添加以下内容：\n1 2  dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir   注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。\n  配置环境变量如下：\n1 2 3  # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin   接着通过source命令生效。\n  开启zookeeper连接（前置条件：已配好java环境）：zkServer.sh start\n  查看连接情况：\n1 2 3 4 5 6  zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone   可见已经开启成功了。\n  客户端进行连接：zkCli.sh\n1 2 3  [zk: localhost:2181(CONNECTED) 1] ls / [zookeeper] [zk: localhost:2181(CONNECTED) 2] get /zookeeper     编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于zookeeper包的导入： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.springframework.cloud\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;spring-cloud-starter-zookeeper-discovery\u0026lt;/artifactId\u0026gt; \u0026lt;exclusions\u0026gt; \u0026lt;exclusion\u0026gt; \u0026lt;groupId\u0026gt;org.apache.zookeeper\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;zookeeper\u0026lt;/artifactId\u0026gt; \u0026lt;/exclusion\u0026gt; \u0026lt;/exclusions\u0026gt; \u0026lt;/dependency\u0026gt; \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.apache.zookeeper\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;zookeeper\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;3.7.1\u0026lt;/version\u0026gt; \u0026lt;/dependency\u0026gt;   starter默认包可能和自己服务器上的zookeeper版本不一致，需要排除并执行导入。 关于application.yml 1 2 3  cloud: zookeeper: connect-string: 172.23.215.195:2181 # 自己服务器ip以及zookeeper端口地址。    启动类添加@EnableDiscoveryClient注解。  zookeeper测试 1 2 3 4 5 6 7 8 9  [zk: localhost:2181(CONNECTED) 3] ls / [services, zookeeper] [zk: localhost:2181(CONNECTED) 4] ls /services [cloud-provider-payment] [zk: localhost:2181(CONNECTED) 5] ls /services/cloud-provider-payment [2f68697b-4e55-4740-9204-f74842694a1d] [zk: localhost:2181(CONNECTED) 10] get /services/cloud-provider-payment/2f68697b-4e55-4740-9204-f74842694a1d {\u0026#34;name\u0026#34;:\u0026#34;cloud-provider-payment\u0026#34;,\u0026#34;id\u0026#34;:\u0026#34;2f68697b-4e55-4740-9204-f74842694a1d\u0026#34;,\u0026#34;address\u0026#34;:\u0026#34;LAPTOP-JZH\u0026#34;,\u0026#34;port\u0026#34;:8004,\u0026#34;sslPort\u0026#34;:null,\u0026#34;payload\u0026#34;:{\u0026#34;@class\u0026#34;:\u0026#34;org.springframework.cloud.zookeeper.discovery.ZookeeperInstance\u0026#34;,\u0026#34;id\u0026#34;:\u0026#34;application-1\u0026#34;,\u0026#34;name\u0026#34;:\u0026#34;cloud-provider-payment\u0026#34;,\u0026#34;metadata\u0026#34;:{}},\u0026#34;registrationTimeUTC\u0026#34;:1658200325523,\u0026#34;serviceType\u0026#34;:\u0026#34;DYNAMIC\u0026#34;,\u0026#34;uriSpec\u0026#34;:{\u0026#34;parts\u0026#34;:[{\u0026#34;value\u0026#34;:\u0026#34;scheme\u0026#34;,\u0026#34;variable\u0026#34;:true},{\u0026#34;value\u0026#34;:\u0026#34;://\u0026#34;,\u0026#34;variable\u0026#34;:false},{\u0026#34;value\u0026#34;:\u0026#34;address\u0026#34;,\u0026#34;variable\u0026#34;:true},{\u0026#34;value\u0026#34;:\u0026#34;:\u0026#34;,\u0026#34;variable\u0026#34;:false},{\u0026#34;value\u0026#34;:\u0026#34;port\u0026#34;,\u0026#34;variable\u0026#34;:true}]}}   对以上json串格式化后，可以获得服务具体信息如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39  { \u0026#34;name\u0026#34;: \u0026#34;cloud-provider-payment\u0026#34;, \u0026#34;id\u0026#34;: \u0026#34;2f68697b-4e55-4740-9204-f74842694a1d\u0026#34;, \u0026#34;address\u0026#34;: \u0026#34;LAPTOP-JZH\u0026#34;, \u0026#34;port\u0026#34;: 8004, \u0026#34;sslPort\u0026#34;: null, \u0026#34;payload\u0026#34;: { \u0026#34;@class\u0026#34;: \u0026#34;org.springframework.cloud.zookeeper.discovery.ZookeeperInstance\u0026#34;, \u0026#34;id\u0026#34;: \u0026#34;application-1\u0026#34;, \u0026#34;name\u0026#34;: \u0026#34;cloud-provider-payment\u0026#34;, \u0026#34;metadata\u0026#34;: {} }, \u0026#34;registrationTimeUTC\u0026#34;: 1658200325523, \u0026#34;serviceType\u0026#34;: \u0026#34;DYNAMIC\u0026#34;, \u0026#34;uriSpec\u0026#34;: { \u0026#34;parts\u0026#34;: [ { \u0026#34;value\u0026#34;: \u0026#34;scheme\u0026#34;, \u0026#34;variable\u0026#34;: true }, { \u0026#34;value\u0026#34;: \u0026#34;://\u0026#34;, \u0026#34;variable\u0026#34;: false }, { \u0026#34;value\u0026#34;: \u0026#34;address\u0026#34;, \u0026#34;variable\u0026#34;: true }, { \u0026#34;value\u0026#34;: \u0026#34;:\u0026#34;, \u0026#34;variable\u0026#34;: false }, { \u0026#34;value\u0026#34;: \u0026#34;port\u0026#34;, \u0026#34;variable\u0026#34;: true } ] } }   From My Blog: akynazh.\nOver.\n"
         }, 
         {
-          "objectID": "Linux实用操作之系统服务管理",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/",
-          "title": "Linux实用操作之系统服务管理",
-          "date": "2022-07-18T20:42:27+08:00",
-          "tags": ["linux"],
-          "categories": ["Study"],
-          "summary": "systemctl指令  立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service  service和chkconfig指令  启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list  Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  - Unit - Description，服务的描述 - Requires，定义此unit需在哪个daemon启动后才能够启动 - Service - Type，定义启动时的进程行为。它有以下几种值。 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 - Type=dbus，当前服务通过D-Bus启动 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 - Type=idle，若有其他任务执行完毕，当前服务才会运行 - ExecStart，启动当前服务的命令 - ExecStartPre，启动当前服务之前执行的命令 - ExecStartPost，启动当前服务之后执行的命令 - ExecReload，重启当前服务时执行的命令 - ExecStop，停止当前服务时执行的命令 - ExecStopPost，停止当其服务之后执行的命令 - RestartSec，自动重启当前服务间隔的秒数 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 - Environment，指定环境变量 - Install - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.",
-          "content": "systemctl指令  立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service  service和chkconfig指令  启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list  Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  - Unit - Description，服务的描述 - Requires，定义此unit需在哪个daemon启动后才能够启动 - Service - Type，定义启动时的进程行为。它有以下几种值。 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 - Type=dbus，当前服务通过D-Bus启动 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 - Type=idle，若有其他任务执行完毕，当前服务才会运行 - ExecStart，启动当前服务的命令 - ExecStartPre，启动当前服务之前执行的命令 - ExecStartPost，启动当前服务之后执行的命令 - ExecReload，重启当前服务时执行的命令 - ExecStop，停止当前服务时执行的命令 - ExecStopPost，停止当其服务之后执行的命令 - RestartSec，自动重启当前服务间隔的秒数 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 - Environment，指定环境变量 - Install - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.wants后缀构成的子目录中 - RequiredBy，它的值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.required后缀构成的子目录中 - Alias，当前Unit可用于启动的别名 - Also，当前Unit激活(enable)时，会被同时激活的其他Unit   自定义服务启动 服务的管理通过systemd进行，systemd大部分配置文件位于/usr/lib/systemd/system/内，一般不在这进行修改。\n修改的位置位于/etc/systemd/system内，在这里可以加入自己的服务。\n新建service文件 1 2 3 4 5 6 7 8 9 10 11 12  vim /etc/systemd/system/test.service # test.service [Unit] Description=service test [Service] Type=simple ExecStart=/bin/bash -c \u0026#34; ~/test-service.sh\u0026#34; [Install] WantedBy=multi-user.target   开启服务并观察 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [root@VM-0-11-centos ~]# systemctl daemon-reload [root@VM-0-11-centos ~]# systemctl start test.service [root@VM-0-11-centos ~]# systemctl status test.service ● test.service - service test Loaded: loaded (/etc/systemd/system/test.service; disabled; vendor preset: disabled) Active: active (running) since Wed 2022-04-13 00:04:24 CST; 4s ago Main PID: 15428 (bash) CGroup: /system.slice/test.service ├─15428 /bin/bash -c ~/test-service.sh | at now; ├─15429 /bin/bash -c ~/test-service.sh | at now; ├─15430 at now └─15432 sleep 30s Apr 13 00:04:24 VM-0-11-centos systemd[1]: Started service test.   查看Unit启动日志 Systemd统一管理了所有Unit的启动日志，因此只需要使用journalctl命令就可以查看到服务的日志。\n 显示尾部指定行数的日志：journalctl -n 20 查看指定服务的日志：journalctl /usr/lib/systemd/systemd 查看指定进程的日志：journalctl _PID=1 查看某个 Unit 的日志：journalctl -u nginx.service  "
-        }, 
-        {
           "objectID": "Eureka配置过程与理解",
-          "url": "https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/",
+          "url": "https://akynazh.site/posts/study/web/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/",
           "title": "Eureka配置过程与理解",
           "date": "2022-07-17T11:39:35+08:00",
           "tags": ["eureka","springcloud","java"],
@@ -121,7 +131,7 @@
         }, 
         {
           "objectID": "Window添加命令别名的方法",
-          "url": "https://akynazh.site/posts/study/window%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/window/window%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/",
           "title": "Window添加命令别名的方法",
           "date": "2022-06-24T22:52:59+08:00",
           "tags": ["window","powershell"],
@@ -141,7 +151,7 @@
         }, 
         {
           "objectID": "使用x86_64汇编写一个自旋锁",
-          "url": "https://akynazh.site/posts/study/%E4%BD%BF%E7%94%A8x86_64%E6%B1%87%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E6%97%8B%E9%94%81/",
+          "url": "https://akynazh.site/posts/study/os/%E4%BD%BF%E7%94%A8x86_64%E6%B1%87%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E6%97%8B%E9%94%81/",
           "title": "使用x86_64汇编写一个自旋锁",
           "date": "2022-06-09T23:37:51+08:00",
           "tags": ["汇编语言","os"],
@@ -151,7 +161,7 @@
         }, 
         {
           "objectID": "通过Wireshark分析TCP原理",
-          "url": "https://akynazh.site/posts/study/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/",
+          "url": "https://akynazh.site/posts/study/network/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/",
           "title": "通过Wireshark分析TCP原理",
           "date": "2022-06-09T23:18:55+08:00",
           "tags": ["tcp"],
@@ -231,7 +241,7 @@
         }, 
         {
           "objectID": "《挪威的森林》文摘四",
-          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/",
+          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E5%9B%9B/",
           "title": "《挪威的森林》文摘四",
           "date": "2022-04-25T20:39:14+08:00",
           "tags": ["excerpt"],
@@ -241,7 +251,7 @@
         }, 
         {
           "objectID": "Window实用命令记录之进程与网络控制",
-          "url": "https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/",
+          "url": "https://akynazh.site/posts/study/window/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6/",
           "title": "Window实用命令记录之进程与网络控制",
           "date": "2022-04-18T23:10:39+08:00",
           "tags": ["window","powershell","cmd"],
@@ -251,7 +261,7 @@
         }, 
         {
           "objectID": "《挪威的森林》文摘三",
-          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%89/",
+          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%89/",
           "title": "《挪威的森林》文摘三",
           "date": "2022-04-18T20:31:46+08:00",
           "tags": ["excerpt"],
@@ -271,7 +281,7 @@
         }, 
         {
           "objectID": "《挪威的森林》文摘二",
-          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%BA%8C/",
+          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%BA%8C/",
           "title": "《挪威的森林》文摘二",
           "date": "2022-04-16T18:03:53+08:00",
           "tags": ["excerpt"],
@@ -291,7 +301,7 @@
         }, 
         {
           "objectID": "《挪威的森林》文摘一",
-          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%80/",
+          "url": "https://akynazh.site/posts/book/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97/%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E6%96%87%E6%91%98%E4%B8%80/",
           "title": "《挪威的森林》文摘一",
           "date": "2022-04-14T23:11:22+08:00",
           "tags": ["excerpt"],
@@ -331,7 +341,7 @@
         }, 
         {
           "objectID": "在前后端不分离的情况下进行交互性数据展示的实现方法",
-          "url": "https://akynazh.site/posts/study/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/web/%E5%9C%A8%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8D%E5%88%86%E7%A6%BB%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E6%80%A7%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/",
           "title": "在前后端不分离的情况下进行交互性数据展示的实现方法",
           "date": "2022-02-11T00:05:25+08:00",
           "tags": ["springboot","java","web"],
@@ -351,7 +361,7 @@
         }, 
         {
           "objectID": "Linux实用操作之权限管理",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/",
           "title": "Linux实用操作之权限管理",
           "date": "2021-12-20T10:15:34+08:00",
           "tags": ["linux"],
@@ -361,7 +371,7 @@
         }, 
         {
           "objectID": "redis学习记录（二）",
-          "url": "https://akynazh.site/posts/study/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/",
+          "url": "https://akynazh.site/posts/study/database/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%BA%8C/",
           "title": "Redis学习记录（二）",
           "date": "2021-12-20T10:15:05+08:00",
           "tags": ["redis","database"],
@@ -371,7 +381,7 @@
         }, 
         {
           "objectID": "redis学习记录（一）",
-          "url": "https://akynazh.site/posts/study/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/",
+          "url": "https://akynazh.site/posts/study/database/redis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/",
           "title": "Redis学习记录（一）",
           "date": "2021-12-14T23:40:44+08:00",
           "tags": ["redis","database"],
@@ -381,7 +391,7 @@
         }, 
         {
           "objectID": "Git实用操作之初始化与分支管理",
-          "url": "https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/",
+          "url": "https://akynazh.site/posts/study/linux/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/",
           "title": "Git实用操作之初始化与分支管理",
           "date": "2021-12-10T18:10:07+08:00",
           "tags": ["git","github"],
@@ -391,7 +401,7 @@
         }, 
         {
           "objectID": "Linux实用操作之流程控制",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/",
           "title": "Linux实用操作之流程控制",
           "date": "2021-12-09T20:33:45+08:00",
           "tags": ["linux"],
@@ -401,7 +411,7 @@
         }, 
         {
           "objectID": "关于char, string的理解",
-          "url": "https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/",
+          "url": "https://akynazh.site/posts/study/language/%E5%85%B3%E4%BA%8Echar-string%E7%9A%84%E7%90%86%E8%A7%A3/",
           "title": "关于char*, char[], string的理解",
           "date": "2021-12-05T12:37:32+08:00",
           "tags": ["cpp"],
@@ -411,7 +421,7 @@
         }, 
         {
           "objectID": "Linux实用操作之文本操作",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/",
           "title": "Linux实用操作之文本操作",
           "date": "2021-12-05T00:20:09+08:00",
           "tags": ["linux"],
@@ -421,7 +431,7 @@
         }, 
         {
           "objectID": "Java重写equals方法的同时为什么要重写hashcode方法",
-          "url": "https://akynazh.site/posts/study/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/language/java%E9%87%8D%E5%86%99equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%90%8C%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99hashcode%E6%96%B9%E6%B3%95/",
           "title": "Java重写equals方法的同时为什么要重写hashcode方法",
           "date": "2021-11-26T09:23:27+08:00",
           "tags": ["java"],
@@ -441,7 +451,7 @@
         }, 
         {
           "objectID": "Window增加右键打开选项",
-          "url": "https://akynazh.site/posts/study/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/",
+          "url": "https://akynazh.site/posts/study/window/window%E5%A2%9E%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E9%80%89%E9%A1%B9/",
           "title": "Window增加右键打开选项",
           "date": "2021-11-20T18:10:30+08:00",
           "tags": ["window"],
@@ -451,7 +461,7 @@
         }, 
         {
           "objectID": "Java中通过反射获取带参数类型的方法",
-          "url": "https://akynazh.site/posts/study/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/language/java%E4%B8%AD%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E5%B8%A6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/",
           "title": "Java中通过反射获取带参数类型的方法",
           "date": "2021-11-17T23:30:04+08:00",
           "tags": ["java"],
@@ -461,7 +471,7 @@
         }, 
         {
           "objectID": "Linux上部署JAR包项目后的文件上传问题",
-          "url": "https://akynazh.site/posts/study/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E4%B8%8A%E9%83%A8%E7%BD%B2jar%E5%8C%85%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/",
           "title": "Linux上部署JAR包项目后的文件上传问题",
           "date": "2021-11-03T00:38:12+08:00",
           "tags": ["java","linux"],
@@ -471,17 +481,27 @@
         }, 
         {
           "objectID": "Linux主机部署springboot项目全过程",
-          "url": "https://akynazh.site/posts/study/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/",
           "title": "Linux主机部署springboot项目全过程",
           "date": "2021-11-03T00:30:25+08:00",
           "tags": ["linux","springboot","java"],
           "categories": ["Study"],
-          "summary": "注：部署环境为centos7.9版本\n操作步骤如下：\n 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz\n  将jdk压缩包通过winsp上传至主机\n  解压缩jdk压缩包\n1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录\n1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:",
-          "content": "注：部署环境为centos7.9版本\n操作步骤如下：\n 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz\n  将jdk压缩包通过winsp上传至主机\n  解压缩jdk压缩包\n1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录\n1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:\n /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:\n /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。\n1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version \u0026#34;1.8.0_311\u0026#34; Java(TM) SE Runtime Environment (build 1.8.0_311-b11) Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode) [root@VM-0-11-centos ~]# javac Usage: javac \u0026lt;options\u0026gt; \u0026lt;source files\u0026gt; where possible options include: ...   配置mysql环境 yum方式安装mysql57 这里实验环境为centos7.9版本，且采用yum方式安装mysql57。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35  # 获取mysql80-community-release-el7-3.noarch.rpm软件包 [root@VM-0-11-centos ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm ...... 2022-01-02 12:07:24 (133 KB/s) - ‘mysql80-community-release-el7-3.noarch.rpm’ saved [26024/26024] # 安装mysql80-community-release-el7-3.noarch.rpm软件包 [root@VM-0-11-centos ~]# rpm -Uvh mysql80-community-release-el7-3.noarch.rpm ...... Updating / installing... 1:mysql80-community-release-el7-3 ################################# [100%] # 这时查看/etc/yum.repos.d可以看到如下： [root@VM-0-11-centos ~]# ls /etc/yum.repos.d | grep mysql mysql-community.repo mysql-community-source.repo # 将mysql80换为mysql57 [root@VM-0-11-centos ~]# yum-config-manager --disable mysql80-community [root@VM-0-11-centos ~]# yum-config-manager --enable mysql57-community # 查看是否切换成功： [root@VM-0-11-centos ~]# yum repolist enabled | grep mysql mysql-connectors-community/x86_64 MySQL Connectors Community 221 mysql-tools-community/x86_64 MySQL Tools Community 135 mysql57-community/x86_64 MySQL 5.7 Community Server 544 # 安装mysql57 [root@VM-0-11-centos ~]# yum install mysql-community-server ...... Installed: mysql-community-libs.x86_64 0:5.7.36-1.el7 mysql-community-libs-compat.x86_64 0:5.7.36-1.el7 mysql-community-server.x86_64 0:5.7.36-1.el7 ......   运行mysql 1 2 3 4 5 6 7 8 9 10 11 12  # 开启mysql服务 [root@VM-0-11-centos ~]# service mysqld start Redirecting to /bin/systemctl start mysqld.service # 查看mysql服务状态 [root@VM-0-11-centos ~]# systemctl status mysqld.service ● mysqld.service - MySQL Server Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled) Active: active (running) since Sun 2022-01-02 12:21:47 CST; 11s ago ...... Jan 02 12:21:41 VM-0-11-centos systemd[1]: Starting MySQL Server... Jan 02 12:21:47 VM-0-11-centos systemd[1]: Started MySQL Server.   配置mysql 设置root密码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # 获取初始mysql为root生成的默认密码并登录mysql [root@VM-0-11-centos ~]# grep \u0026#39;temporary password\u0026#39; /var/log/mysqld.log 2022-01-02T04:21:43.962084Z 1 [Note] A temporary password is generated for root@localhost: mkjhMuJBe3,% # 则默认密码为mkjhMuJBe3,% [root@VM-0-11-centos ~]# mysql -uroot -p Enter password: # 输入默认密码 Welcome to the MySQL monitor. Commands end with ; or \\g. Your MySQL connection id is 3 Server version: 5.7.36 ... mysql\u0026gt; # 修改root账户登录密码 mysql\u0026gt; ALTER USER \u0026#39;root\u0026#39;@\u0026#39;localhost\u0026#39; IDENTIFIED BY \u0026#39;658766@Jzh\u0026#39;; Query OK, 0 rows affected (0.00 sec)   设置允许远程访问mysql 1 2 3 4  mysql\u0026gt; GRANT ALL PRIVILEGES ON *.* TO \u0026#39;root\u0026#39;@\u0026#39;%\u0026#39; IDENTIFIED BY \u0026#39;658766@Jzh\u0026#39; WITH GRANT OPTION; Query OK, 0 rows affected, 1 warning (0.00 sec) mysql\u0026gt; FLUSH PRIVILEGES; Query OK, 0 rows affected (0.00 sec)   设置开机自启动mysql 1 2 3  [root@VM-0-11-centos ~]# systemctl enable mysqld [root@VM-0-11-centos ~]# systemctl daemon-reload   设置mysql默认编码为utf-8 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  # 查看原来编码 mysql\u0026gt; SHOW VARIABLES LIKE \u0026#39;character%\u0026#39;; +--------------------------+----------------------------+ | Variable_name | Value | +--------------------------+----------------------------+ | character_set_client | utf8 | | character_set_connection | utf8 | | character_set_database | latin1 | | character_set_filesystem | binary | | character_set_results | utf8 | | character_set_server | latin1 | | character_set_system | utf8 | | character_sets_dir | /usr/share/mysql/charsets/ | +--------------------------+----------------------------+ # 编辑/etc/my.cnf文件 [root@VM-0-11-centos ~]# vim /etc/my.cnf [mysqld]下新增： character_set_server=utf8 init-connect=\u0026#39;SET NAMES utf8\u0026#39; # 重启mysql服务 [root@VM-0-11-centos ~]# systemctl restart mysqld.service # 再查看编码 mysql\u0026gt; SHOW VARIABLES LIKE \u0026#39;character%\u0026#39;; +--------------------------+----------------------------+ | Variable_name | Value | +--------------------------+----------------------------+ | character_set_client | utf8 | | character_set_connection | utf8 | | character_set_database | utf8 | | character_set_filesystem | binary | | character_set_results | utf8 | | character_set_server | utf8 | | character_set_system | utf8 | | character_sets_dir | /usr/share/mysql/charsets/ | +--------------------------+----------------------------+ 8 rows in set (0.01 sec)   建立数据库并新建表。 通过sql脚本快速建成。\n配置redis环境 yum安装redis 1  yum install redis   启动redis 默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置\n1 2 3 4 5  systemctl start redis ps -ef | grep redis # 检查是否已经启动 redis 12105 1 0 00:44 ? 00:00:01 /usr/bin/redis-server 127.0.0.1:6379   设置开机自启动redis 1  systemctl enable redis   生成，上传并运行JAR包项目 上传JAR包项目 1 2  mvn clean mvn package   即可把项目打包为JAR包，再通过WINSP上传到服务器。\n先新建一个app文件夹，放置项目所有内容：\n1 2  mkdir /app chmod 777 /app   新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。\n1 2 3 4 5 6 7  spring: datasource: password: ...... resources: static-locations: - classpath:static/ - file:/app/static/   1 2 3  [root@VM-0-11-centos app]# chmod -R 777 * [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   运行项目 确保需要的端口开启 1  netstat -ntlp   指定安全组规则 值得注意的一点是，在某云上购买的主机可能带有安全组，其优先级更高，所以想要开放8080端口，还得现在安全组那里先添加入站规则以放通8080端口。同样的，3306端口也一样要添加，否则同样是连接不上滴。\n部署运行JAR包 1  java -jar LonersHub-0.0.1-SNAPSHOT.jar   这样的话关闭终端项目就停止运行了。\n可以这样：\n1 2  [root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar \u0026amp; [1] 27108   这样即使关闭终端项目也仍旧运行着！\n更新项目 首先删除原来的jar包并上传新的jar包。\n然后杀死原本进程并运行jar包：\n1 2 3 4 5 6 7  [root@VM-0-11-centos app]# ps -ef | grep java root 13415 1 1 00:02 ? 00:00:18 java -jar LonersHub-0.0.1-SNAPSHOT.jar root 16053 15504 0 00:21 pts/1 00:00:00 grep --color=auto java [root@VM-0-11-centos app]# kill -9 12415 [root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar \u0026amp;   脚本实现：\n1 2 3 4 5 6 7 8 9 10  # 编写脚本 [root@VM-0-11-centos app]# touch restart.sh [root@VM-0-11-centos app]# vim restart.sh kill -9 `ps -ef | grep LonersHub | grep -v color | awk \u0026#39;{print $2}\u0026#39;` nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar \u0026amp; # 运行脚本 [root@VM-0-11-centos app]# sh restart.sh   总结 通过记录项目的完整部署运行过程，方便以后参考。\nOVER.\n"
+          "summary": "注：部署环境为centos7.9版本\n操作步骤如下：\n 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 前往：Linux配置Java环境\n配置mysql环境   配置mysql环境，前往：Linux配置Mysql环境\n  建立数据库并新建表，可通过sql脚本快速建成。\n  配置redis环境  安装redis：yum install redis 启动redis：systemctl start redis 默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置 设置开机自启动redis：systemctl enable redis  生成，上传并运行JAR包项目 上传JAR包项目 1 2  mvn clean mvn package   即可把项目打包为JAR包，再通过WINSP上传到服务器。\n先新建一个app文件夹，放置项目所有内容：\n1 2  mkdir /app chmod 777 /app   新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。\n1 2 3 4 5 6 7  spring: datasource: password: ...... resources: static-locations: - classpath:static/ - file:/app/static/   1 2 3  [root@VM-0-11-centos app]# chmod -R 777 * [root@VM-0-11-centos app]# ls application.",
+          "content": "注：部署环境为centos7.9版本\n操作步骤如下：\n 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 前往：Linux配置Java环境\n配置mysql环境   配置mysql环境，前往：Linux配置Mysql环境\n  建立数据库并新建表，可通过sql脚本快速建成。\n  配置redis环境  安装redis：yum install redis 启动redis：systemctl start redis 默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置 设置开机自启动redis：systemctl enable redis  生成，上传并运行JAR包项目 上传JAR包项目 1 2  mvn clean mvn package   即可把项目打包为JAR包，再通过WINSP上传到服务器。\n先新建一个app文件夹，放置项目所有内容：\n1 2  mkdir /app chmod 777 /app   新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。\n1 2 3 4 5 6 7  spring: datasource: password: ...... resources: static-locations: - classpath:static/ - file:/app/static/   1 2 3  [root@VM-0-11-centos app]# chmod -R 777 * [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static   运行项目 确保需要的端口开启 1  netstat -ntlp   指定安全组规则 值得注意的一点是，在某云上购买的主机可能带有安全组，其优先级更高，所以想要开放8080端口，还得现在安全组那里先添加入站规则以放通8080端口。同样的，3306端口也一样要添加，否则同样是连接不上滴。\n部署运行JAR包 1  java -jar LonersHub-0.0.1-SNAPSHOT.jar   这样的话关闭终端项目就停止运行了。\n可以这样：\n1 2  [root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar \u0026amp; [1] 27108   这样即使关闭终端项目也仍旧运行着！\n更新项目 首先删除原来的jar包并上传新的jar包。\n然后终止原本进程并运行jar包：\n1 2 3 4 5 6 7  [root@VM-0-11-centos app]# ps -ef | grep java root 13415 1 1 00:02 ? 00:00:18 java -jar LonersHub-0.0.1-SNAPSHOT.jar root 16053 15504 0 00:21 pts/1 00:00:00 grep --color=auto java [root@VM-0-11-centos app]# kill -9 12415 [root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar \u0026amp;   脚本实现：\n1 2 3 4 5 6 7 8 9 10  # 编写脚本 [root@VM-0-11-centos app]# touch restart.sh [root@VM-0-11-centos app]# vim restart.sh kill -9 `ps -ef | grep LonersHub | grep -v color | awk \u0026#39;{print $2}\u0026#39;` nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar \u0026amp; # 运行脚本 [root@VM-0-11-centos app]# sh restart.sh   总结 通过记录项目的完整部署运行过程，方便以后参考。\nOVER.\n"
+        }, 
+        {
+          "objectID": "Linux配置Java环境",
+          "url": "https://akynazh.site/posts/study/linux/linux%E9%85%8D%E7%BD%AEjava%E7%8E%AF%E5%A2%83/",
+          "title": "Linux配置Java环境",
+          "date": "2021-07-23T20:49:56+08:00",
+          "tags": ["java","linux"],
+          "categories": ["Study"],
+          "summary": "速通  ubuntu: /etc/bash.bashrc centos: /etc/bashrc  1 2 3 4 5 6 7 8 9 10  # jdk8.sh # 安装jdk-8u311-linux-x64并配好环境变量的脚本 tar -zxvf jdk-8u311-linux-x64.tar.gz mkdir /usr/local/java mv ./jdk1.8.0_311 /usr/local/java echo \u0026#39;# java env\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc echo \u0026#39;export JAVA_HOME=/usr/local/java/jdk1.8.0_311\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc echo \u0026#39;export PATH=$JAVA_HOME/bin:$PATH\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc echo \u0026#39;export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc source /etc/bash.bashrc   下文是分步解释。\n获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz\n  将jdk压缩包通过winsp上传至主机\n  解压缩jdk压缩包\n1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.",
+          "content": "速通  ubuntu: /etc/bash.bashrc centos: /etc/bashrc  1 2 3 4 5 6 7 8 9 10  # jdk8.sh # 安装jdk-8u311-linux-x64并配好环境变量的脚本 tar -zxvf jdk-8u311-linux-x64.tar.gz mkdir /usr/local/java mv ./jdk1.8.0_311 /usr/local/java echo \u0026#39;# java env\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc echo \u0026#39;export JAVA_HOME=/usr/local/java/jdk1.8.0_311\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc echo \u0026#39;export PATH=$JAVA_HOME/bin:$PATH\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc echo \u0026#39;export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar\u0026#39; \u0026gt;\u0026gt; /etc/bash.bashrc source /etc/bash.bashrc   下文是分步解释。\n获取JDK   下载jdk压缩包： jdk-8u311-linux-x64.tar.gz\n  将jdk压缩包通过winsp上传至主机\n  解压缩jdk压缩包\n1 2 3 4 5 6  [root@VM-0-11-centos ~]# ls bin jdk-8u311-linux-x64.tar.gz passwd var [root@VM-0-11-centos ~]# tar -zxvf jdk-8u311-linux-x64.tar.gz ... [root@VM-0-11-centos ~]# ls bin jdk1.8.0_311 jdk-8u311-linux-x64.tar.gz passwd var     移动jdk到合适目录\n1 2  [root@VM-0-11-centos ~]# mkdir /usr/local/java [root@VM-0-11-centos ~]# mv ./jdk1.8.0_311 /usr/local/java     配置环境变量 Linux相关配置文件解析 bashrc部分:\n /etc/bashrc: 针对所有用户，每开启一个shell都会执行一次 /etc/skel/.bashrc: 针对所有用户，用于在新建一个用户时默认给用户配置的bashrc ~/.bashrc: 只针对单个用户，每开启一个shell执行一次  profile部分:\n /etc/profile: 针对所有用户，首次登录执行一次 /etc/skel/bash_profile: 针对所有用户，用于在新建一个用户时默认给用户配置的bashr_profile ~/.bash_profile: 只针对单个用户，首次登录执行一次  编辑/etc/bashrc文件 也可以选择编辑/etc/profile。\n1 2 3 4 5 6 7 8  [root@VM-0-11-centos ~]# vim /etc/bashrc # 进行全局配置 进行添加如下： #JAVA export JAVA_HOME=/usr/local/java/jdk1.8.0_311 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar    使配置文件生效：  1  source /etc/bashrc   验证Java环境： 1 2 3 4 5 6 7 8 9  [root@VM-0-11-centos ~]# java -version java version \u0026#34;1.8.0_311\u0026#34; Java(TM) SE Runtime Environment (build 1.8.0_311-b11) Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode) [root@VM-0-11-centos ~]# javac Usage: javac \u0026lt;options\u0026gt; \u0026lt;source files\u0026gt; where possible options include: ...   From My Blog: akynazh.\nOver.\n"
         }, 
         {
           "objectID": "《我的青春恋爱物语果然有问题》文摘四",
-          "url": "https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/",
+          "url": "https://akynazh.site/posts/book/%E6%98%A5%E7%89%A9/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/",
           "title": "春物文摘四",
           "date": "2021-06-23T23:27:20+08:00",
           "tags": ["excerpt"],
@@ -491,7 +511,7 @@
         }, 
         {
           "objectID": "Docker简单使用过程记录",
-          "url": "https://akynazh.site/posts/study/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/",
+          "url": "https://akynazh.site/posts/study/web/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/",
           "title": "Docker简单使用过程记录",
           "date": "2021-05-19T22:52:52+08:00",
           "tags": ["linux","docker"],
@@ -501,7 +521,7 @@
         }, 
         {
           "objectID": "Synchronized到底锁了谁",
-          "url": "https://akynazh.site/posts/study/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/",
+          "url": "https://akynazh.site/posts/study/language/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/",
           "title": "Synchronized到底锁了谁",
           "date": "2021-05-19T22:43:45+08:00",
           "tags": ["java"],
@@ -511,7 +531,7 @@
         }, 
         {
           "objectID": "Git实用操作之解决冲突",
-          "url": "https://akynazh.site/posts/study/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/",
+          "url": "https://akynazh.site/posts/study/linux/git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/",
           "title": "Git实用操作之解决冲突",
           "date": "2021-05-19T22:12:54+08:00",
           "tags": ["git"],
@@ -521,7 +541,7 @@
         }, 
         {
           "objectID": "《我的青春恋爱物语果然有问题》文摘三",
-          "url": "https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/",
+          "url": "https://akynazh.site/posts/book/%E6%98%A5%E7%89%A9/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%89/",
           "title": "春物文摘三",
           "date": "2021-05-13T23:19:00+08:00",
           "tags": ["excerpt"],
@@ -531,7 +551,7 @@
         }, 
         {
           "objectID": "《我的青春恋爱物语果然有问题》文摘二",
-          "url": "https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/",
+          "url": "https://akynazh.site/posts/book/%E6%98%A5%E7%89%A9/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%BA%8C/",
           "title": "春物文摘二",
           "date": "2021-05-11T16:44:36+08:00",
           "tags": ["excerpt"],
@@ -551,7 +571,7 @@
         }, 
         {
           "objectID": "Java与C++中的值传递和引用传递解析",
-          "url": "https://akynazh.site/posts/study/java%E4%B8%8Ec++%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/",
+          "url": "https://akynazh.site/posts/study/language/java%E4%B8%8Ec++%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%A7%A3%E6%9E%90/",
           "title": "Java与C++中的值传递和引用传递解析",
           "date": "2021-05-01T20:16:39+08:00",
           "tags": ["java","cpp"],
@@ -561,7 +581,7 @@
         }, 
         {
           "objectID": "Window实用命令记录之文件操作",
-          "url": "https://akynazh.site/posts/study/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/",
+          "url": "https://akynazh.site/posts/study/window/window%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/",
           "title": "Window实用命令记录之文件操作",
           "date": "2021-04-19T13:48:19+08:00",
           "tags": ["window","cmd","powershell"],
@@ -571,7 +591,7 @@
         }, 
         {
           "objectID": "Linux实用操作之shell变量运算",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8Bshell%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97/",
           "title": "Linux实用操作之shell变量运算",
           "date": "2021-04-12T23:21:41+08:00",
           "tags": ["linux"],
@@ -591,7 +611,7 @@
         }, 
         {
           "objectID": "《我的青春恋爱物语果然有问题》文摘一",
-          "url": "https://akynazh.site/posts/book/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/",
+          "url": "https://akynazh.site/posts/book/%E6%98%A5%E7%89%A9/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E4%B8%80/",
           "title": "春物文摘一",
           "date": "2021-04-11T11:51:03+08:00",
           "tags": ["excerpt"],
@@ -601,7 +621,7 @@
         }, 
         {
           "objectID": "Linux实用操作之编辑命令与变量",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%8F%98%E9%87%8F/",
           "title": "Linux实用操作之编辑命令与变量",
           "date": "2021-04-05T23:01:48+08:00",
           "tags": ["linux"],
@@ -611,7 +631,7 @@
         }, 
         {
           "objectID": "Linux实用操作之文件操作",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/",
           "title": "Linux实用操作之文件操作",
           "date": "2021-04-05T22:38:46+08:00",
           "tags": ["linux"],
@@ -621,7 +641,7 @@
         }, 
         {
           "objectID": "Linux实用操作之进程管理",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/",
           "title": "Linux实用操作之进程管理",
           "date": "2021-03-31T22:55:53+08:00",
           "tags": ["linux"],
@@ -631,7 +651,7 @@
         }, 
         {
           "objectID": "Linux实用操作之工作调度",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E5%B7%A5%E4%BD%9C%E8%B0%83%E5%BA%A6/",
           "title": "Linux实用操作之工作调度",
           "date": "2021-03-31T22:34:24+08:00",
           "tags": ["linux"],
@@ -641,7 +661,7 @@
         }, 
         {
           "objectID": "Linux实用操作之网络管理",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/",
           "title": "Linux实用操作之网络管理",
           "date": "2021-01-03T00:27:58+08:00",
           "tags": ["linux","network"],
@@ -651,17 +671,17 @@
         }, 
         {
           "objectID": "Linux实用操作之修改默认配置",
-          "url": "https://akynazh.site/posts/study/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/",
+          "url": "https://akynazh.site/posts/study/linux/linux%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C%E4%B9%8B%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/",
           "title": "Linux实用操作之修改默认配置",
           "date": "2021-01-03T00:10:38+08:00",
           "tags": ["linux"],
           "categories": ["Study"],
-          "summary": "修改vim中tab长度 设置vim中tab长度\n1 2 3  vim /etc/vimrc set tabstop=4   修改vim自动缩进长度 1 2 3  vim /etc/vimrc set shiftwidth=4   禁用烦人的蜂鸣声  禁用bash蜂鸣声  1 2 3  vim /etc/inputrc ------ 取消\u0026#34;set bell-style none\u0026#34;注释   禁用vim蜂鸣声  1 2 3  vim /etc/vimrc ------ 添加\u0026#34;set noeb vb t_vb=\u0026#34;   (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)",
-          "content": "修改vim中tab长度 设置vim中tab长度\n1 2 3  vim /etc/vimrc set tabstop=4   修改vim自动缩进长度 1 2 3  vim /etc/vimrc set shiftwidth=4   禁用烦人的蜂鸣声  禁用bash蜂鸣声  1 2 3  vim /etc/inputrc ------ 取消\u0026#34;set bell-style none\u0026#34;注释   禁用vim蜂鸣声  1 2 3  vim /etc/vimrc ------ 添加\u0026#34;set noeb vb t_vb=\u0026#34;   (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)\n"
+          "summary": "修改vim中tab长度 设置vim中tab长度\n1 2 3  vim /etc/vimrc set tabstop=4   修改vim自动缩进长度 1 2 3  vim /etc/vimrc set shiftwidth=4   禁用烦人的蜂鸣声  禁用bash蜂鸣声  1 2 3  vim /etc/inputrc set bell-style none   禁用vim蜂鸣声  1 2 3  vim /etc/vimrc set noeb vb t_vb=   (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)",
+          "content": "修改vim中tab长度 设置vim中tab长度\n1 2 3  vim /etc/vimrc set tabstop=4   修改vim自动缩进长度 1 2 3  vim /etc/vimrc set shiftwidth=4   禁用烦人的蜂鸣声  禁用bash蜂鸣声  1 2 3  vim /etc/inputrc set bell-style none   禁用vim蜂鸣声  1 2 3  vim /etc/vimrc set noeb vb t_vb=   (vb即visual bell用屏幕的闪烁代替响铃 t_vb就是闪烁设置为空，即不表现出闪烁)\n"
         }, 
         {
           "objectID": "图的着色问题汇总",
-          "url": "https://akynazh.site/posts/study/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E5%9B%BE%E7%9A%84%E7%9D%80%E8%89%B2%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/",
           "title": "图的着色问题汇总",
           "date": "2020-12-05T12:34:05+08:00",
           "tags": ["algorithm"],
@@ -671,7 +691,7 @@
         }, 
         {
           "objectID": "求解有向图和无向图中是否存在环的方法",
-          "url": "https://akynazh.site/posts/study/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E6%B1%82%E8%A7%A3%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95/",
           "title": "求解有向图和无向图中是否存在环的方法",
           "date": "2020-12-02T23:50:44+08:00",
           "tags": ["algorithm"],
@@ -691,7 +711,7 @@
         }, 
         {
           "objectID": "equals方法和==运算符的作用区别",
-          "url": "https://akynazh.site/posts/study/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/",
+          "url": "https://akynazh.site/posts/study/language/equals%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB/",
           "title": "equals方法和==运算符的作用区别",
           "date": "2020-11-25T00:21:05+08:00",
           "tags": ["java"],
@@ -701,7 +721,7 @@
         }, 
         {
           "objectID": "Cmd重要且实用的一些命令",
-          "url": "https://akynazh.site/posts/study/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/",
+          "url": "https://akynazh.site/posts/study/window/cmd%E9%87%8D%E8%A6%81%E4%B8%94%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/",
           "title": "Cmd重要且实用的一些命令",
           "date": "2020-11-20T18:17:33+08:00",
           "tags": ["script","cmd"],
@@ -711,7 +731,7 @@
         }, 
         {
           "objectID": "矩阵快速幂的介绍及其应用",
-          "url": "https://akynazh.site/posts/study/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/",
           "title": "矩阵快速幂的介绍及其应用",
           "date": "2020-11-18T23:47:15+08:00",
           "tags": ["algorithm"],
@@ -721,7 +741,7 @@
         }, 
         {
           "objectID": "ssh免密且免IP登录远程主机的方法以及遇到的一些问题",
-          "url": "https://akynazh.site/posts/study/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/",
+          "url": "https://akynazh.site/posts/study/linux/ssh%E5%85%8D%E5%AF%86%E4%B8%94%E5%85%8Dip%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/",
           "title": "SSH免密且免IP登录远程主机的方法以及遇到的一些问题",
           "date": "2020-11-17T17:56:03+08:00",
           "tags": ["linux","ssh","network"],
@@ -731,7 +751,7 @@
         }, 
         {
           "objectID": "最短路问题汇总",
-          "url": "https://akynazh.site/posts/study/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/",
           "title": "最短路问题汇总",
           "date": "2020-11-17T17:55:32+08:00",
           "tags": ["algorithm"],
@@ -741,7 +761,7 @@
         }, 
         {
           "objectID": "关于辗转相除法和扩展欧几里得算法",
-          "url": "https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/",
           "title": "关于辗转相除法和扩展欧几里得算法",
           "date": "2020-07-21T20:48:53+08:00",
           "tags": ["algorithm","math"],
@@ -751,7 +771,7 @@
         }, 
         {
           "objectID": "有关素数的一些算法",
-          "url": "https://akynazh.site/posts/study/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/",
+          "url": "https://akynazh.site/posts/study/algorithm/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/",
           "title": "有关素数的一些算法",
           "date": "2020-07-21T20:43:04+08:00",
           "tags": ["algorithm","math"],
@@ -761,7 +781,7 @@
         }, 
         {
           "objectID": "Python自动爬取花瓣网任意面板中所有图片",
-          "url": "https://akynazh.site/posts/study/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/",
+          "url": "https://akynazh.site/posts/study/web/python%E8%87%AA%E5%8A%A8%E7%88%AC%E5%8F%96%E8%8A%B1%E7%93%A3%E7%BD%91%E4%BB%BB%E6%84%8F%E9%9D%A2%E6%9D%BF%E4%B8%AD%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87/",
           "title": "Python自动爬取花瓣网任意面板中所有图片",
           "date": "2020-02-13T00:14:23+08:00",
           "tags": ["python","web"],
@@ -771,7 +791,7 @@
         }, 
         {
           "objectID": "matlab基本用法整理",
-          "url": "https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/",
+          "url": "https://akynazh.site/posts/study/language/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/",
           "title": "Matlab基本用法整理",
           "date": "2020-02-06T20:41:12+08:00",
           "tags": ["matlab","math"],
@@ -816,8 +836,8 @@
           "date": "0001-01-01T00:00:00Z",
           "tags": null,
           "categories": null,
-          "summary": "Linux开启ssh服务   下载OpenSSH；\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo ssh-keygen -A: 生成hostkeys；\n  sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  查看linux发行版本 1  lsb_release -a   查看linux操作系统信息 1  uname -a   关于apt apt update：从服务器检查并且更新本地仓库软件版本信息，通过apt list --upgradable进行查看可更新软件。",
-          "content": "Linux开启ssh服务   下载OpenSSH；\n  vim /etc/ssh/sshd_config\n编辑配置文件如下：\n1 2 3 4 5  Port 22 # 开启端口22 PermitRootLogin yes # 允许远程登录 PasswordAuthentication yes # 开启密码验证 ListenAddress 0.0.0.0 # 开启监听 ListenAddress :: # 开启监听     sudo ssh-keygen -A: 生成hostkeys；\n  sudo service ssh start开启服务。\n注意ubuntu下为ssh，centos下为sshd。\n  查看linux发行版本 1  lsb_release -a   查看linux操作系统信息 1  uname -a   关于apt apt update：从服务器检查并且更新本地仓库软件版本信息，通过apt list --upgradable进行查看可更新软件。\napt upgrade：更新已安装的软件。\n"
+          "summary": "RPM Red Hat Package Manager，可以方便地进行包管理。\n软件包查询功能 RPM在查询的时候，查询的地方是在/var/lib/rpm目录下的数据库文件。\n常用命令：\nrpm -qa：查询所有已经安装的软件名称 rpm -q {}：查询后面接的软件是否已经安装 rpm -qi {}：列出该软件的详细信息（information），包含开发商、版本与说明等 rpm -ql {}：列出该软件所有的文件与目录（list）\n软件包的安装和升级  安装：rpm -ivh package_name.rpm  -i：install -v：查看更详细的安装信息页面 -h：以安装信息列显示安装进度   升级： 1 2  rpm –Uvh package_name.rpm # 如果该软件没安装过，则直接安装，若没安装则升级至最新版 rpm –Fvh package_name.rpm # 如果该软件没有安装，则不会安装升级     查看发行版本 LSB是Linux Standard Base（Linux标准库）的缩写。\nlsb_release命令用来查看与具体Linux发行版相关的Linux标准库信息。\n如果没有该指令，先进行安装：\n1 2 3 4 5  # centos yum install lsb # ubuntu apt install lsb-core   1  lsb_release -a   查看linux内核版本 uname -a 或者 cat /proc/version",
+          "content": "RPM Red Hat Package Manager，可以方便地进行包管理。\n软件包查询功能 RPM在查询的时候，查询的地方是在/var/lib/rpm目录下的数据库文件。\n常用命令：\nrpm -qa：查询所有已经安装的软件名称 rpm -q {}：查询后面接的软件是否已经安装 rpm -qi {}：列出该软件的详细信息（information），包含开发商、版本与说明等 rpm -ql {}：列出该软件所有的文件与目录（list）\n软件包的安装和升级  安装：rpm -ivh package_name.rpm  -i：install -v：查看更详细的安装信息页面 -h：以安装信息列显示安装进度   升级： 1 2  rpm –Uvh package_name.rpm # 如果该软件没安装过，则直接安装，若没安装则升级至最新版 rpm –Fvh package_name.rpm # 如果该软件没有安装，则不会安装升级     查看发行版本 LSB是Linux Standard Base（Linux标准库）的缩写。\nlsb_release命令用来查看与具体Linux发行版相关的Linux标准库信息。\n如果没有该指令，先进行安装：\n1 2 3 4 5  # centos yum install lsb # ubuntu apt install lsb-core   1  lsb_release -a   查看linux内核版本 uname -a 或者 cat /proc/version\n关于apt apt update：从服务器检查并且更新本地仓库软件版本信息，通过apt list --upgradable进行查看可更新软件。\napt upgrade：更新已安装的软件。\n关于bash字符串与变量问题 1 2 3 4  root@ubuntu2004:~# echo \u0026#34;$PATH\u0026#34; /usr/local/java/jdk1.8.0_311/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:... root@ubuntu2004:~# echo \u0026#39;$PATH\u0026#39; $PATH   "
         }, 
         {
           "objectID": "mysql",

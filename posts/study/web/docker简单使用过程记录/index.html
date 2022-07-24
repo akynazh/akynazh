@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-regular-400.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Docker简单使用过程记录 | Norwegian Wood</title>
+  <link rel='canonical' href='https://akynazh.site/posts/study/web/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Docker简单使用过程记录" />
+<meta property="og:description" content="开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &#34;hello world&#34; Unable to find image &#39;ubuntu:15.10&#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akynazh.site/posts/study/web/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-19T22:52:52+08:00" />
+<meta property="article:modified_time" content="2021-05-19T22:52:52+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker简单使用过程记录"/>
+<meta name="twitter:description" content="开启docker服务  1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   通过docker下载ubuntu镜像，运行并测试ubuntu  1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &#34;hello world&#34; Unable to find image &#39;ubuntu:15.10&#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15."/>
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.e3651ad593c0b08c12a1df3660f1212df19a068952fcf75ae5a4371715cc78f3917db7df3b994c1dbb07f51f2991eab265ae5cc32af53d1cf2f0df511d7e54cd.css" integrity="sha512-42Ua1ZPAsIwSod82YPEhLfGaBolS/Pda5aQ3FxXMePORfbffO5lMHbsH9R8pkeqyZa5cwyr1PRzy8N9RHX5UzQ==">
+
+  
+  
+  <link rel="stylesheet" href="https://akynazh.site/css/my-style.css"> 
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://akynazh.site/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', '213197524', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+  
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/gallery">Gallery</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://akynazh.site/posts/study/language/synchronized%E5%88%B0%E5%BA%95%E9%94%81%E4%BA%86%E8%B0%81/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://akynazh.site/posts/book/%E6%98%A5%E7%89%A9/%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%81%8B%E7%88%B1%E7%89%A9%E8%AF%AD%E6%9E%9C%E7%84%B6%E6%9C%89%E9%97%AE%E9%A2%98%E6%96%87%E6%91%98%E5%9B%9B/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&text=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&title=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&is_video=false&description=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&title=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&title=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&name=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95&description=%e5%bc%80%e5%90%afdocker%e6%9c%8d%e5%8a%a1%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20curl%20-sSL%20https%3a%2f%2fget.daocloud.io%2fdocker%20%7c%20sh%20%5broot%40VM-0-11-centos%20~%5d%23%20systemctl%20start%20docker%20%20%20%e9%80%9a%e8%bf%87docker%e4%b8%8b%e8%bd%bdubuntu%e9%95%9c%e5%83%8f%ef%bc%8c%e8%bf%90%e8%a1%8c%e5%b9%b6%e6%b5%8b%e8%af%95ubuntu%20%201%202%203%204%205%206%207%208%209%2010%2011%2012%20%20%5broot%40VM-0-11-centos%20~%5d%23%20docker%20run%20ubuntu%3a15.10%20%2fbin%2fecho%20%26%2334%3bhello%20world%26%2334%3b%20Unable%20to%20find%20image%20%26%2339%3bubuntu%3a15.10%26%2339%3b%20locally%2015.10%3a%20Pulling%20from%20library%2fubuntu%207dcf5a444392%3a%20Pull%20complete%20759aa75f3cee%3a%20Pull%20complete%203fa871dc8a2b%3a%20Pull%20complete%20224c42ae46e7%3a%20Pull%20complete%20Digest%3a%20sha256%3a02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3%20Status%3a%20Downloaded%20newer%20image%20for%20ubuntu%3a15." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&t=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Docker简单使用过程记录
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-05-19 22:52:52 &#43;0800 CST" itemprop="datePublished">2021-05-19</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          1 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/study">Study</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/linux" rel="tag">linux</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <ol>
+<li>开启docker服务</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># curl -sSL https://get.daocloud.io/docker | sh</span>
+[root@VM-0-11-centos ~]<span style="color:#0f0"># systemctl start docker</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>通过docker下载ubuntu镜像，运行并测试ubuntu</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &#34;hello world&#34;
+
+Unable to find image &#39;ubuntu:15.10&#39; locally
+15.10: Pulling from library/ubuntu
+7dcf5a444392: Pull complete
+759aa75f3cee: Pull complete
+3fa871dc8a2b: Pull complete
+224c42ae46e7: Pull complete
+Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3
+Status: Downloaded newer image for ubuntu:15.10
+hello world
+
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>通过docker运行ubuntu并开启bash交互</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># docker run -i -t ubuntu:15.10 /bin/bash</span>
+root@fda3220ed59f:/# echo hello
+hello
+root@fda3220ed59f:/# cat /proc/version
+Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 <span style="color:#f60">20150623</span> (Red Hat 4.8.5-44) (GCC) ) <span style="color:#0f0">#1 SMP Wed Oct 13 17:20:51 UTC 2021</span>
+root@fda3220ed59f:/# ls
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+boot  etc  lib   media  opt  root  sbin  sys  usr
+root@fda3220ed59f:/# exit
+exit
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>运行进程并观察</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># docker run -d ubuntu:15.10 /bin/sh -c &#34;while true; do echo hello; sleep 1; done&#34;</span>
+6668bf16629c8466ecbc32d77978e993c34a0c1c6f51bab420dcc6b89dc85063
+[root@VM-0-11-centos ~]<span style="color:#0f0"># docker ps</span>
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS     NAMES
+6668bf16629c   ubuntu:15.10   <span style="color:#87ceeb">&#34;/bin/sh -c &#39;while t…&#34;</span>   <span style="color:#f60">6</span> seconds ago   Up <span style="color:#f60">5</span> seconds             charming_chaum
+</code></pre></td></tr></table>
+</div>
+</div><p>再通过序号停止进程：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[root@VM-0-11-centos ~]<span style="color:#0f0"># docker stop 6668bf16629c8466ecbc32d77978e993c34a0c1c6f51bab420dcc6b89dc85063</span>
+
+[root@VM-0-11-centos ~]<span style="color:#0f0"># docker ps</span>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="akynazh/hugo-comment"
+    issue-term="pathname"
+    label="akynazh"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Archives</a></li>
+         
+          <li><a href="/gallery">Gallery</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&text=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&title=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&is_video=false&description=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&title=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&title=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&name=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95&description=%e5%bc%80%e5%90%afdocker%e6%9c%8d%e5%8a%a1%20%201%202%20%20%5broot%40VM-0-11-centos%20~%5d%23%20curl%20-sSL%20https%3a%2f%2fget.daocloud.io%2fdocker%20%7c%20sh%20%5broot%40VM-0-11-centos%20~%5d%23%20systemctl%20start%20docker%20%20%20%e9%80%9a%e8%bf%87docker%e4%b8%8b%e8%bd%bdubuntu%e9%95%9c%e5%83%8f%ef%bc%8c%e8%bf%90%e8%a1%8c%e5%b9%b6%e6%b5%8b%e8%af%95ubuntu%20%201%202%203%204%205%206%207%208%209%2010%2011%2012%20%20%5broot%40VM-0-11-centos%20~%5d%23%20docker%20run%20ubuntu%3a15.10%20%2fbin%2fecho%20%26%2334%3bhello%20world%26%2334%3b%20Unable%20to%20find%20image%20%26%2339%3bubuntu%3a15.10%26%2339%3b%20locally%2015.10%3a%20Pulling%20from%20library%2fubuntu%207dcf5a444392%3a%20Pull%20complete%20759aa75f3cee%3a%20Pull%20complete%203fa871dc8a2b%3a%20Pull%20complete%20224c42ae46e7%3a%20Pull%20complete%20Digest%3a%20sha256%3a02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3%20Status%3a%20Downloaded%20newer%20image%20for%20ubuntu%3a15." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2fstudy%2fweb%2fdocker%25E7%25AE%2580%25E5%258D%2595%25E4%25BD%25BF%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E8%25AE%25B0%25E5%25BD%2595%2f&t=Docker%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Jzh 
+    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/gallery">Gallery</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/js/lazy.js></script>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

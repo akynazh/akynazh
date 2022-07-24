@@ -10,10 +10,10 @@
     <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>理解快速幂运算并进行应用</title>
-      <link>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</link>
+      <link>https://akynazh.site/posts/study/algorithm/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://akynazh.site/posts/study/algorithm/%E7%90%86%E8%A7%A3%E5%BF%AB%E9%80%9F%E5%B9%82%E8%BF%90%E7%AE%97%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%BA%94%E7%94%A8/</guid>
       <description>快速幂运算的解释 问n是否满足$x^n \mod n = x (1 &amp;lt; x &amp;lt; n)$？
 先由一个例子引入：
 $3^{11} = 3 \times 9^5 = 3 \times 9 \times 81^2 = 3 \times 9 \times 6561^1$
@@ -30,10 +30,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>关于辗转相除法和扩展欧几里得算法</title>
-      <link>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/algorithm/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 21 Jul 2020 20:48:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/algorithm/%E5%85%B3%E4%BA%8E%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%92%8C%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
       <description>gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
 1 2 3 4  int gcd(int a, int b){ if(b == 0) return a; return gcd(b, a % b); }   exgcd扩展欧几里得算法 先介绍贝祖定理：
 若a,b为整数，则一定存在整数x,y，使得$ax + by = gcd(a,b)$。
@@ -49,10 +49,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>有关素数的一些算法</title>
-      <link>https://akynazh.site/posts/study/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/</link>
+      <link>https://akynazh.site/posts/study/algorithm/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 21 Jul 2020 20:43:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://akynazh.site/posts/study/algorithm/%E6%9C%89%E5%85%B3%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%97%E6%B3%95/</guid>
       <description>埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
 算法思路：
@@ -62,10 +62,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>Matlab基本用法整理</title>
-      <link>https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/language/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</link>
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/language/matlab%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%95%B4%E7%90%86/</guid>
       <description>基本语法方面 提取矩阵某行或某列 1  A(:, [2 3]) 返回第2和第3列   获取随机数 1  randi(100); % 1 到 100 之间的随机整数   初始化数组 1  zeros(1, 30); % 1行30列的全0数组   控制语句 1 2 3 4 5 6 7 8 9 10  for i = 0 : 100 for j = 1 : 10 if (...)  ... else ... end end ... end   格式化输出 1  fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM);   初等数学方面 求解方程组 注：solve已经改版，不可传入字符串</description>
     </item>
     

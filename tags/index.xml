@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sat, 23 Jul 2022 17:34:52 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jul 2022 20:42:27 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
       <link>https://akynazh.site/tags/linux/</link>
-      <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
+      <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://akynazh.site/tags/database/</link>
+      <pubDate>Sat, 23 Jul 2022 21:27:15 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://akynazh.site/tags/mysql/</link>
+      <pubDate>Sat, 23 Jul 2022 21:27:15 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/mysql/</guid>
       <description></description>
     </item>
     
@@ -230,15 +248,6 @@
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/thinking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://akynazh.site/tags/database/</link>
-      <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/database/</guid>
       <description></description>
     </item>
     

@@ -10,10 +10,10 @@
     <lastBuildDate>Thu, 09 Jun 2022 23:18:55 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过Wireshark分析TCP原理</title>
-      <link>https://akynazh.site/posts/study/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/</link>
+      <link>https://akynazh.site/posts/study/network/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://akynazh.site/posts/study/network/%E9%80%9A%E8%BF%87wireshark%E5%88%86%E6%9E%90tcp%E5%8E%9F%E7%90%86/</guid>
       <description>使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
 设备信息  主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65)  操作与分析过程 打开Wireshark进行捕获  选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;amp;&amp;amp;tcp进行捕获。  通过ftp上传文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14  PS C:\Users\akyna&amp;gt; ftp 172.23.234.65 连接到 172.23.234.65。 220 (vsFTPd 3.0.3) 200 Always in UTF8 mode. 用户(172.23.234.65:(none)): akyna 331 Please specify the password. 密码: 230 Login successful. ftp&amp;gt; put a.txt 200 PORT command successful. Consider using PASV. 150 Ok to send data. 226 Transfer complete.</description>
     </item>

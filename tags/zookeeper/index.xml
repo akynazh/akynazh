@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 19 Jul 2022 12:00:37 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zookeeper配置过程与测试</title>
-      <link>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+      <link>https://akynazh.site/posts/study/web/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 19 Jul 2022 12:00:37 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://akynazh.site/posts/study/web/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
       <description>前言 Zookeeper类似于Eureka，起到微服务注册中心的作用，满足分布式系统中的CP原则，是弱可用性的。
 配置zookeeper环境   下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。
   将zookeeper解压缩到/usr/local/zookeeper3.7.1。

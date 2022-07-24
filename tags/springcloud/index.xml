@@ -10,25 +10,25 @@
     <lastBuildDate>Fri, 22 Jul 2022 17:39:24 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/springcloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenFeign使用记录</title>
-      <link>https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <link>https://akynazh.site/posts/study/web/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 22 Jul 2022 17:39:24 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://akynazh.site/posts/study/web/openfeign%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
       <description>为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如restTemplate.postForObject(PAYMENT_URL + &amp;quot;/payment/create&amp;quot;, payment, CommonResult.class);这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
 OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。
 使用OpenFeign   关于pom.xml
 1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     关于application.yml
 除了基本配置内容外，注意以下配置：
-1 2 3 4 5 6 7 8  # 设置feign客户端超时时间（默认为1秒） ribbon: ReadTimeout: 5000 ConnectTimeout: 5000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口
+1 2 3 4 5 6 7 8 9 10 11  feign: # 设置feign客户端超时时间（默认为1秒） client: config: default: ConnectTimeOut: 10000 ReadTimeOut: 10000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口     编写服务接口
  首先在启动类开启@EnableFeignClients注解； 编写服务接口：  添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。    1 2 3 4 5 6 7 8 9  @Component @FeignClient(value = &amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;) public interface PaymentService { @GetMapping(&amp;#34;/payment/get/{id}&amp;#34;) CommonResult&amp;lt;Payment&amp;gt; getPaymentById(@PathVariable(&amp;#34;id&amp;#34;) Long id); @PostMapping(&amp;#34;/payment/create&amp;#34;) CommonResult&amp;lt;Integer&amp;gt; createPayment(@RequestBody Payment payment); }     调用接口</description>
     </item>
     
     <item>
       <title>理解Ribbon并自己实现负载均衡</title>
-      <link>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <link>https://akynazh.site/posts/study/web/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
       <pubDate>Wed, 20 Jul 2022 17:07:35 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <guid>https://akynazh.site/posts/study/web/%E7%90%86%E8%A7%A3ribbon%E5%B9%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
       <description>负载均衡（LB）是什么 对于用户的某个请求，将有多个相同功能的服务点服务该请求，某个服务点挂了，其他服务点还是可以进行服务，这样就实现了系统的高可用。
 关于集中式LB和进程内LB 集中式LB 在服务的消费方和提供方之间使用独立的LB设施，（软硬件均可，软件如Nginx，硬件如F5），由该设施负责把访问请求通过某种策略（可自行指定）转发至服务的提供方。
 进程内LB 将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务点进行服务。
@@ -41,10 +41,10 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     
     <item>
       <title>Consul配置过程及测试</title>
-      <link>https://akynazh.site/posts/study/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</link>
+      <link>https://akynazh.site/posts/study/web/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 19 Jul 2022 16:34:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://akynazh.site/posts/study/web/consul%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%B5%8B%E8%AF%95/</guid>
       <description>前言 类似于zookeeper和eureka，也起到微服务注册中心的作用, 满足分布式系统中的CP原则，是弱可用性的。
 不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。
 配置Consul环境  下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。  编写springcloud服务代码  关于pom.xml 除了一些基本包的导入之外，关于consul包的导入：  1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-consul-discovery&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;   关于application.yml  1 2 3 4 5 6 7 8 9 10  spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name}   启动类添加@EnableDiscoveryClient注解。  consul测试 较为简单，访问localhost:8500查看即可。
@@ -54,10 +54,10 @@ Over.</description>
     
     <item>
       <title>Zookeeper配置过程与测试</title>
-      <link>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+      <link>https://akynazh.site/posts/study/web/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 19 Jul 2022 12:00:37 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://akynazh.site/posts/study/web/zookeeper%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
       <description>前言 Zookeeper类似于Eureka，起到微服务注册中心的作用，满足分布式系统中的CP原则，是弱可用性的。
 配置zookeeper环境   下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。
   将zookeeper解压缩到/usr/local/zookeeper3.7.1。
@@ -72,10 +72,10 @@ Over.</description>
     
     <item>
       <title>Eureka配置过程与理解</title>
-      <link>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</link>
+      <link>https://akynazh.site/posts/study/web/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</link>
       <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/study/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</guid>
+      <guid>https://akynazh.site/posts/study/web/eureka%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%90%86%E8%A7%A3/</guid>
       <description>前言 起到微服务注册中心的作用，满足分布式系统中的AP原则，是弱一致性的。
 Eureka微服务架构图  服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。  引入Eureka依赖说明   client端：
 1 2 3 4  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;     server端：
