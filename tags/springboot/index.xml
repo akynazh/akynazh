@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>springboot on Norwegian Wood</title>
+    <link>/tags/springboot/</link>
+    <description>Recent content in springboot on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 11 Feb 2022 00:05:25 +0800</lastBuildDate><atom:link href="/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
+      <link>/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
+      <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
+      <guid>/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
+      <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
+本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
+使用cookie传递数据：不推荐 一、步骤  后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值  二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
+ 用户可能禁止cookie 后端如果有重定向操作将导致cookie添加失败 前端每次都要删除cookie，有时可能会失效  使用session传递数据：值得借鉴 一、步骤  后端往session中存入数据 前端通过${session}进行获取数据并展示 前端将该数据删除或修改为指定默认值  这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：
+1 2 3  &amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; // 这里可以通过session访问值 &amp;lt;/script&amp;gt;   二、缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
+但是这种方法的思想值得借鉴，请看如下方法。
+通过RedirectAttributesModelMap传递数据 注意这里后端采用SpringMVC。
+一、步骤  通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示  二、示例：提醒用户首先进行登录 1、后端代码： 1 2 3 4 5  @GetMapping(&amp;#34;/loginFirst&amp;#34;) public String loginFirst(RedirectAttributesModelMap model) { model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); return &amp;#34;redirect:/&amp;#34;; }     RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失</description>
+    </item>
+    
+    <item>
+      <title>Linux主机部署springboot项目全过程</title>
+      <link>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
+      <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
+      
+      <guid>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
+      <description>注：部署环境为centos7.9版本
+操作步骤如下：
+ 配置Java环境 配置mysql环境 配置redis环境 生成，上传并运行JAR包项目  配置Java环境 前往：Linux配置Java环境
+配置mysql环境   配置mysql环境，前往：Linux配置Mysql环境
+  建立数据库并新建表，可通过sql脚本快速建成。
+  配置redis环境  安装redis：yum install redis 启动redis：systemctl start redis 默认启动在了6379端口，如需特殊指定可在/etc/redis.conf中修改默认配置 设置开机自启动redis：systemctl enable redis  生成，上传并运行JAR包项目 上传JAR包项目 1 2  mvn clean mvn package   即可把项目打包为JAR包，再通过WINSP上传到服务器。
+先新建一个app文件夹，放置项目所有内容：
+1 2  mkdir /app chmod 777 /app   新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。
+1 2 3 4 5 6 7  spring: datasource: password: ...... resources: static-locations: - classpath:static/ - file:/app/static/   1 2 3  [root@VM-0-11-centos app]# chmod -R 777 * [root@VM-0-11-centos app]# ls application.</description>
+    </item>
+    
+  </channel>
+</rss>

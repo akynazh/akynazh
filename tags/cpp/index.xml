@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cpp on Norwegian Wood</title>
+    <link>/tags/cpp/</link>
+    <description>Recent content in cpp on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 05 Dec 2021 12:37:32 +0800</lastBuildDate><atom:link href="/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于char*, char[], string的理解</title>
+      <link>/posts/2021/12/understanding-of-char-char-string/</link>
+      <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
+      
+      <guid>/posts/2021/12/understanding-of-char-char-string/</guid>
+      <description>关于char[]与char*的区别 1 2 3 4  char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc s1[1] = &amp;#39;d&amp;#39;; // 改变值 cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc   &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
+1 2 3 4  const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc s2 = &amp;#34;dfs&amp;#34;; // 改变地址 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs   &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
+以上两者皆可用于函数传值
+1 2 3 4 5 6  void print_str(const char * str) { printf(&amp;#34;%s\n&amp;#34;, str); } print_str(s1); // adc print_str(s2); // dfs   关于string和char[],char*的关系  string是类，string是对一个字符串的引用值  1 2 3 4 5 6 7  const char* s1 = &amp;#34;abc&amp;#34;; string s = s1; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc s += &amp;#34;a&amp;#34;; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 证明string只是引用了s1    string引用字符串示例  1 2 3 4 5 6 7  const char *s1 = &amp;#34;123&amp;#34;; string str1 = s1; // 若要这样赋值s1必须加const cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123  char s2[] = &amp;#34;234&amp;#34;; string str2 = s2; cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234    string转char*  1 2 3  const char* s1_1 = str1.</description>
+    </item>
+    
+    <item>
+      <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
+      <link>/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
+      <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
+      
+      <guid>/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
+      <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
+Java的参数传递 先定义3个方法如下：
+1 2 3 4 5 6 7 8 9 10 11  public static void change1(String str, int num) { str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象!  num = 100; } public static void change2(User user) { user.age = 1; user.name = &amp;#34;mary&amp;#34;; } public static void change3(User user) { user = new User(1, &amp;#34;mary&amp;#34;); }   进行测试：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  public static void main(String[] args) { String str = &amp;#34;hello&amp;#34;; int num = 1; System.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Norwegian Wood</title>
+    <link>/tags/network/</link>
+    <description>Recent content in network on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 03 Jan 2021 00:27:58 +0800</lastBuildDate><atom:link href="/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux实用操作之网络管理</title>
+      <link>/posts/2021/01/network-management-of-linux-practical-operation/</link>
+      <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
+      
+      <guid>/posts/2021/01/network-management-of-linux-practical-operation/</guid>
+      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
+1  alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34;   test:
+1 2  [root@VM-0-11-centos ~]# myip 172.17.0.11   查看外网IP 1  curl cip.cc   show:
+IP : ${my_ip} 地址 : 中国 中国
+数据二 : 上海市 | 腾讯云
+数据三 : 中国北京北京 | 腾讯
+URL : http://www.cip.cc/${my_ip}
+查看IP端口状况 1 2 3 4 5 6  [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
+    </item>
+    
+    <item>
+      <title>SSH免密且免IP登录远程主机的方法以及遇到的一些问题</title>
+      <link>/posts/2020/11/ssh-password-free-and-ip-free-login-methods-to-remote-hosts-and-some-problems-encountered/</link>
+      <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
+      
+      <guid>/posts/2020/11/ssh-password-free-and-ip-free-login-methods-to-remote-hosts-and-some-problems-encountered/</guid>
+      <description>问题的提出： 我们可以通过指令：
+1  ssh 用户名@IP   登录远程主机，但是每次都要输入ip和密码，有点麻烦，为了节省时间，我们需要寻求提高效率的办法！
+通过了解，我们可以通过RSA，即非对称式的加密方法实现免密操作，而免IP只需要在config文件中进行配置即可。
+实现免ip登录：   新建config文件
+若window下操作，则在.ssh目录中新建一个名为config的文件，而linux下直接编辑ssh_config文件。
+  编辑代替名以及IP，端口号，用户。
+  1 2 3 4  Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户   这样，即可通过
+1  ssh 代替名   进行登录咯！
+接着我们实现免密登录：  在本地生成密钥：  1  ssh-keygen   并选择生成在.ssh目录下即可，获得一把公钥和私钥。
+将名字带.pub的就是公钥了。
+ 将公钥发给远程主机  通过命令
+1  ssh-copy-id -i .ssh/公钥 用户名@IP   即可发送给远程主机。
+在window10中可能出现以下错误：
+1  ssh-copy-id : 无法将“ssh-copy-id”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。   则可先于命令行中运行以下代码：</description>
+    </item>
+    
+  </channel>
+</rss>

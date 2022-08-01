@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Norwegian Wood</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 29 Jul 2022 18:26:44 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code</title>
+      <link>/categories/code/</link>
+      <pubDate>Fri, 29 Jul 2022 18:26:44 +0800</pubDate>
+      
+      <guid>/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tool</title>
+      <link>/categories/tool/</link>
+      <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
+      
+      <guid>/categories/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
+      <link>/categories/book/</link>
+      <pubDate>Tue, 12 Jul 2022 23:11:48 +0800</pubDate>
+      
+      <guid>/categories/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>/categories/music/</link>
+      <pubDate>Sun, 10 Jul 2022 14:22:57 +0800</pubDate>
+      
+      <guid>/categories/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life</title>
+      <link>/categories/life/</link>
+      <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
+      
+      <guid>/categories/life/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

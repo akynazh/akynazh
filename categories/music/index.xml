@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Music on Norwegian Wood</title>
+    <link>/categories/music/</link>
+    <description>Recent content in Music on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 10 Jul 2022 14:22:57 +0800</lastBuildDate><atom:link href="/categories/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>乐理知识记录</title>
+      <link>/posts/2022/07/music-theory-knowledge-record/</link>
+      <pubDate>Sun, 10 Jul 2022 14:22:57 +0800</pubDate>
+      
+      <guid>/posts/2022/07/music-theory-knowledge-record/</guid>
+      <description>&amp;hellip;
+ From My Blog: akynazh.
+Over.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-regular-400.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Hystrix实现服务熔断与监控 | Norwegian Wood</title>
+  <link rel='canonical' href='/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Hystrix实现服务熔断与监控" />
+<meta property="og:description" content="什么是服务熔断 概念 应对微服务雪崩效应的一种链路保护机制，类似保险丝。
+关于雪崩效应 微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务C，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致雪崩效应。
+实现机制 当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用。
+通过Hystrix实现服务熔断，Hystrix会监控微服务间调用的状况，当失败的调用到一定阈值，就会启动熔断机制，断路器打开。而在一段时间之后，断路器会变为半开状态，此时允许部分微服务调用，如果都成功了，即不超过设定好的阈值，那么断路器将恢复为关闭状态。
+如下图所示：（来自Martin Fowler大神的博客）
+应用场景 微服务架构中，多个微服务相互调用出使用
+Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt; &lt;/dependency&gt;   2. 启动类添加@EnableHystrix注解，表示使用熔断器。 实现服务熔断 1. PaymentService.java 1 2 3 4  public interface PaymentService { ... String circuitBreaker(Integer id); }   2. PaymentServiceImpl.java 设置服务熔断的核心配置：
+（1）启用断路器:
+1  @HystrixProperty(name = &#34;circuitBreaker.enabled&#34;, value = &#34;true&#34;)   （2）设置请求次数:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-26T11:39:11+08:00" />
+<meta property="article:modified_time" content="2022-07-26T11:39:11+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hystrix实现服务熔断与监控"/>
+<meta name="twitter:description" content="什么是服务熔断 概念 应对微服务雪崩效应的一种链路保护机制，类似保险丝。
+关于雪崩效应 微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务C，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致雪崩效应。
+实现机制 当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用。
+通过Hystrix实现服务熔断，Hystrix会监控微服务间调用的状况，当失败的调用到一定阈值，就会启动熔断机制，断路器打开。而在一段时间之后，断路器会变为半开状态，此时允许部分微服务调用，如果都成功了，即不超过设定好的阈值，那么断路器将恢复为关闭状态。
+如下图所示：（来自Martin Fowler大神的博客）
+应用场景 微服务架构中，多个微服务相互调用出使用
+Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt; &lt;/dependency&gt;   2. 启动类添加@EnableHystrix注解，表示使用熔断器。 实现服务熔断 1. PaymentService.java 1 2 3 4  public interface PaymentService { ... String circuitBreaker(Integer id); }   2. PaymentServiceImpl.java 设置服务熔断的核心配置：
+（1）启用断路器:
+1  @HystrixProperty(name = &#34;circuitBreaker.enabled&#34;, value = &#34;true&#34;)   （2）设置请求次数:"/>
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/styles.09f1de3a03a3185b1f1da4e352b3004aab5d2e95ce7125b390aef821855b3a31dee8a069d9f31fd2757a73e8b339e20a5d0785f1e4cf04aa84db9b45ee386a4b.css" integrity="sha512-CfHeOgOjGFsfHaTjUrMASqtdLpXOcSWzkK74IYVbOjHe6KBp2fMf0nV6c&#43;izOeIKXQeF8eTPBKqE25tF7jhqSw==">
+
+  
+  
+  <link rel="stylesheet" href="css/my.css"> 
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="image/base/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+<body class="max-width-blog mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/gallery">Gallery</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/2022/07/hytrix-enables-service-degradation/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/posts/2022/07/springcloud-gateway-usage-record/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&text=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&title=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&is_video=false&description=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7&body=Check out this article: %2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&title=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&title=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&name=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7&description=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%20%e6%a6%82%e5%bf%b5%20%e5%ba%94%e5%af%b9%e5%be%ae%e6%9c%8d%e5%8a%a1%e9%9b%aa%e5%b4%a9%e6%95%88%e5%ba%94%e7%9a%84%e4%b8%80%e7%a7%8d%e9%93%be%e8%b7%af%e4%bf%9d%e6%8a%a4%e6%9c%ba%e5%88%b6%ef%bc%8c%e7%b1%bb%e4%bc%bc%e4%bf%9d%e9%99%a9%e4%b8%9d%e3%80%82%0a%e5%85%b3%e4%ba%8e%e9%9b%aa%e5%b4%a9%e6%95%88%e5%ba%94%20%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%e7%9a%84%e6%95%b0%e6%8d%ae%e4%ba%a4%e4%ba%92%e6%98%af%e9%80%9a%e8%bf%87%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e6%9d%a5%e5%ae%8c%e6%88%90%e7%9a%84%e3%80%82%e6%9c%8d%e5%8a%a1A%e8%b0%83%e7%94%a8%e6%9c%8d%e5%8a%a1%ef%bc%8c%e6%9c%8d%e5%8a%a1B%e8%b0%83%e7%94%a8%e6%9c%8d%e5%8a%a1C%ef%bc%8c%e6%9f%90%e4%b8%80%e6%97%b6%e9%97%b4%e9%93%be%e8%b7%af%e4%b8%8a%e5%af%b9%e6%9c%8d%e5%8a%a1C%e7%9a%84%e8%b0%83%e7%94%a8%e5%93%8d%e5%ba%94%e6%97%b6%e9%97%b4%e8%bf%87%e9%95%bf%e6%88%96%e8%80%85%e6%9c%8d%e5%8a%a1C%e4%b8%8d%e5%8f%af%e7%94%a8%ef%bc%8c%e9%9a%8f%e7%9d%80%e6%97%b6%e9%97%b4%e7%9a%84%e5%a2%9e%e9%95%bf%ef%bc%8c%e5%af%b9%e6%9c%8d%e5%8a%a1C%e7%9a%84%e8%b0%83%e7%94%a8%e4%b9%9f%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%a4%9a%ef%bc%8c%e7%84%b6%e5%90%8e%e6%9c%8d%e5%8a%a1C%e5%b4%a9%e6%ba%83%e4%ba%86%ef%bc%8c%e4%bd%86%e6%98%af%e9%93%be%e8%b7%af%e8%b0%83%e7%94%a8%e8%bf%98%e5%9c%a8%ef%bc%8c%e5%af%b9%e6%9c%8d%e5%8a%a1B%e7%9a%84%e8%b0%83%e7%94%a8%e4%b9%9f%e5%9c%a8%e6%8c%81%e7%bb%ad%e5%a2%9e%e5%a4%9a%ef%bc%8c%e7%84%b6%e5%90%8e%e6%9c%8d%e5%8a%a1B%e5%b4%a9%e6%ba%83%ef%bc%8c%e9%9a%8f%e4%b9%8bA%e4%b9%9f%e5%b4%a9%e6%ba%83%ef%bc%8c%e5%af%bc%e8%87%b4%e9%9b%aa%e5%b4%a9%e6%95%88%e5%ba%94%e3%80%82%0a%e5%ae%9e%e7%8e%b0%e6%9c%ba%e5%88%b6%20%e5%bd%93%e6%9f%90%e6%9c%8d%e5%8a%a1%e5%87%ba%e7%8e%b0%e4%b8%8d%e5%8f%af%e7%94%a8%e6%88%96%e5%93%8d%e5%ba%94%e8%b6%85%e6%97%b6%e7%9a%84%e6%83%85%e5%86%b5%e6%97%b6%ef%bc%8c%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e6%95%b4%e4%b8%aa%e7%b3%bb%e7%bb%9f%e5%87%ba%e7%8e%b0%e9%9b%aa%e5%b4%a9%ef%bc%8c%e6%9a%82%e6%97%b6%e5%81%9c%e6%ad%a2%e5%af%b9%e8%af%a5%e6%9c%8d%e5%8a%a1%e7%9a%84%e8%b0%83%e7%94%a8%e3%80%82%0a%e9%80%9a%e8%bf%87Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%ef%bc%8cHystrix%e4%bc%9a%e7%9b%91%e6%8e%a7%e5%be%ae%e6%9c%8d%e5%8a%a1%e9%97%b4%e8%b0%83%e7%94%a8%e7%9a%84%e7%8a%b6%e5%86%b5%ef%bc%8c%e5%bd%93%e5%a4%b1%e8%b4%a5%e7%9a%84%e8%b0%83%e7%94%a8%e5%88%b0%e4%b8%80%e5%ae%9a%e9%98%88%e5%80%bc%ef%bc%8c%e5%b0%b1%e4%bc%9a%e5%90%af%e5%8a%a8%e7%86%94%e6%96%ad%e6%9c%ba%e5%88%b6%ef%bc%8c%e6%96%ad%e8%b7%af%e5%99%a8%e6%89%93%e5%bc%80%e3%80%82%e8%80%8c%e5%9c%a8%e4%b8%80%e6%ae%b5%e6%97%b6%e9%97%b4%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%96%ad%e8%b7%af%e5%99%a8%e4%bc%9a%e5%8f%98%e4%b8%ba%e5%8d%8a%e5%bc%80%e7%8a%b6%e6%80%81%ef%bc%8c%e6%ad%a4%e6%97%b6%e5%85%81%e8%ae%b8%e9%83%a8%e5%88%86%e5%be%ae%e6%9c%8d%e5%8a%a1%e8%b0%83%e7%94%a8%ef%bc%8c%e5%a6%82%e6%9e%9c%e9%83%bd%e6%88%90%e5%8a%9f%e4%ba%86%ef%bc%8c%e5%8d%b3%e4%b8%8d%e8%b6%85%e8%bf%87%e8%ae%be%e5%ae%9a%e5%a5%bd%e7%9a%84%e9%98%88%e5%80%bc%ef%bc%8c%e9%82%a3%e4%b9%88%e6%96%ad%e8%b7%af%e5%99%a8%e5%b0%86%e6%81%a2%e5%a4%8d%e4%b8%ba%e5%85%b3%e9%97%ad%e7%8a%b6%e6%80%81%e3%80%82%0a%e5%a6%82%e4%b8%8b%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%9a%ef%bc%88%e6%9d%a5%e8%87%aaMartin%20Fowler%e5%a4%a7%e7%a5%9e%e7%9a%84%e5%8d%9a%e5%ae%a2%ef%bc%89%0a%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af%20%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e4%b8%ad%ef%bc%8c%e5%a4%9a%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%9b%b8%e4%ba%92%e8%b0%83%e7%94%a8%e5%87%ba%e4%bd%bf%e7%94%a8%0aHystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%20%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba%201.%20%e5%85%b3%e4%ba%8epom.xml%201%202%203%204%205%206%207%208%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-hystrix%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%202.%20%e5%90%af%e5%8a%a8%e7%b1%bb%e6%b7%bb%e5%8a%a0%40EnableHystrix%e6%b3%a8%e8%a7%a3%ef%bc%8c%e8%a1%a8%e7%a4%ba%e4%bd%bf%e7%94%a8%e7%86%94%e6%96%ad%e5%99%a8%e3%80%82%20%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%201.%20PaymentService.java%201%202%203%204%20%20public%20interface%20PaymentService%20%7b%20...%20String%20circuitBreaker%28Integer%20id%29%3b%20%7d%20%20%202.%20PaymentServiceImpl.java%20%e8%ae%be%e7%bd%ae%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e7%9a%84%e6%a0%b8%e5%bf%83%e9%85%8d%e7%bd%ae%ef%bc%9a%0a%ef%bc%881%ef%bc%89%e5%90%af%e7%94%a8%e6%96%ad%e8%b7%af%e5%99%a8%3a%0a1%20%20%40HystrixProperty%28name%20%3d%20%26%2334%3bcircuitBreaker.enabled%26%2334%3b%2c%20value%20%3d%20%26%2334%3btrue%26%2334%3b%29%20%20%20%ef%bc%882%ef%bc%89%e8%ae%be%e7%bd%ae%e8%af%b7%e6%b1%82%e6%ac%a1%e6%95%b0%3a" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&t=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是服务熔断">什么是服务熔断</a>
+      <ul>
+        <li><a href="#概念">概念</a></li>
+        <li><a href="#关于雪崩效应">关于雪崩效应</a></li>
+        <li><a href="#实现机制">实现机制</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#hystrix实现服务熔断">Hystrix实现服务熔断</a>
+      <ul>
+        <li><a href="#环境搭建">环境搭建</a>
+          <ul>
+            <li><a href="#1-关于pomxml">1. 关于pom.xml</a></li>
+            <li><a href="#2-启动类添加enablehystrix注解表示使用熔断器">2. 启动类添加@EnableHystrix注解，表示使用熔断器。</a></li>
+          </ul>
+        </li>
+        <li><a href="#实现服务熔断">实现服务熔断</a>
+          <ul>
+            <li><a href="#1-paymentservicejava">1. PaymentService.java</a></li>
+            <li><a href="#2-paymentserviceimpljava">2. PaymentServiceImpl.java</a></li>
+            <li><a href="#3-paymentcontrollerjava">3. PaymentController.java</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#hystrix实现服务监控">Hystrix实现服务监控</a></li>
+    <li><a href="#测试">测试</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Hystrix实现服务熔断与监控
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-07-26 11:39:11 &#43;0800 CST" itemprop="datePublished">2022-07-26</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          6 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/code">Code</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/hystrix" rel="tag">hystrix</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/java" rel="tag">java</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/springcloud" rel="tag">springcloud</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="什么是服务熔断">什么是服务熔断</h2>
+<h3 id="概念">概念</h3>
+<p>应对微服务雪崩效应的一种链路保护机制，类似保险丝。</p>
+<h3 id="关于雪崩效应">关于雪崩效应</h3>
+<p>微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务C，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致<strong>雪崩效应</strong>。</p>
+<h3 id="实现机制">实现机制</h3>
+<p>当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用。</p>
+<p>通过Hystrix实现服务熔断，Hystrix会监控微服务间调用的状况，当失败的调用到一定阈值，就会启动熔断机制，断路器打开。而在一段时间之后，断路器会变为半开状态，此时允许部分微服务调用，如果都成功了，即不超过设定好的阈值，那么断路器将恢复为关闭状态。</p>
+<p>如下图所示：（来自<a href="https://martinfowler.com/bliki/CircuitBreaker.html">Martin Fowler大神的博客</a>）</p>
+<p><img src="/image/hytrix-realizes-service-fusing-and-monitoring/1.jpg" alt=""></p>
+<h3 id="应用场景">应用场景</h3>
+<p>微服务架构中，多个微服务相互调用出使用</p>
+<h2 id="hystrix实现服务熔断">Hystrix实现服务熔断</h2>
+<h3 id="环境搭建">环境搭建</h3>
+<h4 id="1-关于pomxml">1. 关于pom.xml</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-hystrix<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+<span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-启动类添加enablehystrix注解表示使用熔断器">2. 启动类添加@EnableHystrix注解，表示使用熔断器。</h4>
+<h3 id="实现服务熔断">实现服务熔断</h3>
+<h4 id="1-paymentservicejava">1. PaymentService.java</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">PaymentService</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">...</span>
+    String <span style="color:#50fa7b">circuitBreaker</span><span style="color:#ff79c6">(</span>Integer id<span style="color:#ff79c6">);</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-paymentserviceimpljava">2. PaymentServiceImpl.java</h4>
+<p>设置服务熔断的核心配置：</p>
+<p>（1）启用断路器:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.enabled&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>（2）设置请求次数:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.requestVolumeThreshold&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;10&#34;</span><span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>（3）设置时间窗口期:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.sleepWindowInMilliseconds&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;10000&#34;</span><span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>（4）设置失败率:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.errorThresholdPercentage&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;60&#34;</span><span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如上设置的值，如果在10秒内，失败率达到请求次数（10）的百分之60，也就是6次，就会打开断路器，否则断路器依然关闭。</p>
+<p>断路器打开后，在一定时间之后，断路器变为半开状态，允许部分请求访问，如果这些请求满足要求，不超阈值，则断路器恢复为关闭状态。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Service
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PaymentServiceImpl</span> <span style="color:#8be9fd;font-style:italic">implements</span> PaymentService <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">...</span>
+    @Override
+    @HystrixCommand<span style="color:#ff79c6">(</span>fallbackMethod <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker_fallback&#34;</span><span style="color:#ff79c6">,</span>
+            commandProperties <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">{</span>
+                    @HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.enabled&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">),</span>
+                    @HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.requestVolumeThreshold&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;10&#34;</span><span style="color:#ff79c6">),</span>
+                    @HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.sleepWindowInMilliseconds&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;10000&#34;</span><span style="color:#ff79c6">),</span>
+                    @HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.errorThresholdPercentage&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;60&#34;</span><span style="color:#ff79c6">)</span>
+            <span style="color:#ff79c6">})</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">circuitBreaker</span><span style="color:#ff79c6">(</span>Integer id<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>id <span style="color:#ff79c6">&lt;</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> RuntimeException<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;id 不能小于0&#34;</span><span style="color:#ff79c6">);</span>
+        String uuid <span style="color:#ff79c6">=</span> IdUtil<span style="color:#ff79c6">.</span><span style="color:#50fa7b">simpleUUID</span><span style="color:#ff79c6">();</span>
+        <span style="color:#ff79c6">return</span> Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">currentThread</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;\t&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;uuid:&#34;</span> <span style="color:#ff79c6">+</span> uuid<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">circuitBreaker_fallback</span><span style="color:#ff79c6">(</span>@PathVariable<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;id&#34;</span><span style="color:#ff79c6">)</span> Integer id<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;id 不能小于0, 请重试~ id: &#34;</span> <span style="color:#ff79c6">+</span> id<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-paymentcontrollerjava">3. PaymentController.java</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@RestController
+@Slf4j
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PaymentController</span> <span style="color:#ff79c6">{</span>
+    @Resource
+    <span style="color:#8be9fd;font-style:italic">private</span> PaymentService paymentService<span style="color:#ff79c6">;</span>
+
+    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/payment/cir/{id}&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentCircuitBreaker</span><span style="color:#ff79c6">(</span>@PathVariable<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;id&#34;</span><span style="color:#ff79c6">)</span> Integer id<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">return</span> paymentService<span style="color:#ff79c6">.</span><span style="color:#50fa7b">circuitBreaker</span><span style="color:#ff79c6">(</span>id<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="hystrix实现服务监控">Hystrix实现服务监控</h2>
+<p>一、在另一个module或者project中进行：</p>
+<p>（1）关于pom.xml</p>
+<p>除了一些基本依赖外：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-hystrix-dashboard<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>（2）启动类开启@EnableHystrixDashboard注解。</p>
+<p>二、在要监控的服务的配置文件中添加：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#6272a4"># hystrix 9001监控配置</span>
+<span style="color:#ff79c6">management</span>:
+<span style="color:#ff79c6">endpoints</span>:
+    <span style="color:#ff79c6">web</span>:
+    <span style="color:#ff79c6">exposure</span>:
+        <span style="color:#ff79c6">include</span>: hystrix.stream, info, health
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="测试">测试</h2>
+<p>（一）打开：<code>http://{ip}:{port}/hystrix</code>；</p>
+<p>（二）监控：<code>http://{ip}:{port}/actuator/hystrix.stream</code>；</p>
+<p>（三）访问<code>http://localhost:8001/payment/cir/1</code>，可以正常访问；</p>
+<p>（四）多次访问<code>http://localhost:8001/payment/cir/-1</code>, 返回系统繁忙信息，发现断路器开启了：</p>
+<p><img src="/image/hytrix-realizes-service-fusing-and-monitoring/2.jpg" alt=""></p>
+<p>此时，再访问<code>http://localhost:8001/payment/cir/1</code>，发现返回了系统繁忙信息。</p>
+<p>（五）多次访问<code>http://localhost:8001/payment/cir/1</code>，发现断路器关闭，恢复正常访问。</p>
+<hr>
+<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
+<p><strong>Over.</strong></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="akynazh/hugo-comment"
+    issue-term="pathname"
+    label="akynazh"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Archives</a></li>
+         
+          <li><a href="/gallery">Gallery</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是服务熔断">什么是服务熔断</a>
+      <ul>
+        <li><a href="#概念">概念</a></li>
+        <li><a href="#关于雪崩效应">关于雪崩效应</a></li>
+        <li><a href="#实现机制">实现机制</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#hystrix实现服务熔断">Hystrix实现服务熔断</a>
+      <ul>
+        <li><a href="#环境搭建">环境搭建</a>
+          <ul>
+            <li><a href="#1-关于pomxml">1. 关于pom.xml</a></li>
+            <li><a href="#2-启动类添加enablehystrix注解表示使用熔断器">2. 启动类添加@EnableHystrix注解，表示使用熔断器。</a></li>
+          </ul>
+        </li>
+        <li><a href="#实现服务熔断">实现服务熔断</a>
+          <ul>
+            <li><a href="#1-paymentservicejava">1. PaymentService.java</a></li>
+            <li><a href="#2-paymentserviceimpljava">2. PaymentServiceImpl.java</a></li>
+            <li><a href="#3-paymentcontrollerjava">3. PaymentController.java</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#hystrix实现服务监控">Hystrix实现服务监控</a></li>
+    <li><a href="#测试">测试</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&text=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&title=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&is_video=false&description=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7&body=Check out this article: %2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&title=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&title=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&name=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7&description=%e4%bb%80%e4%b9%88%e6%98%af%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%20%e6%a6%82%e5%bf%b5%20%e5%ba%94%e5%af%b9%e5%be%ae%e6%9c%8d%e5%8a%a1%e9%9b%aa%e5%b4%a9%e6%95%88%e5%ba%94%e7%9a%84%e4%b8%80%e7%a7%8d%e9%93%be%e8%b7%af%e4%bf%9d%e6%8a%a4%e6%9c%ba%e5%88%b6%ef%bc%8c%e7%b1%bb%e4%bc%bc%e4%bf%9d%e9%99%a9%e4%b8%9d%e3%80%82%0a%e5%85%b3%e4%ba%8e%e9%9b%aa%e5%b4%a9%e6%95%88%e5%ba%94%20%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%e7%9a%84%e6%95%b0%e6%8d%ae%e4%ba%a4%e4%ba%92%e6%98%af%e9%80%9a%e8%bf%87%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e6%9d%a5%e5%ae%8c%e6%88%90%e7%9a%84%e3%80%82%e6%9c%8d%e5%8a%a1A%e8%b0%83%e7%94%a8%e6%9c%8d%e5%8a%a1%ef%bc%8c%e6%9c%8d%e5%8a%a1B%e8%b0%83%e7%94%a8%e6%9c%8d%e5%8a%a1C%ef%bc%8c%e6%9f%90%e4%b8%80%e6%97%b6%e9%97%b4%e9%93%be%e8%b7%af%e4%b8%8a%e5%af%b9%e6%9c%8d%e5%8a%a1C%e7%9a%84%e8%b0%83%e7%94%a8%e5%93%8d%e5%ba%94%e6%97%b6%e9%97%b4%e8%bf%87%e9%95%bf%e6%88%96%e8%80%85%e6%9c%8d%e5%8a%a1C%e4%b8%8d%e5%8f%af%e7%94%a8%ef%bc%8c%e9%9a%8f%e7%9d%80%e6%97%b6%e9%97%b4%e7%9a%84%e5%a2%9e%e9%95%bf%ef%bc%8c%e5%af%b9%e6%9c%8d%e5%8a%a1C%e7%9a%84%e8%b0%83%e7%94%a8%e4%b9%9f%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%a4%9a%ef%bc%8c%e7%84%b6%e5%90%8e%e6%9c%8d%e5%8a%a1C%e5%b4%a9%e6%ba%83%e4%ba%86%ef%bc%8c%e4%bd%86%e6%98%af%e9%93%be%e8%b7%af%e8%b0%83%e7%94%a8%e8%bf%98%e5%9c%a8%ef%bc%8c%e5%af%b9%e6%9c%8d%e5%8a%a1B%e7%9a%84%e8%b0%83%e7%94%a8%e4%b9%9f%e5%9c%a8%e6%8c%81%e7%bb%ad%e5%a2%9e%e5%a4%9a%ef%bc%8c%e7%84%b6%e5%90%8e%e6%9c%8d%e5%8a%a1B%e5%b4%a9%e6%ba%83%ef%bc%8c%e9%9a%8f%e4%b9%8bA%e4%b9%9f%e5%b4%a9%e6%ba%83%ef%bc%8c%e5%af%bc%e8%87%b4%e9%9b%aa%e5%b4%a9%e6%95%88%e5%ba%94%e3%80%82%0a%e5%ae%9e%e7%8e%b0%e6%9c%ba%e5%88%b6%20%e5%bd%93%e6%9f%90%e6%9c%8d%e5%8a%a1%e5%87%ba%e7%8e%b0%e4%b8%8d%e5%8f%af%e7%94%a8%e6%88%96%e5%93%8d%e5%ba%94%e8%b6%85%e6%97%b6%e7%9a%84%e6%83%85%e5%86%b5%e6%97%b6%ef%bc%8c%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e6%95%b4%e4%b8%aa%e7%b3%bb%e7%bb%9f%e5%87%ba%e7%8e%b0%e9%9b%aa%e5%b4%a9%ef%bc%8c%e6%9a%82%e6%97%b6%e5%81%9c%e6%ad%a2%e5%af%b9%e8%af%a5%e6%9c%8d%e5%8a%a1%e7%9a%84%e8%b0%83%e7%94%a8%e3%80%82%0a%e9%80%9a%e8%bf%87Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%ef%bc%8cHystrix%e4%bc%9a%e7%9b%91%e6%8e%a7%e5%be%ae%e6%9c%8d%e5%8a%a1%e9%97%b4%e8%b0%83%e7%94%a8%e7%9a%84%e7%8a%b6%e5%86%b5%ef%bc%8c%e5%bd%93%e5%a4%b1%e8%b4%a5%e7%9a%84%e8%b0%83%e7%94%a8%e5%88%b0%e4%b8%80%e5%ae%9a%e9%98%88%e5%80%bc%ef%bc%8c%e5%b0%b1%e4%bc%9a%e5%90%af%e5%8a%a8%e7%86%94%e6%96%ad%e6%9c%ba%e5%88%b6%ef%bc%8c%e6%96%ad%e8%b7%af%e5%99%a8%e6%89%93%e5%bc%80%e3%80%82%e8%80%8c%e5%9c%a8%e4%b8%80%e6%ae%b5%e6%97%b6%e9%97%b4%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%96%ad%e8%b7%af%e5%99%a8%e4%bc%9a%e5%8f%98%e4%b8%ba%e5%8d%8a%e5%bc%80%e7%8a%b6%e6%80%81%ef%bc%8c%e6%ad%a4%e6%97%b6%e5%85%81%e8%ae%b8%e9%83%a8%e5%88%86%e5%be%ae%e6%9c%8d%e5%8a%a1%e8%b0%83%e7%94%a8%ef%bc%8c%e5%a6%82%e6%9e%9c%e9%83%bd%e6%88%90%e5%8a%9f%e4%ba%86%ef%bc%8c%e5%8d%b3%e4%b8%8d%e8%b6%85%e8%bf%87%e8%ae%be%e5%ae%9a%e5%a5%bd%e7%9a%84%e9%98%88%e5%80%bc%ef%bc%8c%e9%82%a3%e4%b9%88%e6%96%ad%e8%b7%af%e5%99%a8%e5%b0%86%e6%81%a2%e5%a4%8d%e4%b8%ba%e5%85%b3%e9%97%ad%e7%8a%b6%e6%80%81%e3%80%82%0a%e5%a6%82%e4%b8%8b%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%9a%ef%bc%88%e6%9d%a5%e8%87%aaMartin%20Fowler%e5%a4%a7%e7%a5%9e%e7%9a%84%e5%8d%9a%e5%ae%a2%ef%bc%89%0a%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af%20%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e4%b8%ad%ef%bc%8c%e5%a4%9a%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%9b%b8%e4%ba%92%e8%b0%83%e7%94%a8%e5%87%ba%e4%bd%bf%e7%94%a8%0aHystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%20%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba%201.%20%e5%85%b3%e4%ba%8epom.xml%201%202%203%204%205%206%207%208%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-hystrix%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%202.%20%e5%90%af%e5%8a%a8%e7%b1%bb%e6%b7%bb%e5%8a%a0%40EnableHystrix%e6%b3%a8%e8%a7%a3%ef%bc%8c%e8%a1%a8%e7%a4%ba%e4%bd%bf%e7%94%a8%e7%86%94%e6%96%ad%e5%99%a8%e3%80%82%20%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%201.%20PaymentService.java%201%202%203%204%20%20public%20interface%20PaymentService%20%7b%20...%20String%20circuitBreaker%28Integer%20id%29%3b%20%7d%20%20%202.%20PaymentServiceImpl.java%20%e8%ae%be%e7%bd%ae%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e7%9a%84%e6%a0%b8%e5%bf%83%e9%85%8d%e7%bd%ae%ef%bc%9a%0a%ef%bc%881%ef%bc%89%e5%90%af%e7%94%a8%e6%96%ad%e8%b7%af%e5%99%a8%3a%0a1%20%20%40HystrixProperty%28name%20%3d%20%26%2334%3bcircuitBreaker.enabled%26%2334%3b%2c%20value%20%3d%20%26%2334%3btrue%26%2334%3b%29%20%20%20%ef%bc%882%ef%bc%89%e8%ae%be%e7%bd%ae%e8%af%b7%e6%b1%82%e6%ac%a1%e6%95%b0%3a" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f07%2fhytrix-realizes-service-fusing-and-monitoring%2f&t=Hystrix%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%86%94%e6%96%ad%e4%b8%8e%e7%9b%91%e6%8e%a7" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Jzh 
+    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/gallery">Gallery</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/js/lazy.js></script>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

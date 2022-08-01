@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Norwegian Wood</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in docker on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Wed, 19 May 2021 22:52:52 +0800</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker简单使用过程记录</title>
+      <link>/posts/2021/05/docker-simple-use-process-record/</link>
+      <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
+      
+      <guid>/posts/2021/05/docker-simple-use-process-record/</guid>
+      <description>开启docker服务 1 2  [root@VM-0-11-centos ~]# curl -sSL https://get.daocloud.io/docker | sh [root@VM-0-11-centos ~]# systemctl start docker   测试docker 一、下载ubuntu镜像
+1 2 3 4 5 6 7 8 9 10 11 12  [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;hello world&amp;#34; Unable to find image &amp;#39;ubuntu:15.10&amp;#39; locally 15.10: Pulling from library/ubuntu 7dcf5a444392: Pull complete 759aa75f3cee: Pull complete 3fa871dc8a2b: Pull complete 224c42ae46e7: Pull complete Digest: sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3 Status: Downloaded newer image for ubuntu:15.</description>
+    </item>
+    
+  </channel>
+</rss>

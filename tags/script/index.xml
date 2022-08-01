@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>script on Norwegian Wood</title>
+    <link>/tags/script/</link>
+    <description>Recent content in script on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 20 Nov 2020 18:17:33 +0800</lastBuildDate><atom:link href="/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cmd重要且实用的一些命令</title>
+      <link>/posts/2020/11/cmd-some-important-and-practical-commands/</link>
+      <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
+      
+      <guid>/posts/2020/11/cmd-some-important-and-practical-commands/</guid>
+      <description>写入文件  写入hello字符串（同时新建了a.txt）  1  echo hello &amp;gt; a.txt    追加写入hello字符串  1  echo hello &amp;gt;&amp;gt; a.txt    将a.txt内容追加写入b.txt  1  type a.txt &amp;gt;&amp;gt; b.txt   新建文件  新建空文件a.txt  1  type null &amp;gt; a.txt   换行（分号换行输出） 1  echo hello; echo peter   关于程序编译 test.cpp: 一个含cin输入的程序
+编译cpp
+1  g++ test.cpp -o test   以1.in作为标准输入，2.out作为标准输出执行test
+1  test &amp;lt; 1.</description>
+    </item>
+    
+  </channel>
+</rss>

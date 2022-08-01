@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on Norwegian Wood</title>
+    <link>/tags/redis/</link>
+    <description>Recent content in redis on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Mon, 20 Dec 2021 10:15:05 +0800</lastBuildDate><atom:link href="/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis学习记录二</title>
+      <link>/posts/2021/12/redis-learning-record-ii/</link>
+      <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
+      
+      <guid>/posts/2021/12/redis-learning-record-ii/</guid>
+      <description>事务 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;#34;java&amp;#34; 127.0.0.1:6379&amp;gt; get book &amp;#34;java&amp;#34; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil)   获取key 获取指定key 1  keys * # 获取所有key   1  keys pattern # 根据pattern获取key   1 2 3 4  - * 代表匹配任意字符 - ?</description>
+    </item>
+    
+    <item>
+      <title>Redis学习记录一</title>
+      <link>/posts/2021/12/redis-learning-record-i/</link>
+      <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
+      
+      <guid>/posts/2021/12/redis-learning-record-i/</guid>
+      <description>Open, Connect And Config  open redis:  1  redis-server   connect to redis:  1  redis-cli   disconnect:  1  redis-cli shutdown   show chinese:  1  redis-cli --raw   connect to remote redis:  1  redis-cli -h host -p port -a password   get redis config:  1  config get {config_name}   Data Type list:
+1 2 3  lpush clist redis lpush clist mysql lrange clist 0 100   key:</description>
+    </item>
+    
+  </channel>
+</rss>

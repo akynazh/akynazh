@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Norwegian Wood</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 10 Dec 2021 18:10:07 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git实用操作之初始化与分支管理</title>
+      <link>/posts/2021/12/initialization-and-branch-management-of-git-practical-operations/</link>
+      <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
+      <guid>/posts/2021/12/initialization-and-branch-management-of-git-practical-operations/</guid>
+      <description>git初次拉取远程仓库  从github建立一个仓库，获取仓库地址url 进入项目所在文件夹，运行一下代码  1 2 3 4 5 6 7 8 9  &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程仓库 &amp;gt; git push origin master # 将本地分支推送到远程仓库   这里执行完 git commit -m “init”后，我们查看一下本地分支信息：
+1 2  &amp;gt; git branch * master   可见git自动为我们本地创建了一个master分支。
+执行完git push origin master后，我们查看一下本地分支与远程分支的映射关系：</description>
+    </item>
+    
+    <item>
+      <title>Git实用操作之解决冲突</title>
+      <link>/posts/2021/05/conflict-resolution-of-git-practical-operation/</link>
+      <pubDate>Wed, 19 May 2021 22:12:54 +0800</pubDate>
+      
+      <guid>/posts/2021/05/conflict-resolution-of-git-practical-operation/</guid>
+      <description>首先提交当前分支修改：
+1 2  git add . git commit -m &amp;#34;msg&amp;#34;   这时如果其他分支对当前提交分支进行了修改，直接push上去则会失败并提醒进行冲突的解决。
+因此，进行pull，将更改拉取下来进行冲突的解决。
+1  git pull   这时有2种可能的情况，要么其他分支的修改地方和自己的修改的地方不冲突，要么冲突。
+如果不冲突且接受其他分支的容易修改，则可以直接push上去了。
+如果冲突了，则对所有冲突的地方merge，即在提示冲突的地方进行修改的选择即可。
+1 2 3 4 5  &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD hello world ======= hello kitty &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; another-branch   HEAD标记&amp;quot;Current Change&amp;quot;，即当前分支的修改，&amp;ldquo;another-branch&amp;quot;标记其他分支的修改，两者之间用&amp;rdquo;===&amp;ldquo;隔开。
+修改完成后，重新进行完整的提交即可：
+1 2 3  git add . git commit -m &amp;#34;msg&amp;#34; git push   over.</description>
+    </item>
+    
+  </channel>
+</rss>

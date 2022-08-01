@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-regular-400.woff2" as="font"
+    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/%20lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Config结合Bus使用记录 | Norwegian Wood</title>
+  <link rel='canonical' href='/posts/2022/07/config-combined-with-bus-usage-record/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Config结合Bus使用记录" />
+<meta property="og:description" content="为何要使用Config和Bus Config可以进行多个微服务下的全局配置，更加方便，易于管理。
+当全局配置修改时，需要通知各个微服务，一个一个地通知是非常耗时的，如果可以通过广播的方式快速将消息传递出去就轻松多了，而通过Bus即可实现这一点。
+测试方法 一、在6996端口通过git拉取全局配置，相当于一个ConfigServer，6886和6776端口作为ConfigClient；
+二、Bus结合RabbitMQ实现，修改配置时，只通知ConfigServer，达到消息广播的效果。
+依赖引入 一、ConfigServer端：
+1 2 3 4 5 6 7 8  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt; &lt;/dependency&gt;   二、ConfigClient端：
+1 2 3 4 5 6 7 8  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt; &lt;/dependency&gt;   其他一些基本包就省略了。
+文件配置 一、ConfigServer端：
+以下为application.yml:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  spring: cloud: config: server: git: # github项目地址 uri: https://github." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2022/07/config-combined-with-bus-usage-record/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-27T22:00:55+08:00" />
+<meta property="article:modified_time" content="2022-07-27T22:00:55+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Config结合Bus使用记录"/>
+<meta name="twitter:description" content="为何要使用Config和Bus Config可以进行多个微服务下的全局配置，更加方便，易于管理。
+当全局配置修改时，需要通知各个微服务，一个一个地通知是非常耗时的，如果可以通过广播的方式快速将消息传递出去就轻松多了，而通过Bus即可实现这一点。
+测试方法 一、在6996端口通过git拉取全局配置，相当于一个ConfigServer，6886和6776端口作为ConfigClient；
+二、Bus结合RabbitMQ实现，修改配置时，只通知ConfigServer，达到消息广播的效果。
+依赖引入 一、ConfigServer端：
+1 2 3 4 5 6 7 8  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt; &lt;/dependency&gt;   二、ConfigClient端：
+1 2 3 4 5 6 7 8  &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt; &lt;/dependency&gt;   其他一些基本包就省略了。
+文件配置 一、ConfigServer端：
+以下为application.yml:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  spring: cloud: config: server: git: # github项目地址 uri: https://github."/>
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/styles.09f1de3a03a3185b1f1da4e352b3004aab5d2e95ce7125b390aef821855b3a31dee8a069d9f31fd2757a73e8b339e20a5d0785f1e4cf04aa84db9b45ee386a4b.css" integrity="sha512-CfHeOgOjGFsfHaTjUrMASqtdLpXOcSWzkK74IYVbOjHe6KBp2fMf0nV6c&#43;izOeIKXQeF8eTPBKqE25tF7jhqSw==">
+
+  
+  
+  <link rel="stylesheet" href="css/my.css"> 
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="image/base/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+<body class="max-width-blog mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/gallery">Gallery</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/2022/07/springcloud-gateway-usage-record/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/posts/2022/07/springcloud-stream-usage-record/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&text=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&title=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&is_video=false&description=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&title=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&title=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&name=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e4%b8%ba%e4%bd%95%e8%a6%81%e4%bd%bf%e7%94%a8Config%e5%92%8cBus%20Config%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b8%8b%e7%9a%84%e5%85%a8%e5%b1%80%e9%85%8d%e7%bd%ae%ef%bc%8c%e6%9b%b4%e5%8a%a0%e6%96%b9%e4%be%bf%ef%bc%8c%e6%98%93%e4%ba%8e%e7%ae%a1%e7%90%86%e3%80%82%0a%e5%bd%93%e5%85%a8%e5%b1%80%e9%85%8d%e7%bd%ae%e4%bf%ae%e6%94%b9%e6%97%b6%ef%bc%8c%e9%9c%80%e8%a6%81%e9%80%9a%e7%9f%a5%e5%90%84%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b8%80%e4%b8%aa%e4%b8%80%e4%b8%aa%e5%9c%b0%e9%80%9a%e7%9f%a5%e6%98%af%e9%9d%9e%e5%b8%b8%e8%80%97%e6%97%b6%e7%9a%84%ef%bc%8c%e5%a6%82%e6%9e%9c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b9%bf%e6%92%ad%e7%9a%84%e6%96%b9%e5%bc%8f%e5%bf%ab%e9%80%9f%e5%b0%86%e6%b6%88%e6%81%af%e4%bc%a0%e9%80%92%e5%87%ba%e5%8e%bb%e5%b0%b1%e8%bd%bb%e6%9d%be%e5%a4%9a%e4%ba%86%ef%bc%8c%e8%80%8c%e9%80%9a%e8%bf%87Bus%e5%8d%b3%e5%8f%af%e5%ae%9e%e7%8e%b0%e8%bf%99%e4%b8%80%e7%82%b9%e3%80%82%0a%e6%b5%8b%e8%af%95%e6%96%b9%e6%b3%95%20%e4%b8%80%e3%80%81%e5%9c%a86996%e7%ab%af%e5%8f%a3%e9%80%9a%e8%bf%87git%e6%8b%89%e5%8f%96%e5%85%a8%e5%b1%80%e9%85%8d%e7%bd%ae%ef%bc%8c%e7%9b%b8%e5%bd%93%e4%ba%8e%e4%b8%80%e4%b8%aaConfigServer%ef%bc%8c6886%e5%92%8c6776%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%baConfigClient%ef%bc%9b%0a%e4%ba%8c%e3%80%81Bus%e7%bb%93%e5%90%88RabbitMQ%e5%ae%9e%e7%8e%b0%ef%bc%8c%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%97%b6%ef%bc%8c%e5%8f%aa%e9%80%9a%e7%9f%a5ConfigServer%ef%bc%8c%e8%be%be%e5%88%b0%e6%b6%88%e6%81%af%e5%b9%bf%e6%92%ad%e7%9a%84%e6%95%88%e6%9e%9c%e3%80%82%0a%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e4%b8%80%e3%80%81ConfigServer%e7%ab%af%ef%bc%9a%0a1%202%203%204%205%206%207%208%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-bus-amqp%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-config-server%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%e4%ba%8c%e3%80%81ConfigClient%e7%ab%af%ef%bc%9a%0a1%202%203%204%205%206%207%208%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-bus-amqp%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-config%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%e5%85%b6%e4%bb%96%e4%b8%80%e4%ba%9b%e5%9f%ba%e6%9c%ac%e5%8c%85%e5%b0%b1%e7%9c%81%e7%95%a5%e4%ba%86%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e4%b8%80%e3%80%81ConfigServer%e7%ab%af%ef%bc%9a%0a%e4%bb%a5%e4%b8%8b%e4%b8%baapplication.yml%3a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%20%20spring%3a%20cloud%3a%20config%3a%20server%3a%20git%3a%20%23%20github%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80%20uri%3a%20https%3a%2f%2fgithub." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&t=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#为何要使用config和bus">为何要使用Config和Bus</a></li>
+    <li><a href="#测试方法">测试方法</a></li>
+    <li><a href="#依赖引入">依赖引入</a></li>
+    <li><a href="#文件配置">文件配置</a></li>
+    <li><a href="#编写java类">编写Java类</a></li>
+    <li><a href="#测试">测试</a>
+      <ul>
+        <li><a href="#启动rabbitmq">启动RabbitMQ</a></li>
+        <li><a href="#加载配置测试">加载配置测试</a></li>
+        <li><a href="#修改配置测试">修改配置测试</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Config结合Bus使用记录
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-07-27 22:00:55 &#43;0800 CST" itemprop="datePublished">2022-07-27</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          6 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/code">Code</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/springcloud" rel="tag">springcloud</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/java" rel="tag">java</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="为何要使用config和bus">为何要使用Config和Bus</h2>
+<p>Config可以进行多个微服务下的全局配置，更加方便，易于管理。</p>
+<p>当全局配置修改时，需要通知各个微服务，一个一个地通知是非常耗时的，如果可以通过广播的方式快速将消息传递出去就轻松多了，而通过Bus即可实现这一点。</p>
+<h2 id="测试方法">测试方法</h2>
+<p>一、在6996端口通过git拉取全局配置，相当于一个ConfigServer，6886和6776端口作为ConfigClient；</p>
+<p>二、Bus结合RabbitMQ实现，修改配置时，只通知ConfigServer，达到消息广播的效果。</p>
+<h2 id="依赖引入">依赖引入</h2>
+<p>一、ConfigServer端：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-bus-amqp<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+<span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-config-server<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>二、ConfigClient端：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-bus-amqp<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+<span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-config<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其他一些基本包就省略了。</p>
+<h2 id="文件配置">文件配置</h2>
+<p>一、ConfigServer端：</p>
+<p>以下为application.yml:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ff79c6">spring</span>:
+  <span style="color:#ff79c6">cloud</span>:
+    <span style="color:#ff79c6">config</span>:
+      <span style="color:#ff79c6">server</span>:
+        <span style="color:#ff79c6">git</span>:
+          <span style="color:#6272a4"># github项目地址</span>
+          <span style="color:#ff79c6">uri</span>: https://github.com/akynazh/SpringCloud-Demo.git
+          <span style="color:#6272a4"># 指定搜索项目下config文件夹中的内容</span>
+          <span style="color:#ff79c6">search-paths</span>:
+            - config
+          <span style="color:#6272a4"># 指定分支</span>
+          <span style="color:#ff79c6">default-label</span>: master
+  <span style="color:#ff79c6">rabbitmq</span>:
+    <span style="color:#ff79c6">host</span>: localhost
+    <span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">5672</span>
+    <span style="color:#ff79c6">username</span>: guest
+    <span style="color:#ff79c6">password</span>: guest
+<span style="color:#ff79c6">management</span>:
+  <span style="color:#ff79c6">endpoints</span>:
+    <span style="color:#ff79c6">web</span>:
+      <span style="color:#ff79c6">exposure</span>:
+        <span style="color:#6272a4"># 通过/actuator/bus-refresh可进行事件通知</span>
+        <span style="color:#ff79c6">include</span>: <span style="color:#f1fa8c">&#34;bus-refresh&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以后，运维人员修改config时，即可通过如下地址：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">http://localhost:6996/actuator/bus-refresh
+</code></pre></td></tr></table>
+</div>
+</div><p>即可发送POST请求进行消息通知。</p>
+<p>二、ConfigClient端：</p>
+<p>以下为bootstrap.yml:（可以加载全局配置）</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ff79c6">spring</span>:
+  <span style="color:#ff79c6">application</span>:
+    <span style="color:#ff79c6">name</span>: cloud-config-client
+  <span style="color:#ff79c6">cloud</span>:
+    <span style="color:#ff79c6">config</span>:
+      <span style="color:#ff79c6">label</span>: master <span style="color:#6272a4"># 分支</span>
+      <span style="color:#ff79c6">name</span>: config <span style="color:#6272a4"># 文件名</span>
+      <span style="color:#ff79c6">profile</span>: dev <span style="color:#6272a4"># 环境</span>
+      <span style="color:#ff79c6">uri</span>: http://localhost:6996 <span style="color:#6272a4"># 全局配置加载地址</span>
+  <span style="color:#ff79c6">rabbitmq</span>:
+    <span style="color:#ff79c6">host</span>: localhost
+    <span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">5672</span>
+    <span style="color:#ff79c6">username</span>: guest
+    <span style="color:#ff79c6">password</span>: guest
+</code></pre></td></tr></table>
+</div>
+</div><p>值得注意的地方：</p>
+<p>第一，config文件名编写需要遵循一定规则，我选择的是{name}-{profile}.yml的格式，然后如上配置文件应该填写对应内容。</p>
+<p>第二，application-name可以用于后续选择性通知，如只想通知6776，可通过POST请求访问如下地址：http://localhost:6996/actuator/bus-refresh/cloud-config-client:6776</p>
+<h2 id="编写java类">编写Java类</h2>
+<p>一、ConfigServer需要注意添加@EnableConfigServer注解。</p>
+<p>二、ConfigClient端的Controller编写：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@RestController
+@Slf4j
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyController</span> <span style="color:#ff79c6">{</span>
+
+    @Resource
+    <span style="color:#8be9fd;font-style:italic">private</span> Environment env<span style="color:#ff79c6">;</span>
+
+    @Value<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;${server.port}&#34;</span><span style="color:#ff79c6">)</span>
+    String port<span style="color:#ff79c6">;</span>
+
+    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/v&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">getVersion</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;port: &#34;</span> <span style="color:#ff79c6">+</span> port <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;\t &#34;</span> <span style="color:#ff79c6">+</span> env<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getProperty</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;config.version&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="测试">测试</h2>
+<h3 id="启动rabbitmq">启动RabbitMQ</h3>
+<p>进入到sbin文件目录下：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">.\rabbitmq-service.bat start
+</code></pre></td></tr></table>
+</div>
+</div><p>默认启动在5672端口。（图形界面在15672端口）</p>
+<h3 id="加载配置测试">加载配置测试</h3>
+<p>访问：http://localhost:6996/master/config-dev.yml</p>
+<p>会从github加载得到：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ff79c6">config</span>:
+  <span style="color:#ff79c6">label</span>: master
+  <span style="color:#ff79c6">profile</span>: dev
+  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">3.0</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>访问：http://localhost:6776/v</p>
+<p>得到：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">port: 6776 3.0
+</code></pre></td></tr></table>
+</div>
+</div><p>6886得到相同结果，证明成功加载全局配置。</p>
+<h3 id="修改配置测试">修改配置测试</h3>
+<p>修改配置version为3.6，提交，发送请求如下：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl -X POST &#34;http://localhost:6996/actuator/bus-refresh&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>发现三个端口version均改为3.6，测试通过。</p>
+<p>修改配置version为3.9，提交，发送请求如下：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl -X POST &#34;http://localhost:6996/actuator/bus-refresh/cloud-config-client:6776&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>发现6996和6776的version为3.9，而6886的version仍为3.6，测试通过。</p>
+<hr>
+<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
+<p><strong>Over.</strong></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="akynazh/hugo-comment"
+    issue-term="pathname"
+    label="akynazh"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Archives</a></li>
+         
+          <li><a href="/gallery">Gallery</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#为何要使用config和bus">为何要使用Config和Bus</a></li>
+    <li><a href="#测试方法">测试方法</a></li>
+    <li><a href="#依赖引入">依赖引入</a></li>
+    <li><a href="#文件配置">文件配置</a></li>
+    <li><a href="#编写java类">编写Java类</a></li>
+    <li><a href="#测试">测试</a>
+      <ul>
+        <li><a href="#启动rabbitmq">启动RabbitMQ</a></li>
+        <li><a href="#加载配置测试">加载配置测试</a></li>
+        <li><a href="#修改配置测试">修改配置测试</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&text=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&title=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&is_video=false&description=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&title=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&title=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&name=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e4%b8%ba%e4%bd%95%e8%a6%81%e4%bd%bf%e7%94%a8Config%e5%92%8cBus%20Config%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b8%8b%e7%9a%84%e5%85%a8%e5%b1%80%e9%85%8d%e7%bd%ae%ef%bc%8c%e6%9b%b4%e5%8a%a0%e6%96%b9%e4%be%bf%ef%bc%8c%e6%98%93%e4%ba%8e%e7%ae%a1%e7%90%86%e3%80%82%0a%e5%bd%93%e5%85%a8%e5%b1%80%e9%85%8d%e7%bd%ae%e4%bf%ae%e6%94%b9%e6%97%b6%ef%bc%8c%e9%9c%80%e8%a6%81%e9%80%9a%e7%9f%a5%e5%90%84%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b8%80%e4%b8%aa%e4%b8%80%e4%b8%aa%e5%9c%b0%e9%80%9a%e7%9f%a5%e6%98%af%e9%9d%9e%e5%b8%b8%e8%80%97%e6%97%b6%e7%9a%84%ef%bc%8c%e5%a6%82%e6%9e%9c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b9%bf%e6%92%ad%e7%9a%84%e6%96%b9%e5%bc%8f%e5%bf%ab%e9%80%9f%e5%b0%86%e6%b6%88%e6%81%af%e4%bc%a0%e9%80%92%e5%87%ba%e5%8e%bb%e5%b0%b1%e8%bd%bb%e6%9d%be%e5%a4%9a%e4%ba%86%ef%bc%8c%e8%80%8c%e9%80%9a%e8%bf%87Bus%e5%8d%b3%e5%8f%af%e5%ae%9e%e7%8e%b0%e8%bf%99%e4%b8%80%e7%82%b9%e3%80%82%0a%e6%b5%8b%e8%af%95%e6%96%b9%e6%b3%95%20%e4%b8%80%e3%80%81%e5%9c%a86996%e7%ab%af%e5%8f%a3%e9%80%9a%e8%bf%87git%e6%8b%89%e5%8f%96%e5%85%a8%e5%b1%80%e9%85%8d%e7%bd%ae%ef%bc%8c%e7%9b%b8%e5%bd%93%e4%ba%8e%e4%b8%80%e4%b8%aaConfigServer%ef%bc%8c6886%e5%92%8c6776%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%baConfigClient%ef%bc%9b%0a%e4%ba%8c%e3%80%81Bus%e7%bb%93%e5%90%88RabbitMQ%e5%ae%9e%e7%8e%b0%ef%bc%8c%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%97%b6%ef%bc%8c%e5%8f%aa%e9%80%9a%e7%9f%a5ConfigServer%ef%bc%8c%e8%be%be%e5%88%b0%e6%b6%88%e6%81%af%e5%b9%bf%e6%92%ad%e7%9a%84%e6%95%88%e6%9e%9c%e3%80%82%0a%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e4%b8%80%e3%80%81ConfigServer%e7%ab%af%ef%bc%9a%0a1%202%203%204%205%206%207%208%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-bus-amqp%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-config-server%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%e4%ba%8c%e3%80%81ConfigClient%e7%ab%af%ef%bc%9a%0a1%202%203%204%205%206%207%208%20%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-bus-amqp%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-config%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%20%20%e5%85%b6%e4%bb%96%e4%b8%80%e4%ba%9b%e5%9f%ba%e6%9c%ac%e5%8c%85%e5%b0%b1%e7%9c%81%e7%95%a5%e4%ba%86%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e4%b8%80%e3%80%81ConfigServer%e7%ab%af%ef%bc%9a%0a%e4%bb%a5%e4%b8%8b%e4%b8%baapplication.yml%3a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%20%20spring%3a%20cloud%3a%20config%3a%20server%3a%20git%3a%20%23%20github%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80%20uri%3a%20https%3a%2f%2fgithub." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f07%2fconfig-combined-with-bus-usage-record%2f&t=Config%e7%bb%93%e5%90%88Bus%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Jzh 
+    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/gallery">Gallery</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/js/lazy.js></script>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

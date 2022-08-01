@@ -1,0 +1,46 @@
+#title {
+	font-family: 'Times New Roman', Times, serif;
+}
+/* 定义好段落间距 */
+p {
+  margin: 8px 0 8px 0;
+}
+
+/* 图片样式 */
+.myimg {
+	width: 80%;
+	height: 200px;
+	object-fit: cover;
+	margin: 2px;
+	border-radius: 8px;
+}
+img {
+	border-top-style: initial;
+	border-right-style: initial;
+	border-bottom-style: initial;
+	border-left-style: initial;
+	border-top-color: initial;
+	border-right-color: initial;
+	border-bottom-color: initial;
+	border-left-color: initial;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	max-width: 100%;
+	height: auto;
+	cursor: zoom-in;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+	transition-delay: 0s;
+	transition-property: transform;
+	margin-top: 15;
+	margin-bottom: 30;
+	display: block;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	box-shadow: rgba(27, 31, 35, 0.15) 0px 1px 15px, rgba(106, 115, 125, 0.35) 0px 0px 1px;
+}

@@ -1,0 +1,73 @@
+name: Metrics
+on:
+  # Schedule daily updates
+  schedule: [{cron: "0 0 * * *"}]
+  # (optional) Run workflow manually
+  workflow_dispatch:
+  # (optional) Run workflow when pushing on master/main
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: user_info_classic
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.classic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+          
+      - name: user_info_terminal
+        uses: lowlighter/metrics@latest
+        with:
+          template: terminal
+          filename: metrics.terminal.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, metadata
+      
+      - name: WakaTime
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.wakatime.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects-graphs, languages-graphs
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          
+      - name: Most used
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot
+          plugin_languages_limit: 5
+          
+      - name: Half-year calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          
+      - name: News from hackernews
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.rss.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_rss: yes
+          plugin_rss_source: https://akynazh.site/index.xml
+          plugin_rss_limit: 4
+          name: Recently used
+
+
+

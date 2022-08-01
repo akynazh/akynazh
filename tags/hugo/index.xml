@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Norwegian Wood</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in hugo on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Wed, 20 Jul 2022 23:46:01 +0800</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo通过Algolia添加站内搜索功能</title>
+      <link>/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
+      <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
+      
+      <guid>/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</guid>
+      <description>注册账号并创建Index 官网链接：Algolia，注册完成后保存好ApiID和ApiKey。
+接着，创建一个Index，保存好Index的名称。
+数据生成以及上传Algolia 方法一：通过hugo-algolia插件的方式 一、下载hugo-algolia： npm install -g hugo-algolia
+二、编写config.yaml
+网站根目录下创建config.yaml，编写参数如下：
+1 2 3 4 5 6  --- algolia: index: &amp;#34;{indexName}&amp;#34; key: &amp;#34;{key}&amp;#34; appID: &amp;#34;{appID}&amp;#34; ---   三、生成algolia.json
+网站根目录下运行： hugo-algolia -s，即可生成 {site}/public/algolia.json，同时该数据也同步到了algolia账户下，可以去官网查看。
+四、前往algolia的indices进行搜索类型的设置
+可以选择按tag，category，content等内容进行搜索，并指定优先级。
+方法二：通过GithubAction的方式 这里不通过插件而是通过hugo定制化地生成algolia.json，然后通过GithubAction在每次push时上传数据。
+个人更推荐这样做，更好定制化且方便。同时上面方法一有个bug，对中文数据好像不支持。
+一、配置algolia输出文件 1 2 3 4 5 6 7 8 9 10  outputs: home: - HTML - RSS - Algolia outputFormats: Algolia: mediaType: application/json baseName: algolia isPlainText: true   二、生成algolia.</description>
+    </item>
+    
+  </channel>
+</rss>

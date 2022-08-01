@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Norwegian Wood</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 29 Jul 2022 18:26:44 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java</title>
+      <link>/tags/java/</link>
+      <pubDate>Fri, 29 Jul 2022 18:26:44 +0800</pubDate>
+      
+      <guid>/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>springcloud</title>
+      <link>/tags/springcloud/</link>
+      <pubDate>Fri, 29 Jul 2022 18:26:44 +0800</pubDate>
+      
+      <guid>/tags/springcloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hystrix</title>
+      <link>/tags/hystrix/</link>
+      <pubDate>Tue, 26 Jul 2022 11:39:11 +0800</pubDate>
+      
+      <guid>/tags/hystrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>/tags/database/</link>
+      <pubDate>Sat, 23 Jul 2022 21:27:15 +0800</pubDate>
+      
+      <guid>/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>/tags/mysql/</link>
+      <pubDate>Sat, 23 Jul 2022 21:27:15 +0800</pubDate>
+      
+      <guid>/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl</title>
+      <link>/tags/wsl/</link>
+      <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
+      
+      <guid>/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithm</title>
+      <link>/tags/algorithm/</link>
+      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
+      
+      <guid>/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>/tags/math/</link>
+      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
+      
+      <guid>/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>site</title>
+      <link>/tags/site/</link>
+      <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
+      
+      <guid>/tags/site/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>excerpt</title>
+      <link>/tags/excerpt/</link>
+      <pubDate>Tue, 12 Jul 2022 23:11:48 +0800</pubDate>
+      
+      <guid>/tags/excerpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>music</title>
+      <link>/tags/music/</link>
+      <pubDate>Sun, 10 Jul 2022 14:22:57 +0800</pubDate>
+      
+      <guid>/tags/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>/tags/powershell/</link>
+      <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
+      
+      <guid>/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>window</title>
+      <link>/tags/window/</link>
+      <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
+      
+      <guid>/tags/window/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>assembly</title>
+      <link>/tags/assembly/</link>
+      <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
+      
+      <guid>/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>os</title>
+      <link>/tags/os/</link>
+      <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
+      
+      <guid>/tags/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tcp</title>
+      <link>/tags/tcp/</link>
+      <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
+      
+      <guid>/tags/tcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>poem</title>
+      <link>/tags/poem/</link>
+      <pubDate>Mon, 30 May 2022 20:11:37 +0800</pubDate>
+      
+      <guid>/tags/poem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cmd</title>
+      <link>/tags/cmd/</link>
+      <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
+      
+      <guid>/tags/cmd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>journey</title>
+      <link>/tags/journey/</link>
+      <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
+      
+      <guid>/tags/journey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>/tags/life/</link>
+      <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
+      
+      <guid>/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>springboot</title>
+      <link>/tags/springboot/</link>
+      <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
+      <guid>/tags/springboot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>/tags/web/</link>
+      <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
+      
+      <guid>/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thinking</title>
+      <link>/tags/thinking/</link>
+      <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
+      
+      <guid>/tags/thinking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>/tags/redis/</link>
+      <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
+      
+      <guid>/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cpp</title>
+      <link>/tags/cpp/</link>
+      <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
+      
+      <guid>/tags/cpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>language</title>
+      <link>/tags/language/</link>
+      <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
+      
+      <guid>/tags/language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>/tags/network/</link>
+      <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
+      
+      <guid>/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>acgn</title>
+      <link>/tags/acgn/</link>
+      <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
+      
+      <guid>/tags/acgn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>script</title>
+      <link>/tags/script/</link>
+      <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
+      
+      <guid>/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>/tags/ssh/</link>
+      <pubDate>Tue, 17 Nov 2020 17:56:03 +0800</pubDate>
+      
+      <guid>/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matlab</title>
+      <link>/tags/matlab/</link>
+      <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
+      
+      <guid>/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
