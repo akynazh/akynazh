@@ -16,10 +16,10 @@
       <a style="display: block;" href="https://akynazh.site">
         <img src="/metrics.plugin.rss.svg" alt=""></img>
       </a>
-      <a style="display: block;" href="https://akynazh.site/categories/code/">
+      <a style="display: block;" href="https://akynazh.site">
         <img src="/metrics.plugin.wakatime.svg" alt=""></img>
       </a>
-      <a style="display: block;" href="https://akynazh.site/categories/code/">
+      <a style="display: block;" href="https://akynazh.site">
         <img src="/metrics.plugin.languages.svg" alt=""></img>
       </a>
     </td>
