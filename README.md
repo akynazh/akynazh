@@ -1,9 +1,5 @@
 <table>
   <tr>
-    <th><a href="https://github.com/akynazh"> Information And Contributions </a></th>
-    <th><a href="https://akynazh.site"> Coding And Writing Records </a></th>
-  </tr>
-  <tr>
     <td align="center" width="50%">
       <a style="display: block;" href="https://github.com/akynazh">
         <img src="/metrics.classic.svg" alt=""></img>
