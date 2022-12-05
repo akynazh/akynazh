@@ -9,7 +9,7 @@
       </a>
     </td>
     <td align="center" width="50%">
-      <a style="display: block;" href="https://akynazh.site">
+      <a style="display: block;" href="https://akynazh.site/index.xml">
         <img src="/metrics.plugin.rss.svg" alt=""></img>
       </a>
       <a style="display: block;" href="https://akynazh.site">
