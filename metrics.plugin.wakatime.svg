@@ -37,28 +37,28 @@
                         <div class="chart-bars horizontal">
                             <div class="entry">
                                 <span class="name">tg-jav-bot</span>
-                                <div class="bar" style="width: 76.36%; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
-                                <span class="value">95%</span>
-                            </div>
-                            <div class="entry">
-                                <span class="name">algorithm</span>
-                                <div class="bar" style="width: 1.472%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
-                                <span class="value">2%</span>
-                            </div>
-                            <div class="entry">
-                                <span class="name">pikpakupload</span>
-                                <div class="bar" style="width: 0.8640000000000001%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
-                                <span class="value">1%</span>
+                                <div class="bar" style="width: 73.83999999999999%; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
+                                <span class="value">92%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">site</span>
-                                <div class="bar" style="width: 0.7519999999999999%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
-                                <span class="value">1%</span>
+                                <div class="bar" style="width: 2.968%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <span class="value">4%</span>
+                            </div>
+                            <div class="entry">
+                                <span class="name">algorithm</span>
+                                <div class="bar" style="width: 2.52%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <span class="value">3%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">Scripts</span>
                                 <div class="bar" style="width: 0.44000000000000006%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">1%</span>
+                            </div>
+                            <div class="entry">
+                                <span class="name">pikpakupload</span>
+                                <div class="bar" style="width: 0.12%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <span class="value">0%</span>
                             </div>
                         </div>
                     </section>
@@ -67,13 +67,13 @@
                         <div class="chart-bars horizontal">
                             <div class="entry">
                                 <span class="name">Python</span>
-                                <div class="bar" style="width: 63.384%; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
-                                <span class="value">79%</span>
+                                <div class="bar" style="width: 63.784%; background-color: var(--color-calendar-graph-day-L4-bg)"></div>
+                                <span class="value">80%</span>
                             </div>
                             <div class="entry">
-                                <span class="name">HTML</span>
-                                <div class="bar" style="width: 4.648%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
-                                <span class="value">6%</span>
+                                <span class="name">Markdown</span>
+                                <div class="bar" style="width: 4.056%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <span class="value">5%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">YAML</span>
@@ -81,13 +81,13 @@
                                 <span class="value">4%</span>
                             </div>
                             <div class="entry">
-                                <span class="name">Other</span>
-                                <div class="bar" style="width: 1.7280000000000002%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <span class="name">HTML</span>
+                                <div class="bar" style="width: 1.952%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">2%</span>
                             </div>
                             <div class="entry">
-                                <span class="name">Markdown</span>
-                                <div class="bar" style="width: 1.704%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <span class="name">Java</span>
+                                <div class="bar" style="width: 1.928%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">2%</span>
                             </div>
                         </div>
