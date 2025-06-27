@@ -65,7 +65,7 @@ jobs:
           token: NOT_NEEDED
           base: ""
           plugin_rss: yes
-          plugin_rss_source: https://akynazh.site/index.xml
+          plugin_rss_source: https://zhihang.org/index.xml
           plugin_rss_limit: 4
           name: Recently used
 
