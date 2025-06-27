@@ -9,13 +9,13 @@
       </a>
     </td>
     <td align="center" width="50%">
-      <a style="display: block;" href="https://akynazh.site">
+      <a style="display: block;" href="https://zhihang.org">
         <img src="/metrics.plugin.rss.svg" alt=""></img>
       </a>
-      <a style="display: block;" href="https://akynazh.site">
+      <a style="display: block;" href="https://zhihang.org">
         <img src="/metrics.plugin.wakatime.svg" alt=""></img>
       </a>
-      <a style="display: block;" href="https://akynazh.site">
+      <a style="display: block;" href="https://zhihang.org">
         <img src="/metrics.plugin.languages.svg" alt=""></img>
       </a>
     </td>
